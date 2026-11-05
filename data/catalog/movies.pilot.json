@@ -1,0 +1,2377 @@
+{
+  "generated_at": "2026-11-05T03:43:24.351Z",
+  "source": "semilla_manual",
+  "count": 34,
+  "prompt_version": "juez-v2.0",
+  "attribution": "Datos de películas: semilla manual. Al usar TMDB: \"This product uses the TMDB API but is not endorsed or certified by TMDB.\" Plataformas: JustWatch.",
+  "stats": {
+    "frenetica": {
+      "mean": 0.3074,
+      "stddev": 0.2711
+    },
+    "agil": {
+      "mean": 0.4809,
+      "stddev": 0.2714
+    },
+    "pausada": {
+      "mean": 0.4309,
+      "stddev": 0.2444
+    },
+    "contemplativa": {
+      "mean": 0.2429,
+      "stddev": 0.2763
+    },
+    "reconfortante": {
+      "mean": 0.3268,
+      "stddev": 0.2532
+    },
+    "luminosa": {
+      "mean": 0.3491,
+      "stddev": 0.2523
+    },
+    "melancolica": {
+      "mean": 0.5391,
+      "stddev": 0.2948
+    },
+    "tensa": {
+      "mean": 0.4762,
+      "stddev": 0.2924
+    },
+    "inquietante": {
+      "mean": 0.2694,
+      "stddev": 0.2515
+    },
+    "sombria": {
+      "mean": 0.3735,
+      "stddev": 0.2891
+    },
+    "cruda": {
+      "mean": 0.3059,
+      "stddev": 0.2455
+    },
+    "onirica": {
+      "mean": 0.2921,
+      "stddev": 0.2417
+    },
+    "neon": {
+      "mean": 0.2568,
+      "stddev": 0.2758
+    },
+    "pastel": {
+      "mean": 0.1629,
+      "stddev": 0.2127
+    },
+    "calida": {
+      "mean": 0.4882,
+      "stddev": 0.2587
+    },
+    "monocromatica": {
+      "mean": 0.1738,
+      "stddev": 0.2661
+    },
+    "carga_emocional": {
+      "mean": 0.7003,
+      "stddev": 0.2405
+    },
+    "complejidad": {
+      "mean": 0.4294,
+      "stddev": 0.2358
+    },
+    "humor": {
+      "mean": 0.3365,
+      "stddev": 0.2603
+    },
+    "intimidad": {
+      "mean": 0.5432,
+      "stddev": 0.2675
+    },
+    "escala_epica": {
+      "mean": 0.4091,
+      "stddev": 0.3392
+    }
+  },
+  "team_deck": {
+    "_doc": "Mazo del Equipo Kinoo (owner_kind = system). Alimenta el rol 'creador' mientras no exista Comunidad. PROVISIONAL: lo eligió el modelo que construyó el back; el equipo debe curarlo y escribir sus notas.",
+    "uuid": "00000000-0000-4000-8000-00000000c0de",
+    "owner_name": "Equipo Kinoo",
+    "title": "Para empezar con Kinoo",
+    "movie_ids": [
+      "el-abrazo-de-la-serpiente",
+      "past-lives",
+      "parasite",
+      "coco",
+      "cinema-paradiso",
+      "mad-max-fury-road",
+      "relatos-salvajes",
+      "arrival",
+      "chungking-express",
+      "roma",
+      "everything-everywhere",
+      "central-do-brasil"
+    ],
+    "notes": {
+      "el-abrazo-de-la-serpiente": "Hecha en Colombia y en blanco y negro. Vale cada minuto.",
+      "past-lives": "Para cuando quieras llorar despacio.",
+      "parasite": "Empieza como comedia. No termina así.",
+      "coco": "La vemos cada noviembre.",
+      "relatos-salvajes": "Seis historias de gente que pierde la paciencia."
+    }
+  },
+  "movies": [
+    {
+      "id": "interstellar",
+      "tmdb_id": null,
+      "title": "Interstellar",
+      "original_title": null,
+      "year": 2014,
+      "runtime_min": 169,
+      "genres": [
+        "Ciencia ficción",
+        "Drama",
+        "Aventura"
+      ],
+      "directors": [
+        "Christopher Nolan"
+      ],
+      "countries": [
+        "US",
+        "GB"
+      ],
+      "original_language": "en",
+      "vote_average": 8.4,
+      "vote_count": 36000,
+      "popularity": null,
+      "poster_path": "_blob/8d36ec8e6ab2e36a214159e1cc93d1c6.jpg",
+      "overview": "",
+      "atoms": {
+        "frenetica": 0.25,
+        "agil": 0.35,
+        "pausada": 0.6,
+        "contemplativa": 0.3,
+        "reconfortante": 0.3,
+        "luminosa": 0.35,
+        "melancolica": 0.65,
+        "tensa": 0.7,
+        "inquietante": 0.3,
+        "sombria": 0.35,
+        "cruda": 0.1,
+        "onirica": 0.4,
+        "neon": 0.05,
+        "pastel": 0,
+        "calida": 0.4,
+        "monocromatica": 0.1,
+        "carga_emocional": 0.9,
+        "complejidad": 0.85,
+        "humor": 0.1,
+        "intimidad": 0.35,
+        "escala_epica": 0.98
+      },
+      "hook": "CON LA TIERRA AGONIZANDO, UN GRUPO DE EXPLORADORES CRUZA UN PORTAL HACIA OTRA GALAXIA PARA SALVAR A LA HUMANIDAD, A COSTA DE DEJAR ATRÁS A SUS HIJOS.",
+      "pillars": {
+        "ritmo": "majestuoso",
+        "tono": "emotivo y grandioso",
+        "historia": "viaje cósmico por los hijos",
+        "visual": "espacio infinito"
+      },
+      "providers": {
+        "CO": [
+          "Netflix",
+          "Prime Video"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T03:43:24.308Z"
+      },
+      "source": "semilla_manual"
+    },
+    {
+      "id": "la-la-land",
+      "tmdb_id": null,
+      "title": "La La Land",
+      "original_title": null,
+      "year": 2016,
+      "runtime_min": 128,
+      "genres": [
+        "Musical",
+        "Romance",
+        "Drama"
+      ],
+      "directors": [
+        "Damien Chazelle"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.9,
+      "vote_count": 17000,
+      "popularity": null,
+      "poster_path": null,
+      "overview": "",
+      "atoms": {
+        "frenetica": 0.15,
+        "agil": 0.6,
+        "pausada": 0.4,
+        "contemplativa": 0.1,
+        "reconfortante": 0.5,
+        "luminosa": 0.75,
+        "melancolica": 0.8,
+        "tensa": 0.05,
+        "inquietante": 0,
+        "sombria": 0.05,
+        "cruda": 0,
+        "onirica": 0.5,
+        "neon": 0.6,
+        "pastel": 0.75,
+        "calida": 0.7,
+        "monocromatica": 0,
+        "carga_emocional": 0.85,
+        "complejidad": 0.2,
+        "humor": 0.3,
+        "intimidad": 0.65,
+        "escala_epica": 0.3
+      },
+      "hook": "UNA ACTRIZ CON SUEÑOS Y UN PIANISTA OBSESIONADO CON EL JAZZ SE ENAMORAN EN LOS ÁNGELES, PERO SUS AMBICIONES LOS PONEN A PRUEBA.",
+      "pillars": {
+        "ritmo": "musical",
+        "tono": "agridulce",
+        "historia": "amor y ambición",
+        "visual": "colores de ensueño"
+      },
+      "providers": {
+        "CO": [
+          "Netflix",
+          "Prime Video"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T03:43:24.313Z"
+      },
+      "source": "semilla_manual"
+    },
+    {
+      "id": "tick-tick-boom",
+      "tmdb_id": null,
+      "title": "tick, tick...BOOM!",
+      "original_title": null,
+      "year": 2021,
+      "runtime_min": 115,
+      "genres": [
+        "Musical",
+        "Drama"
+      ],
+      "directors": [
+        "Lin-Manuel Miranda"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.5,
+      "vote_count": 1600,
+      "popularity": null,
+      "poster_path": null,
+      "overview": "",
+      "atoms": {
+        "frenetica": 0.3,
+        "agil": 0.75,
+        "pausada": 0.25,
+        "contemplativa": 0.05,
+        "reconfortante": 0.55,
+        "luminosa": 0.6,
+        "melancolica": 0.55,
+        "tensa": 0.3,
+        "inquietante": 0.05,
+        "sombria": 0.1,
+        "cruda": 0.15,
+        "onirica": 0.2,
+        "neon": 0.2,
+        "pastel": 0.15,
+        "calida": 0.7,
+        "monocromatica": 0,
+        "carga_emocional": 0.75,
+        "complejidad": 0.2,
+        "humor": 0.4,
+        "intimidad": 0.6,
+        "escala_epica": 0.1
+      },
+      "hook": "A PUNTO DE CUMPLIR TREINTA, UN JOVEN COMPOSITOR DE TEATRO LUCHA CONTRA EL RELOJ PARA ESTRENAR SU OBRA Y NO PERDER A QUIENES QUIERE.",
+      "pillars": {
+        "ritmo": "enérgico",
+        "tono": "inspirador y emotivo",
+        "historia": "sueño contra el tiempo",
+        "visual": "nueva york años noventa"
+      },
+      "providers": {
+        "CO": [
+          "Netflix"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T03:43:24.313Z"
+      },
+      "source": "semilla_manual"
+    },
+    {
+      "id": "oppenheimer",
+      "tmdb_id": null,
+      "title": "Oppenheimer",
+      "original_title": null,
+      "year": 2023,
+      "runtime_min": 180,
+      "genres": [
+        "Drama",
+        "Historia"
+      ],
+      "directors": [
+        "Christopher Nolan"
+      ],
+      "countries": [
+        "US",
+        "GB"
+      ],
+      "original_language": "en",
+      "vote_average": 8.1,
+      "vote_count": 10000,
+      "popularity": null,
+      "poster_path": "_blob/1632e88b436a4b0f52ce128f48b74984.jpg",
+      "overview": "",
+      "atoms": {
+        "frenetica": 0.35,
+        "agil": 0.55,
+        "pausada": 0.4,
+        "contemplativa": 0.1,
+        "reconfortante": 0.03,
+        "luminosa": 0.05,
+        "melancolica": 0.4,
+        "tensa": 0.85,
+        "inquietante": 0.45,
+        "sombria": 0.75,
+        "cruda": 0.3,
+        "onirica": 0.3,
+        "neon": 0.05,
+        "pastel": 0,
+        "calida": 0.3,
+        "monocromatica": 0.45,
+        "carga_emocional": 0.65,
+        "complejidad": 0.9,
+        "humor": 0.08,
+        "intimidad": 0.3,
+        "escala_epica": 0.8
+      },
+      "hook": "UN FÍSICO BRILLANTE LIDERA LA CARRERA POR CREAR EL ARMA MÁS DESTRUCTIVA JAMÁS CONOCIDA Y LUEGO DEBE CARGAR CON LAS CONSECUENCIAS DE SU LOGRO.",
+      "pillars": {
+        "ritmo": "denso y veloz",
+        "tono": "grave y tenso",
+        "historia": "culpa de un científico",
+        "visual": "blanco y negro y color"
+      },
+      "providers": {
+        "CO": [
+          "Prime Video",
+          "Netflix"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T03:43:24.308Z"
+      },
+      "source": "semilla_manual"
+    },
+    {
+      "id": "project-hail-mary",
+      "tmdb_id": null,
+      "title": "Proyecto Fin del Mundo",
+      "original_title": "Project Hail Mary",
+      "year": 2026,
+      "runtime_min": 156,
+      "genres": [
+        "Ciencia ficción",
+        "Aventura"
+      ],
+      "directors": [
+        "Phil Lord",
+        "Christopher Miller"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.8,
+      "vote_count": 800,
+      "popularity": null,
+      "poster_path": "_blob/poster-hail-mary.jpg",
+      "overview": "",
+      "atoms": {
+        "frenetica": 0.2,
+        "agil": 0.65,
+        "pausada": 0.4,
+        "contemplativa": 0.1,
+        "reconfortante": 0.75,
+        "luminosa": 0.7,
+        "melancolica": 0.3,
+        "tensa": 0.5,
+        "inquietante": 0.1,
+        "sombria": 0.1,
+        "cruda": 0.05,
+        "onirica": 0.15,
+        "neon": 0.1,
+        "pastel": 0.1,
+        "calida": 0.5,
+        "monocromatica": 0.05,
+        "carga_emocional": 0.75,
+        "complejidad": 0.5,
+        "humor": 0.65,
+        "intimidad": 0.6,
+        "escala_epica": 0.8
+      },
+      "hook": "UN HOMBRE DESPIERTA SOLO EN UNA NAVE, SIN RECUERDOS, CON LA MISIÓN DE SALVAR A LA TIERRA, Y DESCUBRE QUE NO ESTÁ TAN SOLO COMO CREÍA.",
+      "pillars": {
+        "ritmo": "ágil",
+        "tono": "esperanzador y divertido",
+        "historia": "amistad improbable en el espacio",
+        "visual": "ciencia ficción luminosa"
+      },
+      "providers": {
+        "CO": [
+          "Prime Video"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T03:43:24.308Z"
+      },
+      "source": "semilla_manual"
+    },
+    {
+      "id": "the-dark-knight",
+      "tmdb_id": null,
+      "title": "The Dark Knight",
+      "original_title": null,
+      "year": 2008,
+      "runtime_min": 152,
+      "genres": [
+        "Acción",
+        "Crimen",
+        "Drama"
+      ],
+      "directors": [
+        "Christopher Nolan"
+      ],
+      "countries": [
+        "US",
+        "GB"
+      ],
+      "original_language": "en",
+      "vote_average": 8.5,
+      "vote_count": 33000,
+      "popularity": null,
+      "poster_path": "_blob/afe4882e107c9f765350409c23f76f18.jpg",
+      "overview": "",
+      "atoms": {
+        "frenetica": 0.65,
+        "agil": 0.7,
+        "pausada": 0.3,
+        "contemplativa": 0.02,
+        "reconfortante": 0,
+        "luminosa": 0,
+        "melancolica": 0.3,
+        "tensa": 0.95,
+        "inquietante": 0.6,
+        "sombria": 0.95,
+        "cruda": 0.3,
+        "onirica": 0.05,
+        "neon": 0.3,
+        "pastel": 0,
+        "calida": 0.1,
+        "monocromatica": 0.4,
+        "carga_emocional": 0.55,
+        "complejidad": 0.7,
+        "humor": 0.2,
+        "intimidad": 0.15,
+        "escala_epica": 0.85
+      },
+      "hook": "UN JUSTICIERO ENMASCARADO ENFRENTA A UN CRIMINAL ANÁRQUICO QUE QUIERE DEMOSTRAR QUE LA CIUDAD ENTERA PUEDE CORROMPERSE.",
+      "pillars": {
+        "ritmo": "tenso",
+        "tono": "oscuro",
+        "historia": "orden contra caos",
+        "visual": "ciudad nocturna"
+      },
+      "providers": {
+        "CO": [
+          "Max",
+          "Netflix"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T03:43:24.313Z"
+      },
+      "source": "semilla_manual"
+    },
+    {
+      "id": "her",
+      "tmdb_id": null,
+      "title": "Her",
+      "original_title": null,
+      "year": 2013,
+      "runtime_min": 126,
+      "genres": [
+        "Romance",
+        "Ciencia ficción",
+        "Drama"
+      ],
+      "directors": [
+        "Spike Jonze"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.8,
+      "vote_count": 14000,
+      "popularity": null,
+      "poster_path": "_blob/poster-her.jpg",
+      "overview": "",
+      "atoms": {
+        "frenetica": 0,
+        "agil": 0.1,
+        "pausada": 0.8,
+        "contemplativa": 0.6,
+        "reconfortante": 0.4,
+        "luminosa": 0.4,
+        "melancolica": 0.9,
+        "tensa": 0.1,
+        "inquietante": 0.2,
+        "sombria": 0.1,
+        "cruda": 0.05,
+        "onirica": 0.4,
+        "neon": 0.2,
+        "pastel": 0.85,
+        "calida": 0.8,
+        "monocromatica": 0.05,
+        "carga_emocional": 0.8,
+        "complejidad": 0.55,
+        "humor": 0.3,
+        "intimidad": 0.95,
+        "escala_epica": 0.05
+      },
+      "hook": "EN UN FUTURO CERCANO, UN HOMBRE SOLITARIO SE ENAMORA DE LA VOZ DE UN SISTEMA OPERATIVO QUE APRENDE A SENTIR.",
+      "pillars": {
+        "ritmo": "pausado",
+        "tono": "melancólico y tierno",
+        "historia": "amor artificial",
+        "visual": "tonos cálidos"
+      },
+      "providers": {
+        "CO": [
+          "Netflix",
+          "Max"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T03:43:24.313Z"
+      },
+      "source": "semilla_manual"
+    },
+    {
+      "id": "lost-in-translation",
+      "tmdb_id": null,
+      "title": "Perdidos en Tokio",
+      "original_title": "Lost in Translation",
+      "year": 2003,
+      "runtime_min": 102,
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "directors": [
+        "Sofia Coppola"
+      ],
+      "countries": [
+        "US",
+        "JP"
+      ],
+      "original_language": "en",
+      "vote_average": 7.4,
+      "vote_count": 7500,
+      "popularity": null,
+      "poster_path": null,
+      "overview": "",
+      "atoms": {
+        "frenetica": 0.03,
+        "agil": 0.1,
+        "pausada": 0.65,
+        "contemplativa": 0.8,
+        "reconfortante": 0.5,
+        "luminosa": 0.35,
+        "melancolica": 0.85,
+        "tensa": 0.1,
+        "inquietante": 0.1,
+        "sombria": 0.1,
+        "cruda": 0.3,
+        "onirica": 0.45,
+        "neon": 0.7,
+        "pastel": 0.45,
+        "calida": 0.35,
+        "monocromatica": 0.05,
+        "carga_emocional": 0.7,
+        "complejidad": 0.2,
+        "humor": 0.4,
+        "intimidad": 0.95,
+        "escala_epica": 0.03
+      },
+      "hook": "EN UNA CIUDAD EXTRAÑA Y DESVELADA, UN ACTOR EN DECADENCIA Y UNA JOVEN PERDIDA ENCUENTRAN EN LA OTRA UNA CONEXIÓN FUGAZ QUE NADIE MÁS ENTIENDE.",
+      "pillars": {
+        "ritmo": "pausado",
+        "tono": "melancólico y tierno",
+        "historia": "conexión pasajera",
+        "visual": "neón de madrugada"
+      },
+      "providers": {
+        "CO": [
+          "Max"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T03:43:24.308Z"
+      },
+      "source": "semilla_manual"
+    },
+    {
+      "id": "eternal-sunshine",
+      "tmdb_id": null,
+      "title": "Eterno resplandor de una mente sin recuerdos",
+      "original_title": "Eternal Sunshine of the Spotless Mind",
+      "year": 2004,
+      "runtime_min": 108,
+      "genres": [
+        "Ciencia ficción",
+        "Romance",
+        "Drama"
+      ],
+      "directors": [
+        "Michel Gondry"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 8.1,
+      "vote_count": 15000,
+      "popularity": null,
+      "poster_path": null,
+      "overview": "",
+      "atoms": {
+        "frenetica": 0.2,
+        "agil": 0.4,
+        "pausada": 0.45,
+        "contemplativa": 0.25,
+        "reconfortante": 0.35,
+        "luminosa": 0.35,
+        "melancolica": 0.85,
+        "tensa": 0.3,
+        "inquietante": 0.35,
+        "sombria": 0.25,
+        "cruda": 0.35,
+        "onirica": 0.9,
+        "neon": 0.15,
+        "pastel": 0.35,
+        "calida": 0.45,
+        "monocromatica": 0.1,
+        "carga_emocional": 0.9,
+        "complejidad": 0.65,
+        "humor": 0.35,
+        "intimidad": 0.9,
+        "escala_epica": 0.1
+      },
+      "hook": "DESPUÉS DE UNA RUPTURA, UN HOMBRE DECIDE BORRAR A SU EX DE SU MEMORIA, Y MIENTRAS LOS RECUERDOS SE DESVANECEN, COMPRENDE LO QUE REALMENTE QUIERE CONSERVAR.",
+      "pillars": {
+        "ritmo": "fluido y fragmentado",
+        "tono": "agridulce",
+        "historia": "amor que se resiste al olvido",
+        "visual": "memoria onírica"
+      },
+      "providers": {
+        "CO": [
+          "Prime Video",
+          "Apple TV"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T03:43:24.308Z"
+      },
+      "source": "semilla_manual"
+    },
+    {
+      "id": "past-lives",
+      "tmdb_id": null,
+      "title": "Vidas pasadas",
+      "original_title": "Past Lives",
+      "year": 2023,
+      "runtime_min": 106,
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "directors": [
+        "Celine Song"
+      ],
+      "countries": [
+        "US",
+        "KR"
+      ],
+      "original_language": "en",
+      "vote_average": 7.7,
+      "vote_count": 1800,
+      "popularity": null,
+      "poster_path": null,
+      "overview": "",
+      "atoms": {
+        "frenetica": 0,
+        "agil": 0.05,
+        "pausada": 0.85,
+        "contemplativa": 0.75,
+        "reconfortante": 0.35,
+        "luminosa": 0.3,
+        "melancolica": 0.95,
+        "tensa": 0.15,
+        "inquietante": 0.05,
+        "sombria": 0.15,
+        "cruda": 0.3,
+        "onirica": 0.1,
+        "neon": 0.3,
+        "pastel": 0.3,
+        "calida": 0.5,
+        "monocromatica": 0.05,
+        "carga_emocional": 0.95,
+        "complejidad": 0.25,
+        "humor": 0.15,
+        "intimidad": 0.95,
+        "escala_epica": 0
+      },
+      "hook": "DOS AMIGOS DE LA INFANCIA SEPARADOS POR UN OCÉANO SE REENCUENTRAN DECADAS DESPUÉS Y SE PREGUNTAN QUÉ HABRÍA PASADO.",
+      "pillars": {
+        "ritmo": "pausado",
+        "tono": "melancólico",
+        "historia": "amor a destiempo",
+        "visual": "luces de ciudad"
+      },
+      "providers": {
+        "CO": [
+          "Prime Video",
+          "Max"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T03:43:24.313Z"
+      },
+      "source": "semilla_manual"
+    },
+    {
+      "id": "arrival",
+      "tmdb_id": null,
+      "title": "La llegada",
+      "original_title": "Arrival",
+      "year": 2016,
+      "runtime_min": 116,
+      "genres": [
+        "Drama",
+        "Ciencia ficción"
+      ],
+      "directors": [
+        "Denis Villeneuve"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.6,
+      "vote_count": 18000,
+      "popularity": null,
+      "poster_path": null,
+      "overview": "",
+      "atoms": {
+        "frenetica": 0.05,
+        "agil": 0.15,
+        "pausada": 0.8,
+        "contemplativa": 0.6,
+        "reconfortante": 0.2,
+        "luminosa": 0.15,
+        "melancolica": 0.85,
+        "tensa": 0.6,
+        "inquietante": 0.55,
+        "sombria": 0.4,
+        "cruda": 0.1,
+        "onirica": 0.55,
+        "neon": 0,
+        "pastel": 0.05,
+        "calida": 0.05,
+        "monocromatica": 0.75,
+        "carga_emocional": 0.9,
+        "complejidad": 0.85,
+        "humor": 0.05,
+        "intimidad": 0.6,
+        "escala_epica": 0.6
+      },
+      "hook": "NAVES MISTERIOSAS APARECEN EN LA TIERRA Y UNA LINGÜISTA DEBE DESCIFRAR SU LENGUAJE ANTES DE QUE EL MUNDO ENTRE EN GUERRA.",
+      "pillars": {
+        "ritmo": "pausado",
+        "tono": "enigmático y emotivo",
+        "historia": "primer contacto",
+        "visual": "niebla y gris"
+      },
+      "providers": {
+        "CO": [
+          "Netflix",
+          "Max"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T03:43:24.313Z"
+      },
+      "source": "semilla_manual"
+    },
+    {
+      "id": "aftersun",
+      "tmdb_id": null,
+      "title": "Aftersun",
+      "original_title": null,
+      "year": 2022,
+      "runtime_min": 101,
+      "genres": [
+        "Drama"
+      ],
+      "directors": [
+        "Charlotte Wells"
+      ],
+      "countries": [
+        "GB",
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.7,
+      "vote_count": 1700,
+      "popularity": null,
+      "poster_path": null,
+      "overview": "",
+      "atoms": {
+        "frenetica": 0.02,
+        "agil": 0.1,
+        "pausada": 0.7,
+        "contemplativa": 0.8,
+        "reconfortante": 0.3,
+        "luminosa": 0.4,
+        "melancolica": 0.95,
+        "tensa": 0.2,
+        "inquietante": 0.2,
+        "sombria": 0.3,
+        "cruda": 0.45,
+        "onirica": 0.5,
+        "neon": 0.2,
+        "pastel": 0.3,
+        "calida": 0.7,
+        "monocromatica": 0.05,
+        "carga_emocional": 0.97,
+        "complejidad": 0.3,
+        "humor": 0.1,
+        "intimidad": 0.97,
+        "escala_epica": 0.02
+      },
+      "hook": "UNA MUJER RECUERDA LAS VACACIONES DE VERANO QUE PASÓ DE NIÑA CON SU PADRE, Y BUSCA EN ESAS IMÁGENES AL HOMBRE QUE NUNCA LLEGÓ A CONOCER.",
+      "pillars": {
+        "ritmo": "pausado",
+        "tono": "nostálgico y devastador",
+        "historia": "padre e hija en un verano",
+        "visual": "video casero cálido"
+      },
+      "providers": {
+        "CO": [
+          "Max",
+          "Apple TV"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T03:43:24.308Z"
+      },
+      "source": "semilla_manual"
+    },
+    {
+      "id": "everything-everywhere",
+      "tmdb_id": null,
+      "title": "Todo en todas partes al mismo tiempo",
+      "original_title": "Everything Everywhere All at Once",
+      "year": 2022,
+      "runtime_min": 139,
+      "genres": [
+        "Comedia",
+        "Acción",
+        "Fantasía"
+      ],
+      "directors": [
+        "Daniel Kwan",
+        "Daniel Scheinert"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.8,
+      "vote_count": 7000,
+      "popularity": null,
+      "poster_path": null,
+      "overview": "",
+      "atoms": {
+        "frenetica": 0.9,
+        "agil": 0.8,
+        "pausada": 0.05,
+        "contemplativa": 0.03,
+        "reconfortante": 0.55,
+        "luminosa": 0.55,
+        "melancolica": 0.5,
+        "tensa": 0.35,
+        "inquietante": 0.2,
+        "sombria": 0.1,
+        "cruda": 0.1,
+        "onirica": 0.8,
+        "neon": 0.85,
+        "pastel": 0.3,
+        "calida": 0.35,
+        "monocromatica": 0,
+        "carga_emocional": 0.88,
+        "complejidad": 0.85,
+        "humor": 0.85,
+        "intimidad": 0.5,
+        "escala_epica": 0.85
+      },
+      "hook": "UNA DUEÑA DE LAVANDERÍA AGOBIADA POR LOS IMPUESTOS DEBE SALTAR ENTRE UNIVERSOS PARALELOS PARA SALVAR EL MULTIVERSO Y A SU FAMILIA.",
+      "pillars": {
+        "ritmo": "vertiginoso",
+        "tono": "absurdo y tierno",
+        "historia": "madre e hija entre universos",
+        "visual": "caos colorido"
+      },
+      "providers": {
+        "CO": [
+          "Prime Video",
+          "Max"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T03:43:24.308Z"
+      },
+      "source": "semilla_manual"
+    },
+    {
+      "id": "mad-max-fury-road",
+      "tmdb_id": null,
+      "title": "Mad Max: Furia en el camino",
+      "original_title": "Mad Max: Fury Road",
+      "year": 2015,
+      "runtime_min": 120,
+      "genres": [
+        "Acción",
+        "Aventura",
+        "Ciencia ficción"
+      ],
+      "directors": [
+        "George Miller"
+      ],
+      "countries": [
+        "AU",
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.6,
+      "vote_count": 22000,
+      "popularity": null,
+      "poster_path": null,
+      "overview": "",
+      "atoms": {
+        "frenetica": 0.95,
+        "agil": 0.7,
+        "pausada": 0.05,
+        "contemplativa": 0,
+        "reconfortante": 0.05,
+        "luminosa": 0.1,
+        "melancolica": 0.25,
+        "tensa": 0.85,
+        "inquietante": 0.3,
+        "sombria": 0.6,
+        "cruda": 0.5,
+        "onirica": 0.2,
+        "neon": 0.2,
+        "pastel": 0,
+        "calida": 0.8,
+        "monocromatica": 0.1,
+        "carga_emocional": 0.4,
+        "complejidad": 0.15,
+        "humor": 0.1,
+        "intimidad": 0.1,
+        "escala_epica": 0.95
+      },
+      "hook": "EN UN DESIERTO SIN LEY, UNA MUJER HUYE DE UN TIRANO AL VOLANTE DE UN CAMIÓN BLINDADO. LA PERSECUCIÓN DURA CASI TODA LA PELÍCULA.",
+      "pillars": {
+        "ritmo": "vertiginoso",
+        "tono": "brutal",
+        "historia": "huida en el desierto",
+        "visual": "polvo y fuego"
+      },
+      "providers": {
+        "CO": [
+          "Max",
+          "Netflix"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T03:43:24.313Z"
+      },
+      "source": "semilla_manual"
+    },
+    {
+      "id": "parasite",
+      "tmdb_id": null,
+      "title": "Parásitos",
+      "original_title": "기생충",
+      "year": 2019,
+      "runtime_min": 132,
+      "genres": [
+        "Thriller",
+        "Comedia",
+        "Drama"
+      ],
+      "directors": [
+        "Bong Joon-ho"
+      ],
+      "countries": [
+        "KR"
+      ],
+      "original_language": "ko",
+      "vote_average": 8.5,
+      "vote_count": 18000,
+      "popularity": null,
+      "poster_path": null,
+      "overview": "",
+      "atoms": {
+        "frenetica": 0.2,
+        "agil": 0.6,
+        "pausada": 0.45,
+        "contemplativa": 0.1,
+        "reconfortante": 0.05,
+        "luminosa": 0.1,
+        "melancolica": 0.35,
+        "tensa": 0.85,
+        "inquietante": 0.6,
+        "sombria": 0.65,
+        "cruda": 0.5,
+        "onirica": 0.1,
+        "neon": 0.15,
+        "pastel": 0.1,
+        "calida": 0.3,
+        "monocromatica": 0.1,
+        "carga_emocional": 0.65,
+        "complejidad": 0.65,
+        "humor": 0.5,
+        "intimidad": 0.55,
+        "escala_epica": 0.2
+      },
+      "hook": "UNA FAMILIA POBRE SE VA INFILTRANDO, UNO A UNO, EN LA CASA DE UNOS RICOS, HASTA QUE EL PLAN PERFECTO EMPIEZA A DESMORONARSE.",
+      "pillars": {
+        "ritmo": "ágil y creciente",
+        "tono": "sarcástico y sombrío",
+        "historia": "lucha de clases",
+        "visual": "casas contrastadas"
+      },
+      "providers": {
+        "CO": [
+          "Prime Video",
+          "Max"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T03:43:24.308Z"
+      },
+      "source": "semilla_manual"
+    },
+    {
+      "id": "coco",
+      "tmdb_id": null,
+      "title": "Coco",
+      "original_title": null,
+      "year": 2017,
+      "runtime_min": 105,
+      "genres": [
+        "Animación",
+        "Familia",
+        "Fantasía"
+      ],
+      "directors": [
+        "Lee Unkrich",
+        "Adrian Molina"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 8.2,
+      "vote_count": 19000,
+      "popularity": null,
+      "poster_path": "_blob/poster-coco.jpg",
+      "overview": "",
+      "atoms": {
+        "frenetica": 0.3,
+        "agil": 0.7,
+        "pausada": 0.3,
+        "contemplativa": 0.05,
+        "reconfortante": 0.85,
+        "luminosa": 0.9,
+        "melancolica": 0.6,
+        "tensa": 0.15,
+        "inquietante": 0.05,
+        "sombria": 0.05,
+        "cruda": 0,
+        "onirica": 0.6,
+        "neon": 0.6,
+        "pastel": 0.5,
+        "calida": 0.9,
+        "monocromatica": 0,
+        "carga_emocional": 0.95,
+        "complejidad": 0.3,
+        "humor": 0.55,
+        "intimidad": 0.5,
+        "escala_epica": 0.45
+      },
+      "hook": "UN NIÑO QUE SUEÑA CON SER MÚSICO CRUZA AL MUNDO DE LOS MUERTOS PARA DESCUBRIR EL SECRETO DE SU FAMILIA.",
+      "pillars": {
+        "ritmo": "ágil",
+        "tono": "conmovedor y cálido",
+        "historia": "memoria y familia",
+        "visual": "colorido festivo"
+      },
+      "providers": {
+        "CO": [
+          "Disney+"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T03:43:24.313Z"
+      },
+      "source": "semilla_manual"
+    },
+    {
+      "id": "knives-out",
+      "tmdb_id": null,
+      "title": "Entre navajas y secretos",
+      "original_title": "Knives Out",
+      "year": 2019,
+      "runtime_min": 130,
+      "genres": [
+        "Misterio",
+        "Comedia",
+        "Crimen"
+      ],
+      "directors": [
+        "Rian Johnson"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.8,
+      "vote_count": 13000,
+      "popularity": null,
+      "poster_path": null,
+      "overview": "",
+      "atoms": {
+        "frenetica": 0.2,
+        "agil": 0.75,
+        "pausada": 0.25,
+        "contemplativa": 0,
+        "reconfortante": 0.45,
+        "luminosa": 0.4,
+        "melancolica": 0.05,
+        "tensa": 0.55,
+        "inquietante": 0.15,
+        "sombria": 0.1,
+        "cruda": 0.05,
+        "onirica": 0,
+        "neon": 0,
+        "pastel": 0.15,
+        "calida": 0.75,
+        "monocromatica": 0,
+        "carga_emocional": 0.2,
+        "complejidad": 0.7,
+        "humor": 0.8,
+        "intimidad": 0.35,
+        "escala_epica": 0.1
+      },
+      "hook": "TRAS LA MUERTE DE UN ESCRITOR MILLONARIO, UN DETECTIVE EXCÉNTRICO INTERROGA A UNA FAMILIA DONDE TODOS TIENEN ALGO QUE ESCONDER.",
+      "pillars": {
+        "ritmo": "ágil",
+        "tono": "divertido y pícaro",
+        "historia": "crimen en familia",
+        "visual": "mansión otoñal"
+      },
+      "providers": {
+        "CO": [
+          "Prime Video",
+          "Netflix"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T03:43:24.313Z"
+      },
+      "source": "semilla_manual"
+    },
+    {
+      "id": "hereditary",
+      "tmdb_id": null,
+      "title": "El legado del diablo",
+      "original_title": "Hereditary",
+      "year": 2018,
+      "runtime_min": 127,
+      "genres": [
+        "Terror",
+        "Drama",
+        "Misterio"
+      ],
+      "directors": [
+        "Ari Aster"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.3,
+      "vote_count": 7000,
+      "popularity": null,
+      "poster_path": null,
+      "overview": "",
+      "atoms": {
+        "frenetica": 0.1,
+        "agil": 0.15,
+        "pausada": 0.6,
+        "contemplativa": 0.35,
+        "reconfortante": 0,
+        "luminosa": 0.02,
+        "melancolica": 0.4,
+        "tensa": 0.92,
+        "inquietante": 0.98,
+        "sombria": 0.95,
+        "cruda": 0.4,
+        "onirica": 0.35,
+        "neon": 0.05,
+        "pastel": 0,
+        "calida": 0.3,
+        "monocromatica": 0.15,
+        "carga_emocional": 0.8,
+        "complejidad": 0.5,
+        "humor": 0.03,
+        "intimidad": 0.8,
+        "escala_epica": 0.1
+      },
+      "hook": "TRAS LA MUERTE DE LA MATRIARCA, UNA FAMILIA EMPIEZA A DESCUBRIR SECRETOS TERRIBLES SOBRE SU PASADO MIENTRAS EL DUELO LA VA DEVORANDO.",
+      "pillars": {
+        "ritmo": "pausado y asfixiante",
+        "tono": "aterrador y sombrío",
+        "historia": "duelo familiar maldito",
+        "visual": "penumbra doméstica"
+      },
+      "providers": {
+        "CO": [
+          "Max",
+          "Prime Video"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T03:43:24.308Z"
+      },
+      "source": "semilla_manual"
+    },
+    {
+      "id": "titanic",
+      "tmdb_id": null,
+      "title": "Titanic",
+      "original_title": null,
+      "year": 1997,
+      "runtime_min": 194,
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "directors": [
+        "James Cameron"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.9,
+      "vote_count": 25000,
+      "popularity": null,
+      "poster_path": "_blob/poster-titanic.jpg",
+      "overview": "",
+      "atoms": {
+        "frenetica": 0.2,
+        "agil": 0.4,
+        "pausada": 0.6,
+        "contemplativa": 0.05,
+        "reconfortante": 0.2,
+        "luminosa": 0.4,
+        "melancolica": 0.8,
+        "tensa": 0.6,
+        "inquietante": 0.1,
+        "sombria": 0.45,
+        "cruda": 0.15,
+        "onirica": 0.15,
+        "neon": 0.05,
+        "pastel": 0.1,
+        "calida": 0.75,
+        "monocromatica": 0.05,
+        "carga_emocional": 0.98,
+        "complejidad": 0.15,
+        "humor": 0.15,
+        "intimidad": 0.45,
+        "escala_epica": 0.95
+      },
+      "hook": "A BORDO DE UN TRANSATLÁNTICO CONDENADO, UNA JOVEN DE ALTA SOCIEDAD Y UN ARTISTA POBRE SE ENAMORAN CONTRA TODO PRONÓSTICO.",
+      "pillars": {
+        "ritmo": "fluido",
+        "tono": "trágico y romántico",
+        "historia": "amor imposible",
+        "visual": "épica marítima"
+      },
+      "providers": {
+        "CO": [
+          "Disney+"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T03:43:24.313Z"
+      },
+      "source": "semilla_manual"
+    },
+    {
+      "id": "the-matrix",
+      "tmdb_id": null,
+      "title": "Matrix",
+      "original_title": "The Matrix",
+      "year": 1999,
+      "runtime_min": 136,
+      "genres": [
+        "Acción",
+        "Ciencia ficción"
+      ],
+      "directors": [
+        "Lana Wachowski",
+        "Lilly Wachowski"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 8.2,
+      "vote_count": 26000,
+      "popularity": null,
+      "poster_path": "_blob/poster-matrix.jpg",
+      "overview": "",
+      "atoms": {
+        "frenetica": 0.7,
+        "agil": 0.75,
+        "pausada": 0.2,
+        "contemplativa": 0.08,
+        "reconfortante": 0.1,
+        "luminosa": 0.1,
+        "melancolica": 0.15,
+        "tensa": 0.75,
+        "inquietante": 0.45,
+        "sombria": 0.6,
+        "cruda": 0.15,
+        "onirica": 0.5,
+        "neon": 0.75,
+        "pastel": 0,
+        "calida": 0.05,
+        "monocromatica": 0.55,
+        "carga_emocional": 0.35,
+        "complejidad": 0.7,
+        "humor": 0.15,
+        "intimidad": 0.2,
+        "escala_epica": 0.85
+      },
+      "hook": "UN HACKER DESCUBRE QUE SU REALIDAD ES UNA SIMULACIÓN Y ES RECLUTADO PARA LIBRAR UNA GUERRA CONTRA LAS MÁQUINAS QUE CONTROLAN A LA HUMANIDAD.",
+      "pillars": {
+        "ritmo": "vibrante",
+        "tono": "tenso y cool",
+        "historia": "elegido que despierta",
+        "visual": "verde digital y cuero"
+      },
+      "providers": {
+        "CO": [
+          "Max"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T03:43:24.308Z"
+      },
+      "source": "semilla_manual"
+    },
+    {
+      "id": "rocky",
+      "tmdb_id": null,
+      "title": "Rocky",
+      "original_title": null,
+      "year": 1976,
+      "runtime_min": 120,
+      "genres": [
+        "Drama"
+      ],
+      "directors": [
+        "John G. Avildsen"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.7,
+      "vote_count": 7000,
+      "popularity": null,
+      "poster_path": "_blob/poster-rocky.jpg",
+      "overview": "",
+      "atoms": {
+        "frenetica": 0.2,
+        "agil": 0.4,
+        "pausada": 0.55,
+        "contemplativa": 0.15,
+        "reconfortante": 0.7,
+        "luminosa": 0.55,
+        "melancolica": 0.45,
+        "tensa": 0.45,
+        "inquietante": 0.03,
+        "sombria": 0.25,
+        "cruda": 0.65,
+        "onirica": 0.03,
+        "neon": 0.03,
+        "pastel": 0.05,
+        "calida": 0.65,
+        "monocromatica": 0.15,
+        "carga_emocional": 0.85,
+        "complejidad": 0.1,
+        "humor": 0.25,
+        "intimidad": 0.65,
+        "escala_epica": 0.3
+      },
+      "hook": "UN BOXEADOR DE BARRIO QUE NUNCA TUVO UNA OPORTUNIDAD RECIBE LA PELEA DE SU VIDA Y SOLO QUIERE DEMOSTRAR QUE PUEDE AGUANTAR HASTA EL FINAL.",
+      "pillars": {
+        "ritmo": "constante y creciente",
+        "tono": "conmovedor y esperanzador",
+        "historia": "el perdedor que se atreve",
+        "visual": "calles grises de barrio"
+      },
+      "providers": {
+        "CO": [
+          "Prime Video"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T03:43:24.308Z"
+      },
+      "source": "semilla_manual"
+    },
+    {
+      "id": "smile",
+      "tmdb_id": null,
+      "title": "Sonríe",
+      "original_title": "Smile",
+      "year": 2022,
+      "runtime_min": 115,
+      "genres": [
+        "Terror",
+        "Misterio"
+      ],
+      "directors": [
+        "Parker Finn"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 6.6,
+      "vote_count": 3300,
+      "popularity": null,
+      "poster_path": "_blob/poster-smile.jpg",
+      "overview": "",
+      "atoms": {
+        "frenetica": 0.25,
+        "agil": 0.5,
+        "pausada": 0.45,
+        "contemplativa": 0.05,
+        "reconfortante": 0,
+        "luminosa": 0,
+        "melancolica": 0.2,
+        "tensa": 0.9,
+        "inquietante": 0.95,
+        "sombria": 0.9,
+        "cruda": 0.3,
+        "onirica": 0.3,
+        "neon": 0.1,
+        "pastel": 0,
+        "calida": 0.05,
+        "monocromatica": 0.5,
+        "carga_emocional": 0.45,
+        "complejidad": 0.4,
+        "humor": 0.05,
+        "intimidad": 0.5,
+        "escala_epica": 0.1
+      },
+      "hook": "TRAS PRESENCIAR UN SUCESO TERRIBLE, UNA PSIQUIATRA EMPIEZA A VER SONRISAS INQUIETANTES Y SOSPECHA QUE ALGO LA PERSIGUE.",
+      "pillars": {
+        "ritmo": "tenso",
+        "tono": "aterrador",
+        "historia": "maldición que se contagia",
+        "visual": "sonrisas perturbadoras"
+      },
+      "providers": {
+        "CO": [
+          "Prime Video",
+          "Netflix"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T03:43:24.313Z"
+      },
+      "source": "semilla_manual"
+    },
+    {
+      "id": "superman-2025",
+      "tmdb_id": null,
+      "title": "Superman",
+      "original_title": null,
+      "year": 2025,
+      "runtime_min": 129,
+      "genres": [
+        "Acción",
+        "Aventura",
+        "Ciencia ficción"
+      ],
+      "directors": [
+        "James Gunn"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.4,
+      "vote_count": 2500,
+      "popularity": null,
+      "poster_path": "_blob/poster-superman.jpg",
+      "overview": "",
+      "atoms": {
+        "frenetica": 0.6,
+        "agil": 0.85,
+        "pausada": 0.1,
+        "contemplativa": 0,
+        "reconfortante": 0.6,
+        "luminosa": 0.85,
+        "melancolica": 0.1,
+        "tensa": 0.4,
+        "inquietante": 0.05,
+        "sombria": 0.1,
+        "cruda": 0,
+        "onirica": 0.1,
+        "neon": 0.45,
+        "pastel": 0.3,
+        "calida": 0.6,
+        "monocromatica": 0,
+        "carga_emocional": 0.45,
+        "complejidad": 0.25,
+        "humor": 0.65,
+        "intimidad": 0.15,
+        "escala_epica": 0.85
+      },
+      "hook": "UN HÉROE AMABLE Y PODEROSO BUSCA SU LUGAR ENTRE DOS MUNDOS MIENTRAS UN MAGNATE LO QUIERE DESTRUIR Y LA GENTE DUDA DE ÉL.",
+      "pillars": {
+        "ritmo": "vibrante",
+        "tono": "optimista",
+        "historia": "héroe contra el poder",
+        "visual": "colorido y aéreo"
+      },
+      "providers": {
+        "CO": [
+          "Max"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T03:43:24.313Z"
+      },
+      "source": "semilla_manual"
+    },
+    {
+      "id": "the-terminator",
+      "tmdb_id": null,
+      "title": "Terminator",
+      "original_title": "The Terminator",
+      "year": 1984,
+      "runtime_min": 107,
+      "genres": [
+        "Acción",
+        "Ciencia ficción"
+      ],
+      "directors": [
+        "James Cameron"
+      ],
+      "countries": [
+        "US",
+        "GB"
+      ],
+      "original_language": "en",
+      "vote_average": 7.7,
+      "vote_count": 13000,
+      "popularity": null,
+      "poster_path": "_blob/poster-terminator.jpg",
+      "overview": "",
+      "atoms": {
+        "frenetica": 0.8,
+        "agil": 0.8,
+        "pausada": 0.1,
+        "contemplativa": 0.03,
+        "reconfortante": 0.05,
+        "luminosa": 0.05,
+        "melancolica": 0.15,
+        "tensa": 0.92,
+        "inquietante": 0.45,
+        "sombria": 0.75,
+        "cruda": 0.45,
+        "onirica": 0.1,
+        "neon": 0.55,
+        "pastel": 0,
+        "calida": 0.2,
+        "monocromatica": 0.2,
+        "carga_emocional": 0.35,
+        "complejidad": 0.35,
+        "humor": 0.1,
+        "intimidad": 0.25,
+        "escala_epica": 0.5
+      },
+      "hook": "UNA MÁQUINA ASESINA VIAJA DESDE EL FUTURO PARA ELIMINAR A UNA MUJER CORRIENTE, Y SU ÚNICA DEFENSA ES UN SOLDADO QUE LA SIGUE DE CERCA.",
+      "pillars": {
+        "ritmo": "implacable",
+        "tono": "tenso y sombrío",
+        "historia": "persecución desde el futuro",
+        "visual": "noches de neón y acero"
+      },
+      "providers": {
+        "CO": [
+          "Prime Video"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T03:43:24.308Z"
+      },
+      "source": "semilla_manual"
+    },
+    {
+      "id": "the-hangover",
+      "tmdb_id": null,
+      "title": "¿Qué pasó ayer?",
+      "original_title": "The Hangover",
+      "year": 2009,
+      "runtime_min": 100,
+      "genres": [
+        "Comedia"
+      ],
+      "directors": [
+        "Todd Phillips"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.3,
+      "vote_count": 17000,
+      "popularity": null,
+      "poster_path": "_blob/poster-que-paso-ayer.jpg",
+      "overview": "",
+      "atoms": {
+        "frenetica": 0.6,
+        "agil": 0.85,
+        "pausada": 0.05,
+        "contemplativa": 0.02,
+        "reconfortante": 0.4,
+        "luminosa": 0.6,
+        "melancolica": 0.03,
+        "tensa": 0.3,
+        "inquietante": 0.1,
+        "sombria": 0.1,
+        "cruda": 0.15,
+        "onirica": 0.1,
+        "neon": 0.6,
+        "pastel": 0.03,
+        "calida": 0.5,
+        "monocromatica": 0,
+        "carga_emocional": 0.1,
+        "complejidad": 0.3,
+        "humor": 0.93,
+        "intimidad": 0.25,
+        "escala_epica": 0.3
+      },
+      "hook": "TRES AMIGOS DESPIERTAN TRAS UNA DESPEDIDA DE SOLTERO SIN RECORDAR NADA Y CON EL NOVIO DESAPARECIDO, Y TIENEN UN DÍA PARA ENCONTRARLO.",
+      "pillars": {
+        "ritmo": "ágil",
+        "tono": "desmadrado y cómico",
+        "historia": "noche perdida",
+        "visual": "luces de la ciudad del juego"
+      },
+      "providers": {
+        "CO": [
+          "Max"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T03:43:24.308Z"
+      },
+      "source": "semilla_manual"
+    },
+    {
+      "id": "roma",
+      "tmdb_id": null,
+      "title": "Roma",
+      "original_title": null,
+      "year": 2018,
+      "runtime_min": 135,
+      "genres": [
+        "Drama"
+      ],
+      "directors": [
+        "Alfonso Cuarón"
+      ],
+      "countries": [
+        "MX"
+      ],
+      "original_language": "es",
+      "vote_average": 7.7,
+      "vote_count": 4500,
+      "popularity": null,
+      "poster_path": null,
+      "overview": "",
+      "atoms": {
+        "frenetica": 0,
+        "agil": 0.05,
+        "pausada": 0.8,
+        "contemplativa": 0.85,
+        "reconfortante": 0.25,
+        "luminosa": 0.2,
+        "melancolica": 0.85,
+        "tensa": 0.3,
+        "inquietante": 0.15,
+        "sombria": 0.4,
+        "cruda": 0.6,
+        "onirica": 0.2,
+        "neon": 0,
+        "pastel": 0.05,
+        "calida": 0.2,
+        "monocromatica": 0.95,
+        "carga_emocional": 0.85,
+        "complejidad": 0.3,
+        "humor": 0.15,
+        "intimidad": 0.8,
+        "escala_epica": 0.2
+      },
+      "hook": "UN AÑO EN LA VIDA DE UNA EMPLEADA DOMÉSTICA EN UNA CASA DE CLASE MEDIA, MIENTRAS LA FAMILIA Y EL PAÍS SE TAMBALEAN.",
+      "pillars": {
+        "ritmo": "pausado",
+        "tono": "melancólico",
+        "historia": "vida doméstica",
+        "visual": "blanco y negro"
+      },
+      "providers": {
+        "CO": [
+          "Netflix"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T03:43:24.313Z"
+      },
+      "source": "semilla_manual"
+    },
+    {
+      "id": "relatos-salvajes",
+      "tmdb_id": null,
+      "title": "Relatos salvajes",
+      "original_title": null,
+      "year": 2014,
+      "runtime_min": 122,
+      "genres": [
+        "Comedia",
+        "Drama",
+        "Thriller"
+      ],
+      "directors": [
+        "Damián Szifron"
+      ],
+      "countries": [
+        "AR",
+        "ES"
+      ],
+      "original_language": "es",
+      "vote_average": 8.1,
+      "vote_count": 4000,
+      "popularity": null,
+      "poster_path": null,
+      "overview": "",
+      "atoms": {
+        "frenetica": 0.45,
+        "agil": 0.85,
+        "pausada": 0.1,
+        "contemplativa": 0,
+        "reconfortante": 0,
+        "luminosa": 0.1,
+        "melancolica": 0.1,
+        "tensa": 0.85,
+        "inquietante": 0.45,
+        "sombria": 0.55,
+        "cruda": 0.55,
+        "onirica": 0.05,
+        "neon": 0.1,
+        "pastel": 0.05,
+        "calida": 0.6,
+        "monocromatica": 0,
+        "carga_emocional": 0.3,
+        "complejidad": 0.3,
+        "humor": 0.85,
+        "intimidad": 0.25,
+        "escala_epica": 0.15
+      },
+      "hook": "SEIS HISTORIAS DONDE LA INJUSTICIA Y LA RABIA COTIDIANA ESTALLAN EN VENGANZAS DESCABELLADAS Y MUY DIVERTIDAS.",
+      "pillars": {
+        "ritmo": "ágil",
+        "tono": "humor negro",
+        "historia": "venganzas cotidianas",
+        "visual": "realismo exagerado"
+      },
+      "providers": {
+        "CO": [
+          "Prime Video"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T03:43:24.313Z"
+      },
+      "source": "semilla_manual"
+    },
+    {
+      "id": "el-abrazo-de-la-serpiente",
+      "tmdb_id": null,
+      "title": "El abrazo de la serpiente",
+      "original_title": null,
+      "year": 2015,
+      "runtime_min": 125,
+      "genres": [
+        "Aventura",
+        "Drama",
+        "Historia"
+      ],
+      "directors": [
+        "Ciro Guerra"
+      ],
+      "countries": [
+        "CO",
+        "VE",
+        "AR"
+      ],
+      "original_language": "es",
+      "vote_average": 7.5,
+      "vote_count": 500,
+      "popularity": null,
+      "poster_path": null,
+      "overview": "",
+      "atoms": {
+        "frenetica": 0.05,
+        "agil": 0.1,
+        "pausada": 0.6,
+        "contemplativa": 0.8,
+        "reconfortante": 0.05,
+        "luminosa": 0.1,
+        "melancolica": 0.85,
+        "tensa": 0.35,
+        "inquietante": 0.5,
+        "sombria": 0.6,
+        "cruda": 0.5,
+        "onirica": 0.7,
+        "neon": 0,
+        "pastel": 0,
+        "calida": 0.2,
+        "monocromatica": 0.95,
+        "carga_emocional": 0.75,
+        "complejidad": 0.55,
+        "humor": 0.1,
+        "intimidad": 0.55,
+        "escala_epica": 0.5
+      },
+      "hook": "UN CHAMÁN, ÚLTIMO SOBREVIVIENTE DE SU PUEBLO, GUÍA POR EL RÍO A DOS EXPLORADORES EN BUSCA DE UNA PLANTA SAGRADA EN LA AMAZONIA.",
+      "pillars": {
+        "ritmo": "pausado",
+        "tono": "hipnótico",
+        "historia": "viaje por el río",
+        "visual": "selva en blanco y negro"
+      },
+      "providers": {
+        "CO": [
+          "Prime Video"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T03:43:24.313Z"
+      },
+      "source": "semilla_manual"
+    },
+    {
+      "id": "amores-perros",
+      "tmdb_id": null,
+      "title": "Amores perros",
+      "original_title": null,
+      "year": 2000,
+      "runtime_min": 154,
+      "genres": [
+        "Drama",
+        "Thriller"
+      ],
+      "directors": [
+        "Alejandro González Iñárritu"
+      ],
+      "countries": [
+        "MX"
+      ],
+      "original_language": "es",
+      "vote_average": 7.8,
+      "vote_count": 2700,
+      "popularity": null,
+      "poster_path": null,
+      "overview": "",
+      "atoms": {
+        "frenetica": 0.5,
+        "agil": 0.55,
+        "pausada": 0.4,
+        "contemplativa": 0.1,
+        "reconfortante": 0.03,
+        "luminosa": 0.05,
+        "melancolica": 0.5,
+        "tensa": 0.7,
+        "inquietante": 0.35,
+        "sombria": 0.9,
+        "cruda": 0.95,
+        "onirica": 0.05,
+        "neon": 0.1,
+        "pastel": 0,
+        "calida": 0.45,
+        "monocromatica": 0.1,
+        "carga_emocional": 0.85,
+        "complejidad": 0.6,
+        "humor": 0.1,
+        "intimidad": 0.5,
+        "escala_epica": 0.2
+      },
+      "hook": "UN ACCIDENTE DE AUTO EN CIUDAD DE MÉXICO ENTRELAZA TRES VIDAS: UN JOVEN, UNA MODELO Y UN VAGABUNDO, Y TODAS TIENEN QUE CUESTIONAR SU LEALTAD.",
+      "pillars": {
+        "ritmo": "nervioso y coral",
+        "tono": "duro y desgarrador",
+        "historia": "tres vidas cruzadas",
+        "visual": "cámara en mano"
+      },
+      "providers": {
+        "CO": [
+          "Max"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T03:43:24.308Z"
+      },
+      "source": "semilla_manual"
+    },
+    {
+      "id": "y-tu-mama-tambien",
+      "tmdb_id": null,
+      "title": "Y tu mamá también",
+      "original_title": null,
+      "year": 2001,
+      "runtime_min": 106,
+      "genres": [
+        "Drama",
+        "Romance",
+        "Comedia"
+      ],
+      "directors": [
+        "Alfonso Cuarón"
+      ],
+      "countries": [
+        "MX"
+      ],
+      "original_language": "es",
+      "vote_average": 7.4,
+      "vote_count": 2000,
+      "popularity": null,
+      "poster_path": null,
+      "overview": "",
+      "atoms": {
+        "frenetica": 0.1,
+        "agil": 0.4,
+        "pausada": 0.5,
+        "contemplativa": 0.3,
+        "reconfortante": 0.25,
+        "luminosa": 0.5,
+        "melancolica": 0.7,
+        "tensa": 0.2,
+        "inquietante": 0.1,
+        "sombria": 0.25,
+        "cruda": 0.8,
+        "onirica": 0.1,
+        "neon": 0.03,
+        "pastel": 0.03,
+        "calida": 0.8,
+        "monocromatica": 0.03,
+        "carga_emocional": 0.7,
+        "complejidad": 0.3,
+        "humor": 0.55,
+        "intimidad": 0.85,
+        "escala_epica": 0.15
+      },
+      "hook": "DOS ADOLESCENTES INVITAN A UNA MUJER MAYOR A UN VIAJE POR CARRETERA HACIA UNA PLAYA INEXISTENTE, Y TERMINAN APRENDIENDO MÁS DE LO QUE ESPERABAN.",
+      "pillars": {
+        "ritmo": "relajado",
+        "tono": "sensual y agridulce",
+        "historia": "viaje que hace madurar",
+        "visual": "carretera con luz natural"
+      },
+      "providers": {
+        "CO": [
+          "Prime Video"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T03:43:24.308Z"
+      },
+      "source": "semilla_manual"
+    },
+    {
+      "id": "central-do-brasil",
+      "tmdb_id": null,
+      "title": "Estación central de Brasil",
+      "original_title": "Central do Brasil",
+      "year": 1998,
+      "runtime_min": 113,
+      "genres": [
+        "Drama"
+      ],
+      "directors": [
+        "Walter Salles"
+      ],
+      "countries": [
+        "BR",
+        "FR"
+      ],
+      "original_language": "pt",
+      "vote_average": 8,
+      "vote_count": 1000,
+      "popularity": null,
+      "poster_path": null,
+      "overview": "",
+      "atoms": {
+        "frenetica": 0.05,
+        "agil": 0.15,
+        "pausada": 0.75,
+        "contemplativa": 0.3,
+        "reconfortante": 0.55,
+        "luminosa": 0.4,
+        "melancolica": 0.75,
+        "tensa": 0.25,
+        "inquietante": 0.05,
+        "sombria": 0.3,
+        "cruda": 0.65,
+        "onirica": 0.05,
+        "neon": 0,
+        "pastel": 0.05,
+        "calida": 0.85,
+        "monocromatica": 0,
+        "carga_emocional": 0.9,
+        "complejidad": 0.2,
+        "humor": 0.2,
+        "intimidad": 0.85,
+        "escala_epica": 0.3
+      },
+      "hook": "UNA MAESTRA JUBILADA QUE ESCRIBE CARTAS EN UNA ESTACIÓN ACOMPAÑA A UN NIÑO HUÉRFANO EN UN LARGO VIAJE EN BUSCA DE SU PADRE.",
+      "pillars": {
+        "ritmo": "pausado",
+        "tono": "humano y conmovedor",
+        "historia": "viaje en busca del padre",
+        "visual": "carretera del interior"
+      },
+      "providers": {
+        "CO": [
+          "Mubi"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T03:43:24.313Z"
+      },
+      "source": "semilla_manual"
+    },
+    {
+      "id": "cinema-paradiso",
+      "tmdb_id": null,
+      "title": "Cinema Paradiso",
+      "original_title": "Nuovo Cinema Paradiso",
+      "year": 1988,
+      "runtime_min": 124,
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "directors": [
+        "Giuseppe Tornatore"
+      ],
+      "countries": [
+        "IT",
+        "FR"
+      ],
+      "original_language": "it",
+      "vote_average": 8.4,
+      "vote_count": 4300,
+      "popularity": null,
+      "poster_path": null,
+      "overview": "",
+      "atoms": {
+        "frenetica": 0.05,
+        "agil": 0.2,
+        "pausada": 0.7,
+        "contemplativa": 0.2,
+        "reconfortante": 0.8,
+        "luminosa": 0.6,
+        "melancolica": 0.95,
+        "tensa": 0.05,
+        "inquietante": 0,
+        "sombria": 0.1,
+        "cruda": 0.05,
+        "onirica": 0.2,
+        "neon": 0,
+        "pastel": 0.3,
+        "calida": 0.95,
+        "monocromatica": 0,
+        "carga_emocional": 0.98,
+        "complejidad": 0.2,
+        "humor": 0.35,
+        "intimidad": 0.6,
+        "escala_epica": 0.25
+      },
+      "hook": "UN CINEASTA RECUERDA SU INFANCIA EN UN PUEBLO SICILIANO Y LA AMISTAD CON EL PROYECCIONISTA QUE LE ENSEÑÓ A AMAR EL CINE.",
+      "pillars": {
+        "ritmo": "pausado",
+        "tono": "nostálgico y cálido",
+        "historia": "amistad y primer amor",
+        "visual": "luz dorada de pueblo"
+      },
+      "providers": {
+        "CO": [
+          "Prime Video"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T03:43:24.313Z"
+      },
+      "source": "semilla_manual"
+    },
+    {
+      "id": "chungking-express",
+      "tmdb_id": null,
+      "title": "Chungking Express",
+      "original_title": "重慶森林",
+      "year": 1994,
+      "runtime_min": 102,
+      "genres": [
+        "Drama",
+        "Romance",
+        "Comedia"
+      ],
+      "directors": [
+        "Wong Kar-wai"
+      ],
+      "countries": [
+        "HK"
+      ],
+      "original_language": "cn",
+      "vote_average": 7.9,
+      "vote_count": 1300,
+      "popularity": null,
+      "poster_path": null,
+      "overview": "",
+      "atoms": {
+        "frenetica": 0.5,
+        "agil": 0.7,
+        "pausada": 0.15,
+        "contemplativa": 0.3,
+        "reconfortante": 0.5,
+        "luminosa": 0.5,
+        "melancolica": 0.7,
+        "tensa": 0.15,
+        "inquietante": 0.1,
+        "sombria": 0.1,
+        "cruda": 0.4,
+        "onirica": 0.65,
+        "neon": 0.97,
+        "pastel": 0.2,
+        "calida": 0.4,
+        "monocromatica": 0,
+        "carga_emocional": 0.55,
+        "complejidad": 0.2,
+        "humor": 0.45,
+        "intimidad": 0.75,
+        "escala_epica": 0.05
+      },
+      "hook": "EN LAS NOCHES ELÉCTRICAS DE UNA CIUDAD ABARROTADA, DOS POLICÍAS SOLITARIOS ESPERAN UN AMOR QUE SE FUE Y UNO NUEVO QUE TAL VEZ YA PASÓ A SU LADO.",
+      "pillars": {
+        "ritmo": "vibrante y suelto",
+        "tono": "melancólico y juguetón",
+        "historia": "amores a destiempo",
+        "visual": "neón nocturno"
+      },
+      "providers": {
+        "CO": [
+          "Mubi"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T03:43:24.308Z"
+      },
+      "source": "semilla_manual"
+    },
+    {
+      "id": "avengers-endgame",
+      "tmdb_id": null,
+      "title": "Avengers: Endgame",
+      "original_title": null,
+      "year": 2019,
+      "runtime_min": 181,
+      "genres": [
+        "Acción",
+        "Aventura",
+        "Ciencia ficción"
+      ],
+      "directors": [
+        "Anthony Russo",
+        "Joe Russo"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 8.2,
+      "vote_count": 26000,
+      "popularity": null,
+      "poster_path": null,
+      "overview": "",
+      "atoms": {
+        "frenetica": 0.55,
+        "agil": 0.6,
+        "pausada": 0.3,
+        "contemplativa": 0.03,
+        "reconfortante": 0.45,
+        "luminosa": 0.4,
+        "melancolica": 0.55,
+        "tensa": 0.55,
+        "inquietante": 0.1,
+        "sombria": 0.3,
+        "cruda": 0.05,
+        "onirica": 0.1,
+        "neon": 0.3,
+        "pastel": 0.03,
+        "calida": 0.4,
+        "monocromatica": 0.03,
+        "carga_emocional": 0.85,
+        "complejidad": 0.4,
+        "humor": 0.5,
+        "intimidad": 0.1,
+        "escala_epica": 0.98
+      },
+      "hook": "TRAS UNA PÉRDIDA CATASTRÓFICA, LOS HÉROES QUE SOBREVIVEN SE JUEGAN TODO EN UN ÚLTIMO PLAN PARA DESHACER EL DAÑO Y RECUPERAR A QUIENES AMAN.",
+      "pillars": {
+        "ritmo": "épico",
+        "tono": "emotivo y heroico",
+        "historia": "despedida de un equipo",
+        "visual": "espectáculo de gran escala"
+      },
+      "providers": {
+        "CO": [
+          "Disney+"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T03:43:24.308Z"
+      },
+      "source": "semilla_manual"
+    }
+  ]
+}

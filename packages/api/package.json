@@ -1,0 +1,9 @@
+{
+  "name": "@kinoo/api",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "dependencies": { "@kinoo/engine": "*", "@kinoo/shared": "*" }
+}

@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <title>Ver · Tu mazo</title>
 <script src="../_prototipos/dc-runtime.js"></script>
+<script src="../_kinoo/kinoo-demo.js"></script>
 </head>
 <body>
 <x-dc>
@@ -181,7 +182,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;margin:0;cu
           </button>
         </sc-for>
       </div>
-      <div style="padding:16px 26px 0"><a href="FlujoV2_Abriendo.dc.html" style="width:350px;height:58px;box-sizing:border-box;border-radius:29px;background:#5e0c10;border:2px solid #f4e7d0;color:#f4e7d0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:22px;letter-spacing:.5px;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 6px 16px rgba(0,0,0,.25)">{{openLabel}}</a></div>
+      <div style="padding:16px 26px 0"><a href="FlujoV2_Abriendo.dc.html" onClick="{{startWatch}}" style="width:350px;height:58px;box-sizing:border-box;border-radius:29px;background:#5e0c10;border:2px solid #f4e7d0;color:#f4e7d0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:22px;letter-spacing:.5px;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 6px 16px rgba(0,0,0,.25)">{{openLabel}}</a></div>
       <p style="margin:10px 0 0;padding:0 36px;text-align:center;font-weight:600;font-size:10.5px;line-height:14px;color:#8e6f62">Kinoo no reproduce: te lleva a la app donde ya tienes la película.</p>
     </div>
     </sc-if>
@@ -229,6 +230,13 @@ const PLATS = [
 const SUPER0 = ['interstellar', 'oppen', 'tdk', 'arrival', 'parasite', 'vidas', 'aftersun'];
 const gbg = (p) => 'radial-gradient(circle at 64% 34%,' + p[2] + ' 0 13%,transparent 13.5%),radial-gradient(ellipse at 50% 120%,rgba(0,0,0,.7),transparent 60%),linear-gradient(170deg,' + p[0] + ',' + p[1] + ')';
 const vis = (id) => { const f = FILMS[id]; return { hasImg: !!f.img, noImg: !f.img, img: f.img || '', gbg: f.pal ? gbg(f.pal) : 'none', p1: f.pal ? f.pal[1] : '#000', bgc: f.pal ? f.pal[1] : '#0c0a09' }; };
+  // Motor Kinoo v2 (modo demo): si hay películas en la mano, cada mood propone desde ahí, en el orden del motor.
+  const KD = window.KinooDemo;
+  const KQ = KD ? KD.watchQueue(null) : null;
+  if (KQ) {
+    Object.assign(FILMS, KQ.films);
+    MOODS.forEach((m) => { const q = m[0] === 'todas' ? KQ : KD.watchQueue(m[0]); if (q) m[3] = q.ids; });
+  }
   this.__d = { FILMS, MOODS, PLATS, SUPER0, gbg, vis };
   return this.__d;
 }
@@ -325,7 +333,8 @@ renderVals() {
     slFilms: slList.map((id) => Object.assign({ t: FILMS[id].t, match: FILMS[id].match, open: () => { this._closeSheet(); setTimeout(() => this._openDonde(id, null, false), 360); } }, vis(id))),
     slCount: slList.length > 3 ? '+' + (slList.length - 3) + ' más · desliza para verlas' : slList.length + ' en este filtro',
     playSuper: () => { this._closeSheet(); const fs = Array.from(new Set(superFilms)); this.setState({ kind: 'super', deckName: 'Super likes', items: fs.map((id) => ({ kind: 'film', id })), idx: 0, liked: [], noped: [], supAdded: 0, deal: true }); },
-    hasToast: !!S.toast, toast: S.toast || ''
+    hasToast: !!S.toast, toast: S.toast || '',
+    startWatch: () => { const s = st(); if (window.KinooDemo && s.film) window.KinooDemo.onWatch(s.film, 'start', PLATS[s.plat || 0].n); }
   };
 }
 _build(mood, kind, films, titleShown) {
@@ -368,6 +377,7 @@ _swipe(dir) {
     return;
   }
   this.setState({ exit: dir, drag: false });
+  if (window.KinooDemo && it.kind === 'film' && dir === 'left') window.KinooDemo.onWatch(it.id, 'skip');
   clearTimeout(this._te);
   this._te = setTimeout(() => {
     const c = this.state || {};

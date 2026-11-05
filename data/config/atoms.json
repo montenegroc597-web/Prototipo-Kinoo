@@ -1,0 +1,26 @@
+{
+  "_doc": "Los 21 átomos (sección 4 de KINOO_ALGORITMO_v2). 'label' se usa en las explicaciones: escríbela para que encaje en 'historias {label}'.",
+  "atoms": [
+    { "key": "frenetica", "dimension": "dinamica", "label": "frenéticas", "description": "Cortes rápidos, acción constante" },
+    { "key": "agil", "dimension": "dinamica", "label": "ágiles", "description": "Avanza rápido sin agobiar" },
+    { "key": "pausada", "dimension": "dinamica", "label": "a fuego lento", "description": "Se toma su tiempo, pero avanza" },
+    { "key": "contemplativa", "dimension": "dinamica", "label": "contemplativas", "description": "Planos largos, poca trama" },
+    { "key": "reconfortante", "dimension": "atmosfera", "label": "reconfortantes", "description": "Te deja bien" },
+    { "key": "luminosa", "dimension": "atmosfera", "label": "luminosas", "description": "Optimista, cálida en el ánimo" },
+    { "key": "melancolica", "dimension": "atmosfera", "label": "melancólicas", "description": "Tristeza suave, nostalgia" },
+    { "key": "tensa", "dimension": "atmosfera", "label": "tensas", "description": "Suspenso, nervios" },
+    { "key": "inquietante", "dimension": "atmosfera", "label": "inquietantes", "description": "Incomodidad, extrañeza" },
+    { "key": "sombria", "dimension": "atmosfera", "label": "sombrías", "description": "Oscura, dura" },
+    { "key": "cruda", "dimension": "estetica", "label": "de estética cruda", "description": "Realista, cámara en mano" },
+    { "key": "onirica", "dimension": "estetica", "label": "oníricas", "description": "Surreal, de sueño" },
+    { "key": "neon", "dimension": "estetica", "label": "de neón", "description": "Colores saturados, nocturna" },
+    { "key": "pastel", "dimension": "estetica", "label": "de tonos pastel", "description": "Suave, composiciones cuidadas" },
+    { "key": "calida", "dimension": "estetica", "label": "de luz cálida", "description": "Paleta cálida, textura de película" },
+    { "key": "monocromatica", "dimension": "estetica", "label": "en blanco y negro o casi", "description": "Paleta reducida" },
+    { "key": "carga_emocional", "dimension": "carga", "label": "que mueven por dentro", "description": "Cuánto te puede hacer llorar o conmover" },
+    { "key": "complejidad", "dimension": "carga", "label": "que exigen atención", "description": "Trama enredada, te hace pensar" },
+    { "key": "humor", "dimension": "carga", "label": "con humor", "description": "Cuánto te hace reír" },
+    { "key": "intimidad", "dimension": "carga", "label": "íntimas", "description": "Pocos personajes, escala personal" },
+    { "key": "escala_epica", "dimension": "carga", "label": "épicas", "description": "Gran escala, aventura, espectáculo" }
+  ]
+}

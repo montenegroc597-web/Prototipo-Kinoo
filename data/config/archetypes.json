@@ -1,0 +1,10 @@
+{
+  "_doc": "Arquetipos de perfil (sección 7.4 de la especificación). La carta de cada persona es el arquetipo más parecido (coseno) a su perfil. Los nombres son una propuesta: cámbialos aquí.",
+  "archetypes": [
+    { "key": "explorador", "name": "El Explorador", "recipe": { "agil": 1, "humor": 1, "neon": 1, "escala_epica": 1 } },
+    { "key": "observador", "name": "El Observador", "recipe": { "contemplativa": 1, "complejidad": 1, "monocromatica": 1 } },
+    { "key": "romantico", "name": "El Romántico", "recipe": { "intimidad": 1, "calida": 1, "carga_emocional": 1 } },
+    { "key": "nocturno", "name": "El Nocturno", "recipe": { "inquietante": 1, "onirica": 1, "sombria": 1 } },
+    { "key": "luminoso", "name": "El Luminoso", "recipe": { "luminosa": 1, "reconfortante": 1, "pastel": 1 } }
+  ]
+}

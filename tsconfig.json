@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.base.json",
+  "include": ["data/config/*.ts", "packages/*/src", "packages/*/sim", "packages/*/test", "apps/*/src", "scripts/**/*.ts", "supabase/**/*.ts", "e2e", "vitest.config.ts"],
+  "exclude": ["supabase/functions/**"],
+  "compilerOptions": {
+    "noEmit": true,
+    "types": ["node"],
+    "baseUrl": ".",
+    "paths": {
+      "@kinoo/engine": ["packages/engine/src/index.ts"],
+      "@kinoo/shared": ["packages/shared/src/index.ts"],
+      "@kinoo/api": ["packages/api/src/index.ts"]
+    }
+  }
+}
