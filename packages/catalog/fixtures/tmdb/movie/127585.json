@@ -1,0 +1,213 @@
+{
+  "_simulado": true,
+  "_id_verificado": true,
+  "id": 127585,
+  "imdb_id": "tt1877832",
+  "title": "X-Men: Días del futuro pasado",
+  "original_title": "X-Men: Days of Future Past",
+  "original_language": "en",
+  "release_date": "2014-05-21",
+  "runtime": 132,
+  "status": "Released",
+  "adult": false,
+  "genres": [
+    {
+      "id": 28,
+      "name": "Acción"
+    },
+    {
+      "id": 12,
+      "name": "Aventura"
+    },
+    {
+      "id": 878,
+      "name": "Ciencia ficción"
+    }
+  ],
+  "overview": "En un futuro sombrío, los mutantes son cazados por unos centinelas invencibles. Wolverine viaja al pasado para unir a los jóvenes Profesor X y Magneto e intentar cambiar el rumbo de la historia.",
+  "tagline": "Cambiar el pasado para salvar el futuro.",
+  "vote_average": 7.5,
+  "vote_count": 15000,
+  "popularity": 71.3,
+  "poster_path": null,
+  "backdrop_path": null,
+  "production_countries": [
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    },
+    {
+      "iso_3166_1": "GB",
+      "name": "United Kingdom"
+    }
+  ],
+  "spoken_languages": [
+    {
+      "iso_639_1": "en",
+      "english_name": "English",
+      "name": "English"
+    },
+    {
+      "iso_639_1": "vi",
+      "english_name": "Vietnamese",
+      "name": "Tiếng Việt"
+    }
+  ],
+  "budget": 200000000,
+  "revenue": 746000000,
+  "credits": {
+    "cast": [
+      {
+        "id": null,
+        "name": "Hugh Jackman",
+        "character": "Logan / Wolverine",
+        "order": 0
+      },
+      {
+        "id": null,
+        "name": "James McAvoy",
+        "character": "Charles Xavier",
+        "order": 1
+      },
+      {
+        "id": null,
+        "name": "Michael Fassbender",
+        "character": "Erik Lehnsherr / Magneto",
+        "order": 2
+      },
+      {
+        "id": null,
+        "name": "Jennifer Lawrence",
+        "character": "Raven / Mystique",
+        "order": 3
+      },
+      {
+        "id": null,
+        "name": "Patrick Stewart",
+        "character": "Professor X",
+        "order": 4
+      },
+      {
+        "id": null,
+        "name": "Ian McKellen",
+        "character": "Magneto",
+        "order": 5
+      },
+      {
+        "id": null,
+        "name": "Peter Dinklage",
+        "character": "Bolivar Trask",
+        "order": 6
+      },
+      {
+        "id": null,
+        "name": "Halle Berry",
+        "character": "Ororo Munroe / Storm",
+        "order": 7
+      }
+    ],
+    "crew": [
+      {
+        "id": null,
+        "name": "Bryan Singer",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "Simon Kinberg",
+        "job": "Screenplay",
+        "department": "Writing"
+      },
+      {
+        "id": null,
+        "name": "John Ottman",
+        "job": "Original Music Composer",
+        "department": "Sound"
+      }
+    ]
+  },
+  "keywords": {
+    "keywords": [
+      {
+        "id": null,
+        "name": "superhero"
+      },
+      {
+        "id": null,
+        "name": "mutant"
+      },
+      {
+        "id": null,
+        "name": "time travel"
+      },
+      {
+        "id": null,
+        "name": "based on comic"
+      },
+      {
+        "id": null,
+        "name": "dystopia"
+      },
+      {
+        "id": null,
+        "name": "alternate timeline"
+      },
+      {
+        "id": null,
+        "name": "shape shifter"
+      },
+      {
+        "id": null,
+        "name": "1970s"
+      },
+      {
+        "id": null,
+        "name": "vietnam war"
+      },
+      {
+        "id": null,
+        "name": "aftercreditsstinger"
+      }
+    ]
+  },
+  "reviews": {
+    "page": 1,
+    "total_results": 2,
+    "results": [
+      {
+        "author": "comicbookjunkie",
+        "author_details": {
+          "rating": 8
+        },
+        "content": "A satisfying blend of both X-Men casts with real emotional stakes. The Quicksilver sequence alone is worth the ticket.",
+        "created_at": "2014-05-24T16:30:02.000Z",
+        "id": "537f1c3a0e0a2643a2000b51"
+      },
+      {
+        "author": "lectora_de_cine",
+        "author_details": {
+          "rating": null
+        },
+        "content": "Una de las mejores entregas de la saga. Mezcla acción y drama con buen ritmo, aunque la línea de tiempo puede enredar a quien no conozca las películas anteriores.",
+        "created_at": "2014-06-10T01:15:48.000Z",
+        "id": "5397b8f2c3a3685c0e001f2d"
+      }
+    ]
+  },
+  "watch/providers": {
+    "results": {
+      "CO": {
+        "link": "https://www.themoviedb.org/movie/127585/watch?locale=CO",
+        "flatrate": [
+          {
+            "provider_id": 337,
+            "provider_name": "Disney Plus",
+            "logo_path": null,
+            "display_priority": 2
+          }
+        ]
+      }
+    }
+  }
+}

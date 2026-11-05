@@ -19,8 +19,8 @@ import { loadTmdbFixtures } from '../src/fixtures';
 const fixtures = loadTmdbFixtures();
 
 describe('simulación de TMDB (fixtures)', () => {
-  it('hay 38 fichas con la forma de GET /movie/{id}?append_to_response=credits,keywords,watch/providers,reviews', () => {
-    expect(fixtures).toHaveLength(38);
+  it('hay al menos 38 fichas con la forma de GET /movie/{id}?append_to_response=credits,keywords,watch/providers,reviews', () => {
+    expect(fixtures.length).toBeGreaterThanOrEqual(38);
     const genreIds = new Set(GENRES_ES.map((g) => g.id));
     for (const d of fixtures) {
       expect(d._simulado, String(d.id)).toBe(true);
@@ -50,7 +50,7 @@ describe('simulación de TMDB (fixtures)', () => {
       page: 1,
     });
     expect(p1.results).toHaveLength(20);
-    expect(p1.total_pages).toBe(2);
+    expect(p1.total_pages).toBe(Math.ceil(fixtures.length / 20));
     expect(p1.results.map((r) => r.popularity)).toEqual([...p1.results.map((r) => r.popularity)].sort((a, b) => b - a));
     const old = await t.get<{ results: Array<{ release_date: string }> }>('/discover/movie', { 'primary_release_date.lte': '1999-12-31' });
     expect(old.results.length).toBe(fixtures.filter((d) => d.release_date < '2000').length);

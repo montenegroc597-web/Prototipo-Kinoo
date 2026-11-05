@@ -11,9 +11,22 @@
       "path": "posters/coco-2017.jpg",
       "origin": "local"
     },
+    "corpse-bride-2005": null,
+    "cuando-acecha-la-maldad-2023": null,
+    "dune-2021": {
+      "path": "posters/dune-2021.jpg",
+      "origin": "local"
+    },
+    "dune-part-two-2024": {
+      "path": "posters/dune-part-two-2024.jpg",
+      "origin": "local"
+    },
     "el-abrazo-de-la-serpiente-2015": null,
     "eternal-sunshine-of-the-spotless-mind-2004": null,
     "everything-everywhere-all-at-once-2022": null,
+    "get-out-2017": null,
+    "grease-1978": null,
+    "halloween-2018": null,
     "her-2013": {
       "path": "posters/her-2013.jpg",
       "origin": "local"
@@ -30,6 +43,16 @@
     "la-la-land-2016": null,
     "lost-in-translation-2003": null,
     "mad-max-fury-road-2015": null,
+    "marty-supreme-2025": {
+      "path": "posters/marty-supreme-2025.jpg",
+      "origin": "local"
+    },
+    "mickey-17-2025": null,
+    "mortal-kombat-2021": null,
+    "mortal-kombat-ii-2026": {
+      "path": "posters/mortal-kombat-ii-2026.jpg",
+      "origin": "local"
+    },
     "nosferatu-2024": null,
     "nuovo-cinema-paradiso-1988": null,
     "oppenheimer-2023": {
@@ -42,12 +65,19 @@
       "path": "posters/project-hail-mary-2026.jpg",
       "origin": "local"
     },
+    "ratatouille-2007": null,
     "relatos-salvajes-2014": null,
     "rocky-1976": {
       "path": "posters/rocky-1976.jpg",
       "origin": "local"
     },
+    "rocky-balboa-2006": null,
+    "rocky-ii-1979": null,
+    "rocky-iii-1982": null,
     "roma-2018": null,
+    "scarface-1983": null,
+    "shrek-2-2004": null,
+    "sinners-2025": null,
     "smile-2022": {
       "path": "posters/smile-2022.jpg",
       "origin": "local"
@@ -56,10 +86,17 @@
       "path": "posters/superman-2025.jpg",
       "origin": "local"
     },
+    "ted-2-2015": null,
+    "ted-2012": null,
+    "the-batman-2022": null,
     "the-dark-knight-2008": {
       "path": "posters/the-dark-knight-2008.jpg",
       "origin": "local"
     },
+    "the-exorcist-1973": null,
+    "the-godfather-1972": null,
+    "the-godfather-part-ii-1974": null,
+    "the-godfather-part-iii-1990": null,
     "the-hangover-2009": {
       "path": "posters/the-hangover-2009.jpg",
       "origin": "local"
@@ -68,6 +105,7 @@
       "path": "posters/the-matrix-1999.jpg",
       "origin": "local"
     },
+    "the-pope-s-exorcist-2023": null,
     "the-shining-1980": null,
     "the-terminator-1984": {
       "path": "posters/the-terminator-1984.jpg",
@@ -79,7 +117,12 @@
       "path": "posters/titanic-1997.jpg",
       "origin": "local"
     },
+    "toy-story-1995": null,
+    "toy-story-2-1999": null,
     "toy-story-3-2010": null,
+    "watchmen-2009": null,
+    "world-war-z-2013": null,
+    "x-men-days-of-future-past-2014": null,
     "y-tu-mama-tambien-2001": null
   },
   "missing": [
@@ -89,23 +132,50 @@
     "avengers-endgame-2019",
     "central-do-brasil-1998",
     "chungking-express-1994",
+    "corpse-bride-2005",
+    "cuando-acecha-la-maldad-2023",
     "el-abrazo-de-la-serpiente-2015",
     "eternal-sunshine-of-the-spotless-mind-2004",
     "everything-everywhere-all-at-once-2022",
+    "get-out-2017",
+    "grease-1978",
+    "halloween-2018",
     "knives-out-2019",
     "la-la-land-2016",
     "lost-in-translation-2003",
     "mad-max-fury-road-2015",
+    "mickey-17-2025",
+    "mortal-kombat-2021",
     "nosferatu-2024",
     "nuovo-cinema-paradiso-1988",
     "parasitos-2019",
     "past-lives-2023",
+    "ratatouille-2007",
     "relatos-salvajes-2014",
+    "rocky-balboa-2006",
+    "rocky-ii-1979",
+    "rocky-iii-1982",
     "roma-2018",
+    "scarface-1983",
+    "shrek-2-2004",
+    "sinners-2025",
+    "ted-2-2015",
+    "ted-2012",
+    "the-batman-2022",
+    "the-exorcist-1973",
+    "the-godfather-1972",
+    "the-godfather-part-ii-1974",
+    "the-godfather-part-iii-1990",
+    "the-pope-s-exorcist-2023",
     "the-shining-1980",
     "the-wild-robot-2024",
     "tick-tick-boom-2021",
+    "toy-story-1995",
+    "toy-story-2-1999",
     "toy-story-3-2010",
+    "watchmen-2009",
+    "world-war-z-2013",
+    "x-men-days-of-future-past-2014",
     "y-tu-mama-tambien-2001"
   ],
   "orphans": []

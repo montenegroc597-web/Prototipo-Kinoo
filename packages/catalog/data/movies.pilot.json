@@ -1,93 +1,93 @@
 {
-  "generated_at": "2026-11-05T04:27:22.656Z",
+  "generated_at": "2026-11-05T04:30:35.067Z",
   "source": "tmdb_simulado",
-  "count": 38,
+  "count": 69,
   "prompt_version": "juez-v2.0",
   "attribution": "Datos simulados con el formato de TMDB (fixtures). No vienen de la API de TMDB.",
   "stats": {
     "frenetica": {
-      "mean": 0.2934,
-      "stddev": 0.2623
+      "mean": 0.3149,
+      "stddev": 0.2498
     },
     "agil": {
-      "mean": 0.4737,
-      "stddev": 0.275
+      "mean": 0.5058,
+      "stddev": 0.2465
     },
     "pausada": {
-      "mean": 0.4355,
-      "stddev": 0.2471
+      "mean": 0.4026,
+      "stddev": 0.2378
     },
     "contemplativa": {
-      "mean": 0.2392,
-      "stddev": 0.266
+      "mean": 0.1826,
+      "stddev": 0.2277
     },
     "reconfortante": {
-      "mean": 0.3332,
-      "stddev": 0.2712
+      "mean": 0.3065,
+      "stddev": 0.2944
     },
     "luminosa": {
-      "mean": 0.3537,
-      "stddev": 0.2657
+      "mean": 0.3284,
+      "stddev": 0.2812
     },
     "melancolica": {
-      "mean": 0.5218,
-      "stddev": 0.2855
+      "mean": 0.4243,
+      "stddev": 0.2725
     },
     "tensa": {
-      "mean": 0.4911,
-      "stddev": 0.2916
+      "mean": 0.5026,
+      "stddev": 0.28
     },
     "inquietante": {
-      "mean": 0.2932,
-      "stddev": 0.2845
+      "mean": 0.2962,
+      "stddev": 0.2821
     },
     "sombria": {
-      "mean": 0.3847,
-      "stddev": 0.3023
+      "mean": 0.4213,
+      "stddev": 0.3113
     },
     "cruda": {
-      "mean": 0.2874,
-      "stddev": 0.2418
+      "mean": 0.2807,
+      "stddev": 0.2305
     },
     "onirica": {
-      "mean": 0.3021,
-      "stddev": 0.2382
+      "mean": 0.2414,
+      "stddev": 0.2131
     },
     "neon": {
-      "mean": 0.2416,
-      "stddev": 0.2672
+      "mean": 0.2309,
+      "stddev": 0.2466
     },
     "pastel": {
-      "mean": 0.1695,
-      "stddev": 0.2142
+      "mean": 0.1397,
+      "stddev": 0.1968
     },
     "calida": {
-      "mean": 0.4855,
-      "stddev": 0.2628
+      "mean": 0.4891,
+      "stddev": 0.2514
     },
     "monocromatica": {
-      "mean": 0.1832,
-      "stddev": 0.2773
+      "mean": 0.182,
+      "stddev": 0.2382
     },
     "carga_emocional": {
-      "mean": 0.6963,
-      "stddev": 0.2412
+      "mean": 0.6009,
+      "stddev": 0.2369
     },
     "complejidad": {
-      "mean": 0.4158,
-      "stddev": 0.2309
+      "mean": 0.3696,
+      "stddev": 0.2314
     },
     "humor": {
-      "mean": 0.3368,
-      "stddev": 0.2646
+      "mean": 0.3338,
+      "stddev": 0.2817
     },
     "intimidad": {
-      "mean": 0.5361,
-      "stddev": 0.2566
+      "mean": 0.4532,
+      "stddev": 0.2365
     },
     "escala_epica": {
-      "mean": 0.4055,
-      "stddev": 0.3229
+      "mean": 0.4364,
+      "stddev": 0.3057
     }
   },
   "team_deck": {
@@ -669,6 +669,323 @@
       "source": "tmdb_simulado"
     },
     {
+      "id": "corpse-bride-2005",
+      "tmdb_id": 9071,
+      "imdb_id": "tt0121164",
+      "title": "El cadáver de la novia",
+      "original_title": "Corpse Bride",
+      "year": 2005,
+      "runtime_min": 77,
+      "genres": [
+        "Animación",
+        "Fantasía",
+        "Romance"
+      ],
+      "directors": [
+        "Tim Burton",
+        "Mike Johnson"
+      ],
+      "countries": [
+        "GB",
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.5,
+      "vote_count": 6500,
+      "popularity": 48.9,
+      "poster_path": null,
+      "overview": "Víctor, un joven tímido a punto de casarse, ensaya sus votos en el bosque y sin querer compromete su mano con una novia fallecida. Lo arrastra al mundo de los muertos, más alegre que el de los vivos.",
+      "keywords": [
+        "stop motion",
+        "wedding",
+        "afterlife",
+        "undead",
+        "arranged marriage",
+        "love triangle",
+        "musical",
+        "gothic",
+        "dark fantasy",
+        "victorian era"
+      ],
+      "atoms": {
+        "frenetica": 0.1,
+        "agil": 0.4,
+        "pausada": 0.5,
+        "contemplativa": 0.1,
+        "reconfortante": 0.55,
+        "luminosa": 0.3,
+        "melancolica": 0.6,
+        "tensa": 0.1,
+        "inquietante": 0.35,
+        "sombria": 0.35,
+        "cruda": 0,
+        "onirica": 0.75,
+        "neon": 0.1,
+        "pastel": 0.3,
+        "calida": 0.1,
+        "monocromatica": 0.55,
+        "carga_emocional": 0.6,
+        "complejidad": 0.2,
+        "humor": 0.5,
+        "intimidad": 0.45,
+        "escala_epica": 0.2
+      },
+      "hook": "UN NOVIO TÍMIDO PROMETE SU MANO A UNA NOVIA MUERTA Y DESCUBRE QUE EL OTRO MUNDO ES MÁS ALEGRE QUE EL DE LOS VIVOS.",
+      "pillars": {
+        "ritmo": "ágil y musical",
+        "tono": "melancólico y juguetón",
+        "historia": "amor entre dos mundos",
+        "visual": "gótico en stop motion"
+      },
+      "providers": {
+        "CO": [
+          "Max"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T05:30:00.000Z"
+      },
+      "source": "tmdb_simulado"
+    },
+    {
+      "id": "cuando-acecha-la-maldad-2023",
+      "tmdb_id": 9900405,
+      "imdb_id": null,
+      "title": "Cuando acecha la maldad",
+      "original_title": "Cuando acecha la maldad",
+      "year": 2023,
+      "runtime_min": 99,
+      "genres": [
+        "Terror"
+      ],
+      "directors": [
+        "Demián Rugna"
+      ],
+      "countries": [
+        "AR",
+        "US"
+      ],
+      "original_language": "es",
+      "vote_average": 7,
+      "vote_count": 900,
+      "popularity": 28.6,
+      "poster_path": null,
+      "overview": "En una zona rural de Argentina, dos hermanos encuentran un cuerpo gravemente poseído por una entidad maligna. Al intentar deshacerse de él, liberan una fuerza que amenaza a todo el pueblo.",
+      "keywords": [
+        "demonic possession",
+        "rural",
+        "argentina",
+        "supernatural horror",
+        "gore",
+        "brothers",
+        "evil",
+        "demon",
+        "countryside",
+        "folk horror"
+      ],
+      "atoms": {
+        "frenetica": 0.45,
+        "agil": 0.5,
+        "pausada": 0.35,
+        "contemplativa": 0.05,
+        "reconfortante": 0,
+        "luminosa": 0.02,
+        "melancolica": 0.15,
+        "tensa": 0.85,
+        "inquietante": 0.85,
+        "sombria": 0.95,
+        "cruda": 0.7,
+        "onirica": 0.1,
+        "neon": 0,
+        "pastel": 0,
+        "calida": 0.3,
+        "monocromatica": 0.15,
+        "carga_emocional": 0.4,
+        "complejidad": 0.2,
+        "humor": 0.03,
+        "intimidad": 0.3,
+        "escala_epica": 0.25
+      },
+      "hook": "EN UN PUEBLO RURAL, DOS HERMANOS LIBERAN UNA FUERZA MALIGNA AL INTENTAR DESHACERSE DE UN CUERPO POSEÍDO. NADIE ESTÁ A SALVO.",
+      "pillars": {
+        "ritmo": "tenso",
+        "tono": "brutal y opresivo",
+        "historia": "posesión en el campo",
+        "visual": "campo polvoriento"
+      },
+      "providers": {
+        "CO": [
+          "Prime Video"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T05:30:00.000Z"
+      },
+      "source": "tmdb_simulado"
+    },
+    {
+      "id": "dune-2021",
+      "tmdb_id": 438631,
+      "imdb_id": "tt1160419",
+      "title": "Duna",
+      "original_title": "Dune",
+      "year": 2021,
+      "runtime_min": 155,
+      "genres": [
+        "Ciencia ficción",
+        "Aventura"
+      ],
+      "directors": [
+        "Denis Villeneuve"
+      ],
+      "countries": [
+        "US",
+        "CA"
+      ],
+      "original_language": "en",
+      "vote_average": 7.8,
+      "vote_count": 13000,
+      "popularity": 92.4,
+      "poster_path": "posters/dune-2021.jpg",
+      "overview": "Paul Atreides, un joven brillante y talentoso, nace con un gran destino que está más allá de su comprensión. Debe viajar al planeta más peligroso del universo para asegurar el futuro de su familia y su pueblo.",
+      "keywords": [
+        "based on novel or book",
+        "desert",
+        "space opera",
+        "chosen one",
+        "prophecy",
+        "royal family",
+        "giant worm",
+        "distant future",
+        "epic",
+        "war"
+      ],
+      "atoms": {
+        "frenetica": 0.1,
+        "agil": 0.25,
+        "pausada": 0.6,
+        "contemplativa": 0.45,
+        "reconfortante": 0.05,
+        "luminosa": 0.05,
+        "melancolica": 0.45,
+        "tensa": 0.5,
+        "inquietante": 0.3,
+        "sombria": 0.5,
+        "cruda": 0.1,
+        "onirica": 0.4,
+        "neon": 0,
+        "pastel": 0,
+        "calida": 0.45,
+        "monocromatica": 0.55,
+        "carga_emocional": 0.4,
+        "complejidad": 0.5,
+        "humor": 0.03,
+        "intimidad": 0.15,
+        "escala_epica": 0.97
+      },
+      "hook": "UN JOVEN CON UN DESTINO QUE NO ENTIENDE VIAJA AL PLANETA MÁS PELIGROSO DEL UNIVERSO PARA PROTEGER A SU FAMILIA Y A SU PUEBLO.",
+      "pillars": {
+        "ritmo": "pausado",
+        "tono": "solemne",
+        "historia": "elegido en el desierto",
+        "visual": "desierto monumental"
+      },
+      "providers": {
+        "CO": [
+          "Max"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T05:30:00.000Z"
+      },
+      "source": "tmdb_simulado"
+    },
+    {
+      "id": "dune-part-two-2024",
+      "tmdb_id": 693134,
+      "imdb_id": "tt15239678",
+      "title": "Duna: Parte dos",
+      "original_title": "Dune: Part Two",
+      "year": 2024,
+      "runtime_min": 166,
+      "genres": [
+        "Ciencia ficción",
+        "Aventura"
+      ],
+      "directors": [
+        "Denis Villeneuve"
+      ],
+      "countries": [
+        "US",
+        "CA"
+      ],
+      "original_language": "en",
+      "vote_average": 8.1,
+      "vote_count": 7000,
+      "popularity": 118.6,
+      "poster_path": "posters/dune-part-two-2024.jpg",
+      "overview": "Paul Atreides se une a Chani y a los Fremen mientras busca venganza contra quienes destruyeron a su familia. Enfrentado a una decisión entre el amor de su vida y el destino del universo, intenta evitar un futuro terrible.",
+      "keywords": [
+        "based on novel or book",
+        "desert",
+        "space opera",
+        "revenge",
+        "prophecy",
+        "giant worm",
+        "rebellion",
+        "sequel",
+        "epic",
+        "distant future"
+      ],
+      "atoms": {
+        "frenetica": 0.35,
+        "agil": 0.45,
+        "pausada": 0.4,
+        "contemplativa": 0.25,
+        "reconfortante": 0.05,
+        "luminosa": 0.05,
+        "melancolica": 0.4,
+        "tensa": 0.65,
+        "inquietante": 0.35,
+        "sombria": 0.75,
+        "cruda": 0.15,
+        "onirica": 0.35,
+        "neon": 0.05,
+        "pastel": 0,
+        "calida": 0.5,
+        "monocromatica": 0.6,
+        "carga_emocional": 0.55,
+        "complejidad": 0.55,
+        "humor": 0.03,
+        "intimidad": 0.15,
+        "escala_epica": 0.98
+      },
+      "hook": "ENTRE EL AMOR Y EL DESTINO DEL UNIVERSO, UN JOVEN SE ALÍA CON EL PUEBLO DEL DESIERTO PARA VENGAR A SU FAMILIA Y EVITAR UN FUTURO TERRIBLE.",
+      "pillars": {
+        "ritmo": "épico",
+        "tono": "grave y ominoso",
+        "historia": "venganza y profecía",
+        "visual": "arena y fuego"
+      },
+      "providers": {
+        "CO": [
+          "Max"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T05:30:00.000Z"
+      },
+      "source": "tmdb_simulado"
+    },
+    {
       "id": "el-abrazo-de-la-serpiente-2015",
       "tmdb_id": 9900110,
       "imdb_id": null,
@@ -906,6 +1223,242 @@
         "model": "claude-sonnet (subagente de Claude Code)",
         "prompt_version": "juez-v2.0",
         "tagged_at": "2026-11-05T03:43:24.308Z"
+      },
+      "source": "tmdb_simulado"
+    },
+    {
+      "id": "get-out-2017",
+      "tmdb_id": 419430,
+      "imdb_id": "tt5052448",
+      "title": "¡Huye!",
+      "original_title": "Get Out",
+      "year": 2017,
+      "runtime_min": 104,
+      "genres": [
+        "Misterio",
+        "Suspense",
+        "Terror"
+      ],
+      "directors": [
+        "Jordan Peele"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.6,
+      "vote_count": 17000,
+      "popularity": 61.8,
+      "poster_path": null,
+      "overview": "Chris, un joven fotógrafo afroamericano, viaja a conocer a la familia de su novia en una finca apartada. Lo que al principio parece una visita incómoda se convierte en un descubrimiento perturbador.",
+      "keywords": [
+        "racism",
+        "hypnosis",
+        "interracial relationship",
+        "psychological thriller",
+        "social commentary",
+        "photographer",
+        "meeting the parents",
+        "suburbia",
+        "paranoia",
+        "satire"
+      ],
+      "atoms": {
+        "frenetica": 0.15,
+        "agil": 0.55,
+        "pausada": 0.4,
+        "contemplativa": 0.05,
+        "reconfortante": 0.05,
+        "luminosa": 0.08,
+        "melancolica": 0.15,
+        "tensa": 0.9,
+        "inquietante": 0.85,
+        "sombria": 0.6,
+        "cruda": 0.3,
+        "onirica": 0.35,
+        "neon": 0,
+        "pastel": 0.1,
+        "calida": 0.2,
+        "monocromatica": 0.1,
+        "carga_emocional": 0.45,
+        "complejidad": 0.55,
+        "humor": 0.3,
+        "intimidad": 0.4,
+        "escala_epica": 0.05
+      },
+      "hook": "UNA VISITA A LA FINCA DE LOS PADRES DE SU NOVIA PARECE SOLO INCÓMODA, HASTA QUE UN JOVEN FOTÓGRAFO DESCUBRE ALGO PERTURBADOR.",
+      "pillars": {
+        "ritmo": "tenso",
+        "tono": "incómodo y satírico",
+        "historia": "paranoia social",
+        "visual": "suburbio inquietante"
+      },
+      "providers": {
+        "CO": [
+          "Netflix"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T05:30:00.000Z"
+      },
+      "source": "tmdb_simulado"
+    },
+    {
+      "id": "grease-1978",
+      "tmdb_id": 621,
+      "imdb_id": "tt0077631",
+      "title": "Grease (Vaselina)",
+      "original_title": "Grease",
+      "year": 1978,
+      "runtime_min": 110,
+      "genres": [
+        "Romance",
+        "Comedia",
+        "Música"
+      ],
+      "directors": [
+        "Randal Kleiser"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.4,
+      "vote_count": 7500,
+      "popularity": 44.8,
+      "poster_path": null,
+      "overview": "Danny Zuko y Sandy Olsson se enamoran durante el verano. Al reencontrarse en el instituto, deberán lidiar con las presiones de su grupo de amigos y con las apariencias para poder estar juntos.",
+      "keywords": [
+        "based on musical",
+        "high school",
+        "1950s",
+        "summer romance",
+        "teenage love",
+        "rock 'n' roll",
+        "drag race",
+        "gang",
+        "new student",
+        "dance"
+      ],
+      "atoms": {
+        "frenetica": 0.3,
+        "agil": 0.75,
+        "pausada": 0.15,
+        "contemplativa": 0,
+        "reconfortante": 0.85,
+        "luminosa": 0.95,
+        "melancolica": 0.2,
+        "tensa": 0.05,
+        "inquietante": 0,
+        "sombria": 0,
+        "cruda": 0,
+        "onirica": 0.1,
+        "neon": 0.5,
+        "pastel": 0.55,
+        "calida": 0.75,
+        "monocromatica": 0,
+        "carga_emocional": 0.4,
+        "complejidad": 0.08,
+        "humor": 0.65,
+        "intimidad": 0.25,
+        "escala_epica": 0.25
+      },
+      "hook": "UN AMOR DE VERANO SE REENCUENTRA EN EL INSTITUTO, DONDE LAS APARIENCIAS Y LOS AMIGOS AMENAZAN CON SEPARAR A LA PAREJA.",
+      "pillars": {
+        "ritmo": "vibrante",
+        "tono": "alegre",
+        "historia": "amor de instituto",
+        "visual": "años cincuenta colorido"
+      },
+      "providers": {
+        "CO": [
+          "Prime Video"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T05:30:00.000Z"
+      },
+      "source": "tmdb_simulado"
+    },
+    {
+      "id": "halloween-2018",
+      "tmdb_id": 424139,
+      "imdb_id": "tt1502407",
+      "title": "Halloween",
+      "original_title": "Halloween",
+      "year": 2018,
+      "runtime_min": 106,
+      "genres": [
+        "Terror",
+        "Suspense"
+      ],
+      "directors": [
+        "David Gordon Green"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 6.5,
+      "vote_count": 5000,
+      "popularity": 48.7,
+      "poster_path": null,
+      "overview": "Cuarenta años después de la noche en que Michael Myers aterrorizó Haddonfield, Laurie Strode se ha preparado para un nuevo enfrentamiento. Cuando el asesino enmascarado regresa, la lucha de tres generaciones de mujeres comienza.",
+      "keywords": [
+        "slasher",
+        "serial killer",
+        "halloween",
+        "sequel",
+        "masked killer",
+        "survivor",
+        "babysitter",
+        "small town",
+        "trauma",
+        "grandmother granddaughter relationship"
+      ],
+      "atoms": {
+        "frenetica": 0.3,
+        "agil": 0.55,
+        "pausada": 0.4,
+        "contemplativa": 0.05,
+        "reconfortante": 0,
+        "luminosa": 0.02,
+        "melancolica": 0.15,
+        "tensa": 0.85,
+        "inquietante": 0.6,
+        "sombria": 0.8,
+        "cruda": 0.45,
+        "onirica": 0.1,
+        "neon": 0.1,
+        "pastel": 0,
+        "calida": 0.15,
+        "monocromatica": 0.3,
+        "carga_emocional": 0.3,
+        "complejidad": 0.1,
+        "humor": 0.05,
+        "intimidad": 0.35,
+        "escala_epica": 0.1
+      },
+      "hook": "CUARENTA AÑOS DESPUÉS DE UNA NOCHE DE TERROR, UNA SOBREVIVIENTE QUE SE PREPARÓ TODA LA VIDA ENFRENTA DE NUEVO AL ASESINO ENMASCARADO.",
+      "pillars": {
+        "ritmo": "tenso",
+        "tono": "sombrío",
+        "historia": "venganza de sobrevivientes",
+        "visual": "noche de barrio"
+      },
+      "providers": {
+        "CO": [
+          "Prime Video"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T05:30:00.000Z"
       },
       "source": "tmdb_simulado"
     },
@@ -1466,6 +2019,322 @@
       "source": "tmdb_simulado"
     },
     {
+      "id": "marty-supreme-2025",
+      "tmdb_id": 9900303,
+      "imdb_id": null,
+      "title": "Marty Supreme",
+      "original_title": "Marty Supreme",
+      "year": 2025,
+      "runtime_min": 149,
+      "genres": [
+        "Drama",
+        "Comedia"
+      ],
+      "directors": [
+        "Josh Safdie"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.6,
+      "vote_count": 900,
+      "popularity": 48.7,
+      "poster_path": "posters/marty-supreme-2025.jpg",
+      "overview": "Marty Mauser, un joven ambicioso y sin filtros de la Nueva York de los años cincuenta, persigue su sueño de convertirse en campeón mundial de tenis de mesa. Para lograrlo está dispuesto a todo, sin importar a quién tenga que arrastrar consigo.",
+      "keywords": [
+        "table tennis",
+        "new york city",
+        "1950s",
+        "ambition",
+        "hustler",
+        "sports",
+        "dark comedy",
+        "obsession",
+        "tournament"
+      ],
+      "atoms": {
+        "frenetica": 0.85,
+        "agil": 0.8,
+        "pausada": 0.1,
+        "contemplativa": 0.02,
+        "reconfortante": 0.1,
+        "luminosa": 0.3,
+        "melancolica": 0.15,
+        "tensa": 0.75,
+        "inquietante": 0.25,
+        "sombria": 0.25,
+        "cruda": 0.6,
+        "onirica": 0.1,
+        "neon": 0.5,
+        "pastel": 0.05,
+        "calida": 0.65,
+        "monocromatica": 0.1,
+        "carga_emocional": 0.4,
+        "complejidad": 0.3,
+        "humor": 0.55,
+        "intimidad": 0.3,
+        "escala_epica": 0.3
+      },
+      "hook": "EN LA NUEVA YORK DE LOS CINCUENTA, UN JOVEN SIN FILTROS LO ARRIESGA TODO POR SER CAMPEÓN MUNDIAL DE TENIS DE MESA.",
+      "pillars": {
+        "ritmo": "vertiginoso",
+        "tono": "ansioso y cómico",
+        "historia": "ambición sin freno",
+        "visual": "nueva york granulada"
+      },
+      "providers": {
+        "CO": [
+          "Max"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T05:30:00.000Z"
+      },
+      "source": "tmdb_simulado"
+    },
+    {
+      "id": "mickey-17-2025",
+      "tmdb_id": 9900501,
+      "imdb_id": null,
+      "title": "Mickey 17",
+      "original_title": "Mickey 17",
+      "year": 2025,
+      "runtime_min": 137,
+      "genres": [
+        "Ciencia ficción",
+        "Comedia",
+        "Aventura"
+      ],
+      "directors": [
+        "Bong Joon-ho"
+      ],
+      "countries": [
+        "US",
+        "KR"
+      ],
+      "original_language": "en",
+      "vote_average": 6.9,
+      "vote_count": 2500,
+      "popularity": 88.1,
+      "poster_path": null,
+      "overview": "Mickey, un trabajador prescindible en una expedición para colonizar un planeta helado, es enviado a misiones mortales y regenerado una y otra vez. Todo se complica cuando una versión suya aparece mientras la anterior sigue con vida.",
+      "keywords": [
+        "based on novel or book",
+        "clone",
+        "space colony",
+        "ice planet",
+        "dark comedy",
+        "expendable worker",
+        "satire",
+        "dictator",
+        "reincarnation",
+        "alien creature"
+      ],
+      "atoms": {
+        "frenetica": 0.35,
+        "agil": 0.6,
+        "pausada": 0.3,
+        "contemplativa": 0.05,
+        "reconfortante": 0.2,
+        "luminosa": 0.3,
+        "melancolica": 0.3,
+        "tensa": 0.35,
+        "inquietante": 0.35,
+        "sombria": 0.4,
+        "cruda": 0.1,
+        "onirica": 0.15,
+        "neon": 0.1,
+        "pastel": 0.1,
+        "calida": 0.1,
+        "monocromatica": 0.45,
+        "carga_emocional": 0.45,
+        "complejidad": 0.55,
+        "humor": 0.7,
+        "intimidad": 0.3,
+        "escala_epica": 0.65
+      },
+      "hook": "UN TRABAJADOR PRESCINDIBLE MUERE Y RENACE EN CADA MISIÓN MORTAL, HASTA QUE UNA COPIA SUYA APARECE CUANDO LA ANTERIOR SIGUE CON VIDA.",
+      "pillars": {
+        "ritmo": "ágil",
+        "tono": "satírico y absurdo",
+        "historia": "clones en el hielo",
+        "visual": "colonia helada"
+      },
+      "providers": {
+        "CO": [
+          "Max"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T05:30:00.000Z"
+      },
+      "source": "tmdb_simulado"
+    },
+    {
+      "id": "mortal-kombat-2021",
+      "tmdb_id": 460465,
+      "imdb_id": "tt0293429",
+      "title": "Mortal Kombat",
+      "original_title": "Mortal Kombat",
+      "year": 2021,
+      "runtime_min": 110,
+      "genres": [
+        "Acción",
+        "Fantasía",
+        "Aventura"
+      ],
+      "directors": [
+        "Simon McQuoid"
+      ],
+      "countries": [
+        "US",
+        "AU"
+      ],
+      "original_language": "en",
+      "vote_average": 7,
+      "vote_count": 6000,
+      "popularity": 62.4,
+      "poster_path": null,
+      "overview": "Cole Young, un luchador de MMA acostumbrado a perder, descubre que lleva una misteriosa marca de nacimiento. Perseguido por el letal Sub-Zero, busca a los mejores guerreros de la Tierra para enfrentarse a los campeones de otro reino.",
+      "keywords": [
+        "based on video game",
+        "martial arts",
+        "tournament",
+        "fighting",
+        "ninja",
+        "mixed martial arts",
+        "fatality",
+        "sorcerer",
+        "gore",
+        "reboot"
+      ],
+      "atoms": {
+        "frenetica": 0.8,
+        "agil": 0.7,
+        "pausada": 0.1,
+        "contemplativa": 0,
+        "reconfortante": 0.1,
+        "luminosa": 0.15,
+        "melancolica": 0.1,
+        "tensa": 0.5,
+        "inquietante": 0.2,
+        "sombria": 0.55,
+        "cruda": 0.3,
+        "onirica": 0.15,
+        "neon": 0.5,
+        "pastel": 0,
+        "calida": 0.3,
+        "monocromatica": 0.1,
+        "carga_emocional": 0.2,
+        "complejidad": 0.15,
+        "humor": 0.3,
+        "intimidad": 0.1,
+        "escala_epica": 0.75
+      },
+      "hook": "UN LUCHADOR ACOSTUMBRADO A PERDER LLEVA UNA MARCA MISTERIOSA Y DEBE UNIRSE A LOS MEJORES GUERREROS DE LA TIERRA CONTRA CAMPEONES DE OTRO REINO.",
+      "pillars": {
+        "ritmo": "frenético",
+        "tono": "violento y directo",
+        "historia": "torneo entre reinos",
+        "visual": "combates sangrientos"
+      },
+      "providers": {
+        "CO": [
+          "Max"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T05:30:00.000Z"
+      },
+      "source": "tmdb_simulado"
+    },
+    {
+      "id": "mortal-kombat-ii-2026",
+      "tmdb_id": 9900304,
+      "imdb_id": null,
+      "title": "Mortal Kombat II",
+      "original_title": "Mortal Kombat II",
+      "year": 2026,
+      "runtime_min": 116,
+      "genres": [
+        "Acción",
+        "Fantasía",
+        "Aventura"
+      ],
+      "directors": [
+        "Simon McQuoid"
+      ],
+      "countries": [
+        "US",
+        "AU"
+      ],
+      "original_language": "en",
+      "vote_average": 6.6,
+      "vote_count": 600,
+      "popularity": 37.2,
+      "poster_path": "posters/mortal-kombat-ii-2026.jpg",
+      "overview": "Los campeones de la Tierra se preparan para el torneo de Mortal Kombat, donde deberán enfrentarse a los luchadores del Mundo Exterior. Esta vez, Johnny Cage se suma al equipo con la misión de proteger el reino.",
+      "keywords": [
+        "based on video game",
+        "martial arts",
+        "tournament",
+        "sequel",
+        "fighting",
+        "gore",
+        "sorcerer",
+        "parallel world",
+        "supernatural"
+      ],
+      "atoms": {
+        "frenetica": 0.85,
+        "agil": 0.7,
+        "pausada": 0.08,
+        "contemplativa": 0,
+        "reconfortante": 0.1,
+        "luminosa": 0.2,
+        "melancolica": 0.05,
+        "tensa": 0.5,
+        "inquietante": 0.2,
+        "sombria": 0.45,
+        "cruda": 0.25,
+        "onirica": 0.2,
+        "neon": 0.6,
+        "pastel": 0,
+        "calida": 0.3,
+        "monocromatica": 0.1,
+        "carga_emocional": 0.2,
+        "complejidad": 0.15,
+        "humor": 0.4,
+        "intimidad": 0.1,
+        "escala_epica": 0.8
+      },
+      "hook": "LOS CAMPEONES DE LA TIERRA SE PREPARAN PARA UN TORNEO CONTRA LOS LUCHADORES DEL MUNDO EXTERIOR, Y LLEGA UN NUEVO REFUERZO PARA PROTEGER EL REINO.",
+      "pillars": {
+        "ritmo": "frenético",
+        "tono": "violento y festivo",
+        "historia": "torneo de otro mundo",
+        "visual": "neón y magia"
+      },
+      "providers": {
+        "CO": [
+          "Max"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T05:30:00.000Z"
+      },
+      "source": "tmdb_simulado"
+    },
+    {
       "id": "nosferatu-2024",
       "tmdb_id": 426063,
       "imdb_id": "tt5040012",
@@ -1944,6 +2813,85 @@
       "source": "tmdb_simulado"
     },
     {
+      "id": "ratatouille-2007",
+      "tmdb_id": 2062,
+      "imdb_id": "tt0382932",
+      "title": "Ratatouille",
+      "original_title": "Ratatouille",
+      "year": 2007,
+      "runtime_min": 111,
+      "genres": [
+        "Animación",
+        "Comedia",
+        "Familia"
+      ],
+      "directors": [
+        "Brad Bird"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.8,
+      "vote_count": 17000,
+      "popularity": 55.9,
+      "poster_path": null,
+      "overview": "Remy, una rata con un talento extraordinario para la cocina, sueña con ser chef en París. Su improbable alianza con un joven pinche de cocina cambiará la vida de ambos.",
+      "keywords": [
+        "paris, france",
+        "rat",
+        "chef",
+        "restaurant",
+        "cooking",
+        "food",
+        "food critic",
+        "anthropomorphism",
+        "kitchen",
+        "dream"
+      ],
+      "atoms": {
+        "frenetica": 0.3,
+        "agil": 0.75,
+        "pausada": 0.2,
+        "contemplativa": 0.02,
+        "reconfortante": 0.9,
+        "luminosa": 0.85,
+        "melancolica": 0.2,
+        "tensa": 0.2,
+        "inquietante": 0,
+        "sombria": 0,
+        "cruda": 0,
+        "onirica": 0.1,
+        "neon": 0.1,
+        "pastel": 0.45,
+        "calida": 0.9,
+        "monocromatica": 0,
+        "carga_emocional": 0.6,
+        "complejidad": 0.15,
+        "humor": 0.65,
+        "intimidad": 0.4,
+        "escala_epica": 0.3
+      },
+      "hook": "UNA RATA CON TALENTO EXTRAORDINARIO PARA LA COCINA SUEÑA CON SER CHEF EN PARÍS GRACIAS A UNA ALIANZA IMPROBABLE.",
+      "pillars": {
+        "ritmo": "ágil",
+        "tono": "cálido y alegre",
+        "historia": "sueño de cocina",
+        "visual": "parís dorado"
+      },
+      "providers": {
+        "CO": [
+          "Disney+"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T05:30:00.000Z"
+      },
+      "source": "tmdb_simulado"
+    },
+    {
       "id": "relatos-salvajes-2014",
       "tmdb_id": 9900109,
       "imdb_id": null,
@@ -2099,6 +3047,236 @@
       "source": "tmdb_simulado"
     },
     {
+      "id": "rocky-balboa-2006",
+      "tmdb_id": 1246,
+      "imdb_id": "tt0479143",
+      "title": "Rocky Balboa",
+      "original_title": "Rocky Balboa",
+      "year": 2006,
+      "runtime_min": 102,
+      "genres": [
+        "Drama"
+      ],
+      "directors": [
+        "Sylvester Stallone"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 6.6,
+      "vote_count": 4000,
+      "popularity": 22.5,
+      "poster_path": null,
+      "overview": "Años después de retirarse, Rocky Balboa dirige un pequeño restaurante en Filadelfia y vive con el recuerdo de su esposa. Una pelea simulada por computador lo empuja a volver al cuadrilátero para enfrentar al campeón actual.",
+      "keywords": [
+        "boxing",
+        "philadelphia, pennsylvania",
+        "sequel",
+        "comeback",
+        "boxer",
+        "widower",
+        "father son relationship",
+        "aging",
+        "underdog",
+        "las vegas"
+      ],
+      "atoms": {
+        "frenetica": 0.1,
+        "agil": 0.3,
+        "pausada": 0.65,
+        "contemplativa": 0.15,
+        "reconfortante": 0.55,
+        "luminosa": 0.4,
+        "melancolica": 0.7,
+        "tensa": 0.3,
+        "inquietante": 0.02,
+        "sombria": 0.3,
+        "cruda": 0.45,
+        "onirica": 0.05,
+        "neon": 0.1,
+        "pastel": 0,
+        "calida": 0.55,
+        "monocromatica": 0.2,
+        "carga_emocional": 0.8,
+        "complejidad": 0.1,
+        "humor": 0.1,
+        "intimidad": 0.65,
+        "escala_epica": 0.25
+      },
+      "hook": "VIUDO Y RETIRADO, UN EXBOXEADOR QUE DIRIGE UN PEQUEÑO RESTAURANTE VUELVE AL CUADRILÁTERO PARA ENFRENTAR AL CAMPEÓN ACTUAL.",
+      "pillars": {
+        "ritmo": "pausado",
+        "tono": "melancólico y valiente",
+        "historia": "regreso de un veterano",
+        "visual": "filadelfia gris"
+      },
+      "providers": {
+        "CO": [
+          "Prime Video"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T05:30:00.000Z"
+      },
+      "source": "tmdb_simulado"
+    },
+    {
+      "id": "rocky-ii-1979",
+      "tmdb_id": 1367,
+      "imdb_id": "tt0079817",
+      "title": "Rocky II",
+      "original_title": "Rocky II",
+      "year": 1979,
+      "runtime_min": 119,
+      "genres": [
+        "Drama"
+      ],
+      "directors": [
+        "Sylvester Stallone"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.1,
+      "vote_count": 4000,
+      "popularity": 30.2,
+      "poster_path": null,
+      "overview": "Tras su combate contra Apollo Creed, Rocky Balboa intenta rehacer su vida junto a Adrian, pero la fama no le resulta sencilla. Un nuevo desafío lo empuja de vuelta al ring para una revancha.",
+      "keywords": [
+        "boxing",
+        "sequel",
+        "philadelphia, pennsylvania",
+        "rematch",
+        "underdog",
+        "boxer",
+        "training",
+        "heavyweight champion",
+        "marriage",
+        "sports"
+      ],
+      "atoms": {
+        "frenetica": 0.2,
+        "agil": 0.5,
+        "pausada": 0.45,
+        "contemplativa": 0.05,
+        "reconfortante": 0.65,
+        "luminosa": 0.6,
+        "melancolica": 0.3,
+        "tensa": 0.35,
+        "inquietante": 0,
+        "sombria": 0.15,
+        "cruda": 0.5,
+        "onirica": 0.05,
+        "neon": 0.05,
+        "pastel": 0,
+        "calida": 0.7,
+        "monocromatica": 0.1,
+        "carga_emocional": 0.65,
+        "complejidad": 0.08,
+        "humor": 0.2,
+        "intimidad": 0.55,
+        "escala_epica": 0.25
+      },
+      "hook": "TRAS SU GRAN COMBATE, UN BOXEADOR INTENTA REHACER SU VIDA EN PAREJA, PERO LA FAMA PESA Y UNA REVANCHA LO LLAMA DE VUELTA AL RING.",
+      "pillars": {
+        "ritmo": "constante",
+        "tono": "esperanzador",
+        "historia": "revancha del perdedor",
+        "visual": "barrio setentero"
+      },
+      "providers": {
+        "CO": [
+          "Prime Video"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T05:30:00.000Z"
+      },
+      "source": "tmdb_simulado"
+    },
+    {
+      "id": "rocky-iii-1982",
+      "tmdb_id": 1374,
+      "imdb_id": "tt0084602",
+      "title": "Rocky III",
+      "original_title": "Rocky III",
+      "year": 1982,
+      "runtime_min": 99,
+      "genres": [
+        "Drama"
+      ],
+      "directors": [
+        "Sylvester Stallone"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 6.9,
+      "vote_count": 3700,
+      "popularity": 38.4,
+      "poster_path": null,
+      "overview": "Rocky Balboa, ya campeón mundial, disfruta de la fama hasta que un joven y feroz aspirante lo desafía. Para recuperar la fuerza y el hambre de pelear deberá apoyarse en un antiguo rival.",
+      "keywords": [
+        "boxing",
+        "sequel",
+        "philadelphia, pennsylvania",
+        "boxer",
+        "training",
+        "rematch",
+        "world champion",
+        "underdog",
+        "friendship"
+      ],
+      "atoms": {
+        "frenetica": 0.3,
+        "agil": 0.65,
+        "pausada": 0.25,
+        "contemplativa": 0.02,
+        "reconfortante": 0.5,
+        "luminosa": 0.5,
+        "melancolica": 0.3,
+        "tensa": 0.45,
+        "inquietante": 0,
+        "sombria": 0.2,
+        "cruda": 0.35,
+        "onirica": 0.05,
+        "neon": 0.3,
+        "pastel": 0,
+        "calida": 0.6,
+        "monocromatica": 0.05,
+        "carga_emocional": 0.6,
+        "complejidad": 0.08,
+        "humor": 0.25,
+        "intimidad": 0.35,
+        "escala_epica": 0.35
+      },
+      "hook": "UN CAMPEÓN ACOMODADO POR LA FAMA ES DESAFIADO POR UN ASPIRANTE FEROZ Y DEBE RECUPERAR EL HAMBRE DE PELEAR APOYÁNDOSE EN UN ANTIGUO RIVAL.",
+      "pillars": {
+        "ritmo": "enérgico",
+        "tono": "motivador",
+        "historia": "caída y reconquista",
+        "visual": "gimnasio ochentero"
+      },
+      "providers": {
+        "CO": [
+          "Prime Video"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T05:30:00.000Z"
+      },
+      "source": "tmdb_simulado"
+    },
+    {
       "id": "roma-2018",
       "tmdb_id": 426426,
       "imdb_id": "tt6155172",
@@ -2172,6 +3350,245 @@
         "model": "claude-sonnet (subagente de Claude Code)",
         "prompt_version": "juez-v2.0",
         "tagged_at": "2026-11-05T03:43:24.313Z"
+      },
+      "source": "tmdb_simulado"
+    },
+    {
+      "id": "scarface-1983",
+      "tmdb_id": 111,
+      "imdb_id": "tt0086250",
+      "title": "Scarface: El precio del poder",
+      "original_title": "Scarface",
+      "year": 1983,
+      "runtime_min": 170,
+      "genres": [
+        "Crimen",
+        "Drama"
+      ],
+      "directors": [
+        "Brian De Palma"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 8.2,
+      "vote_count": 12000,
+      "popularity": 44.8,
+      "poster_path": null,
+      "overview": "Tony Montana, un refugiado cubano en Miami, se abre camino en el mundo del narcotráfico con ambición y violencia. Su ascenso meteórico lo lleva a la cima, pero el poder tiene un precio.",
+      "keywords": [
+        "cuban",
+        "miami",
+        "drug dealer",
+        "cocaine",
+        "organized crime",
+        "gangster",
+        "american dream",
+        "remake",
+        "1980s",
+        "drug cartel"
+      ],
+      "atoms": {
+        "frenetica": 0.45,
+        "agil": 0.55,
+        "pausada": 0.4,
+        "contemplativa": 0.05,
+        "reconfortante": 0,
+        "luminosa": 0.08,
+        "melancolica": 0.2,
+        "tensa": 0.65,
+        "inquietante": 0.2,
+        "sombria": 0.8,
+        "cruda": 0.45,
+        "onirica": 0.1,
+        "neon": 0.85,
+        "pastel": 0.15,
+        "calida": 0.55,
+        "monocromatica": 0.05,
+        "carga_emocional": 0.4,
+        "complejidad": 0.25,
+        "humor": 0.2,
+        "intimidad": 0.2,
+        "escala_epica": 0.5
+      },
+      "hook": "UN REFUGIADO CUBANO EN MIAMI ASCIENDE EN EL NARCOTRÁFICO CON AMBICIÓN Y VIOLENCIA, PERO EL PODER SE COBRA CARO.",
+      "pillars": {
+        "ritmo": "intenso",
+        "tono": "violento y excesivo",
+        "historia": "ascenso y caída criminal",
+        "visual": "miami neón"
+      },
+      "providers": {
+        "CO": [
+          "Netflix"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T05:30:00.000Z"
+      },
+      "source": "tmdb_simulado"
+    },
+    {
+      "id": "shrek-2-2004",
+      "tmdb_id": 809,
+      "imdb_id": "tt0298148",
+      "title": "Shrek 2",
+      "original_title": "Shrek 2",
+      "year": 2004,
+      "runtime_min": 93,
+      "genres": [
+        "Animación",
+        "Comedia",
+        "Familia",
+        "Fantasía"
+      ],
+      "directors": [
+        "Andrew Adamson",
+        "Kelly Asbury",
+        "Conrad Vernon"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.3,
+      "vote_count": 12000,
+      "popularity": 52.1,
+      "poster_path": null,
+      "overview": "Shrek y Fiona regresan de su luna de miel y son invitados al reino de Muy Muy Lejano para conocer a los padres de ella. La visita se complica con un Hada Madrina decidida a arruinar su felicidad.",
+      "keywords": [
+        "ogre",
+        "fairy tale",
+        "sequel",
+        "parody",
+        "talking animal",
+        "in-laws",
+        "fairy godmother",
+        "swamp",
+        "kingdom",
+        "anthropomorphism"
+      ],
+      "atoms": {
+        "frenetica": 0.35,
+        "agil": 0.8,
+        "pausada": 0.1,
+        "contemplativa": 0.02,
+        "reconfortante": 0.8,
+        "luminosa": 0.8,
+        "melancolica": 0.1,
+        "tensa": 0.2,
+        "inquietante": 0.03,
+        "sombria": 0.03,
+        "cruda": 0,
+        "onirica": 0.3,
+        "neon": 0.4,
+        "pastel": 0.45,
+        "calida": 0.6,
+        "monocromatica": 0,
+        "carga_emocional": 0.45,
+        "complejidad": 0.12,
+        "humor": 0.92,
+        "intimidad": 0.35,
+        "escala_epica": 0.45
+      },
+      "hook": "UN OGRO RECIÉN CASADO VISITA A LOS SUEGROS REALES Y DESCUBRE QUE LA FAMILIA POLÍTICA PUEDE SER MÁS PELIGROSA QUE CUALQUIER PANTANO.",
+      "pillars": {
+        "ritmo": "ágil",
+        "tono": "divertido y cálido",
+        "historia": "suegros imposibles",
+        "visual": "cuento animado"
+      },
+      "providers": {
+        "CO": [
+          "Netflix"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T05:30:00.000Z"
+      },
+      "source": "tmdb_simulado"
+    },
+    {
+      "id": "sinners-2025",
+      "tmdb_id": 1233413,
+      "imdb_id": "tt31193180",
+      "title": "Pecadores",
+      "original_title": "Sinners",
+      "year": 2025,
+      "runtime_min": 138,
+      "genres": [
+        "Terror",
+        "Acción",
+        "Suspense"
+      ],
+      "directors": [
+        "Ryan Coogler"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.5,
+      "vote_count": 2500,
+      "popularity": 96.3,
+      "poster_path": null,
+      "overview": "Dos hermanos gemelos regresan a su pueblo natal en el Misisipi de los años treinta para abrir un club de música. Su noche de inauguración atrae a una presencia oscura que amenaza a todos.",
+      "keywords": [
+        "vampire",
+        "mississippi",
+        "1930s",
+        "blues",
+        "twin brothers",
+        "juke joint",
+        "jim crow era",
+        "supernatural horror",
+        "musician",
+        "period drama"
+      ],
+      "atoms": {
+        "frenetica": 0.5,
+        "agil": 0.55,
+        "pausada": 0.35,
+        "contemplativa": 0.1,
+        "reconfortante": 0.1,
+        "luminosa": 0.1,
+        "melancolica": 0.4,
+        "tensa": 0.8,
+        "inquietante": 0.6,
+        "sombria": 0.75,
+        "cruda": 0.45,
+        "onirica": 0.35,
+        "neon": 0.2,
+        "pastel": 0,
+        "calida": 0.8,
+        "monocromatica": 0.05,
+        "carga_emocional": 0.55,
+        "complejidad": 0.35,
+        "humor": 0.15,
+        "intimidad": 0.3,
+        "escala_epica": 0.55
+      },
+      "hook": "DOS HERMANOS ABREN UN CLUB DE MÚSICA EN EL SUR DE LOS AÑOS TREINTA, Y SU NOCHE DE INAUGURACIÓN ATRAE ALGO QUE NO DEBERÍA ENTRAR.",
+      "pillars": {
+        "ritmo": "intenso",
+        "tono": "oscuro y vibrante",
+        "historia": "noche de terror y blues",
+        "visual": "calor de época"
+      },
+      "providers": {
+        "CO": [
+          "Max"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T05:30:00.000Z"
       },
       "source": "tmdb_simulado"
     },
@@ -2333,6 +3750,240 @@
       "source": "tmdb_simulado"
     },
     {
+      "id": "ted-2-2015",
+      "tmdb_id": 214756,
+      "imdb_id": "tt2637276",
+      "title": "Ted 2",
+      "original_title": "Ted 2",
+      "year": 2015,
+      "runtime_min": 115,
+      "genres": [
+        "Comedia"
+      ],
+      "directors": [
+        "Seth MacFarlane"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 6.3,
+      "vote_count": 7500,
+      "popularity": 31.9,
+      "poster_path": null,
+      "overview": "Recién casado, Ted quiere tener un hijo con su esposa, pero antes debe demostrar ante un tribunal que es una persona y no una propiedad. Con la ayuda de John y una joven abogada, emprende una batalla legal por sus derechos.",
+      "keywords": [
+        "sequel",
+        "talking teddy bear",
+        "courtroom",
+        "civil rights",
+        "marriage",
+        "adult humor",
+        "lawyer",
+        "friendship",
+        "marijuana",
+        "stuffed animal"
+      ],
+      "atoms": {
+        "frenetica": 0.2,
+        "agil": 0.7,
+        "pausada": 0.25,
+        "contemplativa": 0.02,
+        "reconfortante": 0.45,
+        "luminosa": 0.55,
+        "melancolica": 0.1,
+        "tensa": 0.1,
+        "inquietante": 0.02,
+        "sombria": 0.03,
+        "cruda": 0.05,
+        "onirica": 0.05,
+        "neon": 0.2,
+        "pastel": 0.1,
+        "calida": 0.5,
+        "monocromatica": 0,
+        "carga_emocional": 0.3,
+        "complejidad": 0.12,
+        "humor": 0.9,
+        "intimidad": 0.45,
+        "escala_epica": 0.1
+      },
+      "hook": "UN OSO DE PELUCHE BOCÓN QUIERE SER PAPÁ, PERO PRIMERO DEBE DEMOSTRAR ANTE UN JUEZ QUE ES UNA PERSONA Y NO UN OBJETO.",
+      "pillars": {
+        "ritmo": "ágil",
+        "tono": "irreverente",
+        "historia": "juicio por ser persona",
+        "visual": "comedia urbana"
+      },
+      "providers": {
+        "CO": [
+          "Netflix"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T05:30:00.000Z"
+      },
+      "source": "tmdb_simulado"
+    },
+    {
+      "id": "ted-2012",
+      "tmdb_id": 72105,
+      "imdb_id": "tt1637725",
+      "title": "Ted",
+      "original_title": "Ted",
+      "year": 2012,
+      "runtime_min": 106,
+      "genres": [
+        "Comedia",
+        "Fantasía"
+      ],
+      "directors": [
+        "Seth MacFarlane"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 6.4,
+      "vote_count": 12500,
+      "popularity": 44.1,
+      "poster_path": null,
+      "overview": "John Bennett deseó de niño que su osito de peluche cobrara vida, y el deseo se cumplió. Décadas después, el oso vulgar y malhablado sigue siendo su mejor amigo, y su relación con su novia empieza a resentirse.",
+      "keywords": [
+        "talking teddy bear",
+        "friendship",
+        "boston, massachusetts",
+        "adult humor",
+        "wish",
+        "stuffed animal",
+        "slacker",
+        "relationship",
+        "magic",
+        "pop culture"
+      ],
+      "atoms": {
+        "frenetica": 0.2,
+        "agil": 0.7,
+        "pausada": 0.25,
+        "contemplativa": 0.02,
+        "reconfortante": 0.5,
+        "luminosa": 0.55,
+        "melancolica": 0.1,
+        "tensa": 0.12,
+        "inquietante": 0.03,
+        "sombria": 0.03,
+        "cruda": 0.05,
+        "onirica": 0.1,
+        "neon": 0.2,
+        "pastel": 0.1,
+        "calida": 0.5,
+        "monocromatica": 0,
+        "carga_emocional": 0.35,
+        "complejidad": 0.1,
+        "humor": 0.92,
+        "intimidad": 0.5,
+        "escala_epica": 0.1
+      },
+      "hook": "UN DESEO DE NIÑO DIO VIDA A SU OSO DE PELUCHE. AHORA, YA ADULTO, DEBE ELEGIR ENTRE SU MEJOR AMIGO GROSERO Y LA MUJER QUE AMA.",
+      "pillars": {
+        "ritmo": "ágil",
+        "tono": "gamberro y tierno",
+        "historia": "amistad que no madura",
+        "visual": "comedia cotidiana"
+      },
+      "providers": {
+        "CO": [
+          "Netflix"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T05:30:00.000Z"
+      },
+      "source": "tmdb_simulado"
+    },
+    {
+      "id": "the-batman-2022",
+      "tmdb_id": 414906,
+      "imdb_id": "tt1877830",
+      "title": "Batman",
+      "original_title": "The Batman",
+      "year": 2022,
+      "runtime_min": 176,
+      "genres": [
+        "Crimen",
+        "Misterio",
+        "Suspense"
+      ],
+      "directors": [
+        "Matt Reeves"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.7,
+      "vote_count": 11000,
+      "popularity": 85.1,
+      "poster_path": null,
+      "overview": "Durante su segundo año combatiendo el crimen en Gotham, Batman descubre una red de corrupción que conecta con su propia familia. Cuando un asesino en serie empieza a atacar a las élites de la ciudad, deberá seguir un rastro de pistas enigmáticas.",
+      "keywords": [
+        "based on comic",
+        "superhero",
+        "vigilante",
+        "serial killer",
+        "detective",
+        "gotham city",
+        "corruption",
+        "neo-noir",
+        "conspiracy",
+        "dc comics"
+      ],
+      "atoms": {
+        "frenetica": 0.2,
+        "agil": 0.3,
+        "pausada": 0.7,
+        "contemplativa": 0.3,
+        "reconfortante": 0,
+        "luminosa": 0.02,
+        "melancolica": 0.4,
+        "tensa": 0.85,
+        "inquietante": 0.65,
+        "sombria": 0.95,
+        "cruda": 0.5,
+        "onirica": 0.1,
+        "neon": 0.4,
+        "pastel": 0,
+        "calida": 0.15,
+        "monocromatica": 0.45,
+        "carga_emocional": 0.45,
+        "complejidad": 0.65,
+        "humor": 0.03,
+        "intimidad": 0.3,
+        "escala_epica": 0.6
+      },
+      "hook": "UN ASESINO ATACA A LAS ÉLITES DE UNA CIUDAD CORRUPTA Y DEJA ACERTIJOS. UN JUSTICIERO ENMASCARADO SIGUE EL RASTRO HASTA SU PROPIO PASADO.",
+      "pillars": {
+        "ritmo": "pausado y tenso",
+        "tono": "oscuro",
+        "historia": "investigación criminal",
+        "visual": "noir lluvioso"
+      },
+      "providers": {
+        "CO": [
+          "Max"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T05:30:00.000Z"
+      },
+      "source": "tmdb_simulado"
+    },
+    {
       "id": "the-dark-knight-2008",
       "tmdb_id": 155,
       "imdb_id": "tt0468569",
@@ -2410,6 +4061,317 @@
         "model": "claude-sonnet (subagente de Claude Code)",
         "prompt_version": "juez-v2.0",
         "tagged_at": "2026-11-05T03:43:24.313Z"
+      },
+      "source": "tmdb_simulado"
+    },
+    {
+      "id": "the-exorcist-1973",
+      "tmdb_id": 9552,
+      "imdb_id": "tt0070047",
+      "title": "El exorcista",
+      "original_title": "The Exorcist",
+      "year": 1973,
+      "runtime_min": 122,
+      "genres": [
+        "Terror"
+      ],
+      "directors": [
+        "William Friedkin"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.7,
+      "vote_count": 8000,
+      "popularity": 71.2,
+      "poster_path": null,
+      "overview": "Una actriz acude desesperada a dos sacerdotes cuando su hija de doce años empieza a mostrar un comportamiento inexplicable y aterrador. Un clásico del terror sobre la fe y la posesión.",
+      "keywords": [
+        "exorcism",
+        "possession",
+        "priest",
+        "demon",
+        "washington d.c.",
+        "based on novel or book",
+        "faith",
+        "mother daughter relationship",
+        "supernatural horror",
+        "classic"
+      ],
+      "atoms": {
+        "frenetica": 0.15,
+        "agil": 0.25,
+        "pausada": 0.65,
+        "contemplativa": 0.15,
+        "reconfortante": 0,
+        "luminosa": 0.02,
+        "melancolica": 0.3,
+        "tensa": 0.85,
+        "inquietante": 0.95,
+        "sombria": 0.9,
+        "cruda": 0.7,
+        "onirica": 0.2,
+        "neon": 0,
+        "pastel": 0,
+        "calida": 0.3,
+        "monocromatica": 0.3,
+        "carga_emocional": 0.65,
+        "complejidad": 0.35,
+        "humor": 0.02,
+        "intimidad": 0.7,
+        "escala_epica": 0.15
+      },
+      "hook": "UNA MADRE DESESPERADA PIDE AYUDA A DOS SACERDOTES CUANDO SU HIJA DE DOCE AÑOS EMPIEZA A COMPORTARSE DE UN MODO IMPOSIBLE DE EXPLICAR.",
+      "pillars": {
+        "ritmo": "lento y opresivo",
+        "tono": "aterrador",
+        "historia": "fe contra posesión",
+        "visual": "realismo gélido"
+      },
+      "providers": {
+        "CO": [
+          "Max"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T05:30:00.000Z"
+      },
+      "source": "tmdb_simulado"
+    },
+    {
+      "id": "the-godfather-1972",
+      "tmdb_id": 238,
+      "imdb_id": "tt0068646",
+      "title": "El padrino",
+      "original_title": "The Godfather",
+      "year": 1972,
+      "runtime_min": 175,
+      "genres": [
+        "Drama",
+        "Crimen"
+      ],
+      "directors": [
+        "Francis Ford Coppola"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 8.7,
+      "vote_count": 21000,
+      "popularity": 94.3,
+      "poster_path": null,
+      "overview": "Don Vito Corleone, patriarca de una familia de la mafia en Nueva York, debe traspasar el control de su imperio a su reacio hijo menor. Una saga sobre poder, lealtad y familia.",
+      "keywords": [
+        "based on novel or book",
+        "mafia",
+        "organized crime",
+        "new york city",
+        "italian american",
+        "patriarch",
+        "family business",
+        "loyalty",
+        "power struggle",
+        "1940s"
+      ],
+      "atoms": {
+        "frenetica": 0.08,
+        "agil": 0.2,
+        "pausada": 0.75,
+        "contemplativa": 0.4,
+        "reconfortante": 0.05,
+        "luminosa": 0.1,
+        "melancolica": 0.55,
+        "tensa": 0.6,
+        "inquietante": 0.2,
+        "sombria": 0.7,
+        "cruda": 0.3,
+        "onirica": 0.05,
+        "neon": 0,
+        "pastel": 0,
+        "calida": 0.9,
+        "monocromatica": 0.35,
+        "carga_emocional": 0.7,
+        "complejidad": 0.55,
+        "humor": 0.1,
+        "intimidad": 0.6,
+        "escala_epica": 0.7
+      },
+      "hook": "EL PATRIARCA DE UNA FAMILIA MAFIOSA DEBE TRASPASAR SU IMPERIO A UN HIJO QUE NUNCA QUISO ESE DESTINO. EL PODER SIEMPRE SE PAGA.",
+      "pillars": {
+        "ritmo": "pausado",
+        "tono": "solemne",
+        "historia": "herencia de poder",
+        "visual": "penumbra dorada"
+      },
+      "providers": {
+        "CO": [
+          "Prime Video"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T05:30:00.000Z"
+      },
+      "source": "tmdb_simulado"
+    },
+    {
+      "id": "the-godfather-part-ii-1974",
+      "tmdb_id": 240,
+      "imdb_id": "tt0071562",
+      "title": "El padrino II",
+      "original_title": "The Godfather Part II",
+      "year": 1974,
+      "runtime_min": 202,
+      "genres": [
+        "Drama",
+        "Crimen"
+      ],
+      "directors": [
+        "Francis Ford Coppola"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 8.6,
+      "vote_count": 12500,
+      "popularity": 61.5,
+      "poster_path": null,
+      "overview": "Michael Corleone consolida el poder de la familia mientras se retrata la juventud de su padre, Vito, en la Sicilia y la Nueva York de principios de siglo. Dos historias paralelas sobre el precio del poder.",
+      "keywords": [
+        "mafia",
+        "sequel",
+        "organized crime",
+        "sicily, italy",
+        "flashback",
+        "havana, cuba",
+        "immigrant",
+        "betrayal",
+        "family",
+        "1950s"
+      ],
+      "atoms": {
+        "frenetica": 0.05,
+        "agil": 0.15,
+        "pausada": 0.8,
+        "contemplativa": 0.5,
+        "reconfortante": 0.03,
+        "luminosa": 0.1,
+        "melancolica": 0.7,
+        "tensa": 0.6,
+        "inquietante": 0.25,
+        "sombria": 0.8,
+        "cruda": 0.3,
+        "onirica": 0.1,
+        "neon": 0,
+        "pastel": 0,
+        "calida": 0.85,
+        "monocromatica": 0.3,
+        "carga_emocional": 0.75,
+        "complejidad": 0.7,
+        "humor": 0.05,
+        "intimidad": 0.5,
+        "escala_epica": 0.8
+      },
+      "hook": "UN HOMBRE CONSOLIDA SU PODER MIENTRAS SE RECUERDA CÓMO SU PADRE LLEGÓ A SER LEYENDA. DOS ÉPOCAS, UN MISMO PRECIO.",
+      "pillars": {
+        "ritmo": "pausado",
+        "tono": "sombrío",
+        "historia": "poder y soledad",
+        "visual": "épocas doradas"
+      },
+      "providers": {
+        "CO": [
+          "Prime Video"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T05:30:00.000Z"
+      },
+      "source": "tmdb_simulado"
+    },
+    {
+      "id": "the-godfather-part-iii-1990",
+      "tmdb_id": 242,
+      "imdb_id": "tt0099674",
+      "title": "El padrino III",
+      "original_title": "The Godfather Part III",
+      "year": 1990,
+      "runtime_min": 162,
+      "genres": [
+        "Crimen",
+        "Drama"
+      ],
+      "directors": [
+        "Francis Ford Coppola"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.4,
+      "vote_count": 6000,
+      "popularity": 40.8,
+      "poster_path": null,
+      "overview": "Ya mayor, Michael Corleone busca legitimar los negocios de su familia y redimirse de su pasado, pero nuevas alianzas y viejos enemigos lo arrastran de nuevo al mundo criminal.",
+      "keywords": [
+        "mafia",
+        "sequel",
+        "organized crime",
+        "vatican",
+        "redemption",
+        "sicily, italy",
+        "aging",
+        "guilt",
+        "banking",
+        "1970s"
+      ],
+      "atoms": {
+        "frenetica": 0.1,
+        "agil": 0.25,
+        "pausada": 0.7,
+        "contemplativa": 0.35,
+        "reconfortante": 0.05,
+        "luminosa": 0.1,
+        "melancolica": 0.8,
+        "tensa": 0.55,
+        "inquietante": 0.2,
+        "sombria": 0.65,
+        "cruda": 0.2,
+        "onirica": 0.1,
+        "neon": 0,
+        "pastel": 0,
+        "calida": 0.75,
+        "monocromatica": 0.2,
+        "carga_emocional": 0.75,
+        "complejidad": 0.6,
+        "humor": 0.05,
+        "intimidad": 0.5,
+        "escala_epica": 0.6
+      },
+      "hook": "ENVEJECIDO Y CARGADO DE CULPA, UN JEFE CRIMINAL BUSCA LEGITIMAR SU FAMILIA Y REDIMIRSE, PERO SU PASADO NO LO DEJA IR.",
+      "pillars": {
+        "ritmo": "pausado",
+        "tono": "crepuscular",
+        "historia": "redención imposible",
+        "visual": "sombras italianas"
+      },
+      "providers": {
+        "CO": [
+          "Prime Video"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T05:30:00.000Z"
       },
       "source": "tmdb_simulado"
     },
@@ -2564,6 +4526,85 @@
         "model": "claude-sonnet (subagente de Claude Code)",
         "prompt_version": "juez-v2.0",
         "tagged_at": "2026-11-05T03:43:24.308Z"
+      },
+      "source": "tmdb_simulado"
+    },
+    {
+      "id": "the-pope-s-exorcist-2023",
+      "tmdb_id": 9900410,
+      "imdb_id": null,
+      "title": "El exorcista del papa",
+      "original_title": "The Pope's Exorcist",
+      "year": 2023,
+      "runtime_min": 103,
+      "genres": [
+        "Terror",
+        "Suspense"
+      ],
+      "directors": [
+        "Julius Avery"
+      ],
+      "countries": [
+        "US",
+        "GB",
+        "ES"
+      ],
+      "original_language": "en",
+      "vote_average": 7,
+      "vote_count": 2500,
+      "popularity": 62.7,
+      "poster_path": null,
+      "overview": "Basada en los archivos del padre Gabriele Amorth, jefe de exorcistas del Vaticano. Investiga la posesión de un niño y descubre un secreto que la Iglesia ha intentado mantener oculto durante siglos.",
+      "keywords": [
+        "exorcism",
+        "possession",
+        "priest",
+        "vatican",
+        "demon",
+        "based on true story",
+        "spain",
+        "supernatural horror",
+        "catholic church"
+      ],
+      "atoms": {
+        "frenetica": 0.35,
+        "agil": 0.55,
+        "pausada": 0.3,
+        "contemplativa": 0.03,
+        "reconfortante": 0.03,
+        "luminosa": 0.05,
+        "melancolica": 0.1,
+        "tensa": 0.7,
+        "inquietante": 0.7,
+        "sombria": 0.65,
+        "cruda": 0.2,
+        "onirica": 0.15,
+        "neon": 0.05,
+        "pastel": 0,
+        "calida": 0.4,
+        "monocromatica": 0.1,
+        "carga_emocional": 0.2,
+        "complejidad": 0.2,
+        "humor": 0.25,
+        "intimidad": 0.3,
+        "escala_epica": 0.3
+      },
+      "hook": "UN EXORCISTA DEL VATICANO INVESTIGA LA POSESIÓN DE UN NIÑO Y DESCUBRE UN SECRETO QUE LA IGLESIA LLEVA SIGLOS OCULTANDO.",
+      "pillars": {
+        "ritmo": "ágil",
+        "tono": "sobresaltado",
+        "historia": "demonio y secreto",
+        "visual": "abadía en sombras"
+      },
+      "providers": {
+        "CO": [
+          "Netflix"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T05:30:00.000Z"
       },
       "source": "tmdb_simulado"
     },
@@ -2960,6 +5001,165 @@
       "source": "tmdb_simulado"
     },
     {
+      "id": "toy-story-1995",
+      "tmdb_id": 862,
+      "imdb_id": "tt0114709",
+      "title": "Toy Story",
+      "original_title": "Toy Story",
+      "year": 1995,
+      "runtime_min": 81,
+      "genres": [
+        "Animación",
+        "Familia",
+        "Comedia"
+      ],
+      "directors": [
+        "John Lasseter"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 8,
+      "vote_count": 18500,
+      "popularity": 73.9,
+      "poster_path": null,
+      "overview": "Woody, un vaquero de juguete, es el favorito de su dueño Andy hasta que llega Buzz Lightyear, un flamante guardián espacial. Los celos y un viaje accidental fuera de casa obligarán a los dos a trabajar juntos para volver con Andy.",
+      "keywords": [
+        "toy",
+        "friendship",
+        "rivalry",
+        "cowboy",
+        "space ranger",
+        "jealousy",
+        "boy",
+        "anthropomorphism",
+        "computer animation",
+        "buddy"
+      ],
+      "atoms": {
+        "frenetica": 0.3,
+        "agil": 0.8,
+        "pausada": 0.15,
+        "contemplativa": 0.03,
+        "reconfortante": 0.85,
+        "luminosa": 0.85,
+        "melancolica": 0.2,
+        "tensa": 0.25,
+        "inquietante": 0.05,
+        "sombria": 0.03,
+        "cruda": 0,
+        "onirica": 0.1,
+        "neon": 0.3,
+        "pastel": 0.4,
+        "calida": 0.7,
+        "monocromatica": 0,
+        "carga_emocional": 0.6,
+        "complejidad": 0.12,
+        "humor": 0.75,
+        "intimidad": 0.45,
+        "escala_epica": 0.4
+      },
+      "hook": "UN VAQUERO DE JUGUETE PIERDE EL PUESTO DE FAVORITO CUANDO LLEGA UN GUARDIÁN ESPACIAL. LOS DOS TENDRÁN QUE UNIRSE PARA VOLVER A CASA.",
+      "pillars": {
+        "ritmo": "ágil",
+        "tono": "cálido",
+        "historia": "rivales que se vuelven amigos",
+        "visual": "juguetes de colores"
+      },
+      "providers": {
+        "CO": [
+          "Disney+"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T05:30:00.000Z"
+      },
+      "source": "tmdb_simulado"
+    },
+    {
+      "id": "toy-story-2-1999",
+      "tmdb_id": 863,
+      "imdb_id": "tt0120363",
+      "title": "Toy Story 2",
+      "original_title": "Toy Story 2",
+      "year": 1999,
+      "runtime_min": 92,
+      "genres": [
+        "Animación",
+        "Familia",
+        "Comedia"
+      ],
+      "directors": [
+        "John Lasseter",
+        "Lee Unkrich",
+        "Ash Brannon"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.6,
+      "vote_count": 14000,
+      "popularity": 61.3,
+      "poster_path": null,
+      "overview": "Cuando Woody es secuestrado por un coleccionista de juguetes, Buzz y sus amigos emprenden una misión de rescate. Mientras tanto, Woody descubre sus orígenes y debe decidir qué clase de juguete quiere ser.",
+      "keywords": [
+        "toy",
+        "rescue",
+        "sequel",
+        "collector",
+        "friendship",
+        "cowboy",
+        "airport",
+        "anthropomorphism",
+        "computer animation"
+      ],
+      "atoms": {
+        "frenetica": 0.35,
+        "agil": 0.8,
+        "pausada": 0.1,
+        "contemplativa": 0.03,
+        "reconfortante": 0.85,
+        "luminosa": 0.8,
+        "melancolica": 0.4,
+        "tensa": 0.25,
+        "inquietante": 0.05,
+        "sombria": 0.03,
+        "cruda": 0,
+        "onirica": 0.1,
+        "neon": 0.3,
+        "pastel": 0.4,
+        "calida": 0.7,
+        "monocromatica": 0,
+        "carga_emocional": 0.75,
+        "complejidad": 0.15,
+        "humor": 0.75,
+        "intimidad": 0.4,
+        "escala_epica": 0.5
+      },
+      "hook": "UN JUGUETE ES SECUESTRADO POR UN COLECCIONISTA. SUS AMIGOS LO RESCATAN MIENTRAS ÉL DECIDE QUÉ CLASE DE JUGUETE QUIERE SER.",
+      "pillars": {
+        "ritmo": "ágil",
+        "tono": "tierno",
+        "historia": "rescate y pertenencia",
+        "visual": "juguetes de colores"
+      },
+      "providers": {
+        "CO": [
+          "Disney+"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T05:30:00.000Z"
+      },
+      "source": "tmdb_simulado"
+    },
+    {
       "id": "toy-story-3-2010",
       "tmdb_id": 10193,
       "imdb_id": "tt0435761",
@@ -3035,6 +5235,245 @@
         "model": "claude-sonnet (subagente de Claude Code)",
         "prompt_version": "juez-v2.0",
         "tagged_at": "2026-11-05T05:00:00.000Z"
+      },
+      "source": "tmdb_simulado"
+    },
+    {
+      "id": "watchmen-2009",
+      "tmdb_id": 13183,
+      "imdb_id": "tt0409459",
+      "title": "Watchmen: Los vigilantes",
+      "original_title": "Watchmen",
+      "year": 2009,
+      "runtime_min": 162,
+      "genres": [
+        "Acción",
+        "Misterio",
+        "Ciencia ficción"
+      ],
+      "directors": [
+        "Zack Snyder"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.2,
+      "vote_count": 9000,
+      "popularity": 38.4,
+      "poster_path": null,
+      "overview": "En una Norteamérica alternativa de 1985, los superhéroes están proscritos y la Guerra Fría amenaza con una catástrofe nuclear. Cuando uno de sus antiguos compañeros es asesinado, un vigilante enmascarado investiga una conspiración que puede cambiar el mundo.",
+      "keywords": [
+        "superhero",
+        "based on graphic novel",
+        "alternate history",
+        "cold war",
+        "vigilante",
+        "nuclear war",
+        "conspiracy",
+        "murder mystery",
+        "dystopia",
+        "1980s"
+      ],
+      "atoms": {
+        "frenetica": 0.35,
+        "agil": 0.4,
+        "pausada": 0.55,
+        "contemplativa": 0.2,
+        "reconfortante": 0,
+        "luminosa": 0.03,
+        "melancolica": 0.45,
+        "tensa": 0.65,
+        "inquietante": 0.5,
+        "sombria": 0.85,
+        "cruda": 0.5,
+        "onirica": 0.25,
+        "neon": 0.5,
+        "pastel": 0,
+        "calida": 0.3,
+        "monocromatica": 0.2,
+        "carga_emocional": 0.4,
+        "complejidad": 0.8,
+        "humor": 0.1,
+        "intimidad": 0.3,
+        "escala_epica": 0.75
+      },
+      "hook": "EN UN 1985 ALTERNATIVO, LOS SUPERHÉROES ESTÁN PROSCRITOS Y LA GUERRA FRÍA AL BORDE DEL FIN. UN ASESINATO DESTAPA UNA CONSPIRACIÓN MUNDIAL.",
+      "pillars": {
+        "ritmo": "denso",
+        "tono": "cínico",
+        "historia": "conspiración de héroes caídos",
+        "visual": "cómic sombrío"
+      },
+      "providers": {
+        "CO": [
+          "Max"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T05:30:00.000Z"
+      },
+      "source": "tmdb_simulado"
+    },
+    {
+      "id": "world-war-z-2013",
+      "tmdb_id": 72190,
+      "imdb_id": "tt0816711",
+      "title": "Guerra Mundial Z",
+      "original_title": "World War Z",
+      "year": 2013,
+      "runtime_min": 116,
+      "genres": [
+        "Acción",
+        "Terror",
+        "Ciencia ficción"
+      ],
+      "directors": [
+        "Marc Forster"
+      ],
+      "countries": [
+        "US",
+        "MT"
+      ],
+      "original_language": "en",
+      "vote_average": 6.8,
+      "vote_count": 16000,
+      "popularity": 52.7,
+      "poster_path": null,
+      "overview": "Un exinvestigador de la ONU recorre el mundo en busca del origen de una pandemia que convierte a los infectados en criaturas violentas. Su misión es encontrar una forma de detenerla antes de que la civilización colapse.",
+      "keywords": [
+        "zombie",
+        "pandemic",
+        "apocalypse",
+        "based on novel or book",
+        "virus",
+        "united nations",
+        "survival",
+        "epidemic",
+        "family",
+        "post-apocalyptic future"
+      ],
+      "atoms": {
+        "frenetica": 0.85,
+        "agil": 0.7,
+        "pausada": 0.1,
+        "contemplativa": 0.02,
+        "reconfortante": 0.03,
+        "luminosa": 0.05,
+        "melancolica": 0.15,
+        "tensa": 0.9,
+        "inquietante": 0.4,
+        "sombria": 0.55,
+        "cruda": 0.4,
+        "onirica": 0.03,
+        "neon": 0.05,
+        "pastel": 0,
+        "calida": 0.3,
+        "monocromatica": 0.15,
+        "carga_emocional": 0.3,
+        "complejidad": 0.3,
+        "humor": 0.05,
+        "intimidad": 0.1,
+        "escala_epica": 0.9
+      },
+      "hook": "UNA PANDEMIA CONVIERTE A LOS INFECTADOS EN HORDAS VIOLENTAS. UN EXINVESTIGADOR RECORRE EL MUNDO BUSCANDO FRENARLA ANTES DEL COLAPSO.",
+      "pillars": {
+        "ritmo": "vertiginoso",
+        "tono": "angustiante",
+        "historia": "carrera contra la pandemia",
+        "visual": "caos global"
+      },
+      "providers": {
+        "CO": [
+          "Prime Video"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T05:30:00.000Z"
+      },
+      "source": "tmdb_simulado"
+    },
+    {
+      "id": "x-men-days-of-future-past-2014",
+      "tmdb_id": 127585,
+      "imdb_id": "tt1877832",
+      "title": "X-Men: Días del futuro pasado",
+      "original_title": "X-Men: Days of Future Past",
+      "year": 2014,
+      "runtime_min": 132,
+      "genres": [
+        "Acción",
+        "Aventura",
+        "Ciencia ficción"
+      ],
+      "directors": [
+        "Bryan Singer"
+      ],
+      "countries": [
+        "US",
+        "GB"
+      ],
+      "original_language": "en",
+      "vote_average": 7.5,
+      "vote_count": 15000,
+      "popularity": 71.3,
+      "poster_path": null,
+      "overview": "En un futuro sombrío, los mutantes son cazados por unos centinelas invencibles. Wolverine viaja al pasado para unir a los jóvenes Profesor X y Magneto e intentar cambiar el rumbo de la historia.",
+      "keywords": [
+        "superhero",
+        "mutant",
+        "time travel",
+        "based on comic",
+        "dystopia",
+        "alternate timeline",
+        "shape shifter",
+        "1970s",
+        "vietnam war",
+        "aftercreditsstinger"
+      ],
+      "atoms": {
+        "frenetica": 0.6,
+        "agil": 0.75,
+        "pausada": 0.15,
+        "contemplativa": 0.03,
+        "reconfortante": 0.1,
+        "luminosa": 0.25,
+        "melancolica": 0.3,
+        "tensa": 0.65,
+        "inquietante": 0.15,
+        "sombria": 0.45,
+        "cruda": 0.1,
+        "onirica": 0.1,
+        "neon": 0.3,
+        "pastel": 0.05,
+        "calida": 0.45,
+        "monocromatica": 0.1,
+        "carga_emocional": 0.4,
+        "complejidad": 0.6,
+        "humor": 0.25,
+        "intimidad": 0.15,
+        "escala_epica": 0.85
+      },
+      "hook": "EN UN FUTURO DEVASTADO, UN MUTANTE VIAJA AL PASADO PARA UNIR A DOS ANTIGUOS ENEMIGOS E INTENTAR CAMBIAR EL RUMBO DE LA HISTORIA.",
+      "pillars": {
+        "ritmo": "vibrante",
+        "tono": "épico",
+        "historia": "viaje al pasado",
+        "visual": "ciencia ficción setentera"
+      },
+      "providers": {
+        "CO": [
+          "Disney+"
+        ]
+      },
+      "tagger": {
+        "model": "claude-sonnet (subagente de Claude Code)",
+        "prompt_version": "juez-v2.0",
+        "tagged_at": "2026-11-05T05:30:00.000Z"
       },
       "source": "tmdb_simulado"
     },

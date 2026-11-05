@@ -90,7 +90,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;margin:0;cu
         <sc-if value="{{c.noImg}}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;background:{{c.gbg}};overflow:hidden"><span style="position:absolute;left:0;right:0;top:9%;text-align:center;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:22px;letter-spacing:.45em;color:rgba(244,231,208,.85);padding:0 8%">{{c.T}}</span><div style="position:absolute;left:-10%;right:-10%;bottom:-6%;height:48%;background:{{c.p1}};border-radius:50% 50% 0 0;filter:brightness(.55)"></div><div style="position:absolute;left:40%;bottom:30%;width:9%;height:22%;background:rgba(0,0,0,.75);border-radius:40% 40% 4px 4px"></div></div></sc-if>
         <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,20,16,.55) 0%,rgba(26,20,16,0) 20%,rgba(26,20,16,0) 40%,rgba(26,20,17,.82) 70%,#1a1411 100%);pointer-events:none"></div>
         <div style="position:absolute;left:14px;right:14px;top:14px;display:flex;justify-content:space-between;align-items:center">
-          <span style="height:30px;box-sizing:border-box;border-radius:15px;background:#f2b544;color:#1a1411;font-weight:800;font-size:13px;display:flex;align-items:center;gap:7px;padding:0 12px 0 5px"><span style="width:20px;height:20px;border-radius:10px;background:#1a1411;box-shadow:inset 0 0 0 4px #1a1411,inset 0 0 0 6px #f2b544"></span>{{c.match}} % contigo</span>
+          <span style="height:30px;box-sizing:border-box;border-radius:15px;background:#f2b544;color:#1a1411;font-weight:800;font-size:13px;display:flex;align-items:center;gap:7px;padding:0 12px 0 5px"><span style="width:20px;height:20px;border-radius:10px;background:#1a1411;box-shadow:inset 0 0 0 4px #1a1411,inset 0 0 0 6px #f2b544"></span>{{c.matchTxt}}</span>
           <button onPointerDown="{{stop}}" onPointerUp="{{stop}}" onClick="{{toggleList}}" style="height:30px;box-sizing:border-box;border-radius:15px;background:{{c.lbg}};color:{{c.lfg}};font-weight:700;font-size:12px;display:flex;align-items:center;gap:6px;padding:0 12px 0 9px;transition:background .25s">
             <sc-if value="{{c.inList}}" hint-placeholder-val="{{ true }}"><img src="_blob/7fb4649c4d0200ce341a5f8738962eb0.svg" alt="" width="16" height="16"></sc-if>{{c.lText}}</button>
         </div>
@@ -147,7 +147,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;margin:0;cu
       </div>
       <div style="position:absolute;left:20px;top:186px;width:310px;height:96px;box-sizing:border-box;border-radius:18px;background:#221a15;border:1px solid #3a2c22;display:flex;align-items:center;gap:12px;padding:0 12px">
         <div style="flex:none;width:52px;height:76px;box-sizing:border-box;border-radius:6px;overflow:hidden;border:1.5px solid #f4e7d0;background:{{best.bgc}}"><sc-if value="{{best.hasImg}}" hint-placeholder-val="{{ true }}"><img src="{{best.img}}" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></sc-if></div>
-        <div style="flex:1;min-width:0"><p style="margin:0;font-weight:800;font-size:10px;letter-spacing:1px;color:#f2b544;text-transform:uppercase">Tu match del mazo</p><p style="margin:2px 0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:24px;line-height:24px;text-transform:uppercase">{{best.t}}</p><p style="margin:0;font-weight:600;font-size:11px;color:#bfa98a">{{best.match}} % contigo · {{best.dur}}</p></div>
+        <div style="flex:1;min-width:0"><p style="margin:0;font-weight:800;font-size:10px;letter-spacing:1px;color:#f2b544;text-transform:uppercase">Tu match del mazo</p><p style="margin:2px 0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:24px;line-height:24px;text-transform:uppercase">{{best.t}}</p><p style="margin:0;font-weight:600;font-size:11px;color:#bfa98a">{{best.matchTxt}}{{best.dur}}</p></div>
         <button onClick="{{openBest}}" style="height:30px;padding:0 14px;border-radius:15px;background:#f2b544;color:#1a1411;font-weight:800;font-size:12px">Verla</button>
       </div>
       <p style="position:absolute;left:20px;top:300px;margin:0;font-weight:800;font-size:10px;letter-spacing:1px;color:#d9c7a8;text-transform:uppercase">¿Y ahora qué?</p>
@@ -201,7 +201,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;margin:0;cu
               <sc-if value="{{s.hasImg}}" hint-placeholder-val="{{ true }}"><img src="{{s.img}}" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></sc-if>
               <span style="position:absolute;left:6px;top:6px;width:24px;height:24px;box-sizing:border-box;border-radius:12px;background:#f2b544;border:1.5px solid #1a1411;display:flex;align-items:center;justify-content:center"><img src="_blob/a73add2e38d3041673a7f504159c4235.svg" alt="" width="13" height="13"></span>
             </div>
-            <b style="display:block;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:15px;line-height:15px;text-transform:uppercase;margin-top:6px">{{s.t}}</b><small style="font-weight:600;font-size:10.5px;color:#8e6f62">{{s.match}} % contigo</small>
+            <b style="display:block;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:15px;line-height:15px;text-transform:uppercase;margin-top:6px">{{s.t}}</b><small style="font-weight:600;font-size:10.5px;color:#8e6f62">{{s.matchTxt}}</small>
           </button>
         </sc-for>
       </div>
@@ -257,11 +257,13 @@ renderVals() {
   const inList = S.inList || {};
   const moodName = (MOODS.find((m) => m[0] === mood) || MOODS[2])[1];
 
+  // Con el motor (modo demo) no hay porcentajes: el principio 1 prohíbe mostrar afinidad en números.
+  const pct = (m) => (m ? m + ' % contigo' : 'de tu mano');
   let c = { isFilm: false, isTitle: false, plats: [] };
   if (item && item.kind === 'film') {
     const f = FILMS[item.id];
     const il = inList[item.id] !== false;
-    c = Object.assign({ isFilm: true, isTitle: false, t: f.t, T: f.t.toUpperCase(), match: f.match, tsize: f.t.length > 14 ? 34 : 46,
+    c = Object.assign({ isFilm: true, isTitle: false, t: f.t, T: f.t.toUpperCase(), match: f.match, matchTxt: pct(f.match), tsize: f.t.length > 14 ? 34 : 46,
       meta: f.dur + ' · ' + f.g[0] + ' · ' + f.dir, why: f.why,
       kicker: kind === 'super' ? 'de tu mazo super likes' : 'tu película para esta noche',
       inList: il, lText: il ? 'En tu lista' : '+ A tu lista', lbg: il ? 'rgba(26,20,17,.82)' : 'rgba(244,231,208,.92)', lfg: il ? '#f4e7d0' : '#1a1411',
@@ -304,7 +306,7 @@ renderVals() {
     supers, bumpCls: S.bump ? 'kbump' : '',
     deckLabel: kind === 'super' ? 'Super likes' : moodName, endCount: films.length,
     nList: liked.length, nOtro: noped.length, nSup: S.supAdded || 0,
-    best: Object.assign({ t: bf.t, match: bf.match, dur: bf.dur }, vis(bestId)),
+    best: Object.assign({ t: bf.t, match: bf.match, matchTxt: bf.match ? pct(bf.match) + ' · ' : '', dur: bf.dur }, vis(bestId)),
     openBest: () => this._openDonde(bestId, null, false),
     restart: () => this._setMood(mood, true),
     stop: (e) => { e.stopPropagation(); },
@@ -330,7 +332,7 @@ renderVals() {
     plats: PLATS.map((p, i) => { const on = i === plat; return { n: p.n, s: p.s, logo: p.logo, sc: p.rent ? '#8e6f62' : '#2f6b4f', op: p.rent ? 0.78 : 1, bd: on ? '2px solid #e8642c' : '1.5px solid #8e6f62', bg: on ? '#fff7ea' : 'rgba(255,255,255,.25)', rc: on ? '#e8642c' : '#8e6f62', dot: on ? 1 : 0, pick: () => this.setState({ plat: i }) }; }),
     openLabel: PLATS[plat].rent ? 'Alquilar en ' + PLATS[plat].n + ' · $14.900' : 'Abrir en ' + PLATS[plat].n + ' ↗',
     slChips: ['Todas', 'Sufrir bonito', 'Salir pensando'].map((n) => ({ n, bg: n === slF ? '#1a1411' : 'transparent', fg: n === slF ? '#f4e7d0' : '#1a1411', pick: () => this.setState({ slFilter: n }) })),
-    slFilms: slList.map((id) => Object.assign({ t: FILMS[id].t, match: FILMS[id].match, open: () => { this._closeSheet(); setTimeout(() => this._openDonde(id, null, false), 360); } }, vis(id))),
+    slFilms: slList.map((id) => Object.assign({ t: FILMS[id].t, match: FILMS[id].match, matchTxt: pct(FILMS[id].match), open: () => { this._closeSheet(); setTimeout(() => this._openDonde(id, null, false), 360); } }, vis(id))),
     slCount: slList.length > 3 ? '+' + (slList.length - 3) + ' más · desliza para verlas' : slList.length + ' en este filtro',
     playSuper: () => { this._closeSheet(); const fs = Array.from(new Set(superFilms)); this.setState({ kind: 'super', deckName: 'Super likes', items: fs.map((id) => ({ kind: 'film', id })), idx: 0, liked: [], noped: [], supAdded: 0, deal: true }); },
     hasToast: !!S.toast, toast: S.toast || '',

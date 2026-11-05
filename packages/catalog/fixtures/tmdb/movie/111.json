@@ -1,0 +1,205 @@
+{
+  "_simulado": true,
+  "_id_verificado": true,
+  "id": 111,
+  "imdb_id": "tt0086250",
+  "title": "Scarface: El precio del poder",
+  "original_title": "Scarface",
+  "original_language": "en",
+  "release_date": "1983-12-09",
+  "runtime": 170,
+  "status": "Released",
+  "adult": false,
+  "genres": [
+    {
+      "id": 80,
+      "name": "Crimen"
+    },
+    {
+      "id": 18,
+      "name": "Drama"
+    }
+  ],
+  "overview": "Tony Montana, un refugiado cubano en Miami, se abre camino en el mundo del narcotráfico con ambición y violencia. Su ascenso meteórico lo lleva a la cima, pero el poder tiene un precio.",
+  "tagline": "Él lo quería todo y lo consiguió.",
+  "vote_average": 8.2,
+  "vote_count": 12000,
+  "popularity": 44.8,
+  "poster_path": null,
+  "backdrop_path": null,
+  "production_countries": [
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    }
+  ],
+  "spoken_languages": [
+    {
+      "iso_639_1": "en",
+      "english_name": "English",
+      "name": "English"
+    },
+    {
+      "iso_639_1": "es",
+      "english_name": "Spanish",
+      "name": "Español"
+    }
+  ],
+  "budget": 25000000,
+  "revenue": 66000000,
+  "credits": {
+    "cast": [
+      {
+        "id": null,
+        "name": "Al Pacino",
+        "character": "Tony Montana",
+        "order": 0
+      },
+      {
+        "id": null,
+        "name": "Michelle Pfeiffer",
+        "character": "Elvira Hancock",
+        "order": 1
+      },
+      {
+        "id": null,
+        "name": "Steven Bauer",
+        "character": "Manny Ribera",
+        "order": 2
+      },
+      {
+        "id": null,
+        "name": "Mary Elizabeth Mastrantonio",
+        "character": "Gina Montana",
+        "order": 3
+      },
+      {
+        "id": null,
+        "name": "Robert Loggia",
+        "character": "Frank Lopez",
+        "order": 4
+      },
+      {
+        "id": null,
+        "name": "F. Murray Abraham",
+        "character": "Omar Suárez",
+        "order": 5
+      },
+      {
+        "id": null,
+        "name": "Paul Shenar",
+        "character": "Alejandro Sosa",
+        "order": 6
+      },
+      {
+        "id": null,
+        "name": "Harris Yulin",
+        "character": "Mel Bernstein",
+        "order": 7
+      }
+    ],
+    "crew": [
+      {
+        "id": null,
+        "name": "Brian De Palma",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "Oliver Stone",
+        "job": "Screenplay",
+        "department": "Writing"
+      },
+      {
+        "id": null,
+        "name": "Giorgio Moroder",
+        "job": "Original Music Composer",
+        "department": "Sound"
+      }
+    ]
+  },
+  "keywords": {
+    "keywords": [
+      {
+        "id": null,
+        "name": "cuban"
+      },
+      {
+        "id": null,
+        "name": "miami"
+      },
+      {
+        "id": null,
+        "name": "drug dealer"
+      },
+      {
+        "id": null,
+        "name": "cocaine"
+      },
+      {
+        "id": null,
+        "name": "organized crime"
+      },
+      {
+        "id": null,
+        "name": "gangster"
+      },
+      {
+        "id": null,
+        "name": "american dream"
+      },
+      {
+        "id": null,
+        "name": "remake"
+      },
+      {
+        "id": null,
+        "name": "1980s"
+      },
+      {
+        "id": null,
+        "name": "drug cartel"
+      }
+    ]
+  },
+  "reviews": {
+    "page": 1,
+    "total_results": 2,
+    "results": [
+      {
+        "author": "godfatherfanatic",
+        "author_details": {
+          "rating": 9
+        },
+        "content": "Pacino is magnetic and excessive in the best possible way. Loud, violent, and endlessly quotable, it still feels dangerous decades later.",
+        "created_at": "2015-03-14T12:09:51.000Z",
+        "id": "5504240ec3a3682d7b000a7e"
+      },
+      {
+        "author": "tardes_de_cine",
+        "author_details": {
+          "rating": 9
+        },
+        "content": "Un clásico del cine de gánsteres. Larga pero nunca aburrida, con una banda sonora y una puesta en escena que definieron una época.",
+        "created_at": "2019-08-27T23:41:16.000Z",
+        "id": "5d65b2f40e0a26534e7c91d0"
+      }
+    ]
+  },
+  "watch/providers": {
+    "results": {
+      "CO": {
+        "link": "https://www.themoviedb.org/movie/111/watch?locale=CO",
+        "flatrate": [
+          {
+            "provider_id": 8,
+            "provider_name": "Netflix",
+            "logo_path": null,
+            "display_priority": 1
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,12 +1,12 @@
 # Progreso
 
 ## Estado actual
-- Fase: F6 · Documentación y cierre
-- Última tarea terminada: F6 · documentación consolidada y pull request abierto
-- Siguiente tarea: ninguna del plan. Pendientes de Camilo en "Para revisar cuando vuelvas"
-- Pull request: https://github.com/montenegroc597-web/Prototipo-Kinoo/pull/1
-- Bloqueos: **F4 · sin `TMDB_API_KEY` y con la red bloqueada a `api.themoviedb.org`**. El catálogo quedó en 34 películas de semilla manual. Para resolverlo, Camilo debe crear la clave, guardarla como variable de entorno y permitir la red a `api.themoviedb.org` e `image.tmdb.org` (ver `guias/catalogo.md`)
-- Última actualización: 2026-11-05 03:40
+- Fase: F7 · Reorganización front/back, nube y simulación de TMDB
+- Última tarea terminada: F7 · estructura nueva, base de datos portátil, API HTTP, simulación de TMDB con 69 películas, pósters y documentación
+- Siguiente tarea: revisión de Camilo; subir los pósters que faltan (ver abajo)
+- Bloqueos: sin `TMDB_API_KEY` (el catálogo usa la simulación de TMDB, que corre el mismo pipeline sin red)
+- Pull requests: montenegroc597-web/Prototipo-Kinoo#1 (fusionado), montenegroc597-web/Prototipo-Kinoo#2 (arreglo del despliegue), y el de F7
+- Última actualización: 2026-11-05 05:40
 
 ## Fases
 | Fase | Estado | Comprobación |
@@ -17,6 +17,7 @@
 | F3 | ✅ | 35/35 unitarias del motor; 5/5 pruebas de simulación (Aprende 6,4× el azar; moods coseno 0,64 y 20 % compartido; cambio en 22 eventos en el peor caso; 0 explicaciones con números; 181/181 mazos respetan la receta). Total del repo 51/51 |
 | F4 | ✅ (semilla) | 34 películas válidas (no 300: bloqueo anotado); 0 errores de esquema y frases gancho; dispersión ≥ 0,21 en los 21 átomos; 0 contradicciones; error de anclas 0,052 (anclas provisionales); CSV de 20 para revisión |
 | F5 | ✅ | 56/56 unitarias (incluye API de punta a punta sobre PGlite con RLS); 3/3 e2e: mazo del motor → guardar → Ver → "Me encantó" cambia el perfil; sin motor, el prototipo sigue igual; 86/86 rutas |
+| F7 | ✅ | 116/116 unitarias e integración (migraciones y RLS con los dos proveedores, API HTTP con JWT, simulación de TMDB); 3/3 e2e; 86/86 rutas; lint y tipos limpios |
 | F6 | ✅ | Documentos enlazados entre sí (0 enlaces rotos); PR abierto: https://github.com/montenegroc597-web/Prototipo-Kinoo/pull/1 (sin fusionar). **Plan completo** |
 
 ## Inventario del repositorio (F0)
@@ -38,6 +39,8 @@
 - 2026-11-05 06:05 · F5 · `packages/api`: un solo servicio para las Edge Functions y el modo demo. Cinco endpoints en `supabase/functions/` (events, deck, watch, onboarding). Prueba de punta a punta contra PGlite con RLS.
 - 2026-11-05 06:40 · F5 · Modo demo (`_kinoo/kinoo-demo.js`) y conexión de `Flujo1_Descubrir`, `FlujoV1_Feed` y `FlujoV4_Calificar`. Ver `adr/0003-api-y-modo-demo.md` y `guias/contrato-api.md`.
 - 2026-11-05 07:00 · F6 · `docs/README.md`, guía para ajustar el algoritmo, guía de despliegue, README raíz. Pull request hacia `main` (sin fusionar).
+- 2026-11-05 04:15 · Arreglo · El despliegue de `main` fallaba: `package-lock.json` no incluía el paquete `packages/api`. PR #2 lo regenera. La CI también fallaba porque Playwright no soporta Ubuntu 26.04: las e2e pasan a `ubuntu-24.04`.
+- 2026-11-05 05:40 · F7 · Pedido de Camilo: separar front y back con estándares actuales, dejar la base lista para Supabase u otra nube, fortalecer las pruebas, simular TMDB y documentar. Ver `adr/0004-front-back-y-nube.md` y `ARQUITECTURA.md`.
 
 ## Decisiones tomadas sin Camilo
 - La línea base es 0/0 porque el prototipo no tenía pruebas. Las pruebas nuevas son las primeras del repositorio.
@@ -71,8 +74,14 @@
 - **Super like en Ver:** no tiene acción en el back. La especificación no lo define y no quise inventarle un peso.
 - **Tono del reverso:** el prototipo tiene ilustraciones para cuatro tonos (melancólico, nostálgico, oscuro, cálido). El puente elige el más cercano según los átomos; el tono del juez queda como subtítulo.
 - **Onboarding sin pantallas:** el prototipo no tiene pantallas de onboarding. El endpoint existe y está probado, pero en la demo el perfil empieza vacío y aprende desde el primer mazo.
+- **F7 · Ids de película nuevos:** ahora salen de TMDB como `titulo-original-año` (`the-godfather-1972`, `parasitos-2019`). Los eventos guardados en el navegador con ids viejos se ignoran.
+- **F7 · Catálogo de 69 películas simuladas:** las 34 de antes más 35 de los pósters que mandaste. 13 tienen id de TMDB sin verificar (`_id_verificado: false`); se corrigen con la API real.
+- **F7 · "% contigo" en Ver:** con el motor, la insignia dice "de tu mano" en vez de un porcentaje. Resumen y Perfil todavía muestran porcentajes de ejemplo porque no están conectados.
+- **F7 · Supabase sin dependencias:** el back habla con Supabase por REST (fetch) y verifica JWT con WebCrypto. No usa `@supabase/supabase-js`.
+- **F7 · Una migración nueva (0007)** en vez de editar la 0002, porque las publicadas no se editan.
 
 ## Para revisar cuando vuelvas
+- **Pósters que faltan.** De todas las imágenes que mandaste por el chat, solo 5 llegaron como archivo (*Duna*, *Duna: Parte dos*, *Marty Supreme*, *Hereditary* y *Mortal Kombat II*): esas ya están. Las demás se pudieron ver, pero no guardar. Para agregarlas, súbelas a `apps/web/public/posters/` con el nombre de la lista `missing` de `packages/catalog/data/posters.json` (por ejemplo, `the-godfather-1972.jpg`) y corre `npm run catalog:posters && npm run catalog:build && npm run db:seeds`. Si las subes desde GitHub, se pueden procesar en una sesión.
 - Subir el documento de Argon a `docs/historico/`.
 - Resultados del simulador: `packages/engine/sim/RESULTADOS.md`.
 - CSV de revisión del catálogo: `data/catalog/revision-20.csv`. Valores ancla del equipo en `data/catalog/anchors.json`.

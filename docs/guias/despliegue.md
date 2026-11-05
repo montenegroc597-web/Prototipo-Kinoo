@@ -1,77 +1,109 @@
 # Despliegue
 
-**Para qué sirve esto.** Lista los pasos manuales que quedan para publicar el modo demo y, cuando se quiera, conectar Supabase. Nada de esto se hizo solo: la sesión no cambia la configuración del repositorio ni tiene cuentas de servicio.
+**Para qué sirve esto.** Dice cómo publicar el front, y cómo levantar la base de datos y la API en Supabase o en otra nube cuando llegue el momento. Hoy solo está activo el front en GitHub Pages; lo demás queda preparado y probado.
 
-## 1. GitHub Pages (modo demo)
+## 1. Front en GitHub Pages (activo)
 
-- `main` publica con `.github/workflows/deploy.yml`. Ahora construye `site/` (`npm ci`, `npm run build`, `npm run check:site`) en vez de copiar `public/`.
-- La fuente de Pages sigue siendo **GitHub Actions**: no hay que cambiar nada en Settings → Pages.
-- Las rutas no cambian: `https://montenegroc597-web.github.io/Prototipo-Kinoo/kinoo-flujo/…`. `check:site` falla si falta alguna de las 86.
-- **Ojo:** al fusionar en `main`, el enlace del prototipo pasa a usar el motor en Descubrir y Ver. Si ese enlace se está usando en pruebas con participantes, fusiona cuando no haya una ronda en curso.
-
-Para mirarlo en local antes de fusionar:
+- `main` publica con `.github/workflows/deploy.yml`: `npm ci`, `npm run build` (arma `apps/web/dist`), comprobación de las 86 rutas y publicación.
+- La fuente de Pages es **GitHub Actions**. Las rutas no cambian: `https://montenegroc597-web.github.io/Prototipo-Kinoo/kinoo-flujo/…`.
+- Para mirarlo en local:
 
 ```bash
 npm ci
 ```
 
 ```bash
-npm run build && npm run serve
+npm run dev:web
 ```
 
-y abre `http://localhost:4173/Prototipo-Kinoo/`.
+Abre `http://localhost:4173/Prototipo-Kinoo/`.
 
-## 2. Supabase (producto)
+## 2. Base de datos: elige dónde
+
+Las migraciones son las mismas en todas partes. Solo cambia el **proveedor** (quién es la persona actual en las reglas de seguridad):
+
+| Opción | Proveedor | Cuándo |
+|---|---|---|
+| **Supabase** | `supabase` | Quieres cuentas (Supabase Auth), API REST y funciones sin mantener servidores |
+| **PostgreSQL genérico** (Neon, AWS RDS, Google Cloud SQL, Azure, Railway, Render, Docker) | `postgres` | Ya tienes nube o quieres control total. La API corre en Node |
 
 **No uses el proyecto «Pruebas Kinoo»:** es el de la herramienta de usabilidad. Crea uno nuevo.
 
-1. Crea el proyecto en supabase.com y anota la URL, la clave anónima (`anon`) y la de servicio (`service_role`). Guárdalas como variables de entorno o secretos, nunca en el repositorio (ver `.env.example`).
-2. Aplica las migraciones en orden (`supabase/migrations/0001…0006`) desde el editor SQL o con el CLI:
+### 2a. Supabase
+
+1. Crea el proyecto y anota la URL, la clave `anon` y la `service_role`. Guárdalas como variables o secretos (ver `.env.example`), nunca en el repositorio.
+2. Genera la carpeta del CLI (migraciones con el proveedor de Supabase, `seed.sql` y la API empaquetada):
+
+```bash
+npm run supabase:build
+```
+
+3. Desde `infra/supabase/`:
 
 ```bash
 supabase link --project-ref <ref>
 ```
 
 ```bash
-supabase db push
-```
-
-3. Carga las semillas: `supabase/seed/001_config.sql` y `002_catalogo.sql`. Si cambiaste algo en `data/`, primero:
-
-```bash
-npm run seed
-```
-
-4. Empaqueta y despliega las funciones:
-
-```bash
-npm run build:functions
+supabase db push --include-seed
 ```
 
 ```bash
 supabase functions deploy events && supabase functions deploy deck && supabase functions deploy watch && supabase functions deploy onboarding
 ```
 
-5. (Opcional) Restringe el origen con el secreto `KINOO_ALLOWED_ORIGIN` (por ejemplo `https://montenegroc597-web.github.io`).
-6. Activa un método de inicio de sesión en Supabase Auth (correo o enlace mágico). Las funciones exigen una sesión.
+4. Secretos de las funciones (opcionales): `KINOO_ALLOWED_ORIGINS` y `KINOO_ASSET_BASE_URL`. Por defecto, la URL de GitHub Pages.
+5. Activa un método de inicio de sesión en Supabase Auth.
 
-Las pantallas actuales usan el modo demo. Para que un front use Supabase, se crea el cliente con `supabaseAdapter({ url, anonKey, accessToken })` de `apps/web/src/adapter.ts`.
+Alternativa sin CLI: `DATABASE_URL=<conexión directa> npm run db:migrate -- --supabase`.
 
-## 3. Catálogo de 300 películas
+### 2b. PostgreSQL en cualquier otra nube
 
-Necesita `TMDB_API_KEY` y acceso de red a `api.themoviedb.org` e `image.tmdb.org`. Pasos en `catalogo.md`.
+1. Crea la base (PostgreSQL 15 o más, con la extensión `vector`).
+2. Aplica proveedor, migraciones y semillas:
+
+```bash
+DATABASE_URL=postgres://… npm run db:migrate
+```
+
+3. Despliega la API (`apps/api`) donde corra Node 22 o un contenedor. La imagen está en `infra/docker/api.Dockerfile`. Variables:
+   - `DATABASE_URL`: la base.
+   - `KINOO_JWT_SECRET`: el secreto con que tu proveedor de identidad firma los JWT (HS256). Puede ser el de Supabase Auth, Auth0, Clerk u otro.
+   - `KINOO_ALLOWED_ORIGINS`: los orígenes del front, separados por coma.
+   - `KINOO_ASSET_BASE_URL`: dónde están los pósters (por defecto, la URL de GitHub Pages).
+   - `PORT`: 8787 por defecto.
+
+### 2c. Todo en local con Docker
+
+```bash
+docker compose -f infra/docker/compose.yml up -d db
+```
+
+```bash
+DATABASE_URL=postgres://kinoo:kinoo@localhost:5432/kinoo npm run db:migrate
+```
+
+```bash
+docker compose -f infra/docker/compose.yml up api
+```
+
+La API queda en `http://localhost:8787` con autenticación de desarrollo: el encabezado `x-kinoo-user: <uuid>` hace de sesión. Solo en local.
+
+## 3. Catálogo real
+
+Necesita `TMDB_API_KEY` y red a `api.themoviedb.org` e `image.tmdb.org`. Pasos en `catalogo.md`.
 
 ## 4. Legal
 
-- Revisar los términos comerciales de TMDB y JustWatch antes de lanzar.
-- Agregar el logo de TMDB donde se muestren sus datos.
-- Revisar con un abogado la política de datos (Ley 1581): las funciones de exportar y borrar ya existen (`kinoo_export_my_data`, `kinoo_delete_my_data`).
+- Términos comerciales de TMDB y JustWatch. Logo de TMDB donde se muestren sus datos.
+- Derechos de los pósters publicados en el repositorio (son material promocional de terceros).
+- Política de datos (Ley 1581). Las funciones `kinoo_export_my_data` y `kinoo_delete_my_data` ya existen.
 
 ## Ejemplo con números
 
-Una publicación normal tarda unos 2 minutos en la CI:
+Una publicación del front tarda unos 2 minutos en GitHub:
 
 - `npm ci`: unos 40 s.
-- `npm run build`: menos de 2 s (copia 86 archivos y empaqueta el motor en unos 75 KB).
-- `check:site`: comprueba las 86 rutas.
+- `npm run build`: menos de 3 s (copia el prototipo y empaqueta el motor con 69 películas en unos 140 KB).
+- Comprobación de rutas: 86 de 86.
 - Subida a Pages: el resto.

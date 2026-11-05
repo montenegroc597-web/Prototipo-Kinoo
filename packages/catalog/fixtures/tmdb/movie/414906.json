@@ -1,0 +1,204 @@
+{
+  "_simulado": true,
+  "_id_verificado": true,
+  "id": 414906,
+  "imdb_id": "tt1877830",
+  "title": "Batman",
+  "original_title": "The Batman",
+  "original_language": "en",
+  "release_date": "2022-03-01",
+  "runtime": 176,
+  "status": "Released",
+  "adult": false,
+  "genres": [
+    {
+      "id": 80,
+      "name": "Crimen"
+    },
+    {
+      "id": 9648,
+      "name": "Misterio"
+    },
+    {
+      "id": 53,
+      "name": "Suspense"
+    }
+  ],
+  "overview": "Durante su segundo año combatiendo el crimen en Gotham, Batman descubre una red de corrupción que conecta con su propia familia. Cuando un asesino en serie empieza a atacar a las élites de la ciudad, deberá seguir un rastro de pistas enigmáticas.",
+  "tagline": "Desenmascara la verdad.",
+  "vote_average": 7.7,
+  "vote_count": 11000,
+  "popularity": 85.1,
+  "poster_path": null,
+  "backdrop_path": null,
+  "production_countries": [
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    }
+  ],
+  "spoken_languages": [
+    {
+      "iso_639_1": "en",
+      "english_name": "English",
+      "name": "English"
+    }
+  ],
+  "budget": 185000000,
+  "revenue": 772000000,
+  "credits": {
+    "cast": [
+      {
+        "id": null,
+        "name": "Robert Pattinson",
+        "character": "Bruce Wayne / The Batman",
+        "order": 0
+      },
+      {
+        "id": null,
+        "name": "Zoë Kravitz",
+        "character": "Selina Kyle",
+        "order": 1
+      },
+      {
+        "id": null,
+        "name": "Paul Dano",
+        "character": "Edward Nashton / The Riddler",
+        "order": 2
+      },
+      {
+        "id": null,
+        "name": "Jeffrey Wright",
+        "character": "James Gordon",
+        "order": 3
+      },
+      {
+        "id": null,
+        "name": "John Turturro",
+        "character": "Carmine Falcone",
+        "order": 4
+      },
+      {
+        "id": null,
+        "name": "Andy Serkis",
+        "character": "Alfred Pennyworth",
+        "order": 5
+      },
+      {
+        "id": null,
+        "name": "Colin Farrell",
+        "character": "Oswald Cobblepot / The Penguin",
+        "order": 6
+      },
+      {
+        "id": null,
+        "name": "Peter Sarsgaard",
+        "character": "Gil Colson",
+        "order": 7
+      }
+    ],
+    "crew": [
+      {
+        "id": null,
+        "name": "Matt Reeves",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "Matt Reeves",
+        "job": "Screenplay",
+        "department": "Writing"
+      },
+      {
+        "id": null,
+        "name": "Michael Giacchino",
+        "job": "Original Music Composer",
+        "department": "Sound"
+      }
+    ]
+  },
+  "keywords": {
+    "keywords": [
+      {
+        "id": null,
+        "name": "based on comic"
+      },
+      {
+        "id": null,
+        "name": "superhero"
+      },
+      {
+        "id": null,
+        "name": "vigilante"
+      },
+      {
+        "id": null,
+        "name": "serial killer"
+      },
+      {
+        "id": null,
+        "name": "detective"
+      },
+      {
+        "id": null,
+        "name": "gotham city"
+      },
+      {
+        "id": null,
+        "name": "corruption"
+      },
+      {
+        "id": null,
+        "name": "neo-noir"
+      },
+      {
+        "id": null,
+        "name": "conspiracy"
+      },
+      {
+        "id": null,
+        "name": "dc comics"
+      }
+    ]
+  },
+  "reviews": {
+    "page": 1,
+    "total_results": 2,
+    "results": [
+      {
+        "author": "gotham_nights",
+        "author_details": {
+          "rating": 9
+        },
+        "content": "A dark, gritty detective story that finally treats Batman as the world's greatest detective. Pattinson is superb and the atmosphere is unforgettable.",
+        "created_at": "2022-03-06T23:09:50.000Z",
+        "id": "62253c7fd1a8b60019f4e2c3"
+      },
+      {
+        "author": "murcielago_urbano",
+        "author_details": {
+          "rating": 8
+        },
+        "content": "Larga pero muy bien contada, con un tono noir que se agradece. La música y la fotografía elevan toda la experiencia.",
+        "created_at": "2022-03-15T08:27:13.000Z",
+        "id": "622fa09e5b3c7d0022a1d8f4"
+      }
+    ]
+  },
+  "watch/providers": {
+    "results": {
+      "CO": {
+        "link": "https://www.themoviedb.org/movie/414906/watch?locale=CO",
+        "flatrate": [
+          {
+            "provider_id": 1899,
+            "provider_name": "Max",
+            "logo_path": null,
+            "display_priority": 3
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "_simulado": true,
+  "_id_verificado": false,
+  "id": 9900303,
+  "imdb_id": null,
+  "title": "Marty Supreme",
+  "original_title": "Marty Supreme",
+  "original_language": "en",
+  "release_date": "2025-12-25",
+  "runtime": 149,
+  "status": "Released",
+  "adult": false,
+  "genres": [
+    {
+      "id": 18,
+      "name": "Drama"
+    },
+    {
+      "id": 35,
+      "name": "Comedia"
+    }
+  ],
+  "overview": "Marty Mauser, un joven ambicioso y sin filtros de la Nueva York de los años cincuenta, persigue su sueño de convertirse en campeón mundial de tenis de mesa. Para lograrlo está dispuesto a todo, sin importar a quién tenga que arrastrar consigo.",
+  "tagline": "",
+  "vote_average": 7.6,
+  "vote_count": 900,
+  "popularity": 48.7,
+  "poster_path": null,
+  "backdrop_path": null,
+  "production_countries": [
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    }
+  ],
+  "spoken_languages": [
+    {
+      "iso_639_1": "en",
+      "english_name": "English",
+      "name": "English"
+    }
+  ],
+  "budget": 0,
+  "revenue": 0,
+  "credits": {
+    "cast": [
+      {
+        "id": null,
+        "name": "Timothée Chalamet",
+        "character": "Marty Mauser",
+        "order": 0
+      },
+      {
+        "id": null,
+        "name": "Gwyneth Paltrow",
+        "character": "Kay Stone",
+        "order": 1
+      },
+      {
+        "id": null,
+        "name": "Odessa A'zion",
+        "character": "Rachel Mizler",
+        "order": 2
+      },
+      {
+        "id": null,
+        "name": "Tyler, the Creator",
+        "character": "Wally",
+        "order": 3
+      },
+      {
+        "id": null,
+        "name": "Fran Drescher",
+        "character": "Rebecca Mauser",
+        "order": 4
+      },
+      {
+        "id": null,
+        "name": "Kevin O'Leary",
+        "character": "Milton Rockwell",
+        "order": 5
+      },
+      {
+        "id": null,
+        "name": "Abel Ferrara",
+        "character": "Ezra Mishkin",
+        "order": 6
+      },
+      {
+        "id": null,
+        "name": "Penn Jillette",
+        "character": "Lloyd Hamilton",
+        "order": 7
+      }
+    ],
+    "crew": [
+      {
+        "id": null,
+        "name": "Josh Safdie",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "Ronald Bronstein",
+        "job": "Screenplay",
+        "department": "Writing"
+      },
+      {
+        "id": null,
+        "name": "Daniel Lopatin",
+        "job": "Original Music Composer",
+        "department": "Sound"
+      }
+    ]
+  },
+  "keywords": {
+    "keywords": [
+      {
+        "id": null,
+        "name": "table tennis"
+      },
+      {
+        "id": null,
+        "name": "new york city"
+      },
+      {
+        "id": null,
+        "name": "1950s"
+      },
+      {
+        "id": null,
+        "name": "ambition"
+      },
+      {
+        "id": null,
+        "name": "hustler"
+      },
+      {
+        "id": null,
+        "name": "sports"
+      },
+      {
+        "id": null,
+        "name": "dark comedy"
+      },
+      {
+        "id": null,
+        "name": "obsession"
+      },
+      {
+        "id": null,
+        "name": "tournament"
+      }
+    ]
+  },
+  "reviews": {
+    "page": 1,
+    "total_results": 2,
+    "results": [
+      {
+        "author": "pingpong_fan88",
+        "author_details": {
+          "rating": 8
+        },
+        "content": "Frenetic, funny and exhausting in the best way. Chalamet gives a manic performance that carries the whole film.",
+        "created_at": "2025-12-28T19:30:00.000Z",
+        "id": "694f1a8c3e5b7d0021b8f6a4"
+      },
+      {
+        "author": "lectora_de_cine",
+        "author_details": {
+          "rating": null
+        },
+        "content": "Una película nerviosa y muy entretenida. El protagonista es insoportable y fascinante a la vez, y la banda sonora le da un pulso especial.",
+        "created_at": "2026-01-05T11:12:48.000Z",
+        "id": "695b2d70c4a1e90019d3e7b1"
+      }
+    ]
+  },
+  "watch/providers": {
+    "results": {
+      "CO": {
+        "link": "https://www.themoviedb.org/movie/9900303/watch?locale=CO",
+        "flatrate": [
+          {
+            "provider_id": 1899,
+            "provider_name": "Max",
+            "logo_path": null,
+            "display_priority": 3
+          }
+        ]
+      }
+    }
+  }
+}

@@ -48,7 +48,8 @@ jobs:
 
   e2e:
     name: Front (build, rutas y e2e)
-    runs-on: ubuntu-latest
+    # Playwright 1.56 no soporta ubuntu-latest (26.04) todavía
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4

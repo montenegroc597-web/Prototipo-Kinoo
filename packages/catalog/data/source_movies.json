@@ -5,11 +5,11 @@
   "country": "CO",
   "attribution": "Datos de películas: TMDB. This product uses the TMDB API but is not endorsed or certified by TMDB. Plataformas: JustWatch.",
   "quotas": {
-    "total": 38,
-    "latam": 6,
-    "latamShare": 0.15789473684210525,
-    "pre2000": 8,
-    "pre2000Share": 0.21052631578947367,
+    "total": 69,
+    "latam": 7,
+    "latamShare": 0.10144927536231885,
+    "pre2000": 18,
+    "pre2000Share": 0.2608695652173913,
     "genres": 15
   },
   "movies": [
@@ -411,6 +411,240 @@
       "simulated": true
     },
     {
+      "id": "corpse-bride-2005",
+      "tmdb_id": 9071,
+      "imdb_id": "tt0121164",
+      "tmdb_id_verified": true,
+      "title": "El cadáver de la novia",
+      "original_title": "Corpse Bride",
+      "year": 2005,
+      "runtime_min": 77,
+      "genres": [
+        "Animación",
+        "Fantasía",
+        "Romance"
+      ],
+      "directors": [
+        "Tim Burton",
+        "Mike Johnson"
+      ],
+      "cast": [
+        "Johnny Depp",
+        "Helena Bonham Carter",
+        "Emily Watson",
+        "Tracey Ullman",
+        "Albert Finney",
+        "Richard E. Grant",
+        "Christopher Lee"
+      ],
+      "countries": [
+        "GB",
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.5,
+      "vote_count": 6500,
+      "popularity": 48.9,
+      "poster_path": null,
+      "overview": "Víctor, un joven tímido a punto de casarse, ensaya sus votos en el bosque y sin querer compromete su mano con una novia fallecida. Lo arrastra al mundo de los muertos, más alegre que el de los vivos.",
+      "keywords": [
+        "stop motion",
+        "wedding",
+        "afterlife",
+        "undead",
+        "arranged marriage",
+        "love triangle",
+        "musical",
+        "gothic",
+        "dark fantasy",
+        "victorian era"
+      ],
+      "reviews": [
+        "Gorgeous stop-motion and a surprisingly tender story. Danny Elfman's songs are the cherry on top.",
+        "Corta, oscura y encantadora. Quizás menos memorable que otras películas de Burton, pero visualmente es una delicia."
+      ],
+      "providers": {
+        "CO": [
+          "Max"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "cuando-acecha-la-maldad-2023",
+      "tmdb_id": 9900405,
+      "imdb_id": null,
+      "tmdb_id_verified": false,
+      "title": "Cuando acecha la maldad",
+      "original_title": "Cuando acecha la maldad",
+      "year": 2023,
+      "runtime_min": 99,
+      "genres": [
+        "Terror"
+      ],
+      "directors": [
+        "Demián Rugna"
+      ],
+      "cast": [
+        "Ezequiel Rodríguez",
+        "Demián Salomón",
+        "Silvia Sabater",
+        "Luis Ziembrowski",
+        "Virginia Garófalo",
+        "Marcelo Michinaux"
+      ],
+      "countries": [
+        "AR",
+        "US"
+      ],
+      "original_language": "es",
+      "vote_average": 7,
+      "vote_count": 900,
+      "popularity": 28.6,
+      "poster_path": null,
+      "overview": "En una zona rural de Argentina, dos hermanos encuentran un cuerpo gravemente poseído por una entidad maligna. Al intentar deshacerse de él, liberan una fuerza que amenaza a todo el pueblo.",
+      "keywords": [
+        "demonic possession",
+        "rural",
+        "argentina",
+        "supernatural horror",
+        "gore",
+        "brothers",
+        "evil",
+        "demon",
+        "countryside",
+        "folk horror"
+      ],
+      "reviews": [
+        "Brutal, sucia y sin concesiones. Una de las películas de terror más inquietantes de los últimos años, con una atmósfera que no suelta.",
+        "Relentlessly grim and not for the squeamish. The rules of its demonic threat are refreshingly unclear, which makes everything scarier."
+      ],
+      "providers": {
+        "CO": [
+          "Prime Video"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "dune-2021",
+      "tmdb_id": 438631,
+      "imdb_id": "tt1160419",
+      "tmdb_id_verified": true,
+      "title": "Duna",
+      "original_title": "Dune",
+      "year": 2021,
+      "runtime_min": 155,
+      "genres": [
+        "Ciencia ficción",
+        "Aventura"
+      ],
+      "directors": [
+        "Denis Villeneuve"
+      ],
+      "cast": [
+        "Timothée Chalamet",
+        "Rebecca Ferguson",
+        "Oscar Isaac",
+        "Jason Momoa",
+        "Stellan Skarsgård",
+        "Zendaya",
+        "Josh Brolin",
+        "Javier Bardem"
+      ],
+      "countries": [
+        "US",
+        "CA"
+      ],
+      "original_language": "en",
+      "vote_average": 7.8,
+      "vote_count": 13000,
+      "popularity": 92.4,
+      "poster_path": null,
+      "overview": "Paul Atreides, un joven brillante y talentoso, nace con un gran destino que está más allá de su comprensión. Debe viajar al planeta más peligroso del universo para asegurar el futuro de su familia y su pueblo.",
+      "keywords": [
+        "based on novel or book",
+        "desert",
+        "space opera",
+        "chosen one",
+        "prophecy",
+        "royal family",
+        "giant worm",
+        "distant future",
+        "epic",
+        "war"
+      ],
+      "reviews": [
+        "A visually staggering adaptation with immense scale and sound design. Slow in places, but the world-building is immersive and the cast is excellent.",
+        "Una película imponente que se disfruta mucho mejor en pantalla grande. El ritmo es pausado pero la ambientación y la música son espectaculares."
+      ],
+      "providers": {
+        "CO": [
+          "Max"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "dune-part-two-2024",
+      "tmdb_id": 693134,
+      "imdb_id": "tt15239678",
+      "tmdb_id_verified": true,
+      "title": "Duna: Parte dos",
+      "original_title": "Dune: Part Two",
+      "year": 2024,
+      "runtime_min": 166,
+      "genres": [
+        "Ciencia ficción",
+        "Aventura"
+      ],
+      "directors": [
+        "Denis Villeneuve"
+      ],
+      "cast": [
+        "Timothée Chalamet",
+        "Zendaya",
+        "Rebecca Ferguson",
+        "Josh Brolin",
+        "Austin Butler",
+        "Florence Pugh",
+        "Dave Bautista",
+        "Christopher Walken"
+      ],
+      "countries": [
+        "US",
+        "CA"
+      ],
+      "original_language": "en",
+      "vote_average": 8.1,
+      "vote_count": 7000,
+      "popularity": 118.6,
+      "poster_path": null,
+      "overview": "Paul Atreides se une a Chani y a los Fremen mientras busca venganza contra quienes destruyeron a su familia. Enfrentado a una decisión entre el amor de su vida y el destino del universo, intenta evitar un futuro terrible.",
+      "keywords": [
+        "based on novel or book",
+        "desert",
+        "space opera",
+        "revenge",
+        "prophecy",
+        "giant worm",
+        "rebellion",
+        "sequel",
+        "epic",
+        "distant future"
+      ],
+      "reviews": [
+        "A rare sequel that surpasses its predecessor. The action set pieces are breathtaking and the performances give the story real emotional weight.",
+        "Espectacular en todos los sentidos: imagen, sonido y actuaciones. Dura casi tres horas pero no se siente larga."
+      ],
+      "providers": {
+        "CO": [
+          "Max"
+        ]
+      },
+      "simulated": true
+    },
+    {
       "id": "el-abrazo-de-la-serpiente-2015",
       "tmdb_id": 9900110,
       "imdb_id": null,
@@ -581,6 +815,181 @@
         "CO": [
           "Prime Video",
           "Max"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "get-out-2017",
+      "tmdb_id": 419430,
+      "imdb_id": "tt5052448",
+      "tmdb_id_verified": true,
+      "title": "¡Huye!",
+      "original_title": "Get Out",
+      "year": 2017,
+      "runtime_min": 104,
+      "genres": [
+        "Misterio",
+        "Suspense",
+        "Terror"
+      ],
+      "directors": [
+        "Jordan Peele"
+      ],
+      "cast": [
+        "Daniel Kaluuya",
+        "Allison Williams",
+        "Catherine Keener",
+        "Bradley Whitford",
+        "Caleb Landry Jones",
+        "Lil Rel Howery",
+        "Stephen Root"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.6,
+      "vote_count": 17000,
+      "popularity": 61.8,
+      "poster_path": null,
+      "overview": "Chris, un joven fotógrafo afroamericano, viaja a conocer a la familia de su novia en una finca apartada. Lo que al principio parece una visita incómoda se convierte en un descubrimiento perturbador.",
+      "keywords": [
+        "racism",
+        "hypnosis",
+        "interracial relationship",
+        "psychological thriller",
+        "social commentary",
+        "photographer",
+        "meeting the parents",
+        "suburbia",
+        "paranoia",
+        "satire"
+      ],
+      "reviews": [
+        "Sharp, unsettling and smart. It builds dread through small details and keeps you guessing until the very end.",
+        "Un debut brillante que mezcla terror y crítica social con mucho ingenio. La actuación de Kaluuya es inolvidable."
+      ],
+      "providers": {
+        "CO": [
+          "Netflix"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "grease-1978",
+      "tmdb_id": 621,
+      "imdb_id": "tt0077631",
+      "tmdb_id_verified": true,
+      "title": "Grease (Vaselina)",
+      "original_title": "Grease",
+      "year": 1978,
+      "runtime_min": 110,
+      "genres": [
+        "Romance",
+        "Comedia",
+        "Música"
+      ],
+      "directors": [
+        "Randal Kleiser"
+      ],
+      "cast": [
+        "John Travolta",
+        "Olivia Newton-John",
+        "Stockard Channing",
+        "Jeff Conaway",
+        "Barry Pearl",
+        "Michael Tucci",
+        "Kelly Ward",
+        "Didi Conn"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.4,
+      "vote_count": 7500,
+      "popularity": 44.8,
+      "poster_path": null,
+      "overview": "Danny Zuko y Sandy Olsson se enamoran durante el verano. Al reencontrarse en el instituto, deberán lidiar con las presiones de su grupo de amigos y con las apariencias para poder estar juntos.",
+      "keywords": [
+        "based on musical",
+        "high school",
+        "1950s",
+        "summer romance",
+        "teenage love",
+        "rock 'n' roll",
+        "drag race",
+        "gang",
+        "new student",
+        "dance"
+      ],
+      "reviews": [
+        "Pure joy from start to finish. The songs are endlessly catchy and the chemistry between the leads is magnetic.",
+        "Un clásico que sigue siendo muy divertido, con números musicales inolvidables. Algunos chistes han envejecido, pero el espíritu se mantiene."
+      ],
+      "providers": {
+        "CO": [
+          "Prime Video"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "halloween-2018",
+      "tmdb_id": 424139,
+      "imdb_id": "tt1502407",
+      "tmdb_id_verified": true,
+      "title": "Halloween",
+      "original_title": "Halloween",
+      "year": 2018,
+      "runtime_min": 106,
+      "genres": [
+        "Terror",
+        "Suspense"
+      ],
+      "directors": [
+        "David Gordon Green"
+      ],
+      "cast": [
+        "Jamie Lee Curtis",
+        "Judy Greer",
+        "Andi Matichak",
+        "Will Patton",
+        "Virginia Gardner",
+        "Haluk Bilginer",
+        "James Jude Courtney",
+        "Nick Castle"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 6.5,
+      "vote_count": 5000,
+      "popularity": 48.7,
+      "poster_path": null,
+      "overview": "Cuarenta años después de la noche en que Michael Myers aterrorizó Haddonfield, Laurie Strode se ha preparado para un nuevo enfrentamiento. Cuando el asesino enmascarado regresa, la lucha de tres generaciones de mujeres comienza.",
+      "keywords": [
+        "slasher",
+        "serial killer",
+        "halloween",
+        "sequel",
+        "masked killer",
+        "survivor",
+        "babysitter",
+        "small town",
+        "trauma",
+        "grandmother granddaughter relationship"
+      ],
+      "reviews": [
+        "A respectful return to form for the franchise. Jamie Lee Curtis carries the film, and the tension in the quieter scenes works better than the kills.",
+        "Buena secuela directa que ignora el resto de la saga. Tiene momentos muy efectivos, aunque algunas decisiones de los personajes son difíciles de creer."
+      ],
+      "providers": {
+        "CO": [
+          "Prime Video"
         ]
       },
       "simulated": true
@@ -991,6 +1400,241 @@
       "simulated": true
     },
     {
+      "id": "marty-supreme-2025",
+      "tmdb_id": 9900303,
+      "imdb_id": null,
+      "tmdb_id_verified": false,
+      "title": "Marty Supreme",
+      "original_title": "Marty Supreme",
+      "year": 2025,
+      "runtime_min": 149,
+      "genres": [
+        "Drama",
+        "Comedia"
+      ],
+      "directors": [
+        "Josh Safdie"
+      ],
+      "cast": [
+        "Timothée Chalamet",
+        "Gwyneth Paltrow",
+        "Odessa A'zion",
+        "Tyler, the Creator",
+        "Fran Drescher",
+        "Kevin O'Leary",
+        "Abel Ferrara",
+        "Penn Jillette"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.6,
+      "vote_count": 900,
+      "popularity": 48.7,
+      "poster_path": null,
+      "overview": "Marty Mauser, un joven ambicioso y sin filtros de la Nueva York de los años cincuenta, persigue su sueño de convertirse en campeón mundial de tenis de mesa. Para lograrlo está dispuesto a todo, sin importar a quién tenga que arrastrar consigo.",
+      "keywords": [
+        "table tennis",
+        "new york city",
+        "1950s",
+        "ambition",
+        "hustler",
+        "sports",
+        "dark comedy",
+        "obsession",
+        "tournament"
+      ],
+      "reviews": [
+        "Frenetic, funny and exhausting in the best way. Chalamet gives a manic performance that carries the whole film.",
+        "Una película nerviosa y muy entretenida. El protagonista es insoportable y fascinante a la vez, y la banda sonora le da un pulso especial."
+      ],
+      "providers": {
+        "CO": [
+          "Max"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "mickey-17-2025",
+      "tmdb_id": 9900501,
+      "imdb_id": null,
+      "tmdb_id_verified": false,
+      "title": "Mickey 17",
+      "original_title": "Mickey 17",
+      "year": 2025,
+      "runtime_min": 137,
+      "genres": [
+        "Ciencia ficción",
+        "Comedia",
+        "Aventura"
+      ],
+      "directors": [
+        "Bong Joon-ho"
+      ],
+      "cast": [
+        "Robert Pattinson",
+        "Naomi Ackie",
+        "Steven Yeun",
+        "Toni Collette",
+        "Mark Ruffalo",
+        "Anamaria Vartolomei",
+        "Patsy Ferran"
+      ],
+      "countries": [
+        "US",
+        "KR"
+      ],
+      "original_language": "en",
+      "vote_average": 6.9,
+      "vote_count": 2500,
+      "popularity": 88.1,
+      "poster_path": null,
+      "overview": "Mickey, un trabajador prescindible en una expedición para colonizar un planeta helado, es enviado a misiones mortales y regenerado una y otra vez. Todo se complica cuando una versión suya aparece mientras la anterior sigue con vida.",
+      "keywords": [
+        "based on novel or book",
+        "clone",
+        "space colony",
+        "ice planet",
+        "dark comedy",
+        "expendable worker",
+        "satire",
+        "dictator",
+        "reincarnation",
+        "alien creature"
+      ],
+      "reviews": [
+        "Pattinson is hilarious and heartbreaking in a double role. Bong's satire is sharp, even if the tone wobbles in places.",
+        "Divertida, extraña y con mucho que decir sobre la desigualdad. Una propuesta original de ciencia ficción que se disfruta de principio a fin."
+      ],
+      "providers": {
+        "CO": [
+          "Max"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "mortal-kombat-2021",
+      "tmdb_id": 460465,
+      "imdb_id": "tt0293429",
+      "tmdb_id_verified": true,
+      "title": "Mortal Kombat",
+      "original_title": "Mortal Kombat",
+      "year": 2021,
+      "runtime_min": 110,
+      "genres": [
+        "Acción",
+        "Fantasía",
+        "Aventura"
+      ],
+      "directors": [
+        "Simon McQuoid"
+      ],
+      "cast": [
+        "Lewis Tan",
+        "Jessica McNamee",
+        "Josh Lawson",
+        "Tadanobu Asano",
+        "Mehcad Brooks",
+        "Hiroyuki Sanada",
+        "Joe Taslim",
+        "Chin Han"
+      ],
+      "countries": [
+        "US",
+        "AU"
+      ],
+      "original_language": "en",
+      "vote_average": 7,
+      "vote_count": 6000,
+      "popularity": 62.4,
+      "poster_path": null,
+      "overview": "Cole Young, un luchador de MMA acostumbrado a perder, descubre que lleva una misteriosa marca de nacimiento. Perseguido por el letal Sub-Zero, busca a los mejores guerreros de la Tierra para enfrentarse a los campeones de otro reino.",
+      "keywords": [
+        "based on video game",
+        "martial arts",
+        "tournament",
+        "fighting",
+        "ninja",
+        "mixed martial arts",
+        "fatality",
+        "sorcerer",
+        "gore",
+        "reboot"
+      ],
+      "reviews": [
+        "The fight choreography is the real star here, and the fan service lands more often than it misses. The story is thin, but it delivers the brutal fun the games promised.",
+        "Una adaptación entretenida que entiende de qué va el juego. Las peleas están muy bien filmadas, aunque los personajes nuevos se sienten algo planos."
+      ],
+      "providers": {
+        "CO": [
+          "Max"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "mortal-kombat-ii-2026",
+      "tmdb_id": 9900304,
+      "imdb_id": null,
+      "tmdb_id_verified": false,
+      "title": "Mortal Kombat II",
+      "original_title": "Mortal Kombat II",
+      "year": 2026,
+      "runtime_min": 116,
+      "genres": [
+        "Acción",
+        "Fantasía",
+        "Aventura"
+      ],
+      "directors": [
+        "Simon McQuoid"
+      ],
+      "cast": [
+        "Karl Urban",
+        "Adeline Rudolph",
+        "Jessica McNamee",
+        "Lewis Tan",
+        "Josh Lawson",
+        "Tadanobu Asano",
+        "Hiroyuki Sanada",
+        "Ludi Lin"
+      ],
+      "countries": [
+        "US",
+        "AU"
+      ],
+      "original_language": "en",
+      "vote_average": 6.6,
+      "vote_count": 600,
+      "popularity": 37.2,
+      "poster_path": null,
+      "overview": "Los campeones de la Tierra se preparan para el torneo de Mortal Kombat, donde deberán enfrentarse a los luchadores del Mundo Exterior. Esta vez, Johnny Cage se suma al equipo con la misión de proteger el reino.",
+      "keywords": [
+        "based on video game",
+        "martial arts",
+        "tournament",
+        "sequel",
+        "fighting",
+        "gore",
+        "sorcerer",
+        "parallel world",
+        "supernatural"
+      ],
+      "reviews": [
+        "Fun, bloody and fast-paced. The fights are better choreographed than the first film and Karl Urban steals every scene he is in.",
+        "Buena adaptación para los fans del juego, con muchos guiños y combates bien logrados. La historia es floja, pero cumple como entretenimiento."
+      ],
+      "providers": {
+        "CO": [
+          "Max"
+        ]
+      },
+      "simulated": true
+    },
+    {
       "id": "nosferatu-2024",
       "tmdb_id": 426063,
       "imdb_id": "tt5040012",
@@ -1340,6 +1984,65 @@
       "simulated": true
     },
     {
+      "id": "ratatouille-2007",
+      "tmdb_id": 2062,
+      "imdb_id": "tt0382932",
+      "tmdb_id_verified": true,
+      "title": "Ratatouille",
+      "original_title": "Ratatouille",
+      "year": 2007,
+      "runtime_min": 111,
+      "genres": [
+        "Animación",
+        "Comedia",
+        "Familia"
+      ],
+      "directors": [
+        "Brad Bird"
+      ],
+      "cast": [
+        "Patton Oswalt",
+        "Lou Romano",
+        "Ian Holm",
+        "Janeane Garofalo",
+        "Peter O'Toole",
+        "Brian Dennehy",
+        "Peter Sohn",
+        "Brad Garrett"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.8,
+      "vote_count": 17000,
+      "popularity": 55.9,
+      "poster_path": null,
+      "overview": "Remy, una rata con un talento extraordinario para la cocina, sueña con ser chef en París. Su improbable alianza con un joven pinche de cocina cambiará la vida de ambos.",
+      "keywords": [
+        "paris, france",
+        "rat",
+        "chef",
+        "restaurant",
+        "cooking",
+        "food",
+        "food critic",
+        "anthropomorphism",
+        "kitchen",
+        "dream"
+      ],
+      "reviews": [
+        "Gorgeous animation and a genuinely moving message about art and criticism. The final scene with Anton Ego is one of Pixar's best moments.",
+        "Una película que se disfruta a cualquier edad. Divertida, tierna y con unas escenas de cocina que dan hambre."
+      ],
+      "providers": {
+        "CO": [
+          "Disney+"
+        ]
+      },
+      "simulated": true
+    },
+    {
       "id": "relatos-salvajes-2014",
       "tmdb_id": 9900109,
       "imdb_id": null,
@@ -1452,6 +2155,173 @@
       "simulated": true
     },
     {
+      "id": "rocky-balboa-2006",
+      "tmdb_id": 1246,
+      "imdb_id": "tt0479143",
+      "tmdb_id_verified": true,
+      "title": "Rocky Balboa",
+      "original_title": "Rocky Balboa",
+      "year": 2006,
+      "runtime_min": 102,
+      "genres": [
+        "Drama"
+      ],
+      "directors": [
+        "Sylvester Stallone"
+      ],
+      "cast": [
+        "Sylvester Stallone",
+        "Burt Young",
+        "Antonio Tarver",
+        "Geraldine Hughes",
+        "Milo Ventimiglia",
+        "Tony Burton",
+        "Pedro Lovell"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 6.6,
+      "vote_count": 4000,
+      "popularity": 22.5,
+      "poster_path": null,
+      "overview": "Años después de retirarse, Rocky Balboa dirige un pequeño restaurante en Filadelfia y vive con el recuerdo de su esposa. Una pelea simulada por computador lo empuja a volver al cuadrilátero para enfrentar al campeón actual.",
+      "keywords": [
+        "boxing",
+        "philadelphia, pennsylvania",
+        "sequel",
+        "comeback",
+        "boxer",
+        "widower",
+        "father son relationship",
+        "aging",
+        "underdog",
+        "las vegas"
+      ],
+      "reviews": [
+        "A heartfelt and fitting return for the character. It is more about perseverance than about boxing, and it lands emotionally.",
+        "Una despedida digna para Rocky. Es sencilla y predecible, pero tiene corazón y un montaje de entrenamiento que motiva."
+      ],
+      "providers": {
+        "CO": [
+          "Prime Video"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "rocky-ii-1979",
+      "tmdb_id": 1367,
+      "imdb_id": "tt0079817",
+      "tmdb_id_verified": true,
+      "title": "Rocky II",
+      "original_title": "Rocky II",
+      "year": 1979,
+      "runtime_min": 119,
+      "genres": [
+        "Drama"
+      ],
+      "directors": [
+        "Sylvester Stallone"
+      ],
+      "cast": [
+        "Sylvester Stallone",
+        "Talia Shire",
+        "Burt Young",
+        "Carl Weathers",
+        "Burgess Meredith",
+        "Tony Burton",
+        "Joe Spinell"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.1,
+      "vote_count": 4000,
+      "popularity": 30.2,
+      "poster_path": null,
+      "overview": "Tras su combate contra Apollo Creed, Rocky Balboa intenta rehacer su vida junto a Adrian, pero la fama no le resulta sencilla. Un nuevo desafío lo empuja de vuelta al ring para una revancha.",
+      "keywords": [
+        "boxing",
+        "sequel",
+        "philadelphia, pennsylvania",
+        "rematch",
+        "underdog",
+        "boxer",
+        "training",
+        "heavyweight champion",
+        "marriage",
+        "sports"
+      ],
+      "reviews": [
+        "Not as fresh as the first one, but the heart is still there. The final fight is thrilling and the training montage is classic.",
+        "Una secuela que cuida a sus personajes y se toma su tiempo antes del combate final. Stallone sorprende como director y la historia de Rocky y Adrian se siente sincera."
+      ],
+      "providers": {
+        "CO": [
+          "Prime Video"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "rocky-iii-1982",
+      "tmdb_id": 1374,
+      "imdb_id": "tt0084602",
+      "tmdb_id_verified": true,
+      "title": "Rocky III",
+      "original_title": "Rocky III",
+      "year": 1982,
+      "runtime_min": 99,
+      "genres": [
+        "Drama"
+      ],
+      "directors": [
+        "Sylvester Stallone"
+      ],
+      "cast": [
+        "Sylvester Stallone",
+        "Talia Shire",
+        "Burt Young",
+        "Carl Weathers",
+        "Mr. T",
+        "Burgess Meredith",
+        "Hulk Hogan"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 6.9,
+      "vote_count": 3700,
+      "popularity": 38.4,
+      "poster_path": null,
+      "overview": "Rocky Balboa, ya campeón mundial, disfruta de la fama hasta que un joven y feroz aspirante lo desafía. Para recuperar la fuerza y el hambre de pelear deberá apoyarse en un antiguo rival.",
+      "keywords": [
+        "boxing",
+        "sequel",
+        "philadelphia, pennsylvania",
+        "boxer",
+        "training",
+        "rematch",
+        "world champion",
+        "underdog",
+        "friendship"
+      ],
+      "reviews": [
+        "Louder and flashier than the first two, but it works. Mr. T is a terrific villain and the training montage is iconic.",
+        "Una secuela entretenida que cambia el tono hacia lo más espectacular. No alcanza la emoción de la primera, pero tiene mucha energía y buena música."
+      ],
+      "providers": {
+        "CO": [
+          "Prime Video"
+        ]
+      },
+      "simulated": true
+    },
+    {
       "id": "roma-2018",
       "tmdb_id": 426426,
       "imdb_id": "tt6155172",
@@ -1503,6 +2373,184 @@
       "providers": {
         "CO": [
           "Netflix"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "scarface-1983",
+      "tmdb_id": 111,
+      "imdb_id": "tt0086250",
+      "tmdb_id_verified": true,
+      "title": "Scarface: El precio del poder",
+      "original_title": "Scarface",
+      "year": 1983,
+      "runtime_min": 170,
+      "genres": [
+        "Crimen",
+        "Drama"
+      ],
+      "directors": [
+        "Brian De Palma"
+      ],
+      "cast": [
+        "Al Pacino",
+        "Michelle Pfeiffer",
+        "Steven Bauer",
+        "Mary Elizabeth Mastrantonio",
+        "Robert Loggia",
+        "F. Murray Abraham",
+        "Paul Shenar",
+        "Harris Yulin"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 8.2,
+      "vote_count": 12000,
+      "popularity": 44.8,
+      "poster_path": null,
+      "overview": "Tony Montana, un refugiado cubano en Miami, se abre camino en el mundo del narcotráfico con ambición y violencia. Su ascenso meteórico lo lleva a la cima, pero el poder tiene un precio.",
+      "keywords": [
+        "cuban",
+        "miami",
+        "drug dealer",
+        "cocaine",
+        "organized crime",
+        "gangster",
+        "american dream",
+        "remake",
+        "1980s",
+        "drug cartel"
+      ],
+      "reviews": [
+        "Pacino is magnetic and excessive in the best possible way. Loud, violent, and endlessly quotable, it still feels dangerous decades later.",
+        "Un clásico del cine de gánsteres. Larga pero nunca aburrida, con una banda sonora y una puesta en escena que definieron una época."
+      ],
+      "providers": {
+        "CO": [
+          "Netflix"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "shrek-2-2004",
+      "tmdb_id": 809,
+      "imdb_id": "tt0298148",
+      "tmdb_id_verified": true,
+      "title": "Shrek 2",
+      "original_title": "Shrek 2",
+      "year": 2004,
+      "runtime_min": 93,
+      "genres": [
+        "Animación",
+        "Comedia",
+        "Familia",
+        "Fantasía"
+      ],
+      "directors": [
+        "Andrew Adamson",
+        "Kelly Asbury",
+        "Conrad Vernon"
+      ],
+      "cast": [
+        "Mike Myers",
+        "Eddie Murphy",
+        "Cameron Diaz",
+        "Julie Andrews",
+        "Antonio Banderas",
+        "John Cleese",
+        "Rupert Everett",
+        "Jennifer Saunders"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.3,
+      "vote_count": 12000,
+      "popularity": 52.1,
+      "poster_path": null,
+      "overview": "Shrek y Fiona regresan de su luna de miel y son invitados al reino de Muy Muy Lejano para conocer a los padres de ella. La visita se complica con un Hada Madrina decidida a arruinar su felicidad.",
+      "keywords": [
+        "ogre",
+        "fairy tale",
+        "sequel",
+        "parody",
+        "talking animal",
+        "in-laws",
+        "fairy godmother",
+        "swamp",
+        "kingdom",
+        "anthropomorphism"
+      ],
+      "reviews": [
+        "Funnier than the original in many ways, and Puss in Boots steals every scene he is in. Great soundtrack and plenty of jokes for adults.",
+        "Una secuela que mantiene el humor y el corazón del original. Divertida para toda la familia y con referencias que hacen reír a los grandes."
+      ],
+      "providers": {
+        "CO": [
+          "Netflix"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "sinners-2025",
+      "tmdb_id": 1233413,
+      "imdb_id": "tt31193180",
+      "tmdb_id_verified": true,
+      "title": "Pecadores",
+      "original_title": "Sinners",
+      "year": 2025,
+      "runtime_min": 138,
+      "genres": [
+        "Terror",
+        "Acción",
+        "Suspense"
+      ],
+      "directors": [
+        "Ryan Coogler"
+      ],
+      "cast": [
+        "Michael B. Jordan",
+        "Hailee Steinfeld",
+        "Miles Caton",
+        "Jack O'Connell",
+        "Wunmi Mosaku",
+        "Jayme Lawson",
+        "Delroy Lindo"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.5,
+      "vote_count": 2500,
+      "popularity": 96.3,
+      "poster_path": null,
+      "overview": "Dos hermanos gemelos regresan a su pueblo natal en el Misisipi de los años treinta para abrir un club de música. Su noche de inauguración atrae a una presencia oscura que amenaza a todos.",
+      "keywords": [
+        "vampire",
+        "mississippi",
+        "1930s",
+        "blues",
+        "twin brothers",
+        "juke joint",
+        "jim crow era",
+        "supernatural horror",
+        "musician",
+        "period drama"
+      ],
+      "reviews": [
+        "A bold mix of horror, history and music. The performances are powerful and the soundtrack is part of the storytelling.",
+        "Una película con mucha personalidad y una puesta en escena espectacular. Tarda en arrancar, pero la segunda mitad es intensa."
+      ],
+      "providers": {
+        "CO": [
+          "Max"
         ]
       },
       "simulated": true
@@ -1622,6 +2670,178 @@
       "simulated": true
     },
     {
+      "id": "ted-2-2015",
+      "tmdb_id": 214756,
+      "imdb_id": "tt2637276",
+      "tmdb_id_verified": true,
+      "title": "Ted 2",
+      "original_title": "Ted 2",
+      "year": 2015,
+      "runtime_min": 115,
+      "genres": [
+        "Comedia"
+      ],
+      "directors": [
+        "Seth MacFarlane"
+      ],
+      "cast": [
+        "Mark Wahlberg",
+        "Seth MacFarlane",
+        "Amanda Seyfried",
+        "Jessica Barth",
+        "Giovanni Ribisi",
+        "Morgan Freeman",
+        "Sam J. Jones"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 6.3,
+      "vote_count": 7500,
+      "popularity": 31.9,
+      "poster_path": null,
+      "overview": "Recién casado, Ted quiere tener un hijo con su esposa, pero antes debe demostrar ante un tribunal que es una persona y no una propiedad. Con la ayuda de John y una joven abogada, emprende una batalla legal por sus derechos.",
+      "keywords": [
+        "sequel",
+        "talking teddy bear",
+        "courtroom",
+        "civil rights",
+        "marriage",
+        "adult humor",
+        "lawyer",
+        "friendship",
+        "marijuana",
+        "stuffed animal"
+      ],
+      "reviews": [
+        "Not as fresh as the first one, but it still has enough gags to carry it. The courtroom plot is a bit thin.",
+        "Una secuela correcta que repite la fórmula. Tiene buenos momentos de humor, aunque la historia se siente alargada."
+      ],
+      "providers": {
+        "CO": [
+          "Netflix"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "ted-2012",
+      "tmdb_id": 72105,
+      "imdb_id": "tt1637725",
+      "tmdb_id_verified": true,
+      "title": "Ted",
+      "original_title": "Ted",
+      "year": 2012,
+      "runtime_min": 106,
+      "genres": [
+        "Comedia",
+        "Fantasía"
+      ],
+      "directors": [
+        "Seth MacFarlane"
+      ],
+      "cast": [
+        "Mark Wahlberg",
+        "Mila Kunis",
+        "Seth MacFarlane",
+        "Joel McHale",
+        "Giovanni Ribisi",
+        "Patrick Warburton",
+        "Matt Walsh"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 6.4,
+      "vote_count": 12500,
+      "popularity": 44.1,
+      "poster_path": null,
+      "overview": "John Bennett deseó de niño que su osito de peluche cobrara vida, y el deseo se cumplió. Décadas después, el oso vulgar y malhablado sigue siendo su mejor amigo, y su relación con su novia empieza a resentirse.",
+      "keywords": [
+        "talking teddy bear",
+        "friendship",
+        "boston, massachusetts",
+        "adult humor",
+        "wish",
+        "stuffed animal",
+        "slacker",
+        "relationship",
+        "magic",
+        "pop culture"
+      ],
+      "reviews": [
+        "Crude but genuinely funny, with great chemistry between Wahlberg and the CGI bear. The jokes land more often than they miss.",
+        "Una comedia irreverente que se disfruta sin pensar mucho. El humor es grosero, pero tiene su corazón en la amistad de los protagonistas."
+      ],
+      "providers": {
+        "CO": [
+          "Netflix"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "the-batman-2022",
+      "tmdb_id": 414906,
+      "imdb_id": "tt1877830",
+      "tmdb_id_verified": true,
+      "title": "Batman",
+      "original_title": "The Batman",
+      "year": 2022,
+      "runtime_min": 176,
+      "genres": [
+        "Crimen",
+        "Misterio",
+        "Suspense"
+      ],
+      "directors": [
+        "Matt Reeves"
+      ],
+      "cast": [
+        "Robert Pattinson",
+        "Zoë Kravitz",
+        "Paul Dano",
+        "Jeffrey Wright",
+        "John Turturro",
+        "Andy Serkis",
+        "Colin Farrell",
+        "Peter Sarsgaard"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.7,
+      "vote_count": 11000,
+      "popularity": 85.1,
+      "poster_path": null,
+      "overview": "Durante su segundo año combatiendo el crimen en Gotham, Batman descubre una red de corrupción que conecta con su propia familia. Cuando un asesino en serie empieza a atacar a las élites de la ciudad, deberá seguir un rastro de pistas enigmáticas.",
+      "keywords": [
+        "based on comic",
+        "superhero",
+        "vigilante",
+        "serial killer",
+        "detective",
+        "gotham city",
+        "corruption",
+        "neo-noir",
+        "conspiracy",
+        "dc comics"
+      ],
+      "reviews": [
+        "A dark, gritty detective story that finally treats Batman as the world's greatest detective. Pattinson is superb and the atmosphere is unforgettable.",
+        "Larga pero muy bien contada, con un tono noir que se agradece. La música y la fotografía elevan toda la experiencia."
+      ],
+      "providers": {
+        "CO": [
+          "Max"
+        ]
+      },
+      "simulated": true
+    },
+    {
       "id": "the-dark-knight-2008",
       "tmdb_id": 155,
       "imdb_id": "tt0468569",
@@ -1677,6 +2897,235 @@
         "CO": [
           "Max",
           "Netflix"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "the-exorcist-1973",
+      "tmdb_id": 9552,
+      "imdb_id": "tt0070047",
+      "tmdb_id_verified": true,
+      "title": "El exorcista",
+      "original_title": "The Exorcist",
+      "year": 1973,
+      "runtime_min": 122,
+      "genres": [
+        "Terror"
+      ],
+      "directors": [
+        "William Friedkin"
+      ],
+      "cast": [
+        "Ellen Burstyn",
+        "Max von Sydow",
+        "Linda Blair",
+        "Jason Miller",
+        "Lee J. Cobb",
+        "Kitty Winn",
+        "Jack MacGowran"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.7,
+      "vote_count": 8000,
+      "popularity": 71.2,
+      "poster_path": null,
+      "overview": "Una actriz acude desesperada a dos sacerdotes cuando su hija de doce años empieza a mostrar un comportamiento inexplicable y aterrador. Un clásico del terror sobre la fe y la posesión.",
+      "keywords": [
+        "exorcism",
+        "possession",
+        "priest",
+        "demon",
+        "washington d.c.",
+        "based on novel or book",
+        "faith",
+        "mother daughter relationship",
+        "supernatural horror",
+        "classic"
+      ],
+      "reviews": [
+        "Still unsettling after all these years. The slow build and the performances make it far more than a shock film.",
+        "Una obra maestra del terror que se apoya en el drama familiar antes que en los sustos. Sigue siendo una referencia del género."
+      ],
+      "providers": {
+        "CO": [
+          "Max"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "the-godfather-1972",
+      "tmdb_id": 238,
+      "imdb_id": "tt0068646",
+      "tmdb_id_verified": true,
+      "title": "El padrino",
+      "original_title": "The Godfather",
+      "year": 1972,
+      "runtime_min": 175,
+      "genres": [
+        "Drama",
+        "Crimen"
+      ],
+      "directors": [
+        "Francis Ford Coppola"
+      ],
+      "cast": [
+        "Marlon Brando",
+        "Al Pacino",
+        "James Caan",
+        "Robert Duvall",
+        "Diane Keaton",
+        "Talia Shire",
+        "John Cazale",
+        "Richard S. Castellano"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 8.7,
+      "vote_count": 21000,
+      "popularity": 94.3,
+      "poster_path": null,
+      "overview": "Don Vito Corleone, patriarca de una familia de la mafia en Nueva York, debe traspasar el control de su imperio a su reacio hijo menor. Una saga sobre poder, lealtad y familia.",
+      "keywords": [
+        "based on novel or book",
+        "mafia",
+        "organized crime",
+        "new york city",
+        "italian american",
+        "patriarch",
+        "family business",
+        "loyalty",
+        "power struggle",
+        "1940s"
+      ],
+      "reviews": [
+        "Every frame feels deliberate. The performances, the score and the pacing make this one of the great films, and it rewards every rewatch.",
+        "Una película perfecta sobre el poder y la familia. Brando y Pacino están inmensos y la dirección de Coppola es magistral."
+      ],
+      "providers": {
+        "CO": [
+          "Prime Video"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "the-godfather-part-ii-1974",
+      "tmdb_id": 240,
+      "imdb_id": "tt0071562",
+      "tmdb_id_verified": true,
+      "title": "El padrino II",
+      "original_title": "The Godfather Part II",
+      "year": 1974,
+      "runtime_min": 202,
+      "genres": [
+        "Drama",
+        "Crimen"
+      ],
+      "directors": [
+        "Francis Ford Coppola"
+      ],
+      "cast": [
+        "Al Pacino",
+        "Robert De Niro",
+        "Robert Duvall",
+        "Diane Keaton",
+        "John Cazale",
+        "Talia Shire",
+        "Lee Strasberg"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 8.6,
+      "vote_count": 12500,
+      "popularity": 61.5,
+      "poster_path": null,
+      "overview": "Michael Corleone consolida el poder de la familia mientras se retrata la juventud de su padre, Vito, en la Sicilia y la Nueva York de principios de siglo. Dos historias paralelas sobre el precio del poder.",
+      "keywords": [
+        "mafia",
+        "sequel",
+        "organized crime",
+        "sicily, italy",
+        "flashback",
+        "havana, cuba",
+        "immigrant",
+        "betrayal",
+        "family",
+        "1950s"
+      ],
+      "reviews": [
+        "Rare sequel that deepens everything the first film built. The parallel structure is brilliant and Pacino's quiet menace is unforgettable.",
+        "Larga pero absorbente. La historia del joven Vito y la caída moral de Michael se complementan de forma magistral."
+      ],
+      "providers": {
+        "CO": [
+          "Prime Video"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "the-godfather-part-iii-1990",
+      "tmdb_id": 242,
+      "imdb_id": "tt0099674",
+      "tmdb_id_verified": true,
+      "title": "El padrino III",
+      "original_title": "The Godfather Part III",
+      "year": 1990,
+      "runtime_min": 162,
+      "genres": [
+        "Crimen",
+        "Drama"
+      ],
+      "directors": [
+        "Francis Ford Coppola"
+      ],
+      "cast": [
+        "Al Pacino",
+        "Diane Keaton",
+        "Talia Shire",
+        "Andy Garcia",
+        "Eli Wallach",
+        "Joe Mantegna",
+        "George Hamilton",
+        "Sofia Coppola"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.4,
+      "vote_count": 6000,
+      "popularity": 40.8,
+      "poster_path": null,
+      "overview": "Ya mayor, Michael Corleone busca legitimar los negocios de su familia y redimirse de su pasado, pero nuevas alianzas y viejos enemigos lo arrastran de nuevo al mundo criminal.",
+      "keywords": [
+        "mafia",
+        "sequel",
+        "organized crime",
+        "vatican",
+        "redemption",
+        "sicily, italy",
+        "aging",
+        "guilt",
+        "banking",
+        "1970s"
+      ],
+      "reviews": [
+        "Unfairly judged against its two predecessors. It has real weight and a haunting final stretch, even if some casting choices distract.",
+        "No llega al nivel de las dos primeras, pero es un cierre melancólico y digno para la historia de Michael. Vale la pena verla."
+      ],
+      "providers": {
+        "CO": [
+          "Prime Video"
         ]
       },
       "simulated": true
@@ -1788,6 +3237,63 @@
       "providers": {
         "CO": [
           "Max"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "the-pope-s-exorcist-2023",
+      "tmdb_id": 9900410,
+      "imdb_id": null,
+      "tmdb_id_verified": false,
+      "title": "El exorcista del papa",
+      "original_title": "The Pope's Exorcist",
+      "year": 2023,
+      "runtime_min": 103,
+      "genres": [
+        "Terror",
+        "Suspense"
+      ],
+      "directors": [
+        "Julius Avery"
+      ],
+      "cast": [
+        "Russell Crowe",
+        "Daniel Zovatto",
+        "Alex Essoe",
+        "Franco Nero",
+        "Peter DeSouza-Feighoney",
+        "Laurel Marsden"
+      ],
+      "countries": [
+        "US",
+        "GB",
+        "ES"
+      ],
+      "original_language": "en",
+      "vote_average": 7,
+      "vote_count": 2500,
+      "popularity": 62.7,
+      "poster_path": null,
+      "overview": "Basada en los archivos del padre Gabriele Amorth, jefe de exorcistas del Vaticano. Investiga la posesión de un niño y descubre un secreto que la Iglesia ha intentado mantener oculto durante siglos.",
+      "keywords": [
+        "exorcism",
+        "possession",
+        "priest",
+        "vatican",
+        "demon",
+        "based on true story",
+        "spain",
+        "supernatural horror",
+        "catholic church"
+      ],
+      "reviews": [
+        "Russell Crowe clearly has fun with the role and carries the film. Not the scariest exorcism movie, but a lively and entertaining ride.",
+        "Tiene buenos momentos de tensión y un protagonista carismático. La trama es previsible, pero cumple si te gusta el género."
+      ],
+      "providers": {
+        "CO": [
+          "Netflix"
         ]
       },
       "simulated": true
@@ -2078,6 +3584,125 @@
       "simulated": true
     },
     {
+      "id": "toy-story-1995",
+      "tmdb_id": 862,
+      "imdb_id": "tt0114709",
+      "tmdb_id_verified": true,
+      "title": "Toy Story",
+      "original_title": "Toy Story",
+      "year": 1995,
+      "runtime_min": 81,
+      "genres": [
+        "Animación",
+        "Familia",
+        "Comedia"
+      ],
+      "directors": [
+        "John Lasseter"
+      ],
+      "cast": [
+        "Tom Hanks",
+        "Tim Allen",
+        "Don Rickles",
+        "Jim Varney",
+        "Wallace Shawn",
+        "John Ratzenberger",
+        "Annie Potts",
+        "John Morris"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 8,
+      "vote_count": 18500,
+      "popularity": 73.9,
+      "poster_path": null,
+      "overview": "Woody, un vaquero de juguete, es el favorito de su dueño Andy hasta que llega Buzz Lightyear, un flamante guardián espacial. Los celos y un viaje accidental fuera de casa obligarán a los dos a trabajar juntos para volver con Andy.",
+      "keywords": [
+        "toy",
+        "friendship",
+        "rivalry",
+        "cowboy",
+        "space ranger",
+        "jealousy",
+        "boy",
+        "anthropomorphism",
+        "computer animation",
+        "buddy"
+      ],
+      "reviews": [
+        "A true classic that changed animation forever. The humor and heart still hold up decades later.",
+        "Una joya que sigue siendo divertida para grandes y chicos. La amistad entre Woody y Buzz es inolvidable."
+      ],
+      "providers": {
+        "CO": [
+          "Disney+"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "toy-story-2-1999",
+      "tmdb_id": 863,
+      "imdb_id": "tt0120363",
+      "tmdb_id_verified": true,
+      "title": "Toy Story 2",
+      "original_title": "Toy Story 2",
+      "year": 1999,
+      "runtime_min": 92,
+      "genres": [
+        "Animación",
+        "Familia",
+        "Comedia"
+      ],
+      "directors": [
+        "John Lasseter",
+        "Lee Unkrich",
+        "Ash Brannon"
+      ],
+      "cast": [
+        "Tom Hanks",
+        "Tim Allen",
+        "Joan Cusack",
+        "Kelsey Grammer",
+        "Don Rickles",
+        "Jim Varney",
+        "Wallace Shawn",
+        "John Ratzenberger"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.6,
+      "vote_count": 14000,
+      "popularity": 61.3,
+      "poster_path": null,
+      "overview": "Cuando Woody es secuestrado por un coleccionista de juguetes, Buzz y sus amigos emprenden una misión de rescate. Mientras tanto, Woody descubre sus orígenes y debe decidir qué clase de juguete quiere ser.",
+      "keywords": [
+        "toy",
+        "rescue",
+        "sequel",
+        "collector",
+        "friendship",
+        "cowboy",
+        "airport",
+        "anthropomorphism",
+        "computer animation"
+      ],
+      "reviews": [
+        "One of the rare sequels that matches the original. Jessie is a great addition and the emotional beats really land.",
+        "Divertida, emotiva y con una canción que hace llorar a cualquiera. Muy recomendable para ver en familia."
+      ],
+      "providers": {
+        "CO": [
+          "Disney+"
+        ]
+      },
+      "simulated": true
+    },
+    {
       "id": "toy-story-3-2010",
       "tmdb_id": 10193,
       "imdb_id": "tt0435761",
@@ -2128,6 +3753,183 @@
       "reviews": [
         "Un cierre emotivo para la trilogía. Mezcla aventura, humor y una nostalgia que pega fuerte, sobre todo a quienes crecieron con las primeras películas.",
         "Pixar at its best: inventive, hilarious and a genuine tearjerker. The prison-break structure in the daycare is a clever touch."
+      ],
+      "providers": {
+        "CO": [
+          "Disney+"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "watchmen-2009",
+      "tmdb_id": 13183,
+      "imdb_id": "tt0409459",
+      "tmdb_id_verified": true,
+      "title": "Watchmen: Los vigilantes",
+      "original_title": "Watchmen",
+      "year": 2009,
+      "runtime_min": 162,
+      "genres": [
+        "Acción",
+        "Misterio",
+        "Ciencia ficción"
+      ],
+      "directors": [
+        "Zack Snyder"
+      ],
+      "cast": [
+        "Malin Åkerman",
+        "Billy Crudup",
+        "Matthew Goode",
+        "Jackie Earle Haley",
+        "Patrick Wilson",
+        "Jeffrey Dean Morgan",
+        "Carla Gugino"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.2,
+      "vote_count": 9000,
+      "popularity": 38.4,
+      "poster_path": null,
+      "overview": "En una Norteamérica alternativa de 1985, los superhéroes están proscritos y la Guerra Fría amenaza con una catástrofe nuclear. Cuando uno de sus antiguos compañeros es asesinado, un vigilante enmascarado investiga una conspiración que puede cambiar el mundo.",
+      "keywords": [
+        "superhero",
+        "based on graphic novel",
+        "alternate history",
+        "cold war",
+        "vigilante",
+        "nuclear war",
+        "conspiracy",
+        "murder mystery",
+        "dystopia",
+        "1980s"
+      ],
+      "reviews": [
+        "Visually striking and faithful in tone to the source material. The length is demanding, but the world-building and the performances keep it compelling.",
+        "Una adaptación ambiciosa con una banda sonora memorable. Algunas escenas se alargan, pero la atmósfera y el personaje de Rorschach valen la pena."
+      ],
+      "providers": {
+        "CO": [
+          "Max"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "world-war-z-2013",
+      "tmdb_id": 72190,
+      "imdb_id": "tt0816711",
+      "tmdb_id_verified": true,
+      "title": "Guerra Mundial Z",
+      "original_title": "World War Z",
+      "year": 2013,
+      "runtime_min": 116,
+      "genres": [
+        "Acción",
+        "Terror",
+        "Ciencia ficción"
+      ],
+      "directors": [
+        "Marc Forster"
+      ],
+      "cast": [
+        "Brad Pitt",
+        "Mireille Enos",
+        "Daniella Kertesz",
+        "James Badge Dale",
+        "Ludi Boeken",
+        "Matthew Fox",
+        "David Morse"
+      ],
+      "countries": [
+        "US",
+        "MT"
+      ],
+      "original_language": "en",
+      "vote_average": 6.8,
+      "vote_count": 16000,
+      "popularity": 52.7,
+      "poster_path": null,
+      "overview": "Un exinvestigador de la ONU recorre el mundo en busca del origen de una pandemia que convierte a los infectados en criaturas violentas. Su misión es encontrar una forma de detenerla antes de que la civilización colapse.",
+      "keywords": [
+        "zombie",
+        "pandemic",
+        "apocalypse",
+        "based on novel or book",
+        "virus",
+        "united nations",
+        "survival",
+        "epidemic",
+        "family",
+        "post-apocalyptic future"
+      ],
+      "reviews": [
+        "Tense, fast and surprisingly grand in scale. It trades the gore of the genre for large set pieces, and it works as a globe-trotting thriller.",
+        "Entretenida y con mucho ritmo. El final es más tranquilo de lo que esperaba, pero la secuencia de Jerusalén es espectacular."
+      ],
+      "providers": {
+        "CO": [
+          "Prime Video"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "x-men-days-of-future-past-2014",
+      "tmdb_id": 127585,
+      "imdb_id": "tt1877832",
+      "tmdb_id_verified": true,
+      "title": "X-Men: Días del futuro pasado",
+      "original_title": "X-Men: Days of Future Past",
+      "year": 2014,
+      "runtime_min": 132,
+      "genres": [
+        "Acción",
+        "Aventura",
+        "Ciencia ficción"
+      ],
+      "directors": [
+        "Bryan Singer"
+      ],
+      "cast": [
+        "Hugh Jackman",
+        "James McAvoy",
+        "Michael Fassbender",
+        "Jennifer Lawrence",
+        "Patrick Stewart",
+        "Ian McKellen",
+        "Peter Dinklage",
+        "Halle Berry"
+      ],
+      "countries": [
+        "US",
+        "GB"
+      ],
+      "original_language": "en",
+      "vote_average": 7.5,
+      "vote_count": 15000,
+      "popularity": 71.3,
+      "poster_path": null,
+      "overview": "En un futuro sombrío, los mutantes son cazados por unos centinelas invencibles. Wolverine viaja al pasado para unir a los jóvenes Profesor X y Magneto e intentar cambiar el rumbo de la historia.",
+      "keywords": [
+        "superhero",
+        "mutant",
+        "time travel",
+        "based on comic",
+        "dystopia",
+        "alternate timeline",
+        "shape shifter",
+        "1970s",
+        "vietnam war",
+        "aftercreditsstinger"
+      ],
+      "reviews": [
+        "A satisfying blend of both X-Men casts with real emotional stakes. The Quicksilver sequence alone is worth the ticket.",
+        "Una de las mejores entregas de la saga. Mezcla acción y drama con buen ritmo, aunque la línea de tiempo puede enredar a quien no conozca las películas anteriores."
       ],
       "providers": {
         "CO": [

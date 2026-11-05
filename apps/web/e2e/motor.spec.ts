@@ -48,6 +48,8 @@ test('abrir un mazo, guardar una carta, verla en Ver y confirmar "Me encantó" c
   await page.waitForFunction(() => !!(window as unknown as { KinooDemo?: unknown }).KinooDemo);
   await expect(page.getByText(cards[0]!.title, { exact: true }).first()).toBeVisible();
   await expect(page.getByText(/^Por qué hoy: encaja con tu gusto/)).toBeVisible();
+  await expect(page.getByText(/% contigo/)).toHaveCount(0);
+  await expect(page.getByText('de tu mano').first()).toBeVisible();
   await page.getByText('verla →', { exact: true }).click();
   await page.getByText(/^(Abrir en|Alquilar en)/).click();
   await page.waitForURL(/FlujoV2_Abriendo/);

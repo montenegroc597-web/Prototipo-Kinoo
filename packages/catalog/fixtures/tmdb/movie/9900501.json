@@ -1,0 +1,202 @@
+{
+  "_simulado": true,
+  "_id_verificado": false,
+  "id": 9900501,
+  "imdb_id": null,
+  "title": "Mickey 17",
+  "original_title": "Mickey 17",
+  "original_language": "en",
+  "release_date": "2025-03-05",
+  "runtime": 137,
+  "status": "Released",
+  "adult": false,
+  "genres": [
+    {
+      "id": 878,
+      "name": "Ciencia ficción"
+    },
+    {
+      "id": 35,
+      "name": "Comedia"
+    },
+    {
+      "id": 12,
+      "name": "Aventura"
+    }
+  ],
+  "overview": "Mickey, un trabajador prescindible en una expedición para colonizar un planeta helado, es enviado a misiones mortales y regenerado una y otra vez. Todo se complica cuando una versión suya aparece mientras la anterior sigue con vida.",
+  "tagline": "Morir es un trabajo.",
+  "vote_average": 6.9,
+  "vote_count": 2500,
+  "popularity": 88.1,
+  "poster_path": null,
+  "backdrop_path": null,
+  "production_countries": [
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    },
+    {
+      "iso_3166_1": "KR",
+      "name": "South Korea"
+    }
+  ],
+  "spoken_languages": [
+    {
+      "iso_639_1": "en",
+      "english_name": "English",
+      "name": "English"
+    }
+  ],
+  "budget": 118000000,
+  "revenue": 130000000,
+  "credits": {
+    "cast": [
+      {
+        "id": 17419,
+        "name": "Robert Pattinson",
+        "character": "Mickey Barnes / Mickey 17 / Mickey 18",
+        "order": 0
+      },
+      {
+        "id": null,
+        "name": "Naomi Ackie",
+        "character": "Nasha",
+        "order": 1
+      },
+      {
+        "id": null,
+        "name": "Steven Yeun",
+        "character": "Timo",
+        "order": 2
+      },
+      {
+        "id": null,
+        "name": "Toni Collette",
+        "character": "Ylfa",
+        "order": 3
+      },
+      {
+        "id": null,
+        "name": "Mark Ruffalo",
+        "character": "Kenneth Marshall",
+        "order": 4
+      },
+      {
+        "id": null,
+        "name": "Anamaria Vartolomei",
+        "character": "Kai Katz",
+        "order": 5
+      },
+      {
+        "id": null,
+        "name": "Patsy Ferran",
+        "character": "Dorothy",
+        "order": 6
+      }
+    ],
+    "crew": [
+      {
+        "id": null,
+        "name": "Bong Joon-ho",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "Bong Joon-ho",
+        "job": "Screenplay",
+        "department": "Writing"
+      },
+      {
+        "id": null,
+        "name": "Jung Jae-il",
+        "job": "Original Music Composer",
+        "department": "Sound"
+      }
+    ]
+  },
+  "keywords": {
+    "keywords": [
+      {
+        "id": null,
+        "name": "based on novel or book"
+      },
+      {
+        "id": null,
+        "name": "clone"
+      },
+      {
+        "id": null,
+        "name": "space colony"
+      },
+      {
+        "id": null,
+        "name": "ice planet"
+      },
+      {
+        "id": null,
+        "name": "dark comedy"
+      },
+      {
+        "id": null,
+        "name": "expendable worker"
+      },
+      {
+        "id": null,
+        "name": "satire"
+      },
+      {
+        "id": null,
+        "name": "dictator"
+      },
+      {
+        "id": null,
+        "name": "reincarnation"
+      },
+      {
+        "id": null,
+        "name": "alien creature"
+      }
+    ]
+  },
+  "reviews": {
+    "page": 1,
+    "total_results": 2,
+    "results": [
+      {
+        "author": "orbitwatcher",
+        "author_details": {
+          "rating": 7
+        },
+        "content": "Pattinson is hilarious and heartbreaking in a double role. Bong's satire is sharp, even if the tone wobbles in places.",
+        "created_at": "2025-03-10T17:42:58.000Z",
+        "id": "67cf1a3e9b2d4c00e5a1f860"
+      },
+      {
+        "author": "sala_oscura_bog",
+        "author_details": {
+          "rating": 8
+        },
+        "content": "Divertida, extraña y con mucho que decir sobre la desigualdad. Una propuesta original de ciencia ficción que se disfruta de principio a fin.",
+        "created_at": "2025-04-02T03:27:15.000Z",
+        "id": "67ed4b7c1f8a3e00d2c9b541"
+      }
+    ]
+  },
+  "watch/providers": {
+    "results": {
+      "CO": {
+        "link": "https://www.themoviedb.org/movie/9900501/watch?locale=CO",
+        "flatrate": [
+          {
+            "provider_id": 1899,
+            "provider_name": "Max",
+            "logo_path": null,
+            "display_priority": 2
+          }
+        ]
+      }
+    }
+  }
+}

@@ -19,6 +19,18 @@ Camilo pidió construir todo sobre el repositorio del prototipo (`Prototipo-Kino
 
 Detalle en `docs/adr/0001-estructura.md` y `docs/adr/0002-monorepo.md`.
 
+## Ajustes de la versión 1.2 · F7
+
+Después de F6, Camilo pidió una fase más: **F7 · Reorganización front/back, nube y simulación de TMDB.**
+
+- Front en `apps/web`, back en `apps/api`, paquetes compartidos en `packages/`, infraestructura en `infra/`.
+- Base de datos portátil: las mismas migraciones en Supabase o en cualquier PostgreSQL (proveedores), con aplicador propio, Docker y CLI de Supabase.
+- Pruebas por capas: unitarias, integración (dos proveedores, API HTTP), e2e, lint y tipos.
+- Simulación de TMDB con fixtures del formato real y el mismo pipeline. Pósters locales con inventario.
+- Documentación: arquitectura, guía para integrar un front nuevo, pruebas, `AGENTS.md`.
+
+Comprobación: todo `npm run check` en verde, e2e en verde y la documentación enlazada. Detalle en `docs/adr/0004-front-back-y-nube.md`.
+
 ---
 
 ## 1. Objetivo
