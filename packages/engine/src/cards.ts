@@ -1,4 +1,4 @@
-import { type CardDTO, type DeckDTO, type DeckRole, posterUrl } from '@kinoo/shared';
+import { type CardDTO, type DeckDTO, type DeckRole, type Params, fitText, posterUrl } from '@kinoo/shared';
 import type { IndexedMovie } from './catalog';
 import type { ActiveDeck, DeckCard } from './deck';
 
@@ -7,6 +7,28 @@ export interface DtoOptions {
   country?: string;
   /** Base para pósters del repositorio ("posters/<id>.jpg"): por ejemplo "https://…/Prototipo-Kinoo/" o "../". */
   assetBaseUrl?: string;
+  /** Estándar de caracteres de la carta (params card_*_max). */
+  limits?: Pick<Params, 'card_premise_max' | 'card_title_max' | 'card_subtitle_max' | 'card_overview_max' | 'card_explanation_max' | 'card_pillar_max'>;
+}
+
+export const DEFAULT_CARD_LIMITS = {
+  card_premise_max: 44,
+  card_title_max: 24,
+  card_subtitle_max: 40,
+  card_overview_max: 110,
+  card_explanation_max: 96,
+  card_pillar_max: 18,
+};
+
+const sentenceCase = (s: string) => (s ? s.charAt(0).toUpperCase() + s.slice(1).toLowerCase() : s);
+
+/** "Una película de A y B"; si no cabe, solo el primer nombre (y "y otros" si cabe). */
+function byline(directors: string[], max: number): string {
+  const all = `Una película de ${directors.join(' y ')}`;
+  if (all.length <= max || directors.length === 0) return directors.length ? all : '';
+  const first = `Una película de ${directors[0]}`;
+  if (directors.length > 1 && first.length + 8 <= max) return `${first} y otros`;
+  return fitText(first, max);
 }
 
 /** Las dos caras de la carta. El back entrega ambas; el front decide cuál mostrar primero. */
@@ -17,6 +39,8 @@ export function toCardDTO(
 ): CardDTO {
   const mv = m.movie;
   const country = o.country ?? 'CO';
+  const L = { ...DEFAULT_CARD_LIMITS, ...(o.limits ?? {}) };
+  const overview = mv.overview || sentenceCase(mv.hook);
   return {
     slot: card.slot,
     role: card.role,
@@ -34,6 +58,19 @@ export function toCardDTO(
       providers: mv.providers?.[country] ?? [],
     },
     explanation: card.explanation,
+    display: {
+      premise: fitText(sentenceCase(mv.hook), L.card_premise_max),
+      title: fitText(mv.title, L.card_title_max),
+      subtitle: byline(mv.directors, L.card_subtitle_max),
+      overview: fitText(overview, L.card_overview_max),
+      explanation: fitText(card.explanation, L.card_explanation_max),
+      pillars: {
+        ritmo: fitText(mv.pillars.ritmo, L.card_pillar_max),
+        tono: fitText(mv.pillars.tono, L.card_pillar_max),
+        historia: fitText(mv.pillars.historia, L.card_pillar_max),
+        visual: fitText(mv.pillars.visual, L.card_pillar_max),
+      },
+    },
     special_treatment: card.special_treatment,
     ...(card.curator_name ? { curator_name: card.curator_name } : {}),
   };

@@ -47,7 +47,7 @@ ${ex}
 - Sin revelar giros del final.
 
 ## Pilares (reverso de la carta)
-Cuatro etiquetas cortas en minúscula y en español: ritmo (p. ej. "pausado", "vibrante"), tono (p. ej. "melancólico", "cálido"), historia (p. ej. "amor a destiempo"), visual (p. ej. "neón nocturno").
+Cuatro etiquetas cortas en minúscula y en español, de 18 caracteres como máximo cada una (se ven en una sola línea de la carta): ritmo (p. ej. "pausado", "vibrante"), tono (p. ej. "melancólico", "cálido"), historia (p. ej. "amor a destiempo"), visual (p. ej. "neón nocturno").
 
 ## Películas
 ${list}

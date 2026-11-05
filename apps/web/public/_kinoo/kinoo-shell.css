@@ -1,0 +1,30 @@
+/*
+ * Marco del prototipo en pantallas anchas (PC, tablet horizontal): la app de 402 px se ve centrada,
+ * como un celular, sobre un fondo café. En el celular no cambia nada.
+ * Estructura de cada pantalla .dc.html: body > div > div > div (402 px, la app).
+ */
+@media (min-width: 600px) {
+  html, body { background: #3b2a20 !important; }
+  body { margin: 0; min-height: 100vh; background: radial-gradient(ellipse at 50% 30%, #4a3528 0%, #3b2a20 55%, #2a1d16 100%) !important; }
+  body > div, body > div > div { width: 100% !important; }
+  body > div > div {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 24px 0;
+    box-sizing: border-box;
+  }
+  body > div > div > div {
+    flex: none;
+    border-radius: 36px;
+    box-shadow: 0 0 0 10px #17120f, 0 0 0 12px #5a4232, 0 30px 80px rgba(0, 0, 0, 0.55);
+    /* Los elementos fijos (hojas, avisos) quedan dentro del celular. */
+    transform: translateZ(0);
+  }
+}
+
+/* Pantallas de PC bajas: el celular se reduce para verse completo, sin cortarse abajo. */
+@media (min-width: 600px) and (max-height: 960px) { body > div > div > div { zoom: 0.9; } }
+@media (min-width: 600px) and (max-height: 860px) { body > div > div > div { zoom: 0.8; } }
+@media (min-width: 600px) and (max-height: 760px) { body > div > div > div { zoom: 0.7; } }

@@ -1,6 +1,6 @@
 import { defaultConfig } from '@kinoo/config';
 import { KinooService, type UserSnapshot } from '@kinoo/core';
-import { type ActiveDeck, KinooEngine, cosine, topAtoms } from '@kinoo/engine';
+import { type ActiveDeck, KinooEngine, cosine, explain, toCardDTO, topAtoms } from '@kinoo/engine';
 // Modo demo de Kinoo: el motor v2 corre en el navegador. Lo cargan las pantallas del prototipo
 // (../_kinoo/kinoo-demo.js) y queda en window.KinooDemo. Si este archivo no carga, las pantallas
 // usan sus datos de ejemplo de siempre.
@@ -97,22 +97,13 @@ function toneKey(m: Movie): 'melancólico' | 'nostálgico' | 'oscuro' | 'cálido
   };
   return Object.entries(c).sort((x, y) => y[1] - x[1])[0]![0] as 'melancólico';
 }
-/**
- * La carta del prototipo está diseñada para una premisa corta (unas 40 letras) y el juez escribe frases de hasta 160.
- * Para la demo se toma la primera parte de la frase (hasta una coma) y, si sigue larga, se corta en una palabra con "…".
- * Decisión pendiente para Camilo: pedirle al juez una premisa corta aparte o ajustar el diseño de la carta.
- */
-export function shortPremise(hook: string, max = 44): string {
-  const sentence = hook.charAt(0) + hook.slice(1).toLowerCase();
-  const parts = sentence.split(/,\s+|\s+—\s+|;\s+/);
-  let out = parts[0]!;
-  for (let i = 1; i < parts.length && out.length < 24 && out.length + parts[i]!.length + 2 <= max; i++) out += ', ' + parts[i];
-  if (out.length > max) out = out.slice(0, out.lastIndexOf(' ', max - 1)) + '…';
-  else if (out.length < sentence.length) out = out.replace(/[.,;:]?$/, '…');
-  return out;
-}
-
 const KICKER: Record<string, string> = { afin: 'muy tú', creador: 'del equipo Kinoo', comodin: 'un giro para ti', sorpresa: 'una sorpresa' };
+
+/** Tamaño del título del reverso según su largo (el estándar card_title_max garantiza que el más largo quepa a 26 px). */
+export function titleSize(title: string): number {
+  const n = title.length;
+  return n <= 12 ? 40 : n <= 15 ? 38 : n <= 18 ? 34 : n <= 21 ? 30 : 26;
+}
 
 /** Carta del motor → formato de carta del prototipo (Flujo1_Descubrir). */
 function toProtoCard(c: CardDTO) {
@@ -123,27 +114,29 @@ function toProtoCard(c: CardDTO) {
     movie_id: m.id,
     role: c.role,
     kicker: KICKER[c.role] ?? 'para ti',
-    premise: shortPremise(c.front.hook),
+    premise: c.display.premise,
     match: '',
     showMatch: false,
     tags: m.genres.slice(0, 3),
-    similar: c.explanation,
-    title: m.title,
-    subtitle: `Una película de ${m.directors.join(' y ')}`,
+    similar: c.display.explanation,
+    title: c.display.title,
+    titleSize: titleSize(c.display.title),
+    subtitle: c.display.subtitle,
     dur: fmtDur(m.runtime_min),
     genre: m.genres[0] ?? '',
     year: String(m.year),
-    desc: m.overview || c.front.hook.charAt(0) + c.front.hook.slice(1).toLowerCase(),
+    desc: c.display.overview,
     img: c.back.poster_url ?? undefined,
-    pos: '50% 50%',
+    // Los pósters son verticales y el espacio de la carta es horizontal: se muestra la parte de arriba (caras y título).
+    pos: '50% 22%',
     netflix: provs.includes('Netflix'),
     disney: provs.includes('Disney+'),
     tono,
     rows: [
-      ['ritmo', m.pillars.ritmo, 'ritmo de la película'],
-      ['tono', tono, m.pillars.tono],
-      ['historia', m.pillars.historia, 'de qué va'],
-      ['visual', m.pillars.visual, 'cómo se ve'],
+      ['ritmo', c.display.pillars.ritmo, 'ritmo de la película'],
+      ['tono', tono, c.display.pillars.tono],
+      ['historia', c.display.pillars.historia, 'de qué va'],
+      ['visual', c.display.pillars.visual, 'cómo se ve'],
     ],
   };
 }
@@ -179,7 +172,28 @@ function ensureDeck(): ActiveDeck {
   pinned = state.active_deck!.deck_id;
   return state.active_deck!;
 }
+// Auditoría de textos (solo pruebas): ?auditoria=id1,id2… muestra esas películas como mazo, sin guardar nada.
+const AUDIT_IDS = (() => {
+  try {
+    const q = new URLSearchParams(location.search).get('auditoria');
+    return q ? q.split(',').filter((id) => engine.catalog.byId.has(id)) : null;
+  } catch {
+    return null;
+  }
+})();
+
+function auditView() {
+  const cards = AUDIT_IDS!.map((id, i) => {
+    const m = engine.catalog.byId.get(id)!;
+    // Peor caso de la explicación: el perfil igual a la película (dos rasgos con etiqueta larga).
+    const explanation = explain({ hat: m.hat, profile: m.hat, vibe: null, vibeRecipe: null }, engine.cfg);
+    return toCardDTO(m, { slot: i + 1, role: 'afin', explanation, special_treatment: false }, { country: 'CO', assetBaseUrl: ASSET_BASE });
+  });
+  return { id: 'auditoria', cards: cards.map(toProtoCard), adn: cards.map(protoAdn) };
+}
+
 function deckView() {
+  if (AUDIT_IDS) return (cache ??= auditView());
   const d = ensureDeck();
   if (!cache || cache.id !== d.deck_id) {
     const cards = engine.deckDTO(d).cards;
@@ -205,6 +219,7 @@ const api = {
   },
   /** El prototipo informa una acción sobre la carta idx. El gesto lo decide el front. */
   onCard(idx: number, kind: 'want' | 'pass' | 'seen', flipped: boolean) {
+    if (AUDIT_IDS) return null;
     const d = ensureDeck();
     const card = d.cards[idx];
     const type = ACTIONS[kind];
@@ -227,6 +242,7 @@ const api = {
     return { special_match: !!r.results.find((x) => x.save)?.save?.special_match, closing: closing ?? null };
   },
   onFlip(idx: number) {
+    if (AUDIT_IDS) return;
     const d = ensureDeck();
     const card = d.cards[idx];
     if (card)
@@ -236,6 +252,7 @@ const api = {
   },
   /** Al salir del mazo: si quedó a medias, se cierra; el próximo Descubrir abre uno nuevo. */
   leaveDeck() {
+    if (AUDIT_IDS) return;
     const d = state.active_deck;
     if (d && !d.completed_at) run((svc) => svc.postEvents([{ type: 'deck_completed', payload: { deck_id: d.deck_id } } as EventInput]));
     pinned = null;

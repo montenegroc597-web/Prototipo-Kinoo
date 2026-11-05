@@ -23,6 +23,7 @@ for (const f of existsSync(batchDir)
 }
 
 const errors = [];
+const longPillars = [];
 const warnings = [];
 const movies = [];
 for (const m of meta) {
@@ -54,6 +55,8 @@ for (const m of meta) {
     if (!v) errors.push(`${m.id}: falta el pilar ${k}`);
     pillars[k] = v;
   }
+  for (const k of PILLARS)
+    if (pillars[k].length > 18) longPillars.push(`${m.id}: el pilar ${k} tiene ${pillars[k].length} caracteres (la carta muestra 18; se recorta)`);
   if (atoms.frenetica > 0.8 && atoms.contemplativa > 0.8) warnings.push(`${m.id}: frenética y contemplativa por encima de 0,8`);
   movies.push({
     id: m.id,
@@ -149,6 +152,7 @@ const md = [
   '|---|---|---|---|',
   `| Esquema y frases gancho | ${errors.length} errores | 0 errores | ${errors.length ? '❌' : '✅'} |`,
   `| Dispersión | ${lowDispersion.length ? `bajos: ${lowDispersion.join(', ')}` : 'todos ≥ 0,15'} | desviación ≥ 0,15 por átomo | ${lowDispersion.length ? '❌' : '✅'} |`,
+  `| Pilares (≤ 18 caracteres para la carta) | ${longPillars.length} largos | se recortan con "…" | ${longPillars.length ? '⚠️' : '✅'} |`,
   `| Contradicciones | ${warnings.length} alertas | frenética y contemplativa no ambas > 0,8 | ${warnings.length ? '⚠️' : '✅'} |`,
   `| Error de las anclas | ${anchorMae ?? 'sin anclas'} (${valid.map((x) => `${x.id}: ${x.mae}`).join(', ')}) | ≤ 0,15 | ${anchorMae !== null && anchorMae <= 0.15 ? '✅' : '❌'} |`,
   '',
@@ -160,6 +164,7 @@ const md = [
   '',
   ...(errors.length ? ['## Errores', '', ...errors.map((e) => `- ${e}`), ''] : []),
   ...(warnings.length ? ['## Alertas', '', ...warnings.map((e) => `- ${e}`), ''] : []),
+  ...(longPillars.length ? ['## Pilares largos', '', ...longPillars.map((e) => `- ${e}`), ''] : []),
 ];
 writeFileSync(p('packages/catalog/data/qc-report.md'), md.join('\n'));
 console.log(md.slice(4, 10).join('\n'));

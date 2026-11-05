@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T04:30:35.067Z",
+  "generated_at": "2026-11-05T05:05:26.543Z",
   "source": "tmdb_simulado",
   "count": 69,
   "prompt_version": "juez-v2.0",
@@ -179,9 +179,9 @@
       "hook": "UNA MUJER RECUERDA LAS VACACIONES DE VERANO QUE PASÓ DE NIÑA CON SU PADRE, Y BUSCA EN ESAS IMÁGENES AL HOMBRE QUE NUNCA LLEGÓ A CONOCER.",
       "pillars": {
         "ritmo": "pausado",
-        "tono": "nostálgico y devastador",
-        "historia": "padre e hija en un verano",
-        "visual": "video casero cálido"
+        "tono": "nostalgia rota",
+        "historia": "verano con papá",
+        "visual": "video casero"
       },
       "providers": {
         "CO": [
@@ -259,7 +259,7 @@
       "pillars": {
         "ritmo": "nervioso y coral",
         "tono": "duro y desgarrador",
-        "historia": "tres vidas cruzadas",
+        "historia": "vidas cruzadas",
         "visual": "cámara en mano"
       },
       "providers": {
@@ -335,7 +335,7 @@
       "hook": "NAVES MISTERIOSAS APARECEN EN LA TIERRA Y UNA LINGÜISTA DEBE DESCIFRAR SU LENGUAJE ANTES DE QUE EL MUNDO ENTRE EN GUERRA.",
       "pillars": {
         "ritmo": "pausado",
-        "tono": "enigmático y emotivo",
+        "tono": "enigmático",
         "historia": "primer contacto",
         "visual": "niebla y gris"
       },
@@ -417,8 +417,8 @@
       "pillars": {
         "ritmo": "épico",
         "tono": "emotivo y heroico",
-        "historia": "despedida de un equipo",
-        "visual": "espectáculo de gran escala"
+        "historia": "adiós al equipo",
+        "visual": "espectáculo épico"
       },
       "providers": {
         "CO": [
@@ -493,9 +493,9 @@
       "hook": "UNA MAESTRA JUBILADA QUE ESCRIBE CARTAS EN UNA ESTACIÓN ACOMPAÑA A UN NIÑO HUÉRFANO EN UN LARGO VIAJE EN BUSCA DE SU PADRE.",
       "pillars": {
         "ritmo": "pausado",
-        "tono": "humano y conmovedor",
-        "historia": "viaje en busca del padre",
-        "visual": "carretera del interior"
+        "tono": "humano y tierno",
+        "historia": "buscando al padre",
+        "visual": "ruta del interior"
       },
       "providers": {
         "CO": [
@@ -572,7 +572,7 @@
       "hook": "EN LAS NOCHES ELÉCTRICAS DE UNA CIUDAD ABARROTADA, DOS POLICÍAS SOLITARIOS ESPERAN UN AMOR QUE SE FUE Y UNO NUEVO QUE TAL VEZ YA PASÓ A SU LADO.",
       "pillars": {
         "ritmo": "vibrante y suelto",
-        "tono": "melancólico y juguetón",
+        "tono": "melancolía lúdica",
         "historia": "amores a destiempo",
         "visual": "neón nocturno"
       },
@@ -652,7 +652,7 @@
       "hook": "UN NIÑO QUE SUEÑA CON SER MÚSICO CRUZA AL MUNDO DE LOS MUERTOS PARA DESCUBRIR EL SECRETO DE SU FAMILIA.",
       "pillars": {
         "ritmo": "ágil",
-        "tono": "conmovedor y cálido",
+        "tono": "cálido y emotivo",
         "historia": "memoria y familia",
         "visual": "colorido festivo"
       },
@@ -733,9 +733,9 @@
       "hook": "UN NOVIO TÍMIDO PROMETE SU MANO A UNA NOVIA MUERTA Y DESCUBRE QUE EL OTRO MUNDO ES MÁS ALEGRE QUE EL DE LOS VIVOS.",
       "pillars": {
         "ritmo": "ágil y musical",
-        "tono": "melancólico y juguetón",
-        "historia": "amor entre dos mundos",
-        "visual": "gótico en stop motion"
+        "tono": "melancolía lúdica",
+        "historia": "amor entre mundos",
+        "visual": "gótico stop motion"
       },
       "providers": {
         "CO": [
@@ -812,7 +812,7 @@
       "pillars": {
         "ritmo": "tenso",
         "tono": "brutal y opresivo",
-        "historia": "posesión en el campo",
+        "historia": "posesión rural",
         "visual": "campo polvoriento"
       },
       "providers": {
@@ -891,8 +891,8 @@
       "pillars": {
         "ritmo": "pausado",
         "tono": "solemne",
-        "historia": "elegido en el desierto",
-        "visual": "desierto monumental"
+        "historia": "el elegido",
+        "visual": "desierto colosal"
       },
       "providers": {
         "CO": [
@@ -970,7 +970,7 @@
       "pillars": {
         "ritmo": "épico",
         "tono": "grave y ominoso",
-        "historia": "venganza y profecía",
+        "historia": "venganza profética",
         "visual": "arena y fuego"
       },
       "providers": {
@@ -1052,7 +1052,7 @@
         "ritmo": "pausado",
         "tono": "hipnótico",
         "historia": "viaje por el río",
-        "visual": "selva en blanco y negro"
+        "visual": "selva monocroma"
       },
       "providers": {
         "CO": [
@@ -1127,9 +1127,9 @@
       },
       "hook": "DESPUÉS DE UNA RUPTURA, UN HOMBRE DECIDE BORRAR A SU EX DE SU MEMORIA, Y MIENTRAS LOS RECUERDOS SE DESVANECEN, COMPRENDE LO QUE REALMENTE QUIERE CONSERVAR.",
       "pillars": {
-        "ritmo": "fluido y fragmentado",
+        "ritmo": "fragmentado",
         "tono": "agridulce",
-        "historia": "amor que se resiste al olvido",
+        "historia": "amor sin olvido",
         "visual": "memoria onírica"
       },
       "providers": {
@@ -1210,7 +1210,7 @@
       "pillars": {
         "ritmo": "vertiginoso",
         "tono": "absurdo y tierno",
-        "historia": "madre e hija entre universos",
+        "historia": "hija y multiverso",
         "visual": "caos colorido"
       },
       "providers": {
@@ -1289,9 +1289,9 @@
       "hook": "UNA VISITA A LA FINCA DE LOS PADRES DE SU NOVIA PARECE SOLO INCÓMODA, HASTA QUE UN JOVEN FOTÓGRAFO DESCUBRE ALGO PERTURBADOR.",
       "pillars": {
         "ritmo": "tenso",
-        "tono": "incómodo y satírico",
+        "tono": "sátira incómoda",
         "historia": "paranoia social",
-        "visual": "suburbio inquietante"
+        "visual": "suburbio siniestro"
       },
       "providers": {
         "CO": [
@@ -1370,7 +1370,7 @@
         "ritmo": "vibrante",
         "tono": "alegre",
         "historia": "amor de instituto",
-        "visual": "años cincuenta colorido"
+        "visual": "años 50 colorido"
       },
       "providers": {
         "CO": [
@@ -1447,7 +1447,7 @@
       "pillars": {
         "ritmo": "tenso",
         "tono": "sombrío",
-        "historia": "venganza de sobrevivientes",
+        "historia": "ajuste de cuentas",
         "visual": "noche de barrio"
       },
       "providers": {
@@ -1524,7 +1524,7 @@
       "hook": "EN UN FUTURO CERCANO, UN HOMBRE SOLITARIO SE ENAMORA DE LA VOZ DE UN SISTEMA OPERATIVO QUE APRENDE A SENTIR.",
       "pillars": {
         "ritmo": "pausado",
-        "tono": "melancólico y tierno",
+        "tono": "melancolía tierna",
         "historia": "amor artificial",
         "visual": "tonos cálidos"
       },
@@ -1602,9 +1602,9 @@
       },
       "hook": "TRAS LA MUERTE DE LA MATRIARCA, UNA FAMILIA EMPIEZA A DESCUBRIR SECRETOS TERRIBLES SOBRE SU PASADO MIENTRAS EL DUELO LA VA DEVORANDO.",
       "pillars": {
-        "ritmo": "pausado y asfixiante",
-        "tono": "aterrador y sombrío",
-        "historia": "duelo familiar maldito",
+        "ritmo": "asfixiante",
+        "tono": "terror sombrío",
+        "historia": "duelo maldito",
         "visual": "penumbra doméstica"
       },
       "providers": {
@@ -1683,8 +1683,8 @@
       "hook": "CON LA TIERRA AGONIZANDO, UN GRUPO DE EXPLORADORES CRUZA UN PORTAL HACIA OTRA GALAXIA PARA SALVAR A LA HUMANIDAD, A COSTA DE DEJAR ATRÁS A SUS HIJOS.",
       "pillars": {
         "ritmo": "majestuoso",
-        "tono": "emotivo y grandioso",
-        "historia": "viaje cósmico por los hijos",
+        "tono": "épico y emotivo",
+        "historia": "viaje cósmico",
         "visual": "espacio infinito"
       },
       "providers": {
@@ -1921,7 +1921,7 @@
       "hook": "EN UNA CIUDAD EXTRAÑA Y DESVELADA, UN ACTOR EN DECADENCIA Y UNA JOVEN PERDIDA ENCUENTRAN EN LA OTRA UNA CONEXIÓN FUGAZ QUE NADIE MÁS ENTIENDE.",
       "pillars": {
         "ritmo": "pausado",
-        "tono": "melancólico y tierno",
+        "tono": "soledad tierna",
         "historia": "conexión pasajera",
         "visual": "neón de madrugada"
       },
@@ -2002,7 +2002,7 @@
       "pillars": {
         "ritmo": "vertiginoso",
         "tono": "brutal",
-        "historia": "huida en el desierto",
+        "historia": "huida desértica",
         "visual": "polvo y fuego"
       },
       "providers": {
@@ -2081,7 +2081,7 @@
         "ritmo": "vertiginoso",
         "tono": "ansioso y cómico",
         "historia": "ambición sin freno",
-        "visual": "nueva york granulada"
+        "visual": "ciudad granulada"
       },
       "providers": {
         "CO": [
@@ -2240,8 +2240,8 @@
       "pillars": {
         "ritmo": "frenético",
         "tono": "violento y directo",
-        "historia": "torneo entre reinos",
-        "visual": "combates sangrientos"
+        "historia": "torneo de reinos",
+        "visual": "combate sangriento"
       },
       "providers": {
         "CO": [
@@ -2319,7 +2319,7 @@
       "pillars": {
         "ritmo": "frenético",
         "tono": "violento y festivo",
-        "historia": "torneo de otro mundo",
+        "historia": "torneo otro mundo",
         "visual": "neón y magia"
       },
       "providers": {
@@ -2478,9 +2478,9 @@
       "hook": "UN CINEASTA RECUERDA SU INFANCIA EN UN PUEBLO SICILIANO Y LA AMISTAD CON EL PROYECCIONISTA QUE LE ENSEÑÓ A AMAR EL CINE.",
       "pillars": {
         "ritmo": "pausado",
-        "tono": "nostálgico y cálido",
-        "historia": "amistad y primer amor",
-        "visual": "luz dorada de pueblo"
+        "tono": "nostalgia cálida",
+        "historia": "amistad y amor",
+        "visual": "luz dorada rural"
       },
       "providers": {
         "CO": [
@@ -2558,8 +2558,8 @@
       "pillars": {
         "ritmo": "denso y veloz",
         "tono": "grave y tenso",
-        "historia": "culpa de un científico",
-        "visual": "blanco y negro y color"
+        "historia": "culpa científica",
+        "visual": "monocromo y color"
       },
       "providers": {
         "CO": [
@@ -2637,7 +2637,7 @@
       "hook": "UNA FAMILIA POBRE SE VA INFILTRANDO, UNO A UNO, EN LA CASA DE UNOS RICOS, HASTA QUE EL PLAN PERFECTO EMPIEZA A DESMORONARSE.",
       "pillars": {
         "ritmo": "ágil y creciente",
-        "tono": "sarcástico y sombrío",
+        "tono": "sarcasmo sombrío",
         "historia": "lucha de clases",
         "visual": "casas contrastadas"
       },
@@ -2796,9 +2796,9 @@
       "hook": "UN HOMBRE DESPIERTA SOLO EN UNA NAVE, SIN RECUERDOS, CON LA MISIÓN DE SALVAR A LA TIERRA, Y DESCUBRE QUE NO ESTÁ TAN SOLO COMO CREÍA.",
       "pillars": {
         "ritmo": "ágil",
-        "tono": "esperanzador y divertido",
-        "historia": "amistad improbable en el espacio",
-        "visual": "ciencia ficción luminosa"
+        "tono": "esperanza y humor",
+        "historia": "amistad espacial",
+        "visual": "ficción luminosa"
       },
       "providers": {
         "CO": [
@@ -2955,7 +2955,7 @@
       "pillars": {
         "ritmo": "ágil",
         "tono": "humor negro",
-        "historia": "venganzas cotidianas",
+        "historia": "venganza cotidiana",
         "visual": "realismo exagerado"
       },
       "providers": {
@@ -2991,7 +2991,7 @@
       "vote_average": 7.7,
       "vote_count": 7000,
       "popularity": 38.9,
-      "poster_path": "posters/rocky-1976.jpg",
+      "poster_path": null,
       "overview": "Un modesto boxeador de Filadelfia recibe la oportunidad de enfrentarse al campeón mundial de peso pesado. Más que ganar, quiere demostrarse a sí mismo que puede aguantar hasta el final.",
       "keywords": [
         "boxing",
@@ -3029,10 +3029,10 @@
       },
       "hook": "UN BOXEADOR DE BARRIO QUE NUNCA TUVO UNA OPORTUNIDAD RECIBE LA PELEA DE SU VIDA Y SOLO QUIERE DEMOSTRAR QUE PUEDE AGUANTAR HASTA EL FINAL.",
       "pillars": {
-        "ritmo": "constante y creciente",
-        "tono": "conmovedor y esperanzador",
-        "historia": "el perdedor que se atreve",
-        "visual": "calles grises de barrio"
+        "ritmo": "creciente",
+        "tono": "esperanza emotiva",
+        "historia": "perdedor valiente",
+        "visual": "barrio gris"
       },
       "providers": {
         "CO": [
@@ -3067,7 +3067,7 @@
       "vote_average": 6.6,
       "vote_count": 4000,
       "popularity": 22.5,
-      "poster_path": null,
+      "poster_path": "posters/rocky-balboa-2006.jpg",
       "overview": "Años después de retirarse, Rocky Balboa dirige un pequeño restaurante en Filadelfia y vive con el recuerdo de su esposa. Una pelea simulada por computador lo empuja a volver al cuadrilátero para enfrentar al campeón actual.",
       "keywords": [
         "boxing",
@@ -3107,8 +3107,8 @@
       "hook": "VIUDO Y RETIRADO, UN EXBOXEADOR QUE DIRIGE UN PEQUEÑO RESTAURANTE VUELVE AL CUADRILÁTERO PARA ENFRENTAR AL CAMPEÓN ACTUAL.",
       "pillars": {
         "ritmo": "pausado",
-        "tono": "melancólico y valiente",
-        "historia": "regreso de un veterano",
+        "tono": "nostalgia valiente",
+        "historia": "veterano de vuelta",
         "visual": "filadelfia gris"
       },
       "providers": {
@@ -3185,7 +3185,7 @@
       "pillars": {
         "ritmo": "constante",
         "tono": "esperanzador",
-        "historia": "revancha del perdedor",
+        "historia": "revancha pendiente",
         "visual": "barrio setentero"
       },
       "providers": {
@@ -3261,7 +3261,7 @@
       "pillars": {
         "ritmo": "enérgico",
         "tono": "motivador",
-        "historia": "caída y reconquista",
+        "historia": "caída y regreso",
         "visual": "gimnasio ochentero"
       },
       "providers": {
@@ -3415,8 +3415,8 @@
       "hook": "UN REFUGIADO CUBANO EN MIAMI ASCIENDE EN EL NARCOTRÁFICO CON AMBICIÓN Y VIOLENCIA, PERO EL PODER SE COBRA CARO.",
       "pillars": {
         "ritmo": "intenso",
-        "tono": "violento y excesivo",
-        "historia": "ascenso y caída criminal",
+        "tono": "violencia excesiva",
+        "historia": "ascenso criminal",
         "visual": "miami neón"
       },
       "providers": {
@@ -3577,7 +3577,7 @@
       "pillars": {
         "ritmo": "intenso",
         "tono": "oscuro y vibrante",
-        "historia": "noche de terror y blues",
+        "historia": "terror y blues",
         "visual": "calor de época"
       },
       "providers": {
@@ -3654,8 +3654,8 @@
       "pillars": {
         "ritmo": "tenso",
         "tono": "aterrador",
-        "historia": "maldición que se contagia",
-        "visual": "sonrisas perturbadoras"
+        "historia": "maldición viral",
+        "visual": "sonrisa macabra"
       },
       "providers": {
         "CO": [
@@ -3734,7 +3734,7 @@
       "pillars": {
         "ritmo": "vibrante",
         "tono": "optimista",
-        "historia": "héroe contra el poder",
+        "historia": "héroe contra poder",
         "visual": "colorido y aéreo"
       },
       "providers": {
@@ -3811,7 +3811,7 @@
       "pillars": {
         "ritmo": "ágil",
         "tono": "irreverente",
-        "historia": "juicio por ser persona",
+        "historia": "juicio y derechos",
         "visual": "comedia urbana"
       },
       "providers": {
@@ -3889,7 +3889,7 @@
       "pillars": {
         "ritmo": "ágil",
         "tono": "gamberro y tierno",
-        "historia": "amistad que no madura",
+        "historia": "amistad inmadura",
         "visual": "comedia cotidiana"
       },
       "providers": {
@@ -3968,7 +3968,7 @@
       "pillars": {
         "ritmo": "pausado y tenso",
         "tono": "oscuro",
-        "historia": "investigación criminal",
+        "historia": "caso criminal",
         "visual": "noir lluvioso"
       },
       "providers": {
@@ -4360,7 +4360,7 @@
       "pillars": {
         "ritmo": "pausado",
         "tono": "crepuscular",
-        "historia": "redención imposible",
+        "historia": "redención fallida",
         "visual": "sombras italianas"
       },
       "providers": {
@@ -4435,9 +4435,9 @@
       "hook": "TRES AMIGOS DESPIERTAN TRAS UNA DESPEDIDA DE SOLTERO SIN RECORDAR NADA Y CON EL NOVIO DESAPARECIDO, Y TIENEN UN DÍA PARA ENCONTRARLO.",
       "pillars": {
         "ritmo": "ágil",
-        "tono": "desmadrado y cómico",
+        "tono": "desmadre cómico",
         "historia": "noche perdida",
-        "visual": "luces de la ciudad del juego"
+        "visual": "luces de casino"
       },
       "providers": {
         "CO": [
@@ -4514,8 +4514,8 @@
       "pillars": {
         "ritmo": "vibrante",
         "tono": "tenso y cool",
-        "historia": "elegido que despierta",
-        "visual": "verde digital y cuero"
+        "historia": "el despertar",
+        "visual": "verde digital"
       },
       "providers": {
         "CO": [
@@ -4672,7 +4672,7 @@
       "pillars": {
         "ritmo": "pausado",
         "tono": "opresivo",
-        "historia": "locura en aislamiento",
+        "historia": "locura aislada",
         "visual": "simetría helada"
       },
       "providers": {
@@ -4751,8 +4751,8 @@
       "pillars": {
         "ritmo": "implacable",
         "tono": "tenso y sombrío",
-        "historia": "persecución desde el futuro",
-        "visual": "noches de neón y acero"
+        "historia": "caza del futuro",
+        "visual": "neón y acero"
       },
       "providers": {
         "CO": [
@@ -4830,7 +4830,7 @@
       "pillars": {
         "ritmo": "ágil",
         "tono": "tierno",
-        "historia": "maternidad inesperada",
+        "historia": "madre inesperada",
         "visual": "naturaleza pintada"
       },
       "providers": {
@@ -4906,9 +4906,9 @@
       "hook": "A PUNTO DE CUMPLIR TREINTA, UN JOVEN COMPOSITOR DE TEATRO LUCHA CONTRA EL RELOJ PARA ESTRENAR SU OBRA Y NO PERDER A QUIENES QUIERE.",
       "pillars": {
         "ritmo": "enérgico",
-        "tono": "inspirador y emotivo",
-        "historia": "sueño contra el tiempo",
-        "visual": "nueva york años noventa"
+        "tono": "inspirador",
+        "historia": "sueño y reloj",
+        "visual": "años noventa"
       },
       "providers": {
         "CO": [
@@ -4984,7 +4984,7 @@
       "hook": "A BORDO DE UN TRANSATLÁNTICO CONDENADO, UNA JOVEN DE ALTA SOCIEDAD Y UN ARTISTA POBRE SE ENAMORAN CONTRA TODO PRONÓSTICO.",
       "pillars": {
         "ritmo": "fluido",
-        "tono": "trágico y romántico",
+        "tono": "romance trágico",
         "historia": "amor imposible",
         "visual": "épica marítima"
       },
@@ -5064,8 +5064,8 @@
       "pillars": {
         "ritmo": "ágil",
         "tono": "cálido",
-        "historia": "rivales que se vuelven amigos",
-        "visual": "juguetes de colores"
+        "historia": "rivales y amigos",
+        "visual": "juguetes en color"
       },
       "providers": {
         "CO": [
@@ -5144,8 +5144,8 @@
       "pillars": {
         "ritmo": "ágil",
         "tono": "tierno",
-        "historia": "rescate y pertenencia",
-        "visual": "juguetes de colores"
+        "historia": "rescate y hogar",
+        "visual": "juguetes en color"
       },
       "providers": {
         "CO": [
@@ -5223,7 +5223,7 @@
       "pillars": {
         "ritmo": "ágil",
         "tono": "cálido y emotivo",
-        "historia": "crecer y despedirse",
+        "historia": "crecer y soltar",
         "visual": "animación colorida"
       },
       "providers": {
@@ -5302,7 +5302,7 @@
       "pillars": {
         "ritmo": "denso",
         "tono": "cínico",
-        "historia": "conspiración de héroes caídos",
+        "historia": "héroes caídos",
         "visual": "cómic sombrío"
       },
       "providers": {
@@ -5382,7 +5382,7 @@
       "pillars": {
         "ritmo": "vertiginoso",
         "tono": "angustiante",
-        "historia": "carrera contra la pandemia",
+        "historia": "contra la pandemia",
         "visual": "caos global"
       },
       "providers": {
@@ -5463,7 +5463,7 @@
         "ritmo": "vibrante",
         "tono": "épico",
         "historia": "viaje al pasado",
-        "visual": "ciencia ficción setentera"
+        "visual": "ficción setentera"
       },
       "providers": {
         "CO": [
@@ -5539,9 +5539,9 @@
       "hook": "DOS ADOLESCENTES INVITAN A UNA MUJER MAYOR A UN VIAJE POR CARRETERA HACIA UNA PLAYA INEXISTENTE, Y TERMINAN APRENDIENDO MÁS DE LO QUE ESPERABAN.",
       "pillars": {
         "ritmo": "relajado",
-        "tono": "sensual y agridulce",
-        "historia": "viaje que hace madurar",
-        "visual": "carretera con luz natural"
+        "tono": "sensual agridulce",
+        "historia": "viaje iniciático",
+        "visual": "ruta luz natural"
       },
       "providers": {
         "CO": [

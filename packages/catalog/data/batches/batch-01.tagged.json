@@ -30,9 +30,9 @@
       },
       "hook": "TRAS LA MUERTE DE LA MATRIARCA, UNA FAMILIA EMPIEZA A DESCUBRIR SECRETOS TERRIBLES SOBRE SU PASADO MIENTRAS EL DUELO LA VA DEVORANDO.",
       "pillars": {
-        "ritmo": "pausado y asfixiante",
-        "tono": "aterrador y sombrío",
-        "historia": "duelo familiar maldito",
+        "ritmo": "asfixiante",
+        "tono": "terror sombrío",
+        "historia": "duelo maldito",
         "visual": "penumbra doméstica"
       }
     },
@@ -64,9 +64,9 @@
       "hook": "UNA MUJER RECUERDA LAS VACACIONES DE VERANO QUE PASÓ DE NIÑA CON SU PADRE, Y BUSCA EN ESAS IMÁGENES AL HOMBRE QUE NUNCA LLEGÓ A CONOCER.",
       "pillars": {
         "ritmo": "pausado",
-        "tono": "nostálgico y devastador",
-        "historia": "padre e hija en un verano",
-        "visual": "video casero cálido"
+        "tono": "nostalgia rota",
+        "historia": "verano con papá",
+        "visual": "video casero"
       }
     },
     {
@@ -97,7 +97,7 @@
       "hook": "EN LAS NOCHES ELÉCTRICAS DE UNA CIUDAD ABARROTADA, DOS POLICÍAS SOLITARIOS ESPERAN UN AMOR QUE SE FUE Y UNO NUEVO QUE TAL VEZ YA PASÓ A SU LADO.",
       "pillars": {
         "ritmo": "vibrante y suelto",
-        "tono": "melancólico y juguetón",
+        "tono": "melancolía lúdica",
         "historia": "amores a destiempo",
         "visual": "neón nocturno"
       }
@@ -130,8 +130,8 @@
       "hook": "CON LA TIERRA AGONIZANDO, UN GRUPO DE EXPLORADORES CRUZA UN PORTAL HACIA OTRA GALAXIA PARA SALVAR A LA HUMANIDAD, A COSTA DE DEJAR ATRÁS A SUS HIJOS.",
       "pillars": {
         "ritmo": "majestuoso",
-        "tono": "emotivo y grandioso",
-        "historia": "viaje cósmico por los hijos",
+        "tono": "épico y emotivo",
+        "historia": "viaje cósmico",
         "visual": "espacio infinito"
       }
     },
@@ -164,8 +164,8 @@
       "pillars": {
         "ritmo": "denso y veloz",
         "tono": "grave y tenso",
-        "historia": "culpa de un científico",
-        "visual": "blanco y negro y color"
+        "historia": "culpa científica",
+        "visual": "monocromo y color"
       }
     },
     {
@@ -196,9 +196,9 @@
       "hook": "UN HOMBRE DESPIERTA SOLO EN UNA NAVE, SIN RECUERDOS, CON LA MISIÓN DE SALVAR A LA TIERRA, Y DESCUBRE QUE NO ESTÁ TAN SOLO COMO CREÍA.",
       "pillars": {
         "ritmo": "ágil",
-        "tono": "esperanzador y divertido",
-        "historia": "amistad improbable en el espacio",
-        "visual": "ciencia ficción luminosa"
+        "tono": "esperanza y humor",
+        "historia": "amistad espacial",
+        "visual": "ficción luminosa"
       }
     },
     {
@@ -229,7 +229,7 @@
       "hook": "EN UNA CIUDAD EXTRAÑA Y DESVELADA, UN ACTOR EN DECADENCIA Y UNA JOVEN PERDIDA ENCUENTRAN EN LA OTRA UNA CONEXIÓN FUGAZ QUE NADIE MÁS ENTIENDE.",
       "pillars": {
         "ritmo": "pausado",
-        "tono": "melancólico y tierno",
+        "tono": "soledad tierna",
         "historia": "conexión pasajera",
         "visual": "neón de madrugada"
       }
@@ -261,9 +261,9 @@
       },
       "hook": "DESPUÉS DE UNA RUPTURA, UN HOMBRE DECIDE BORRAR A SU EX DE SU MEMORIA, Y MIENTRAS LOS RECUERDOS SE DESVANECEN, COMPRENDE LO QUE REALMENTE QUIERE CONSERVAR.",
       "pillars": {
-        "ritmo": "fluido y fragmentado",
+        "ritmo": "fragmentado",
         "tono": "agridulce",
-        "historia": "amor que se resiste al olvido",
+        "historia": "amor sin olvido",
         "visual": "memoria onírica"
       }
     },
@@ -296,7 +296,7 @@
       "pillars": {
         "ritmo": "vertiginoso",
         "tono": "absurdo y tierno",
-        "historia": "madre e hija entre universos",
+        "historia": "hija y multiverso",
         "visual": "caos colorido"
       }
     },
@@ -328,7 +328,7 @@
       "hook": "UNA FAMILIA POBRE SE VA INFILTRANDO, UNO A UNO, EN LA CASA DE UNOS RICOS, HASTA QUE EL PLAN PERFECTO EMPIEZA A DESMORONARSE.",
       "pillars": {
         "ritmo": "ágil y creciente",
-        "tono": "sarcástico y sombrío",
+        "tono": "sarcasmo sombrío",
         "historia": "lucha de clases",
         "visual": "casas contrastadas"
       }
@@ -362,8 +362,8 @@
       "pillars": {
         "ritmo": "vibrante",
         "tono": "tenso y cool",
-        "historia": "elegido que despierta",
-        "visual": "verde digital y cuero"
+        "historia": "el despertar",
+        "visual": "verde digital"
       }
     },
     {
@@ -393,10 +393,10 @@
       },
       "hook": "UN BOXEADOR DE BARRIO QUE NUNCA TUVO UNA OPORTUNIDAD RECIBE LA PELEA DE SU VIDA Y SOLO QUIERE DEMOSTRAR QUE PUEDE AGUANTAR HASTA EL FINAL.",
       "pillars": {
-        "ritmo": "constante y creciente",
-        "tono": "conmovedor y esperanzador",
-        "historia": "el perdedor que se atreve",
-        "visual": "calles grises de barrio"
+        "ritmo": "creciente",
+        "tono": "esperanza emotiva",
+        "historia": "perdedor valiente",
+        "visual": "barrio gris"
       }
     },
     {
@@ -428,8 +428,8 @@
       "pillars": {
         "ritmo": "implacable",
         "tono": "tenso y sombrío",
-        "historia": "persecución desde el futuro",
-        "visual": "noches de neón y acero"
+        "historia": "caza del futuro",
+        "visual": "neón y acero"
       }
     },
     {
@@ -460,9 +460,9 @@
       "hook": "TRES AMIGOS DESPIERTAN TRAS UNA DESPEDIDA DE SOLTERO SIN RECORDAR NADA Y CON EL NOVIO DESAPARECIDO, Y TIENEN UN DÍA PARA ENCONTRARLO.",
       "pillars": {
         "ritmo": "ágil",
-        "tono": "desmadrado y cómico",
+        "tono": "desmadre cómico",
         "historia": "noche perdida",
-        "visual": "luces de la ciudad del juego"
+        "visual": "luces de casino"
       }
     },
     {
@@ -494,7 +494,7 @@
       "pillars": {
         "ritmo": "nervioso y coral",
         "tono": "duro y desgarrador",
-        "historia": "tres vidas cruzadas",
+        "historia": "vidas cruzadas",
         "visual": "cámara en mano"
       }
     },
@@ -526,9 +526,9 @@
       "hook": "DOS ADOLESCENTES INVITAN A UNA MUJER MAYOR A UN VIAJE POR CARRETERA HACIA UNA PLAYA INEXISTENTE, Y TERMINAN APRENDIENDO MÁS DE LO QUE ESPERABAN.",
       "pillars": {
         "ritmo": "relajado",
-        "tono": "sensual y agridulce",
-        "historia": "viaje que hace madurar",
-        "visual": "carretera con luz natural"
+        "tono": "sensual agridulce",
+        "historia": "viaje iniciático",
+        "visual": "ruta luz natural"
       }
     },
     {
@@ -560,9 +560,10 @@
       "pillars": {
         "ritmo": "épico",
         "tono": "emotivo y heroico",
-        "historia": "despedida de un equipo",
-        "visual": "espectáculo de gran escala"
+        "historia": "adiós al equipo",
+        "visual": "espectáculo épico"
       }
     }
-  ]
+  ],
+  "pillars_revision": "pilares acortados a 18 caracteres para la carta (2026-11-05)"
 }

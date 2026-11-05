@@ -74,14 +74,29 @@ Empieza en modo demo; cambiar de modo es cambiar una línea.
 
 Los moods son claves de `packages/config/data/vibes.json` (`llorar_bonito`, `apagar_cerebro`, `escapar`, `salir_pensando`, `solo_reirme`, `algo_raro`, `cine_del_bueno`). Muestra `name` y `definition`. El back también acepta los alias del prototipo (`sufrir`, `sentir`, `apagar`…).
 
-## Paso 3 · Pósters
+## Paso 3 · Textos de la carta: el estándar de caracteres
+
+Cada carta trae `display`, con los textos **ya recortados** para que nunca se salgan del borde. Úsalos en la carta; deja los campos completos (`back.overview`, `back.title`…) para una vista de detalle.
+
+| Campo | Máximo | Dónde va | Si es más largo |
+|---|---|---|---|
+| `display.premise` | 44 caracteres | Frente: la premisa | Corta en una palabra y agrega "…" |
+| `display.title` | 24 | Reverso: el título (el tamaño baja de 40 a 26 px según el largo) | Ídem |
+| `display.subtitle` | 40 | Reverso: "Una película de…" | Deja el primer director y "y otros" |
+| `display.overview` | 110 | Reverso: la sinopsis (3 líneas + "Ver más") | Termina en una frase completa o corta con "…" |
+| `display.explanation` | 96 | Frente: la razón al pie (2 líneas) | Ídem |
+| `display.pillars.*` | 18 | Frente: ritmo, tono, historia, visual (1 línea) | Ídem |
+
+Los máximos están en `packages/config/data/params.json` (`card_*_max`). Si el diseño nuevo tiene otro tamaño de carta, cambia esos números; la función que recorta es `fitText()` de `@kinoo/shared`. La prueba `apps/web/e2e/cartas.spec.ts` revisa en el navegador que ningún texto de ninguna película se salga del borde. Si cambias el diseño de la carta, adapta esa prueba.
+
+## Paso 4 · Pósters
 
 Cada carta trae dos campos:
 
 - `back.poster_url`: **úsalo siempre**. Es una URL lista para `<img src>`, sea de TMDB o un archivo del repositorio.
 - `back.poster_path`: el dato crudo (`/abc.jpg` de TMDB o `posters/<id>.jpg` local). Solo para depurar.
 
-Si `poster_url` es `null`, muestra el fondo de color del diseño, con el título. Para el modo demo, el motor arma las URL relativas a `kinoo-flujo/` (`../posters/<id>.jpg`). Un front nuevo que viva en otra carpeta pasa su propia base:
+Si `poster_url` es `null`, muestra el fondo de color del diseño, con el título. Los pósters son verticales (2:3 o 3:4); si el espacio de la carta es horizontal, encuádralos hacia arriba (`object-position: 50% 22%`), donde suelen ir las caras y el título. Para el modo demo, el motor arma las URL relativas a `kinoo-flujo/` (`../posters/<id>.jpg`). Un front nuevo que viva en otra carpeta pasa su propia base:
 
 ```ts
 new KinooEngine(config, movies, { assetBaseUrl: '/Prototipo-Kinoo/' });
@@ -101,10 +116,12 @@ Para optimizar una imagen grande (600 px de ancho, unos 70 KB):
 python3 packages/catalog/scripts/optimize-poster.py ruta/al/poster.jpg the-godfather-1972
 ```
 
-## Paso 4 · Comprobar
+## Paso 5 · Comprobar
 
 - [ ] La e2e del flujo principal pasa (`apps/web/e2e/motor.spec.ts` es el modelo a copiar): abrir mazo → guardar → Ver → "Me encantó" → el perfil cambió.
 - [ ] Ninguna pantalla muestra números de afinidad. Busca `%` en el front.
+- [ ] Ningún texto se sale de la carta: usa `display.*` y corre `cartas.spec.ts`.
+- [ ] En PC se ve centrado (en la demo lo hace `public/_kinoo/kinoo-shell.css`).
 - [ ] Las acciones llegan como eventos. Revísalo con `KinooDemo.events()` en la consola.
 - [ ] Sin conexión al back, el front muestra un estado vacío decente.
 

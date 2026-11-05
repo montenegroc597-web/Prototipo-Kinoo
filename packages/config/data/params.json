@@ -38,5 +38,11 @@
   "watch_vibe_min_cosine": 0.2,
   "dismiss_fatigue_weight": 0.3,
   "dismiss_fatigue_hours": 24,
-  "closing_min_saves": 2
+  "closing_min_saves": 2,
+  "card_premise_max": 44,
+  "card_title_max": 24,
+  "card_subtitle_max": 40,
+  "card_overview_max": 110,
+  "card_explanation_max": 96,
+  "card_pillar_max": 18
 }

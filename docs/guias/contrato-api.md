@@ -65,11 +65,12 @@ El mazo abierto y sin terminar, o `null`.
   "front": { "hook": "UN VERANO EN TURQUÍA…", "pillars": { "ritmo": "pausado", "tono": "melancólico", "historia": "padre e hija", "visual": "luz de verano" } },
   "back": { "title": "Aftersun", "year": 2022, "runtime_min": 101, "genres": ["Drama"], "directors": ["Charlotte Wells"], "poster_path": "posters/aftersun-2022.jpg", "poster_url": "https://montenegroc597-web.github.io/Prototipo-Kinoo/posters/aftersun-2022.jpg", "overview": "Años después, una mujer recuerda…", "providers": ["Max", "Apple TV"] },
   "explanation": "Responde a tu forma de llorar bonito: íntimas y melancólicas.",
+  "display": { "premise": "Un verano en turquía, una hija y su…", "title": "Aftersun", "subtitle": "Una película de Charlotte Wells", "overview": "Años después, una mujer recuerda unas vacaciones de verano con su padre…", "explanation": "Responde a tu forma de llorar bonito: íntimas y melancólicas.", "pillars": { "ritmo": "pausado", "tono": "melancólico", "historia": "padre e hija", "visual": "luz de verano" } },
   "special_treatment": false
 }
 ```
 
-`poster_url` es la URL lista para `<img>` (TMDB o archivo del repositorio); si es `null`, no hay póster. `role` es `afin`, `creador`, `comodin` o `sorpresa`. `special_treatment: true` (sorpresa) pide un tratamiento visual especial. Si el rol es `creador`, llega `curator_name`.
+`display` trae los textos de la carta ya recortados con el estándar de caracteres (ver `integrar-un-front-nuevo.md`). `poster_url` es la URL lista para `<img>` (TMDB o archivo del repositorio); si es `null`, no hay póster. `role` es `afin`, `creador`, `comodin` o `sorpresa`. `special_treatment: true` (sorpresa) pide un tratamiento visual especial. Si el rol es `creador`, llega `curator_name`.
 
 ## GET /watch/proposal
 

@@ -66,3 +66,17 @@ export function posterUrl(posterPath: string | null | undefined, opts: { assetBa
   if (posterPath.startsWith('/')) return `${TMDB_IMAGE_BASE}${opts.size ?? 'w500'}${posterPath}`;
   return `${opts.assetBaseUrl ?? ''}${posterPath}`;
 }
+
+/**
+ * Recorta un texto a un máximo de caracteres sin cortar palabras.
+ * Primero intenta terminar en una frase completa; si no cabe ninguna, corta en un espacio y agrega "…".
+ */
+export function fitText(text: string, max: number): string {
+  const t = (text ?? '').replace(/\s+/g, ' ').trim();
+  if (t.length <= max) return t;
+  const head = t.slice(0, max + 1);
+  const sentence = Math.max(head.lastIndexOf('. '), head.lastIndexOf('! '), head.lastIndexOf('? '));
+  if (sentence >= max * 0.4) return t.slice(0, sentence + 1);
+  const space = t.slice(0, max).lastIndexOf(' ');
+  return `${t.slice(0, space > 0 ? space : max - 1).replace(/[\s,;:.\-–—]+$/, '')}…`;
+}

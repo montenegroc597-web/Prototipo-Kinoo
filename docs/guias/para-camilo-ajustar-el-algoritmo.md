@@ -104,7 +104,11 @@ Los más útiles:
 | `distinct_threshold` | 0,2 | Más alto = aprende solo de los rasgos más marcados |
 | `community_prior_weight` | 10 | Más votos de la comunidad para corregir al juez |
 
-## 6. Comprobar que sigue aprendiendo
+## 6. Largo de los textos de la carta (`params.json`)
+
+Para que ningún texto se salga del borde, cada texto de la carta tiene un máximo de caracteres: `card_premise_max` (44), `card_title_max` (24), `card_subtitle_max` (40), `card_overview_max` (110), `card_explanation_max` (96) y `card_pillar_max` (18). Si el texto es más largo, Kinoo lo corta en una palabra y agrega "…". Si el diseño de la carta cambia de tamaño, se cambian estos números. Después hay que correr la prueba de cartas (`npm run test:e2e`).
+
+## 7. Comprobar que sigue aprendiendo
 
 Después de cualquier cambio, alguien del equipo corre:
 
