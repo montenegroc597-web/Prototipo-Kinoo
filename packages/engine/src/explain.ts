@@ -1,5 +1,6 @@
 import { ATOM_KEYS, type AtomKey, type AtomVector } from '@kinoo/shared';
 import type { ConfigIndex } from './configIndex';
+import { norm } from './vector';
 
 /** Regla dura (sección 11): nunca números ni %. */
 export function hasNumbers(text: string): boolean {
@@ -44,7 +45,7 @@ export function explain(input: ExplainInput, cfg: ConfigIndex): string {
     const top = topContributors(hat, profile, null, 1)[0];
     if (top) return safe(fill(cfg.template('role_comodin'), { a: cfg.label(top) }));
   }
-  if (!labels.length) return safe(cfg.template('cold_start'));
+  if (!labels.length) return safe(cfg.template(norm(profile) < 1e-9 && !vibe ? 'cold_start' : 'no_overlap'));
   if (vibe) {
     const mood = (cfg.vibes.get(vibe)?.name ?? vibe).toLowerCase();
     const t = labels.length > 1 ? 'vibe' : 'vibe_single';

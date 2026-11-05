@@ -28,10 +28,12 @@ export interface UserModel {
   watch_skips_in_row: number;
   /** Películas que pidió cambiar en Ver desde el último reinicio (no se vuelven a proponer enseguida). */
   watch_skipped_ids: Set<string>;
+  /** Descartes recientes (para la fatiga de descarte: "hoy no" baja lo parecido por un tiempo). */
+  recent_dismissals: Array<{ movie_id: string; at: string }>;
 }
 
 export function emptyModel(user_id: string): UserModel {
-  return { user_id, profile: zeroVector(), signal_count: 0, vibes: {}, states: new Map(), providers: null, watch_skips_in_row: 0, watch_skipped_ids: new Set() };
+  return { user_id, profile: zeroVector(), signal_count: 0, vibes: {}, states: new Map(), providers: null, watch_skips_in_row: 0, watch_skipped_ids: new Set(), recent_dismissals: [] };
 }
 
 /** El mood en el que ocurrió un evento: primero el del payload, luego el del contexto. */
@@ -87,7 +89,13 @@ function updateState(model: UserModel, e: KinooEvent) {
     case 'saved_intent':
       mark(model, e.movie_id, 'saved', e.at, { saved_at: e.at, special_match: !!e.context?.special_match });
       break;
-    case 'dismissed': mark(model, e.movie_id, 'dismissed', e.at); break;
+    case 'dismissed':
+      mark(model, e.movie_id, 'dismissed', e.at);
+      if (e.movie_id) {
+        model.recent_dismissals.push({ movie_id: e.movie_id, at: e.at });
+        if (model.recent_dismissals.length > 200) model.recent_dismissals.shift();
+      }
+      break;
     case 'marked_seen': mark(model, e.movie_id, 'seen', e.at); break;
     case 'rewatch_intent': mark(model, e.movie_id, 'rewatch', e.at); break;
     case 'watch_confirmed':

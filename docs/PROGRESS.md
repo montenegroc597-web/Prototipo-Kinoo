@@ -1,9 +1,9 @@
 # Progreso
 
 ## Estado actual
-- Fase: F3 · Motor del algoritmo
-- Última tarea terminada: F3 · módulos del motor (rasgo distintivo, aprendizaje, puntaje, mazos, Ver, explicaciones, onboarding, arquetipos)
-- Siguiente tarea: pruebas unitarias y simulador de usuarios
+- Fase: F4 · Catálogo piloto
+- Última tarea terminada: F3 · motor, pruebas, simulador y guía paso a paso
+- Siguiente tarea: pipeline del catálogo (TMDB + juez) y semilla manual
 - Bloqueos: sin `TMDB_API_KEY` y sin acceso de red a `api.themoviedb.org` (afecta a F4)
 - Última actualización: 2026-11-05 03:40
 
@@ -13,7 +13,7 @@
 | F0 | ✅ | Línea base: 0 unitarias, 0 e2e (el repositorio no tenía pruebas). Inventario abajo |
 | F1 | ✅ | 86/86 rutas publicadas en `site/`; 86 archivos movidos con `git mv` sin cambios de contenido; typecheck limpio; 1/1 unitaria y 1/1 e2e (rutas) |
 | F2 | ✅ | 6 migraciones aplicadas desde cero en PGlite + pgvector; 10/10 pruebas (RLS de eventos y perfiles, solo agregar, votos, exportar y borrar) |
-| F3 | ⬜ | |
+| F3 | ✅ | 35/35 unitarias del motor; 5/5 pruebas de simulación (Aprende 6,4× el azar; moods coseno 0,64 y 20 % compartido; cambio en 22 eventos en el peor caso; 0 explicaciones con números; 181/181 mazos respetan la receta). Total del repo 51/51 |
 | F4 | ⬜ | |
 | F5 | ⬜ | |
 | F6 | ⬜ | |
@@ -32,6 +32,7 @@
 - 2026-11-05 03:55 · F1 · `public/` → `apps/web/` con `git mv`. Build a `site/`, `check:site`, CI nueva. Ver `adr/0002-monorepo.md`.
 - 2026-11-05 04:10 · F2 · Configuración en `data/config/*.json` → `npm run seed` → `supabase/seed/`. 6 migraciones y pruebas sobre PGlite.
 - 2026-11-05 04:30 · F3 · Módulos del motor escritos. Por indicación de Camilo, las cartas de tarot pasan a ser **arquetipos de perfil** (misma idea, sin mencionar el tarot): tabla `archetypes`, `data/config/archetypes.json`.
+- 2026-11-05 05:10 · F3 · Simulador (`npm run sim`). Con los valores iniciales fallaba "Responde al cambio" (peor caso 62 eventos): el mazo insistía en lo descartado y nunca mostraba el gusto nuevo. Se agregó la fatiga de descarte y se ajustaron dos valores en la configuración (abajo). Resultado: 5/5.
 
 ## Decisiones tomadas sin Camilo
 - La línea base es 0/0 porque el prototipo no tenía pruebas. Las pruebas nuevas son las primeras del repositorio.
@@ -45,6 +46,14 @@
 - **Plataformas del usuario:** se guardan en `profiles.providers` y con un evento `platforms_set` (nuevo, no estaba en la tabla de eventos).
 - **Borrado de datos:** `kinoo_delete_my_data()` es la única vía que puede borrar eventos, por la Ley 1581.
 - **Nombres de los arquetipos:** El Explorador, El Observador, El Romántico, El Nocturno y El Luminoso (antes El Loco, El Ermitaño, Los Amantes, La Luna y La Estrella). Son una propuesta; se cambian en `data/config/archetypes.json`.
+- **Fatiga de descarte (nuevo):** lo que se parece mucho a algo descartado en las últimas 24 h baja en el mazo: `− 0,3 × coseno`. Es la lectura de "hoy no". Parámetros `dismiss_fatigue_weight` y `dismiss_fatigue_hours`.
+- **Ajustes de configuración por el simulador:** `dismissed` η pasó de 0,03 a 0,10 y `sorpresa_min_cosine` de −0,1 a −0,5. Probé 14 combinaciones; esta es la única que pasa las cinco pruebas en el catálogo de referencia.
+- **"Responde al cambio" es frágil:** con otras dos semillas del catálogo sintético, el peor caso fue 33 y 34 eventos (el promedio, 20). Pasa en el catálogo de referencia y en promedio, pero no siempre en el peor usuario. Hay que volver a medirlo con el catálogo real y con datos de uso.
+- **β con poca confianza:** el 0,3 se aplica solo cuando hay mood. Sin mood no hay receta con la cual compensar, así que el perfil vacío deja que pese la calidad.
+- **Explicación sin rasgos en común:** si el perfil existe pero no comparte nada con la película, la frase es "Algo distinto a lo que sueles guardar, para ampliar el mazo." (plantilla `no_overlap`, nueva).
+- **Sorpresa "media o baja":** puntaje en el 60 % inferior de las candidatas (`sorpresa_max_score_percentile`).
+- **Comodín:** el rasgo favorito tiene que valer al menos 0,4 en la película (`comodin_min_top_atom`).
 
 ## Para revisar cuando vuelvas
 - Subir el documento de Argon a `docs/historico/`.
+- Resultados del simulador: `packages/engine/sim/RESULTADOS.md`.

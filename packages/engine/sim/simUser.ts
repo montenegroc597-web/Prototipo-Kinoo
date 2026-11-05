@@ -63,7 +63,7 @@ export class SimUser {
   }
 
   /** Abre un mazo y reacciona a cada carta. Devuelve el mazo. */
-  playDeck(vibe: string | null = null, size = 10, stopAtSignals = Infinity) {
+  playDeck(vibe: string | null = null, size = 10, stopAtSignals = Infinity, afterEach?: () => boolean) {
     const deck = this.engine.openDeck(this.model, { deck_id: `${this.id}-d${this.n}`, now: this.now(), vibe, size });
     this.emit({ type: 'deck_opened', payload: { deck_id: deck.deck_id, vibe, size } } as never);
     const thr = this.threshold(vibe);
@@ -75,6 +75,7 @@ export class SimUser {
       const flipped = this.rng() < 0.5;
       if (accept) this.emit({ type: 'saved_intent', movie_id: m.movie.id, payload: { flipped, vibe, deck_id: deck.deck_id, slot: c.slot } } as never);
       else this.emit({ type: 'dismissed', movie_id: m.movie.id, payload: { flipped, vibe, deck_id: deck.deck_id, slot: c.slot } } as never);
+      if (afterEach?.()) return deck;
     }
     // Ve una de las guardadas y cuenta qué tal.
     const saved = deck.cards.map((c) => this.engine.catalog.byId.get(c.movie_id)!).filter((m) => this.model.states.get(m.movie.id)?.state === 'saved');
@@ -83,6 +84,7 @@ export class SimUser {
       const a = this.affinity(m, vibe);
       const reaction = a >= thr + 0.05 ? 'loved' : a >= thr - 0.1 ? 'liked' : 'not_for_me';
       this.emit({ type: 'watch_confirmed', movie_id: m.movie.id, payload: { reaction, vibe } } as never);
+      afterEach?.();
     }
     this.emit({ type: 'deck_completed', payload: { deck_id: deck.deck_id } } as never);
     return deck;

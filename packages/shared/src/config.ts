@@ -42,6 +42,8 @@ export interface Params {
   watch_vibe_min_cosine: number;
   watch_relax_order: Array<'duration' | 'vibe'>;
   curator_follow_bonus: number;
+  dismiss_fatigue_weight: number;
+  dismiss_fatigue_hours: number;
   community_prior_weight: number;
   onboarding_min_pairs: number;
   onboarding_max_pairs: number;

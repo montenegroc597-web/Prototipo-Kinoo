@@ -24,7 +24,7 @@ function gauss(r: () => number) {
   return Math.sqrt(-2 * Math.log(r() + 1e-12)) * Math.cos(2 * Math.PI * r());
 }
 
-export function synthCatalog(n = 300, seed = 42): Movie[] {
+export function synthCatalog(n = 300, seed = Number(process.env.KINOO_SIM_SEED || 42)): Movie[] {
   const r = makeRng(seed);
   const kinds = Object.keys(KINDS);
   const out: Movie[] = [];

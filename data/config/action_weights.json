@@ -1,20 +1,110 @@
 {
   "_doc": "Sección 6.1. 'signal' (w) es la dirección y fuerza; 'eta' (η) es cuánto mueve el perfil. Cambiar una fila cambia el aprendizaje sin tocar código.",
   "weights": [
-    { "action": "saved_intent", "variant": "unflipped", "signal": 0.5, "eta": 0.08, "reason": "La premisa sedujo" },
-    { "action": "saved_intent", "variant": "flipped", "signal": 0.4, "eta": 0.08, "reason": "Sedujo con todo a la vista" },
-    { "action": "dismissed", "variant": "default", "signal": -0.3, "eta": 0.03, "reason": "Hoy no, no un rechazo permanente" },
-    { "action": "marked_seen", "variant": "default", "signal": 0.2, "eta": 0.03, "reason": "Sabemos poco" },
-    { "action": "marked_seen", "variant": "loved", "signal": 1.0, "eta": 0.2, "reason": "La vio antes y le encantó" },
-    { "action": "marked_seen", "variant": "liked", "signal": 0.4, "eta": 0.1, "reason": "La vio antes y le gustó" },
-    { "action": "marked_seen", "variant": "not_for_me", "signal": -0.6, "eta": 0.15, "reason": "La vio antes y no era para él o ella" },
-    { "action": "rewatch_intent", "variant": "default", "signal": 1.0, "eta": 0.2, "reason": "Afinidad alta" },
-    { "action": "watch_confirmed", "variant": "loved", "signal": 1.0, "eta": 0.25, "reason": "Señal reina: cumplió fuera de la app" },
-    { "action": "watch_confirmed", "variant": "loved_rewatch", "signal": 1.3, "eta": 0.3, "reason": "Máximo" },
-    { "action": "watch_confirmed", "variant": "liked", "signal": 0.4, "eta": 0.15, "reason": "Cumplió sin deslumbrar" },
-    { "action": "watch_confirmed", "variant": "not_for_me", "signal": -0.8, "eta": 0.25, "reason": "Falsa promesa" },
-    { "action": "onboarding_choice", "variant": "chosen", "signal": 0.8, "eta": 0.2, "reason": "Arranque en frío" },
-    { "action": "onboarding_choice", "variant": "rejected", "signal": -0.4, "eta": 0.2, "reason": "Arranque en frío" },
-    { "action": "watch_skipped", "variant": "default", "signal": 0, "eta": 0, "reason": "Señal de momento, no de gusto" }
+    {
+      "action": "saved_intent",
+      "variant": "unflipped",
+      "signal": 0.5,
+      "eta": 0.08,
+      "reason": "La premisa sedujo"
+    },
+    {
+      "action": "saved_intent",
+      "variant": "flipped",
+      "signal": 0.4,
+      "eta": 0.08,
+      "reason": "Sedujo con todo a la vista"
+    },
+    {
+      "action": "dismissed",
+      "variant": "default",
+      "signal": -0.3,
+      "eta": 0.1,
+      "reason": "Hoy no, no un rechazo permanente (η subió de 0,03 a 0,10 con el simulador: ver PROGRESS)"
+    },
+    {
+      "action": "marked_seen",
+      "variant": "default",
+      "signal": 0.2,
+      "eta": 0.03,
+      "reason": "Sabemos poco"
+    },
+    {
+      "action": "marked_seen",
+      "variant": "loved",
+      "signal": 1.0,
+      "eta": 0.2,
+      "reason": "La vio antes y le encantó"
+    },
+    {
+      "action": "marked_seen",
+      "variant": "liked",
+      "signal": 0.4,
+      "eta": 0.1,
+      "reason": "La vio antes y le gustó"
+    },
+    {
+      "action": "marked_seen",
+      "variant": "not_for_me",
+      "signal": -0.6,
+      "eta": 0.15,
+      "reason": "La vio antes y no era para él o ella"
+    },
+    {
+      "action": "rewatch_intent",
+      "variant": "default",
+      "signal": 1.0,
+      "eta": 0.2,
+      "reason": "Afinidad alta"
+    },
+    {
+      "action": "watch_confirmed",
+      "variant": "loved",
+      "signal": 1.0,
+      "eta": 0.25,
+      "reason": "Señal reina: cumplió fuera de la app"
+    },
+    {
+      "action": "watch_confirmed",
+      "variant": "loved_rewatch",
+      "signal": 1.3,
+      "eta": 0.3,
+      "reason": "Máximo"
+    },
+    {
+      "action": "watch_confirmed",
+      "variant": "liked",
+      "signal": 0.4,
+      "eta": 0.15,
+      "reason": "Cumplió sin deslumbrar"
+    },
+    {
+      "action": "watch_confirmed",
+      "variant": "not_for_me",
+      "signal": -0.8,
+      "eta": 0.25,
+      "reason": "Falsa promesa"
+    },
+    {
+      "action": "onboarding_choice",
+      "variant": "chosen",
+      "signal": 0.8,
+      "eta": 0.2,
+      "reason": "Arranque en frío"
+    },
+    {
+      "action": "onboarding_choice",
+      "variant": "rejected",
+      "signal": -0.4,
+      "eta": 0.2,
+      "reason": "Arranque en frío"
+    },
+    {
+      "action": "watch_skipped",
+      "variant": "default",
+      "signal": 0,
+      "eta": 0,
+      "reason": "Señal de momento, no de gusto"
+    }
   ]
 }

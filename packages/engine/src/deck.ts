@@ -49,6 +49,26 @@ export interface BuildDeckInput {
   filters?: HardFilters;
 }
 
+/**
+ * Fatiga de descarte: descartar es "hoy no", así que lo muy parecido a lo descartado en las últimas horas
+ * baja en el mazo. Resta peso × (mayor coseno con un descarte reciente). Evita que el mazo insista
+ * en lo mismo cuando el gusto cambia.
+ */
+export function dismissFatigue(model: UserModel, catalog: Catalog, cfg: ConfigIndex, now: Date): (m: IndexedMovie) => number {
+  const w = cfg.params.dismiss_fatigue_weight;
+  const since = now.getTime() - cfg.params.dismiss_fatigue_hours * 3_600_000;
+  const recent = model.recent_dismissals
+    .filter((d) => new Date(d.at).getTime() >= since)
+    .map((d) => catalog.byId.get(d.movie_id))
+    .filter((x): x is IndexedMovie => !!x);
+  if (!w || !recent.length) return () => 0;
+  return (m) => {
+    let mx = 0;
+    for (const d of recent) { const c = cosine(d.hat, m.hat); if (c > mx) mx = c; }
+    return w * mx;
+  };
+}
+
 /** Receta personal para puntuar sin modificar el modelo (si la persona nunca usó el mood, la semilla). */
 export function vibeRecipeOf(model: UserModel, vibe: string | null, cfg: ConfigIndex): AtomVector | null {
   if (!vibe) return null;
@@ -71,7 +91,8 @@ export function buildDeck(input: BuildDeckInput): ActiveDeck {
     for (const id of new Set(d.movie_ids)) curatorCount.set(id, (curatorCount.get(id) ?? 0) + 1);
   }
   const followBonus = (m: IndexedMovie) => (curatorCount.get(m.movie.id) ? p.curator_follow_bonus : 0);
-  const ctx = { model, vibe, vibeRecipe, bonus: followBonus };
+  const fatigue = dismissFatigue(model, catalog, cfg, now);
+  const ctx = { model, vibe, vibeRecipe, bonus: (m: IndexedMovie) => followBonus(m) - fatigue(m) };
 
   const candidates = discoverCandidates(catalog, model, cfg, now, input.filters);
   const scored: Scored[] = candidates.map((m) => scoreMovie(m, ctx, cfg)).sort((a, b) => b.score - a.score);

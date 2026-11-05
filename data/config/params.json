@@ -15,7 +15,7 @@
   "comodin_max_cosine": 0.4,
   "comodin_min_top_atom": 0.4,
   "sorpresa_min_quality": 0.75,
-  "sorpresa_min_cosine": -0.1,
+  "sorpresa_min_cosine": -0.5,
   "sorpresa_max_score_percentile": 0.6,
   "curators_for_special": 3,
   "special_match_percentile": 0.95,
@@ -35,5 +35,7 @@
   "onboarding_min_pairs": 5,
   "onboarding_max_pairs": 8,
   "team_deck_owner": "equipo-kinoo",
-  "watch_vibe_min_cosine": 0.2
+  "watch_vibe_min_cosine": 0.2,
+  "dismiss_fatigue_weight": 0.3,
+  "dismiss_fatigue_hours": 24
 }

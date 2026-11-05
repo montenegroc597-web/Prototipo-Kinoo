@@ -36,7 +36,7 @@ insert into archetypes (key, name, recipe) values ('nocturno', 'El Nocturno', '{
 insert into archetypes (key, name, recipe) values ('luminoso', 'El Luminoso', '{"luminosa":1,"reconfortante":1,"pastel":1}'::jsonb) on conflict (key) do update set name = excluded.name, recipe = excluded.recipe;
 insert into action_weights (action, variant, signal, eta, reason) values ('saved_intent', 'unflipped', 0.5, 0.08, 'La premisa sedujo') on conflict (action, variant) do update set signal = excluded.signal, eta = excluded.eta, reason = excluded.reason;
 insert into action_weights (action, variant, signal, eta, reason) values ('saved_intent', 'flipped', 0.4, 0.08, 'Sedujo con todo a la vista') on conflict (action, variant) do update set signal = excluded.signal, eta = excluded.eta, reason = excluded.reason;
-insert into action_weights (action, variant, signal, eta, reason) values ('dismissed', 'default', -0.3, 0.03, 'Hoy no, no un rechazo permanente') on conflict (action, variant) do update set signal = excluded.signal, eta = excluded.eta, reason = excluded.reason;
+insert into action_weights (action, variant, signal, eta, reason) values ('dismissed', 'default', -0.3, 0.1, 'Hoy no, no un rechazo permanente (η subió de 0,03 a 0,10 con el simulador: ver PROGRESS)') on conflict (action, variant) do update set signal = excluded.signal, eta = excluded.eta, reason = excluded.reason;
 insert into action_weights (action, variant, signal, eta, reason) values ('marked_seen', 'default', 0.2, 0.03, 'Sabemos poco') on conflict (action, variant) do update set signal = excluded.signal, eta = excluded.eta, reason = excluded.reason;
 insert into action_weights (action, variant, signal, eta, reason) values ('marked_seen', 'loved', 1, 0.2, 'La vio antes y le encantó') on conflict (action, variant) do update set signal = excluded.signal, eta = excluded.eta, reason = excluded.reason;
 insert into action_weights (action, variant, signal, eta, reason) values ('marked_seen', 'liked', 0.4, 0.1, 'La vio antes y le gustó') on conflict (action, variant) do update set signal = excluded.signal, eta = excluded.eta, reason = excluded.reason;
@@ -57,6 +57,7 @@ insert into explanation_templates (key, text) values ('profile_single', 'Encaja 
 insert into explanation_templates (key, text) values ('vibe', 'Responde a tu forma de {mood}: {a} y {b}.') on conflict (key) do update set text = excluded.text;
 insert into explanation_templates (key, text) values ('vibe_single', 'Responde a tu forma de {mood}: {a}.') on conflict (key) do update set text = excluded.text;
 insert into explanation_templates (key, text) values ('social', 'La guardó {curator}, que también disfruta lo {a}.') on conflict (key) do update set text = excluded.text;
+insert into explanation_templates (key, text) values ('no_overlap', 'Algo distinto a lo que sueles guardar, para ampliar el mazo.') on conflict (key) do update set text = excluded.text;
 insert into explanation_templates (key, text) values ('cold_start', 'Una de las mejor valoradas para empezar a conocerte.') on conflict (key) do update set text = excluded.text;
 insert into explanation_templates (key, text) values ('role_comodin', 'Tiene lo {a} que te gusta, en una forma distinta.') on conflict (key) do update set text = excluded.text;
 insert into explanation_templates (key, text) values ('role_sorpresa', 'Fuera de tu zona, pero muy bien valorada. Dale una oportunidad.') on conflict (key) do update set text = excluded.text;
@@ -83,7 +84,7 @@ insert into config (key, value) values ('comodin_min_cosine', '0.1'::jsonb) on c
 insert into config (key, value) values ('comodin_max_cosine', '0.4'::jsonb) on conflict (key) do update set value = excluded.value, updated_at = now();
 insert into config (key, value) values ('comodin_min_top_atom', '0.4'::jsonb) on conflict (key) do update set value = excluded.value, updated_at = now();
 insert into config (key, value) values ('sorpresa_min_quality', '0.75'::jsonb) on conflict (key) do update set value = excluded.value, updated_at = now();
-insert into config (key, value) values ('sorpresa_min_cosine', '-0.1'::jsonb) on conflict (key) do update set value = excluded.value, updated_at = now();
+insert into config (key, value) values ('sorpresa_min_cosine', '-0.5'::jsonb) on conflict (key) do update set value = excluded.value, updated_at = now();
 insert into config (key, value) values ('sorpresa_max_score_percentile', '0.6'::jsonb) on conflict (key) do update set value = excluded.value, updated_at = now();
 insert into config (key, value) values ('curators_for_special', '3'::jsonb) on conflict (key) do update set value = excluded.value, updated_at = now();
 insert into config (key, value) values ('special_match_percentile', '0.95'::jsonb) on conflict (key) do update set value = excluded.value, updated_at = now();
@@ -101,4 +102,6 @@ insert into config (key, value) values ('onboarding_min_pairs', '5'::jsonb) on c
 insert into config (key, value) values ('onboarding_max_pairs', '8'::jsonb) on conflict (key) do update set value = excluded.value, updated_at = now();
 insert into config (key, value) values ('team_deck_owner', '"equipo-kinoo"'::jsonb) on conflict (key) do update set value = excluded.value, updated_at = now();
 insert into config (key, value) values ('watch_vibe_min_cosine', '0.2'::jsonb) on conflict (key) do update set value = excluded.value, updated_at = now();
+insert into config (key, value) values ('dismiss_fatigue_weight', '0.3'::jsonb) on conflict (key) do update set value = excluded.value, updated_at = now();
+insert into config (key, value) values ('dismiss_fatigue_hours', '24'::jsonb) on conflict (key) do update set value = excluded.value, updated_at = now();
 commit;
