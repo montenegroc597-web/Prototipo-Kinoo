@@ -19,7 +19,11 @@ function safe(text: string): string {
 /** Contribución de cada átomo: cᵢ = Uᵢ × m̂ᵢ (+ Rᵢ × m̂ᵢ si hay mood). Devuelve los dos mayores positivos. */
 export function topContributors(hat: AtomVector, profile: AtomVector, recipe: AtomVector | null, n = 2): AtomKey[] {
   const c: Array<[AtomKey, number]> = ATOM_KEYS.map((k) => [k, profile[k] * hat[k] + (recipe ? recipe[k] * hat[k] : 0)]);
-  return c.filter(([, v]) => v > 1e-6).sort((a, b) => b[1] - a[1]).slice(0, n).map(([k]) => k);
+  return c
+    .filter(([, v]) => v > 1e-6)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, n)
+    .map(([k]) => k);
 }
 
 export interface ExplainInput {

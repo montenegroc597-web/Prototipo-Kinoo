@@ -1,0 +1,27 @@
+# Configuración mínima para el CLI de Supabase (supabase start / db push / functions deploy).
+# Las migraciones y seed.sql se GENERAN con `npm run supabase:build` desde packages/db (fuente única).
+project_id = "kinoo"
+
+[api]
+port = 54321
+schemas = ["public"]
+
+[db]
+port = 54322
+major_version = 15
+
+[db.seed]
+enabled = true
+sql_paths = ["./seed.sql"]
+
+[auth]
+site_url = "https://montenegroc597-web.github.io/Prototipo-Kinoo/"
+
+[functions.events]
+verify_jwt = true
+[functions.deck]
+verify_jwt = true
+[functions.watch]
+verify_jwt = true
+[functions.onboarding]
+verify_jwt = true

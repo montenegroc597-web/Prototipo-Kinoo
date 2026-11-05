@@ -18,7 +18,9 @@ export class ConfigIndex {
     for (const a of config.atoms) this.labels.set(a.key, a.label);
   }
 
-  get params() { return this.config.params; }
+  get params() {
+    return this.config.params;
+  }
 
   /** Clave canónica de un mood (acepta alias del prototipo, como "sufrir"). null si no existe o no está activo. */
   vibeKey(key: string | null | undefined): string | null {

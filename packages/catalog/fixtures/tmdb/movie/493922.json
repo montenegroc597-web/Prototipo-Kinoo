@@ -1,0 +1,194 @@
+{
+  "_simulado": true,
+  "_id_verificado": true,
+  "id": 493922,
+  "imdb_id": "tt7784604",
+  "title": "El legado del diablo",
+  "original_title": "Hereditary",
+  "original_language": "en",
+  "release_date": "2018-06-07",
+  "runtime": 127,
+  "status": "Released",
+  "adult": false,
+  "genres": [
+    {
+      "id": 27,
+      "name": "Terror"
+    },
+    {
+      "id": 18,
+      "name": "Drama"
+    },
+    {
+      "id": 9648,
+      "name": "Misterio"
+    }
+  ],
+  "overview": "Tras la muerte de su matriarca, una familia comienza a descubrir secretos cada vez más inquietantes sobre su linaje. Cuanto más intentan escapar de su destino, más se adentran en una pesadilla.",
+  "tagline": "Cada familia tiene sus secretos.",
+  "vote_average": 7.3,
+  "vote_count": 7000,
+  "popularity": 58.4,
+  "poster_path": null,
+  "backdrop_path": null,
+  "production_countries": [
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    }
+  ],
+  "spoken_languages": [
+    {
+      "iso_639_1": "en",
+      "english_name": "English",
+      "name": "English"
+    }
+  ],
+  "budget": 10000000,
+  "revenue": 82000000,
+  "credits": {
+    "cast": [
+      {
+        "id": null,
+        "name": "Toni Collette",
+        "character": "Annie Graham",
+        "order": 0
+      },
+      {
+        "id": null,
+        "name": "Alex Wolff",
+        "character": "Peter Graham",
+        "order": 1
+      },
+      {
+        "id": null,
+        "name": "Milly Shapiro",
+        "character": "Charlie Graham",
+        "order": 2
+      },
+      {
+        "id": null,
+        "name": "Ann Dowd",
+        "character": "Joan",
+        "order": 3
+      },
+      {
+        "id": null,
+        "name": "Gabriel Byrne",
+        "character": "Steve Graham",
+        "order": 4
+      },
+      {
+        "id": null,
+        "name": "Mallory Bechtel",
+        "character": "Bridget",
+        "order": 5
+      }
+    ],
+    "crew": [
+      {
+        "id": null,
+        "name": "Ari Aster",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "Ari Aster",
+        "job": "Screenplay",
+        "department": "Writing"
+      },
+      {
+        "id": null,
+        "name": "Colin Stetson",
+        "job": "Original Music Composer",
+        "department": "Sound"
+      }
+    ]
+  },
+  "keywords": {
+    "keywords": [
+      {
+        "id": null,
+        "name": "grief"
+      },
+      {
+        "id": null,
+        "name": "family"
+      },
+      {
+        "id": null,
+        "name": "occult"
+      },
+      {
+        "id": null,
+        "name": "cult"
+      },
+      {
+        "id": null,
+        "name": "death"
+      },
+      {
+        "id": null,
+        "name": "supernatural"
+      },
+      {
+        "id": null,
+        "name": "mother son relationship"
+      },
+      {
+        "id": null,
+        "name": "dollhouse"
+      },
+      {
+        "id": null,
+        "name": "psychological horror"
+      }
+    ]
+  },
+  "reviews": {
+    "page": 1,
+    "total_results": 2,
+    "results": [
+      {
+        "author": "nightreel_42",
+        "author_details": {
+          "rating": 9
+        },
+        "content": "A slow-burn nightmare anchored by an extraordinary lead performance. The dread builds in every frame and the sound design is unsettling.",
+        "created_at": "2018-06-20T14:32:11.000Z",
+        "id": "5b2a1c7e9d3f4a0012ab34cd"
+      },
+      {
+        "author": "cinefilo_bog",
+        "author_details": {
+          "rating": 7
+        },
+        "content": "Muy buena puesta en escena y un drama familiar devastador. El tramo final divide, pero la atmósfera es difícil de olvidar.",
+        "created_at": "2018-07-02T20:05:47.000Z",
+        "id": "5b3e8f10c3a7b2001ef56a78"
+      }
+    ]
+  },
+  "watch/providers": {
+    "results": {
+      "CO": {
+        "link": "https://www.themoviedb.org/movie/493922/watch?locale=CO",
+        "flatrate": [
+          {
+            "provider_id": 1899,
+            "provider_name": "Max",
+            "logo_path": null,
+            "display_priority": 3
+          },
+          {
+            "provider_id": 119,
+            "provider_name": "Amazon Prime Video",
+            "logo_path": null,
+            "display_priority": 5
+          }
+        ]
+      }
+    }
+  }
+}

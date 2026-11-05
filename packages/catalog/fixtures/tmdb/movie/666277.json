@@ -1,0 +1,209 @@
+{
+  "_simulado": true,
+  "_id_verificado": true,
+  "id": 666277,
+  "imdb_id": "tt13238346",
+  "title": "Vidas pasadas",
+  "original_title": "Past Lives",
+  "original_language": "en",
+  "release_date": "2023-06-02",
+  "runtime": 106,
+  "status": "Released",
+  "adult": false,
+  "genres": [
+    {
+      "id": 18,
+      "name": "Drama"
+    },
+    {
+      "id": 10749,
+      "name": "Romance"
+    }
+  ],
+  "overview": "Dos amigos de infancia se reencuentran décadas después de que su familia emigrara de Corea del Sur, y se preguntan qué habría sido de ellos.",
+  "tagline": "",
+  "vote_average": 7.7,
+  "vote_count": 1800,
+  "popularity": 27.1,
+  "poster_path": null,
+  "backdrop_path": null,
+  "production_countries": [
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    },
+    {
+      "iso_3166_1": "KR",
+      "name": "South Korea"
+    }
+  ],
+  "spoken_languages": [
+    {
+      "iso_639_1": "en",
+      "english_name": "English",
+      "name": "English"
+    },
+    {
+      "iso_639_1": "ko",
+      "english_name": "Korean",
+      "name": "한국어/조선말"
+    }
+  ],
+  "budget": 12000000,
+  "revenue": 43000000,
+  "credits": {
+    "cast": [
+      {
+        "id": null,
+        "name": "Greta Lee",
+        "character": "Nora Moon",
+        "order": 0
+      },
+      {
+        "id": null,
+        "name": "Teo Yoo",
+        "character": "Hae Sung",
+        "order": 1
+      },
+      {
+        "id": null,
+        "name": "John Magaro",
+        "character": "Arthur",
+        "order": 2
+      },
+      {
+        "id": null,
+        "name": "Moon Seung-ah",
+        "character": "Young Na Young",
+        "order": 3
+      },
+      {
+        "id": null,
+        "name": "Leem Seung-min",
+        "character": "Young Hae Sung",
+        "order": 4
+      },
+      {
+        "id": null,
+        "name": "Ji Hye Yoon",
+        "character": "Hae Sung's Friend",
+        "order": 5
+      }
+    ],
+    "crew": [
+      {
+        "id": null,
+        "name": "Celine Song",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "Celine Song",
+        "job": "Screenplay",
+        "department": "Writing"
+      },
+      {
+        "id": null,
+        "name": "Christopher Bear",
+        "job": "Original Music Composer",
+        "department": "Sound"
+      },
+      {
+        "id": null,
+        "name": "Daniel Rossen",
+        "job": "Original Music Composer",
+        "department": "Sound"
+      }
+    ]
+  },
+  "keywords": {
+    "keywords": [
+      {
+        "id": null,
+        "name": "immigrant"
+      },
+      {
+        "id": null,
+        "name": "first love"
+      },
+      {
+        "id": null,
+        "name": "south korea"
+      },
+      {
+        "id": null,
+        "name": "new york city"
+      },
+      {
+        "id": null,
+        "name": "reunion"
+      },
+      {
+        "id": null,
+        "name": "childhood friends"
+      },
+      {
+        "id": null,
+        "name": "love triangle"
+      },
+      {
+        "id": null,
+        "name": "destiny"
+      },
+      {
+        "id": null,
+        "name": "playwright"
+      },
+      {
+        "id": null,
+        "name": "long distance relationship"
+      }
+    ]
+  },
+  "reviews": {
+    "page": 1,
+    "total_results": 2,
+    "results": [
+      {
+        "author": "cafe_y_cine",
+        "author_details": {
+          "rating": 9
+        },
+        "content": "Delicada y honesta. Te deja con un nudo en la garganta sin recurrir a grandes gestos.",
+        "created_at": "2023-06-20T15:52:30.000Z",
+        "id": "6491d7a3e4b0c9012f5a3b86"
+      },
+      {
+        "author": "slowburn_sam",
+        "author_details": {
+          "rating": 8
+        },
+        "content": "A beautifully restrained debut about timing and what could have been. The final scene is perfect.",
+        "created_at": "2023-07-08T22:14:03.000Z",
+        "id": "64a9e0f2c2d5a8010b7c4e19"
+      }
+    ]
+  },
+  "watch/providers": {
+    "results": {
+      "CO": {
+        "link": "https://www.themoviedb.org/movie/666277/watch?locale=CO",
+        "flatrate": [
+          {
+            "provider_id": 119,
+            "provider_name": "Amazon Prime Video",
+            "logo_path": null,
+            "display_priority": 0
+          },
+          {
+            "provider_id": 1899,
+            "provider_name": "Max",
+            "logo_path": null,
+            "display_priority": 1
+          }
+        ]
+      }
+    }
+  }
+}

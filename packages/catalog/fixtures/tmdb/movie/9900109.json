@@ -1,0 +1,198 @@
+{
+  "_simulado": true,
+  "_id_verificado": false,
+  "id": 9900109,
+  "imdb_id": null,
+  "title": "Relatos salvajes",
+  "original_title": "Relatos salvajes",
+  "original_language": "es",
+  "release_date": "2014-08-21",
+  "runtime": 122,
+  "status": "Released",
+  "adult": false,
+  "genres": [
+    {
+      "id": 35,
+      "name": "Comedia"
+    },
+    {
+      "id": 18,
+      "name": "Drama"
+    },
+    {
+      "id": 53,
+      "name": "Suspense"
+    }
+  ],
+  "overview": "Seis historias independientes muestran cómo la rabia y la injusticia empujan a personas comunes a perder el control. Una comedia negra sobre la venganza y los límites de la civilización.",
+  "tagline": "A veces perder el control es un placer.",
+  "vote_average": 8.1,
+  "vote_count": 4000,
+  "popularity": 29.7,
+  "poster_path": null,
+  "backdrop_path": null,
+  "production_countries": [
+    {
+      "iso_3166_1": "AR",
+      "name": "Argentina"
+    },
+    {
+      "iso_3166_1": "ES",
+      "name": "Spain"
+    }
+  ],
+  "spoken_languages": [
+    {
+      "iso_639_1": "es",
+      "english_name": "Spanish",
+      "name": "Español"
+    }
+  ],
+  "budget": 3300000,
+  "revenue": 30000000,
+  "credits": {
+    "cast": [
+      {
+        "id": null,
+        "name": "Ricardo Darín",
+        "character": "Simón Fischer",
+        "order": 0
+      },
+      {
+        "id": null,
+        "name": "Óscar Martínez",
+        "character": "Cuenca",
+        "order": 1
+      },
+      {
+        "id": null,
+        "name": "Leonardo Sbaraglia",
+        "character": "Diego",
+        "order": 2
+      },
+      {
+        "id": null,
+        "name": "Érica Rivas",
+        "character": "Romina",
+        "order": 3
+      },
+      {
+        "id": null,
+        "name": "Rita Cortese",
+        "character": "Cocinera",
+        "order": 4
+      },
+      {
+        "id": null,
+        "name": "Julieta Zylberberg",
+        "character": "Helena",
+        "order": 5
+      },
+      {
+        "id": null,
+        "name": "Darío Grandinetti",
+        "character": "Salgado",
+        "order": 6
+      }
+    ],
+    "crew": [
+      {
+        "id": null,
+        "name": "Damián Szifron",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "Damián Szifron",
+        "job": "Screenplay",
+        "department": "Writing"
+      },
+      {
+        "id": null,
+        "name": "Gustavo Santaolalla",
+        "job": "Original Music Composer",
+        "department": "Sound"
+      }
+    ]
+  },
+  "keywords": {
+    "keywords": [
+      {
+        "id": null,
+        "name": "anthology"
+      },
+      {
+        "id": null,
+        "name": "black comedy"
+      },
+      {
+        "id": null,
+        "name": "revenge"
+      },
+      {
+        "id": null,
+        "name": "rage"
+      },
+      {
+        "id": null,
+        "name": "buenos aires, argentina"
+      },
+      {
+        "id": null,
+        "name": "injustice"
+      },
+      {
+        "id": null,
+        "name": "wedding"
+      },
+      {
+        "id": null,
+        "name": "road rage"
+      },
+      {
+        "id": null,
+        "name": "corruption"
+      }
+    ]
+  },
+  "reviews": {
+    "page": 1,
+    "total_results": 2,
+    "results": [
+      {
+        "author": "sala_tres",
+        "author_details": {
+          "rating": 9
+        },
+        "content": "Wickedly funny and perfectly paced. Each story builds to a gleefully chaotic payoff.",
+        "created_at": "2015-03-02T19:14:55.000Z",
+        "id": "54f4c1a8e3b7d2001a9c5e30"
+      },
+      {
+        "author": "cinefagia_ar",
+        "author_details": {
+          "rating": 8
+        },
+        "content": "Un festival de humor negro con episodios muy desiguales pero casi todos brillantes. Una de las mejores películas latinas de los últimos años.",
+        "created_at": "2016-07-11T22:36:08.000Z",
+        "id": "5783d9f2b5c1a4003e6f8b24"
+      }
+    ]
+  },
+  "watch/providers": {
+    "results": {
+      "CO": {
+        "link": "https://www.themoviedb.org/movie/9900109/watch?locale=CO",
+        "flatrate": [
+          {
+            "provider_id": 119,
+            "provider_name": "Amazon Prime Video",
+            "logo_path": null,
+            "display_priority": 5
+          }
+        ]
+      }
+    }
+  }
+}

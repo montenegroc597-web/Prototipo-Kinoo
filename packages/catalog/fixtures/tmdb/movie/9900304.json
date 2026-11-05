@@ -1,0 +1,204 @@
+{
+  "_simulado": true,
+  "_id_verificado": false,
+  "id": 9900304,
+  "imdb_id": null,
+  "title": "Mortal Kombat II",
+  "original_title": "Mortal Kombat II",
+  "original_language": "en",
+  "release_date": "2026-05-08",
+  "runtime": 116,
+  "status": "Released",
+  "adult": false,
+  "genres": [
+    {
+      "id": 28,
+      "name": "Acción"
+    },
+    {
+      "id": 14,
+      "name": "Fantasía"
+    },
+    {
+      "id": 12,
+      "name": "Aventura"
+    }
+  ],
+  "overview": "Los campeones de la Tierra se preparan para el torneo de Mortal Kombat, donde deberán enfrentarse a los luchadores del Mundo Exterior. Esta vez, Johnny Cage se suma al equipo con la misión de proteger el reino.",
+  "tagline": "",
+  "vote_average": 6.6,
+  "vote_count": 600,
+  "popularity": 37.2,
+  "poster_path": null,
+  "backdrop_path": null,
+  "production_countries": [
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    },
+    {
+      "iso_3166_1": "AU",
+      "name": "Australia"
+    }
+  ],
+  "spoken_languages": [
+    {
+      "iso_639_1": "en",
+      "english_name": "English",
+      "name": "English"
+    }
+  ],
+  "budget": 0,
+  "revenue": 0,
+  "credits": {
+    "cast": [
+      {
+        "id": null,
+        "name": "Karl Urban",
+        "character": "Johnny Cage",
+        "order": 0
+      },
+      {
+        "id": null,
+        "name": "Adeline Rudolph",
+        "character": "Kitana",
+        "order": 1
+      },
+      {
+        "id": null,
+        "name": "Jessica McNamee",
+        "character": "Sonya Blade",
+        "order": 2
+      },
+      {
+        "id": null,
+        "name": "Lewis Tan",
+        "character": "Cole Young",
+        "order": 3
+      },
+      {
+        "id": null,
+        "name": "Josh Lawson",
+        "character": "Kano",
+        "order": 4
+      },
+      {
+        "id": null,
+        "name": "Tadanobu Asano",
+        "character": "Lord Raiden",
+        "order": 5
+      },
+      {
+        "id": null,
+        "name": "Hiroyuki Sanada",
+        "character": "Scorpion / Hanzo Hasashi",
+        "order": 6
+      },
+      {
+        "id": null,
+        "name": "Ludi Lin",
+        "character": "Liu Kang",
+        "order": 7
+      }
+    ],
+    "crew": [
+      {
+        "id": null,
+        "name": "Simon McQuoid",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "Jeremy Slater",
+        "job": "Screenplay",
+        "department": "Writing"
+      },
+      {
+        "id": null,
+        "name": "Benjamin Wallfisch",
+        "job": "Original Music Composer",
+        "department": "Sound"
+      }
+    ]
+  },
+  "keywords": {
+    "keywords": [
+      {
+        "id": null,
+        "name": "based on video game"
+      },
+      {
+        "id": null,
+        "name": "martial arts"
+      },
+      {
+        "id": null,
+        "name": "tournament"
+      },
+      {
+        "id": null,
+        "name": "sequel"
+      },
+      {
+        "id": null,
+        "name": "fighting"
+      },
+      {
+        "id": null,
+        "name": "gore"
+      },
+      {
+        "id": null,
+        "name": "sorcerer"
+      },
+      {
+        "id": null,
+        "name": "parallel world"
+      },
+      {
+        "id": null,
+        "name": "supernatural"
+      }
+    ]
+  },
+  "reviews": {
+    "page": 1,
+    "total_results": 2,
+    "results": [
+      {
+        "author": "fatality_finisher",
+        "author_details": {
+          "rating": 7
+        },
+        "content": "Fun, bloody and fast-paced. The fights are better choreographed than the first film and Karl Urban steals every scene he is in.",
+        "created_at": "2026-05-10T22:14:30.000Z",
+        "id": "6a0f2c8e1b9d4a0016c2e5d7"
+      },
+      {
+        "author": "gamer_medellin",
+        "author_details": {
+          "rating": 6
+        },
+        "content": "Buena adaptación para los fans del juego, con muchos guiños y combates bien logrados. La historia es floja, pero cumple como entretenimiento.",
+        "created_at": "2026-05-14T03:48:21.000Z",
+        "id": "6a14b7d9e5c30f0012a8f4c6"
+      }
+    ]
+  },
+  "watch/providers": {
+    "results": {
+      "CO": {
+        "link": "https://www.themoviedb.org/movie/9900304/watch?locale=CO",
+        "flatrate": [
+          {
+            "provider_id": 1899,
+            "provider_name": "Max",
+            "logo_path": null,
+            "display_priority": 3
+          }
+        ]
+      }
+    }
+  }
+}

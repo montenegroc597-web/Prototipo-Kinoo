@@ -1,0 +1,210 @@
+{
+  "_simulado": true,
+  "_id_verificado": false,
+  "id": 9900110,
+  "imdb_id": null,
+  "title": "El abrazo de la serpiente",
+  "original_title": "El abrazo de la serpiente",
+  "original_language": "es",
+  "release_date": "2015-05-21",
+  "runtime": 125,
+  "status": "Released",
+  "adult": false,
+  "genres": [
+    {
+      "id": 12,
+      "name": "Aventura"
+    },
+    {
+      "id": 18,
+      "name": "Drama"
+    },
+    {
+      "id": 36,
+      "name": "Historia"
+    }
+  ],
+  "overview": "Karamakate, un chamán amazónico último sobreviviente de su pueblo, guía a dos científicos separados por décadas en la búsqueda de una planta sagrada. Un viaje por el río que enfrenta dos formas de entender el mundo.",
+  "tagline": "",
+  "vote_average": 7.5,
+  "vote_count": 500,
+  "popularity": 14.8,
+  "poster_path": null,
+  "backdrop_path": null,
+  "production_countries": [
+    {
+      "iso_3166_1": "CO",
+      "name": "Colombia"
+    },
+    {
+      "iso_3166_1": "VE",
+      "name": "Venezuela"
+    },
+    {
+      "iso_3166_1": "AR",
+      "name": "Argentina"
+    }
+  ],
+  "spoken_languages": [
+    {
+      "iso_639_1": "es",
+      "english_name": "Spanish",
+      "name": "Español"
+    },
+    {
+      "iso_639_1": "de",
+      "english_name": "German",
+      "name": "Deutsch"
+    },
+    {
+      "iso_639_1": "pt",
+      "english_name": "Portuguese",
+      "name": "Português"
+    }
+  ],
+  "budget": 1500000,
+  "revenue": 1300000,
+  "credits": {
+    "cast": [
+      {
+        "id": null,
+        "name": "Nilbio Torres",
+        "character": "Karamakate joven",
+        "order": 0
+      },
+      {
+        "id": null,
+        "name": "Antonio Bolívar Salvador",
+        "character": "Karamakate anciano",
+        "order": 1
+      },
+      {
+        "id": null,
+        "name": "Jan Bijvoet",
+        "character": "Theodor von Martius",
+        "order": 2
+      },
+      {
+        "id": null,
+        "name": "Brionne Davis",
+        "character": "Evan",
+        "order": 3
+      },
+      {
+        "id": null,
+        "name": "Yauenkü Migue",
+        "character": "Manduca",
+        "order": 4
+      },
+      {
+        "id": null,
+        "name": "Luigi Sciamanna",
+        "character": "Padre Gaspar",
+        "order": 5
+      }
+    ],
+    "crew": [
+      {
+        "id": null,
+        "name": "Ciro Guerra",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "Ciro Guerra",
+        "job": "Screenplay",
+        "department": "Writing"
+      },
+      {
+        "id": null,
+        "name": "Nascuy Linares",
+        "job": "Original Music Composer",
+        "department": "Sound"
+      }
+    ]
+  },
+  "keywords": {
+    "keywords": [
+      {
+        "id": null,
+        "name": "amazon rainforest"
+      },
+      {
+        "id": null,
+        "name": "shaman"
+      },
+      {
+        "id": null,
+        "name": "colonialism"
+      },
+      {
+        "id": null,
+        "name": "river"
+      },
+      {
+        "id": null,
+        "name": "indigenous"
+      },
+      {
+        "id": null,
+        "name": "explorer"
+      },
+      {
+        "id": null,
+        "name": "yakruna"
+      },
+      {
+        "id": null,
+        "name": "black and white"
+      },
+      {
+        "id": null,
+        "name": "based on diary"
+      },
+      {
+        "id": null,
+        "name": "colombia"
+      }
+    ]
+  },
+  "reviews": {
+    "page": 1,
+    "total_results": 2,
+    "results": [
+      {
+        "author": "rio_adentro",
+        "author_details": {
+          "rating": 9
+        },
+        "content": "A hypnotic journey up the river in stunning black and white. It treats its subject with real respect and depth.",
+        "created_at": "2016-02-24T11:08:31.000Z",
+        "id": "56cd2e7fa1b4c8002d5e9a17"
+      },
+      {
+        "author": "cuaderno_de_cine",
+        "author_details": {
+          "rating": 8
+        },
+        "content": "Una experiencia sensorial y reflexiva sobre la selva y el choque de culturas. Exige paciencia, pero deja huella.",
+        "created_at": "2017-09-30T17:52:14.000Z",
+        "id": "59cf6b04d3e8a2001c7f4b95"
+      }
+    ]
+  },
+  "watch/providers": {
+    "results": {
+      "CO": {
+        "link": "https://www.themoviedb.org/movie/9900110/watch?locale=CO",
+        "flatrate": [
+          {
+            "provider_id": 119,
+            "provider_name": "Amazon Prime Video",
+            "logo_path": null,
+            "display_priority": 5
+          }
+        ]
+      }
+    }
+  }
+}

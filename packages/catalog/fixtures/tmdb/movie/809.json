@@ -1,0 +1,220 @@
+{
+  "_simulado": true,
+  "_id_verificado": true,
+  "id": 809,
+  "imdb_id": "tt0298148",
+  "title": "Shrek 2",
+  "original_title": "Shrek 2",
+  "original_language": "en",
+  "release_date": "2004-05-19",
+  "runtime": 93,
+  "status": "Released",
+  "adult": false,
+  "genres": [
+    {
+      "id": 16,
+      "name": "Animación"
+    },
+    {
+      "id": 35,
+      "name": "Comedia"
+    },
+    {
+      "id": 10751,
+      "name": "Familia"
+    },
+    {
+      "id": 14,
+      "name": "Fantasía"
+    }
+  ],
+  "overview": "Shrek y Fiona regresan de su luna de miel y son invitados al reino de Muy Muy Lejano para conocer a los padres de ella. La visita se complica con un Hada Madrina decidida a arruinar su felicidad.",
+  "tagline": "Ogros, burros y gatos con botas.",
+  "vote_average": 7.3,
+  "vote_count": 12000,
+  "popularity": 52.1,
+  "poster_path": null,
+  "backdrop_path": null,
+  "production_countries": [
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    }
+  ],
+  "spoken_languages": [
+    {
+      "iso_639_1": "en",
+      "english_name": "English",
+      "name": "English"
+    }
+  ],
+  "budget": 150000000,
+  "revenue": 928700000,
+  "credits": {
+    "cast": [
+      {
+        "id": null,
+        "name": "Mike Myers",
+        "character": "Shrek (voice)",
+        "order": 0
+      },
+      {
+        "id": null,
+        "name": "Eddie Murphy",
+        "character": "Donkey (voice)",
+        "order": 1
+      },
+      {
+        "id": null,
+        "name": "Cameron Diaz",
+        "character": "Princess Fiona (voice)",
+        "order": 2
+      },
+      {
+        "id": null,
+        "name": "Julie Andrews",
+        "character": "Queen Lillian (voice)",
+        "order": 3
+      },
+      {
+        "id": null,
+        "name": "Antonio Banderas",
+        "character": "Puss in Boots (voice)",
+        "order": 4
+      },
+      {
+        "id": null,
+        "name": "John Cleese",
+        "character": "King Harold (voice)",
+        "order": 5
+      },
+      {
+        "id": null,
+        "name": "Rupert Everett",
+        "character": "Prince Charming (voice)",
+        "order": 6
+      },
+      {
+        "id": null,
+        "name": "Jennifer Saunders",
+        "character": "Fairy Godmother (voice)",
+        "order": 7
+      }
+    ],
+    "crew": [
+      {
+        "id": null,
+        "name": "Andrew Adamson",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "Kelly Asbury",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "Conrad Vernon",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "Andrew Adamson",
+        "job": "Screenplay",
+        "department": "Writing"
+      },
+      {
+        "id": null,
+        "name": "Harry Gregson-Williams",
+        "job": "Original Music Composer",
+        "department": "Sound"
+      }
+    ]
+  },
+  "keywords": {
+    "keywords": [
+      {
+        "id": null,
+        "name": "ogre"
+      },
+      {
+        "id": null,
+        "name": "fairy tale"
+      },
+      {
+        "id": null,
+        "name": "sequel"
+      },
+      {
+        "id": null,
+        "name": "parody"
+      },
+      {
+        "id": null,
+        "name": "talking animal"
+      },
+      {
+        "id": null,
+        "name": "in-laws"
+      },
+      {
+        "id": null,
+        "name": "fairy godmother"
+      },
+      {
+        "id": null,
+        "name": "swamp"
+      },
+      {
+        "id": null,
+        "name": "kingdom"
+      },
+      {
+        "id": null,
+        "name": "anthropomorphism"
+      }
+    ]
+  },
+  "reviews": {
+    "page": 1,
+    "total_results": 2,
+    "results": [
+      {
+        "author": "swampdweller42",
+        "author_details": {
+          "rating": 8
+        },
+        "content": "Funnier than the original in many ways, and Puss in Boots steals every scene he is in. Great soundtrack and plenty of jokes for adults.",
+        "created_at": "2014-06-08T15:20:44.000Z",
+        "id": "5393c4b1c3a3682f6c00128a"
+      },
+      {
+        "author": "pelis_con_palomitas",
+        "author_details": {
+          "rating": null
+        },
+        "content": "Una secuela que mantiene el humor y el corazón del original. Divertida para toda la familia y con referencias que hacen reír a los grandes.",
+        "created_at": "2020-01-19T20:33:12.000Z",
+        "id": "5e24a8c7b6a4a0001b3d7f52"
+      }
+    ]
+  },
+  "watch/providers": {
+    "results": {
+      "CO": {
+        "link": "https://www.themoviedb.org/movie/809/watch?locale=CO",
+        "flatrate": [
+          {
+            "provider_id": 8,
+            "provider_name": "Netflix",
+            "logo_path": null,
+            "display_priority": 1
+          }
+        ]
+      }
+    }
+  }
+}

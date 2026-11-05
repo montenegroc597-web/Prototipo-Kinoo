@@ -1,0 +1,213 @@
+{
+  "_simulado": true,
+  "_id_verificado": true,
+  "id": 460465,
+  "imdb_id": "tt0293429",
+  "title": "Mortal Kombat",
+  "original_title": "Mortal Kombat",
+  "original_language": "en",
+  "release_date": "2021-04-07",
+  "runtime": 110,
+  "status": "Released",
+  "adult": false,
+  "genres": [
+    {
+      "id": 28,
+      "name": "Acción"
+    },
+    {
+      "id": 14,
+      "name": "Fantasía"
+    },
+    {
+      "id": 12,
+      "name": "Aventura"
+    }
+  ],
+  "overview": "Cole Young, un luchador de MMA acostumbrado a perder, descubre que lleva una misteriosa marca de nacimiento. Perseguido por el letal Sub-Zero, busca a los mejores guerreros de la Tierra para enfrentarse a los campeones de otro reino.",
+  "tagline": "Prepárate para la pelea.",
+  "vote_average": 7,
+  "vote_count": 6000,
+  "popularity": 62.4,
+  "poster_path": null,
+  "backdrop_path": null,
+  "production_countries": [
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    },
+    {
+      "iso_3166_1": "AU",
+      "name": "Australia"
+    }
+  ],
+  "spoken_languages": [
+    {
+      "iso_639_1": "en",
+      "english_name": "English",
+      "name": "English"
+    },
+    {
+      "iso_639_1": "ja",
+      "english_name": "Japanese",
+      "name": "日本語"
+    }
+  ],
+  "budget": 55000000,
+  "revenue": 84000000,
+  "credits": {
+    "cast": [
+      {
+        "id": null,
+        "name": "Lewis Tan",
+        "character": "Cole Young",
+        "order": 0
+      },
+      {
+        "id": null,
+        "name": "Jessica McNamee",
+        "character": "Sonya Blade",
+        "order": 1
+      },
+      {
+        "id": null,
+        "name": "Josh Lawson",
+        "character": "Kano",
+        "order": 2
+      },
+      {
+        "id": null,
+        "name": "Tadanobu Asano",
+        "character": "Raiden",
+        "order": 3
+      },
+      {
+        "id": null,
+        "name": "Mehcad Brooks",
+        "character": "Jax",
+        "order": 4
+      },
+      {
+        "id": null,
+        "name": "Hiroyuki Sanada",
+        "character": "Scorpion / Hanzo Hasashi",
+        "order": 5
+      },
+      {
+        "id": null,
+        "name": "Joe Taslim",
+        "character": "Sub-Zero / Bi-Han",
+        "order": 6
+      },
+      {
+        "id": null,
+        "name": "Chin Han",
+        "character": "Shang Tsung",
+        "order": 7
+      }
+    ],
+    "crew": [
+      {
+        "id": null,
+        "name": "Simon McQuoid",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "Greg Russo",
+        "job": "Screenplay",
+        "department": "Writing"
+      },
+      {
+        "id": null,
+        "name": "Benjamin Wallfisch",
+        "job": "Original Music Composer",
+        "department": "Sound"
+      }
+    ]
+  },
+  "keywords": {
+    "keywords": [
+      {
+        "id": null,
+        "name": "based on video game"
+      },
+      {
+        "id": null,
+        "name": "martial arts"
+      },
+      {
+        "id": null,
+        "name": "tournament"
+      },
+      {
+        "id": null,
+        "name": "fighting"
+      },
+      {
+        "id": null,
+        "name": "ninja"
+      },
+      {
+        "id": null,
+        "name": "mixed martial arts"
+      },
+      {
+        "id": null,
+        "name": "fatality"
+      },
+      {
+        "id": null,
+        "name": "sorcerer"
+      },
+      {
+        "id": null,
+        "name": "gore"
+      },
+      {
+        "id": null,
+        "name": "reboot"
+      }
+    ]
+  },
+  "reviews": {
+    "page": 1,
+    "total_results": 2,
+    "results": [
+      {
+        "author": "ringsidefan88",
+        "author_details": {
+          "rating": 7
+        },
+        "content": "The fight choreography is the real star here, and the fan service lands more often than it misses. The story is thin, but it delivers the brutal fun the games promised.",
+        "created_at": "2021-04-15T18:22:41.000Z",
+        "id": "60787f3a2c1b4e0021a3c9d1"
+      },
+      {
+        "author": "cinefilo_bogota",
+        "author_details": {
+          "rating": null
+        },
+        "content": "Una adaptación entretenida que entiende de qué va el juego. Las peleas están muy bien filmadas, aunque los personajes nuevos se sienten algo planos.",
+        "created_at": "2021-05-02T03:10:09.000Z",
+        "id": "608e1b4c9f2d3a0045b7e6a2"
+      }
+    ]
+  },
+  "watch/providers": {
+    "results": {
+      "CO": {
+        "link": "https://www.themoviedb.org/movie/460465/watch?locale=CO",
+        "flatrate": [
+          {
+            "provider_id": 1899,
+            "provider_name": "Max",
+            "logo_path": null,
+            "display_priority": 3
+          }
+        ]
+      }
+    }
+  }
+}

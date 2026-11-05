@@ -1,0 +1,208 @@
+{
+  "_simulado": true,
+  "_id_verificado": true,
+  "id": 76341,
+  "imdb_id": "tt1392190",
+  "title": "Mad Max: Furia en el camino",
+  "original_title": "Mad Max: Fury Road",
+  "original_language": "en",
+  "release_date": "2015-05-13",
+  "runtime": 120,
+  "status": "Released",
+  "adult": false,
+  "genres": [
+    {
+      "id": 28,
+      "name": "Acción"
+    },
+    {
+      "id": 12,
+      "name": "Aventura"
+    },
+    {
+      "id": 878,
+      "name": "Ciencia ficción"
+    }
+  ],
+  "overview": "En un desierto postapocalíptico, Max se une a la comandante Furiosa en una huida desesperada a través del yermo, perseguidos por un tirano y su ejército.",
+  "tagline": "Qué día tan glorioso.",
+  "vote_average": 7.6,
+  "vote_count": 22000,
+  "popularity": 67.8,
+  "poster_path": null,
+  "backdrop_path": null,
+  "production_countries": [
+    {
+      "iso_3166_1": "AU",
+      "name": "Australia"
+    },
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    }
+  ],
+  "spoken_languages": [
+    {
+      "iso_639_1": "en",
+      "english_name": "English",
+      "name": "English"
+    }
+  ],
+  "budget": 150000000,
+  "revenue": 378858340,
+  "credits": {
+    "cast": [
+      {
+        "id": null,
+        "name": "Tom Hardy",
+        "character": "Max Rockatansky",
+        "order": 0
+      },
+      {
+        "id": null,
+        "name": "Charlize Theron",
+        "character": "Imperator Furiosa",
+        "order": 1
+      },
+      {
+        "id": null,
+        "name": "Nicholas Hoult",
+        "character": "Nux",
+        "order": 2
+      },
+      {
+        "id": null,
+        "name": "Hugh Keays-Byrne",
+        "character": "Immortan Joe",
+        "order": 3
+      },
+      {
+        "id": null,
+        "name": "Rosie Huntington-Whiteley",
+        "character": "The Splendid Angharad",
+        "order": 4
+      },
+      {
+        "id": null,
+        "name": "Zoë Kravitz",
+        "character": "Toast the Knowing",
+        "order": 5
+      },
+      {
+        "id": null,
+        "name": "Riley Keough",
+        "character": "Capable",
+        "order": 6
+      }
+    ],
+    "crew": [
+      {
+        "id": null,
+        "name": "George Miller",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "George Miller",
+        "job": "Screenplay",
+        "department": "Writing"
+      },
+      {
+        "id": null,
+        "name": "Junkie XL",
+        "job": "Original Music Composer",
+        "department": "Sound"
+      }
+    ]
+  },
+  "keywords": {
+    "keywords": [
+      {
+        "id": null,
+        "name": "post-apocalyptic future"
+      },
+      {
+        "id": null,
+        "name": "desert"
+      },
+      {
+        "id": null,
+        "name": "chase"
+      },
+      {
+        "id": null,
+        "name": "dystopia"
+      },
+      {
+        "id": null,
+        "name": "road trip"
+      },
+      {
+        "id": null,
+        "name": "survival"
+      },
+      {
+        "id": null,
+        "name": "tyrant"
+      },
+      {
+        "id": null,
+        "name": "water"
+      },
+      {
+        "id": null,
+        "name": "sequel"
+      },
+      {
+        "id": null,
+        "name": "warlord"
+      }
+    ]
+  },
+  "reviews": {
+    "page": 1,
+    "total_results": 2,
+    "results": [
+      {
+        "author": "asfalto_rojo",
+        "author_details": {
+          "rating": 10
+        },
+        "content": "Dos horas de persecución pura con un diseño visual espectacular. Furiosa roba la película.",
+        "created_at": "2015-05-20T21:19:36.000Z",
+        "id": "555d4b2ec3a36850e0001f84"
+      },
+      {
+        "author": "v8_cinephile",
+        "author_details": {
+          "rating": 9
+        },
+        "content": "A relentless, gorgeous action film. Practical effects and world-building with almost no exposition.",
+        "created_at": "2016-01-08T16:42:03.000Z",
+        "id": "568fa0d1925141374a0003c7"
+      }
+    ]
+  },
+  "watch/providers": {
+    "results": {
+      "CO": {
+        "link": "https://www.themoviedb.org/movie/76341/watch?locale=CO",
+        "flatrate": [
+          {
+            "provider_id": 1899,
+            "provider_name": "Max",
+            "logo_path": null,
+            "display_priority": 0
+          },
+          {
+            "provider_id": 8,
+            "provider_name": "Netflix",
+            "logo_path": null,
+            "display_priority": 1
+          }
+        ]
+      }
+    }
+  }
+}

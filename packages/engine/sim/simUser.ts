@@ -17,7 +17,14 @@ export class SimUser {
   private readonly rng: () => number;
   private readonly t0: number;
 
-  constructor(readonly engine: KinooEngine, id: string, hidden: PartialAtomVector, seed: number, readonly acceptShare = 0.15, readonly noise = 0.05) {
+  constructor(
+    readonly engine: KinooEngine,
+    id: string,
+    hidden: PartialAtomVector,
+    seed: number,
+    readonly acceptShare = 0.15,
+    readonly noise = 0.05,
+  ) {
     this.id = id;
     this.hidden = fromPartial(hidden);
     this.rng = makeRng(seed);
@@ -25,14 +32,18 @@ export class SimUser {
     this.t0 = Date.parse('2026-11-01T00:00:00Z');
   }
 
-  now() { return new Date(this.t0 + this.n * 60_000); }
+  now() {
+    return new Date(this.t0 + this.n * 60_000);
+  }
 
   tasteFor(vibe: string | null): AtomVector {
     return (vibe && this.hiddenByVibe[vibe]) || this.hidden;
   }
 
   /** Afinidad verdadera con una película. */
-  affinity(m: IndexedMovie, vibe: string | null = null) { return cosine(this.tasteFor(vibe), m.hat); }
+  affinity(m: IndexedMovie, vibe: string | null = null) {
+    return cosine(this.tasteFor(vibe), m.hat);
+  }
 
   /** Umbral para aceptar: el cuantil (1 − acceptShare) de su afinidad sobre el catálogo. */
   threshold(vibe: string | null = null): number {
@@ -52,18 +63,21 @@ export class SimUser {
     return full;
   }
 
-  signalCount() { return this.model.signal_count; }
+  signalCount() {
+    return this.model.signal_count;
+  }
 
   doOnboarding(pairs = 6) {
     for (const p of this.engine.onboarding(this.model, pairs)) {
-      const l = this.engine.catalog.byId.get(p.left_movie_id)!, r = this.engine.catalog.byId.get(p.right_movie_id)!;
+      const l = this.engine.catalog.byId.get(p.left_movie_id)!;
+      const r = this.engine.catalog.byId.get(p.right_movie_id)!;
       const [ch, rj] = this.affinity(l) >= this.affinity(r) ? [l, r] : [r, l];
       this.emit({ type: 'onboarding_choice', movie_id: ch.movie.id, payload: { chosen_movie_id: ch.movie.id, rejected_movie_id: rj.movie.id } } as never);
     }
   }
 
   /** Abre un mazo y reacciona a cada carta. Devuelve el mazo. */
-  playDeck(vibe: string | null = null, size = 10, stopAtSignals = Infinity, afterEach?: () => boolean) {
+  playDeck(vibe: string | null = null, size = 10, stopAtSignals = Number.POSITIVE_INFINITY, afterEach?: () => boolean) {
     const deck = this.engine.openDeck(this.model, { deck_id: `${this.id}-d${this.n}`, now: this.now(), vibe, size });
     this.emit({ type: 'deck_opened', payload: { deck_id: deck.deck_id, vibe, size } } as never);
     const thr = this.threshold(vibe);

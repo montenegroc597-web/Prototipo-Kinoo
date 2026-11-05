@@ -1,0 +1,212 @@
+{
+  "_simulado": true,
+  "_id_verificado": true,
+  "id": 72190,
+  "imdb_id": "tt0816711",
+  "title": "Guerra Mundial Z",
+  "original_title": "World War Z",
+  "original_language": "en",
+  "release_date": "2013-06-20",
+  "runtime": 116,
+  "status": "Released",
+  "adult": false,
+  "genres": [
+    {
+      "id": 28,
+      "name": "Acción"
+    },
+    {
+      "id": 27,
+      "name": "Terror"
+    },
+    {
+      "id": 878,
+      "name": "Ciencia ficción"
+    }
+  ],
+  "overview": "Un exinvestigador de la ONU recorre el mundo en busca del origen de una pandemia que convierte a los infectados en criaturas violentas. Su misión es encontrar una forma de detenerla antes de que la civilización colapse.",
+  "tagline": "El mundo está en guerra.",
+  "vote_average": 6.8,
+  "vote_count": 16000,
+  "popularity": 52.7,
+  "poster_path": null,
+  "backdrop_path": null,
+  "production_countries": [
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    },
+    {
+      "iso_3166_1": "MT",
+      "name": "Malta"
+    }
+  ],
+  "spoken_languages": [
+    {
+      "iso_639_1": "en",
+      "english_name": "English",
+      "name": "English"
+    },
+    {
+      "iso_639_1": "he",
+      "english_name": "Hebrew",
+      "name": "עִבְרִית"
+    },
+    {
+      "iso_639_1": "ar",
+      "english_name": "Arabic",
+      "name": "العربية"
+    }
+  ],
+  "budget": 190000000,
+  "revenue": 540000000,
+  "credits": {
+    "cast": [
+      {
+        "id": null,
+        "name": "Brad Pitt",
+        "character": "Gerry Lane",
+        "order": 0
+      },
+      {
+        "id": null,
+        "name": "Mireille Enos",
+        "character": "Karin Lane",
+        "order": 1
+      },
+      {
+        "id": null,
+        "name": "Daniella Kertesz",
+        "character": "Segen",
+        "order": 2
+      },
+      {
+        "id": null,
+        "name": "James Badge Dale",
+        "character": "Capt. Speke",
+        "order": 3
+      },
+      {
+        "id": null,
+        "name": "Ludi Boeken",
+        "character": "Jurgen Warmbrunn",
+        "order": 4
+      },
+      {
+        "id": null,
+        "name": "Matthew Fox",
+        "character": "Parajumper",
+        "order": 5
+      },
+      {
+        "id": null,
+        "name": "David Morse",
+        "character": "Ex-CIA Agent",
+        "order": 6
+      }
+    ],
+    "crew": [
+      {
+        "id": null,
+        "name": "Marc Forster",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "Matthew Michael Carnahan",
+        "job": "Screenplay",
+        "department": "Writing"
+      },
+      {
+        "id": null,
+        "name": "Marco Beltrami",
+        "job": "Original Music Composer",
+        "department": "Sound"
+      }
+    ]
+  },
+  "keywords": {
+    "keywords": [
+      {
+        "id": null,
+        "name": "zombie"
+      },
+      {
+        "id": null,
+        "name": "pandemic"
+      },
+      {
+        "id": null,
+        "name": "apocalypse"
+      },
+      {
+        "id": null,
+        "name": "based on novel or book"
+      },
+      {
+        "id": null,
+        "name": "virus"
+      },
+      {
+        "id": null,
+        "name": "united nations"
+      },
+      {
+        "id": null,
+        "name": "survival"
+      },
+      {
+        "id": null,
+        "name": "epidemic"
+      },
+      {
+        "id": null,
+        "name": "family"
+      },
+      {
+        "id": null,
+        "name": "post-apocalyptic future"
+      }
+    ]
+  },
+  "reviews": {
+    "page": 1,
+    "total_results": 2,
+    "results": [
+      {
+        "author": "zonaz_critic",
+        "author_details": {
+          "rating": 7
+        },
+        "content": "Tense, fast and surprisingly grand in scale. It trades the gore of the genre for large set pieces, and it works as a globe-trotting thriller.",
+        "created_at": "2017-06-30T19:02:44.000Z",
+        "id": "59567f2dc3a3680a7e00a4d9"
+      },
+      {
+        "author": "marcela_ve",
+        "author_details": {
+          "rating": 6
+        },
+        "content": "Entretenida y con mucho ritmo. El final es más tranquilo de lo que esperaba, pero la secuencia de Jerusalén es espectacular.",
+        "created_at": "2021-02-14T03:15:30.000Z",
+        "id": "6028a1f2b4c5d6007d8e9f30"
+      }
+    ]
+  },
+  "watch/providers": {
+    "results": {
+      "CO": {
+        "link": "https://www.themoviedb.org/movie/72190/watch?locale=CO",
+        "flatrate": [
+          {
+            "provider_id": 119,
+            "provider_name": "Amazon Prime Video",
+            "logo_path": null,
+            "display_priority": 5
+          }
+        ]
+      }
+    }
+  }
+}

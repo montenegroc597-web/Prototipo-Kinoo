@@ -8,23 +8,43 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "node scripts/build-site.mjs",
-    "build:functions": "node scripts/build-functions.mjs",
-    "check:site": "node scripts/check-site.mjs",
+    "dev:web": "npm run build -w @kinoo/web && npm run serve -w @kinoo/web",
+    "dev:api": "npm run dev -w @kinoo/api",
+    "build": "npm run build -w @kinoo/web",
     "typecheck": "tsc --noEmit -p tsconfig.json",
+    "lint": "biome check .",
+    "format": "biome check --write .",
     "test": "vitest run",
-    "e2e": "playwright test",
-    "sim": "tsx packages/engine/sim/run.ts",
-    "seed": "node scripts/seed/generate-seed.mjs",
-    "serve": "node scripts/serve.mjs"
+    "test:unit": "vitest run --project unit",
+    "test:integration": "vitest run --project integration",
+    "test:e2e": "npm run test:e2e -w @kinoo/web",
+    "test:sim": "tsx packages/engine/sim/run.ts",
+    "test:coverage": "vitest run --coverage",
+    "check": "npm run lint && npm run typecheck && npm run db:seeds:check && node packages/catalog/scripts/posters.mjs --check && npm test && npm run build && npm run check:routes -w @kinoo/web",
+    "db:seeds": "node packages/db/scripts/generate-seeds.mjs",
+    "db:seeds:check": "node packages/db/scripts/generate-seeds.mjs --check",
+    "db:migrate": "tsx packages/db/scripts/migrate.ts",
+    "supabase:build": "node infra/supabase/build.mjs",
+    "catalog:fetch": "tsx packages/catalog/scripts/fetch.ts",
+    "catalog:prompts": "node packages/catalog/scripts/tag.mjs prompts",
+    "catalog:tag": "node packages/catalog/scripts/tag.mjs api",
+    "catalog:build": "node packages/catalog/scripts/build.mjs",
+    "catalog:posters": "node packages/catalog/scripts/posters.mjs"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
     "@electric-sql/pglite": "^0.3.7",
     "@playwright/test": "^1.56.0",
     "@types/node": "^22.7.5",
+    "@types/pg": "^8.11.10",
+    "@vitest/coverage-v8": "^2.1.9",
     "esbuild": "^0.24.0",
     "tsx": "^4.19.2",
     "typescript": "^5.6.3",
     "vitest": "^2.1.9"
+  },
+  "description": "Kinoo: app para decidir qué película ver. Monorepo con el front (apps/web), el back (apps/api) y sus paquetes.",
+  "engines": {
+    "node": ">=22"
   }
 }

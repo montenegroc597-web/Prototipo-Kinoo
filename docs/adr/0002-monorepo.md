@@ -1,6 +1,6 @@
 # ADR 0002 · Monorepo con front, motor y back separados
 
-**Estado:** aceptada · 2026-11-05
+**Estado:** aceptada · 2026-11-05 · rutas y paquetes actualizados por la [ADR 0004](0004-front-back-y-nube.md)
 
 ## Contexto
 

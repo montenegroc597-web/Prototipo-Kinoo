@@ -1,5 +1,5 @@
 import type { AtomVector, Movie, Params } from '@kinoo/shared';
-import { catalogStats, distinctive, quality, type CatalogStats } from './distinct';
+import { type CatalogStats, catalogStats, distinctive, quality } from './distinct';
 
 /** Película con lo que el motor calcula una vez: rasgo distintivo y calidad. */
 export interface IndexedMovie {

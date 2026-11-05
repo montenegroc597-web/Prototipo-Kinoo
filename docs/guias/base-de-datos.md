@@ -4,9 +4,20 @@
 
 ## Tres ideas
 
-- **Lo ajustable vive en tablas.** Pesos, moods, recetas de mazo y plantillas son filas, no código. Su fuente editable son los JSON de `data/config/`. `npm run seed` los convierte en SQL (`supabase/seed/`).
+- **Lo ajustable vive en tablas.** Pesos, moods, recetas de mazo y plantillas son filas, no código. Su fuente editable son los JSON de `packages/config/data/`. `npm run db:seeds` los convierte en SQL (`packages/db/seeds/`).
 - **Los eventos mandan.** `events` solo acepta filas nuevas: un trigger impide editarlas o borrarlas. Los perfiles y las marcas se calculan a partir de los eventos.
 - **Cada persona ve lo suyo.** Las reglas de seguridad por fila (RLS) filtran por `auth.uid()`. El catálogo y la configuración son de lectura pública.
+
+## Supabase u otra nube: los proveedores
+
+Las migraciones son PostgreSQL estándar. Las reglas de seguridad preguntan quién es la persona con `kinoo_current_user()`, y esa función la define un **proveedor**:
+
+| Proveedor | Archivo | `kinoo_current_user()` |
+|---|---|---|
+| Supabase | `packages/db/providers/supabase.sql` | `auth.uid()` (el JWT de Supabase Auth) |
+| PostgreSQL genérico | `packages/db/providers/postgres.sql` | `app.user_id`, que pone la API en cada transacción. También crea los roles `anon`, `authenticated` y `service_role` |
+
+`npm run db:migrate` aplica el proveedor, luego las migraciones que falten (registradas en `kinoo_migrations` con una suma de verificación) y las semillas. **Una migración publicada no se edita:** si cambió, el aplicador se detiene. Para el CLI de Supabase, `npm run supabase:build` arma `infra/supabase/migrations` desde la misma fuente.
 
 ## Tablas
 
@@ -48,6 +59,9 @@
 | `lists` | Listas publicables |
 | `groups` / `group_members` | La capa social privada de 2028 |
 
+### Catálogo con datos de TMDB (`0007_catalogo_tmdb.sql`)
+- `movies.imdb_id` y `movies.keywords`. La fuente puede ser `tmdb`, `tmdb_simulado` o `semilla_manual`.
+
 ### Seguridad y privacidad (`0005_rls.sql`, `0006_privacidad.sql`)
 - RLS en todas las tablas.
 - `kinoo_export_my_data()` devuelve en JSON todo lo de la persona que la llama.
@@ -78,7 +92,7 @@ Viven en otro repositorio (`kinoo-pruebas`) y en otro proyecto de Supabase («Pr
 
 ## Cómo se prueba
 
-`npm test` crea una base PostgreSQL en memoria (PGlite con pgvector), aplica `supabase/test/supabase-shim.sql` (imita los roles y `auth.uid()` de Supabase), las migraciones y las semillas, y verifica:
+`npm run test:integration` crea bases PostgreSQL en memoria (PGlite con pgvector) con **los dos proveedores**, aplica las migraciones y las semillas, y verifica:
 
 - Las 22 tablas existen y la semilla carga los 21 átomos.
 - `events` no deja editar ni borrar.

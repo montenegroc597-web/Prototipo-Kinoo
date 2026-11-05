@@ -1,15 +1,15 @@
-import { describe, expect, it } from 'vitest';
-import { defaultConfig } from '../../../data/config';
+import { defaultConfig } from '@kinoo/config';
 import { ATOM_KEYS } from '@kinoo/shared';
-import { distinctive, quality } from '../src/distinct';
-import { applySignal } from '../src/learning';
-import { ConfigIndex } from '../src/configIndex';
-import { KinooEngine } from '../src/engine';
-import { cosine, fromPartial, zeroVector } from '../src/vector';
-import { explain, hasNumbers } from '../src/explain';
-import { checkSpecialMatch } from '../src/deck';
-import { effectiveAtomValue } from '../src/catalog';
+import { describe, expect, it } from 'vitest';
 import { synthCatalog } from '../sim/synthCatalog';
+import { effectiveAtomValue } from '../src/catalog';
+import { ConfigIndex } from '../src/configIndex';
+import { checkSpecialMatch } from '../src/deck';
+import { distinctive, quality } from '../src/distinct';
+import { KinooEngine } from '../src/engine';
+import { explain, hasNumbers } from '../src/explain';
+import { applySignal } from '../src/learning';
+import { cosine, fromPartial, zeroVector } from '../src/vector';
 import { ev, movie } from './helpers';
 
 const cfg = new ConfigIndex(defaultConfig);
@@ -53,11 +53,19 @@ describe('aprendizaje (7.1)', () => {
 });
 
 describe('perfil desde eventos', () => {
-  const movies = [movie('drama', { melancolica: 0.95, carga_emocional: 0.95, intimidad: 0.9 }), movie('accion', { frenetica: 0.95, escala_epica: 0.95 }), movie('comedia', { humor: 0.95, luminosa: 0.9 })];
+  const movies = [
+    movie('drama', { melancolica: 0.95, carga_emocional: 0.95, intimidad: 0.9 }),
+    movie('accion', { frenetica: 0.95, escala_epica: 0.95 }),
+    movie('comedia', { humor: 0.95, luminosa: 0.9 }),
+  ];
   const engine = new KinooEngine(defaultConfig, movies);
 
   it('recalcular desde el historial da lo mismo que aplicar uno a uno', () => {
-    const events = [ev('saved_intent', { flipped: false }, { movie_id: 'drama' }), ev('dismissed', { flipped: true }, { movie_id: 'accion' }), ev('watch_confirmed', { reaction: 'loved' }, { movie_id: 'drama' })];
+    const events = [
+      ev('saved_intent', { flipped: false }, { movie_id: 'drama' }),
+      ev('dismissed', { flipped: true }, { movie_id: 'accion' }),
+      ev('watch_confirmed', { reaction: 'loved' }, { movie_id: 'drama' }),
+    ];
     const a = engine.model('u', events);
     const b = engine.model('u', []);
     for (const e of events) engine.apply(b, e);
@@ -82,7 +90,11 @@ describe('perfil desde eventos', () => {
   });
 
   it('marcas derivadas: guardada, vista, repetir y descartada', () => {
-    const m = engine.model('u', [ev('saved_intent', { flipped: false }, { movie_id: 'drama' }), ev('watch_confirmed', { reaction: 'loved', rewatch: true }, { movie_id: 'drama' }), ev('dismissed', { flipped: false }, { movie_id: 'accion' })]);
+    const m = engine.model('u', [
+      ev('saved_intent', { flipped: false }, { movie_id: 'drama' }),
+      ev('watch_confirmed', { reaction: 'loved', rewatch: true }, { movie_id: 'drama' }),
+      ev('dismissed', { flipped: false }, { movie_id: 'accion' }),
+    ]);
     expect(m.states.get('drama')!.state).toBe('rewatch');
     expect(m.states.get('accion')!.state).toBe('dismissed');
   });
@@ -107,10 +119,18 @@ describe('coseno y puntaje', () => {
 describe('mazos (9)', () => {
   const movies = synthCatalog(300, 42);
   const team = movies.slice(0, 15).map((m) => m.id);
-  const engine = new KinooEngine(defaultConfig, movies, { curatedDecks: [{ id: 't', owner_kind: 'system', owner_id: 'equipo', owner_name: 'Equipo Kinoo', title: 'Para empezar', movie_ids: team }] });
+  const engine = new KinooEngine(defaultConfig, movies, {
+    curatedDecks: [{ id: 't', owner_kind: 'system', owner_id: 'equipo', owner_name: 'Equipo Kinoo', title: 'Para empezar', movie_ids: team }],
+  });
   const learned = () => {
-    const ids = engine.catalog.list.filter((m) => m.movie.genres[0] === 'drama_intimo').slice(0, 8).map((m) => m.movie.id);
-    return engine.model('u', ids.map((id) => ev('watch_confirmed', { reaction: 'loved' }, { movie_id: id })));
+    const ids = engine.catalog.list
+      .filter((m) => m.movie.genres[0] === 'drama_intimo')
+      .slice(0, 8)
+      .map((m) => m.movie.id);
+    return engine.model(
+      'u',
+      ids.map((id) => ev('watch_confirmed', { reaction: 'loved' }, { movie_id: id })),
+    );
   };
 
   it.each([5, 10, 20])('receta de %i: tamaño, roles en posición y sin director repetido', (size) => {
@@ -135,7 +155,10 @@ describe('mazos (9)', () => {
     const d = engine.openDeck(learned(), { deck_id: 'd', now: NOW, size: 10 });
     const creators = d.cards.filter((c) => c.role === 'creador');
     expect(creators.length).toBeGreaterThan(0);
-    for (const c of creators) { expect(team).toContain(c.movie_id); expect(c.curator_name).toBe('Equipo Kinoo'); }
+    for (const c of creators) {
+      expect(team).toContain(c.movie_id);
+      expect(c.curator_name).toBe('Equipo Kinoo');
+    }
   });
 
   it('sin mazo del equipo ni curadores, creador pasa a afín', () => {
@@ -157,7 +180,7 @@ describe('mazos (9)', () => {
 
   it('match especial: como máximo una vez por mazo', () => {
     const d = engine.openDeck(learned(), { deck_id: 'd', now: NOW });
-    d.special_threshold = -Infinity; // todo califica: probamos el límite
+    d.special_threshold = Number.NEGATIVE_INFINITY; // todo califica: probamos el límite
     expect(checkSpecialMatch(d, d.cards[0]!.movie_id, engine.cfg)).toBe(true);
     expect(checkSpecialMatch(d, d.cards[1]!.movie_id, engine.cfg)).toBe(false);
   });
@@ -185,7 +208,8 @@ describe('Ver (10)', () => {
     movie('corta', { humor: 0.95, luminosa: 0.9 }, { runtime_min: 85 }),
     movie('larga', { carga_emocional: 0.95, melancolica: 0.9 }, { runtime_min: 150 }),
     movie('fuera', { humor: 0.9 }, { providers: { CO: ['Mubi'] } }),
-    movie('relleno1', {}), movie('relleno2', {}),
+    movie('relleno1', {}),
+    movie('relleno2', {}),
   ];
   const engine = new KinooEngine(defaultConfig, movies);
   const save = (id: string) => ev('saved_intent', { flipped: false }, { movie_id: id });
@@ -222,16 +246,28 @@ describe('Ver (10)', () => {
 
 describe('explicaciones (11)', () => {
   it('usa las etiquetas de los dos átomos que más aportan', () => {
-    const t = explain({ hat: fromPartial({ intimidad: 0.9, calida: 0.8, humor: 0.1 }), profile: fromPartial({ intimidad: 0.6, calida: 0.5 }), vibe: null, vibeRecipe: null }, cfg);
+    const t = explain(
+      { hat: fromPartial({ intimidad: 0.9, calida: 0.8, humor: 0.1 }), profile: fromPartial({ intimidad: 0.6, calida: 0.5 }), vibe: null, vibeRecipe: null },
+      cfg,
+    );
     expect(t).toBe('Encaja con tu gusto por historias íntimas y de luz cálida.');
   });
   it('con mood: plantilla del mood personal', () => {
-    const t = explain({ hat: fromPartial({ pausada: 0.9, calida: 0.8 }), profile: zeroVector(), vibe: 'llorar_bonito', vibeRecipe: fromPartial({ pausada: 0.5, calida: 0.4 }) }, cfg);
+    const t = explain(
+      { hat: fromPartial({ pausada: 0.9, calida: 0.8 }), profile: zeroVector(), vibe: 'llorar_bonito', vibeRecipe: fromPartial({ pausada: 0.5, calida: 0.4 }) },
+      cfg,
+    );
     expect(t).toBe('Responde a tu forma de llorar bonito: a fuego lento y de luz cálida.');
   });
   it('si una plantilla editada trae números, se usa una frase segura', () => {
-    const bad = new ConfigIndex({ ...defaultConfig, templates: defaultConfig.templates.map((x) => (x.key === 'profile' ? { ...x, text: 'Te gusta al 93%' } : x)) });
-    const t = explain({ hat: fromPartial({ humor: 0.9, luminosa: 0.9 }), profile: fromPartial({ humor: 0.5, luminosa: 0.5 }), vibe: null, vibeRecipe: null }, bad);
+    const bad = new ConfigIndex({
+      ...defaultConfig,
+      templates: defaultConfig.templates.map((x) => (x.key === 'profile' ? { ...x, text: 'Te gusta al 93%' } : x)),
+    });
+    const t = explain(
+      { hat: fromPartial({ humor: 0.9, luminosa: 0.9 }), profile: fromPartial({ humor: 0.5, luminosa: 0.5 }), vibe: null, vibeRecipe: null },
+      bad,
+    );
     expect(hasNumbers(t)).toBe(false);
   });
   it('ninguna plantilla de la configuración tiene números ni %', () => {
@@ -246,7 +282,8 @@ describe('onboarding y arquetipo de perfil (7.3, 7.4)', () => {
     expect(pairs).toHaveLength(6);
     const ids = pairs.flatMap((p) => [p.left_movie_id, p.right_movie_id]);
     expect(new Set(ids).size).toBe(ids.length);
-    for (const p of pairs) expect(cosine(engine.catalog.byId.get(p.left_movie_id)!.hat, engine.catalog.byId.get(p.right_movie_id)!.hat)).toBeLessThanOrEqual(0.3);
+    for (const p of pairs)
+      expect(cosine(engine.catalog.byId.get(p.left_movie_id)!.hat, engine.catalog.byId.get(p.right_movie_id)!.hat)).toBeLessThanOrEqual(0.3);
     expect(engine.onboarding(engine.model('u', []), 20)).toHaveLength(8);
   });
   it('el arquetipo es el más parecido al perfil', () => {

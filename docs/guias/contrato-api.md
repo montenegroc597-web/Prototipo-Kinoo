@@ -1,6 +1,6 @@
 # Contrato de la API
 
-**Para qué sirve esto.** Documenta lo que el front puede pedirle al back. El mismo contrato lo cumplen las Edge Functions de Supabase y el modo demo (`window.KinooDemo.adapter`). El back habla de acciones, películas, mazos y moods; nunca de gestos ni de pantallas.
+**Para qué sirve esto.** Documenta lo que el front puede pedirle al back. Para conectar un front nuevo paso a paso, ver [`integrar-un-front-nuevo.md`](integrar-un-front-nuevo.md). El mismo contrato lo cumplen las Edge Functions de Supabase y el modo demo (`window.KinooDemo.adapter`). El back habla de acciones, películas, mazos y moods; nunca de gestos ni de pantallas.
 
 ## Autenticación
 
@@ -11,7 +11,12 @@ Cada llamada a Supabase lleva dos encabezados:
 
 El back saca de ese JWT quién es la persona. RLS garantiza que solo lee y escribe lo suyo. Los errores responden `{ "error": "mensaje" }` con código 400, 401, 404, 405 o 500.
 
-Base: `https://<proyecto>.supabase.co/functions/v1/`
+Base:
+
+- Supabase: `https://<proyecto>.supabase.co/functions/v1/` (una función por recurso: `events`, `deck`, `watch`, `onboarding`).
+- Servidor propio (`apps/api`): `https://<tu-api>/` o `https://<tu-api>/api/`. Las rutas se reconocen por su final, así que funcionan con cualquier prefijo.
+
+`GET /health` responde `{ "ok": true }` sin sesión. `GET /profile` devuelve el perfil y el arquetipo (ver más abajo).
 
 ## POST /events
 
@@ -19,7 +24,7 @@ Guarda una o varias acciones (máximo 100). Tipos válidos: `onboarding_choice`,
 
 ```json
 { "events": [
-  { "type": "saved_intent", "movie_id": "past-lives", "payload": { "flipped": true, "vibe": "llorar_bonito", "deck_id": "…", "slot": 3 }, "context": { "surface": "discover" } },
+  { "type": "saved_intent", "movie_id": "past-lives-2023", "payload": { "flipped": true, "vibe": "llorar_bonito", "deck_id": "…", "slot": 3 }, "context": { "surface": "discover" } },
   { "type": "deck_completed", "payload": { "deck_id": "…" } }
 ] }
 ```
@@ -29,7 +34,7 @@ Respuesta:
 ```json
 { "accepted": 2, "results": [
   { "id": "…", "save": { "special_match": true, "message": "Esta es muy tú." } },
-  { "id": "…", "closing": { "deck_id": "…", "learned": "Hoy te inclinaste por historias íntimas y de luz cálida.", "top_atoms": ["intimidad", "calida"], "saved_posters": [{ "movie_id": "past-lives", "title": "Vidas pasadas", "poster_path": null }], "ready_tonight": false } }
+  { "id": "…", "closing": { "deck_id": "…", "learned": "Hoy te inclinaste por historias íntimas y de luz cálida.", "top_atoms": ["intimidad", "calida"], "saved_posters": [{ "movie_id": "past-lives-2023", "title": "Vidas pasadas", "poster_path": null, "poster_url": null }], "ready_tonight": false } }
 ] }
 ```
 
@@ -56,15 +61,15 @@ El mazo abierto y sin terminar, o `null`.
 
 ```json
 {
-  "slot": 1, "role": "afin", "movie_id": "aftersun",
+  "slot": 1, "role": "afin", "movie_id": "aftersun-2022",
   "front": { "hook": "UN VERANO EN TURQUÍA…", "pillars": { "ritmo": "pausado", "tono": "melancólico", "historia": "padre e hija", "visual": "luz de verano" } },
-  "back": { "title": "Aftersun", "year": 2022, "runtime_min": 101, "genres": ["Drama"], "directors": ["Charlotte Wells"], "poster_path": null, "overview": "", "providers": ["Max", "Apple TV"] },
+  "back": { "title": "Aftersun", "year": 2022, "runtime_min": 101, "genres": ["Drama"], "directors": ["Charlotte Wells"], "poster_path": "posters/aftersun-2022.jpg", "poster_url": "https://montenegroc597-web.github.io/Prototipo-Kinoo/posters/aftersun-2022.jpg", "overview": "Años después, una mujer recuerda…", "providers": ["Max", "Apple TV"] },
   "explanation": "Responde a tu forma de llorar bonito: íntimas y melancólicas.",
   "special_treatment": false
 }
 ```
 
-`role` es `afin`, `creador`, `comodin` o `sorpresa`. `special_treatment: true` (sorpresa) pide un tratamiento visual especial. Si el rol es `creador`, llega `curator_name`.
+`poster_url` es la URL lista para `<img>` (TMDB o archivo del repositorio); si es `null`, no hay póster. `role` es `afin`, `creador`, `comodin` o `sorpresa`. `special_treatment: true` (sorpresa) pide un tratamiento visual especial. Si el rol es `creador`, llega `curator_name`.
 
 ## GET /watch/proposal
 
@@ -93,9 +98,9 @@ Tres pasos:
 ```json
 { "step": "pairs", "n": 6 }
 ```
-→ `{ "pairs": [{ "left_movie_id": "mad-max-fury-road", "right_movie_id": "aftersun", "left_title": "…", "right_title": "…" }] }`
+→ `{ "pairs": [{ "left_movie_id": "mad-max-fury-road-2015", "right_movie_id": "aftersun-2022", "left_title": "…", "right_title": "…" }] }`
 ```json
-{ "step": "choices", "choices": [{ "chosen_movie_id": "aftersun", "rejected_movie_id": "mad-max-fury-road" }] }
+{ "step": "choices", "choices": [{ "chosen_movie_id": "aftersun-2022", "rejected_movie_id": "mad-max-fury-road-2015" }] }
 ```
 → `{ "profile": { "user_id": "…", "vector": { … }, "signal_count": 12, "archetype": { "key": "romantico", "name": "El Romántico", "top_atoms": ["intimidad", "carga_emocional", "melancolica"] } } }`
 

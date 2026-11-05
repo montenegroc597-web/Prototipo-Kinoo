@@ -1,9 +1,26 @@
-/** Las 21 claves de átomo. La lista editable (etiquetas, descripciones) vive en data/config/atoms.json. */
+/** Las 21 claves de átomo. La lista editable (etiquetas, descripciones) vive en packages/config/data/atoms.json. */
 export const ATOM_KEYS = [
-  'frenetica', 'agil', 'pausada', 'contemplativa',
-  'reconfortante', 'luminosa', 'melancolica', 'tensa', 'inquietante', 'sombria',
-  'cruda', 'onirica', 'neon', 'pastel', 'calida', 'monocromatica',
-  'carga_emocional', 'complejidad', 'humor', 'intimidad', 'escala_epica',
+  'frenetica',
+  'agil',
+  'pausada',
+  'contemplativa',
+  'reconfortante',
+  'luminosa',
+  'melancolica',
+  'tensa',
+  'inquietante',
+  'sombria',
+  'cruda',
+  'onirica',
+  'neon',
+  'pastel',
+  'calida',
+  'monocromatica',
+  'carga_emocional',
+  'complejidad',
+  'humor',
+  'intimidad',
+  'escala_epica',
 ] as const;
 
 export type AtomKey = (typeof ATOM_KEYS)[number];

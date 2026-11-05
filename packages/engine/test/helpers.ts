@@ -6,9 +6,23 @@ export function movie(id: string, atoms: PartialAtomVector, extra: Partial<Movie
   const base: AtomVector = fromPartial({});
   for (const k of Object.keys(base) as Array<keyof AtomVector>) base[k] = 0.1;
   return {
-    id, title: id, year: 2000, runtime_min: 110, genres: ['Drama'], directors: [`dir-${id}`], countries: ['US'], original_language: 'en',
-    vote_average: 7, vote_count: 1000, atoms: { ...base, ...atoms } as AtomVector, hook: 'UNA FRASE', pillars: { ritmo: 'a', tono: 'b', historia: 'c', visual: 'd' },
-    providers: { CO: ['Netflix'] }, tagger: { model: 't', prompt_version: 'v', tagged_at: '2026-11-01T00:00:00Z' }, source: 'semilla_manual', poster_path: null,
+    id,
+    title: id,
+    year: 2000,
+    runtime_min: 110,
+    genres: ['Drama'],
+    directors: [`dir-${id}`],
+    countries: ['US'],
+    original_language: 'en',
+    vote_average: 7,
+    vote_count: 1000,
+    atoms: { ...base, ...atoms } as AtomVector,
+    hook: 'UNA FRASE',
+    pillars: { ritmo: 'a', tono: 'b', historia: 'c', visual: 'd' },
+    providers: { CO: ['Netflix'] },
+    tagger: { model: 't', prompt_version: 'v', tagged_at: '2026-11-01T00:00:00Z' },
+    source: 'semilla_manual',
+    poster_path: null,
     ...extra,
   };
 }

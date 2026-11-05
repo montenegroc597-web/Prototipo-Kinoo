@@ -1,0 +1,200 @@
+{
+  "_simulado": true,
+  "_id_verificado": true,
+  "id": 424139,
+  "imdb_id": "tt1502407",
+  "title": "Halloween",
+  "original_title": "Halloween",
+  "original_language": "en",
+  "release_date": "2018-10-18",
+  "runtime": 106,
+  "status": "Released",
+  "adult": false,
+  "genres": [
+    {
+      "id": 27,
+      "name": "Terror"
+    },
+    {
+      "id": 53,
+      "name": "Suspense"
+    }
+  ],
+  "overview": "Cuarenta años después de la noche en que Michael Myers aterrorizó Haddonfield, Laurie Strode se ha preparado para un nuevo enfrentamiento. Cuando el asesino enmascarado regresa, la lucha de tres generaciones de mujeres comienza.",
+  "tagline": "La noche que regresó a casa.",
+  "vote_average": 6.5,
+  "vote_count": 5000,
+  "popularity": 48.7,
+  "poster_path": null,
+  "backdrop_path": null,
+  "production_countries": [
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    }
+  ],
+  "spoken_languages": [
+    {
+      "iso_639_1": "en",
+      "english_name": "English",
+      "name": "English"
+    }
+  ],
+  "budget": 10000000,
+  "revenue": 255500000,
+  "credits": {
+    "cast": [
+      {
+        "id": null,
+        "name": "Jamie Lee Curtis",
+        "character": "Laurie Strode",
+        "order": 0
+      },
+      {
+        "id": null,
+        "name": "Judy Greer",
+        "character": "Karen",
+        "order": 1
+      },
+      {
+        "id": null,
+        "name": "Andi Matichak",
+        "character": "Allyson",
+        "order": 2
+      },
+      {
+        "id": null,
+        "name": "Will Patton",
+        "character": "Officer Hawkins",
+        "order": 3
+      },
+      {
+        "id": null,
+        "name": "Virginia Gardner",
+        "character": "Vicky",
+        "order": 4
+      },
+      {
+        "id": null,
+        "name": "Haluk Bilginer",
+        "character": "Dr. Sartain",
+        "order": 5
+      },
+      {
+        "id": null,
+        "name": "James Jude Courtney",
+        "character": "Michael Myers",
+        "order": 6
+      },
+      {
+        "id": null,
+        "name": "Nick Castle",
+        "character": "Michael Myers",
+        "order": 7
+      }
+    ],
+    "crew": [
+      {
+        "id": null,
+        "name": "David Gordon Green",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "Danny McBride",
+        "job": "Screenplay",
+        "department": "Writing"
+      },
+      {
+        "id": null,
+        "name": "John Carpenter",
+        "job": "Original Music Composer",
+        "department": "Sound"
+      }
+    ]
+  },
+  "keywords": {
+    "keywords": [
+      {
+        "id": null,
+        "name": "slasher"
+      },
+      {
+        "id": null,
+        "name": "serial killer"
+      },
+      {
+        "id": null,
+        "name": "halloween"
+      },
+      {
+        "id": null,
+        "name": "sequel"
+      },
+      {
+        "id": null,
+        "name": "masked killer"
+      },
+      {
+        "id": null,
+        "name": "survivor"
+      },
+      {
+        "id": null,
+        "name": "babysitter"
+      },
+      {
+        "id": null,
+        "name": "small town"
+      },
+      {
+        "id": null,
+        "name": "trauma"
+      },
+      {
+        "id": null,
+        "name": "grandmother granddaughter relationship"
+      }
+    ]
+  },
+  "reviews": {
+    "page": 1,
+    "total_results": 2,
+    "results": [
+      {
+        "author": "nightshiftreader",
+        "author_details": {
+          "rating": 7
+        },
+        "content": "A respectful return to form for the franchise. Jamie Lee Curtis carries the film, and the tension in the quieter scenes works better than the kills.",
+        "created_at": "2018-10-20T22:05:13.000Z",
+        "id": "5bcb6e0d0e0a26325f01a4b7"
+      },
+      {
+        "author": "terror_en_casa",
+        "author_details": {
+          "rating": 6
+        },
+        "content": "Buena secuela directa que ignora el resto de la saga. Tiene momentos muy efectivos, aunque algunas decisiones de los personajes son difíciles de creer.",
+        "created_at": "2018-11-03T14:47:55.000Z",
+        "id": "5bde0a9b92514150e300b3c8"
+      }
+    ]
+  },
+  "watch/providers": {
+    "results": {
+      "CO": {
+        "link": "https://www.themoviedb.org/movie/424139/watch?locale=CO",
+        "flatrate": [
+          {
+            "provider_id": 119,
+            "provider_name": "Amazon Prime Video",
+            "logo_path": null,
+            "display_priority": 4
+          }
+        ]
+      }
+    }
+  }
+}

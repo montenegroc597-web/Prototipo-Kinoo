@@ -1,0 +1,198 @@
+{
+  "_simulado": true,
+  "_id_verificado": true,
+  "id": 1184918,
+  "imdb_id": "tt29623480",
+  "title": "Robot salvaje",
+  "original_title": "The Wild Robot",
+  "original_language": "en",
+  "release_date": "2024-09-12",
+  "runtime": 102,
+  "status": "Released",
+  "adult": false,
+  "genres": [
+    {
+      "id": 16,
+      "name": "Animación"
+    },
+    {
+      "id": 878,
+      "name": "Ciencia ficción"
+    },
+    {
+      "id": 10751,
+      "name": "Familia"
+    }
+  ],
+  "overview": "Una robot llamada Roz queda varada en una isla deshabitada y debe aprender a sobrevivir en la naturaleza. Poco a poco entabla lazos con los animales del lugar y se convierte en madre adoptiva de un pequeño ganso.",
+  "tagline": "Hogar es donde encuentras tu lugar.",
+  "vote_average": 8.3,
+  "vote_count": 5000,
+  "popularity": 95.2,
+  "poster_path": null,
+  "backdrop_path": null,
+  "production_countries": [
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    }
+  ],
+  "spoken_languages": [
+    {
+      "iso_639_1": "en",
+      "english_name": "English",
+      "name": "English"
+    }
+  ],
+  "budget": 78000000,
+  "revenue": 334000000,
+  "credits": {
+    "cast": [
+      {
+        "id": null,
+        "name": "Lupita Nyong'o",
+        "character": "Roz (voice)",
+        "order": 0
+      },
+      {
+        "id": null,
+        "name": "Pedro Pascal",
+        "character": "Fink (voice)",
+        "order": 1
+      },
+      {
+        "id": null,
+        "name": "Kit Connor",
+        "character": "Brightbill (voice)",
+        "order": 2
+      },
+      {
+        "id": null,
+        "name": "Bill Nighy",
+        "character": "Longneck (voice)",
+        "order": 3
+      },
+      {
+        "id": null,
+        "name": "Stephanie Hsu",
+        "character": "Vontra (voice)",
+        "order": 4
+      },
+      {
+        "id": null,
+        "name": "Mark Hamill",
+        "character": "Thorn (voice)",
+        "order": 5
+      },
+      {
+        "id": null,
+        "name": "Catherine O'Hara",
+        "character": "Pinktail (voice)",
+        "order": 6
+      }
+    ],
+    "crew": [
+      {
+        "id": null,
+        "name": "Chris Sanders",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "Chris Sanders",
+        "job": "Screenplay",
+        "department": "Writing"
+      },
+      {
+        "id": null,
+        "name": "Kris Bowers",
+        "job": "Original Music Composer",
+        "department": "Sound"
+      }
+    ]
+  },
+  "keywords": {
+    "keywords": [
+      {
+        "id": null,
+        "name": "robot"
+      },
+      {
+        "id": null,
+        "name": "island"
+      },
+      {
+        "id": null,
+        "name": "based on novel or book"
+      },
+      {
+        "id": null,
+        "name": "wilderness"
+      },
+      {
+        "id": null,
+        "name": "motherhood"
+      },
+      {
+        "id": null,
+        "name": "goose"
+      },
+      {
+        "id": null,
+        "name": "survival"
+      },
+      {
+        "id": null,
+        "name": "adoption"
+      },
+      {
+        "id": null,
+        "name": "animals"
+      },
+      {
+        "id": null,
+        "name": "artificial intelligence"
+      }
+    ]
+  },
+  "reviews": {
+    "page": 1,
+    "total_results": 2,
+    "results": [
+      {
+        "author": "pantallaazul",
+        "author_details": {
+          "rating": 9
+        },
+        "content": "Una película animada preciosa y muy emotiva. El apartado visual parece una pintura en movimiento y la historia le habla tanto a niños como a adultos.",
+        "created_at": "2024-10-20T14:33:19.000Z",
+        "id": "6714c5d6e7f8091a2b3c4d5e"
+      },
+      {
+        "author": "popcorn_and_pixels",
+        "author_details": {
+          "rating": 8
+        },
+        "content": "Funny, warm and surprisingly moving. The animation style is gorgeous and Lupita Nyong'o gives Roz a lot of heart.",
+        "created_at": "2024-11-03T20:15:47.000Z",
+        "id": "6727d6e7f8091a2b3c4d5e6f"
+      }
+    ]
+  },
+  "watch/providers": {
+    "results": {
+      "CO": {
+        "link": "https://www.themoviedb.org/movie/1184918/watch?locale=CO",
+        "flatrate": [
+          {
+            "provider_id": 119,
+            "provider_name": "Amazon Prime Video",
+            "logo_path": null,
+            "display_priority": 2
+          }
+        ]
+      }
+    }
+  }
+}

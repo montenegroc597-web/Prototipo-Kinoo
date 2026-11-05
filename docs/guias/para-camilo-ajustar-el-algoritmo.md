@@ -1,13 +1,13 @@
 # Para Camilo: cómo ajustar el algoritmo sin programar
 
-**Para qué sirve esto.** Todo lo que se puede ajustar de Kinoo vive en archivos de texto dentro de `data/config/`. Esta guía dice qué archivo abrir, qué valor cambiar y qué efecto tiene. No hace falta tocar código.
+**Para qué sirve esto.** Todo lo que se puede ajustar de Kinoo vive en archivos de texto dentro de `packages/config/data/`. Esta guía dice qué archivo abrir, qué valor cambiar y qué efecto tiene. No hace falta tocar código.
 
 ## Antes de empezar
 
 - Los archivos son JSON: texto con llaves `{ }`, comillas y comas. Cambia solo los números o los textos entre comillas. No borres comas ni llaves.
 - Puedes editarlos en GitHub: abre el archivo, toca el lápiz ✏️, cambia el valor y guarda con "Commit changes" **en la rama `back/algoritmo-v2`** (nunca en `main`).
 - Al guardar, la CI corre las pruebas. Si algo queda mal escrito o rompe una regla (por ejemplo, un número en una plantilla), la CI se pone en rojo y te dice qué falló.
-- Para que Supabase reciba el cambio, alguien corre `npm run seed` y aplica `supabase/seed/001_config.sql`. El modo demo lo toma solo en la próxima publicación.
+- Para que Supabase reciba el cambio, alguien corre `npm run db:seeds` y aplica `packages/db/seeds/001_config.sql`. El modo demo lo toma solo en la próxima publicación.
 
 ## Los archivos
 
@@ -37,7 +37,7 @@ Ejemplo: quieres que "Quiero verla" enseñe más. Busca:
 
 y cambia `eta` a `0.12`. Efecto: cada carta guardada mueve el perfil un 50 % más.
 
-**Cuidado:** `dismissed` tiene `eta = 0.10` porque con el valor inicial (0,03) el perfil no seguía los cambios de gusto (ver `PROGRESS.md`). Si lo bajas, corre `npm run sim` y mira si "Responde al cambio" sigue en verde.
+**Cuidado:** `dismissed` tiene `eta = 0.10` porque con el valor inicial (0,03) el perfil no seguía los cambios de gusto (ver `PROGRESS.md`). Si lo bajas, corre `npm run test:sim` y mira si "Responde al cambio" sigue en verde.
 
 ## 2. Moods (`vibes.json`)
 
@@ -73,7 +73,7 @@ Hay una receta por tamaño (5, 10 y 20). Cada posición tiene un rol:
 
 `"rank": "first"` marca la apertura (la de mayor puntaje) y `"rank": "second"`, el cierre alto (la segunda). Para que el mazo de 10 abra con un comodín, mueve `{ "role": "comodin" }` a la primera posición y pasa el `"rank": "first"` a otra afín.
 
-El mazo del Equipo Kinoo está en `data/catalog/team_deck.json`: ahí eliges sus películas y escribes las notas.
+El mazo del Equipo Kinoo está en `packages/catalog/data/team_deck.json`: ahí eliges sus películas y escribes las notas.
 
 ## 4. Cómo explica Kinoo (`explanation_templates.json` y `atoms.json`)
 
@@ -109,7 +109,7 @@ Los más útiles:
 Después de cualquier cambio, alguien del equipo corre:
 
 ```bash
-npm run sim
+npm run test:sim
 ```
 
 y revisa `packages/engine/sim/RESULTADOS.md`. Las cinco pruebas deberían seguir en ✅.
@@ -118,7 +118,7 @@ y revisa `packages/engine/sim/RESULTADOS.md`. Las cinco pruebas deberían seguir
 
 Quieres que "Llorar bonito" deje de proponer películas sombrías.
 
-1. Abre `data/config/vibes.json`.
+1. Abre `packages/config/data/vibes.json`.
 2. En `llorar_bonito`, cambia `"sombria": -0.5` por `"sombria": -0.9` y sube `"version": 1` a `"version": 2`.
 3. Guarda en la rama `back/algoritmo-v2`.
 

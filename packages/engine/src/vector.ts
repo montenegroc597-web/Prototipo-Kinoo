@@ -8,7 +8,11 @@ export function zeroVector(): AtomVector {
 
 export function fromPartial(p: PartialAtomVector | undefined | null): AtomVector {
   const v = zeroVector();
-  if (p) for (const k of ATOM_KEYS) { const x = p[k]; if (typeof x === 'number' && Number.isFinite(x)) v[k] = x; }
+  if (p)
+    for (const k of ATOM_KEYS) {
+      const x = p[k];
+      if (typeof x === 'number' && Number.isFinite(x)) v[k] = x;
+    }
   return v;
 }
 
@@ -28,7 +32,8 @@ export function norm(a: AtomVector): number {
 
 /** Coseno. Si algún vector es cero (perfil vacío, receta neutra) devuelve 0: "sin opinión". */
 export function cosine(a: AtomVector, b: AtomVector): number {
-  const na = norm(a), nb = norm(b);
+  const na = norm(a);
+  const nb = norm(b);
   if (na < 1e-9 || nb < 1e-9) return 0;
   return dot(a, b) / (na * nb);
 }

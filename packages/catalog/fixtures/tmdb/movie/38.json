@@ -1,0 +1,194 @@
+{
+  "_simulado": true,
+  "_id_verificado": true,
+  "id": 38,
+  "imdb_id": "tt0338013",
+  "title": "Eterno resplandor de una mente sin recuerdos",
+  "original_title": "Eternal Sunshine of the Spotless Mind",
+  "original_language": "en",
+  "release_date": "2004-03-19",
+  "runtime": 108,
+  "status": "Released",
+  "adult": false,
+  "genres": [
+    {
+      "id": 878,
+      "name": "Ciencia ficción"
+    },
+    {
+      "id": 10749,
+      "name": "Romance"
+    },
+    {
+      "id": 18,
+      "name": "Drama"
+    }
+  ],
+  "overview": "Tras una ruptura dolorosa, un hombre recurre a un procedimiento para borrar de su mente los recuerdos de su ex pareja.",
+  "tagline": "¿Podrías borrar a alguien de tu memoria?",
+  "vote_average": 8.1,
+  "vote_count": 15000,
+  "popularity": 38.5,
+  "poster_path": null,
+  "backdrop_path": null,
+  "production_countries": [
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    }
+  ],
+  "spoken_languages": [
+    {
+      "iso_639_1": "en",
+      "english_name": "English",
+      "name": "English"
+    }
+  ],
+  "budget": 20000000,
+  "revenue": 74000000,
+  "credits": {
+    "cast": [
+      {
+        "id": null,
+        "name": "Jim Carrey",
+        "character": "Joel Barish",
+        "order": 0
+      },
+      {
+        "id": null,
+        "name": "Kate Winslet",
+        "character": "Clementine Kruczynski",
+        "order": 1
+      },
+      {
+        "id": null,
+        "name": "Kirsten Dunst",
+        "character": "Mary",
+        "order": 2
+      },
+      {
+        "id": null,
+        "name": "Mark Ruffalo",
+        "character": "Stan",
+        "order": 3
+      },
+      {
+        "id": null,
+        "name": "Elijah Wood",
+        "character": "Patrick",
+        "order": 4
+      },
+      {
+        "id": null,
+        "name": "Tom Wilkinson",
+        "character": "Dr. Howard Mierzwiak",
+        "order": 5
+      }
+    ],
+    "crew": [
+      {
+        "id": null,
+        "name": "Michel Gondry",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "Charlie Kaufman",
+        "job": "Screenplay",
+        "department": "Writing"
+      },
+      {
+        "id": null,
+        "name": "Jon Brion",
+        "job": "Original Music Composer",
+        "department": "Sound"
+      }
+    ]
+  },
+  "keywords": {
+    "keywords": [
+      {
+        "id": null,
+        "name": "male friendship"
+      },
+      {
+        "id": null,
+        "name": "memory loss"
+      },
+      {
+        "id": null,
+        "name": "erasing memory"
+      },
+      {
+        "id": null,
+        "name": "breakup"
+      },
+      {
+        "id": null,
+        "name": "surrealism"
+      },
+      {
+        "id": null,
+        "name": "love"
+      },
+      {
+        "id": null,
+        "name": "psychology"
+      },
+      {
+        "id": null,
+        "name": "dream"
+      },
+      {
+        "id": null,
+        "name": "new york city"
+      }
+    ]
+  },
+  "reviews": {
+    "page": 1,
+    "total_results": 2,
+    "results": [
+      {
+        "author": "memoria_azul",
+        "author_details": {
+          "rating": 10
+        },
+        "content": "Una de las mejores películas sobre el amor y el recuerdo. La he visto cinco veces y siempre encuentro algo nuevo.",
+        "created_at": "2004-04-02T19:21:08.000Z",
+        "id": "4e6a1f2b0e0a26043b000c1d"
+      },
+      {
+        "author": "clementine_fan",
+        "author_details": {
+          "rating": 9
+        },
+        "content": "Inventive, funny and devastating. Carrey and Winslet are both at their best.",
+        "created_at": "2011-09-14T09:37:26.000Z",
+        "id": "5128c4d7760ee30b4f009a63"
+      }
+    ]
+  },
+  "watch/providers": {
+    "results": {
+      "CO": {
+        "link": "https://www.themoviedb.org/movie/38/watch?locale=CO",
+        "flatrate": [
+          {
+            "provider_id": 119,
+            "provider_name": "Amazon Prime Video",
+            "logo_path": null,
+            "display_priority": 0
+          },
+          {
+            "provider_id": 350,
+            "provider_name": "Apple TV+",
+            "logo_path": null,
+            "display_priority": 1
+          }
+        ]
+      }
+    }
+  }
+}

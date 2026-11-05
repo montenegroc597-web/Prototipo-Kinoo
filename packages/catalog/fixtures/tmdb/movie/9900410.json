@@ -1,0 +1,197 @@
+{
+  "_simulado": true,
+  "_id_verificado": false,
+  "id": 9900410,
+  "imdb_id": null,
+  "title": "El exorcista del papa",
+  "original_title": "The Pope's Exorcist",
+  "original_language": "en",
+  "release_date": "2023-04-05",
+  "runtime": 103,
+  "status": "Released",
+  "adult": false,
+  "genres": [
+    {
+      "id": 27,
+      "name": "Terror"
+    },
+    {
+      "id": 53,
+      "name": "Suspense"
+    }
+  ],
+  "overview": "Basada en los archivos del padre Gabriele Amorth, jefe de exorcistas del Vaticano. Investiga la posesión de un niño y descubre un secreto que la Iglesia ha intentado mantener oculto durante siglos.",
+  "tagline": "",
+  "vote_average": 7,
+  "vote_count": 2500,
+  "popularity": 62.7,
+  "poster_path": null,
+  "backdrop_path": null,
+  "production_countries": [
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    },
+    {
+      "iso_3166_1": "GB",
+      "name": "United Kingdom"
+    },
+    {
+      "iso_3166_1": "ES",
+      "name": "Spain"
+    }
+  ],
+  "spoken_languages": [
+    {
+      "iso_639_1": "en",
+      "english_name": "English",
+      "name": "English"
+    },
+    {
+      "iso_639_1": "it",
+      "english_name": "Italian",
+      "name": "Italiano"
+    }
+  ],
+  "budget": 18000000,
+  "revenue": 77000000,
+  "credits": {
+    "cast": [
+      {
+        "id": 934,
+        "name": "Russell Crowe",
+        "character": "Father Gabriele Amorth",
+        "order": 0
+      },
+      {
+        "id": null,
+        "name": "Daniel Zovatto",
+        "character": "Father Esquibel",
+        "order": 1
+      },
+      {
+        "id": null,
+        "name": "Alex Essoe",
+        "character": "Julia",
+        "order": 2
+      },
+      {
+        "id": null,
+        "name": "Franco Nero",
+        "character": "The Pope",
+        "order": 3
+      },
+      {
+        "id": null,
+        "name": "Peter DeSouza-Feighoney",
+        "character": "Henry",
+        "order": 4
+      },
+      {
+        "id": null,
+        "name": "Laurel Marsden",
+        "character": "Amy",
+        "order": 5
+      }
+    ],
+    "crew": [
+      {
+        "id": null,
+        "name": "Julius Avery",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "Michael Petroni",
+        "job": "Screenplay",
+        "department": "Writing"
+      },
+      {
+        "id": null,
+        "name": "Jed Kurzel",
+        "job": "Original Music Composer",
+        "department": "Sound"
+      }
+    ]
+  },
+  "keywords": {
+    "keywords": [
+      {
+        "id": null,
+        "name": "exorcism"
+      },
+      {
+        "id": null,
+        "name": "possession"
+      },
+      {
+        "id": null,
+        "name": "priest"
+      },
+      {
+        "id": null,
+        "name": "vatican"
+      },
+      {
+        "id": null,
+        "name": "demon"
+      },
+      {
+        "id": null,
+        "name": "based on true story"
+      },
+      {
+        "id": null,
+        "name": "spain"
+      },
+      {
+        "id": null,
+        "name": "supernatural horror"
+      },
+      {
+        "id": null,
+        "name": "catholic church"
+      }
+    ]
+  },
+  "reviews": {
+    "page": 1,
+    "total_results": 2,
+    "results": [
+      {
+        "author": "darkhallway",
+        "author_details": {
+          "rating": 7
+        },
+        "content": "Russell Crowe clearly has fun with the role and carries the film. Not the scariest exorcism movie, but a lively and entertaining ride.",
+        "created_at": "2023-04-12T21:08:44.000Z",
+        "id": "64370a8c2f1e9b00d3a6c7e5"
+      },
+      {
+        "author": "noche_de_terror",
+        "author_details": {
+          "rating": 6
+        },
+        "content": "Tiene buenos momentos de tensión y un protagonista carismático. La trama es previsible, pero cumple si te gusta el género.",
+        "created_at": "2023-06-03T15:30:10.000Z",
+        "id": "647b5d9e1a2c3f0123b8a4d0"
+      }
+    ]
+  },
+  "watch/providers": {
+    "results": {
+      "CO": {
+        "link": "https://www.themoviedb.org/movie/9900410/watch?locale=CO",
+        "flatrate": [
+          {
+            "provider_id": 8,
+            "provider_name": "Netflix",
+            "logo_path": null,
+            "display_priority": 1
+          }
+        ]
+      }
+    }
+  }
+}

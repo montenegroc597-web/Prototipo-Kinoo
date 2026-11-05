@@ -1,0 +1,192 @@
+{
+  "_simulado": true,
+  "_id_verificado": true,
+  "id": 72105,
+  "imdb_id": "tt1637725",
+  "title": "Ted",
+  "original_title": "Ted",
+  "original_language": "en",
+  "release_date": "2012-06-29",
+  "runtime": 106,
+  "status": "Released",
+  "adult": false,
+  "genres": [
+    {
+      "id": 35,
+      "name": "Comedia"
+    },
+    {
+      "id": 14,
+      "name": "Fantasía"
+    }
+  ],
+  "overview": "John Bennett deseó de niño que su osito de peluche cobrara vida, y el deseo se cumplió. Décadas después, el oso vulgar y malhablado sigue siendo su mejor amigo, y su relación con su novia empieza a resentirse.",
+  "tagline": "Un oso de peluche con mucha actitud.",
+  "vote_average": 6.4,
+  "vote_count": 12500,
+  "popularity": 44.1,
+  "poster_path": null,
+  "backdrop_path": null,
+  "production_countries": [
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    }
+  ],
+  "spoken_languages": [
+    {
+      "iso_639_1": "en",
+      "english_name": "English",
+      "name": "English"
+    }
+  ],
+  "budget": 50000000,
+  "revenue": 549368315,
+  "credits": {
+    "cast": [
+      {
+        "id": null,
+        "name": "Mark Wahlberg",
+        "character": "John Bennett",
+        "order": 0
+      },
+      {
+        "id": null,
+        "name": "Mila Kunis",
+        "character": "Lori Collins",
+        "order": 1
+      },
+      {
+        "id": null,
+        "name": "Seth MacFarlane",
+        "character": "Ted (voice)",
+        "order": 2
+      },
+      {
+        "id": null,
+        "name": "Joel McHale",
+        "character": "Rex",
+        "order": 3
+      },
+      {
+        "id": null,
+        "name": "Giovanni Ribisi",
+        "character": "Donny",
+        "order": 4
+      },
+      {
+        "id": null,
+        "name": "Patrick Warburton",
+        "character": "Guy",
+        "order": 5
+      },
+      {
+        "id": null,
+        "name": "Matt Walsh",
+        "character": "Thomas",
+        "order": 6
+      }
+    ],
+    "crew": [
+      {
+        "id": null,
+        "name": "Seth MacFarlane",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "Seth MacFarlane",
+        "job": "Screenplay",
+        "department": "Writing"
+      },
+      {
+        "id": null,
+        "name": "Walter Murphy",
+        "job": "Original Music Composer",
+        "department": "Sound"
+      }
+    ]
+  },
+  "keywords": {
+    "keywords": [
+      {
+        "id": null,
+        "name": "talking teddy bear"
+      },
+      {
+        "id": null,
+        "name": "friendship"
+      },
+      {
+        "id": null,
+        "name": "boston, massachusetts"
+      },
+      {
+        "id": null,
+        "name": "adult humor"
+      },
+      {
+        "id": null,
+        "name": "wish"
+      },
+      {
+        "id": null,
+        "name": "stuffed animal"
+      },
+      {
+        "id": null,
+        "name": "slacker"
+      },
+      {
+        "id": null,
+        "name": "relationship"
+      },
+      {
+        "id": null,
+        "name": "magic"
+      },
+      {
+        "id": null,
+        "name": "pop culture"
+      }
+    ]
+  },
+  "reviews": {
+    "page": 1,
+    "total_results": 2,
+    "results": [
+      {
+        "author": "risas_en_vivo",
+        "author_details": {
+          "rating": 7
+        },
+        "content": "Crude but genuinely funny, with great chemistry between Wahlberg and the CGI bear. The jokes land more often than they miss.",
+        "created_at": "2016-03-22T21:10:05.000Z",
+        "id": "56f1b0ac9251410a3c0012aa"
+      },
+      {
+        "author": "lucho_films",
+        "author_details": null,
+        "content": "Una comedia irreverente que se disfruta sin pensar mucho. El humor es grosero, pero tiene su corazón en la amistad de los protagonistas.",
+        "created_at": "2022-07-09T01:33:12.000Z",
+        "id": "62c8d4e1a7b8c9004e5f6a73"
+      }
+    ]
+  },
+  "watch/providers": {
+    "results": {
+      "CO": {
+        "link": "https://www.themoviedb.org/movie/72105/watch?locale=CO",
+        "flatrate": [
+          {
+            "provider_id": 8,
+            "provider_name": "Netflix",
+            "logo_path": null,
+            "display_priority": 1
+          }
+        ]
+      }
+    }
+  }
+}
