@@ -2,3 +2,9 @@ node_modules/
 .DS_Store
 Thumbs.db
 *.log
+site/
+.env
+.env.local
+test-results/
+playwright-report/
+data/catalog/raw/

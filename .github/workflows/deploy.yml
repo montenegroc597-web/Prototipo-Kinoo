@@ -22,9 +22,17 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      # Copia apps/web a site/ (mismas rutas que antes publicaba public/) y empaqueta el modo demo
+      - run: npm run build
+      - run: npm run check:site
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: public
+          path: site
       - id: deployment
         uses: actions/deploy-pages@v4

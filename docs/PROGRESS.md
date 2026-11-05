@@ -1,9 +1,9 @@
 # Progreso
 
 ## Estado actual
-- Fase: F1 · Reorganización front / back
-- Última tarea terminada: F0 · diagnóstico y línea base
-- Siguiente tarea: mover `public/` a `apps/web/` con `git mv` y crear el espacio de trabajo
+- Fase: F2 · Modelo de datos
+- Última tarea terminada: F1 · reorganización (apps/web, workspaces, build, CI)
+- Siguiente tarea: configuración en `data/config/*.json` y migraciones SQL
 - Bloqueos: ninguno
 - Última actualización: 2026-11-05 03:40
 
@@ -11,7 +11,7 @@
 | Fase | Estado | Comprobación |
 |---|---|---|
 | F0 | ✅ | Línea base: 0 unitarias, 0 e2e (el repositorio no tenía pruebas). Inventario abajo |
-| F1 | ⬜ | |
+| F1 | ✅ | 86/86 rutas publicadas en `site/`; 86 archivos movidos con `git mv` sin cambios de contenido; typecheck limpio; 1/1 unitaria y 1/1 e2e (rutas) |
 | F2 | ⬜ | |
 | F3 | ⬜ | |
 | F4 | ⬜ | |
@@ -29,8 +29,13 @@
 ## Bitácora
 - 2026-11-05 03:40 · F0 · Diagnóstico. El plan describe `kinoo-pruebas`, pero Camilo indicó construir en `Prototipo-Kinoo` y no tocar `kinoo-pruebas`. Ver `adr/0001-estructura.md`.
 
+- 2026-11-05 03:55 · F1 · `public/` → `apps/web/` con `git mv`. Build a `site/`, `check:site`, CI nueva. Ver `adr/0002-monorepo.md`.
+
 ## Decisiones tomadas sin Camilo
 - La línea base es 0/0 porque el prototipo no tenía pruebas. Las pruebas nuevas son las primeras del repositorio.
+
+- Se publica `site/` (copia de `apps/web/` + modo demo) en vez de `public/`. Las rutas no cambian y la fuente de Pages sigue siendo GitHub Actions.
+- Para las e2e en la sesión en la nube se usa el Chromium preinstalado (`PW_CHROMIUM_PATH`). En CI, Playwright instala el suyo.
 
 ## Para revisar cuando vuelvas
 - Subir el documento de Argon a `docs/historico/`.
