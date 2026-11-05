@@ -1,8 +1,22 @@
 # Kinoo · Plan maestro del back y del algoritmo
 
-**Versión:** 1.0 · 4 de noviembre de 2026
+**Versión:** 1.1 · 5 de noviembre de 2026 (ajustada al repositorio `Prototipo-Kinoo`)
 **Se usa junto con:** `KINOO_PROMPT_MAESTRO.md` (las instrucciones para el modelo) y `KINOO_ALGORITMO_v2.md` (la especificación).
 **Modelo recomendado:** Claude Opus 5.5 en Claude Code. Para tareas mecánicas (etiquetar lotes de películas), subagentes con Sonnet o Haiku.
+
+## Ajustes de la versión 1.1
+
+Camilo pidió construir todo sobre el repositorio del prototipo (`Prototipo-Kinoo`) y no tocar `kinoo-pruebas`. Esto cambia lo siguiente frente a la 1.0:
+
+| Tema | v1.0 | v1.1 |
+|---|---|---|
+| Repositorio | `kinoo-pruebas` | `Prototipo-Kinoo`. `kinoo-pruebas` no se modifica |
+| Enlaces que no se rompen | `/kinoo-pruebas/app/`, `/kinoo-pruebas/prueba/`, `?equipo=1` | `https://montenegroc597-web.github.io/Prototipo-Kinoo/` y todas las rutas `kinoo-flujo/…` (86 archivos, lista en `scripts/rutas-publicadas.txt`) |
+| Línea base de pruebas | 126 unitarias, 17 e2e | 0 y 0: el prototipo no tenía pruebas. Las de este plan son las primeras |
+| Herramienta de pruebas (`/prueba/`) | Vive en el mismo repositorio | Vive en `kinoo-pruebas`, intacta por construcción |
+| Front que se conecta | App de la herramienta de pruebas | Las pantallas `.dc.html` del prototipo (Descubrir: `Flujo1_Descubrir`; Ver: `FlujoV1_Feed`) |
+
+Detalle en `docs/adr/0001-estructura.md` y `docs/adr/0002-monorepo.md`.
 
 ---
 
@@ -36,7 +50,7 @@ Construir el back de Kinoo con el algoritmo v2, etiquetar un catálogo piloto de
 
 | # | Qué | Para qué | ¿Obligatorio? |
 |---|---|---|---|
-| 1 | Abrir la sesión de Claude Code conectada al repositorio del prototipo | Que trabaje sobre tu código | Sí |
+| 1 | Abrir la sesión de Claude Code conectada a `Prototipo-Kinoo` | Que trabaje sobre tu código | Sí |
 | 2 | Subir `KINOO_ALGORITMO_v2.md` y `KINOO_PLAN_MAESTRO.md` a una carpeta `docs/` del repositorio (o adjuntarlos a la sesión) | El prompt los lee desde ahí | Sí |
 | 3 | Subir también el documento de Argon a `docs/historico/` | Referencia | Recomendado |
 | 4 | Crear una clave de la API de TMDB (gratis, en themoviedb.org → Configuración → API) y guardarla como variable de entorno `TMDB_API_KEY` en el entorno de la sesión | Traer las 300 películas | Sí, o el catálogo queda en 30 películas de semilla |
@@ -54,7 +68,7 @@ Construir el back de Kinoo con el algoritmo v2, etiquetar un catálogo piloto de
 ```
 /
 ├── apps/
-│   └── web/                 # El prototipo actual (front). Conserva /app/ y /prueba/
+│   └── web/                 # El prototipo actual (front). Conserva las rutas kinoo-flujo/…
 ├── packages/
 │   ├── engine/              # Motor del algoritmo: TypeScript puro, sin dependencias de Node ni del navegador
 │   └── shared/              # Tipos y contratos: eventos, respuestas de la API
@@ -105,7 +119,7 @@ El costo relativo es una estimación del peso de cada fase dentro del presupuest
 
 - Mover el prototipo a `apps/web/` con `git mv` para conservar la historia.
 - Configurar el espacio de trabajo (workspaces) con `packages/engine` y `packages/shared` vacíos pero compilando.
-- Ajustar la construcción para que la salida publique exactamente los mismos caminos: `/kinoo-pruebas/app/`, `/kinoo-pruebas/prueba/` y `?equipo=1`.
+- Ajustar la construcción para que la salida publique exactamente los mismos caminos del prototipo (`/Prototipo-Kinoo/kinoo-flujo/…`).
 - Si el despliegue a GitHub Pages debe cambiar (por ejemplo, de "rama" a "GitHub Actions"), dejar el flujo listo y **documentar el paso manual** que debe hacer Camilo. No cambiar la configuración del repositorio.
 
 **Comprobación:** las mismas pruebas de la línea base pasan; la construcción genera los mismos caminos; `docs/adr/0002-monorepo.md` explica la estructura.
@@ -156,7 +170,7 @@ El costo relativo es una estimación del peso de cada fase dentro del presupuest
 - Edge Functions: `POST /events`, `GET /deck/current`, `POST /deck/open`, `GET /watch/proposal`, `POST /onboarding`. Todas usan `packages/engine`.
 - Adaptador de datos en el front con dos modos: **Supabase** (si hay claves) y **demo** (motor en el navegador, catálogo en JSON, eventos en almacenamiento local). El modo demo es el que se publica en GitHub Pages.
 - Conectar Descubrir (abrir mazo, cartas con las dos caras, guardar, descartar, cierre del mazo) y Ver (propuesta, otra, salir, "¿La viste?").
-- No cambiar la herramienta de pruebas (`/prueba/`) ni sus datos.
+- No cambiar la herramienta de pruebas: vive en `kinoo-pruebas` y no se toca.
 
 **Comprobación:** pasan las pruebas de la línea base más pruebas e2e nuevas: abrir un mazo y recibir las cartas del motor, guardar una y verla en Ver, confirmar "Me encantó" y comprobar que el perfil cambió. `docs/guias/contrato-api.md` documenta cada endpoint con ejemplos.
 
