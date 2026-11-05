@@ -1,12 +1,12 @@
 # Progreso
 
 ## Estado actual
-- Fase: F9 · Textos de la carta, pósters y vista en PC
+- Fase: F10 · Límites de texto en toda la app, preguntas de recolección de datos y explicación gráfica del algoritmo
 - Última tarea terminada: F7 · estructura nueva, base de datos portátil, API HTTP, simulación de TMDB con 69 películas, pósters y documentación
-- Siguiente tarea: revisión de Camilo; subir los pósters que faltan (ver abajo)
+- Siguiente tarea: el equipo responde `docs/PREGUNTAS-RECOLECCION-DE-DATOS.md`; subir los pósters que faltan (ver abajo)
 - Bloqueos: sin `TMDB_API_KEY` (el catálogo usa la simulación de TMDB, que corre el mismo pipeline sin red)
 - Pull requests: montenegroc597-web/Prototipo-Kinoo#1 (fusionado), montenegroc597-web/Prototipo-Kinoo#2 (arreglo del despliegue), y el de F7
-- Última actualización: 2026-11-05 05:40
+- Última actualización: 2026-11-05 09:30
 
 ## Fases
 | Fase | Estado | Comprobación |
@@ -17,6 +17,7 @@
 | F3 | ✅ | 35/35 unitarias del motor; 5/5 pruebas de simulación (Aprende 6,4× el azar; moods coseno 0,64 y 20 % compartido; cambio en 22 eventos en el peor caso; 0 explicaciones con números; 181/181 mazos respetan la receta). Total del repo 51/51 |
 | F4 | ✅ (semilla) | 34 películas válidas (no 300: bloqueo anotado); 0 errores de esquema y frases gancho; dispersión ≥ 0,21 en los 21 átomos; 0 contradicciones; error de anclas 0,052 (anclas provisionales); CSV de 20 para revisión |
 | F5 | ✅ | 56/56 unitarias (incluye API de punta a punta sobre PGlite con RLS); 3/3 e2e: mazo del motor → guardar → Ver → "Me encantó" cambia el perfil; sin motor, el prototipo sigue igual; 86/86 rutas |
+| F10 | ✅ | Límites de caracteres por pantalla (`guias/limites-de-texto.md`); auditoría en el navegador sin textos fuera de su caja ni montados en frente, reverso, ficha ADN y Ver de las 69 películas y en las pantallas fijas; 123/123 unitarias e integración y 10/10 e2e; documento de preguntas; explicación gráfica (`presentacion/como-funciona-kinoo.html`) y su versión md |
 | F9 | ✅ | Estándar de caracteres de la carta (`display.*`, `card_*_max`); 0 textos fuera del borde en las 69 películas (`cartas.spec.ts`); 90 pilares acortados; póster de Rocky corregido; vista en PC centrada sobre fondo café; 122/122 y 7/7 e2e |
 | F8 | ✅ | Inicio de sesión camilo/1234 (6/6 e2e); simulación de Camilo en la app (4 mazos por la interfaz real) y de 6 tipos de usuario; `docs/SIMULACION-PERFILAMIENTO.md`; 118/118 unitarias e integración |
 | F7 | ✅ | 116/116 unitarias e integración (migraciones y RLS con los dos proveedores, API HTTP con JWT, simulación de TMDB); 3/3 e2e; 86/86 rutas; lint y tipos limpios |
@@ -46,6 +47,7 @@
 - 2026-11-05 06:00 · F8 · El PR #3 se fusionó antes que el #2. Como el #3 ya traía el arreglo del lock y de Ubuntu, el #2 se dejó sin diferencias con `main` (se puede cerrar). El despliegue sigue fallando porque GitHub Pages no está activado en el repositorio: paso manual en `guias/despliegue.md`.
 - 2026-11-05 06:30 · F8 · Inicio de sesión de la demo, simulación de perfilamiento y dos ajustes que salieron de ella (cierre del mazo y frase del curador).
 - 2026-11-05 07:10 · F9 · Pedido de Camilo: la sinopsis del reverso se salía del borde. Se definió un estándar de caracteres para todos los textos de la carta, se corrigieron los pósters y la vista en PC.
+- 2026-11-05 09:30 · F10 · Pedido de Camilo: revisar todos los textos de la app. Límites en `params.json`, ficha ADN con frase y temas de la película (migración 0008), Ver con título en una línea, cierre del mazo neutro con menos de 2 guardadas, pilares a 15 caracteres. Documento de preguntas para recolectar datos desde el front (minijuego, momentos clave, versión, super like…) y explicación gráfica del algoritmo.
 
 ## Decisiones tomadas sin Camilo
 - La línea base es 0/0 porque el prototipo no tenía pruebas. Las pruebas nuevas son las primeras del repositorio.
@@ -93,6 +95,9 @@
 - **F9 · Pilares:** 90 etiquetas tenían más de 18 caracteres; un subagente las acortó conservando el sentido (por ejemplo, "locura en aislamiento" → "locura aislada"). Desde ahora el juez recibe el límite en el prompt.
 
 ## Para revisar cuando vuelvas
+- **Responder las preguntas** de `docs/PREGUNTAS-RECOLECCION-DE-DATOS.md` (las urgentes están al inicio). Con eso se agregan los eventos del minijuego, el super like y la versión.
+- **Pantallas con porcentajes.** Resumen, Perfil y Función siguen mostrando números de ejemplo ("100 %", "82/100", "41 % igual"): hay que pasarlos a palabras cuando se conecten.
+- **Póster de Interstellar.** La imagen actual es la del prototipo viejo y trae el logo de Netflix: conviene cambiarla.
 - **Pósters que faltan.** De todas las imágenes que mandaste por el chat, solo 5 llegaron como archivo (*Duna*, *Duna: Parte dos*, *Marty Supreme*, *Hereditary* y *Mortal Kombat II*): esas ya están. Las demás se pudieron ver, pero no guardar. Para agregarlas, súbelas a `apps/web/public/posters/` con el nombre de la lista `missing` de `packages/catalog/data/posters.json` (por ejemplo, `the-godfather-1972.jpg`) y corre `npm run catalog:posters && npm run catalog:build && npm run db:seeds`. Si las subes desde GitHub, se pueden procesar en una sesión.
 - Subir el documento de Argon a `docs/historico/`.
 - Resultados del simulador: `packages/engine/sim/RESULTADOS.md`.

@@ -141,4 +141,4 @@ await kinoo.postEvents([{ type: 'saved_intent', movie_id: 'past-lives-2023', pay
 // → { accepted: 1, results: [{ id: '…', save: { special_match: false } }] }
 ```
 
-Con `w = 0,4` y `η = 0,08`, su gusto por lo melancólico sube un poco (de 0,30 a 0,305). Si después confirma "Me encantó" en Ver, sube a 0,454. El front no calcula nada de eso: solo manda las dos acciones.
+Con `w = 0,4` y `η = 0,08`, su gusto por lo melancólico sube un poco (de 0,30 a 0,305). Si después confirma "Me encantó" en Ver, sube a 0,456. El front no calcula nada de eso: solo manda las dos acciones.

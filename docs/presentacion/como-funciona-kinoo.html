@@ -1,0 +1,595 @@
+<title>Cómo piensa Kinoo</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: una sala de cine a oscuras; cada paso es una carta del mazo, con el ADN como barras de luz. Un solo tema oscuro, como la app. */
+:root {
+  --bg: #17120f;
+  --surface: #211915;
+  --surface-2: #2b201a;
+  --line: #3a2c22;
+  --cream: #f4e7d0;
+  --muted: #b9a58c;
+  --wine: #5e0c10;
+  --gold: #f2b544;
+  --orange: #e8642c;
+  --rose: #d0566a;
+  --sand: #e3c79b;
+  --f-dinamica: #e8642c;
+  --f-atmosfera: #d0566a;
+  --f-estetica: #f2b544;
+  --f-carga: #8fb8a8;
+  --display: "Big Shoulders Display", "Arial Narrow", "Roboto Condensed", Impact, sans-serif;
+  --body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--cream); font-family: var(--body); font-size: 16px; line-height: 1.55; }
+.wrap { max-width: 1060px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3 { font-family: var(--display); text-transform: uppercase; letter-spacing: .01em; line-height: .95; margin: 0; text-wrap: balance; }
+h1 { font-size: clamp(44px, 8.5vw, 96px); font-weight: 900; }
+h2 { font-size: clamp(34px, 5.2vw, 56px); font-weight: 800; }
+h3 { font-size: 26px; font-weight: 800; }
+p { margin: 0; max-width: 64ch; }
+.eyebrow { font-family: var(--display); font-weight: 700; text-transform: uppercase; letter-spacing: .14em; font-size: 14px; color: var(--gold); }
+.muted { color: var(--muted); }
+em.hl { font-style: normal; color: var(--gold); }
+section { padding-block: 64px; border-top: 1px solid var(--line); }
+.stack { display: grid; gap: 18px; }
+.grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; align-items: start; }
+@media (max-width: 760px) { .grid2 { grid-template-columns: minmax(0, 1fr); } section { padding-block: 48px; } }
+.num { font-variant-numeric: tabular-nums; }
+
+/* Hero */
+.hero { padding-block: 56px 64px; border-top: 0; background: radial-gradient(ellipse 70% 60% at 85% 20%, rgba(94,12,16,.55), transparent 70%); }
+.hero .lead { font-size: clamp(18px, 2.2vw, 21px); color: var(--sand); }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 40px; align-items: center; }
+@media (max-width: 820px) { .hero-grid { grid-template-columns: minmax(0, 1fr); } }
+
+/* Carta */
+.card { background: linear-gradient(170deg, #3a1214 0%, var(--wine) 55%, #3b0a0c 100%); border: 2px solid rgba(242,181,68,.55); border-radius: 22px; padding: 22px; box-shadow: 0 24px 60px rgba(0,0,0,.55); max-width: 380px; width: 100%; justify-self: center; }
+.card .ttl { font-family: var(--display); font-weight: 900; font-size: 34px; text-transform: uppercase; line-height: .95; }
+.card .sub { font-size: 13px; color: var(--sand); margin-top: 4px; }
+.card .why { margin-top: 16px; padding-top: 14px; border-top: 1px dashed rgba(244,231,208,.3); font-size: 14px; color: var(--cream); }
+
+/* Barras de ADN */
+.bars { display: grid; gap: 9px; margin-top: 16px; }
+.bar { display: grid; grid-template-columns: 112px minmax(0, 1fr) 38px; gap: 10px; align-items: center; font-size: 13px; }
+.bar .lbl { color: var(--sand); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.bar .track { position: relative; height: 10px; background: rgba(0,0,0,.35); border-radius: 5px; overflow: visible; }
+.bar .fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 5px; background: var(--gold); }
+.bar .ghost { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 5px; background: rgba(244,231,208,.18); }
+.bar .mean { position: absolute; top: -4px; bottom: -4px; width: 2px; background: var(--cream); opacity: .8; }
+.bar .v { text-align: right; color: var(--cream); font-variant-numeric: tabular-nums; }
+.legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 12px; color: var(--muted); margin-top: 12px; }
+.legend i { display: inline-block; width: 14px; height: 8px; border-radius: 3px; vertical-align: middle; margin-right: 6px; }
+
+/* Promesas */
+.promises { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 28px; }
+@media (max-width: 900px) { .promises { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .promises { grid-template-columns: minmax(0, 1fr); } }
+.promise { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 18px; display: grid; gap: 8px; align-content: start; }
+.promise b { font-family: var(--display); font-size: 22px; text-transform: uppercase; color: var(--gold); line-height: 1; }
+.promise span { font-size: 14px; color: var(--sand); }
+.vs { width: 100%; border-collapse: collapse; margin-top: 28px; font-size: 15px; }
+.vs th, .vs td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.vs th { font-family: var(--display); text-transform: uppercase; letter-spacing: .06em; font-size: 15px; color: var(--muted); font-weight: 700; }
+.vs td:last-child { color: var(--cream); }
+.vs td:nth-child(2) { color: var(--muted); }
+.scroll { overflow-x: auto; }
+
+/* Pasos */
+.step-head { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 18px; align-items: end; margin-bottom: 28px; }
+.step-n { font-family: var(--display); font-weight: 900; font-size: clamp(64px, 10vw, 112px); line-height: .8; color: transparent; -webkit-text-stroke: 2px var(--orange); }
+.formula { font-family: var(--display); font-weight: 700; font-size: clamp(20px, 3vw, 28px); letter-spacing: .02em; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; line-height: 1.25; }
+.formula small { display: block; font-family: var(--body); font-weight: 400; font-size: 14px; color: var(--muted); letter-spacing: 0; margin-top: 6px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { font-size: 13px; padding: 5px 11px; border-radius: 999px; border: 1px solid currentColor; white-space: nowrap; }
+.fam { display: grid; gap: 8px; }
+.fam h4 { margin: 0; font-family: var(--display); text-transform: uppercase; letter-spacing: .1em; font-size: 15px; }
+
+/* Receta de mood (barras divergentes) */
+.div { display: grid; gap: 8px; }
+.drow { display: grid; grid-template-columns: 120px minmax(0, 1fr) 44px; gap: 10px; align-items: center; font-size: 13px; }
+.dtrack { position: relative; height: 12px; }
+.dtrack::before { content: ""; position: absolute; left: 50%; top: -3px; bottom: -3px; width: 1px; background: var(--line); }
+.dfill { position: absolute; top: 0; bottom: 0; border-radius: 4px; }
+
+/* Puntaje */
+.score-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 640px) { .score-row { grid-template-columns: minmax(0, 1fr); } }
+.term { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px; display: grid; gap: 6px; }
+.term b { font-family: var(--display); font-size: 24px; text-transform: uppercase; line-height: 1; }
+.term span { font-size: 14px; color: var(--sand); }
+.beta { width: 100%; border-collapse: collapse; font-size: 14px; }
+.beta td, .beta th { padding: 9px 10px; border-bottom: 1px solid var(--line); text-align: left; }
+.beta th { color: var(--muted); font-weight: 600; }
+.split { display: flex; height: 10px; border-radius: 5px; overflow: hidden; min-width: 120px; }
+
+/* Mazo */
+.deck { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 8px; }
+@media (max-width: 640px) { .deck { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+.slot { aspect-ratio: 2 / 3; max-width: 100%; border-radius: 10px; display: grid; place-items: center; font-family: var(--display); font-weight: 900; font-size: 22px; color: var(--bg); position: relative; }
+.slot small { position: absolute; bottom: 6px; left: 0; right: 0; text-align: center; font-family: var(--body); font-weight: 700; font-size: 10px; letter-spacing: .04em; text-transform: uppercase; }
+.r-afin { background: var(--gold); }
+.r-creador { background: var(--sand); }
+.r-comodin { background: var(--orange); }
+.r-sorpresa { background: var(--bg); color: var(--gold); border: 2px solid var(--gold); box-shadow: 0 0 18px rgba(242,181,68,.45); }
+.roles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 22px; }
+@media (max-width: 640px) { .roles { grid-template-columns: minmax(0, 1fr); } }
+.role { display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 12px; align-items: start; font-size: 15px; }
+.role i { width: 18px; height: 26px; border-radius: 4px; display: block; margin-top: 2px; }
+.role b { font-family: var(--display); text-transform: uppercase; font-size: 19px; letter-spacing: .02em; }
+
+/* Aprendizaje */
+.learn { display: grid; gap: 10px; }
+.lrow { display: grid; grid-template-columns: minmax(0, 210px) minmax(0, 1fr) 52px; gap: 12px; align-items: center; font-size: 14px; }
+.lrow .track { height: 14px; background: var(--surface-2); border-radius: 4px; position: relative; overflow: hidden; }
+.lrow .fill { position: absolute; top: 0; bottom: 0; left: 0; border-radius: 4px; }
+.lrow .v { text-align: right; font-variant-numeric: tabular-nums; color: var(--muted); }
+@media (max-width: 520px) { .lrow { grid-template-columns: minmax(0, 1fr) 52px; } .lrow .track { grid-column: 1 / -1; grid-row: 2; } }
+.timeline { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 640px) { .timeline { grid-template-columns: minmax(0, 1fr); } }
+.tl { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px; display: grid; gap: 4px; }
+.tl .big { font-family: var(--display); font-weight: 900; font-size: 44px; line-height: 1; color: var(--gold); font-variant-numeric: tabular-nums; }
+.tl span { font-size: 14px; color: var(--sand); }
+
+/* Laboratorio */
+.lab { background: var(--surface); border: 1px solid var(--line); border-radius: 24px; padding: clamp(18px, 3vw, 32px); display: grid; gap: 24px; }
+.picks { display: flex; flex-wrap: wrap; gap: 8px; }
+.pick, .mood { font: inherit; font-size: 14px; color: var(--cream); background: var(--bg); border: 1px solid var(--line); border-radius: 999px; padding: 8px 14px; cursor: pointer; }
+.pick[aria-pressed="true"] { background: var(--gold); color: var(--bg); border-color: var(--gold); font-weight: 700; }
+.mood[aria-pressed="true"] { background: var(--wine); border-color: var(--rose); font-weight: 700; }
+.pick:focus-visible, .mood:focus-visible, .reset:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+.reset { font: inherit; font-size: 13px; background: none; border: 0; color: var(--muted); text-decoration: underline; cursor: pointer; padding: 0; }
+.out { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 24px; }
+@media (max-width: 760px) { .out { grid-template-columns: minmax(0, 1fr); } }
+.arche { font-family: var(--display); font-weight: 900; font-size: 34px; text-transform: uppercase; color: var(--gold); line-height: 1; }
+.results { display: grid; gap: 10px; counter-reset: r; }
+.res { background: var(--bg); border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; display: grid; gap: 4px; }
+.res .t { font-family: var(--display); font-weight: 800; font-size: 22px; text-transform: uppercase; line-height: 1; }
+.res .m { font-size: 12px; color: var(--muted); }
+.res .w { font-size: 14px; color: var(--sand); }
+.empty { color: var(--muted); font-size: 15px; border: 1px dashed var(--line); border-radius: 14px; padding: 18px; }
+
+/* Resultados de la simulación */
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 700px) { .stats { grid-template-columns: minmax(0, 1fr); } }
+.stat { border-left: 3px solid var(--orange); padding: 4px 0 4px 16px; display: grid; gap: 4px; }
+.stat .big { font-family: var(--display); font-weight: 900; font-size: 56px; line-height: .9; font-variant-numeric: tabular-nums; }
+.stat span { font-size: 14px; color: var(--sand); }
+.sim { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 620px; }
+.sim th, .sim td { padding: 10px 12px; border-bottom: 1px solid var(--line); text-align: left; }
+.sim th { color: var(--muted); font-weight: 600; }
+.sim td.n { font-variant-numeric: tabular-nums; }
+.hits { display: inline-flex; gap: 2px; vertical-align: middle; margin-left: 8px; }
+.hits i { width: 6px; height: 12px; border-radius: 2px; background: var(--line); }
+.hits i.on { background: var(--gold); }
+
+.todo { display: grid; gap: 12px; padding: 0; margin: 0; list-style: none; }
+.todo li { display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 12px; font-size: 15px; }
+.todo li::before { content: "→"; color: var(--orange); font-weight: 700; }
+footer { padding-block: 40px 56px; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted); }
+footer p { max-width: 80ch; }
+@media (prefers-reduced-motion: no-preference) {
+  .fill, .dfill { transition: width .5s ease, left .5s ease; }
+}
+</style>
+
+<div class="hero">
+  <div class="wrap hero-grid">
+    <div class="stack">
+      <span class="eyebrow">Kinoo · algoritmo v2 · explicado</span>
+      <h1>Te conocemos por lo que te mueve</h1>
+      <p class="lead">Kinoo no te recomienda lo más visto ni "porque viste X". Lee de qué está hecha cada película, aprende qué de eso te mueve a ti y te propone una para esta noche, con una razón en palabras.</p>
+      <p class="muted">Esta página cuenta cómo funciona, paso a paso, con los datos reales del catálogo piloto (69 películas). Al final hay un laboratorio para probarlo.</p>
+    </div>
+    <div class="card" aria-label="Ejemplo de carta con su ADN">
+      <span class="eyebrow">ADN de la película</span>
+      <div class="ttl" style="margin-top:8px">Aftersun</div>
+      <div class="sub">Una película de Charlotte Wells · 2022</div>
+      <div class="bars" id="hero-bars"></div>
+      <div class="why">Encaja con tu gusto por historias íntimas y que mueven por dentro.</div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">El punto de valor</span>
+    <h2 style="margin-top:10px">Cuatro cosas que nadie más hace juntas</h2>
+    <div class="promises">
+      <div class="promise"><b>Entiende el porqué</b><span>No piensa en géneros: piensa en 21 rasgos, como "a fuego lento", "melancólica" o "neón". Dos dramas pueden ser opuestos.</span></div>
+      <div class="promise"><b>Una para esta noche</b><span>Ver te da una sola propuesta, de las que ya guardaste y que está en tus plataformas. Sin scroll infinito.</span></div>
+      <div class="promise"><b>Te explica en palabras</b><span>Cada carta dice por qué está ahí. Nunca muestra porcentajes ni puntajes de afinidad.</span></div>
+      <div class="promise"><b>Aprende de lo que ves</b><span>Lo que más le enseña es que veas la película y digas "me encantó". Un clic dentro de la app enseña poco.</span></div>
+    </div>
+    <div class="scroll">
+      <table class="vs">
+        <thead><tr><th>Pregunta</th><th>Lo de siempre</th><th>Kinoo</th></tr></thead>
+        <tbody>
+          <tr><td>¿Qué te muestra?</td><td>Lo popular, o lo parecido a lo último que viste</td><td>Lo que comparte contigo los rasgos que te mueven, en el mood que traes hoy</td></tr>
+          <tr><td>¿Cómo lo explica?</td><td>"98 % para ti", o nada</td><td>"Encaja con tu gusto por historias íntimas y melancólicas"</td></tr>
+          <tr><td>¿De qué aprende?</td><td>Clics y minutos vistos</td><td>De lo que guardas, lo que descartas y, sobre todo, de lo que viste y cómo te dejó</td></tr>
+          <tr><td>¿Y si cambias?</td><td>Tarda semanas en notarlo</td><td>Los descartes recientes pesan más y el mazo se ajusta en el siguiente</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="step-head"><div class="step-n">1</div><div class="stack" style="gap:8px"><span class="eyebrow">El ADN de cada película</span><h2>21 rasgos en vez de géneros</h2></div></div>
+    <div class="grid2">
+      <div class="stack">
+        <p>Cada película se describe con 21 rasgos, cada uno entre 0 y 1. Los agrupamos en cuatro familias. Un juez (un modelo de IA con ejemplos calibrados por el equipo) los pone a partir de la ficha de TMDB, y la comunidad podrá corregirlos con sus votos.</p>
+        <div class="fam" id="families"></div>
+      </div>
+      <div class="stack">
+        <h3>Lo que la hace distinta</h3>
+        <p>Casi todas las películas tienen algo de emoción. Por eso Kinoo no usa el valor tal cual, sino <em class="hl">cuánto sobresale del promedio del catálogo</em>. Así, una película "intensa en todo" no gana siempre.</p>
+        <div class="formula">Rasgo distintivo = (valor − promedio) ÷ (1 − promedio)<small>Si la película está por debajo del promedio, el rasgo queda en 0: no se aprende de ausencias.</small></div>
+        <div class="bars" id="distinct-bars"></div>
+        <div class="legend"><span><i style="background:rgba(244,231,208,.25)"></i>valor del juez</span><span><i style="background:var(--cream);width:2px"></i>promedio del catálogo</span><span><i style="background:var(--gold)"></i>rasgo distintivo</span></div>
+        <p class="muted" style="font-size:14px">Aftersun tiene 0,40 de "luminosa", pero el promedio es 0,33: casi no sobresale (0,11). Su humor (0,10) está por debajo del promedio: cuenta 0.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="step-head"><div class="step-n">2</div><div class="stack" style="gap:8px"><span class="eyebrow">Tu perfil</span><h2>Los mismos 21 rasgos, pero tuyos</h2></div></div>
+    <div class="grid2">
+      <div class="stack">
+        <p>Tu perfil usa la misma regla de 21 rasgos, entre −1 y 1. Empieza en cero. Se llena con:</p>
+        <ul class="todo">
+          <li><span><b>El onboarding:</b> 6 duelos "¿Esta o esta?". La que eliges suma; la otra resta un poco.</span></li>
+          <li><span><b>Descubrir:</b> cada "Quiero verla", "No me interesa" o "Ya la vi".</span></li>
+          <li><span><b>Ver:</b> cuando la viste y nos dices cómo te dejó.</span></li>
+        </ul>
+        <p>Con tu perfil, Kinoo te asigna una carta de perfil (un arquetipo): El Romántico, El Nocturno, El Explorador, El Observador o El Luminoso. Es el más parecido a tus rasgos y cambia si tú cambias.</p>
+      </div>
+      <div class="stack">
+        <div class="formula">Perfil nuevo = perfil + η × (objetivo − perfil)<small>El objetivo es la señal de la acción × el rasgo distintivo de la película. η dice cuánto se mueve. Es un promedio que recuerda más lo reciente.</small></div>
+        <p class="muted" style="font-size:14px">Solo se tocan los rasgos en que la película sobresale (más de 0,2). Si guardas Aftersun, Kinoo no concluye nada sobre el humor.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="step-head"><div class="step-n">3</div><div class="stack" style="gap:8px"><span class="eyebrow">Moods</span><h2>Un mood es una receta, y cada quien tiene la suya</h2></div></div>
+    <div class="grid2">
+      <div class="stack">
+        <p>"Llorar bonito" no es un género. Es una mezcla de rasgos: mucha emoción, algo de melancolía y de consuelo, y nada de oscuridad ni frenesí.</p>
+        <p>La receta es la semilla. Cuando guardas o ves algo dentro de un mood, <em class="hl">tu versión</em> de esa receta se mueve. Tu "llorar bonito" puede pedir más intimidad que el de otra persona.</p>
+        <div class="chips" id="vibe-chips"></div>
+      </div>
+      <div class="stack">
+        <h3 id="vibe-title">Llorar bonito</h3>
+        <p class="muted" id="vibe-def" style="font-size:14px"></p>
+        <div class="div" id="vibe-recipe"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="step-head"><div class="step-n">4</div><div class="stack" style="gap:8px"><span class="eyebrow">El puntaje</span><h2>¿Qué tan bien encaja esta película hoy?</h2></div></div>
+    <div class="stack" style="gap:24px">
+      <div class="score-row">
+        <div class="term"><b style="color:var(--gold)">Parecido a ti</b><span>¿Apunta la película hacia los mismos rasgos que tu perfil? Se mide con el coseno: 1 si van en la misma dirección, 0 si no tienen que ver, −1 si son opuestos.</span></div>
+        <div class="term"><b style="color:var(--rose)">Parecido al mood</b><span>Lo mismo, pero contra tu receta del mood que elegiste hoy.</span></div>
+        <div class="term"><b style="color:var(--sand)">Calidad</b><span>Un empujón pequeño por lo bien valorada que está (nota de TMDB, corregida si tiene pocos votos).</span></div>
+      </div>
+      <div class="formula">Puntaje = β × parecido a ti + (1 − β) × parecido al mood + γ × calidad<small>γ vale 0,1, y 0,35 en "Cine del bueno", donde la calidad manda. β cambia según el momento:</small></div>
+      <div class="scroll">
+        <table class="beta">
+          <thead><tr><th>Situación</th><th>β</th><th>Peso de ti / del mood</th></tr></thead>
+          <tbody>
+            <tr><td>Sin mood</td><td class="num">1,0</td><td><div class="split"><span style="flex:10;background:var(--gold)"></span></div></td></tr>
+            <tr><td>Con mood y perfil nuevo (menos de 15 señales)</td><td class="num">0,3</td><td><div class="split"><span style="flex:3;background:var(--gold)"></span><span style="flex:7;background:var(--rose)"></span></div></td></tr>
+            <tr><td>Con mood y perfil confiable</td><td class="num">0,5</td><td><div class="split"><span style="flex:5;background:var(--gold)"></span><span style="flex:5;background:var(--rose)"></span></div></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="muted">Cuando Kinoo todavía no te conoce, se apoya en el mood. A medida que aprende, tu perfil pesa igual que el mood.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="step-head"><div class="step-n">5</div><div class="stack" style="gap:8px"><span class="eyebrow">El mazo</span><h2>Diez cartas, cuatro papeles</h2></div></div>
+    <div class="deck" id="deck" aria-label="Mazo de 10 cartas por papel"></div>
+    <div class="roles">
+      <div class="role"><i class="r-afin"></i><div><b>Afín · 6</b><p class="muted">Las de mejor puntaje. La mejor abre el mazo y la segunda lo cierra, para terminar en alto.</p></div></div>
+      <div class="role"><i class="r-creador"></i><div><b>Creador · 2</b><p class="muted">Elegidas por un curador que sigues (o por el equipo). La carta dice quién la guardó.</p></div></div>
+      <div class="role"><i class="r-comodin"></i><div><b>Comodín · 1</b><p class="muted">Comparte tu rasgo más fuerte, pero por lo demás es distinta. Sirve para descubrir sin perderte.</p></div></div>
+      <div class="role"><i class="r-sorpresa" style="border-width:1px"></i><div><b>Sorpresa · 1</b><p class="muted">Fuera de tu zona, pero muy bien valorada. Tiene tratamiento especial en la carta.</p></div></div>
+    </div>
+    <p class="muted" style="margin-top:20px">Además, el mazo no repite director y no pone dos películas casi iguales. Lo que descartaste hace poco no vuelve por 30 días, y si descartas mucho de un estilo en un día, ese estilo baja.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="step-head"><div class="step-n">6</div><div class="stack" style="gap:8px"><span class="eyebrow">La explicación</span><h2>Una razón, en palabras</h2></div></div>
+    <div class="grid2">
+      <div class="stack">
+        <p>Kinoo mira qué rasgos aportaron más al puntaje (los que tú y la película comparten con más fuerza) y los pone en una frase escrita por el equipo:</p>
+        <div class="formula" style="font-size:clamp(18px,2.6vw,24px)">"Encaja con tu gusto por historias {rasgo 1} y {rasgo 2}."</div>
+        <p>Cada papel tiene su frase. Si una frase llegara a tener un número, el motor la cambia por una genérica: <em class="hl">ningún porcentaje llega a la pantalla</em>.</p>
+      </div>
+      <div class="stack">
+        <div class="res"><div class="m">Afín, con el mood "Llorar bonito"</div><div class="w">"Responde a tu forma de llorar bonito: melancólicas e íntimas."</div></div>
+        <div class="res"><div class="m">Comodín</div><div class="w">"Tiene lo a fuego lento que te gusta, en una forma distinta."</div></div>
+        <div class="res"><div class="m">Sorpresa</div><div class="w">"Fuera de tu zona, pero muy bien valorada. Dale una oportunidad."</div></div>
+        <div class="res"><div class="m">Cierre del mazo</div><div class="w">"Hoy te inclinaste por historias contemplativas e íntimas."</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="step-head"><div class="step-n">7</div><div class="stack" style="gap:8px"><span class="eyebrow">El aprendizaje</span><h2>Lo que haces pesa distinto</h2></div></div>
+    <div class="grid2">
+      <div class="stack">
+        <p>Cada acción tiene una dirección (acerca o aleja) y una fuerza. La barra muestra cuánto puede mover tu perfil cada una (señal × η). La señal reina es <em class="hl">ver la película y decir que te encantó</em>: cumplió fuera de la app.</p>
+        <div class="learn" id="learn"></div>
+        <div class="legend"><span><i style="background:var(--gold)"></i>acerca</span><span><i style="background:var(--rose)"></i>aleja</span></div>
+      </div>
+      <div class="stack">
+        <h3>Ejemplo: Ana y Vidas pasadas</h3>
+        <p class="muted" style="font-size:15px">Vidas pasadas es muy melancólica (rasgo distintivo 0,91). El gusto de Ana por lo melancólico está en 0,30.</p>
+        <div class="timeline">
+          <div class="tl"><span>Empieza</span><div class="big">0,30</div><span>Su perfil hoy</span></div>
+          <div class="tl"><span>La guarda en Descubrir</span><div class="big">0,305</div><span>Sube un poco: es una intención</span></div>
+          <div class="tl"><span>La ve y dice "Me encantó"</span><div class="big">0,46</div><span>Sube mucho: cumplió</span></div>
+        </div>
+        <p class="muted" style="font-size:14px">"← Otra" en Ver no enseña nada sobre gusto: es una señal del momento. Después de tres seguidas, Kinoo te invita a Descubrir.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="laboratorio">
+  <div class="wrap stack" style="gap:24px">
+    <div class="stack" style="gap:8px">
+      <span class="eyebrow">Laboratorio</span>
+      <h2>Pruébalo con el catálogo real</h2>
+      <p>Marca hasta 4 películas que te hayan encantado y elige un mood. La página aplica las mismas fórmulas del motor sobre las 69 películas y te muestra tu perfil, tu carta y las 5 cartas afines de tu próximo mazo.</p>
+    </div>
+    <div class="lab">
+      <div class="stack" style="gap:10px">
+        <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline"><h3>Me encantaron</h3><button class="reset" id="reset" type="button">Empezar de cero</button></div>
+        <div class="picks" id="picks"></div>
+      </div>
+      <div class="stack" style="gap:10px">
+        <h3>Hoy quiero</h3>
+        <div class="picks" id="moods"></div>
+      </div>
+      <div class="out">
+        <div class="stack" style="gap:12px">
+          <span class="eyebrow">Tu carta de perfil</span>
+          <div class="arche" id="arche">—</div>
+          <div class="bars" id="profile-bars"></div>
+          <p class="muted" style="font-size:13px" id="beta-note"></p>
+        </div>
+        <div class="stack" style="gap:12px">
+          <span class="eyebrow">Tu próximo mazo · las afines</span>
+          <div class="results" id="results"></div>
+        </div>
+      </div>
+      <p class="muted" style="font-size:13px">Versión simplificada: aplica el aprendizaje, el puntaje, la explicación y la regla de un director por mazo del motor real (paquete <code>@kinoo/engine</code>). No incluye curadores, comodín, sorpresa ni plataformas.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap stack" style="gap:28px">
+    <div class="stack" style="gap:8px">
+      <span class="eyebrow">Lo que ya probamos</span>
+      <h2>Seis personas simuladas, seis perfiles bien leídos</h2>
+      <p>Simulamos seis tipos de usuario con un gusto oculto. Cada una hizo onboarding (6 duelos), 5 mazos y Ver cada noche. Kinoo no conocía su gusto: solo veía sus acciones.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="big">6 de 6</div><span>arquetipos correctos al segundo mazo</span></div>
+      <div class="stat"><div class="big">13–24</div><span>señales para un perfil confiable (uno o dos mazos)</span></div>
+      <div class="stat"><div class="big">5–8 / 10</div><span>aciertos en el primer mazo con onboarding. Al azar serían 2,6; sin onboarding, 3</span></div>
+    </div>
+    <div class="scroll">
+      <table class="sim" id="sim">
+        <thead><tr><th>Persona</th><th>Gusto oculto</th><th>Perfil confiable en</th><th>Mazo 1</th><th>Arquetipo</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <p class="muted" style="font-size:14px">Fuente: <code>npm run sim:perfiles</code> y <code>docs/SIMULACION-PERFILAMIENTO.md</code>. Son usuarios simulados, no personas reales.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap grid2">
+    <div class="stack">
+      <span class="eyebrow">Lo que falta para que brille</span>
+      <h2>El algoritmo está; falta alimentarlo</h2>
+    </div>
+    <ul class="todo">
+      <li><span><b>Poner los 6 duelos en el front.</b> Suben el primer mazo de 3 a entre 5 y 8 aciertos de 10.</span></li>
+      <li><span><b>Un catálogo más grande.</b> Con 69 películas, a una persona de gusto definido se le acaban las suyas al cuarto mazo.</span></li>
+      <li><span><b>Que el minijuego enseñe.</b> "¿Esto o aquello?" puede afinar rasgos sin gastar películas.</span></li>
+      <li><span><b>Que "¿Qué versión de ti salió?" entrene el mood.</b> Es la mejor señal para personalizar cada receta.</span></li>
+      <li><span><b>Personas reales.</b> Los pesos son supuestos iniciales y se ajustan con datos.</span></li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap stack" style="gap:10px">
+    <p>Documentos del repositorio: <code>docs/COMO-FUNCIONA-EL-ALGORITMO.md</code>, <code>docs/KINOO_ALGORITMO_v2.md</code>, <code>docs/guias/algoritmo-paso-a-paso.md</code>, <code>docs/PREGUNTAS-RECOLECCION-DE-DATOS.md</code>.</p>
+    <p>Datos de películas: TMDB. Este producto usa la API de TMDB, pero TMDB no lo respalda ni lo certifica. El catálogo piloto es una simulación con fichas de TMDB guardadas en el repositorio.</p>
+  </div>
+</footer>
+
+<script>
+const DATA = {"atoms":[{"k":"frenetica","label":"frenéticas","theme":"Frenesí","family":"dinamica"},{"k":"agil","label":"ágiles","theme":"Ritmo ágil","family":"dinamica"},{"k":"pausada","label":"a fuego lento","theme":"Fuego lento","family":"dinamica"},{"k":"contemplativa","label":"contemplativas","theme":"Contemplación","family":"dinamica"},{"k":"reconfortante","label":"reconfortantes","theme":"Consuelo","family":"atmosfera"},{"k":"luminosa","label":"luminosas","theme":"Luz","family":"atmosfera"},{"k":"melancolica","label":"melancólicas","theme":"Melancolía","family":"atmosfera"},{"k":"tensa","label":"tensas","theme":"Tensión","family":"atmosfera"},{"k":"inquietante","label":"inquietantes","theme":"Inquietud","family":"atmosfera"},{"k":"sombria","label":"sombrías","theme":"Oscuridad","family":"atmosfera"},{"k":"cruda","label":"de estética cruda","theme":"Realismo","family":"estetica"},{"k":"onirica","label":"oníricas","theme":"Sueño","family":"estetica"},{"k":"neon","label":"de neón","theme":"Neón","family":"estetica"},{"k":"pastel","label":"de tonos pastel","theme":"Pastel","family":"estetica"},{"k":"calida","label":"de luz cálida","theme":"Luz cálida","family":"estetica"},{"k":"monocromatica","label":"en blanco y negro o casi","theme":"Blanco y negro","family":"estetica"},{"k":"carga_emocional","label":"que mueven por dentro","theme":"Emoción","family":"carga"},{"k":"complejidad","label":"que exigen atención","theme":"Complejidad","family":"carga"},{"k":"humor","label":"con humor","theme":"Humor","family":"carga"},{"k":"intimidad","label":"íntimas","theme":"Intimidad","family":"carga"},{"k":"escala_epica","label":"épicas","theme":"Épica","family":"carga"}],"vibes":[{"key":"llorar_bonito","name":"Llorar bonito","definition":"Historias que te conmueven sin dejarte destruido.","recipe":{"carga_emocional":0.9,"melancolica":0.6,"reconfortante":0.4,"intimidad":0.4,"sombria":-0.5,"frenetica":-0.4},"q":null},{"key":"apagar_cerebro","name":"Apagar el cerebro","definition":"Diversión directa: nada que descifrar, todo que disfrutar.","recipe":{"frenetica":0.6,"agil":0.5,"humor":0.5,"escala_epica":0.5,"complejidad":-0.7,"contemplativa":-0.6,"carga_emocional":-0.3},"q":null},{"key":"escapar","name":"Escapar un rato","definition":"Otro mundo, otra escala: para salir de tu día por un par de horas.","recipe":{"escala_epica":0.8,"luminosa":0.4,"onirica":0.4,"agil":0.3,"cruda":-0.5,"sombria":-0.4},"q":null},{"key":"salir_pensando","name":"Salir pensando","definition":"Películas que siguen trabajando en tu cabeza después de los créditos.","recipe":{"complejidad":0.9,"inquietante":0.4,"pausada":0.3,"contemplativa":0.3,"humor":-0.3,"frenetica":-0.3},"q":null},{"key":"solo_reirme","name":"Solo reírme","definition":"Que lo principal sea reírte, sin sustos ni golpes bajos.","recipe":{"humor":1,"luminosa":0.5,"agil":0.3,"reconfortante":0.3,"sombria":-0.6,"tensa":-0.5,"carga_emocional":-0.3},"q":null},{"key":"algo_raro","name":"Algo raro","definition":"Lo extraño, lo surreal y lo que no se parece a nada.","recipe":{"onirica":0.8,"inquietante":0.6,"neon":0.3,"complejidad":0.3,"reconfortante":-0.4},"q":null},{"key":"cine_del_bueno","name":"Cine del bueno","definition":"Lo mejor valorado que encaja contigo, sin importar el género.","recipe":{},"q":0.35}],"movies":[{"id":"aftersun-2022","t":"Aftersun","y":2022,"g":["Drama"],"d":"Charlotte Wells","q":0.74,"h":[0,0,0.5,0.76,0,0.11,0.91,0,0,0,0.24,0.34,0,0.19,0.41,0,0.92,0,0,0.95,0]},{"id":"amores-perros-2000","t":"Amores perros","y":2000,"g":["Drama","Suspense"],"d":"Alejandro González Iñárritu","q":0.76,"h":[0.27,0.09,0,0,0,0,0.13,0.4,0.08,0.83,0.93,0,0,0,0,0,0.62,0.37,0,0.09,0]},{"id":"arrival-2016","t":"La llegada","y":2016,"g":["Drama","Ciencia ficción"],"d":"Denis Villeneuve","q":0.76,"h":[0,0,0.67,0.51,0,0,0.74,0.2,0.36,0,0,0.41,0,0,0,0.69,0.75,0.76,0,0.27,0.29]},{"id":"avengers-endgame-2019","t":"Avengers: Endgame","y":2019,"g":["Aventura","Ciencia ficción"],"d":"Anthony Russo","q":0.82,"h":[0.34,0.19,0,0,0.21,0.11,0.22,0.1,0,0,0,0,0.09,0,0,0,0.62,0.05,0.25,0,0.96]},{"id":"central-do-brasil-1998","t":"Estación central de Brasil","y":1998,"g":["Drama"],"d":"Walter Salles","q":0.75,"h":[0,0,0.58,0.14,0.35,0.11,0.57,0,0,0,0.51,0,0,0,0.71,0,0.75,0,0,0.73,0]},{"id":"chungking-express-1994","t":"Chungking Express","y":1994,"g":["Drama","Romance"],"d":"Wong Kar-wai","q":0.75,"h":[0.27,0.39,0,0.14,0.28,0.26,0.48,0,0,0,0.17,0.54,0.96,0.07,0,0,0,0,0.17,0.54,0]},{"id":"coco-2017","t":"Coco","y":2017,"g":["Animación","Familia"],"d":"Lee Unkrich","q":0.82,"h":[0,0.39,0,0,0.78,0.85,0.31,0,0,0,0,0.47,0.48,0.42,0.8,0,0.87,0,0.32,0.09,0.02]},{"id":"corpse-bride-2005","t":"El cadáver de la novia","y":2005,"g":["Animación","Fantasía"],"d":"Tim Burton","q":0.74,"h":[0,0,0.16,0,0.35,0,0.31,0,0.08,0,0,0.67,0,0.19,0,0.45,0,0,0.25,0,0]},{"id":"cuando-acecha-la-maldad-2023","t":"Cuando acecha la maldad","y":2023,"g":["Terror"],"d":"Demián Rugna","q":0.68,"h":[0.2,0,0,0,0,0,0,0.7,0.79,0.91,0.58,0,0,0,0,0,0,0,0,0,0]},{"id":"dune-2021","t":"Duna","y":2021,"g":["Ciencia ficción","Aventura"],"d":"Denis Villeneuve","q":0.78,"h":[0,0,0.33,0.33,0,0,0.04,0,0.01,0.14,0,0.21,0,0,0,0.45,0,0.21,0,0,0.95]},{"id":"dune-part-two-2024","t":"Duna: Parte dos","y":2024,"g":["Ciencia ficción","Aventura"],"d":"Denis Villeneuve","q":0.8,"h":[0.05,0,0,0.08,0,0,0,0.3,0.08,0.57,0,0.14,0,0,0.02,0.51,0,0.29,0,0,0.96]},{"id":"el-abrazo-de-la-serpiente-2015","t":"El abrazo de la serpiente","y":2015,"g":["Aventura","Drama"],"d":"Ciro Guerra","q":0.7,"h":[0,0,0.33,0.76,0,0,0.74,0,0.29,0.31,0.3,0.6,0,0,0,0.94,0.37,0.29,0,0.18,0.11]},{"id":"eternal-sunshine-of-the-spotless-mind-2004","t":"Eterno resplandor de una mente sin recuerdos","y":2004,"g":["Ciencia ficción","Romance"],"d":"Michel Gondry","q":0.8,"h":[0,0,0.08,0.08,0.06,0.03,0.74,0,0.08,0,0.1,0.87,0,0.24,0,0,0.75,0.44,0.02,0.82,0]},{"id":"everything-everywhere-all-at-once-2022","t":"Todo en todas partes al mismo tiempo","y":2022,"g":["Comedia","Acción"],"d":"Daniel Kwan","q":0.77,"h":[0.85,0.6,0,0,0.35,0.33,0.13,0,0,0,0,0.74,0.8,0.19,0,0,0.7,0.76,0.77,0.09,0.73]},{"id":"get-out-2017","t":"¡Huye!","y":2017,"g":["Misterio","Suspense"],"d":"Jordan Peele","q":0.76,"h":[0,0.09,0,0,0,0,0,0.8,0.79,0.31,0.03,0.14,0,0,0,0,0,0.29,0,0,0]},{"id":"grease-1978","t":"Grease (Vaselina)","y":1978,"g":["Romance","Comedia"],"d":"Randal Kleiser","q":0.73,"h":[0,0.49,0,0,0.78,0.93,0,0,0,0,0,0,0.35,0.48,0.51,0,0,0,0.47,0,0]},{"id":"halloween-2018","t":"Halloween","y":2018,"g":["Terror","Suspense"],"d":"David Gordon Green","q":0.65,"h":[0,0.09,0,0,0,0,0,0.7,0.43,0.65,0.24,0,0,0,0,0.14,0,0,0,0,0]},{"id":"her-2013","t":"Her","y":2013,"g":["Romance","Ciencia ficción"],"d":"Spike Jonze","q":0.78,"h":[0,0,0.67,0.51,0.13,0.11,0.83,0,0,0,0,0.21,0,0.83,0.61,0,0.5,0.29,0,0.91,0]},{"id":"hereditary-2018","t":"El legado del diablo","y":2018,"g":["Terror","Drama"],"d":"Ari Aster","q":0.72,"h":[0,0,0.33,0.2,0,0,0,0.84,0.97,0.91,0.17,0.14,0,0,0,0,0.5,0.21,0,0.63,0]},{"id":"interstellar-2014","t":"Interstellar","y":2014,"g":["Ciencia ficción","Drama"],"d":"Christopher Nolan","q":0.84,"h":[0,0,0.33,0.14,0,0.03,0.39,0.4,0.01,0,0,0.21,0,0,0,0,0.75,0.76,0,0,0.96]},{"id":"knives-out-2019","t":"Entre navajas y secretos","y":2019,"g":["Misterio","Comedia"],"d":"Rian Johnson","q":0.78,"h":[0,0.49,0,0,0.21,0.11,0,0.1,0,0,0,0,0,0.01,0.51,0,0,0.52,0.7,0,0]},{"id":"la-la-land-2016","t":"La La Land","y":2016,"g":["Música","Romance"],"d":"Damien Chazelle","q":0.79,"h":[0,0.19,0,0,0.28,0.63,0.65,0,0,0,0,0.34,0.48,0.71,0.41,0,0.62,0,0,0.36,0]},{"id":"lost-in-translation-2003","t":"Perdidos en Tokio","y":2003,"g":["Drama","Romance"],"d":"Sofia Coppola","q":0.73,"h":[0,0,0.41,0.76,0.28,0.03,0.74,0,0,0,0.03,0.27,0.61,0.36,0,0,0.25,0,0.1,0.91,0]},{"id":"mad-max-fury-road-2015","t":"Mad Max: Furia en el camino","y":2015,"g":["Acción","Aventura"],"d":"George Miller","q":0.76,"h":[0.93,0.39,0,0,0,0,0,0.7,0.01,0.31,0.3,0,0,0,0.61,0,0,0,0,0,0.91]},{"id":"marty-supreme-2025","t":"Marty Supreme","y":2025,"g":["Drama","Comedia"],"d":"Josh Safdie","q":0.72,"h":[0.78,0.6,0,0,0,0,0,0.5,0,0,0.44,0,0.35,0,0.31,0,0,0,0.32,0,0]},{"id":"mickey-17-2025","t":"Mickey 17","y":2025,"g":["Ciencia ficción","Comedia"],"d":"Bong Joon-ho","q":0.68,"h":[0.05,0.19,0,0,0,0,0,0,0.08,0,0,0,0,0,0,0.33,0,0.29,0.55,0,0.38]},{"id":"mortal-kombat-2021","t":"Mortal Kombat","y":2021,"g":["Acción","Fantasía"],"d":"Simon McQuoid","q":0.7,"h":[0.71,0.39,0,0,0,0,0,0,0,0.22,0.03,0,0.35,0,0,0,0,0,0,0,0.56]},{"id":"mortal-kombat-ii-2026","t":"Mortal Kombat II","y":2026,"g":["Acción","Fantasía"],"d":"Simon McQuoid","q":0.66,"h":[0.78,0.39,0,0,0,0,0,0,0,0.05,0,0,0.48,0,0,0,0,0,0.1,0,0.65]},{"id":"nosferatu-2024","t":"Nosferatu","y":2024,"g":["Terror","Fantasía"],"d":"Robert Eggers","q":0.68,"h":[0,0,0.5,0.14,0,0,0,0.6,0.86,0.86,0.03,0.41,0,0,0,0.82,0,0,0,0,0]},{"id":"nuovo-cinema-paradiso-1988","t":"Cinema Paradiso","y":1988,"g":["Drama","Romance"],"d":"Giuseppe Tornatore","q":0.82,"h":[0,0,0.5,0.02,0.71,0.4,0.91,0,0,0,0,0,0,0.19,0.9,0,0.95,0,0.02,0.27,0]},{"id":"oppenheimer-2023","t":"Oppenheimer","y":2023,"g":["Drama","Historia"],"d":"Christopher Nolan","q":0.8,"h":[0.05,0.09,0,0,0,0,0,0.7,0.22,0.57,0.03,0.08,0,0,0,0.33,0.12,0.84,0,0,0.65]},{"id":"parasitos-2019","t":"Parásitos","y":2019,"g":["Suspense","Comedia"],"d":"Bong Joon-ho","q":0.84,"h":[0,0.19,0.08,0,0,0,0,0.7,0.43,0.4,0.3,0,0,0,0,0,0.12,0.44,0.25,0.18,0]},{"id":"past-lives-2023","t":"Vidas pasadas","y":2023,"g":["Drama","Romance"],"d":"Celine Song","q":0.74,"h":[0,0,0.75,0.69,0.06,0,0.91,0,0,0,0.03,0,0.09,0.19,0.02,0,0.87,0,0,0.91,0]},{"id":"project-hail-mary-2026","t":"Proyecto Fin del Mundo","y":2026,"g":["Ciencia ficción","Aventura"],"d":"Phil Lord","q":0.73,"h":[0,0.29,0,0,0.64,0.55,0,0,0,0,0,0,0,0,0.02,0,0.37,0.21,0.47,0.27,0.65]},{"id":"ratatouille-2007","t":"Ratatouille","y":2007,"g":["Animación","Comedia"],"d":"Brad Bird","q":0.78,"h":[0,0.49,0,0,0.86,0.78,0,0,0,0,0,0,0,0.36,0.8,0,0,0,0.47,0,0]},{"id":"relatos-salvajes-2014","t":"Relatos salvajes","y":2014,"g":["Comedia","Drama"],"d":"Damián Szifron","q":0.79,"h":[0.2,0.7,0,0,0,0,0,0.7,0.22,0.22,0.37,0,0,0,0.22,0,0,0,0.77,0,0]},{"id":"rocky-1976","t":"Rocky","y":1976,"g":["Drama"],"d":"John G. Avildsen","q":0.76,"h":[0,0,0.25,0,0.57,0.33,0.04,0,0,0,0.51,0,0,0,0.31,0,0.62,0,0,0.36,0]},{"id":"rocky-balboa-2006","t":"Rocky Balboa","y":2006,"g":["Drama"],"d":"Sylvester Stallone","q":0.66,"h":[0,0,0.41,0,0.35,0.11,0.48,0,0,0,0.24,0,0,0,0.12,0.02,0.5,0,0,0.36,0]},{"id":"rocky-ii-1979","t":"Rocky II","y":1979,"g":["Drama"],"d":"Sylvester Stallone","q":0.7,"h":[0,0,0.08,0,0.5,0.4,0,0,0,0,0.3,0,0,0,0.41,0,0.12,0,0,0.18,0]},{"id":"rocky-iii-1982","t":"Rocky III","y":1982,"g":["Drama"],"d":"Sylvester Stallone","q":0.69,"h":[0,0.29,0,0,0.28,0.26,0,0,0,0,0.1,0,0.09,0,0.22,0,0,0,0,0,0]},{"id":"roma-2018","t":"Roma","y":2018,"g":["Drama"],"d":"Alfonso Cuarón","q":0.76,"h":[0,0,0.67,0.82,0,0,0.74,0,0,0,0.44,0,0,0,0,0.94,0.62,0,0,0.63,0]},{"id":"scarface-1983","t":"Scarface: El precio del poder","y":1983,"g":["Crimen","Drama"],"d":"Brian De Palma","q":0.81,"h":[0.2,0.09,0,0,0,0,0,0.3,0,0.65,0.24,0,0.8,0.01,0.12,0,0,0,0,0,0.11]},{"id":"shrek-2-2004","t":"Shrek 2","y":2004,"g":["Animación","Comedia"],"d":"Andrew Adamson","q":0.73,"h":[0.05,0.6,0,0,0.71,0.7,0,0,0,0,0,0.08,0.22,0.36,0.22,0,0,0,0.88,0,0.02]},{"id":"sinners-2025","t":"Pecadores","y":2025,"g":["Terror","Acción"],"d":"Ryan Coogler","q":0.73,"h":[0.27,0.09,0,0,0,0,0,0.6,0.43,0.57,0.24,0.14,0,0,0.61,0,0,0,0,0,0.2]},{"id":"smile-2022","t":"Sonríe","y":2022,"g":["Terror","Misterio"],"d":"Parker Finn","q":0.66,"h":[0,0,0.08,0,0,0,0,0.8,0.93,0.83,0.03,0.08,0,0,0,0.39,0,0.05,0,0.09,0]},{"id":"superman-2025","t":"Superman","y":2025,"g":["Acción","Aventura"],"d":"James Gunn","q":0.73,"h":[0.42,0.7,0,0,0.42,0.78,0,0,0,0,0,0,0.28,0.19,0.22,0,0,0,0.47,0,0.73]},{"id":"ted-2-2015","t":"Ted 2","y":2015,"g":["Comedia"],"d":"Seth MacFarlane","q":0.63,"h":[0,0.39,0,0,0.21,0.33,0,0,0,0,0,0,0,0,0.02,0,0,0,0.85,0,0]},{"id":"ted-2012","t":"Ted","y":2012,"g":["Comedia","Fantasía"],"d":"Seth MacFarlane","q":0.64,"h":[0,0.39,0,0,0.28,0.33,0,0,0,0,0,0,0,0,0.02,0,0,0,0.88,0.09,0]},{"id":"the-batman-2022","t":"Batman","y":2022,"g":["Crimen","Misterio"],"d":"Matt Reeves","q":0.76,"h":[0,0,0.5,0.14,0,0,0,0.7,0.5,0.91,0.3,0,0.22,0,0,0.33,0,0.44,0,0,0.29]},{"id":"the-dark-knight-2008","t":"The Dark Knight","y":2008,"g":["Acción","Crimen"],"d":"Christopher Nolan","q":0.85,"h":[0.49,0.39,0,0,0,0,0,0.9,0.43,0.91,0.03,0,0.09,0,0,0.27,0,0.52,0,0,0.73]},{"id":"the-exorcist-1973","t":"El exorcista","y":1973,"g":["Terror"],"d":"William Friedkin","q":0.76,"h":[0,0,0.41,0,0,0,0,0.7,0.93,0.83,0.58,0,0,0,0,0.14,0.12,0,0,0.45,0]},{"id":"the-godfather-1972","t":"El padrino","y":1972,"g":["Drama","Crimen"],"d":"Francis Ford Coppola","q":0.86,"h":[0,0,0.58,0.27,0,0,0.22,0.2,0,0.48,0.03,0,0,0,0.8,0.21,0.25,0.29,0,0.27,0.47]},{"id":"the-godfather-part-ii-1974","t":"El padrino II","y":1974,"g":["Drama","Crimen"],"d":"Francis Ford Coppola","q":0.85,"h":[0,0,0.67,0.39,0,0,0.48,0.2,0,0.65,0.03,0,0,0,0.71,0.14,0.37,0.52,0,0.09,0.65]},{"id":"the-godfather-part-iii-1990","t":"El padrino III","y":1990,"g":["Crimen","Drama"],"d":"Francis Ford Coppola","q":0.73,"h":[0,0,0.5,0.2,0,0,0.65,0.1,0,0.4,0,0,0,0,0.51,0.02,0.37,0.37,0,0.09,0.29]},{"id":"the-hangover-2009","t":"¿Qué pasó ayer?","y":2009,"g":["Comedia"],"d":"Todd Phillips","q":0.73,"h":[0.42,0.7,0,0,0.13,0.4,0,0,0,0,0,0,0.48,0,0.02,0,0,0,0.89,0,0]},{"id":"the-matrix-1999","t":"Matrix","y":1999,"g":["Acción","Ciencia ficción"],"d":"Lana Wachowski","q":0.82,"h":[0.56,0.49,0,0,0,0,0,0.5,0.22,0.31,0,0.34,0.67,0,0,0.45,0,0.52,0,0,0.73]},{"id":"the-pope-s-exorcist-2023","t":"El exorcista del papa","y":2023,"g":["Terror","Suspense"],"d":"Julius Avery","q":0.69,"h":[0.05,0.09,0,0,0,0,0,0.4,0.57,0.4,0,0,0,0,0,0,0,0,0,0,0]},{"id":"the-shining-1980","t":"El resplandor","y":1980,"g":["Terror","Suspense"],"d":"Stanley Kubrick","q":0.82,"h":[0,0,0.58,0.27,0,0,0,0.84,0.93,0.65,0,0.41,0,0,0,0.02,0,0.21,0,0.18,0]},{"id":"the-terminator-1984","t":"Terminator","y":1984,"g":["Acción","Ciencia ficción"],"d":"James Cameron","q":0.77,"h":[0.71,0.6,0,0,0,0,0,0.84,0.22,0.57,0.24,0,0.41,0,0,0.02,0,0,0,0,0.11]},{"id":"the-wild-robot-2024","t":"Robot salvaje","y":2024,"g":["Animación","Ciencia ficción"],"d":"Chris Sanders","q":0.81,"h":[0,0.19,0,0,0.71,0.63,0,0,0,0,0,0.14,0,0.48,0.61,0,0.7,0,0.25,0.27,0]},{"id":"tick-tick-boom-2021","t":"tick, tick...BOOM!","y":2021,"g":["Música","Drama"],"d":"Lin-Manuel Miranda","q":0.73,"h":[0,0.49,0,0,0.35,0.4,0.22,0,0,0,0,0,0,0.01,0.41,0,0.37,0,0.1,0.27,0]},{"id":"titanic-1997","t":"Titanic","y":1997,"g":["Drama","Romance"],"d":"James Cameron","q":0.79,"h":[0,0,0.33,0,0,0.11,0.65,0.2,0,0.05,0,0,0,0,0.51,0,0.95,0,0,0,0.91]},{"id":"toy-story-1995","t":"Toy Story","y":1995,"g":["Animación","Familia"],"d":"John Lasseter","q":0.8,"h":[0,0.6,0,0,0.78,0.78,0,0,0,0,0,0,0.09,0.3,0.41,0,0,0,0.62,0,0]},{"id":"toy-story-2-1999","t":"Toy Story 2","y":1999,"g":["Animación","Familia"],"d":"John Lasseter","q":0.76,"h":[0.05,0.6,0,0,0.78,0.7,0,0,0,0,0,0,0.09,0.3,0.41,0,0.37,0,0.62,0,0.11]},{"id":"toy-story-3-2010","t":"Toy Story 3","y":2010,"g":["Animación","Familia"],"d":"Lee Unkrich","q":0.78,"h":[0.05,0.6,0,0,0.64,0.63,0.13,0,0,0,0,0,0.09,0.19,0.41,0,0.8,0,0.62,0,0.11]},{"id":"watchmen-2009","t":"Watchmen: Los vigilantes","y":2009,"g":["Acción","Misterio"],"d":"Zack Snyder","q":0.72,"h":[0.05,0,0.25,0.02,0,0,0.04,0.3,0.29,0.74,0.3,0.01,0.35,0,0,0.02,0,0.68,0,0,0.56]},{"id":"world-war-z-2013","t":"Guerra Mundial Z","y":2013,"g":["Acción","Terror"],"d":"Marc Forster","q":0.68,"h":[0.78,0.39,0,0,0,0,0,0.8,0.15,0.22,0.17,0,0,0,0,0,0,0,0,0,0.82]},{"id":"x-men-days-of-future-past-2014","t":"X-Men: Días del futuro pasado","y":2014,"g":["Acción","Aventura"],"d":"Bryan Singer","q":0.75,"h":[0.42,0.49,0,0,0,0,0,0.3,0,0.05,0,0,0.09,0,0,0,0,0.37,0,0,0.73]},{"id":"y-tu-mama-tambien-2001","t":"Y tu mamá también","y":2001,"g":["Drama","Romance"],"d":"Alfonso Cuarón","q":0.72,"h":[0,0,0.16,0.14,0,0.26,0.48,0,0,0,0.72,0,0,0,0.61,0,0.25,0,0.32,0.73,0]}],"mean":[0.31,0.51,0.4,0.18,0.31,0.33,0.42,0.5,0.3,0.42,0.28,0.24,0.23,0.14,0.49,0.18,0.6,0.37,0.33,0.45,0.44]};
+const A = DATA.atoms, K = A.map(a => a.k), IDX = Object.fromEntries(K.map((k, i) => [k, i]));
+const FAM = { dinamica: ['Ritmo', 'var(--f-dinamica)'], atmosfera: ['Atmósfera', 'var(--f-atmosfera)'], estetica: ['Estética', 'var(--f-estetica)'], carga: ['Fondo', 'var(--f-carga)'] };
+const fmt = (x, d = 2) => x.toFixed(d).replace('.', ',');
+const el = (tag, attrs = {}, html = '') => { const e = document.createElement(tag); for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, v); e.innerHTML = html; return e; };
+const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
+
+// Héroe y paso 1: Aftersun
+const AFTER = [['carga_emocional', 0.97], ['intimidad', 0.97], ['melancolica', 0.95], ['contemplativa', 0.80], ['pausada', 0.70], ['calida', 0.70], ['luminosa', 0.40], ['humor', 0.10]];
+const after = DATA.movies.find(m => m.id === 'aftersun-2022');
+function bar(label, val, opts = {}) {
+  const r = el('div', { class: 'bar' });
+  r.append(el('span', { class: 'lbl' }, label));
+  const t = el('div', { class: 'track' });
+  if (opts.raw != null) t.append(el('div', { class: 'ghost', style: `width:${opts.raw * 100}%` }));
+  t.append(el('div', { class: 'fill', style: `width:${Math.max(0, val) * 100}%;background:${opts.color || 'var(--gold)'}` }));
+  if (opts.mean != null) t.append(el('div', { class: 'mean', style: `left:calc(${opts.mean * 100}% - 1px)` }));
+  r.append(t, el('span', { class: 'v' }, fmt(val)));
+  return r;
+}
+const hb = document.getElementById('hero-bars');
+AFTER.slice(0, 5).forEach(([k]) => hb.append(bar(A[IDX[k]].theme, after.h[IDX[k]])));
+const db = document.getElementById('distinct-bars');
+AFTER.forEach(([k, raw]) => db.append(bar(A[IDX[k]].theme, after.h[IDX[k]], { raw, mean: DATA.mean[IDX[k]] })));
+
+// Familias
+const fams = document.getElementById('families');
+for (const [f, [name, color]] of Object.entries(FAM)) {
+  const box = el('div', { class: 'fam' });
+  box.append(el('h4', { style: `color:${color}` }, name));
+  const chips = el('div', { class: 'chips' });
+  A.filter(a => a.family === f).forEach(a => chips.append(el('span', { class: 'chip', style: `color:${color}` }, a.theme)));
+  box.append(chips); fams.append(box);
+}
+
+// Paso 3: recetas de mood
+const vibeChips = document.getElementById('vibe-chips');
+function showVibe(v) {
+  document.getElementById('vibe-title').textContent = v.name;
+  document.getElementById('vibe-def').textContent = v.definition;
+  const box = document.getElementById('vibe-recipe'); box.innerHTML = '';
+  const rows = Object.entries(v.recipe).sort((a, b) => b[1] - a[1]);
+  if (!rows.length) { box.append(el('p', { class: 'muted', style: 'font-size:14px' }, 'No tiene receta de rasgos: encaja con tu perfil y le da más peso a la calidad.')); }
+  rows.forEach(([k, w]) => {
+    const r = el('div', { class: 'drow' });
+    r.append(el('span', { class: 'lbl', style: 'color:var(--sand)' }, A[IDX[k]].theme));
+    const t = el('div', { class: 'dtrack' });
+    const w2 = Math.abs(w) * 50;
+    t.append(el('div', { class: 'dfill', style: `left:${w >= 0 ? 50 : 50 - w2}%;width:${w2}%;background:${w >= 0 ? 'var(--gold)' : 'var(--rose)'}` }));
+    r.append(t, el('span', { class: 'v num', style: 'text-align:right' }, (w > 0 ? '+' : '') + fmt(w, 1)));
+    box.append(r);
+  });
+  vibeChips.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.k === v.key)));
+}
+DATA.vibes.forEach(v => { const b = el('button', { class: 'mood', type: 'button', 'data-k': v.key, 'aria-pressed': 'false' }, v.name); b.onclick = () => showVibe(v); vibeChips.append(b); });
+showVibe(DATA.vibes[0]);
+
+// Paso 5: mazo
+const ROLES = ['afin', 'afin', 'creador', 'afin', 'comodin', 'afin', 'creador', 'sorpresa', 'afin', 'afin'];
+const RN = { afin: 'afín', creador: 'creador', comodin: 'comodín', sorpresa: 'sorpresa' };
+const deck = document.getElementById('deck');
+ROLES.forEach((r, i) => deck.append(el('div', { class: `slot r-${r}` }, `${i + 1}<small>${RN[r]}</small>`)));
+
+// Paso 7: fuerza de cada acción (señal × η, de action_weights.json)
+const LEARN = [
+  ['Ver: "¡Obra maestra!" (volver a verla)', 1.3, 0.30], ['Ver: "¡Me encantó!"', 1.0, 0.25], ['Ya la vi y me encantó', 1.0, 0.20],
+  ['Onboarding: la que eliges', 0.8, 0.20], ['Ver: "Estuvo bien"', 0.4, 0.15], ['Quiero verla (sin voltear)', 0.5, 0.08],
+  ['Quiero verla (volteada)', 0.4, 0.08], ['Ya la vi (sin decir más)', 0.2, 0.03], ['Ver: "← otra"', 0, 0],
+  ['No me interesa', -0.3, 0.10], ['Onboarding: la que no eliges', -0.4, 0.20], ['Ver: "No era para mí"', -0.8, 0.25],
+];
+const max = Math.max(...LEARN.map(([, w, e]) => Math.abs(w * e)));
+const lb = document.getElementById('learn');
+LEARN.forEach(([name, w, e]) => {
+  const v = w * e, r = el('div', { class: 'lrow' });
+  r.append(el('span', {}, name));
+  const t = el('div', { class: 'track' });
+  t.append(el('div', { class: 'fill', style: `width:${Math.abs(v) / max * 100}%;background:${v >= 0 ? 'var(--gold)' : 'var(--rose)'}` }));
+  r.append(t, el('span', { class: 'v' }, (v > 0 ? '+' : v < 0 ? '−' : '') + fmt(Math.abs(v), 3)));
+  lb.append(r);
+});
+
+// Simulación
+const SIM = [
+  ['Camilo', 'Autor emotivo, íntimo, melancólico', 14, 8, 'El Romántico'],
+  ['Valentina', 'Acción, escala épica, frenética', 13, 8, 'El Explorador'],
+  ['Andrés', 'Animación, humor, nada oscuro', 18, 6, 'El Luminoso'],
+  ['Laura', 'Terror, inquietante, sombrío', 13, 7, 'El Nocturno'],
+  ['Jorge', 'Dramas complejos, crimen, setentas', 24, 5, 'El Observador'],
+  ['Sofía', 'Comedia romántica, drama luminoso', 13, 7, 'El Luminoso'],
+];
+const sb = document.querySelector('#sim tbody');
+SIM.forEach(([n, g, s, h, a]) => {
+  const tr = el('tr');
+  tr.append(el('td', {}, `<b>${n}</b>`), el('td', { class: 'muted' }, g), el('td', { class: 'n' }, `${s} señales`));
+  const hits = Array.from({ length: 10 }, (_, i) => `<i class="${i < h ? 'on' : ''}"></i>`).join('');
+  tr.append(el('td', { class: 'n' }, `${h} de 10<span class="hits" aria-hidden="true">${hits}</span>`), el('td', {}, `${a} ✓`));
+  sb.append(tr);
+});
+
+// Laboratorio: mismas fórmulas que @kinoo/engine
+const P = { tau: 0.2, gamma: 0.1, betaNo: 1, betaLow: 0.3, betaOk: 0.5, low: 15, w: 1.0, eta: 0.2 };
+const ARCH = [['El Explorador', { agil: 1, humor: 1, neon: 1, escala_epica: 1 }], ['El Observador', { contemplativa: 1, complejidad: 1, monocromatica: 1 }], ['El Romántico', { intimidad: 1, calida: 1, carga_emocional: 1 }], ['El Nocturno', { inquietante: 1, onirica: 1, sombria: 1 }], ['El Luminoso', { luminosa: 1, reconfortante: 1, pastel: 1 }]];
+const vec = o => K.map(k => o[k] || 0);
+const dot = (a, b) => a.reduce((s, x, i) => s + x * b[i], 0);
+const cos = (a, b) => { const n = Math.sqrt(dot(a, a) * dot(b, b)); return n ? dot(a, b) / n : 0; };
+const PICK_IDS = ['past-lives-2023', 'aftersun-2022', 'mad-max-fury-road-2015', 'coco-2017', 'the-shining-1980', 'parasitos-2019', 'la-la-land-2016', 'interstellar-2014', 'the-hangover-2009', 'the-godfather-1972', 'everything-everywhere-all-at-once-2022', 'toy-story-1995', 'get-out-2017', 'roma-2018', 'dune-part-two-2024', 'chungking-express-1994'];
+const byId = Object.fromEntries(DATA.movies.map(m => [m.id, m]));
+const pickable = PICK_IDS.map(id => byId[id]).filter(Boolean);
+let picked = [], mood = null;
+const picksBox = document.getElementById('picks'), moodsBox = document.getElementById('moods');
+pickable.forEach(m => { const b = el('button', { class: 'pick', type: 'button', id: 'p-' + m.id, 'aria-pressed': 'false' }, m.t); b.onclick = () => togglePick(m.id); picksBox.append(b); });
+[{ key: null, name: 'Sin mood' }, ...DATA.vibes].forEach(v => { const b = el('button', { class: 'mood', type: 'button', id: 'm-' + (v.key || 'none'), 'aria-pressed': 'false' }, v.name); b.onclick = () => { mood = v.key; render(); }; moodsBox.append(b); });
+document.getElementById('reset').onclick = () => { picked = []; mood = null; render(); };
+function togglePick(id) { picked = picked.includes(id) ? picked.filter(x => x !== id) : picked.length < 4 ? [...picked, id] : [...picked.slice(1), id]; render(); }
+function learn(ids) {
+  let u = K.map(() => 0);
+  ids.forEach(id => { const h = byId[id].h; u = u.map((x, i) => h[i] > P.tau ? x + P.eta * (Math.max(-1, Math.min(1, P.w * h[i])) - x) : x); });
+  return u;
+}
+function render() {
+  pickable.forEach(m => document.getElementById('p-' + m.id).setAttribute('aria-pressed', String(picked.includes(m.id))));
+  [{ key: null }, ...DATA.vibes].forEach(v => document.getElementById('m-' + (v.key || 'none')).setAttribute('aria-pressed', String(v.key === mood)));
+  const u = learn(picked), vibe = DATA.vibes.find(v => v.key === mood) || null;
+  const pb = document.getElementById('profile-bars'), res = document.getElementById('results'), ar = document.getElementById('arche'), note = document.getElementById('beta-note');
+  pb.innerHTML = ''; res.innerHTML = '';
+  if (!picked.length) {
+    ar.textContent = '—';
+    note.textContent = '';
+    res.append(el('div', { class: 'empty' }, 'Marca al menos una película arriba. Con cero señales, Kinoo abre con las mejor valoradas y te pide los duelos del onboarding.'));
+    pb.append(el('div', { class: 'empty' }, 'Tu perfil empieza en cero.'));
+    return;
+  }
+  ar.textContent = ARCH.map(([n, r]) => [n, cos(u, vec(r))]).sort((a, b) => b[1] - a[1])[0][0];
+  K.map((k, i) => [i, u[i]]).filter(([, v]) => v > 0.005).sort((a, b) => b[1] - a[1]).slice(0, 6).forEach(([i, v]) => pb.append(bar(A[i].theme, v, { color: FAM[A[i].family][1] })));
+  const R = vibe ? vec(vibe.recipe) : null;
+  const hasR = R && R.some(x => x !== 0);
+  const beta = !vibe ? P.betaNo : picked.length < P.low ? P.betaLow : P.betaOk;
+  const gamma = vibe && vibe.q != null ? vibe.q : P.gamma;
+  note.textContent = vibe ? `Con ${picked.length} ${picked.length === 1 ? 'señal' : 'señales'}, el perfil todavía es nuevo: tu perfil pesa ${Math.round(beta * 100)} % y el mood ${Math.round((1 - beta) * 100)} %.` : 'Sin mood, el puntaje usa solo tu perfil (y un poco de calidad).';
+  const scored = DATA.movies.filter(m => !picked.includes(m.id)).map(m => ({ m, s: beta * cos(u, m.h) + (1 - beta) * (hasR ? cos(R, m.h) : 0) + gamma * m.q })).sort((a, b) => b.s - a.s);
+  const dirs = new Set(picked.map(id => byId[id].d)), top = [];
+  for (const x of scored) { if (top.length === 5) break; if (dirs.has(x.m.d)) continue; dirs.add(x.m.d); top.push(x); }
+  top.forEach(({ m }) => {
+    const c = K.map((k, i) => [i, u[i] * m.h[i] + (hasR ? R[i] * m.h[i] : 0)]).filter(([, v]) => v > 1e-6).sort((a, b) => b[1] - a[1]).slice(0, 2).map(([i]) => A[i].label);
+    const why = !c.length ? 'Una de las mejor valoradas para empezar a conocerte.' : vibe && vibe.key !== 'cine_del_bueno' ? `Responde a tu forma de ${vibe.name.toLowerCase()}: ${c.join(' y ')}.` : `Encaja con tu gusto por historias ${c.join(' y ')}.`;
+    const card = el('div', { class: 'res' });
+    card.append(el('div', { class: 't' }, m.t), el('div', { class: 'm' }, `${m.y} · ${(m.g || []).join(', ')} · ${m.d || ''}`), el('div', { class: 'w' }, why));
+    res.append(card);
+  });
+}
+picked = ['aftersun-2022', 'past-lives-2023'].filter(id => byId[id]);
+mood = 'llorar_bonito';
+render();
+</script>

@@ -56,6 +56,8 @@ npm run lint && npm run format
 | Una tabla o columna nueva | `packages/db/migrations/00NN_….sql` + `packages/db/src/rows.ts` | Prueba en `packages/db/test/` |
 | Un endpoint nuevo | Caso de uso en `packages/core/src/service.ts`, ruta en `apps/api/src/handler.ts`, tipo en `packages/shared/src/api.ts` | Prueba en `apps/api/test/http.test.ts` y documentarlo en `docs/guias/contrato-api.md` |
 | Conectar una pantalla | `docs/guias/integrar-un-front-nuevo.md` | e2e en `apps/web/e2e/` |
+| Un texto nuevo en pantalla | Límite en `packages/config/data/params.json` y recorte con `fitText()` en el back (`display.*`) | Tabla en `docs/guias/limites-de-texto.md` y `apps/web/e2e/cartas.spec.ts` |
+| Un evento nuevo | Tipo en `packages/shared/src/events.ts`, peso en `packages/config/data/action_weights.json` | Prueba en `packages/engine/test`; revisar `docs/PREGUNTAS-RECOLECCION-DE-DATOS.md` |
 
 ## Convenciones
 
