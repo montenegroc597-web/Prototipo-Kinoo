@@ -2,5 +2,19 @@
   "name": "@kinoo/web",
   "version": "2.0.0",
   "private": true,
-  "description": "El prototipo de Kinoo (front). Sin build propio: scripts/build-site.mjs lo copia a site/ y agrega el motor para el modo demo."
+  "type": "module",
+  "description": "Front de Kinoo: el prototipo navegable (public/) y el modo demo, que corre el motor en el navegador (src/).",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "serve": "node scripts/serve.mjs",
+    "check:routes": "node scripts/check-routes.mjs",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "@kinoo/config": "*",
+    "@kinoo/core": "*",
+    "@kinoo/engine": "*",
+    "@kinoo/shared": "*",
+    "@kinoo/catalog": "*"
+  }
 }

@@ -1,0 +1,208 @@
+{
+  "_simulado": true,
+  "_id_verificado": true,
+  "id": 426063,
+  "imdb_id": "tt5040012",
+  "title": "Nosferatu",
+  "original_title": "Nosferatu",
+  "original_language": "en",
+  "release_date": "2024-12-25",
+  "runtime": 132,
+  "status": "Released",
+  "adult": false,
+  "genres": [
+    {
+      "id": 27,
+      "name": "Terror"
+    },
+    {
+      "id": 14,
+      "name": "Fantasía"
+    }
+  ],
+  "overview": "Una joven atormentada por una presencia oscura ve cómo su vida se cruza con la de un antiguo conde de los Cárpatos. Su obsesión desata una ola de terror que se extiende sobre quienes la rodean.",
+  "tagline": "Una sombra que no se puede ignorar.",
+  "vote_average": 6.8,
+  "vote_count": 3000,
+  "popularity": 78.9,
+  "poster_path": null,
+  "backdrop_path": null,
+  "production_countries": [
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    },
+    {
+      "iso_3166_1": "GB",
+      "name": "United Kingdom"
+    },
+    {
+      "iso_3166_1": "CZ",
+      "name": "Czech Republic"
+    }
+  ],
+  "spoken_languages": [
+    {
+      "iso_639_1": "en",
+      "english_name": "English",
+      "name": "English"
+    }
+  ],
+  "budget": 50000000,
+  "revenue": 181000000,
+  "credits": {
+    "cast": [
+      {
+        "id": null,
+        "name": "Lily-Rose Depp",
+        "character": "Ellen Hutter",
+        "order": 0
+      },
+      {
+        "id": null,
+        "name": "Nicholas Hoult",
+        "character": "Thomas Hutter",
+        "order": 1
+      },
+      {
+        "id": null,
+        "name": "Bill Skarsgård",
+        "character": "Count Orlok",
+        "order": 2
+      },
+      {
+        "id": null,
+        "name": "Aaron Taylor-Johnson",
+        "character": "Friedrich Harding",
+        "order": 3
+      },
+      {
+        "id": null,
+        "name": "Emma Corrin",
+        "character": "Anna Harding",
+        "order": 4
+      },
+      {
+        "id": null,
+        "name": "Willem Dafoe",
+        "character": "Prof. Albin Eberhart von Franz",
+        "order": 5
+      },
+      {
+        "id": null,
+        "name": "Ralph Ineson",
+        "character": "Dr. Wilhelm Sievers",
+        "order": 6
+      }
+    ],
+    "crew": [
+      {
+        "id": null,
+        "name": "Robert Eggers",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "Robert Eggers",
+        "job": "Screenplay",
+        "department": "Writing"
+      },
+      {
+        "id": null,
+        "name": "Robin Carolan",
+        "job": "Original Music Composer",
+        "department": "Sound"
+      }
+    ]
+  },
+  "keywords": {
+    "keywords": [
+      {
+        "id": null,
+        "name": "vampire"
+      },
+      {
+        "id": null,
+        "name": "gothic"
+      },
+      {
+        "id": null,
+        "name": "remake"
+      },
+      {
+        "id": null,
+        "name": "obsession"
+      },
+      {
+        "id": null,
+        "name": "plague"
+      },
+      {
+        "id": null,
+        "name": "19th century"
+      },
+      {
+        "id": null,
+        "name": "supernatural horror"
+      },
+      {
+        "id": null,
+        "name": "castle"
+      },
+      {
+        "id": null,
+        "name": "possession"
+      },
+      {
+        "id": null,
+        "name": "germany"
+      }
+    ]
+  },
+  "reviews": {
+    "page": 1,
+    "total_results": 2,
+    "results": [
+      {
+        "author": "sombras_y_luz",
+        "author_details": {
+          "rating": 8
+        },
+        "content": "Visualmente deslumbrante, con una atmósfera gótica que se siente casi táctil. El ritmo es pausado pero la tensión nunca se afloja, y el diseño de sonido es fantástico.",
+        "created_at": "2025-01-05T18:20:44.000Z",
+        "id": "677a1b2c3d4e5f60718293a4"
+      },
+      {
+        "author": "reelTalker88",
+        "author_details": {
+          "rating": 7
+        },
+        "content": "A gorgeous, committed take on the classic. Some of the dialogue gets a bit stiff, but the cinematography and the performances carry it through.",
+        "created_at": "2025-01-12T09:51:02.000Z",
+        "id": "678b2c3d4e5f60718293a4b5"
+      }
+    ]
+  },
+  "watch/providers": {
+    "results": {
+      "CO": {
+        "link": "https://www.themoviedb.org/movie/426063/watch?locale=CO",
+        "flatrate": [
+          {
+            "provider_id": 119,
+            "provider_name": "Amazon Prime Video",
+            "logo_path": null,
+            "display_priority": 2
+          },
+          {
+            "provider_id": 1899,
+            "provider_name": "Max",
+            "logo_path": null,
+            "display_priority": 4
+          }
+        ]
+      }
+    }
+  }
+}

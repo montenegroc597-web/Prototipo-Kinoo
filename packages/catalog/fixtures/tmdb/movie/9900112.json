@@ -1,0 +1,182 @@
+{
+  "_simulado": true,
+  "_id_verificado": false,
+  "id": 9900112,
+  "imdb_id": "tt0245574",
+  "title": "Y tu mamá también",
+  "original_title": "Y tu mamá también",
+  "original_language": "es",
+  "release_date": "2001-06-08",
+  "runtime": 106,
+  "status": "Released",
+  "adult": false,
+  "genres": [
+    {
+      "id": 18,
+      "name": "Drama"
+    },
+    {
+      "id": 10749,
+      "name": "Romance"
+    },
+    {
+      "id": 35,
+      "name": "Comedia"
+    }
+  ],
+  "overview": "Dos adolescentes amigos emprenden un viaje por carretera hacia una playa secreta junto a una mujer mayor que ellos. Entre bromas y confesiones, el viaje transforma su amistad y su manera de ver el mundo.",
+  "tagline": "",
+  "vote_average": 7.4,
+  "vote_count": 2000,
+  "popularity": 22.1,
+  "poster_path": null,
+  "backdrop_path": null,
+  "production_countries": [
+    {
+      "iso_3166_1": "MX",
+      "name": "Mexico"
+    }
+  ],
+  "spoken_languages": [
+    {
+      "iso_639_1": "es",
+      "english_name": "Spanish",
+      "name": "Español"
+    }
+  ],
+  "budget": 2000000,
+  "revenue": 33600000,
+  "credits": {
+    "cast": [
+      {
+        "id": null,
+        "name": "Gael García Bernal",
+        "character": "Julio Zapata",
+        "order": 0
+      },
+      {
+        "id": null,
+        "name": "Diego Luna",
+        "character": "Tenoch Iturbide",
+        "order": 1
+      },
+      {
+        "id": null,
+        "name": "Maribel Verdú",
+        "character": "Luisa Cortés",
+        "order": 2
+      },
+      {
+        "id": null,
+        "name": "Diana Bracho",
+        "character": "Silvia Allende de Iturbide",
+        "order": 3
+      },
+      {
+        "id": null,
+        "name": "Ana López Mercado",
+        "character": "Ana Morelos",
+        "order": 4
+      },
+      {
+        "id": null,
+        "name": "Nathan Grinberg",
+        "character": "Jano Ovalle",
+        "order": 5
+      }
+    ],
+    "crew": [
+      {
+        "id": null,
+        "name": "Alfonso Cuarón",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "Carlos Cuarón",
+        "job": "Screenplay",
+        "department": "Writing"
+      }
+    ]
+  },
+  "keywords": {
+    "keywords": [
+      {
+        "id": null,
+        "name": "road trip"
+      },
+      {
+        "id": null,
+        "name": "coming of age"
+      },
+      {
+        "id": null,
+        "name": "friendship"
+      },
+      {
+        "id": null,
+        "name": "teenage boy"
+      },
+      {
+        "id": null,
+        "name": "beach"
+      },
+      {
+        "id": null,
+        "name": "mexico"
+      },
+      {
+        "id": null,
+        "name": "sexuality"
+      },
+      {
+        "id": null,
+        "name": "class differences"
+      },
+      {
+        "id": null,
+        "name": "love triangle"
+      }
+    ]
+  },
+  "reviews": {
+    "page": 1,
+    "total_results": 2,
+    "results": [
+      {
+        "author": "carretera_sur",
+        "author_details": {
+          "rating": 8
+        },
+        "content": "Funny, sensual and unexpectedly moving. The road trip frame hides a sharp look at class and friendship.",
+        "created_at": "2016-05-18T13:39:02.000Z",
+        "id": "573c5a8de4b1d7002b3f9e61"
+      },
+      {
+        "author": "cinema_tardio",
+        "author_details": {
+          "rating": 7
+        },
+        "content": "Frescura y honestidad en cada escena, con dos protagonistas muy naturales. El giro hacia el final le da peso a todo lo anterior.",
+        "created_at": "2019-09-04T18:20:37.000Z",
+        "id": "5d6fb2c0a8e4d3005c1a7e42"
+      }
+    ]
+  },
+  "watch/providers": {
+    "results": {
+      "CO": {
+        "link": "https://www.themoviedb.org/movie/9900112/watch?locale=CO",
+        "flatrate": [
+          {
+            "provider_id": 119,
+            "provider_name": "Amazon Prime Video",
+            "logo_path": null,
+            "display_priority": 5
+          }
+        ]
+      }
+    }
+  }
+}

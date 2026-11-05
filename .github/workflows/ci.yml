@@ -2,26 +2,65 @@ name: CI
 
 on:
   push:
-    branches: [main, back/algoritmo-v2]
+    branches: [main]
   pull_request:
 
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  verificar:
+  calidad:
+    name: Lint, tipos y semillas
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
+        with: { node-version-file: .nvmrc, cache: npm }
       - run: npm ci
-      - name: Semillas SQL al día con data/
-        run: npm run seed -- --check
+      - run: npm run lint
       - run: npm run typecheck
-      - run: npm test
+      - name: Semillas SQL al día con packages/config y packages/catalog
+        run: npm run db:seeds:check
+
+  unitarias:
+    name: Pruebas unitarias (motor, núcleo, catálogo, simulador)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version-file: .nvmrc, cache: npm }
+      - run: npm ci
+      - run: npm run test:unit
+
+  integracion:
+    name: Integración (PostgreSQL en memoria, RLS, API HTTP)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version-file: .nvmrc, cache: npm }
+      - run: npm ci
+      - run: npm run test:integration
+
+  e2e:
+    name: Front (build, rutas y e2e)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version-file: .nvmrc, cache: npm }
+      - run: npm ci
       - run: npm run build
-      - run: npm run check:site
-      - name: Navegador para E2E
-        run: npx playwright install --with-deps chromium
-      - run: npm run e2e
+      - run: npm run check:routes -w @kinoo/web
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright
+          path: apps/web/test-results

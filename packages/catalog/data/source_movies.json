@@ -1,0 +1,2196 @@
+{
+  "_doc": "Generado por packages/catalog/scripts/fetch.ts. No editar a mano: vuelve a correr npm run catalog:fetch.",
+  "source": "tmdb_simulado",
+  "fetched_at": "2026-11-05T00:00:00.000Z",
+  "country": "CO",
+  "attribution": "Datos de películas: TMDB. This product uses the TMDB API but is not endorsed or certified by TMDB. Plataformas: JustWatch.",
+  "quotas": {
+    "total": 38,
+    "latam": 6,
+    "latamShare": 0.15789473684210525,
+    "pre2000": 8,
+    "pre2000Share": 0.21052631578947367,
+    "genres": 15
+  },
+  "movies": [
+    {
+      "id": "aftersun-2022",
+      "tmdb_id": 965150,
+      "imdb_id": "tt19770238",
+      "tmdb_id_verified": true,
+      "title": "Aftersun",
+      "original_title": "Aftersun",
+      "year": 2022,
+      "runtime_min": 101,
+      "genres": [
+        "Drama"
+      ],
+      "directors": [
+        "Charlotte Wells"
+      ],
+      "cast": [
+        "Paul Mescal",
+        "Frankie Corio",
+        "Celia Rowlson-Hall",
+        "Sally Messham",
+        "Brooklyn Toulson",
+        "Spencer Stevenson"
+      ],
+      "countries": [
+        "GB",
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.7,
+      "vote_count": 1700,
+      "popularity": 22.4,
+      "poster_path": null,
+      "overview": "Años después, una mujer recuerda unas vacaciones de verano con su padre en un resort de Turquía, buscando entender al hombre que él era.",
+      "keywords": [
+        "father daughter relationship",
+        "vacation",
+        "memory",
+        "turkey",
+        "resort",
+        "coming of age",
+        "single father",
+        "1990s",
+        "home video"
+      ],
+      "reviews": [
+        "Devastadora en silencio. Mescal y Corio construyen una relación que se siente absolutamente real.",
+        "Subtle, haunting and deeply personal. It trusts what it leaves unsaid."
+      ],
+      "providers": {
+        "CO": [
+          "Max",
+          "Apple TV"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "amores-perros-2000",
+      "tmdb_id": 9900111,
+      "imdb_id": "tt0245712",
+      "tmdb_id_verified": false,
+      "title": "Amores perros",
+      "original_title": "Amores perros",
+      "year": 2000,
+      "runtime_min": 154,
+      "genres": [
+        "Drama",
+        "Suspense"
+      ],
+      "directors": [
+        "Alejandro González Iñárritu"
+      ],
+      "cast": [
+        "Emilio Echevarría",
+        "Gael García Bernal",
+        "Goya Toledo",
+        "Álvaro Guerrero",
+        "Vanessa Bauche",
+        "Jorge Salinas"
+      ],
+      "countries": [
+        "MX"
+      ],
+      "original_language": "es",
+      "vote_average": 7.8,
+      "vote_count": 2700,
+      "popularity": 24.6,
+      "poster_path": null,
+      "overview": "Un accidente automovilístico en Ciudad de México une las vidas de tres personas muy distintas. Tres historias de amor, pérdida y lealtad, con los perros como hilo común.",
+      "keywords": [
+        "dog fighting",
+        "car accident",
+        "mexico city",
+        "anthology",
+        "hitman",
+        "brothers",
+        "nonlinear timeline",
+        "love",
+        "violence",
+        "model"
+      ],
+      "reviews": [
+        "Raw, kinetic and emotionally brutal. A debut that announced a major filmmaker.",
+        "Tres historias intensas conectadas con mucha habilidad. Es dura, pero muy humana."
+      ],
+      "providers": {
+        "CO": [
+          "Max"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "arrival-2016",
+      "tmdb_id": 329865,
+      "imdb_id": "tt2543164",
+      "tmdb_id_verified": true,
+      "title": "La llegada",
+      "original_title": "Arrival",
+      "year": 2016,
+      "runtime_min": 116,
+      "genres": [
+        "Drama",
+        "Ciencia ficción"
+      ],
+      "directors": [
+        "Denis Villeneuve"
+      ],
+      "cast": [
+        "Amy Adams",
+        "Jeremy Renner",
+        "Forest Whitaker",
+        "Michael Stuhlbarg",
+        "Tzi Ma",
+        "Mark O'Brien"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.6,
+      "vote_count": 18000,
+      "popularity": 45.9,
+      "poster_path": null,
+      "overview": "Cuando naves extraterrestres aparecen en distintos puntos del planeta, una lingüista es reclutada para descubrir cómo comunicarse con los visitantes.",
+      "keywords": [
+        "linguistics",
+        "alien contact",
+        "extraterrestrial technology",
+        "based on short story",
+        "language barrier",
+        "first contact",
+        "time",
+        "spacecraft",
+        "mother daughter relationship"
+      ],
+      "reviews": [
+        "Ciencia ficción inteligente y muy humana. Amy Adams logra que cada escena pese emocionalmente.",
+        "Thoughtful, patient and visually striking. A rare blockbuster that trusts its audience."
+      ],
+      "providers": {
+        "CO": [
+          "Netflix",
+          "Max"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "avengers-endgame-2019",
+      "tmdb_id": 299534,
+      "imdb_id": "tt4154796",
+      "tmdb_id_verified": true,
+      "title": "Avengers: Endgame",
+      "original_title": "Avengers: Endgame",
+      "year": 2019,
+      "runtime_min": 181,
+      "genres": [
+        "Aventura",
+        "Ciencia ficción",
+        "Acción"
+      ],
+      "directors": [
+        "Anthony Russo",
+        "Joe Russo"
+      ],
+      "cast": [
+        "Robert Downey Jr.",
+        "Chris Evans",
+        "Mark Ruffalo",
+        "Chris Hemsworth",
+        "Scarlett Johansson",
+        "Jeremy Renner",
+        "Josh Brolin"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 8.2,
+      "vote_count": 26000,
+      "popularity": 96.3,
+      "poster_path": null,
+      "overview": "Tras los devastadores eventos que dejaron al universo en ruinas, los Vengadores restantes se reúnen una vez más. Decididos a deshacer el daño, preparan una última misión.",
+      "keywords": [
+        "superhero",
+        "time travel",
+        "based on comic",
+        "marvel cinematic universe (mcu)",
+        "sacrifice",
+        "alien invasion",
+        "super power",
+        "post-apocalyptic future",
+        "ensemble cast",
+        "sequel"
+      ],
+      "reviews": [
+        "An emotional and satisfying finale to over a decade of storytelling. The payoffs land and the cast delivers.",
+        "Larga pero muy bien aprovechada, con momentos épicos y otros muy emotivos. Una despedida a la altura para los fans."
+      ],
+      "providers": {
+        "CO": [
+          "Disney+"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "central-do-brasil-1998",
+      "tmdb_id": 9900113,
+      "imdb_id": null,
+      "tmdb_id_verified": false,
+      "title": "Estación central de Brasil",
+      "original_title": "Central do Brasil",
+      "year": 1998,
+      "runtime_min": 113,
+      "genres": [
+        "Drama"
+      ],
+      "directors": [
+        "Walter Salles"
+      ],
+      "cast": [
+        "Fernanda Montenegro",
+        "Vinícius de Oliveira",
+        "Marília Pêra",
+        "Soia Lira",
+        "Othon Bastos",
+        "Otávio Augusto"
+      ],
+      "countries": [
+        "BR",
+        "FR"
+      ],
+      "original_language": "pt",
+      "vote_average": 8,
+      "vote_count": 1000,
+      "popularity": 18.4,
+      "poster_path": null,
+      "overview": "Una mujer que escribe cartas para analfabetos en una estación de Río de Janeiro se ve obligada a ayudar a un niño que acaba de perder a su madre. Juntos emprenden un viaje por el interior de Brasil en busca de su padre.",
+      "keywords": [
+        "rio de janeiro",
+        "letter writing",
+        "road trip",
+        "orphan",
+        "search for father",
+        "brazil",
+        "train station",
+        "redemption",
+        "illiteracy"
+      ],
+      "reviews": [
+        "A tender, quietly powerful road movie. Montenegro's performance carries the whole film.",
+        "Una historia sencilla contada con enorme sensibilidad. Los dos protagonistas logran una conexión muy genuina."
+      ],
+      "providers": {
+        "CO": [
+          "Mubi"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "chungking-express-1994",
+      "tmdb_id": 9900115,
+      "imdb_id": "tt0109424",
+      "tmdb_id_verified": false,
+      "title": "Chungking Express",
+      "original_title": "重慶森林",
+      "year": 1994,
+      "runtime_min": 102,
+      "genres": [
+        "Drama",
+        "Romance",
+        "Comedia"
+      ],
+      "directors": [
+        "Wong Kar-wai"
+      ],
+      "cast": [
+        "Brigitte Lin",
+        "Takeshi Kaneshiro",
+        "Tony Leung Chiu-wai",
+        "Faye Wong",
+        "Valerie Chow",
+        "Chen Jinquan"
+      ],
+      "countries": [
+        "HK"
+      ],
+      "original_language": "cn",
+      "vote_average": 7.9,
+      "vote_count": 1300,
+      "popularity": 19.6,
+      "poster_path": null,
+      "overview": "Dos policías solitarios de Hong Kong intentan superar sus desamores en historias que se cruzan en las calles de la ciudad. Un retrato melancólico y juguetón de la soledad urbana.",
+      "keywords": [
+        "hong kong",
+        "policeman",
+        "loneliness",
+        "unrequited love",
+        "heartbreak",
+        "snack bar",
+        "drug smuggling",
+        "urban life",
+        "romance",
+        "neo-noir"
+      ],
+      "reviews": [
+        "Dreamy, restless and full of longing. The camerawork and music turn small moments into something magical.",
+        "Una película con mucho estilo y una ternura inesperada. Perfecta para dejarse llevar por su ritmo y su banda sonora."
+      ],
+      "providers": {
+        "CO": [
+          "Mubi"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "coco-2017",
+      "tmdb_id": 354912,
+      "imdb_id": "tt2380307",
+      "tmdb_id_verified": true,
+      "title": "Coco",
+      "original_title": "Coco",
+      "year": 2017,
+      "runtime_min": 105,
+      "genres": [
+        "Animación",
+        "Familia",
+        "Fantasía"
+      ],
+      "directors": [
+        "Lee Unkrich",
+        "Adrian Molina"
+      ],
+      "cast": [
+        "Anthony Gonzalez",
+        "Gael García Bernal",
+        "Benjamin Bratt",
+        "Alanna Ubach",
+        "Renée Victor",
+        "Ana Ofelia Murguía"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 8.2,
+      "vote_count": 19000,
+      "popularity": 79.1,
+      "poster_path": null,
+      "overview": "Miguel, un niño que sueña con ser músico en una familia que lo prohíbe, viaja a la Tierra de los Muertos y busca descubrir la verdad sobre su historia familiar.",
+      "keywords": [
+        "dia de los muertos",
+        "mexico",
+        "music",
+        "guitar",
+        "afterlife",
+        "family",
+        "skeleton",
+        "boy",
+        "musician",
+        "ancestors"
+      ],
+      "reviews": [
+        "Colorida y profundamente emotiva. Retrata la tradición mexicana con respeto y la música es inolvidable.",
+        "Gorgeous animation and a story that earns every tear. One of Pixar's finest."
+      ],
+      "providers": {
+        "CO": [
+          "Disney+"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "el-abrazo-de-la-serpiente-2015",
+      "tmdb_id": 9900110,
+      "imdb_id": null,
+      "tmdb_id_verified": false,
+      "title": "El abrazo de la serpiente",
+      "original_title": "El abrazo de la serpiente",
+      "year": 2015,
+      "runtime_min": 125,
+      "genres": [
+        "Aventura",
+        "Drama",
+        "Historia"
+      ],
+      "directors": [
+        "Ciro Guerra"
+      ],
+      "cast": [
+        "Nilbio Torres",
+        "Antonio Bolívar Salvador",
+        "Jan Bijvoet",
+        "Brionne Davis",
+        "Yauenkü Migue",
+        "Luigi Sciamanna"
+      ],
+      "countries": [
+        "CO",
+        "VE",
+        "AR"
+      ],
+      "original_language": "es",
+      "vote_average": 7.5,
+      "vote_count": 500,
+      "popularity": 14.8,
+      "poster_path": null,
+      "overview": "Karamakate, un chamán amazónico último sobreviviente de su pueblo, guía a dos científicos separados por décadas en la búsqueda de una planta sagrada. Un viaje por el río que enfrenta dos formas de entender el mundo.",
+      "keywords": [
+        "amazon rainforest",
+        "shaman",
+        "colonialism",
+        "river",
+        "indigenous",
+        "explorer",
+        "yakruna",
+        "black and white",
+        "based on diary",
+        "colombia"
+      ],
+      "reviews": [
+        "A hypnotic journey up the river in stunning black and white. It treats its subject with real respect and depth.",
+        "Una experiencia sensorial y reflexiva sobre la selva y el choque de culturas. Exige paciencia, pero deja huella."
+      ],
+      "providers": {
+        "CO": [
+          "Prime Video"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "eternal-sunshine-of-the-spotless-mind-2004",
+      "tmdb_id": 38,
+      "imdb_id": "tt0338013",
+      "tmdb_id_verified": true,
+      "title": "Eterno resplandor de una mente sin recuerdos",
+      "original_title": "Eternal Sunshine of the Spotless Mind",
+      "year": 2004,
+      "runtime_min": 108,
+      "genres": [
+        "Ciencia ficción",
+        "Romance",
+        "Drama"
+      ],
+      "directors": [
+        "Michel Gondry"
+      ],
+      "cast": [
+        "Jim Carrey",
+        "Kate Winslet",
+        "Kirsten Dunst",
+        "Mark Ruffalo",
+        "Elijah Wood",
+        "Tom Wilkinson"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 8.1,
+      "vote_count": 15000,
+      "popularity": 38.5,
+      "poster_path": null,
+      "overview": "Tras una ruptura dolorosa, un hombre recurre a un procedimiento para borrar de su mente los recuerdos de su ex pareja.",
+      "keywords": [
+        "male friendship",
+        "memory loss",
+        "erasing memory",
+        "breakup",
+        "surrealism",
+        "love",
+        "psychology",
+        "dream",
+        "new york city"
+      ],
+      "reviews": [
+        "Una de las mejores películas sobre el amor y el recuerdo. La he visto cinco veces y siempre encuentro algo nuevo.",
+        "Inventive, funny and devastating. Carrey and Winslet are both at their best."
+      ],
+      "providers": {
+        "CO": [
+          "Prime Video",
+          "Apple TV"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "everything-everywhere-all-at-once-2022",
+      "tmdb_id": 545611,
+      "imdb_id": "tt6710474",
+      "tmdb_id_verified": true,
+      "title": "Todo en todas partes al mismo tiempo",
+      "original_title": "Everything Everywhere All at Once",
+      "year": 2022,
+      "runtime_min": 139,
+      "genres": [
+        "Comedia",
+        "Acción",
+        "Fantasía"
+      ],
+      "directors": [
+        "Daniel Kwan",
+        "Daniel Scheinert"
+      ],
+      "cast": [
+        "Michelle Yeoh",
+        "Stephanie Hsu",
+        "Ke Huy Quan",
+        "Jamie Lee Curtis",
+        "James Hong",
+        "Jenny Slate"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.8,
+      "vote_count": 7000,
+      "popularity": 63.7,
+      "poster_path": null,
+      "overview": "Una inmigrante china agobiada por su lavandería y su familia descubre que debe conectar con versiones de sí misma en otros universos para salvar el multiverso.",
+      "keywords": [
+        "multiverse",
+        "immigrant",
+        "laundromat",
+        "mother daughter relationship",
+        "martial arts",
+        "parallel universe",
+        "family",
+        "irs",
+        "absurdism",
+        "nihilism"
+      ],
+      "reviews": [
+        "Caótica, graciosa y sorprendentemente emotiva. No se parece a nada que hayas visto.",
+        "Wildly inventive with a huge heart underneath the madness. Yeoh and Quan are fantastic."
+      ],
+      "providers": {
+        "CO": [
+          "Prime Video",
+          "Max"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "her-2013",
+      "tmdb_id": 152601,
+      "imdb_id": "tt1798709",
+      "tmdb_id_verified": true,
+      "title": "Her",
+      "original_title": "Her",
+      "year": 2013,
+      "runtime_min": 126,
+      "genres": [
+        "Romance",
+        "Ciencia ficción",
+        "Drama"
+      ],
+      "directors": [
+        "Spike Jonze"
+      ],
+      "cast": [
+        "Joaquin Phoenix",
+        "Scarlett Johansson",
+        "Amy Adams",
+        "Rooney Mara",
+        "Olivia Wilde",
+        "Chris Pratt"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.8,
+      "vote_count": 14000,
+      "popularity": 41.3,
+      "poster_path": null,
+      "overview": "En un futuro cercano, un escritor solitario desarrolla un vínculo inesperado con un sistema operativo inteligente diseñado para adaptarse a cada usuario.",
+      "keywords": [
+        "artificial intelligence (a.i.)",
+        "loneliness",
+        "operating system",
+        "future",
+        "love",
+        "divorce",
+        "letter writer",
+        "los angeles, california",
+        "virtual assistant"
+      ],
+      "reviews": [
+        "Tierna y melancólica. Habla de la soledad moderna con una sensibilidad rara de ver.",
+        "Phoenix is remarkable in a nearly solo performance. A gentle, thoughtful film that lingers."
+      ],
+      "providers": {
+        "CO": [
+          "Netflix",
+          "Max"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "hereditary-2018",
+      "tmdb_id": 493922,
+      "imdb_id": "tt7784604",
+      "tmdb_id_verified": true,
+      "title": "El legado del diablo",
+      "original_title": "Hereditary",
+      "year": 2018,
+      "runtime_min": 127,
+      "genres": [
+        "Terror",
+        "Drama",
+        "Misterio"
+      ],
+      "directors": [
+        "Ari Aster"
+      ],
+      "cast": [
+        "Toni Collette",
+        "Alex Wolff",
+        "Milly Shapiro",
+        "Ann Dowd",
+        "Gabriel Byrne",
+        "Mallory Bechtel"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.3,
+      "vote_count": 7000,
+      "popularity": 58.4,
+      "poster_path": null,
+      "overview": "Tras la muerte de su matriarca, una familia comienza a descubrir secretos cada vez más inquietantes sobre su linaje. Cuanto más intentan escapar de su destino, más se adentran en una pesadilla.",
+      "keywords": [
+        "grief",
+        "family",
+        "occult",
+        "cult",
+        "death",
+        "supernatural",
+        "mother son relationship",
+        "dollhouse",
+        "psychological horror"
+      ],
+      "reviews": [
+        "A slow-burn nightmare anchored by an extraordinary lead performance. The dread builds in every frame and the sound design is unsettling.",
+        "Muy buena puesta en escena y un drama familiar devastador. El tramo final divide, pero la atmósfera es difícil de olvidar."
+      ],
+      "providers": {
+        "CO": [
+          "Max",
+          "Prime Video"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "interstellar-2014",
+      "tmdb_id": 157336,
+      "imdb_id": "tt0816692",
+      "tmdb_id_verified": true,
+      "title": "Interstellar",
+      "original_title": "Interstellar",
+      "year": 2014,
+      "runtime_min": 169,
+      "genres": [
+        "Ciencia ficción",
+        "Drama",
+        "Aventura"
+      ],
+      "directors": [
+        "Christopher Nolan"
+      ],
+      "cast": [
+        "Matthew McConaughey",
+        "Anne Hathaway",
+        "Jessica Chastain",
+        "Michael Caine",
+        "Casey Affleck",
+        "Wes Bentley",
+        "David Gyasi"
+      ],
+      "countries": [
+        "US",
+        "GB"
+      ],
+      "original_language": "en",
+      "vote_average": 8.4,
+      "vote_count": 36000,
+      "popularity": 96.4,
+      "poster_path": null,
+      "overview": "Un grupo de astronautas viaja a través de un agujero de gusano en busca de un nuevo hogar para la humanidad, mientras la Tierra se enfrenta a su declive.",
+      "keywords": [
+        "space travel",
+        "black hole",
+        "wormhole",
+        "time dilation",
+        "father daughter relationship",
+        "dystopia",
+        "astronaut",
+        "future",
+        "space colony"
+      ],
+      "reviews": [
+        "Una experiencia visual y emocional enorme. La música de Zimmer y la relación entre padre e hija sostienen toda la película.",
+        "Ambitious and moving, with some dense science exposition. Still, the scale and the score make it worth seeing on the biggest screen possible."
+      ],
+      "providers": {
+        "CO": [
+          "Netflix",
+          "Prime Video"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "knives-out-2019",
+      "tmdb_id": 546554,
+      "imdb_id": "tt8946378",
+      "tmdb_id_verified": true,
+      "title": "Entre navajas y secretos",
+      "original_title": "Knives Out",
+      "year": 2019,
+      "runtime_min": 130,
+      "genres": [
+        "Misterio",
+        "Comedia",
+        "Crimen"
+      ],
+      "directors": [
+        "Rian Johnson"
+      ],
+      "cast": [
+        "Daniel Craig",
+        "Chris Evans",
+        "Ana de Armas",
+        "Jamie Lee Curtis",
+        "Michael Shannon",
+        "Toni Collette",
+        "Christopher Plummer"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.8,
+      "vote_count": 13000,
+      "popularity": 52.6,
+      "poster_path": null,
+      "overview": "Un detective privado investiga la misteriosa muerte de un célebre novelista de misterio, rodeado de una familia en la que todos tienen algo que ocultar.",
+      "keywords": [
+        "detective",
+        "whodunit",
+        "murder",
+        "family",
+        "mansion",
+        "inheritance",
+        "novelist",
+        "investigation",
+        "nurse",
+        "dysfunctional family"
+      ],
+      "reviews": [
+        "Un misterio clásico con humor afilado y un reparto en estado de gracia. Se disfruta de principio a fin.",
+        "Clever, funny and beautifully constructed. Craig clearly has a blast with his accent."
+      ],
+      "providers": {
+        "CO": [
+          "Prime Video",
+          "Netflix"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "la-la-land-2016",
+      "tmdb_id": 313369,
+      "imdb_id": "tt3783958",
+      "tmdb_id_verified": true,
+      "title": "La La Land",
+      "original_title": "La La Land",
+      "year": 2016,
+      "runtime_min": 128,
+      "genres": [
+        "Música",
+        "Romance",
+        "Drama"
+      ],
+      "directors": [
+        "Damien Chazelle"
+      ],
+      "cast": [
+        "Ryan Gosling",
+        "Emma Stone",
+        "John Legend",
+        "Rosemarie DeWitt",
+        "J.K. Simmons",
+        "Finn Wittrock"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.9,
+      "vote_count": 17000,
+      "popularity": 58.2,
+      "poster_path": null,
+      "overview": "Mia, una aspirante a actriz, y Sebastian, un pianista de jazz, se enamoran mientras persiguen sus sueños en Los Ángeles.",
+      "keywords": [
+        "los angeles, california",
+        "jazz",
+        "musical",
+        "actress",
+        "pianist",
+        "aspiring actress",
+        "romance",
+        "dreams",
+        "audition"
+      ],
+      "reviews": [
+        "Preciosa de principio a fin. Los números musicales y los colores te atrapan y el final te deja pensando varios días.",
+        "A charming throwback with gorgeous cinematography. The leads have wonderful chemistry, even if the story is simpler than the hype suggested."
+      ],
+      "providers": {
+        "CO": [
+          "Netflix",
+          "Prime Video"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "lost-in-translation-2003",
+      "tmdb_id": 153,
+      "imdb_id": "tt0335266",
+      "tmdb_id_verified": true,
+      "title": "Perdidos en Tokio",
+      "original_title": "Lost in Translation",
+      "year": 2003,
+      "runtime_min": 102,
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "directors": [
+        "Sofia Coppola"
+      ],
+      "cast": [
+        "Bill Murray",
+        "Scarlett Johansson",
+        "Giovanni Ribisi",
+        "Anna Faris",
+        "Fumihiro Hayashi",
+        "Catherine Lambert"
+      ],
+      "countries": [
+        "US",
+        "JP"
+      ],
+      "original_language": "en",
+      "vote_average": 7.4,
+      "vote_count": 7500,
+      "popularity": 29.8,
+      "poster_path": null,
+      "overview": "Un actor veterano y una joven recién casada coinciden en un hotel de Tokio y entablan una amistad inesperada en medio de su desorientación.",
+      "keywords": [
+        "tokyo, japan",
+        "hotel",
+        "loneliness",
+        "insomnia",
+        "culture clash",
+        "unlikely friendship",
+        "midlife crisis",
+        "jet lag",
+        "actor"
+      ],
+      "reviews": [
+        "Una película pequeña y silenciosa que dice muchísimo. Murray y Johansson tienen una química especial.",
+        "Quietly funny and quietly sad. The atmosphere does most of the storytelling."
+      ],
+      "providers": {
+        "CO": [
+          "Max"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "mad-max-fury-road-2015",
+      "tmdb_id": 76341,
+      "imdb_id": "tt1392190",
+      "tmdb_id_verified": true,
+      "title": "Mad Max: Furia en el camino",
+      "original_title": "Mad Max: Fury Road",
+      "year": 2015,
+      "runtime_min": 120,
+      "genres": [
+        "Acción",
+        "Aventura",
+        "Ciencia ficción"
+      ],
+      "directors": [
+        "George Miller"
+      ],
+      "cast": [
+        "Tom Hardy",
+        "Charlize Theron",
+        "Nicholas Hoult",
+        "Hugh Keays-Byrne",
+        "Rosie Huntington-Whiteley",
+        "Zoë Kravitz",
+        "Riley Keough"
+      ],
+      "countries": [
+        "AU",
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.6,
+      "vote_count": 22000,
+      "popularity": 67.8,
+      "poster_path": null,
+      "overview": "En un desierto postapocalíptico, Max se une a la comandante Furiosa en una huida desesperada a través del yermo, perseguidos por un tirano y su ejército.",
+      "keywords": [
+        "post-apocalyptic future",
+        "desert",
+        "chase",
+        "dystopia",
+        "road trip",
+        "survival",
+        "tyrant",
+        "water",
+        "sequel",
+        "warlord"
+      ],
+      "reviews": [
+        "Dos horas de persecución pura con un diseño visual espectacular. Furiosa roba la película.",
+        "A relentless, gorgeous action film. Practical effects and world-building with almost no exposition."
+      ],
+      "providers": {
+        "CO": [
+          "Max",
+          "Netflix"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "nosferatu-2024",
+      "tmdb_id": 426063,
+      "imdb_id": "tt5040012",
+      "tmdb_id_verified": true,
+      "title": "Nosferatu",
+      "original_title": "Nosferatu",
+      "year": 2024,
+      "runtime_min": 132,
+      "genres": [
+        "Terror",
+        "Fantasía"
+      ],
+      "directors": [
+        "Robert Eggers"
+      ],
+      "cast": [
+        "Lily-Rose Depp",
+        "Nicholas Hoult",
+        "Bill Skarsgård",
+        "Aaron Taylor-Johnson",
+        "Emma Corrin",
+        "Willem Dafoe",
+        "Ralph Ineson"
+      ],
+      "countries": [
+        "US",
+        "GB",
+        "CZ"
+      ],
+      "original_language": "en",
+      "vote_average": 6.8,
+      "vote_count": 3000,
+      "popularity": 78.9,
+      "poster_path": null,
+      "overview": "Una joven atormentada por una presencia oscura ve cómo su vida se cruza con la de un antiguo conde de los Cárpatos. Su obsesión desata una ola de terror que se extiende sobre quienes la rodean.",
+      "keywords": [
+        "vampire",
+        "gothic",
+        "remake",
+        "obsession",
+        "plague",
+        "19th century",
+        "supernatural horror",
+        "castle",
+        "possession",
+        "germany"
+      ],
+      "reviews": [
+        "Visualmente deslumbrante, con una atmósfera gótica que se siente casi táctil. El ritmo es pausado pero la tensión nunca se afloja, y el diseño de sonido es fantástico.",
+        "A gorgeous, committed take on the classic. Some of the dialogue gets a bit stiff, but the cinematography and the performances carry it through."
+      ],
+      "providers": {
+        "CO": [
+          "Prime Video",
+          "Max"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "nuovo-cinema-paradiso-1988",
+      "tmdb_id": 11216,
+      "imdb_id": "tt0095765",
+      "tmdb_id_verified": true,
+      "title": "Cinema Paradiso",
+      "original_title": "Nuovo Cinema Paradiso",
+      "year": 1988,
+      "runtime_min": 124,
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "directors": [
+        "Giuseppe Tornatore"
+      ],
+      "cast": [
+        "Philippe Noiret",
+        "Salvatore Cascio",
+        "Jacques Perrin",
+        "Marco Leonardi",
+        "Agnese Nano",
+        "Leopoldo Trieste"
+      ],
+      "countries": [
+        "IT",
+        "FR"
+      ],
+      "original_language": "it",
+      "vote_average": 8.4,
+      "vote_count": 4300,
+      "popularity": 27.9,
+      "poster_path": null,
+      "overview": "Un cineasta de éxito regresa a su pueblo siciliano y recuerda su infancia junto al proyeccionista del cine local. Una carta de amor al cine y a los vínculos que nos forman.",
+      "keywords": [
+        "cinema",
+        "projectionist",
+        "sicily",
+        "nostalgia",
+        "filmmaker",
+        "childhood",
+        "friendship",
+        "first love",
+        "small town",
+        "movie theater"
+      ],
+      "reviews": [
+        "An overwhelming love letter to movies. The friendship at its center is unforgettable and the score is perfect.",
+        "Nostálgica, tierna y muy emotiva. Es de esas películas que te recuerdan por qué amas el cine."
+      ],
+      "providers": {
+        "CO": [
+          "Prime Video"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "oppenheimer-2023",
+      "tmdb_id": 872585,
+      "imdb_id": "tt15398776",
+      "tmdb_id_verified": true,
+      "title": "Oppenheimer",
+      "original_title": "Oppenheimer",
+      "year": 2023,
+      "runtime_min": 180,
+      "genres": [
+        "Drama",
+        "Historia"
+      ],
+      "directors": [
+        "Christopher Nolan"
+      ],
+      "cast": [
+        "Cillian Murphy",
+        "Emily Blunt",
+        "Matt Damon",
+        "Robert Downey Jr.",
+        "Florence Pugh",
+        "Josh Hartnett",
+        "Kenneth Branagh"
+      ],
+      "countries": [
+        "US",
+        "GB"
+      ],
+      "original_language": "en",
+      "vote_average": 8.1,
+      "vote_count": 10000,
+      "popularity": 112.3,
+      "poster_path": null,
+      "overview": "La historia del físico J. Robert Oppenheimer y su papel en el desarrollo de la bomba atómica durante la Segunda Guerra Mundial.",
+      "keywords": [
+        "atomic bomb",
+        "world war ii",
+        "physicist",
+        "manhattan project",
+        "biography",
+        "los alamos",
+        "based on true story",
+        "scientist",
+        "cold war",
+        "hearing"
+      ],
+      "reviews": [
+        "Tres horas que se pasan volando. Murphy sostiene la película y el sonido es abrumador en sala.",
+        "Dense, intense and brilliantly acted. The structure takes some patience but the payoff is strong."
+      ],
+      "providers": {
+        "CO": [
+          "Prime Video",
+          "Netflix"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "parasitos-2019",
+      "tmdb_id": 496243,
+      "imdb_id": "tt6751668",
+      "tmdb_id_verified": true,
+      "title": "Parásitos",
+      "original_title": "기생충",
+      "year": 2019,
+      "runtime_min": 132,
+      "genres": [
+        "Suspense",
+        "Comedia",
+        "Drama"
+      ],
+      "directors": [
+        "Bong Joon-ho"
+      ],
+      "cast": [
+        "Song Kang-ho",
+        "Lee Sun-kyun",
+        "Cho Yeo-jeong",
+        "Choi Woo-shik",
+        "Park So-dam",
+        "Lee Jung-eun",
+        "Jang Hye-jin"
+      ],
+      "countries": [
+        "KR"
+      ],
+      "original_language": "ko",
+      "vote_average": 8.5,
+      "vote_count": 18000,
+      "popularity": 71.5,
+      "poster_path": null,
+      "overview": "Una familia pobre se infiltra poco a poco en la vida de una familia adinerada, hasta que un hecho imprevisto altera el equilibrio entre ambas.",
+      "keywords": [
+        "class differences",
+        "social commentary",
+        "con artist",
+        "poverty",
+        "seoul, south korea",
+        "basement",
+        "dark comedy",
+        "wealth",
+        "family",
+        "tutor"
+      ],
+      "reviews": [
+        "Una obra maestra del tono: empieza como comedia y termina en otro lugar. Cada plano tiene intención.",
+        "Sharp, funny and unsettling. Bong controls every shift in mood with total confidence."
+      ],
+      "providers": {
+        "CO": [
+          "Prime Video",
+          "Max"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "past-lives-2023",
+      "tmdb_id": 666277,
+      "imdb_id": "tt13238346",
+      "tmdb_id_verified": true,
+      "title": "Vidas pasadas",
+      "original_title": "Past Lives",
+      "year": 2023,
+      "runtime_min": 106,
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "directors": [
+        "Celine Song"
+      ],
+      "cast": [
+        "Greta Lee",
+        "Teo Yoo",
+        "John Magaro",
+        "Moon Seung-ah",
+        "Leem Seung-min",
+        "Ji Hye Yoon"
+      ],
+      "countries": [
+        "US",
+        "KR"
+      ],
+      "original_language": "en",
+      "vote_average": 7.7,
+      "vote_count": 1800,
+      "popularity": 27.1,
+      "poster_path": null,
+      "overview": "Dos amigos de infancia se reencuentran décadas después de que su familia emigrara de Corea del Sur, y se preguntan qué habría sido de ellos.",
+      "keywords": [
+        "immigrant",
+        "first love",
+        "south korea",
+        "new york city",
+        "reunion",
+        "childhood friends",
+        "love triangle",
+        "destiny",
+        "playwright",
+        "long distance relationship"
+      ],
+      "reviews": [
+        "Delicada y honesta. Te deja con un nudo en la garganta sin recurrir a grandes gestos.",
+        "A beautifully restrained debut about timing and what could have been. The final scene is perfect."
+      ],
+      "providers": {
+        "CO": [
+          "Prime Video",
+          "Max"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "project-hail-mary-2026",
+      "tmdb_id": 9900004,
+      "imdb_id": null,
+      "tmdb_id_verified": false,
+      "title": "Proyecto Fin del Mundo",
+      "original_title": "Project Hail Mary",
+      "year": 2026,
+      "runtime_min": 156,
+      "genres": [
+        "Ciencia ficción",
+        "Aventura"
+      ],
+      "directors": [
+        "Phil Lord",
+        "Christopher Miller"
+      ],
+      "cast": [
+        "Ryan Gosling",
+        "Sandra Hüller",
+        "Lionel Boyce",
+        "Ken Leung",
+        "Milana Vayntrub",
+        "Priya Kansara"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.8,
+      "vote_count": 800,
+      "popularity": 88.9,
+      "poster_path": null,
+      "overview": "Un profesor de ciencias despierta solo en una nave espacial, sin recordar quién es, y descubre que de su misión depende la supervivencia de la Tierra.",
+      "keywords": [
+        "space travel",
+        "based on novel",
+        "amnesia",
+        "astronaut",
+        "first contact",
+        "alien life-form",
+        "scientist",
+        "saving the world",
+        "friendship"
+      ],
+      "reviews": [
+        "Divertida y emotiva, con una amistad improbable que se queda en la memoria. Gosling está en su mejor forma.",
+        "A warm, clever sci-fi adventure that balances humor and real stakes. Slightly long but rarely drags."
+      ],
+      "providers": {
+        "CO": [
+          "Prime Video"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "relatos-salvajes-2014",
+      "tmdb_id": 9900109,
+      "imdb_id": null,
+      "tmdb_id_verified": false,
+      "title": "Relatos salvajes",
+      "original_title": "Relatos salvajes",
+      "year": 2014,
+      "runtime_min": 122,
+      "genres": [
+        "Comedia",
+        "Drama",
+        "Suspense"
+      ],
+      "directors": [
+        "Damián Szifron"
+      ],
+      "cast": [
+        "Ricardo Darín",
+        "Óscar Martínez",
+        "Leonardo Sbaraglia",
+        "Érica Rivas",
+        "Rita Cortese",
+        "Julieta Zylberberg",
+        "Darío Grandinetti"
+      ],
+      "countries": [
+        "AR",
+        "ES"
+      ],
+      "original_language": "es",
+      "vote_average": 8.1,
+      "vote_count": 4000,
+      "popularity": 29.7,
+      "poster_path": null,
+      "overview": "Seis historias independientes muestran cómo la rabia y la injusticia empujan a personas comunes a perder el control. Una comedia negra sobre la venganza y los límites de la civilización.",
+      "keywords": [
+        "anthology",
+        "black comedy",
+        "revenge",
+        "rage",
+        "buenos aires, argentina",
+        "injustice",
+        "wedding",
+        "road rage",
+        "corruption"
+      ],
+      "reviews": [
+        "Wickedly funny and perfectly paced. Each story builds to a gleefully chaotic payoff.",
+        "Un festival de humor negro con episodios muy desiguales pero casi todos brillantes. Una de las mejores películas latinas de los últimos años."
+      ],
+      "providers": {
+        "CO": [
+          "Prime Video"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "rocky-1976",
+      "tmdb_id": 1366,
+      "imdb_id": "tt0075148",
+      "tmdb_id_verified": true,
+      "title": "Rocky",
+      "original_title": "Rocky",
+      "year": 1976,
+      "runtime_min": 120,
+      "genres": [
+        "Drama"
+      ],
+      "directors": [
+        "John G. Avildsen"
+      ],
+      "cast": [
+        "Sylvester Stallone",
+        "Talia Shire",
+        "Burt Young",
+        "Carl Weathers",
+        "Burgess Meredith",
+        "Thayer David"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.7,
+      "vote_count": 7000,
+      "popularity": 38.9,
+      "poster_path": null,
+      "overview": "Un modesto boxeador de Filadelfia recibe la oportunidad de enfrentarse al campeón mundial de peso pesado. Más que ganar, quiere demostrarse a sí mismo que puede aguantar hasta el final.",
+      "keywords": [
+        "boxing",
+        "underdog",
+        "philadelphia, pennsylvania",
+        "training",
+        "sports",
+        "heavyweight champion",
+        "love",
+        "working class",
+        "boxer"
+      ],
+      "reviews": [
+        "More a character study than a sports movie, and all the better for it. Stallone gives the role real heart.",
+        "Una historia sencilla y muy humana que emociona sin trucos. La escena de la escalinata ya es parte de la cultura popular."
+      ],
+      "providers": {
+        "CO": [
+          "Prime Video"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "roma-2018",
+      "tmdb_id": 426426,
+      "imdb_id": "tt6155172",
+      "tmdb_id_verified": true,
+      "title": "Roma",
+      "original_title": "Roma",
+      "year": 2018,
+      "runtime_min": 135,
+      "genres": [
+        "Drama"
+      ],
+      "directors": [
+        "Alfonso Cuarón"
+      ],
+      "cast": [
+        "Yalitza Aparicio",
+        "Marina de Tavira",
+        "Diego Cortina Autrey",
+        "Carlos Peralta",
+        "Marco Graf",
+        "Nancy García",
+        "Verónica García"
+      ],
+      "countries": [
+        "MX"
+      ],
+      "original_language": "es",
+      "vote_average": 7.7,
+      "vote_count": 4500,
+      "popularity": 33.5,
+      "poster_path": null,
+      "overview": "Un año en la vida de Cleo, una joven empleada doméstica de una familia de clase media en la Ciudad de México de principios de los años 70. Entre la intimidad del hogar y la agitación del país, se entrelazan afectos, pérdidas y resistencia.",
+      "keywords": [
+        "mexico city",
+        "maid",
+        "1970s",
+        "domestic worker",
+        "family",
+        "semi-autobiographical",
+        "pregnancy",
+        "social class",
+        "black and white",
+        "coming of age"
+      ],
+      "reviews": [
+        "Visually stunning and deeply personal. The long takes let you live inside Cleo's world, one quiet moment at a time.",
+        "Una película íntima y muy bien filmada. El ritmo es pausado, pero la emoción llega con fuerza."
+      ],
+      "providers": {
+        "CO": [
+          "Netflix"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "smile-2022",
+      "tmdb_id": 882598,
+      "imdb_id": "tt15474916",
+      "tmdb_id_verified": true,
+      "title": "Sonríe",
+      "original_title": "Smile",
+      "year": 2022,
+      "runtime_min": 115,
+      "genres": [
+        "Terror",
+        "Misterio"
+      ],
+      "directors": [
+        "Parker Finn"
+      ],
+      "cast": [
+        "Sosie Bacon",
+        "Jessie T. Usher",
+        "Kyle Gallner",
+        "Caitlin Stasey",
+        "Kal Penn",
+        "Robin Weigert"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 6.6,
+      "vote_count": 3300,
+      "popularity": 47.3,
+      "poster_path": null,
+      "overview": "Tras presenciar un suceso traumático con una paciente, una psiquiatra empieza a experimentar fenómenos inexplicables. Mientras la presión crece, debe averiguar qué la persigue antes de que sea demasiado tarde.",
+      "keywords": [
+        "psychiatrist",
+        "trauma",
+        "curse",
+        "hallucination",
+        "suicide",
+        "supernatural horror",
+        "creepy smile",
+        "paranoia",
+        "mental health"
+      ],
+      "reviews": [
+        "Effective scares and a very committed lead. It leans on familiar horror tropes, but the execution keeps you on edge.",
+        "Tiene momentos realmente inquietantes y una buena ambientación. La idea es mejor que el desarrollo, pero se disfruta."
+      ],
+      "providers": {
+        "CO": [
+          "Netflix",
+          "Prime Video"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "superman-2025",
+      "tmdb_id": 1061474,
+      "imdb_id": null,
+      "tmdb_id_verified": true,
+      "title": "Superman",
+      "original_title": "Superman",
+      "year": 2025,
+      "runtime_min": 129,
+      "genres": [
+        "Acción",
+        "Aventura",
+        "Ciencia ficción"
+      ],
+      "directors": [
+        "James Gunn"
+      ],
+      "cast": [
+        "David Corenswet",
+        "Rachel Brosnahan",
+        "Nicholas Hoult",
+        "Edi Gathegi",
+        "Anthony Carrigan",
+        "Nathan Fillion",
+        "Isabela Merced"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.4,
+      "vote_count": 2500,
+      "popularity": 110.6,
+      "poster_path": null,
+      "overview": "Superman debe conciliar su herencia kryptoniana con su educación humana en Kansas mientras enfrenta una nueva amenaza. Su compromiso con la justicia y la bondad será puesto a prueba.",
+      "keywords": [
+        "superhero",
+        "based on comic",
+        "dc comics",
+        "journalist",
+        "alien",
+        "kryptonian",
+        "reboot",
+        "super power",
+        "hope",
+        "superhero team"
+      ],
+      "reviews": [
+        "A warm, colorful take on the character that puts kindness front and center. Corenswet and Brosnahan have great chemistry.",
+        "Divertida y llena de energía, con un tono distinto al de otras películas del género. Por momentos se llena de personajes, pero funciona."
+      ],
+      "providers": {
+        "CO": [
+          "Max"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "the-dark-knight-2008",
+      "tmdb_id": 155,
+      "imdb_id": "tt0468569",
+      "tmdb_id_verified": true,
+      "title": "The Dark Knight",
+      "original_title": "The Dark Knight",
+      "year": 2008,
+      "runtime_min": 152,
+      "genres": [
+        "Acción",
+        "Crimen",
+        "Drama"
+      ],
+      "directors": [
+        "Christopher Nolan"
+      ],
+      "cast": [
+        "Christian Bale",
+        "Heath Ledger",
+        "Aaron Eckhart",
+        "Michael Caine",
+        "Maggie Gyllenhaal",
+        "Gary Oldman",
+        "Morgan Freeman"
+      ],
+      "countries": [
+        "US",
+        "GB"
+      ],
+      "original_language": "en",
+      "vote_average": 8.5,
+      "vote_count": 33000,
+      "popularity": 74.6,
+      "poster_path": null,
+      "overview": "Batman, con la ayuda del teniente Gordon y el fiscal Harvey Dent, enfrenta al Joker, un criminal que sume a Gotham en el caos.",
+      "keywords": [
+        "superhero",
+        "based on comic",
+        "gotham city",
+        "joker",
+        "vigilante",
+        "organized crime",
+        "crime fighter",
+        "sequel",
+        "district attorney",
+        "anarchy"
+      ],
+      "reviews": [
+        "Ledger está inolvidable. Más que una película de superhéroes, es un thriller criminal de primer nivel.",
+        "Tense, smart and relentless. It redefined what a comic book film could be."
+      ],
+      "providers": {
+        "CO": [
+          "Max",
+          "Netflix"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "the-hangover-2009",
+      "tmdb_id": 18785,
+      "imdb_id": "tt1119646",
+      "tmdb_id_verified": true,
+      "title": "¿Qué pasó ayer?",
+      "original_title": "The Hangover",
+      "year": 2009,
+      "runtime_min": 100,
+      "genres": [
+        "Comedia"
+      ],
+      "directors": [
+        "Todd Phillips"
+      ],
+      "cast": [
+        "Bradley Cooper",
+        "Ed Helms",
+        "Zach Galifianakis",
+        "Justin Bartha",
+        "Heather Graham",
+        "Ken Jeong",
+        "Jeffrey Tambor"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.3,
+      "vote_count": 17000,
+      "popularity": 41.2,
+      "poster_path": null,
+      "overview": "Tres amigos despiertan tras una despedida de soltero en Las Vegas sin recordar nada de la noche anterior. Lo peor es que el novio ha desaparecido y solo tienen unas horas para encontrarlo.",
+      "keywords": [
+        "bachelor party",
+        "las vegas",
+        "amnesia",
+        "wedding",
+        "hangover",
+        "friends",
+        "missing person",
+        "slapstick",
+        "road trip"
+      ],
+      "reviews": [
+        "Sharp, outrageous and endlessly quotable. The mystery structure keeps the jokes landing right until the end.",
+        "Una comedia muy divertida con un trío protagonista que funciona de maravilla. Algunos chistes han envejecido, pero sigue haciendo reír."
+      ],
+      "providers": {
+        "CO": [
+          "Max"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "the-matrix-1999",
+      "tmdb_id": 603,
+      "imdb_id": "tt0133093",
+      "tmdb_id_verified": true,
+      "title": "Matrix",
+      "original_title": "The Matrix",
+      "year": 1999,
+      "runtime_min": 136,
+      "genres": [
+        "Acción",
+        "Ciencia ficción"
+      ],
+      "directors": [
+        "Lana Wachowski",
+        "Lilly Wachowski"
+      ],
+      "cast": [
+        "Keanu Reeves",
+        "Laurence Fishburne",
+        "Carrie-Anne Moss",
+        "Hugo Weaving",
+        "Joe Pantoliano",
+        "Gloria Foster"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 8.2,
+      "vote_count": 26000,
+      "popularity": 84.1,
+      "poster_path": null,
+      "overview": "Un programador informático descubre que la realidad que conoce es una simulación creada por máquinas. Guiado por un grupo de rebeldes, debe decidir si está dispuesto a luchar por la humanidad.",
+      "keywords": [
+        "simulated reality",
+        "dystopia",
+        "artificial intelligence (a.i.)",
+        "hacker",
+        "martial arts",
+        "saving the world",
+        "cyberpunk",
+        "chosen one",
+        "virtual reality"
+      ],
+      "reviews": [
+        "Groundbreaking action and a genuinely clever premise. Every rewatch reveals something new in the design and ideas.",
+        "Un clásico de la ciencia ficción con secuencias de acción memorables. Su influencia se nota todavía hoy en el cine."
+      ],
+      "providers": {
+        "CO": [
+          "Max"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "the-shining-1980",
+      "tmdb_id": 694,
+      "imdb_id": "tt0081505",
+      "tmdb_id_verified": true,
+      "title": "El resplandor",
+      "original_title": "The Shining",
+      "year": 1980,
+      "runtime_min": 144,
+      "genres": [
+        "Terror",
+        "Suspense"
+      ],
+      "directors": [
+        "Stanley Kubrick"
+      ],
+      "cast": [
+        "Jack Nicholson",
+        "Shelley Duvall",
+        "Danny Lloyd",
+        "Scatman Crothers",
+        "Barry Nelson",
+        "Philip Stone",
+        "Joe Turkel"
+      ],
+      "countries": [
+        "GB",
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 8.2,
+      "vote_count": 17500,
+      "popularity": 62.4,
+      "poster_path": null,
+      "overview": "Jack Torrance acepta el puesto de cuidador de invierno en un enorme hotel aislado por la nieve, junto a su esposa y su hijo. A medida que pasan los días, la soledad y las presencias del lugar empiezan a alterar a la familia.",
+      "keywords": [
+        "hotel",
+        "based on novel or book",
+        "writer",
+        "isolation",
+        "psychological horror",
+        "haunted hotel",
+        "snowstorm",
+        "psychic power",
+        "madness",
+        "family"
+      ],
+      "reviews": [
+        "Una obra maestra del terror psicológico. Cada plano está calculado al milímetro y la tensión crece sin necesidad de recurrir a sustos fáciles. Nicholson está inmenso.",
+        "Slow, unsettling and endlessly rewatchable. The hotel itself feels like a character, and the sound design alone is worth the price of admission."
+      ],
+      "providers": {
+        "CO": [
+          "Max"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "the-terminator-1984",
+      "tmdb_id": 218,
+      "imdb_id": "tt0088247",
+      "tmdb_id_verified": true,
+      "title": "Terminator",
+      "original_title": "The Terminator",
+      "year": 1984,
+      "runtime_min": 107,
+      "genres": [
+        "Acción",
+        "Ciencia ficción"
+      ],
+      "directors": [
+        "James Cameron"
+      ],
+      "cast": [
+        "Arnold Schwarzenegger",
+        "Michael Biehn",
+        "Linda Hamilton",
+        "Paul Winfield",
+        "Lance Henriksen",
+        "Rick Rossovich"
+      ],
+      "countries": [
+        "GB",
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.7,
+      "vote_count": 13000,
+      "popularity": 52.8,
+      "poster_path": null,
+      "overview": "Un cíborg asesino es enviado desde el futuro para eliminar a una joven camarera. Un soldado de la resistencia viaja también al pasado para protegerla.",
+      "keywords": [
+        "cyborg",
+        "time travel",
+        "artificial intelligence (a.i.)",
+        "future war",
+        "robot",
+        "los angeles, california",
+        "assassin",
+        "dystopia",
+        "chase",
+        "post-apocalyptic future"
+      ],
+      "reviews": [
+        "Lean, relentless and still thrilling. A low-budget sci-fi film that turned into a landmark of the genre.",
+        "Una persecución sin descanso con un villano inolvidable. Los efectos artesanales tienen un encanto que se agradece."
+      ],
+      "providers": {
+        "CO": [
+          "Prime Video"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "the-wild-robot-2024",
+      "tmdb_id": 1184918,
+      "imdb_id": "tt29623480",
+      "tmdb_id_verified": true,
+      "title": "Robot salvaje",
+      "original_title": "The Wild Robot",
+      "year": 2024,
+      "runtime_min": 102,
+      "genres": [
+        "Animación",
+        "Ciencia ficción",
+        "Familia"
+      ],
+      "directors": [
+        "Chris Sanders"
+      ],
+      "cast": [
+        "Lupita Nyong'o",
+        "Pedro Pascal",
+        "Kit Connor",
+        "Bill Nighy",
+        "Stephanie Hsu",
+        "Mark Hamill",
+        "Catherine O'Hara"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 8.3,
+      "vote_count": 5000,
+      "popularity": 95.2,
+      "poster_path": null,
+      "overview": "Una robot llamada Roz queda varada en una isla deshabitada y debe aprender a sobrevivir en la naturaleza. Poco a poco entabla lazos con los animales del lugar y se convierte en madre adoptiva de un pequeño ganso.",
+      "keywords": [
+        "robot",
+        "island",
+        "based on novel or book",
+        "wilderness",
+        "motherhood",
+        "goose",
+        "survival",
+        "adoption",
+        "animals",
+        "artificial intelligence"
+      ],
+      "reviews": [
+        "Una película animada preciosa y muy emotiva. El apartado visual parece una pintura en movimiento y la historia le habla tanto a niños como a adultos.",
+        "Funny, warm and surprisingly moving. The animation style is gorgeous and Lupita Nyong'o gives Roz a lot of heart."
+      ],
+      "providers": {
+        "CO": [
+          "Prime Video"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "tick-tick-boom-2021",
+      "tmdb_id": 9900002,
+      "imdb_id": null,
+      "tmdb_id_verified": false,
+      "title": "tick, tick...BOOM!",
+      "original_title": "tick, tick...BOOM!",
+      "year": 2021,
+      "runtime_min": 115,
+      "genres": [
+        "Música",
+        "Drama"
+      ],
+      "directors": [
+        "Lin-Manuel Miranda"
+      ],
+      "cast": [
+        "Andrew Garfield",
+        "Alexandra Shipp",
+        "Robin de Jesús",
+        "Joshua Henry",
+        "Vanessa Hudgens",
+        "Judith Light"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.5,
+      "vote_count": 1600,
+      "popularity": 24.7,
+      "poster_path": null,
+      "overview": "En 1990, un joven compositor de teatro en Nueva York lucha por estrenar su obra mientras el reloj de sus treinta años avanza sin pausa.",
+      "keywords": [
+        "musical",
+        "biography",
+        "new york city",
+        "composer",
+        "theater",
+        "based on musical",
+        "aids",
+        "1990s",
+        "turning 30"
+      ],
+      "reviews": [
+        "Garfield está extraordinario. Una carta de amor al teatro musical que emociona sin caer en lo fácil.",
+        "Energetic and heartfelt debut from Miranda. The songs are uneven but the performances carry it."
+      ],
+      "providers": {
+        "CO": [
+          "Netflix"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "titanic-1997",
+      "tmdb_id": 597,
+      "imdb_id": "tt0120338",
+      "tmdb_id_verified": true,
+      "title": "Titanic",
+      "original_title": "Titanic",
+      "year": 1997,
+      "runtime_min": 194,
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "directors": [
+        "James Cameron"
+      ],
+      "cast": [
+        "Leonardo DiCaprio",
+        "Kate Winslet",
+        "Billy Zane",
+        "Kathy Bates",
+        "Frances Fisher",
+        "Gloria Stuart",
+        "Bill Paxton"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.9,
+      "vote_count": 25000,
+      "popularity": 92.7,
+      "poster_path": null,
+      "overview": "Una joven aristócrata y un artista de origen humilde se enamoran a bordo del lujoso transatlántico en su viaje inaugural. Su romance se ve puesto a prueba por las diferencias sociales y por el destino del barco.",
+      "keywords": [
+        "shipwreck",
+        "iceberg",
+        "ocean liner",
+        "forbidden love",
+        "class differences",
+        "epic",
+        "tragic love",
+        "based on true story",
+        "disaster",
+        "artist"
+      ],
+      "reviews": [
+        "A grand, emotional epic that still holds up. The scale of the production is breathtaking and the central romance feels sincere.",
+        "Una película enorme en todos los sentidos. Algo larga, pero la mezcla de romance y tragedia funciona muy bien."
+      ],
+      "providers": {
+        "CO": [
+          "Disney+"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "toy-story-3-2010",
+      "tmdb_id": 10193,
+      "imdb_id": "tt0435761",
+      "tmdb_id_verified": true,
+      "title": "Toy Story 3",
+      "original_title": "Toy Story 3",
+      "year": 2010,
+      "runtime_min": 103,
+      "genres": [
+        "Animación",
+        "Familia",
+        "Comedia"
+      ],
+      "directors": [
+        "Lee Unkrich"
+      ],
+      "cast": [
+        "Tom Hanks",
+        "Tim Allen",
+        "Joan Cusack",
+        "Ned Beatty",
+        "Don Rickles",
+        "Michael Keaton",
+        "Wallace Shawn",
+        "John Ratzenberger"
+      ],
+      "countries": [
+        "US"
+      ],
+      "original_language": "en",
+      "vote_average": 7.8,
+      "vote_count": 15000,
+      "popularity": 54.7,
+      "poster_path": null,
+      "overview": "Andy se va a la universidad y los juguetes terminan por error en una guardería que parece un paraíso. Woody y sus amigos deberán unirse para volver a casa y seguir juntos.",
+      "keywords": [
+        "toy",
+        "sequel",
+        "daycare",
+        "friendship",
+        "growing up",
+        "college",
+        "escape",
+        "cowboy",
+        "talking toys",
+        "pixar"
+      ],
+      "reviews": [
+        "Un cierre emotivo para la trilogía. Mezcla aventura, humor y una nostalgia que pega fuerte, sobre todo a quienes crecieron con las primeras películas.",
+        "Pixar at its best: inventive, hilarious and a genuine tearjerker. The prison-break structure in the daycare is a clever touch."
+      ],
+      "providers": {
+        "CO": [
+          "Disney+"
+        ]
+      },
+      "simulated": true
+    },
+    {
+      "id": "y-tu-mama-tambien-2001",
+      "tmdb_id": 9900112,
+      "imdb_id": "tt0245574",
+      "tmdb_id_verified": false,
+      "title": "Y tu mamá también",
+      "original_title": "Y tu mamá también",
+      "year": 2001,
+      "runtime_min": 106,
+      "genres": [
+        "Drama",
+        "Romance",
+        "Comedia"
+      ],
+      "directors": [
+        "Alfonso Cuarón"
+      ],
+      "cast": [
+        "Gael García Bernal",
+        "Diego Luna",
+        "Maribel Verdú",
+        "Diana Bracho",
+        "Ana López Mercado",
+        "Nathan Grinberg"
+      ],
+      "countries": [
+        "MX"
+      ],
+      "original_language": "es",
+      "vote_average": 7.4,
+      "vote_count": 2000,
+      "popularity": 22.1,
+      "poster_path": null,
+      "overview": "Dos adolescentes amigos emprenden un viaje por carretera hacia una playa secreta junto a una mujer mayor que ellos. Entre bromas y confesiones, el viaje transforma su amistad y su manera de ver el mundo.",
+      "keywords": [
+        "road trip",
+        "coming of age",
+        "friendship",
+        "teenage boy",
+        "beach",
+        "mexico",
+        "sexuality",
+        "class differences",
+        "love triangle"
+      ],
+      "reviews": [
+        "Funny, sensual and unexpectedly moving. The road trip frame hides a sharp look at class and friendship.",
+        "Frescura y honestidad en cada escena, con dos protagonistas muy naturales. El giro hacia el final le da peso a todo lo anterior."
+      ],
+      "providers": {
+        "CO": [
+          "Prime Video"
+        ]
+      },
+      "simulated": true
+    }
+  ]
+}

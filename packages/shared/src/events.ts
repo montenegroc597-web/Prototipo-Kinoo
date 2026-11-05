@@ -39,16 +39,40 @@ export type UndoEvent = Base<'undo', { undone_event_id: string }>;
 export type PlatformsSetEvent = Base<'platforms_set', { country: string; providers: string[] }>;
 
 export type KinooEvent =
-  | OnboardingChoiceEvent | DeckOpenedEvent | CardFlippedEvent | SavedIntentEvent | DismissedEvent
-  | MarkedSeenEvent | RewatchIntentEvent | DeckCompletedEvent | WatchProposedEvent | WatchSkippedEvent
-  | WatchStartedEvent | WatchConfirmedEvent | AttributeRefutedEvent | UndoEvent | PlatformsSetEvent;
+  | OnboardingChoiceEvent
+  | DeckOpenedEvent
+  | CardFlippedEvent
+  | SavedIntentEvent
+  | DismissedEvent
+  | MarkedSeenEvent
+  | RewatchIntentEvent
+  | DeckCompletedEvent
+  | WatchProposedEvent
+  | WatchSkippedEvent
+  | WatchStartedEvent
+  | WatchConfirmedEvent
+  | AttributeRefutedEvent
+  | UndoEvent
+  | PlatformsSetEvent;
 
 export type EventType = KinooEvent['type'];
 
 export const EVENT_TYPES: readonly EventType[] = [
-  'onboarding_choice', 'deck_opened', 'card_flipped', 'saved_intent', 'dismissed', 'marked_seen',
-  'rewatch_intent', 'deck_completed', 'watch_proposed', 'watch_skipped', 'watch_started',
-  'watch_confirmed', 'attribute_refuted', 'undo', 'platforms_set',
+  'onboarding_choice',
+  'deck_opened',
+  'card_flipped',
+  'saved_intent',
+  'dismissed',
+  'marked_seen',
+  'rewatch_intent',
+  'deck_completed',
+  'watch_proposed',
+  'watch_skipped',
+  'watch_started',
+  'watch_confirmed',
+  'attribute_refuted',
+  'undo',
+  'platforms_set',
 ];
 
 /** Filtros de momento en Ver. */

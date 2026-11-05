@@ -1,0 +1,27 @@
+{
+  "_doc": "Mazo del Equipo Kinoo (owner_kind = system). Alimenta el rol 'creador' mientras no exista Comunidad. PROVISIONAL: lo eligió el modelo que construyó el back; el equipo debe curarlo y escribir sus notas.",
+  "uuid": "00000000-0000-4000-8000-00000000c0de",
+  "owner_name": "Equipo Kinoo",
+  "title": "Para empezar con Kinoo",
+  "movie_ids": [
+    "el-abrazo-de-la-serpiente-2015",
+    "past-lives-2023",
+    "parasitos-2019",
+    "coco-2017",
+    "nuovo-cinema-paradiso-1988",
+    "mad-max-fury-road-2015",
+    "relatos-salvajes-2014",
+    "arrival-2016",
+    "chungking-express-1994",
+    "roma-2018",
+    "everything-everywhere-all-at-once-2022",
+    "central-do-brasil-1998"
+  ],
+  "notes": {
+    "el-abrazo-de-la-serpiente-2015": "Hecha en Colombia y en blanco y negro. Vale cada minuto.",
+    "past-lives-2023": "Para cuando quieras llorar despacio.",
+    "parasitos-2019": "Empieza como comedia. No termina así.",
+    "coco-2017": "La vemos cada noviembre.",
+    "relatos-salvajes-2014": "Seis historias de gente que pierde la paciencia."
+  }
+}

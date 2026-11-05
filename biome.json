@@ -1,0 +1,19 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "files": {
+    "ignore": ["**/dist/**", "**/node_modules/**", "**/test-results/**", "coverage/**", "apps/web/public/**", "infra/supabase/functions/_shared/**", "infra/supabase/migrations/**", "packages/catalog/data/**", "packages/catalog/fixtures/**", "packages/engine/sim/results.json", "package-lock.json", ".fixtures-tmp/**"]
+  },
+  "organizeImports": { "enabled": true },
+  "formatter": { "enabled": true, "indentStyle": "space", "indentWidth": 2, "lineWidth": 160 },
+  "javascript": { "formatter": { "quoteStyle": "single", "trailingCommas": "all", "semicolons": "always" } },
+  "json": { "formatter": { "enabled": false } },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "style": { "noNonNullAssertion": "off", "useTemplate": "off", "noParameterAssign": "off" },
+      "suspicious": { "noExplicitAny": "off", "noAssignInExpressions": "off" },
+      "complexity": { "noForEach": "off", "useLiteralKeys": "off" }
+    }
+  }
+}

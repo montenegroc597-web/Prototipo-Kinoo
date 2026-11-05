@@ -9,8 +9,16 @@ export interface CardDTO {
   movie_id: string;
   front: { hook: string; pillars: { ritmo: string; tono: string; historia: string; visual: string } };
   back: {
-    title: string; year: number; runtime_min: number; genres: string[]; directors: string[];
-    poster_path: string | null; overview: string; providers: string[];
+    title: string;
+    year: number;
+    runtime_min: number;
+    genres: string[];
+    directors: string[];
+    poster_path: string | null;
+    /** URL lista para usar en <img> (TMDB o archivo local). null si no hay póster. */
+    poster_url: string | null;
+    overview: string;
+    providers: string[];
   };
   /** Razón en palabras. Nunca contiene números ni %. */
   explanation: string;
@@ -31,7 +39,7 @@ export interface DeckClosingDTO {
   deck_id: string;
   learned: string;
   top_atoms: string[];
-  saved_posters: Array<{ movie_id: string; title: string; poster_path: string | null }>;
+  saved_posters: Array<{ movie_id: string; title: string; poster_path: string | null; poster_url: string | null }>;
   ready_tonight: boolean;
 }
 
@@ -48,9 +56,18 @@ export interface WatchProposalDTO {
   filters: WatchFilters;
 }
 
-export interface OnboardingPairDTO { left_movie_id: string; right_movie_id: string; left_title: string; right_title: string }
+export interface OnboardingPairDTO {
+  left_movie_id: string;
+  right_movie_id: string;
+  left_title: string;
+  right_title: string;
+}
 
-export interface ArchetypeDTO { key: string; name: string; top_atoms: string[] }
+export interface ArchetypeDTO {
+  key: string;
+  name: string;
+  top_atoms: string[];
+}
 
 export interface ProfileDTO {
   user_id: string;

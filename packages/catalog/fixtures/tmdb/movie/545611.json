@@ -1,0 +1,214 @@
+{
+  "_simulado": true,
+  "_id_verificado": true,
+  "id": 545611,
+  "imdb_id": "tt6710474",
+  "title": "Todo en todas partes al mismo tiempo",
+  "original_title": "Everything Everywhere All at Once",
+  "original_language": "en",
+  "release_date": "2022-03-24",
+  "runtime": 139,
+  "status": "Released",
+  "adult": false,
+  "genres": [
+    {
+      "id": 35,
+      "name": "Comedia"
+    },
+    {
+      "id": 28,
+      "name": "Acción"
+    },
+    {
+      "id": 14,
+      "name": "Fantasía"
+    }
+  ],
+  "overview": "Una inmigrante china agobiada por su lavandería y su familia descubre que debe conectar con versiones de sí misma en otros universos para salvar el multiverso.",
+  "tagline": "El universo está a punto de ser aplastado por un bagel.",
+  "vote_average": 7.8,
+  "vote_count": 7000,
+  "popularity": 63.7,
+  "poster_path": null,
+  "backdrop_path": null,
+  "production_countries": [
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    }
+  ],
+  "spoken_languages": [
+    {
+      "iso_639_1": "en",
+      "english_name": "English",
+      "name": "English"
+    },
+    {
+      "iso_639_1": "zh",
+      "english_name": "Mandarin",
+      "name": "普通话"
+    },
+    {
+      "iso_639_1": "cn",
+      "english_name": "Cantonese",
+      "name": "广州话 / 廣州話"
+    }
+  ],
+  "budget": 14300000,
+  "revenue": 143000000,
+  "credits": {
+    "cast": [
+      {
+        "id": null,
+        "name": "Michelle Yeoh",
+        "character": "Evelyn Wang",
+        "order": 0
+      },
+      {
+        "id": null,
+        "name": "Stephanie Hsu",
+        "character": "Joy Wang / Jobu Tupaki",
+        "order": 1
+      },
+      {
+        "id": null,
+        "name": "Ke Huy Quan",
+        "character": "Waymond Wang",
+        "order": 2
+      },
+      {
+        "id": null,
+        "name": "Jamie Lee Curtis",
+        "character": "Deirdre Beaubeirdre",
+        "order": 3
+      },
+      {
+        "id": null,
+        "name": "James Hong",
+        "character": "Gong Gong",
+        "order": 4
+      },
+      {
+        "id": null,
+        "name": "Jenny Slate",
+        "character": "Debbie the Dog Mom",
+        "order": 5
+      }
+    ],
+    "crew": [
+      {
+        "id": null,
+        "name": "Daniel Kwan",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "Daniel Scheinert",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "Daniel Kwan",
+        "job": "Screenplay",
+        "department": "Writing"
+      },
+      {
+        "id": null,
+        "name": "Son Lux",
+        "job": "Original Music Composer",
+        "department": "Sound"
+      }
+    ]
+  },
+  "keywords": {
+    "keywords": [
+      {
+        "id": null,
+        "name": "multiverse"
+      },
+      {
+        "id": null,
+        "name": "immigrant"
+      },
+      {
+        "id": null,
+        "name": "laundromat"
+      },
+      {
+        "id": null,
+        "name": "mother daughter relationship"
+      },
+      {
+        "id": null,
+        "name": "martial arts"
+      },
+      {
+        "id": null,
+        "name": "parallel universe"
+      },
+      {
+        "id": null,
+        "name": "family"
+      },
+      {
+        "id": null,
+        "name": "irs"
+      },
+      {
+        "id": null,
+        "name": "absurdism"
+      },
+      {
+        "id": null,
+        "name": "nihilism"
+      }
+    ]
+  },
+  "reviews": {
+    "page": 1,
+    "total_results": 2,
+    "results": [
+      {
+        "author": "multiverso_fan",
+        "author_details": {
+          "rating": 10
+        },
+        "content": "Caótica, graciosa y sorprendentemente emotiva. No se parece a nada que hayas visto.",
+        "created_at": "2022-04-02T20:36:14.000Z",
+        "id": "6248b1c7e4d0b3009f6a2d51"
+      },
+      {
+        "author": "bagel_critic",
+        "author_details": {
+          "rating": 9
+        },
+        "content": "Wildly inventive with a huge heart underneath the madness. Yeoh and Quan are fantastic.",
+        "created_at": "2022-05-19T14:08:51.000Z",
+        "id": "62863a0fc9e3a7004b1d8e26"
+      }
+    ]
+  },
+  "watch/providers": {
+    "results": {
+      "CO": {
+        "link": "https://www.themoviedb.org/movie/545611/watch?locale=CO",
+        "flatrate": [
+          {
+            "provider_id": 119,
+            "provider_name": "Amazon Prime Video",
+            "logo_path": null,
+            "display_priority": 0
+          },
+          {
+            "provider_id": 1899,
+            "provider_name": "Max",
+            "logo_path": null,
+            "display_priority": 1
+          }
+        ]
+      }
+    }
+  }
+}

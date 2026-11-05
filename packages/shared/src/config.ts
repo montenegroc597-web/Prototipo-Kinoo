@@ -1,16 +1,48 @@
 import type { AtomKey, PartialAtomVector } from './atoms';
 
-export interface AtomDef { key: AtomKey; dimension: string; label: string; description: string }
-export interface VibeDef {
-  key: string; name: string; definition: string; aliases?: string[]; active: boolean; version: number;
-  recipe: PartialAtomVector; quality_weight?: number; example_movie_ids?: string[];
+export interface AtomDef {
+  key: AtomKey;
+  dimension: string;
+  label: string;
+  description: string;
 }
-export interface ActionWeight { action: string; variant: string; signal: number; eta: number; reason?: string }
+export interface VibeDef {
+  key: string;
+  name: string;
+  definition: string;
+  aliases?: string[];
+  active: boolean;
+  version: number;
+  recipe: PartialAtomVector;
+  quality_weight?: number;
+  example_movie_ids?: string[];
+}
+export interface ActionWeight {
+  action: string;
+  variant: string;
+  signal: number;
+  eta: number;
+  reason?: string;
+}
 export type DeckRole = 'afin' | 'creador' | 'comodin' | 'sorpresa';
-export interface DeckSlot { role: DeckRole; rank?: 'first' | 'second' }
-export interface DeckRecipe { size: number; default?: boolean; slots: DeckSlot[] }
-export interface Template { key: string; text: string }
-export interface Archetype { key: string; name: string; recipe: PartialAtomVector }
+export interface DeckSlot {
+  role: DeckRole;
+  rank?: 'first' | 'second';
+}
+export interface DeckRecipe {
+  size: number;
+  default?: boolean;
+  slots: DeckSlot[];
+}
+export interface Template {
+  key: string;
+  text: string;
+}
+export interface Archetype {
+  key: string;
+  name: string;
+  recipe: PartialAtomVector;
+}
 
 export interface Params {
   distinct_threshold: number;

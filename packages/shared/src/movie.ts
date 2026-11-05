@@ -4,6 +4,8 @@ import type { AtomVector } from './atoms';
 export interface Movie {
   id: string;
   tmdb_id?: number;
+  /** Id de IMDb (tt…), lo trae TMDB en external ids. */
+  imdb_id?: string | null;
   title: string;
   original_title?: string;
   year: number;
@@ -18,6 +20,8 @@ export interface Movie {
   popularity?: number;
   poster_path?: string | null;
   overview?: string;
+  /** Palabras clave de TMDB (en inglés). Ayudan al juez; no entran al perfil. */
+  keywords?: string[];
   /** ADN de la película según el juez sintético (0–1 por átomo). */
   atoms: AtomVector;
   /** Frase gancho: cara A de la carta. Máximo 160 caracteres, en mayúsculas. */
@@ -27,7 +31,8 @@ export interface Movie {
   /** Plataformas por país (código ISO, p. ej. "CO"), solo suscripción (flatrate). */
   providers: Record<string, string[]>;
   tagger: { model: string; prompt_version: string; tagged_at: string };
-  source: 'tmdb' | 'semilla_manual';
+  /** tmdb = API real; tmdb_simulado = fixtures con el formato de TMDB; semilla_manual = escrita a mano. */
+  source: 'tmdb' | 'tmdb_simulado' | 'semilla_manual';
 }
 
 export interface Curator {
@@ -44,4 +49,20 @@ export interface CuratedDeck {
   title: string;
   movie_ids: string[];
   notes?: Record<string, string>;
+}
+
+/** Base del CDN de imágenes de TMDB. Tamaños de póster: w92, w154, w185, w342, w500, w780, original. */
+export const TMDB_IMAGE_BASE = 'https://image.tmdb.org/t/p/';
+
+/**
+ * URL lista para usar de un póster.
+ * - poster_path de TMDB ("/abc.jpg") → CDN de TMDB.
+ * - Archivo del repositorio ("posters/<id>.jpg") → assetBaseUrl + ruta (por ejemplo "https://…/Prototipo-Kinoo/" o "../").
+ * - Sin póster → null (el front muestra su fondo de color).
+ */
+export function posterUrl(posterPath: string | null | undefined, opts: { assetBaseUrl?: string; size?: string } = {}): string | null {
+  if (!posterPath) return null;
+  if (/^https?:\/\//.test(posterPath)) return posterPath;
+  if (posterPath.startsWith('/')) return `${TMDB_IMAGE_BASE}${opts.size ?? 'w500'}${posterPath}`;
+  return `${opts.assetBaseUrl ?? ''}${posterPath}`;
 }

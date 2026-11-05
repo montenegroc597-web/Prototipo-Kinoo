@@ -1,0 +1,189 @@
+{
+  "_simulado": true,
+  "_id_verificado": true,
+  "id": 426426,
+  "imdb_id": "tt6155172",
+  "title": "Roma",
+  "original_title": "Roma",
+  "original_language": "es",
+  "release_date": "2018-08-30",
+  "runtime": 135,
+  "status": "Released",
+  "adult": false,
+  "genres": [
+    {
+      "id": 18,
+      "name": "Drama"
+    }
+  ],
+  "overview": "Un año en la vida de Cleo, una joven empleada doméstica de una familia de clase media en la Ciudad de México de principios de los años 70. Entre la intimidad del hogar y la agitación del país, se entrelazan afectos, pérdidas y resistencia.",
+  "tagline": "",
+  "vote_average": 7.7,
+  "vote_count": 4500,
+  "popularity": 33.5,
+  "poster_path": null,
+  "backdrop_path": null,
+  "production_countries": [
+    {
+      "iso_3166_1": "MX",
+      "name": "Mexico"
+    }
+  ],
+  "spoken_languages": [
+    {
+      "iso_639_1": "es",
+      "english_name": "Spanish",
+      "name": "Español"
+    },
+    {
+      "iso_639_1": "en",
+      "english_name": "English",
+      "name": "English"
+    }
+  ],
+  "budget": 15000000,
+  "revenue": 5100000,
+  "credits": {
+    "cast": [
+      {
+        "id": null,
+        "name": "Yalitza Aparicio",
+        "character": "Cleo",
+        "order": 0
+      },
+      {
+        "id": null,
+        "name": "Marina de Tavira",
+        "character": "Sofía",
+        "order": 1
+      },
+      {
+        "id": null,
+        "name": "Diego Cortina Autrey",
+        "character": "Toño",
+        "order": 2
+      },
+      {
+        "id": null,
+        "name": "Carlos Peralta",
+        "character": "Pepe",
+        "order": 3
+      },
+      {
+        "id": null,
+        "name": "Marco Graf",
+        "character": "Fermín",
+        "order": 4
+      },
+      {
+        "id": null,
+        "name": "Nancy García",
+        "character": "Adela",
+        "order": 5
+      },
+      {
+        "id": null,
+        "name": "Verónica García",
+        "character": "Teresa",
+        "order": 6
+      }
+    ],
+    "crew": [
+      {
+        "id": null,
+        "name": "Alfonso Cuarón",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "Alfonso Cuarón",
+        "job": "Screenplay",
+        "department": "Writing"
+      }
+    ]
+  },
+  "keywords": {
+    "keywords": [
+      {
+        "id": null,
+        "name": "mexico city"
+      },
+      {
+        "id": null,
+        "name": "maid"
+      },
+      {
+        "id": null,
+        "name": "1970s"
+      },
+      {
+        "id": null,
+        "name": "domestic worker"
+      },
+      {
+        "id": null,
+        "name": "family"
+      },
+      {
+        "id": null,
+        "name": "semi-autobiographical"
+      },
+      {
+        "id": null,
+        "name": "pregnancy"
+      },
+      {
+        "id": null,
+        "name": "social class"
+      },
+      {
+        "id": null,
+        "name": "black and white"
+      },
+      {
+        "id": null,
+        "name": "coming of age"
+      }
+    ]
+  },
+  "reviews": {
+    "page": 1,
+    "total_results": 2,
+    "results": [
+      {
+        "author": "lente_sur",
+        "author_details": {
+          "rating": 9
+        },
+        "content": "Visually stunning and deeply personal. The long takes let you live inside Cleo's world, one quiet moment at a time.",
+        "created_at": "2018-12-14T08:57:12.000Z",
+        "id": "5c1346e8d2a5f9003e7b8c12"
+      },
+      {
+        "author": "tarde_de_cine",
+        "author_details": {
+          "rating": 8
+        },
+        "content": "Una película íntima y muy bien filmada. El ritmo es pausado, pero la emoción llega con fuerza.",
+        "created_at": "2019-01-26T14:22:49.000Z",
+        "id": "5c4c8b30f1e6a2005d9a4e73"
+      }
+    ]
+  },
+  "watch/providers": {
+    "results": {
+      "CO": {
+        "link": "https://www.themoviedb.org/movie/426426/watch?locale=CO",
+        "flatrate": [
+          {
+            "provider_id": 8,
+            "provider_name": "Netflix",
+            "logo_path": null,
+            "display_priority": 1
+          }
+        ]
+      }
+    }
+  }
+}

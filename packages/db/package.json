@@ -1,0 +1,21 @@
+{
+  "name": "@kinoo/db",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Base de datos de Kinoo: migraciones SQL portátiles (Supabase o cualquier PostgreSQL), semillas y repositorios.",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./files": "./src/files.ts"
+  },
+  "dependencies": {
+    "@kinoo/core": "*",
+    "@kinoo/engine": "*",
+    "@kinoo/shared": "*"
+  },
+  "devDependencies": {
+    "pg": "^8.13.1"
+  }
+}

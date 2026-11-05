@@ -1,0 +1,197 @@
+{
+  "_simulado": true,
+  "_id_verificado": true,
+  "id": 218,
+  "imdb_id": "tt0088247",
+  "title": "Terminator",
+  "original_title": "The Terminator",
+  "original_language": "en",
+  "release_date": "1984-10-26",
+  "runtime": 107,
+  "status": "Released",
+  "adult": false,
+  "genres": [
+    {
+      "id": 28,
+      "name": "Acción"
+    },
+    {
+      "id": 878,
+      "name": "Ciencia ficción"
+    }
+  ],
+  "overview": "Un cíborg asesino es enviado desde el futuro para eliminar a una joven camarera. Un soldado de la resistencia viaja también al pasado para protegerla.",
+  "tagline": "Volverá.",
+  "vote_average": 7.7,
+  "vote_count": 13000,
+  "popularity": 52.8,
+  "poster_path": null,
+  "backdrop_path": null,
+  "production_countries": [
+    {
+      "iso_3166_1": "GB",
+      "name": "United Kingdom"
+    },
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    }
+  ],
+  "spoken_languages": [
+    {
+      "iso_639_1": "en",
+      "english_name": "English",
+      "name": "English"
+    },
+    {
+      "iso_639_1": "es",
+      "english_name": "Spanish",
+      "name": "Español"
+    }
+  ],
+  "budget": 6400000,
+  "revenue": 78371200,
+  "credits": {
+    "cast": [
+      {
+        "id": null,
+        "name": "Arnold Schwarzenegger",
+        "character": "The Terminator",
+        "order": 0
+      },
+      {
+        "id": null,
+        "name": "Michael Biehn",
+        "character": "Kyle Reese",
+        "order": 1
+      },
+      {
+        "id": null,
+        "name": "Linda Hamilton",
+        "character": "Sarah Connor",
+        "order": 2
+      },
+      {
+        "id": null,
+        "name": "Paul Winfield",
+        "character": "Traxler",
+        "order": 3
+      },
+      {
+        "id": null,
+        "name": "Lance Henriksen",
+        "character": "Vukovich",
+        "order": 4
+      },
+      {
+        "id": null,
+        "name": "Rick Rossovich",
+        "character": "Matt",
+        "order": 5
+      }
+    ],
+    "crew": [
+      {
+        "id": null,
+        "name": "James Cameron",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "James Cameron",
+        "job": "Screenplay",
+        "department": "Writing"
+      },
+      {
+        "id": null,
+        "name": "Brad Fiedel",
+        "job": "Original Music Composer",
+        "department": "Sound"
+      }
+    ]
+  },
+  "keywords": {
+    "keywords": [
+      {
+        "id": null,
+        "name": "cyborg"
+      },
+      {
+        "id": null,
+        "name": "time travel"
+      },
+      {
+        "id": null,
+        "name": "artificial intelligence (a.i.)"
+      },
+      {
+        "id": null,
+        "name": "future war"
+      },
+      {
+        "id": null,
+        "name": "robot"
+      },
+      {
+        "id": null,
+        "name": "los angeles, california"
+      },
+      {
+        "id": null,
+        "name": "assassin"
+      },
+      {
+        "id": null,
+        "name": "dystopia"
+      },
+      {
+        "id": null,
+        "name": "chase"
+      },
+      {
+        "id": null,
+        "name": "post-apocalyptic future"
+      }
+    ]
+  },
+  "reviews": {
+    "page": 1,
+    "total_results": 2,
+    "results": [
+      {
+        "author": "chromeheart",
+        "author_details": {
+          "rating": 9
+        },
+        "content": "Lean, relentless and still thrilling. A low-budget sci-fi film that turned into a landmark of the genre.",
+        "created_at": "2018-11-05T12:40:18.000Z",
+        "id": "5be0a5d2f3b7c1004d8e2a91"
+      },
+      {
+        "author": "sala_oscura",
+        "author_details": {
+          "rating": 8
+        },
+        "content": "Una persecución sin descanso con un villano inolvidable. Los efectos artesanales tienen un encanto que se agradece.",
+        "created_at": "2020-06-28T21:15:36.000Z",
+        "id": "5ef8c71ab9d3e2006f1a4c58"
+      }
+    ]
+  },
+  "watch/providers": {
+    "results": {
+      "CO": {
+        "link": "https://www.themoviedb.org/movie/218/watch?locale=CO",
+        "flatrate": [
+          {
+            "provider_id": 119,
+            "provider_name": "Amazon Prime Video",
+            "logo_path": null,
+            "display_priority": 5
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "_doc": "GENERADO por packages/catalog/scripts/posters.mjs. Para agregar un póster, guarda el archivo en apps/web/public/posters/<id>.jpg y corre npm run catalog:posters. \"local\" = archivo del repositorio (ruta relativa a la raíz del sitio); \"tmdb\" = poster_path de TMDB (se sirve desde image.tmdb.org).",
+  "posters": {
+    "aftersun-2022": null,
+    "amores-perros-2000": null,
+    "arrival-2016": null,
+    "avengers-endgame-2019": null,
+    "central-do-brasil-1998": null,
+    "chungking-express-1994": null,
+    "coco-2017": {
+      "path": "posters/coco-2017.jpg",
+      "origin": "local"
+    },
+    "el-abrazo-de-la-serpiente-2015": null,
+    "eternal-sunshine-of-the-spotless-mind-2004": null,
+    "everything-everywhere-all-at-once-2022": null,
+    "her-2013": {
+      "path": "posters/her-2013.jpg",
+      "origin": "local"
+    },
+    "hereditary-2018": {
+      "path": "posters/hereditary-2018.jpg",
+      "origin": "local"
+    },
+    "interstellar-2014": {
+      "path": "posters/interstellar-2014.jpg",
+      "origin": "local"
+    },
+    "knives-out-2019": null,
+    "la-la-land-2016": null,
+    "lost-in-translation-2003": null,
+    "mad-max-fury-road-2015": null,
+    "nosferatu-2024": null,
+    "nuovo-cinema-paradiso-1988": null,
+    "oppenheimer-2023": {
+      "path": "posters/oppenheimer-2023.jpg",
+      "origin": "local"
+    },
+    "parasitos-2019": null,
+    "past-lives-2023": null,
+    "project-hail-mary-2026": {
+      "path": "posters/project-hail-mary-2026.jpg",
+      "origin": "local"
+    },
+    "relatos-salvajes-2014": null,
+    "rocky-1976": {
+      "path": "posters/rocky-1976.jpg",
+      "origin": "local"
+    },
+    "roma-2018": null,
+    "smile-2022": {
+      "path": "posters/smile-2022.jpg",
+      "origin": "local"
+    },
+    "superman-2025": {
+      "path": "posters/superman-2025.jpg",
+      "origin": "local"
+    },
+    "the-dark-knight-2008": {
+      "path": "posters/the-dark-knight-2008.jpg",
+      "origin": "local"
+    },
+    "the-hangover-2009": {
+      "path": "posters/the-hangover-2009.jpg",
+      "origin": "local"
+    },
+    "the-matrix-1999": {
+      "path": "posters/the-matrix-1999.jpg",
+      "origin": "local"
+    },
+    "the-shining-1980": null,
+    "the-terminator-1984": {
+      "path": "posters/the-terminator-1984.jpg",
+      "origin": "local"
+    },
+    "the-wild-robot-2024": null,
+    "tick-tick-boom-2021": null,
+    "titanic-1997": {
+      "path": "posters/titanic-1997.jpg",
+      "origin": "local"
+    },
+    "toy-story-3-2010": null,
+    "y-tu-mama-tambien-2001": null
+  },
+  "missing": [
+    "aftersun-2022",
+    "amores-perros-2000",
+    "arrival-2016",
+    "avengers-endgame-2019",
+    "central-do-brasil-1998",
+    "chungking-express-1994",
+    "el-abrazo-de-la-serpiente-2015",
+    "eternal-sunshine-of-the-spotless-mind-2004",
+    "everything-everywhere-all-at-once-2022",
+    "knives-out-2019",
+    "la-la-land-2016",
+    "lost-in-translation-2003",
+    "mad-max-fury-road-2015",
+    "nosferatu-2024",
+    "nuovo-cinema-paradiso-1988",
+    "parasitos-2019",
+    "past-lives-2023",
+    "relatos-salvajes-2014",
+    "roma-2018",
+    "the-shining-1980",
+    "the-wild-robot-2024",
+    "tick-tick-boom-2021",
+    "toy-story-3-2010",
+    "y-tu-mama-tambien-2001"
+  ],
+  "orphans": []
+}

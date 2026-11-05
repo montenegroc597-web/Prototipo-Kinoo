@@ -1,15 +1,24 @@
 {
   "extends": "./tsconfig.base.json",
-  "include": ["data/config/*.ts", "packages/*/src", "packages/*/sim", "packages/*/test", "apps/*/src", "scripts/**/*.ts", "supabase/**/*.ts", "e2e", "vitest.config.ts"],
-  "exclude": ["supabase/functions/**"],
+  "include": [
+    "apps/web/src", "apps/web/test", "apps/web/e2e", "apps/web/playwright.config.ts",
+    "apps/api/src", "apps/api/test",
+    "packages/*/src", "packages/*/test", "packages/*/sim", "packages/*/scripts/**/*.ts",
+    "vitest.workspace.ts", "vitest.config.ts"
+  ],
   "compilerOptions": {
     "noEmit": true,
     "types": ["node"],
     "baseUrl": ".",
     "paths": {
-      "@kinoo/engine": ["packages/engine/src/index.ts"],
       "@kinoo/shared": ["packages/shared/src/index.ts"],
-      "@kinoo/api": ["packages/api/src/index.ts"]
+      "@kinoo/config": ["packages/config/src/index.ts"],
+      "@kinoo/engine": ["packages/engine/src/index.ts"],
+      "@kinoo/core": ["packages/core/src/index.ts"],
+      "@kinoo/db": ["packages/db/src/index.ts"],
+      "@kinoo/db/files": ["packages/db/src/files.ts"],
+      "@kinoo/catalog": ["packages/catalog/src/index.ts"],
+      "@kinoo/api": ["apps/api/src/index.ts"]
     }
   }
 }

@@ -24,15 +24,15 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version-file: .nvmrc
           cache: npm
       - run: npm ci
-      # Copia apps/web a site/ (mismas rutas que antes publicaba public/) y empaqueta el modo demo
+      # Arma apps/web/dist (mismas rutas que el prototipo publicó siempre + el modo demo con el motor)
       - run: npm run build
-      - run: npm run check:site
+      - run: npm run check:routes -w @kinoo/web
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: site
+          path: apps/web/dist
       - id: deployment
         uses: actions/deploy-pages@v4

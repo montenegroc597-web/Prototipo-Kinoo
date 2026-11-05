@@ -1,0 +1,202 @@
+{
+  "_simulado": true,
+  "_id_verificado": false,
+  "id": 9900115,
+  "imdb_id": "tt0109424",
+  "title": "Chungking Express",
+  "original_title": "重慶森林",
+  "original_language": "cn",
+  "release_date": "1994-07-14",
+  "runtime": 102,
+  "status": "Released",
+  "adult": false,
+  "genres": [
+    {
+      "id": 18,
+      "name": "Drama"
+    },
+    {
+      "id": 10749,
+      "name": "Romance"
+    },
+    {
+      "id": 35,
+      "name": "Comedia"
+    }
+  ],
+  "overview": "Dos policías solitarios de Hong Kong intentan superar sus desamores en historias que se cruzan en las calles de la ciudad. Un retrato melancólico y juguetón de la soledad urbana.",
+  "tagline": "",
+  "vote_average": 7.9,
+  "vote_count": 1300,
+  "popularity": 19.6,
+  "poster_path": null,
+  "backdrop_path": null,
+  "production_countries": [
+    {
+      "iso_3166_1": "HK",
+      "name": "Hong Kong"
+    }
+  ],
+  "spoken_languages": [
+    {
+      "iso_639_1": "cn",
+      "english_name": "Cantonese",
+      "name": "广州话 / 廣州話"
+    },
+    {
+      "iso_639_1": "en",
+      "english_name": "English",
+      "name": "English"
+    },
+    {
+      "iso_639_1": "hi",
+      "english_name": "Hindi",
+      "name": "हिन्दी"
+    }
+  ],
+  "budget": 0,
+  "revenue": 0,
+  "credits": {
+    "cast": [
+      {
+        "id": null,
+        "name": "Brigitte Lin",
+        "character": "La mujer de la peluca rubia",
+        "order": 0
+      },
+      {
+        "id": null,
+        "name": "Takeshi Kaneshiro",
+        "character": "He Zhiwu (Policía 223)",
+        "order": 1
+      },
+      {
+        "id": null,
+        "name": "Tony Leung Chiu-wai",
+        "character": "Policía 663",
+        "order": 2
+      },
+      {
+        "id": null,
+        "name": "Faye Wong",
+        "character": "Faye",
+        "order": 3
+      },
+      {
+        "id": null,
+        "name": "Valerie Chow",
+        "character": "Azafata",
+        "order": 4
+      },
+      {
+        "id": null,
+        "name": "Chen Jinquan",
+        "character": "Jefe del bar",
+        "order": 5
+      }
+    ],
+    "crew": [
+      {
+        "id": null,
+        "name": "Wong Kar-wai",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "Wong Kar-wai",
+        "job": "Screenplay",
+        "department": "Writing"
+      },
+      {
+        "id": null,
+        "name": "Frankie Chan",
+        "job": "Original Music Composer",
+        "department": "Sound"
+      }
+    ]
+  },
+  "keywords": {
+    "keywords": [
+      {
+        "id": null,
+        "name": "hong kong"
+      },
+      {
+        "id": null,
+        "name": "policeman"
+      },
+      {
+        "id": null,
+        "name": "loneliness"
+      },
+      {
+        "id": null,
+        "name": "unrequited love"
+      },
+      {
+        "id": null,
+        "name": "heartbreak"
+      },
+      {
+        "id": null,
+        "name": "snack bar"
+      },
+      {
+        "id": null,
+        "name": "drug smuggling"
+      },
+      {
+        "id": null,
+        "name": "urban life"
+      },
+      {
+        "id": null,
+        "name": "romance"
+      },
+      {
+        "id": null,
+        "name": "neo-noir"
+      }
+    ]
+  },
+  "reviews": {
+    "page": 1,
+    "total_results": 2,
+    "results": [
+      {
+        "author": "neon_diaries",
+        "author_details": {
+          "rating": 9
+        },
+        "content": "Dreamy, restless and full of longing. The camerawork and music turn small moments into something magical.",
+        "created_at": "2017-11-08T07:31:26.000Z",
+        "id": "5a02f8b4d5c1e3001a7d6b39"
+      },
+      {
+        "author": "cielo_de_neon",
+        "author_details": {
+          "rating": 8
+        },
+        "content": "Una película con mucho estilo y una ternura inesperada. Perfecta para dejarse llevar por su ritmo y su banda sonora.",
+        "created_at": "2019-10-14T21:17:03.000Z",
+        "id": "5da4c3e7f2b8a1006e5c9f84"
+      }
+    ]
+  },
+  "watch/providers": {
+    "results": {
+      "CO": {
+        "link": "https://www.themoviedb.org/movie/9900115/watch?locale=CO",
+        "flatrate": [
+          {
+            "provider_id": 11,
+            "provider_name": "MUBI",
+            "logo_path": null,
+            "display_priority": 8
+          }
+        ]
+      }
+    }
+  }
+}

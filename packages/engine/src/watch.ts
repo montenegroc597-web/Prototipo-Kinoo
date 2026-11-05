@@ -41,7 +41,7 @@ export function proposeWatch(input: { catalog: Catalog; model: UserModel; cfg: C
   if (!hand.length) return { ...base, status: 'empty_hand', notice: cfg.template('watch_too_many_skips') };
 
   // 2. Disponibilidad en sus plataformas.
-  const available = model.providers && model.providers.list.length ? hand.filter((x) => availableOn(x.m, model.providers!)) : hand;
+  const available = model.providers?.list.length ? hand.filter((x) => availableOn(x.m, model.providers!)) : hand;
   if (!available.length) return { ...base, status: 'empty_platforms', notice: cfg.template('watch_empty_platforms') };
 
   // No repetir lo que acaba de pedir cambiar (si queda algo más).
@@ -67,7 +67,9 @@ export function proposeWatch(input: { catalog: Catalog; model: UserModel; cfg: C
   // 4. Mayor puntaje + bono de frescura.
   const fresh48 = now.getTime() - p.watch_fresh_hours * 3_600_000;
   const ctx = {
-    model, vibe, vibeRecipe,
+    model,
+    vibe,
+    vibeRecipe,
     bonus: (m: IndexedMovie) => {
       const st = model.states.get(m.movie.id);
       let b = 0;
