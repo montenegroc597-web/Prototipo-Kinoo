@@ -16,6 +16,8 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - name: Semillas SQL al día con data/
+        run: npm run seed -- --check
       - run: npm run typecheck
       - run: npm test
       - run: npm run build

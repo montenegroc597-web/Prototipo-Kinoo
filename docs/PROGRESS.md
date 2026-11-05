@@ -2,8 +2,8 @@
 
 ## Estado actual
 - Fase: F6 · Documentación y cierre
-- Última tarea terminada: F5 · modo demo y Descubrir y Ver conectados al motor
-- Siguiente tarea: README, guía para ajustar el algoritmo, guía de despliegue y pull request
+- Última tarea terminada: F6 · documentación consolidada y pull request abierto
+- Siguiente tarea: ninguna del plan. Pendientes de Camilo en "Para revisar cuando vuelvas"
 - Bloqueos: **F4 · sin `TMDB_API_KEY` y con la red bloqueada a `api.themoviedb.org`**. El catálogo quedó en 34 películas de semilla manual. Para resolverlo, Camilo debe crear la clave, guardarla como variable de entorno y permitir la red a `api.themoviedb.org` e `image.tmdb.org` (ver `guias/catalogo.md`)
 - Última actualización: 2026-11-05 03:40
 
@@ -36,6 +36,7 @@
 - 2026-11-05 05:40 · F4 · Pipeline `scripts/catalog/` (fetch-tmdb, tag, build). Semilla manual de 34 películas, etiquetada por dos subagentes Sonnet. QC aprobado.
 - 2026-11-05 06:05 · F5 · `packages/api`: un solo servicio para las Edge Functions y el modo demo. Cinco endpoints en `supabase/functions/` (events, deck, watch, onboarding). Prueba de punta a punta contra PGlite con RLS.
 - 2026-11-05 06:40 · F5 · Modo demo (`_kinoo/kinoo-demo.js`) y conexión de `Flujo1_Descubrir`, `FlujoV1_Feed` y `FlujoV4_Calificar`. Ver `adr/0003-api-y-modo-demo.md` y `guias/contrato-api.md`.
+- 2026-11-05 07:00 · F6 · `docs/README.md`, guía para ajustar el algoritmo, guía de despliegue, README raíz. Pull request hacia `main` (sin fusionar).
 
 ## Decisiones tomadas sin Camilo
 - La línea base es 0/0 porque el prototipo no tenía pruebas. Las pruebas nuevas son las primeras del repositorio.
