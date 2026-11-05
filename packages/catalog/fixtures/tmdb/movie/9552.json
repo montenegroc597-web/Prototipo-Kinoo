@@ -1,0 +1,195 @@
+{
+  "_simulado": true,
+  "_id_verificado": true,
+  "id": 9552,
+  "imdb_id": "tt0070047",
+  "title": "El exorcista",
+  "original_title": "The Exorcist",
+  "original_language": "en",
+  "release_date": "1973-12-26",
+  "runtime": 122,
+  "status": "Released",
+  "adult": false,
+  "genres": [
+    {
+      "id": 27,
+      "name": "Terror"
+    }
+  ],
+  "overview": "Una actriz acude desesperada a dos sacerdotes cuando su hija de doce años empieza a mostrar un comportamiento inexplicable y aterrador. Un clásico del terror sobre la fe y la posesión.",
+  "tagline": "Algo de una belleza y un terror increíbles.",
+  "vote_average": 7.7,
+  "vote_count": 8000,
+  "popularity": 71.2,
+  "poster_path": null,
+  "backdrop_path": null,
+  "production_countries": [
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    }
+  ],
+  "spoken_languages": [
+    {
+      "iso_639_1": "en",
+      "english_name": "English",
+      "name": "English"
+    },
+    {
+      "iso_639_1": "la",
+      "english_name": "Latin",
+      "name": "Latin"
+    }
+  ],
+  "budget": 12000000,
+  "revenue": 441000000,
+  "credits": {
+    "cast": [
+      {
+        "id": null,
+        "name": "Ellen Burstyn",
+        "character": "Chris MacNeil",
+        "order": 0
+      },
+      {
+        "id": null,
+        "name": "Max von Sydow",
+        "character": "Father Merrin",
+        "order": 1
+      },
+      {
+        "id": null,
+        "name": "Linda Blair",
+        "character": "Regan MacNeil",
+        "order": 2
+      },
+      {
+        "id": null,
+        "name": "Jason Miller",
+        "character": "Father Karras",
+        "order": 3
+      },
+      {
+        "id": null,
+        "name": "Lee J. Cobb",
+        "character": "Lt. Kinderman",
+        "order": 4
+      },
+      {
+        "id": null,
+        "name": "Kitty Winn",
+        "character": "Sharon Spencer",
+        "order": 5
+      },
+      {
+        "id": null,
+        "name": "Jack MacGowran",
+        "character": "Burke Dennings",
+        "order": 6
+      }
+    ],
+    "crew": [
+      {
+        "id": null,
+        "name": "William Friedkin",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "William Peter Blatty",
+        "job": "Screenplay",
+        "department": "Writing"
+      },
+      {
+        "id": null,
+        "name": "Jack Nitzsche",
+        "job": "Original Music Composer",
+        "department": "Sound"
+      }
+    ]
+  },
+  "keywords": {
+    "keywords": [
+      {
+        "id": null,
+        "name": "exorcism"
+      },
+      {
+        "id": null,
+        "name": "possession"
+      },
+      {
+        "id": null,
+        "name": "priest"
+      },
+      {
+        "id": null,
+        "name": "demon"
+      },
+      {
+        "id": null,
+        "name": "washington d.c."
+      },
+      {
+        "id": null,
+        "name": "based on novel or book"
+      },
+      {
+        "id": null,
+        "name": "faith"
+      },
+      {
+        "id": null,
+        "name": "mother daughter relationship"
+      },
+      {
+        "id": null,
+        "name": "supernatural horror"
+      },
+      {
+        "id": null,
+        "name": "classic"
+      }
+    ]
+  },
+  "reviews": {
+    "page": 1,
+    "total_results": 2,
+    "results": [
+      {
+        "author": "vhsnostalgia",
+        "author_details": {
+          "rating": 9
+        },
+        "content": "Still unsettling after all these years. The slow build and the performances make it far more than a shock film.",
+        "created_at": "2018-10-27T23:15:02.000Z",
+        "id": "5bd4f1c6c3a3685d2e00a1b7"
+      },
+      {
+        "author": "lectora_nocturna",
+        "author_details": {
+          "rating": 8
+        },
+        "content": "Una obra maestra del terror que se apoya en el drama familiar antes que en los sustos. Sigue siendo una referencia del género.",
+        "created_at": "2022-01-09T04:50:33.000Z",
+        "id": "61da6b2d8f0e2a0042c5e913"
+      }
+    ]
+  },
+  "watch/providers": {
+    "results": {
+      "CO": {
+        "link": "https://www.themoviedb.org/movie/9552/watch?locale=CO",
+        "flatrate": [
+          {
+            "provider_id": 1899,
+            "provider_name": "Max",
+            "logo_path": null,
+            "display_priority": 2
+          }
+        ]
+      }
+    }
+  }
+}

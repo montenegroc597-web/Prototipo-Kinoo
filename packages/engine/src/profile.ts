@@ -14,7 +14,11 @@ export interface MovieState {
   updated_at: string;
 }
 
-export interface VibeRecipeState { recipe: AtomVector; seed_version: number; signal_count: number }
+export interface VibeRecipeState {
+  recipe: AtomVector;
+  seed_version: number;
+  signal_count: number;
+}
 
 /** Todo lo que se deriva de los eventos de una persona. */
 export interface UserModel {
@@ -33,7 +37,17 @@ export interface UserModel {
 }
 
 export function emptyModel(user_id: string): UserModel {
-  return { user_id, profile: zeroVector(), signal_count: 0, vibes: {}, states: new Map(), providers: null, watch_skips_in_row: 0, watch_skipped_ids: new Set(), recent_dismissals: [] };
+  return {
+    user_id,
+    profile: zeroVector(),
+    signal_count: 0,
+    vibes: {},
+    states: new Map(),
+    providers: null,
+    watch_skips_in_row: 0,
+    watch_skipped_ids: new Set(),
+    recent_dismissals: [],
+  };
 }
 
 /** El mood en el que ocurrió un evento: primero el del payload, luego el del contexto. */
@@ -96,8 +110,12 @@ function updateState(model: UserModel, e: KinooEvent) {
         if (model.recent_dismissals.length > 200) model.recent_dismissals.shift();
       }
       break;
-    case 'marked_seen': mark(model, e.movie_id, 'seen', e.at); break;
-    case 'rewatch_intent': mark(model, e.movie_id, 'rewatch', e.at); break;
+    case 'marked_seen':
+      mark(model, e.movie_id, 'seen', e.at);
+      break;
+    case 'rewatch_intent':
+      mark(model, e.movie_id, 'rewatch', e.at);
+      break;
     case 'watch_confirmed':
       mark(model, e.movie_id, e.payload.rewatch ? 'rewatch' : 'seen', e.at);
       resetSkips(model);
@@ -106,10 +124,17 @@ function updateState(model: UserModel, e: KinooEvent) {
       model.watch_skips_in_row += 1;
       if (e.movie_id) model.watch_skipped_ids.add(e.movie_id);
       break;
-    case 'watch_started': resetSkips(model); break;
-    case 'deck_opened': resetSkips(model); break;
-    case 'platforms_set': model.providers = { country: e.payload.country, list: [...e.payload.providers] }; break;
-    default: break;
+    case 'watch_started':
+      resetSkips(model);
+      break;
+    case 'deck_opened':
+      resetSkips(model);
+      break;
+    case 'platforms_set':
+      model.providers = { country: e.payload.country, list: [...e.payload.providers] };
+      break;
+    default:
+      break;
   }
 }
 

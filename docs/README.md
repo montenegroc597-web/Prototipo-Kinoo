@@ -1,60 +1,44 @@
 # Documentación de Kinoo
 
-Kinoo ayuda a decidir qué película ver. Este repositorio tiene el prototipo navegable (front) y, desde la v2, el back: base de datos, motor del algoritmo, catálogo, API y modo demo.
+**Para qué sirve esto.** Es el índice. Cada documento empieza diciendo para qué sirve y termina con un ejemplo con números.
 
-## Empieza aquí
+## Para entender
 
 | Documento | Para qué |
 |---|---|
-| [PROGRESS.md](PROGRESS.md) | Estado del proyecto, bitácora y **decisiones tomadas sin Camilo** |
+| [ARQUITECTURA.md](ARQUITECTURA.md) | Front, back, paquetes y por dónde pasa una recomendación |
 | [KINOO_ALGORITMO_v2.md](KINOO_ALGORITMO_v2.md) | La especificación del algoritmo (fuente de verdad) |
-| [KINOO_PLAN_MAESTRO.md](KINOO_PLAN_MAESTRO.md) | Fases F0–F6 y sus comprobaciones |
-| [guias/para-camilo-ajustar-el-algoritmo.md](guias/para-camilo-ajustar-el-algoritmo.md) | Cambiar pesos, moods, mazos y frases sin programar |
 | [guias/algoritmo-paso-a-paso.md](guias/algoritmo-paso-a-paso.md) | De un evento a una recomendación, con números |
-| [guias/base-de-datos.md](guias/base-de-datos.md) | Cada tabla en una línea y el diagrama de relaciones |
-| [guias/catalogo.md](guias/catalogo.md) | Cómo entra y se etiqueta una película |
-| [guias/contrato-api.md](guias/contrato-api.md) | Endpoints con ejemplos |
-| [guias/despliegue.md](guias/despliegue.md) | Pasos manuales pendientes (Pages, Supabase, TMDB) |
-| [adr/](adr/) | Decisiones de arquitectura: [0001](adr/0001-estructura.md) repositorio, [0002](adr/0002-monorepo.md) monorepo, [0003](adr/0003-api-y-modo-demo.md) API y modo demo |
-| [historico/](historico/) | Versión 1 del algoritmo (pendiente de subir) |
+| [PROGRESS.md](PROGRESS.md) | Estado, bitácora y **decisiones tomadas sin Camilo** |
+| [KINOO_PLAN_MAESTRO.md](KINOO_PLAN_MAESTRO.md) | Las fases del proyecto y sus comprobaciones |
 
-## Estructura
+## Para trabajar
 
-```
-apps/web/            Prototipo (front). kinoo-flujo/*.dc.html + src/ (modo demo y adaptador)
-packages/shared/     Tipos y contratos: átomos, eventos, configuración, respuestas de la API
-packages/engine/     Motor del algoritmo, TypeScript puro. sim/ = usuarios simulados
-packages/api/        Lógica de los endpoints (la usan Supabase y el modo demo)
-supabase/            migrations/, seed/, functions/ y pruebas sobre PGlite
-data/config/         Configuración editable (pesos, moods, mazos, plantillas, parámetros)
-data/catalog/        Catálogo piloto, anclas, mazo del equipo, control de calidad
-scripts/             Build del sitio, semillas, pipeline del catálogo
-e2e/                 Pruebas de punta a punta con Playwright
-```
-
-## Cómo correrlo
-
-Requiere Node 22.
-
-```bash
-npm ci
-```
-
-| Comando | Qué hace |
+| Documento | Para qué |
 |---|---|
-| `npm test` | Pruebas unitarias: motor, simulador, migraciones con RLS, API y catálogo |
-| `npm run typecheck` | Revisa los tipos |
-| `npm run sim` | Corre los usuarios simulados y escribe `packages/engine/sim/RESULTADOS.md` |
-| `npm run build` | Arma `site/` (prototipo + `_kinoo/kinoo-demo.js`) |
-| `npm run serve` | Sirve `site/` en `http://localhost:4173/Prototipo-Kinoo/` |
-| `npm run e2e` | Pruebas en el navegador (en la nube: `PW_CHROMIUM_PATH=/opt/pw-browsers/chromium`) |
-| `npm run seed` | Genera las semillas SQL desde `data/` |
-| `npm run build:functions` | Empaqueta el motor para las Edge Functions |
+| [guias/integrar-un-front-nuevo.md](guias/integrar-un-front-nuevo.md) | Conectar un front nuevo al back: pantallas, llamadas, pósters |
+| [guias/contrato-api.md](guias/contrato-api.md) | Cada endpoint con ejemplos |
+| [guias/para-camilo-ajustar-el-algoritmo.md](guias/para-camilo-ajustar-el-algoritmo.md) | Cambiar pesos, moods, mazos y frases sin programar |
+| [guias/catalogo.md](guias/catalogo.md) | TMDB real o simulado, juez, pósters, agregar películas |
+| [guias/base-de-datos.md](guias/base-de-datos.md) | Tablas, proveedores (Supabase u otra nube) y seguridad |
+| [guias/despliegue.md](guias/despliegue.md) | Publicar el front; levantar la base y la API en Supabase, otra nube o Docker |
+| [guias/pruebas.md](guias/pruebas.md) | Qué se prueba, dónde y cómo correrlo |
+| [../AGENTS.md](../AGENTS.md) | Mapa y reglas para agentes de IA |
+
+## Decisiones de arquitectura
+
+| ADR | Tema |
+|---|---|
+| [0001](adr/0001-estructura.md) | En qué repositorio se construye |
+| [0002](adr/0002-monorepo.md) | Monorepo con workspaces (actualizada por la 0004) |
+| [0003](adr/0003-api-y-modo-demo.md) | Un solo servicio para la API y el modo demo |
+| [0004](adr/0004-front-back-y-nube.md) | Front y back separados, base de datos portátil y simulación de TMDB |
 
 ## Ejemplo con números
 
-Estado al cerrar la v2 (5 de noviembre de 2026):
+Estado al 5 de noviembre de 2026:
 
-- 56 pruebas unitarias y 3 e2e en verde.
-- 5 de 5 pruebas de aprendizaje. Tras 40 eventos, el mazo trae **6,4 veces** más películas "aceptables" que uno al azar.
-- 34 películas en el catálogo (semilla manual; las 300 esperan la clave de TMDB).
+- 69 películas (simulación de TMDB), 18 con póster.
+- 116 pruebas unitarias y de integración, y 3 e2e, en verde.
+- 5 de 5 pruebas de aprendizaje: tras 40 eventos, el mazo trae 6,4 veces más aciertos que uno al azar.
+- La base de datos se prueba con dos proveedores: Supabase y PostgreSQL genérico.

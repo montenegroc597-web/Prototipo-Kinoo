@@ -1,0 +1,186 @@
+{
+  "_simulado": true,
+  "_id_verificado": true,
+  "id": 18785,
+  "imdb_id": "tt1119646",
+  "title": "¿Qué pasó ayer?",
+  "original_title": "The Hangover",
+  "original_language": "en",
+  "release_date": "2009-06-05",
+  "runtime": 100,
+  "status": "Released",
+  "adult": false,
+  "genres": [
+    {
+      "id": 35,
+      "name": "Comedia"
+    }
+  ],
+  "overview": "Tres amigos despiertan tras una despedida de soltero en Las Vegas sin recordar nada de la noche anterior. Lo peor es que el novio ha desaparecido y solo tienen unas horas para encontrarlo.",
+  "tagline": "Lo que pasa en Las Vegas se queda en Las Vegas... hasta que despiertas.",
+  "vote_average": 7.3,
+  "vote_count": 17000,
+  "popularity": 41.2,
+  "poster_path": null,
+  "backdrop_path": null,
+  "production_countries": [
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    }
+  ],
+  "spoken_languages": [
+    {
+      "iso_639_1": "en",
+      "english_name": "English",
+      "name": "English"
+    }
+  ],
+  "budget": 35000000,
+  "revenue": 467483912,
+  "credits": {
+    "cast": [
+      {
+        "id": null,
+        "name": "Bradley Cooper",
+        "character": "Phil Wenneck",
+        "order": 0
+      },
+      {
+        "id": null,
+        "name": "Ed Helms",
+        "character": "Stu Price",
+        "order": 1
+      },
+      {
+        "id": null,
+        "name": "Zach Galifianakis",
+        "character": "Alan Garner",
+        "order": 2
+      },
+      {
+        "id": null,
+        "name": "Justin Bartha",
+        "character": "Doug Billings",
+        "order": 3
+      },
+      {
+        "id": null,
+        "name": "Heather Graham",
+        "character": "Jade",
+        "order": 4
+      },
+      {
+        "id": null,
+        "name": "Ken Jeong",
+        "character": "Mr. Chow",
+        "order": 5
+      },
+      {
+        "id": null,
+        "name": "Jeffrey Tambor",
+        "character": "Sid Garner",
+        "order": 6
+      }
+    ],
+    "crew": [
+      {
+        "id": null,
+        "name": "Todd Phillips",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "Jon Lucas",
+        "job": "Screenplay",
+        "department": "Writing"
+      },
+      {
+        "id": null,
+        "name": "Christophe Beck",
+        "job": "Original Music Composer",
+        "department": "Sound"
+      }
+    ]
+  },
+  "keywords": {
+    "keywords": [
+      {
+        "id": null,
+        "name": "bachelor party"
+      },
+      {
+        "id": null,
+        "name": "las vegas"
+      },
+      {
+        "id": null,
+        "name": "amnesia"
+      },
+      {
+        "id": null,
+        "name": "wedding"
+      },
+      {
+        "id": null,
+        "name": "hangover"
+      },
+      {
+        "id": null,
+        "name": "friends"
+      },
+      {
+        "id": null,
+        "name": "missing person"
+      },
+      {
+        "id": null,
+        "name": "slapstick"
+      },
+      {
+        "id": null,
+        "name": "road trip"
+      }
+    ]
+  },
+  "reviews": {
+    "page": 1,
+    "total_results": 2,
+    "results": [
+      {
+        "author": "laughtrack_lena",
+        "author_details": {
+          "rating": 8
+        },
+        "content": "Sharp, outrageous and endlessly quotable. The mystery structure keeps the jokes landing right until the end.",
+        "created_at": "2019-05-19T15:33:27.000Z",
+        "id": "5ce1d4a7c8f2b3007b9a1e64"
+      },
+      {
+        "author": "domingo_de_peli",
+        "author_details": {
+          "rating": 7
+        },
+        "content": "Una comedia muy divertida con un trío protagonista que funciona de maravilla. Algunos chistes han envejecido, pero sigue haciendo reír.",
+        "created_at": "2021-08-09T20:48:05.000Z",
+        "id": "6110f2c5a4d7e8008c2b5f37"
+      }
+    ]
+  },
+  "watch/providers": {
+    "results": {
+      "CO": {
+        "link": "https://www.themoviedb.org/movie/18785/watch?locale=CO",
+        "flatrate": [
+          {
+            "provider_id": 1899,
+            "provider_name": "Max",
+            "logo_path": null,
+            "display_priority": 3
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,9 +1,9 @@
+import type { EventsResult } from '@kinoo/core';
 // Adaptador de datos del front. Dos modos:
 //  - demo: el motor corre en el navegador, con el catálogo en JSON y los eventos en el almacenamiento local.
 //  - supabase: el mismo contrato contra las Edge Functions (si hay URL, clave anónima y sesión).
 // El front solo habla de acciones (guardar, descartar…), nunca de gestos.
 import type { DeckDTO, EventInput, OnboardingPairDTO, ProfileDTO, WatchFilters, WatchProposalDTO } from '@kinoo/shared';
-import type { EventsResult } from '@kinoo/api';
 
 export interface KinooAdapter {
   mode: 'demo' | 'supabase';
@@ -30,7 +30,14 @@ export function supabaseAdapter(o: { url: string; anonKey: string; accessToken: 
     postEvents: (events) => call('events', { method: 'POST', body: JSON.stringify({ events }) }),
     currentDeck: async () => (await call('deck/current')).deck,
     openDeck: async (b = {}) => (await call('deck/open', { method: 'POST', body: JSON.stringify(b) })).deck,
-    watchProposal: (f = {}) => call(`watch/proposal?${new URLSearchParams(Object.entries(f).filter(([, v]) => v !== undefined && v !== null).map(([k, v]) => [k, String(v)]))}`),
+    watchProposal: (f = {}) =>
+      call(
+        `watch/proposal?${new URLSearchParams(
+          Object.entries(f)
+            .filter(([, v]) => v !== undefined && v !== null)
+            .map(([k, v]) => [k, String(v)]),
+        )}`,
+      ),
     onboarding: (b) => call('onboarding', { method: 'POST', body: JSON.stringify(b) }),
   };
 }

@@ -1,0 +1,198 @@
+{
+  "_simulado": true,
+  "_id_verificado": true,
+  "id": 419430,
+  "imdb_id": "tt5052448",
+  "title": "¡Huye!",
+  "original_title": "Get Out",
+  "original_language": "en",
+  "release_date": "2017-02-24",
+  "runtime": 104,
+  "status": "Released",
+  "adult": false,
+  "genres": [
+    {
+      "id": 9648,
+      "name": "Misterio"
+    },
+    {
+      "id": 53,
+      "name": "Suspense"
+    },
+    {
+      "id": 27,
+      "name": "Terror"
+    }
+  ],
+  "overview": "Chris, un joven fotógrafo afroamericano, viaja a conocer a la familia de su novia en una finca apartada. Lo que al principio parece una visita incómoda se convierte en un descubrimiento perturbador.",
+  "tagline": "Solo estás de visita.",
+  "vote_average": 7.6,
+  "vote_count": 17000,
+  "popularity": 61.8,
+  "poster_path": null,
+  "backdrop_path": null,
+  "production_countries": [
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    }
+  ],
+  "spoken_languages": [
+    {
+      "iso_639_1": "en",
+      "english_name": "English",
+      "name": "English"
+    }
+  ],
+  "budget": 4500000,
+  "revenue": 255407969,
+  "credits": {
+    "cast": [
+      {
+        "id": null,
+        "name": "Daniel Kaluuya",
+        "character": "Chris Washington",
+        "order": 0
+      },
+      {
+        "id": null,
+        "name": "Allison Williams",
+        "character": "Rose Armitage",
+        "order": 1
+      },
+      {
+        "id": null,
+        "name": "Catherine Keener",
+        "character": "Missy Armitage",
+        "order": 2
+      },
+      {
+        "id": null,
+        "name": "Bradley Whitford",
+        "character": "Dean Armitage",
+        "order": 3
+      },
+      {
+        "id": null,
+        "name": "Caleb Landry Jones",
+        "character": "Jeremy Armitage",
+        "order": 4
+      },
+      {
+        "id": null,
+        "name": "Lil Rel Howery",
+        "character": "Rod Williams",
+        "order": 5
+      },
+      {
+        "id": null,
+        "name": "Stephen Root",
+        "character": "Jim Hudson",
+        "order": 6
+      }
+    ],
+    "crew": [
+      {
+        "id": null,
+        "name": "Jordan Peele",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "Jordan Peele",
+        "job": "Screenplay",
+        "department": "Writing"
+      },
+      {
+        "id": null,
+        "name": "Michael Abels",
+        "job": "Original Music Composer",
+        "department": "Sound"
+      }
+    ]
+  },
+  "keywords": {
+    "keywords": [
+      {
+        "id": null,
+        "name": "racism"
+      },
+      {
+        "id": null,
+        "name": "hypnosis"
+      },
+      {
+        "id": null,
+        "name": "interracial relationship"
+      },
+      {
+        "id": null,
+        "name": "psychological thriller"
+      },
+      {
+        "id": null,
+        "name": "social commentary"
+      },
+      {
+        "id": null,
+        "name": "photographer"
+      },
+      {
+        "id": null,
+        "name": "meeting the parents"
+      },
+      {
+        "id": null,
+        "name": "suburbia"
+      },
+      {
+        "id": null,
+        "name": "paranoia"
+      },
+      {
+        "id": null,
+        "name": "satire"
+      }
+    ]
+  },
+  "reviews": {
+    "page": 1,
+    "total_results": 2,
+    "results": [
+      {
+        "author": "sombra_urbana",
+        "author_details": {
+          "rating": 9
+        },
+        "content": "Sharp, unsettling and smart. It builds dread through small details and keeps you guessing until the very end.",
+        "created_at": "2017-03-02T20:31:17.000Z",
+        "id": "58b9c7e2c3a368358a00031f"
+      },
+      {
+        "author": "valeria_cine",
+        "author_details": {
+          "rating": 8
+        },
+        "content": "Un debut brillante que mezcla terror y crítica social con mucho ingenio. La actuación de Kaluuya es inolvidable.",
+        "created_at": "2020-05-18T16:02:49.000Z",
+        "id": "5ec2b8d3e4f5a6007b8c9d10"
+      }
+    ]
+  },
+  "watch/providers": {
+    "results": {
+      "CO": {
+        "link": "https://www.themoviedb.org/movie/419430/watch?locale=CO",
+        "flatrate": [
+          {
+            "provider_id": 8,
+            "provider_name": "Netflix",
+            "logo_path": null,
+            "display_priority": 1
+          }
+        ]
+      }
+    }
+  }
+}

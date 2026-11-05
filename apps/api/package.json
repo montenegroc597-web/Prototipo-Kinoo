@@ -1,0 +1,20 @@
+{
+  "name": "@kinoo/api",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Back de Kinoo: API HTTP portátil (Fetch API). Corre en Node, Supabase Edge Functions o cualquier nube con Request/Response.",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "dev": "tsx watch src/server.node.ts",
+    "start": "tsx src/server.node.ts"
+  },
+  "dependencies": {
+    "@kinoo/core": "*",
+    "@kinoo/db": "*",
+    "@kinoo/engine": "*",
+    "@kinoo/shared": "*",
+    "pg": "^8.13.1"
+  }
+}

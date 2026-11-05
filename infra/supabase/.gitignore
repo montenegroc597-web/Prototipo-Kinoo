@@ -1,0 +1,4 @@
+functions/_shared/kinoo-api.js
+migrations/
+seed.sql
+.temp/

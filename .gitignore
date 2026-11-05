@@ -2,10 +2,11 @@ node_modules/
 .DS_Store
 Thumbs.db
 *.log
-site/
+dist/
+coverage/
 .env
 .env.local
 test-results/
 playwright-report/
-data/catalog/raw/
-supabase/functions/_shared/kinoo-core.js
+packages/catalog/data/raw/
+.fixtures-tmp/

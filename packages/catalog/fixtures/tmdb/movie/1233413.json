@@ -1,0 +1,198 @@
+{
+  "_simulado": true,
+  "_id_verificado": true,
+  "id": 1233413,
+  "imdb_id": "tt31193180",
+  "title": "Pecadores",
+  "original_title": "Sinners",
+  "original_language": "en",
+  "release_date": "2025-04-16",
+  "runtime": 138,
+  "status": "Released",
+  "adult": false,
+  "genres": [
+    {
+      "id": 27,
+      "name": "Terror"
+    },
+    {
+      "id": 28,
+      "name": "Acción"
+    },
+    {
+      "id": 53,
+      "name": "Suspense"
+    }
+  ],
+  "overview": "Dos hermanos gemelos regresan a su pueblo natal en el Misisipi de los años treinta para abrir un club de música. Su noche de inauguración atrae a una presencia oscura que amenaza a todos.",
+  "tagline": "Cuidado con lo que invitas a entrar.",
+  "vote_average": 7.5,
+  "vote_count": 2500,
+  "popularity": 96.3,
+  "poster_path": null,
+  "backdrop_path": null,
+  "production_countries": [
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    }
+  ],
+  "spoken_languages": [
+    {
+      "iso_639_1": "en",
+      "english_name": "English",
+      "name": "English"
+    }
+  ],
+  "budget": 90000000,
+  "revenue": 368000000,
+  "credits": {
+    "cast": [
+      {
+        "id": null,
+        "name": "Michael B. Jordan",
+        "character": "Smoke / Stack",
+        "order": 0
+      },
+      {
+        "id": null,
+        "name": "Hailee Steinfeld",
+        "character": "Mary",
+        "order": 1
+      },
+      {
+        "id": null,
+        "name": "Miles Caton",
+        "character": "Sammie",
+        "order": 2
+      },
+      {
+        "id": null,
+        "name": "Jack O'Connell",
+        "character": "Remmick",
+        "order": 3
+      },
+      {
+        "id": null,
+        "name": "Wunmi Mosaku",
+        "character": "Annie",
+        "order": 4
+      },
+      {
+        "id": null,
+        "name": "Jayme Lawson",
+        "character": "Pearline",
+        "order": 5
+      },
+      {
+        "id": null,
+        "name": "Delroy Lindo",
+        "character": "Delta Slim",
+        "order": 6
+      }
+    ],
+    "crew": [
+      {
+        "id": null,
+        "name": "Ryan Coogler",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "Ryan Coogler",
+        "job": "Screenplay",
+        "department": "Writing"
+      },
+      {
+        "id": null,
+        "name": "Ludwig Göransson",
+        "job": "Original Music Composer",
+        "department": "Sound"
+      }
+    ]
+  },
+  "keywords": {
+    "keywords": [
+      {
+        "id": null,
+        "name": "vampire"
+      },
+      {
+        "id": null,
+        "name": "mississippi"
+      },
+      {
+        "id": null,
+        "name": "1930s"
+      },
+      {
+        "id": null,
+        "name": "blues"
+      },
+      {
+        "id": null,
+        "name": "twin brothers"
+      },
+      {
+        "id": null,
+        "name": "juke joint"
+      },
+      {
+        "id": null,
+        "name": "jim crow era"
+      },
+      {
+        "id": null,
+        "name": "supernatural horror"
+      },
+      {
+        "id": null,
+        "name": "musician"
+      },
+      {
+        "id": null,
+        "name": "period drama"
+      }
+    ]
+  },
+  "reviews": {
+    "page": 1,
+    "total_results": 2,
+    "results": [
+      {
+        "author": "nocturna_ed",
+        "author_details": {
+          "rating": 9
+        },
+        "content": "A bold mix of horror, history and music. The performances are powerful and the soundtrack is part of the storytelling.",
+        "created_at": "2025-04-20T23:12:40.000Z",
+        "id": "6805a1c4d8e9f0001a2b3c45"
+      },
+      {
+        "author": "dani_en_sala",
+        "author_details": {
+          "rating": 8
+        },
+        "content": "Una película con mucha personalidad y una puesta en escena espectacular. Tarda en arrancar, pero la segunda mitad es intensa.",
+        "created_at": "2025-05-11T18:55:03.000Z",
+        "id": "6820f7a9b1c2d3004e5f6a89"
+      }
+    ]
+  },
+  "watch/providers": {
+    "results": {
+      "CO": {
+        "link": "https://www.themoviedb.org/movie/1233413/watch?locale=CO",
+        "flatrate": [
+          {
+            "provider_id": 1899,
+            "provider_name": "Max",
+            "logo_path": null,
+            "display_priority": 3
+          }
+        ]
+      }
+    }
+  }
+}

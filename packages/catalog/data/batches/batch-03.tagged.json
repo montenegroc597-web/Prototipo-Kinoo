@@ -1,0 +1,31 @@
+{
+  "tagger_model": "claude-sonnet (subagente de Claude Code)",
+  "prompt_version": "juez-v2.0",
+  "tagged_at": "2026-11-05T05:00:00.000Z",
+  "movies": [
+    {
+      "id": "nosferatu-2024",
+      "atoms": {"frenetica": 0.1, "agil": 0.15, "pausada": 0.7, "contemplativa": 0.3, "reconfortante": 0, "luminosa": 0.02, "melancolica": 0.4, "tensa": 0.8, "inquietante": 0.9, "sombria": 0.92, "cruda": 0.3, "onirica": 0.55, "neon": 0, "pastel": 0, "calida": 0.1, "monocromatica": 0.85, "carga_emocional": 0.5, "complejidad": 0.35, "humor": 0.03, "intimidad": 0.45, "escala_epica": 0.4},
+      "hook": "UNA JOVEN ATORMENTADA POR UNA PRESENCIA OSCURA ENFRENTA A UN ANTIGUO CONDE QUE LLEGA CON SU OBSESIÓN Y UNA PLAGA A CUESTAS.",
+      "pillars": {"ritmo": "pausado", "tono": "oscuro y febril", "historia": "obsesión vampírica", "visual": "gótico en sombras"}
+    },
+    {
+      "id": "the-shining-1980",
+      "atoms": {"frenetica": 0.05, "agil": 0.1, "pausada": 0.75, "contemplativa": 0.4, "reconfortante": 0, "luminosa": 0.05, "melancolica": 0.2, "tensa": 0.92, "inquietante": 0.95, "sombria": 0.8, "cruda": 0.2, "onirica": 0.55, "neon": 0.05, "pastel": 0.05, "calida": 0.25, "monocromatica": 0.2, "carga_emocional": 0.35, "complejidad": 0.5, "humor": 0.08, "intimidad": 0.55, "escala_epica": 0.2},
+      "hook": "UN HOTEL AISLADO POR LA NIEVE, UN INVIERNO DE SOLEDAD Y UNA FAMILIA QUE EMPIEZA A PERDER LA CORDURA ENTRE PRESENCIAS QUE NO SE VAN.",
+      "pillars": {"ritmo": "pausado", "tono": "opresivo", "historia": "locura en aislamiento", "visual": "simetría helada"}
+    },
+    {
+      "id": "the-wild-robot-2024",
+      "atoms": {"frenetica": 0.2, "agil": 0.6, "pausada": 0.35, "contemplativa": 0.1, "reconfortante": 0.8, "luminosa": 0.75, "melancolica": 0.4, "tensa": 0.3, "inquietante": 0.03, "sombria": 0.05, "cruda": 0.02, "onirica": 0.35, "neon": 0.1, "pastel": 0.55, "calida": 0.8, "monocromatica": 0, "carga_emocional": 0.88, "complejidad": 0.2, "humor": 0.5, "intimidad": 0.6, "escala_epica": 0.4},
+      "hook": "UNA ROBOT VARADA EN UNA ISLA SALVAJE APRENDE A SOBREVIVIR Y, SIN PLANEARLO, SE CONVIERTE EN MADRE DE UN PEQUEÑO GANSO.",
+      "pillars": {"ritmo": "ágil", "tono": "tierno", "historia": "maternidad inesperada", "visual": "naturaleza pintada"}
+    },
+    {
+      "id": "toy-story-3-2010",
+      "atoms": {"frenetica": 0.35, "agil": 0.8, "pausada": 0.1, "contemplativa": 0.03, "reconfortante": 0.75, "luminosa": 0.75, "melancolica": 0.5, "tensa": 0.45, "inquietante": 0.1, "sombria": 0.15, "cruda": 0, "onirica": 0.1, "neon": 0.3, "pastel": 0.3, "calida": 0.7, "monocromatica": 0, "carga_emocional": 0.92, "complejidad": 0.15, "humor": 0.75, "intimidad": 0.3, "escala_epica": 0.5},
+      "hook": "SU DUEÑO SE VA A LA UNIVERSIDAD Y LOS JUGUETES ACABAN EN UNA GUARDERÍA QUE PARECE UN PARAÍSO. SOLO JUNTOS PODRÁN VOLVER A CASA.",
+      "pillars": {"ritmo": "ágil", "tono": "cálido y emotivo", "historia": "crecer y despedirse", "visual": "animación colorida"}
+    }
+  ]
+}

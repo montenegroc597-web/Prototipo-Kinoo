@@ -2,7 +2,11 @@ import { ATOM_KEYS, type AtomVector, type KinooEvent } from '@kinoo/shared';
 import type { ConfigIndex } from './configIndex';
 import { clamp } from './vector';
 
-export interface Signal { movie_id: string; signal: number; eta: number }
+export interface Signal {
+  movie_id: string;
+  signal: number;
+  eta: number;
+}
 
 /**
  * Traduce un evento a señales de aprendizaje usando action_weights.
@@ -15,18 +19,24 @@ export function signalsOf(e: KinooEvent, cfg: ConfigIndex): Signal[] {
     return movie && x && x.eta > 0 && x.signal !== 0 ? [{ movie_id: movie, signal: x.signal, eta: x.eta }] : [];
   };
   switch (e.type) {
-    case 'saved_intent': return one(e.movie_id, 'saved_intent', e.payload.flipped ? 'flipped' : 'unflipped');
-    case 'dismissed': return one(e.movie_id, 'dismissed');
-    case 'marked_seen': return one(e.movie_id, 'marked_seen', e.payload.reaction ?? 'default');
-    case 'rewatch_intent': return one(e.movie_id, 'rewatch_intent');
+    case 'saved_intent':
+      return one(e.movie_id, 'saved_intent', e.payload.flipped ? 'flipped' : 'unflipped');
+    case 'dismissed':
+      return one(e.movie_id, 'dismissed');
+    case 'marked_seen':
+      return one(e.movie_id, 'marked_seen', e.payload.reaction ?? 'default');
+    case 'rewatch_intent':
+      return one(e.movie_id, 'rewatch_intent');
     case 'watch_confirmed': {
       const v = e.payload.reaction === 'loved' && e.payload.rewatch ? 'loved_rewatch' : e.payload.reaction;
       return one(e.movie_id, 'watch_confirmed', v);
     }
     case 'onboarding_choice':
       return [...one(e.payload.chosen_movie_id, 'onboarding_choice', 'chosen'), ...one(e.payload.rejected_movie_id, 'onboarding_choice', 'rejected')];
-    case 'watch_skipped': return one(e.movie_id, 'watch_skipped');
-    default: return [];
+    case 'watch_skipped':
+      return one(e.movie_id, 'watch_skipped');
+    default:
+      return [];
   }
 }
 

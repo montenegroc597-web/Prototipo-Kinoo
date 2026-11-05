@@ -17,7 +17,7 @@ flowchart LR
 | Paso | Archivo del motor | Qué lo controla |
 |---|---|---|
 | 1. El evento llega | `profile.ts` (`applyEvent`) | Tipos de `packages/shared/src/events.ts` |
-| 2. Se traduce a señal | `learning.ts` (`signalsOf`) | `data/config/action_weights.json` |
+| 2. Se traduce a señal | `learning.ts` (`signalsOf`) | `packages/config/data/action_weights.json` |
 | 3. Rasgo distintivo | `distinct.ts` | Promedio del catálogo (se calcula solo) |
 | 4. Aprende | `learning.ts` (`applySignal`) | `distinct_threshold` (τ) en `params.json` |
 | 5. Puntúa | `score.ts` | β, γ en `params.json`; `quality_weight` del mood |
@@ -37,7 +37,7 @@ flowchart LR
 
 ## Cómo sabemos que aprende
 
-`npm run sim` corre usuarios simulados: personas sintéticas con un gusto oculto que guardan o descartan según ese gusto. Resultados en [`packages/engine/sim/RESULTADOS.md`](../../packages/engine/sim/RESULTADOS.md). Con la configuración actual pasan las cinco pruebas de la sección 16. Lo más importante: tras 40 eventos, el mazo trae **6,4 veces** más películas "aceptables" que un mazo al azar.
+`npm run test:sim` corre usuarios simulados: personas sintéticas con un gusto oculto que guardan o descartan según ese gusto. Resultados en [`packages/engine/sim/RESULTADOS.md`](../../packages/engine/sim/RESULTADOS.md). Con la configuración actual pasan las cinco pruebas de la sección 16. Lo más importante: tras 40 eventos, el mazo trae **6,4 veces** más películas "aceptables" que un mazo al azar.
 
 ## Ejemplo con números
 

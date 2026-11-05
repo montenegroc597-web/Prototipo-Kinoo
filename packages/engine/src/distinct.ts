@@ -1,11 +1,15 @@
 import { ATOM_KEYS, type AtomVector, type Movie } from '@kinoo/shared';
 import { clamp, zeroVector } from './vector';
 
-export interface CatalogStats { mean: AtomVector; stddev: AtomVector }
+export interface CatalogStats {
+  mean: AtomVector;
+  stddev: AtomVector;
+}
 
 /** μᵢ y desviación de cada átomo en el catálogo. Se recalcula cuando cambia el catálogo. */
 export function catalogStats(movies: Pick<Movie, 'atoms'>[]): CatalogStats {
-  const mean = zeroVector(), stddev = zeroVector();
+  const mean = zeroVector();
+  const stddev = zeroVector();
   const n = movies.length || 1;
   for (const m of movies) for (const k of ATOM_KEYS) mean[k] += (m.atoms[k] ?? 0) / n;
   for (const m of movies) for (const k of ATOM_KEYS) stddev[k] += ((m.atoms[k] ?? 0) - mean[k]) ** 2 / n;

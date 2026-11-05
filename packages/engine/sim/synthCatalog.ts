@@ -39,12 +39,23 @@ export function synthCatalog(n = 300, seed = Number(process.env.KINOO_SIM_SEED |
     }
     const provs = PROVIDERS.filter(() => r() < 0.35);
     out.push({
-      id: `sim-${i}`, title: `Película ${kind} ${i}`, year: 1960 + Math.floor(r() * 66), runtime_min: 80 + Math.floor(r() * 90),
-      genres: [kind], directors: [`dir-${Math.floor(r() * 180)}`], countries: ['US'], original_language: 'en',
-      vote_average: 5 + r() * 3.8, vote_count: Math.floor(50 + r() * r() * 20000), atoms,
-      hook: 'UNA HISTORIA PARA PROBAR EL MOTOR', pillars: { ritmo: '-', tono: '-', historia: '-', visual: '-' },
-      providers: { CO: provs.length ? provs : ['Netflix'] }, tagger: { model: 'sintetico', prompt_version: 'sim', tagged_at: '2026-11-05T00:00:00Z' },
-      source: 'semilla_manual', poster_path: null,
+      id: `sim-${i}`,
+      title: `Película ${kind} ${i}`,
+      year: 1960 + Math.floor(r() * 66),
+      runtime_min: 80 + Math.floor(r() * 90),
+      genres: [kind],
+      directors: [`dir-${Math.floor(r() * 180)}`],
+      countries: ['US'],
+      original_language: 'en',
+      vote_average: 5 + r() * 3.8,
+      vote_count: Math.floor(50 + r() * r() * 20000),
+      atoms,
+      hook: 'UNA HISTORIA PARA PROBAR EL MOTOR',
+      pillars: { ritmo: '-', tono: '-', historia: '-', visual: '-' },
+      providers: { CO: provs.length ? provs : ['Netflix'] },
+      tagger: { model: 'sintetico', prompt_version: 'sim', tagged_at: '2026-11-05T00:00:00Z' },
+      source: 'semilla_manual',
+      poster_path: null,
     });
   }
   return out;

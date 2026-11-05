@@ -1,0 +1,214 @@
+{
+  "_simulado": true,
+  "_id_verificado": true,
+  "id": 299534,
+  "imdb_id": "tt4154796",
+  "title": "Avengers: Endgame",
+  "original_title": "Avengers: Endgame",
+  "original_language": "en",
+  "release_date": "2019-04-24",
+  "runtime": 181,
+  "status": "Released",
+  "adult": false,
+  "genres": [
+    {
+      "id": 12,
+      "name": "Aventura"
+    },
+    {
+      "id": 878,
+      "name": "Ciencia ficción"
+    },
+    {
+      "id": 28,
+      "name": "Acción"
+    }
+  ],
+  "overview": "Tras los devastadores eventos que dejaron al universo en ruinas, los Vengadores restantes se reúnen una vez más. Decididos a deshacer el daño, preparan una última misión.",
+  "tagline": "Todo tiene un final.",
+  "vote_average": 8.2,
+  "vote_count": 26000,
+  "popularity": 96.3,
+  "poster_path": null,
+  "backdrop_path": null,
+  "production_countries": [
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    }
+  ],
+  "spoken_languages": [
+    {
+      "iso_639_1": "en",
+      "english_name": "English",
+      "name": "English"
+    },
+    {
+      "iso_639_1": "ja",
+      "english_name": "Japanese",
+      "name": "日本語"
+    },
+    {
+      "iso_639_1": "xh",
+      "english_name": "Xhosa",
+      "name": ""
+    }
+  ],
+  "budget": 356000000,
+  "revenue": 2799439100,
+  "credits": {
+    "cast": [
+      {
+        "id": null,
+        "name": "Robert Downey Jr.",
+        "character": "Tony Stark / Iron Man",
+        "order": 0
+      },
+      {
+        "id": null,
+        "name": "Chris Evans",
+        "character": "Steve Rogers / Captain America",
+        "order": 1
+      },
+      {
+        "id": null,
+        "name": "Mark Ruffalo",
+        "character": "Bruce Banner / Hulk",
+        "order": 2
+      },
+      {
+        "id": null,
+        "name": "Chris Hemsworth",
+        "character": "Thor",
+        "order": 3
+      },
+      {
+        "id": null,
+        "name": "Scarlett Johansson",
+        "character": "Natasha Romanoff / Black Widow",
+        "order": 4
+      },
+      {
+        "id": null,
+        "name": "Jeremy Renner",
+        "character": "Clint Barton / Hawkeye",
+        "order": 5
+      },
+      {
+        "id": null,
+        "name": "Josh Brolin",
+        "character": "Thanos",
+        "order": 6
+      }
+    ],
+    "crew": [
+      {
+        "id": null,
+        "name": "Anthony Russo",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "Joe Russo",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "Christopher Markus",
+        "job": "Screenplay",
+        "department": "Writing"
+      },
+      {
+        "id": null,
+        "name": "Alan Silvestri",
+        "job": "Original Music Composer",
+        "department": "Sound"
+      }
+    ]
+  },
+  "keywords": {
+    "keywords": [
+      {
+        "id": null,
+        "name": "superhero"
+      },
+      {
+        "id": null,
+        "name": "time travel"
+      },
+      {
+        "id": null,
+        "name": "based on comic"
+      },
+      {
+        "id": null,
+        "name": "marvel cinematic universe (mcu)"
+      },
+      {
+        "id": null,
+        "name": "sacrifice"
+      },
+      {
+        "id": null,
+        "name": "alien invasion"
+      },
+      {
+        "id": null,
+        "name": "super power"
+      },
+      {
+        "id": null,
+        "name": "post-apocalyptic future"
+      },
+      {
+        "id": null,
+        "name": "ensemble cast"
+      },
+      {
+        "id": null,
+        "name": "sequel"
+      }
+    ]
+  },
+  "reviews": {
+    "page": 1,
+    "total_results": 2,
+    "results": [
+      {
+        "author": "assemble_always",
+        "author_details": {
+          "rating": 9
+        },
+        "content": "An emotional and satisfying finale to over a decade of storytelling. The payoffs land and the cast delivers.",
+        "created_at": "2019-04-27T01:14:22.000Z",
+        "id": "5cc3b7e0f1a4d8002c6e5a13"
+      },
+      {
+        "author": "sofa_y_palomitas",
+        "author_details": {
+          "rating": 8
+        },
+        "content": "Larga pero muy bien aprovechada, con momentos épicos y otros muy emotivos. Una despedida a la altura para los fans.",
+        "created_at": "2019-06-02T17:39:58.000Z",
+        "id": "5cf3d8a1b6c2e7004f1b9d50"
+      }
+    ]
+  },
+  "watch/providers": {
+    "results": {
+      "CO": {
+        "link": "https://www.themoviedb.org/movie/299534/watch?locale=CO",
+        "flatrate": [
+          {
+            "provider_id": 337,
+            "provider_name": "Disney Plus",
+            "logo_path": null,
+            "display_priority": 4
+          }
+        ]
+      }
+    }
+  }
+}

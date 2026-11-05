@@ -1,0 +1,194 @@
+{
+  "_simulado": true,
+  "_id_verificado": true,
+  "id": 313369,
+  "imdb_id": "tt3783958",
+  "title": "La La Land",
+  "original_title": "La La Land",
+  "original_language": "en",
+  "release_date": "2016-12-09",
+  "runtime": 128,
+  "status": "Released",
+  "adult": false,
+  "genres": [
+    {
+      "id": 10402,
+      "name": "Música"
+    },
+    {
+      "id": 10749,
+      "name": "Romance"
+    },
+    {
+      "id": 18,
+      "name": "Drama"
+    }
+  ],
+  "overview": "Mia, una aspirante a actriz, y Sebastian, un pianista de jazz, se enamoran mientras persiguen sus sueños en Los Ángeles.",
+  "tagline": "Aquí es donde empiezan los sueños.",
+  "vote_average": 7.9,
+  "vote_count": 17000,
+  "popularity": 58.2,
+  "poster_path": null,
+  "backdrop_path": null,
+  "production_countries": [
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    }
+  ],
+  "spoken_languages": [
+    {
+      "iso_639_1": "en",
+      "english_name": "English",
+      "name": "English"
+    }
+  ],
+  "budget": 30000000,
+  "revenue": 448000000,
+  "credits": {
+    "cast": [
+      {
+        "id": null,
+        "name": "Ryan Gosling",
+        "character": "Sebastian",
+        "order": 0
+      },
+      {
+        "id": null,
+        "name": "Emma Stone",
+        "character": "Mia",
+        "order": 1
+      },
+      {
+        "id": null,
+        "name": "John Legend",
+        "character": "Keith",
+        "order": 2
+      },
+      {
+        "id": null,
+        "name": "Rosemarie DeWitt",
+        "character": "Laura",
+        "order": 3
+      },
+      {
+        "id": null,
+        "name": "J.K. Simmons",
+        "character": "Bill",
+        "order": 4
+      },
+      {
+        "id": null,
+        "name": "Finn Wittrock",
+        "character": "Greg",
+        "order": 5
+      }
+    ],
+    "crew": [
+      {
+        "id": null,
+        "name": "Damien Chazelle",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "Damien Chazelle",
+        "job": "Screenplay",
+        "department": "Writing"
+      },
+      {
+        "id": null,
+        "name": "Justin Hurwitz",
+        "job": "Original Music Composer",
+        "department": "Sound"
+      }
+    ]
+  },
+  "keywords": {
+    "keywords": [
+      {
+        "id": null,
+        "name": "los angeles, california"
+      },
+      {
+        "id": null,
+        "name": "jazz"
+      },
+      {
+        "id": null,
+        "name": "musical"
+      },
+      {
+        "id": null,
+        "name": "actress"
+      },
+      {
+        "id": null,
+        "name": "pianist"
+      },
+      {
+        "id": null,
+        "name": "aspiring actress"
+      },
+      {
+        "id": null,
+        "name": "romance"
+      },
+      {
+        "id": null,
+        "name": "dreams"
+      },
+      {
+        "id": null,
+        "name": "audition"
+      }
+    ]
+  },
+  "reviews": {
+    "page": 1,
+    "total_results": 2,
+    "results": [
+      {
+        "author": "lunaensala",
+        "author_details": {
+          "rating": 9
+        },
+        "content": "Preciosa de principio a fin. Los números musicales y los colores te atrapan y el final te deja pensando varios días.",
+        "created_at": "2016-12-20T18:02:44.000Z",
+        "id": "58587a1d9251410f4b0021c3"
+      },
+      {
+        "author": "jazzhands_77",
+        "author_details": {
+          "rating": 8
+        },
+        "content": "A charming throwback with gorgeous cinematography. The leads have wonderful chemistry, even if the story is simpler than the hype suggested.",
+        "created_at": "2017-01-15T21:30:05.000Z",
+        "id": "5a4c8e0b0e0a2600c71f9d34"
+      }
+    ]
+  },
+  "watch/providers": {
+    "results": {
+      "CO": {
+        "link": "https://www.themoviedb.org/movie/313369/watch?locale=CO",
+        "flatrate": [
+          {
+            "provider_id": 8,
+            "provider_name": "Netflix",
+            "logo_path": null,
+            "display_priority": 0
+          },
+          {
+            "provider_id": 119,
+            "provider_name": "Amazon Prime Video",
+            "logo_path": null,
+            "display_priority": 1
+          }
+        ]
+      }
+    }
+  }
+}

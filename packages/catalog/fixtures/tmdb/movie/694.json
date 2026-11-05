@@ -1,0 +1,198 @@
+{
+  "_simulado": true,
+  "_id_verificado": true,
+  "id": 694,
+  "imdb_id": "tt0081505",
+  "title": "El resplandor",
+  "original_title": "The Shining",
+  "original_language": "en",
+  "release_date": "1980-05-23",
+  "runtime": 144,
+  "status": "Released",
+  "adult": false,
+  "genres": [
+    {
+      "id": 27,
+      "name": "Terror"
+    },
+    {
+      "id": 53,
+      "name": "Suspense"
+    }
+  ],
+  "overview": "Jack Torrance acepta el puesto de cuidador de invierno en un enorme hotel aislado por la nieve, junto a su esposa y su hijo. A medida que pasan los días, la soledad y las presencias del lugar empiezan a alterar a la familia.",
+  "tagline": "Un hotel donde el invierno nunca termina.",
+  "vote_average": 8.2,
+  "vote_count": 17500,
+  "popularity": 62.4,
+  "poster_path": null,
+  "backdrop_path": null,
+  "production_countries": [
+    {
+      "iso_3166_1": "GB",
+      "name": "United Kingdom"
+    },
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    }
+  ],
+  "spoken_languages": [
+    {
+      "iso_639_1": "en",
+      "english_name": "English",
+      "name": "English"
+    }
+  ],
+  "budget": 19000000,
+  "revenue": 44017374,
+  "credits": {
+    "cast": [
+      {
+        "id": null,
+        "name": "Jack Nicholson",
+        "character": "Jack Torrance",
+        "order": 0
+      },
+      {
+        "id": null,
+        "name": "Shelley Duvall",
+        "character": "Wendy Torrance",
+        "order": 1
+      },
+      {
+        "id": null,
+        "name": "Danny Lloyd",
+        "character": "Danny Torrance",
+        "order": 2
+      },
+      {
+        "id": null,
+        "name": "Scatman Crothers",
+        "character": "Dick Hallorann",
+        "order": 3
+      },
+      {
+        "id": null,
+        "name": "Barry Nelson",
+        "character": "Stuart Ullman",
+        "order": 4
+      },
+      {
+        "id": null,
+        "name": "Philip Stone",
+        "character": "Delbert Grady",
+        "order": 5
+      },
+      {
+        "id": null,
+        "name": "Joe Turkel",
+        "character": "Lloyd",
+        "order": 6
+      }
+    ],
+    "crew": [
+      {
+        "id": null,
+        "name": "Stanley Kubrick",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "Diane Johnson",
+        "job": "Screenplay",
+        "department": "Writing"
+      },
+      {
+        "id": null,
+        "name": "Wendy Carlos",
+        "job": "Original Music Composer",
+        "department": "Sound"
+      }
+    ]
+  },
+  "keywords": {
+    "keywords": [
+      {
+        "id": null,
+        "name": "hotel"
+      },
+      {
+        "id": null,
+        "name": "based on novel or book"
+      },
+      {
+        "id": null,
+        "name": "writer"
+      },
+      {
+        "id": null,
+        "name": "isolation"
+      },
+      {
+        "id": null,
+        "name": "psychological horror"
+      },
+      {
+        "id": null,
+        "name": "haunted hotel"
+      },
+      {
+        "id": null,
+        "name": "snowstorm"
+      },
+      {
+        "id": null,
+        "name": "psychic power"
+      },
+      {
+        "id": null,
+        "name": "madness"
+      },
+      {
+        "id": null,
+        "name": "family"
+      }
+    ]
+  },
+  "reviews": {
+    "page": 1,
+    "total_results": 2,
+    "results": [
+      {
+        "author": "nocturno_cine",
+        "author_details": {
+          "rating": 10
+        },
+        "content": "Una obra maestra del terror psicológico. Cada plano está calculado al milímetro y la tensión crece sin necesidad de recurrir a sustos fáciles. Nicholson está inmenso.",
+        "created_at": "2021-10-29T15:42:10.000Z",
+        "id": "5f3a9c1b2d4e6a7b8c9d0e1f"
+      },
+      {
+        "author": "frameByFrame",
+        "author_details": {
+          "rating": 9
+        },
+        "content": "Slow, unsettling and endlessly rewatchable. The hotel itself feels like a character, and the sound design alone is worth the price of admission.",
+        "created_at": "2022-02-14T21:08:33.000Z",
+        "id": "60b7d2e4f1a3c5d7e9f0a1b2"
+      }
+    ]
+  },
+  "watch/providers": {
+    "results": {
+      "CO": {
+        "link": "https://www.themoviedb.org/movie/694/watch?locale=CO",
+        "flatrate": [
+          {
+            "provider_id": 1899,
+            "provider_name": "Max",
+            "logo_path": null,
+            "display_priority": 3
+          }
+        ]
+      }
+    }
+  }
+}

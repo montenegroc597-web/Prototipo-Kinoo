@@ -1,0 +1,209 @@
+{
+  "_simulado": true,
+  "_id_verificado": true,
+  "id": 546554,
+  "imdb_id": "tt8946378",
+  "title": "Entre navajas y secretos",
+  "original_title": "Knives Out",
+  "original_language": "en",
+  "release_date": "2019-11-27",
+  "runtime": 130,
+  "status": "Released",
+  "adult": false,
+  "genres": [
+    {
+      "id": 9648,
+      "name": "Misterio"
+    },
+    {
+      "id": 35,
+      "name": "Comedia"
+    },
+    {
+      "id": 80,
+      "name": "Crimen"
+    }
+  ],
+  "overview": "Un detective privado investiga la misteriosa muerte de un célebre novelista de misterio, rodeado de una familia en la que todos tienen algo que ocultar.",
+  "tagline": "Todos tienen un motivo. Nadie tiene una coartada.",
+  "vote_average": 7.8,
+  "vote_count": 13000,
+  "popularity": 52.6,
+  "poster_path": null,
+  "backdrop_path": null,
+  "production_countries": [
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    }
+  ],
+  "spoken_languages": [
+    {
+      "iso_639_1": "en",
+      "english_name": "English",
+      "name": "English"
+    },
+    {
+      "iso_639_1": "es",
+      "english_name": "Spanish",
+      "name": "Español"
+    }
+  ],
+  "budget": 40000000,
+  "revenue": 311000000,
+  "credits": {
+    "cast": [
+      {
+        "id": null,
+        "name": "Daniel Craig",
+        "character": "Benoit Blanc",
+        "order": 0
+      },
+      {
+        "id": null,
+        "name": "Chris Evans",
+        "character": "Ransom Drysdale",
+        "order": 1
+      },
+      {
+        "id": null,
+        "name": "Ana de Armas",
+        "character": "Marta Cabrera",
+        "order": 2
+      },
+      {
+        "id": null,
+        "name": "Jamie Lee Curtis",
+        "character": "Linda Drysdale",
+        "order": 3
+      },
+      {
+        "id": null,
+        "name": "Michael Shannon",
+        "character": "Walt Thrombey",
+        "order": 4
+      },
+      {
+        "id": null,
+        "name": "Toni Collette",
+        "character": "Joni Thrombey",
+        "order": 5
+      },
+      {
+        "id": null,
+        "name": "Christopher Plummer",
+        "character": "Harlan Thrombey",
+        "order": 6
+      }
+    ],
+    "crew": [
+      {
+        "id": null,
+        "name": "Rian Johnson",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "Rian Johnson",
+        "job": "Screenplay",
+        "department": "Writing"
+      },
+      {
+        "id": null,
+        "name": "Nathan Johnson",
+        "job": "Original Music Composer",
+        "department": "Sound"
+      }
+    ]
+  },
+  "keywords": {
+    "keywords": [
+      {
+        "id": null,
+        "name": "detective"
+      },
+      {
+        "id": null,
+        "name": "whodunit"
+      },
+      {
+        "id": null,
+        "name": "murder"
+      },
+      {
+        "id": null,
+        "name": "family"
+      },
+      {
+        "id": null,
+        "name": "mansion"
+      },
+      {
+        "id": null,
+        "name": "inheritance"
+      },
+      {
+        "id": null,
+        "name": "novelist"
+      },
+      {
+        "id": null,
+        "name": "investigation"
+      },
+      {
+        "id": null,
+        "name": "nurse"
+      },
+      {
+        "id": null,
+        "name": "dysfunctional family"
+      }
+    ]
+  },
+  "reviews": {
+    "page": 1,
+    "total_results": 2,
+    "results": [
+      {
+        "author": "lupa_y_pistas",
+        "author_details": {
+          "rating": 9
+        },
+        "content": "Un misterio clásico con humor afilado y un reparto en estado de gracia. Se disfruta de principio a fin.",
+        "created_at": "2019-12-03T20:14:52.000Z",
+        "id": "5de6a1b8d7c4a6001c8e3f47"
+      },
+      {
+        "author": "clue_hunter",
+        "author_details": {
+          "rating": 8
+        },
+        "content": "Clever, funny and beautifully constructed. Craig clearly has a blast with his accent.",
+        "created_at": "2020-01-22T09:31:15.000Z",
+        "id": "5e27f4a0c3a368001d4b9e82"
+      }
+    ]
+  },
+  "watch/providers": {
+    "results": {
+      "CO": {
+        "link": "https://www.themoviedb.org/movie/546554/watch?locale=CO",
+        "flatrate": [
+          {
+            "provider_id": 119,
+            "provider_name": "Amazon Prime Video",
+            "logo_path": null,
+            "display_priority": 0
+          },
+          {
+            "provider_id": 8,
+            "provider_name": "Netflix",
+            "logo_path": null,
+            "display_priority": 1
+          }
+        ]
+      }
+    }
+  }
+}

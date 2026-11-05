@@ -28,7 +28,7 @@ export function discoverCandidates(catalog: Catalog, model: UserModel, cfg: Conf
       if (st.state !== 'dismissed') return false;
       if (new Date(st.updated_at).getTime() >= cutoff) return false;
     }
-    if (f.providers && f.providers.list.length && !availableOn(m, f.providers)) return false;
+    if (f.providers?.list.length && !availableOn(m, f.providers)) return false;
     if (f.max_runtime_min && m.movie.runtime_min > f.max_runtime_min) return false;
     return true;
   });

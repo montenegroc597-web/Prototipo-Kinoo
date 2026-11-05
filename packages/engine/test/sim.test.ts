@@ -1,5 +1,5 @@
+import { defaultConfig } from '@kinoo/config';
 import { describe, expect, it } from 'vitest';
-import { defaultConfig } from '../../../data/config';
 import { runAll } from '../sim/scenarios';
 
 // Las cinco pruebas de la sección 16 sobre el catálogo sintético de referencia (semilla 42).

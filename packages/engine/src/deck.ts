@@ -1,11 +1,11 @@
 import type { AtomKey, AtomVector, CuratedDeck, DeckRole } from '@kinoo/shared';
+import { type HardFilters, discoverCandidates } from './candidates';
 import type { Catalog, IndexedMovie } from './catalog';
-import { discoverCandidates, type HardFilters } from './candidates';
 import type { ConfigIndex } from './configIndex';
 import { explain } from './explain';
-import { ensureVibe, type UserModel } from './profile';
-import { percentile, scoreMovie, type Scored } from './score';
-import { cosine, copyVector, fromPartial, topAtoms } from './vector';
+import { type UserModel, ensureVibe } from './profile';
+import { type Scored, percentile, scoreMovie } from './score';
+import { copyVector, cosine, fromPartial, topAtoms } from './vector';
 
 export interface DeckCard {
   slot: number;
@@ -64,7 +64,10 @@ export function dismissFatigue(model: UserModel, catalog: Catalog, cfg: ConfigIn
   if (!w || !recent.length) return () => 0;
   return (m) => {
     let mx = 0;
-    for (const d of recent) { const c = cosine(d.hat, m.hat); if (c > mx) mx = c; }
+    for (const d of recent) {
+      const c = cosine(d.hat, m.hat);
+      if (c > mx) mx = c;
+    }
     return w * mx;
   };
 }
@@ -120,11 +123,17 @@ export function buildDeck(input: BuildDeckInput): ActiveDeck {
 
   const slots = recipe.slots;
   const result: Array<{ s: Scored; role: DeckRole; curator?: string } | undefined> = new Array(slots.length);
-  const fillSlot = (i: number, role: DeckRole, s: Scored | undefined, curator?: string) => { if (s) result[i] = { s: take(s)!, role, curator }; };
+  const fillSlot = (i: number, role: DeckRole, s: Scored | undefined, curator?: string) => {
+    if (s) result[i] = { s: take(s)!, role, curator };
+  };
 
   // 1) Apertura y cierre: las dos de mayor puntaje.
-  slots.forEach((sl, i) => { if (sl.rank === 'first') fillSlot(i, 'afin', best()); });
-  slots.forEach((sl, i) => { if (sl.rank === 'second') fillSlot(i, 'afin', best()); });
+  slots.forEach((sl, i) => {
+    if (sl.rank === 'first') fillSlot(i, 'afin', best());
+  });
+  slots.forEach((sl, i) => {
+    if (sl.rank === 'second') fillSlot(i, 'afin', best());
+  });
 
   // 2) Roles especiales, en orden de posición.
   const top: AtomKey | undefined = topAtoms(model.profile, 1, { positiveOnly: true })[0];
@@ -133,29 +142,42 @@ export function buildDeck(input: BuildDeckInput): ActiveDeck {
     if (result[i]) return;
     if (sl.role === 'creador') {
       // Curadores seguidos; si no hay, el mazo del equipo (system); si tampoco, afín.
-      const pools = [
-        curated.filter((d) => d.owner_kind === 'curator' && followed.has(d.owner_id)),
-        curated.filter((d) => d.owner_kind === 'system'),
-      ];
+      const pools = [curated.filter((d) => d.owner_kind === 'curator' && followed.has(d.owner_id)), curated.filter((d) => d.owner_kind === 'system')];
       for (const pool of pools) {
         const owner = new Map<string, string>();
         for (const d of pool) for (const id of d.movie_ids) if (!owner.has(id)) owner.set(id, d.owner_name);
         const s = best((x) => owner.has(x.m.movie.id));
-        if (s) { fillSlot(i, 'creador', s, owner.get(s.m.movie.id)); return; }
+        if (s) {
+          fillSlot(i, 'creador', s, owner.get(s.m.movie.id));
+          return;
+        }
       }
     } else if (sl.role === 'comodin' && top) {
       // Comparte el rasgo favorito, pero en el resto se parece poco.
       const s = best((x) => x.m.hat[top] >= p.comodin_min_top_atom && x.cosProfile >= p.comodin_min_cosine && x.cosProfile <= p.comodin_max_cosine);
-      if (s) { fillSlot(i, 'comodin', s); return; }
+      if (s) {
+        fillSlot(i, 'comodin', s);
+        return;
+      }
     } else if (sl.role === 'sorpresa') {
       const byCurators = best((x) => (curatorCount.get(x.m.movie.id) ?? 0) >= p.curators_for_special);
-      const s = byCurators ?? best((x) => x.m.quality >= p.sorpresa_min_quality && x.cosProfile > p.sorpresa_min_cosine && x.score <= scoreCut, (x) => x.m.quality);
-      if (s) { fillSlot(i, 'sorpresa', s); return; }
+      const s =
+        byCurators ??
+        best(
+          (x) => x.m.quality >= p.sorpresa_min_quality && x.cosProfile > p.sorpresa_min_cosine && x.score <= scoreCut,
+          (x) => x.m.quality,
+        );
+      if (s) {
+        fillSlot(i, 'sorpresa', s);
+        return;
+      }
     }
   });
 
   // 3) El resto: afines por puntaje (los roles sin candidato pasan a afín).
-  slots.forEach((_, i) => { if (!result[i]) fillSlot(i, 'afin', best()); });
+  slots.forEach((_, i) => {
+    if (!result[i]) fillSlot(i, 'afin', best());
+  });
 
   const cards: DeckCard[] = [];
   result.forEach((r) => {
@@ -193,6 +215,9 @@ export function checkSpecialMatch(deck: ActiveDeck, movie_id: string, cfg: Confi
   const card = deck.cards.find((c) => c.movie_id === movie_id);
   if (!card) return false;
   const hit = card.score >= deck.special_threshold || card.curator_count >= cfg.params.curators_for_special;
-  if (hit) { deck.special_used = true; card.special = true; }
+  if (hit) {
+    deck.special_used = true;
+    card.special = true;
+  }
   return hit;
 }

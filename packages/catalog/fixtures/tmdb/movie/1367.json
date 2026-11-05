@@ -1,0 +1,190 @@
+{
+  "_simulado": true,
+  "_id_verificado": true,
+  "id": 1367,
+  "imdb_id": "tt0079817",
+  "title": "Rocky II",
+  "original_title": "Rocky II",
+  "original_language": "en",
+  "release_date": "1979-06-15",
+  "runtime": 119,
+  "status": "Released",
+  "adult": false,
+  "genres": [
+    {
+      "id": 18,
+      "name": "Drama"
+    }
+  ],
+  "overview": "Tras su combate contra Apollo Creed, Rocky Balboa intenta rehacer su vida junto a Adrian, pero la fama no le resulta sencilla. Un nuevo desafío lo empuja de vuelta al ring para una revancha.",
+  "tagline": "La revancha.",
+  "vote_average": 7.1,
+  "vote_count": 4000,
+  "popularity": 30.2,
+  "poster_path": null,
+  "backdrop_path": null,
+  "production_countries": [
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    }
+  ],
+  "spoken_languages": [
+    {
+      "iso_639_1": "en",
+      "english_name": "English",
+      "name": "English"
+    }
+  ],
+  "budget": 7000000,
+  "revenue": 200000000,
+  "credits": {
+    "cast": [
+      {
+        "id": null,
+        "name": "Sylvester Stallone",
+        "character": "Rocky Balboa",
+        "order": 0
+      },
+      {
+        "id": null,
+        "name": "Talia Shire",
+        "character": "Adrian Pennino",
+        "order": 1
+      },
+      {
+        "id": null,
+        "name": "Burt Young",
+        "character": "Paulie Pennino",
+        "order": 2
+      },
+      {
+        "id": null,
+        "name": "Carl Weathers",
+        "character": "Apollo Creed",
+        "order": 3
+      },
+      {
+        "id": null,
+        "name": "Burgess Meredith",
+        "character": "Mickey Goldmill",
+        "order": 4
+      },
+      {
+        "id": null,
+        "name": "Tony Burton",
+        "character": "Duke",
+        "order": 5
+      },
+      {
+        "id": null,
+        "name": "Joe Spinell",
+        "character": "Gazzo",
+        "order": 6
+      }
+    ],
+    "crew": [
+      {
+        "id": null,
+        "name": "Sylvester Stallone",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "Sylvester Stallone",
+        "job": "Screenplay",
+        "department": "Writing"
+      },
+      {
+        "id": null,
+        "name": "Bill Conti",
+        "job": "Original Music Composer",
+        "department": "Sound"
+      }
+    ]
+  },
+  "keywords": {
+    "keywords": [
+      {
+        "id": null,
+        "name": "boxing"
+      },
+      {
+        "id": null,
+        "name": "sequel"
+      },
+      {
+        "id": null,
+        "name": "philadelphia, pennsylvania"
+      },
+      {
+        "id": null,
+        "name": "rematch"
+      },
+      {
+        "id": null,
+        "name": "underdog"
+      },
+      {
+        "id": null,
+        "name": "boxer"
+      },
+      {
+        "id": null,
+        "name": "training"
+      },
+      {
+        "id": null,
+        "name": "heavyweight champion"
+      },
+      {
+        "id": null,
+        "name": "marriage"
+      },
+      {
+        "id": null,
+        "name": "sports"
+      }
+    ]
+  },
+  "reviews": {
+    "page": 1,
+    "total_results": 2,
+    "results": [
+      {
+        "author": "ringannouncer",
+        "author_details": {
+          "rating": 7
+        },
+        "content": "Not as fresh as the first one, but the heart is still there. The final fight is thrilling and the training montage is classic.",
+        "created_at": "2016-02-11T17:55:29.000Z",
+        "id": "56bc9e1fc3a3680f3a00b2c6"
+      },
+      {
+        "author": "domingo_de_boxeo",
+        "author_details": {
+          "rating": 8
+        },
+        "content": "Una secuela que cuida a sus personajes y se toma su tiempo antes del combate final. Stallone sorprende como director y la historia de Rocky y Adrian se siente sincera.",
+        "created_at": "2021-09-30T04:27:03.000Z",
+        "id": "6154f2d9a1b3c5004d8e0a47"
+      }
+    ]
+  },
+  "watch/providers": {
+    "results": {
+      "CO": {
+        "link": "https://www.themoviedb.org/movie/1367/watch?locale=CO",
+        "flatrate": [
+          {
+            "provider_id": 119,
+            "provider_name": "Amazon Prime Video",
+            "logo_path": null,
+            "display_priority": 4
+          }
+        ]
+      }
+    }
+  }
+}

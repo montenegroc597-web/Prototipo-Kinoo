@@ -1,0 +1,190 @@
+{
+  "_simulado": true,
+  "_id_verificado": false,
+  "id": 9900004,
+  "imdb_id": null,
+  "title": "Proyecto Fin del Mundo",
+  "original_title": "Project Hail Mary",
+  "original_language": "en",
+  "release_date": "2026-03-20",
+  "runtime": 156,
+  "status": "Released",
+  "adult": false,
+  "genres": [
+    {
+      "id": 878,
+      "name": "Ciencia ficción"
+    },
+    {
+      "id": 12,
+      "name": "Aventura"
+    }
+  ],
+  "overview": "Un profesor de ciencias despierta solo en una nave espacial, sin recordar quién es, y descubre que de su misión depende la supervivencia de la Tierra.",
+  "tagline": "",
+  "vote_average": 7.8,
+  "vote_count": 800,
+  "popularity": 88.9,
+  "poster_path": null,
+  "backdrop_path": null,
+  "production_countries": [
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    }
+  ],
+  "spoken_languages": [
+    {
+      "iso_639_1": "en",
+      "english_name": "English",
+      "name": "English"
+    }
+  ],
+  "budget": 0,
+  "revenue": 0,
+  "credits": {
+    "cast": [
+      {
+        "id": null,
+        "name": "Ryan Gosling",
+        "character": "Ryland Grace",
+        "order": 0
+      },
+      {
+        "id": null,
+        "name": "Sandra Hüller",
+        "character": "Eva Stratt",
+        "order": 1
+      },
+      {
+        "id": null,
+        "name": "Lionel Boyce",
+        "character": "Olesya",
+        "order": 2
+      },
+      {
+        "id": null,
+        "name": "Ken Leung",
+        "character": "Yáo",
+        "order": 3
+      },
+      {
+        "id": null,
+        "name": "Milana Vayntrub",
+        "character": "Xi",
+        "order": 4
+      },
+      {
+        "id": null,
+        "name": "Priya Kansara",
+        "character": "Brook",
+        "order": 5
+      }
+    ],
+    "crew": [
+      {
+        "id": null,
+        "name": "Phil Lord",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "Christopher Miller",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "Drew Goddard",
+        "job": "Screenplay",
+        "department": "Writing"
+      },
+      {
+        "id": null,
+        "name": "Daniel Pemberton",
+        "job": "Original Music Composer",
+        "department": "Sound"
+      }
+    ]
+  },
+  "keywords": {
+    "keywords": [
+      {
+        "id": null,
+        "name": "space travel"
+      },
+      {
+        "id": null,
+        "name": "based on novel"
+      },
+      {
+        "id": null,
+        "name": "amnesia"
+      },
+      {
+        "id": null,
+        "name": "astronaut"
+      },
+      {
+        "id": null,
+        "name": "first contact"
+      },
+      {
+        "id": null,
+        "name": "alien life-form"
+      },
+      {
+        "id": null,
+        "name": "scientist"
+      },
+      {
+        "id": null,
+        "name": "saving the world"
+      },
+      {
+        "id": null,
+        "name": "friendship"
+      }
+    ]
+  },
+  "reviews": {
+    "page": 1,
+    "total_results": 2,
+    "results": [
+      {
+        "author": "nave_nodriza",
+        "author_details": {
+          "rating": 8
+        },
+        "content": "Divertida y emotiva, con una amistad improbable que se queda en la memoria. Gosling está en su mejor forma.",
+        "created_at": "2026-03-24T16:40:21.000Z",
+        "id": "67e1b4c93a7f5d0028c19e63"
+      },
+      {
+        "author": "starfield_notes",
+        "author_details": {
+          "rating": null
+        },
+        "content": "A warm, clever sci-fi adventure that balances humor and real stakes. Slightly long but rarely drags.",
+        "created_at": "2026-04-02T08:55:47.000Z",
+        "id": "67ee90d2b5c4a1003f7a2d18"
+      }
+    ]
+  },
+  "watch/providers": {
+    "results": {
+      "CO": {
+        "link": "https://www.themoviedb.org/movie/9900004/watch?locale=CO",
+        "flatrate": [
+          {
+            "provider_id": 119,
+            "provider_name": "Amazon Prime Video",
+            "logo_path": null,
+            "display_priority": 0
+          }
+        ]
+      }
+    }
+  }
+}

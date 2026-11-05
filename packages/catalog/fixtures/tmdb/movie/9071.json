@@ -1,0 +1,208 @@
+{
+  "_simulado": true,
+  "_id_verificado": true,
+  "id": 9071,
+  "imdb_id": "tt0121164",
+  "title": "El cadáver de la novia",
+  "original_title": "Corpse Bride",
+  "original_language": "en",
+  "release_date": "2005-09-16",
+  "runtime": 77,
+  "status": "Released",
+  "adult": false,
+  "genres": [
+    {
+      "id": 16,
+      "name": "Animación"
+    },
+    {
+      "id": 14,
+      "name": "Fantasía"
+    },
+    {
+      "id": 10749,
+      "name": "Romance"
+    }
+  ],
+  "overview": "Víctor, un joven tímido a punto de casarse, ensaya sus votos en el bosque y sin querer compromete su mano con una novia fallecida. Lo arrastra al mundo de los muertos, más alegre que el de los vivos.",
+  "tagline": "El amor nunca muere.",
+  "vote_average": 7.5,
+  "vote_count": 6500,
+  "popularity": 48.9,
+  "poster_path": null,
+  "backdrop_path": null,
+  "production_countries": [
+    {
+      "iso_3166_1": "GB",
+      "name": "United Kingdom"
+    },
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    }
+  ],
+  "spoken_languages": [
+    {
+      "iso_639_1": "en",
+      "english_name": "English",
+      "name": "English"
+    }
+  ],
+  "budget": 40000000,
+  "revenue": 118000000,
+  "credits": {
+    "cast": [
+      {
+        "id": 85,
+        "name": "Johnny Depp",
+        "character": "Victor Van Dort (voice)",
+        "order": 0
+      },
+      {
+        "id": 1283,
+        "name": "Helena Bonham Carter",
+        "character": "Emily (voice)",
+        "order": 1
+      },
+      {
+        "id": null,
+        "name": "Emily Watson",
+        "character": "Victoria Everglot (voice)",
+        "order": 2
+      },
+      {
+        "id": null,
+        "name": "Tracey Ullman",
+        "character": "Nell Van Dort (voice)",
+        "order": 3
+      },
+      {
+        "id": null,
+        "name": "Albert Finney",
+        "character": "Finis Everglot (voice)",
+        "order": 4
+      },
+      {
+        "id": null,
+        "name": "Richard E. Grant",
+        "character": "Barkis Bittern (voice)",
+        "order": 5
+      },
+      {
+        "id": null,
+        "name": "Christopher Lee",
+        "character": "Pastor Galswells (voice)",
+        "order": 6
+      }
+    ],
+    "crew": [
+      {
+        "id": 510,
+        "name": "Tim Burton",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "Mike Johnson",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "John August",
+        "job": "Screenplay",
+        "department": "Writing"
+      },
+      {
+        "id": null,
+        "name": "Danny Elfman",
+        "job": "Original Music Composer",
+        "department": "Sound"
+      }
+    ]
+  },
+  "keywords": {
+    "keywords": [
+      {
+        "id": null,
+        "name": "stop motion"
+      },
+      {
+        "id": null,
+        "name": "wedding"
+      },
+      {
+        "id": null,
+        "name": "afterlife"
+      },
+      {
+        "id": null,
+        "name": "undead"
+      },
+      {
+        "id": null,
+        "name": "arranged marriage"
+      },
+      {
+        "id": null,
+        "name": "love triangle"
+      },
+      {
+        "id": null,
+        "name": "musical"
+      },
+      {
+        "id": null,
+        "name": "gothic"
+      },
+      {
+        "id": null,
+        "name": "dark fantasy"
+      },
+      {
+        "id": null,
+        "name": "victorian era"
+      }
+    ]
+  },
+  "reviews": {
+    "page": 1,
+    "total_results": 2,
+    "results": [
+      {
+        "author": "stitchedhearts",
+        "author_details": {
+          "rating": 8
+        },
+        "content": "Gorgeous stop-motion and a surprisingly tender story. Danny Elfman's songs are the cherry on top.",
+        "created_at": "2020-10-30T19:05:27.000Z",
+        "id": "5f9c3a7e4d2b1c003a8e65f1"
+      },
+      {
+        "author": "ana_animacion",
+        "author_details": {
+          "rating": 7
+        },
+        "content": "Corta, oscura y encantadora. Quizás menos memorable que otras películas de Burton, pero visualmente es una delicia.",
+        "created_at": "2023-10-15T13:44:51.000Z",
+        "id": "652bd0a3c0a4ea00ae1f77b8"
+      }
+    ]
+  },
+  "watch/providers": {
+    "results": {
+      "CO": {
+        "link": "https://www.themoviedb.org/movie/9071/watch?locale=CO",
+        "flatrate": [
+          {
+            "provider_id": 1899,
+            "provider_name": "Max",
+            "logo_path": null,
+            "display_priority": 2
+          }
+        ]
+      }
+    }
+  }
+}

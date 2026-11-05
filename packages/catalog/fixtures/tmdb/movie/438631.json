@@ -1,0 +1,204 @@
+{
+  "_simulado": true,
+  "_id_verificado": true,
+  "id": 438631,
+  "imdb_id": "tt1160419",
+  "title": "Duna",
+  "original_title": "Dune",
+  "original_language": "en",
+  "release_date": "2021-09-15",
+  "runtime": 155,
+  "status": "Released",
+  "adult": false,
+  "genres": [
+    {
+      "id": 878,
+      "name": "Ciencia ficción"
+    },
+    {
+      "id": 12,
+      "name": "Aventura"
+    }
+  ],
+  "overview": "Paul Atreides, un joven brillante y talentoso, nace con un gran destino que está más allá de su comprensión. Debe viajar al planeta más peligroso del universo para asegurar el futuro de su familia y su pueblo.",
+  "tagline": "Más allá del miedo, el destino te espera.",
+  "vote_average": 7.8,
+  "vote_count": 13000,
+  "popularity": 92.4,
+  "poster_path": null,
+  "backdrop_path": null,
+  "production_countries": [
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    },
+    {
+      "iso_3166_1": "CA",
+      "name": "Canada"
+    }
+  ],
+  "spoken_languages": [
+    {
+      "iso_639_1": "en",
+      "english_name": "English",
+      "name": "English"
+    }
+  ],
+  "budget": 165000000,
+  "revenue": 402000000,
+  "credits": {
+    "cast": [
+      {
+        "id": null,
+        "name": "Timothée Chalamet",
+        "character": "Paul Atreides",
+        "order": 0
+      },
+      {
+        "id": null,
+        "name": "Rebecca Ferguson",
+        "character": "Lady Jessica",
+        "order": 1
+      },
+      {
+        "id": null,
+        "name": "Oscar Isaac",
+        "character": "Duke Leto Atreides",
+        "order": 2
+      },
+      {
+        "id": null,
+        "name": "Jason Momoa",
+        "character": "Duncan Idaho",
+        "order": 3
+      },
+      {
+        "id": null,
+        "name": "Stellan Skarsgård",
+        "character": "Baron Vladimir Harkonnen",
+        "order": 4
+      },
+      {
+        "id": null,
+        "name": "Zendaya",
+        "character": "Chani",
+        "order": 5
+      },
+      {
+        "id": null,
+        "name": "Josh Brolin",
+        "character": "Gurney Halleck",
+        "order": 6
+      },
+      {
+        "id": null,
+        "name": "Javier Bardem",
+        "character": "Stilgar",
+        "order": 7
+      }
+    ],
+    "crew": [
+      {
+        "id": null,
+        "name": "Denis Villeneuve",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "Jon Spaihts",
+        "job": "Screenplay",
+        "department": "Writing"
+      },
+      {
+        "id": null,
+        "name": "Hans Zimmer",
+        "job": "Original Music Composer",
+        "department": "Sound"
+      }
+    ]
+  },
+  "keywords": {
+    "keywords": [
+      {
+        "id": null,
+        "name": "based on novel or book"
+      },
+      {
+        "id": null,
+        "name": "desert"
+      },
+      {
+        "id": null,
+        "name": "space opera"
+      },
+      {
+        "id": null,
+        "name": "chosen one"
+      },
+      {
+        "id": null,
+        "name": "prophecy"
+      },
+      {
+        "id": null,
+        "name": "royal family"
+      },
+      {
+        "id": null,
+        "name": "giant worm"
+      },
+      {
+        "id": null,
+        "name": "distant future"
+      },
+      {
+        "id": null,
+        "name": "epic"
+      },
+      {
+        "id": null,
+        "name": "war"
+      }
+    ]
+  },
+  "reviews": {
+    "page": 1,
+    "total_results": 2,
+    "results": [
+      {
+        "author": "arrakis_wanderer",
+        "author_details": {
+          "rating": 9
+        },
+        "content": "A visually staggering adaptation with immense scale and sound design. Slow in places, but the world-building is immersive and the cast is excellent.",
+        "created_at": "2021-10-03T18:22:41.000Z",
+        "id": "61a3f9c2b7d84e0012c5a1f3"
+      },
+      {
+        "author": "cinefilo_bogota",
+        "author_details": {
+          "rating": 8
+        },
+        "content": "Una película imponente que se disfruta mucho mejor en pantalla grande. El ritmo es pausado pero la ambientación y la música son espectaculares.",
+        "created_at": "2021-11-12T02:10:09.000Z",
+        "id": "618e1b7a4d3c2f0044a9b6e8"
+      }
+    ]
+  },
+  "watch/providers": {
+    "results": {
+      "CO": {
+        "link": "https://www.themoviedb.org/movie/438631/watch?locale=CO",
+        "flatrate": [
+          {
+            "provider_id": 1899,
+            "provider_name": "Max",
+            "logo_path": null,
+            "display_priority": 3
+          }
+        ]
+      }
+    }
+  }
+}

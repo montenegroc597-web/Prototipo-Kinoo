@@ -1,6 +1,6 @@
 # ADR 0003 · Un solo servicio para la API y el modo demo
 
-**Estado:** aceptada · 2026-11-05
+**Estado:** aceptada · 2026-11-05 · rutas y paquetes actualizados por la [ADR 0004](0004-front-back-y-nube.md)
 
 ## Contexto
 

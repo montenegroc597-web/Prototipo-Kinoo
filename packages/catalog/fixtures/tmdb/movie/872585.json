@@ -1,0 +1,204 @@
+{
+  "_simulado": true,
+  "_id_verificado": true,
+  "id": 872585,
+  "imdb_id": "tt15398776",
+  "title": "Oppenheimer",
+  "original_title": "Oppenheimer",
+  "original_language": "en",
+  "release_date": "2023-07-19",
+  "runtime": 180,
+  "status": "Released",
+  "adult": false,
+  "genres": [
+    {
+      "id": 18,
+      "name": "Drama"
+    },
+    {
+      "id": 36,
+      "name": "Historia"
+    }
+  ],
+  "overview": "La historia del físico J. Robert Oppenheimer y su papel en el desarrollo de la bomba atómica durante la Segunda Guerra Mundial.",
+  "tagline": "El mundo cambia para siempre.",
+  "vote_average": 8.1,
+  "vote_count": 10000,
+  "popularity": 112.3,
+  "poster_path": null,
+  "backdrop_path": null,
+  "production_countries": [
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    },
+    {
+      "iso_3166_1": "GB",
+      "name": "United Kingdom"
+    }
+  ],
+  "spoken_languages": [
+    {
+      "iso_639_1": "en",
+      "english_name": "English",
+      "name": "English"
+    }
+  ],
+  "budget": 100000000,
+  "revenue": 975000000,
+  "credits": {
+    "cast": [
+      {
+        "id": null,
+        "name": "Cillian Murphy",
+        "character": "J. Robert Oppenheimer",
+        "order": 0
+      },
+      {
+        "id": null,
+        "name": "Emily Blunt",
+        "character": "Kitty Oppenheimer",
+        "order": 1
+      },
+      {
+        "id": null,
+        "name": "Matt Damon",
+        "character": "Leslie Groves",
+        "order": 2
+      },
+      {
+        "id": null,
+        "name": "Robert Downey Jr.",
+        "character": "Lewis Strauss",
+        "order": 3
+      },
+      {
+        "id": null,
+        "name": "Florence Pugh",
+        "character": "Jean Tatlock",
+        "order": 4
+      },
+      {
+        "id": null,
+        "name": "Josh Hartnett",
+        "character": "Ernest Lawrence",
+        "order": 5
+      },
+      {
+        "id": null,
+        "name": "Kenneth Branagh",
+        "character": "Niels Bohr",
+        "order": 6
+      }
+    ],
+    "crew": [
+      {
+        "id": null,
+        "name": "Christopher Nolan",
+        "job": "Director",
+        "department": "Directing"
+      },
+      {
+        "id": null,
+        "name": "Christopher Nolan",
+        "job": "Screenplay",
+        "department": "Writing"
+      },
+      {
+        "id": null,
+        "name": "Ludwig Göransson",
+        "job": "Original Music Composer",
+        "department": "Sound"
+      }
+    ]
+  },
+  "keywords": {
+    "keywords": [
+      {
+        "id": null,
+        "name": "atomic bomb"
+      },
+      {
+        "id": null,
+        "name": "world war ii"
+      },
+      {
+        "id": null,
+        "name": "physicist"
+      },
+      {
+        "id": null,
+        "name": "manhattan project"
+      },
+      {
+        "id": null,
+        "name": "biography"
+      },
+      {
+        "id": null,
+        "name": "los alamos"
+      },
+      {
+        "id": null,
+        "name": "based on true story"
+      },
+      {
+        "id": null,
+        "name": "scientist"
+      },
+      {
+        "id": null,
+        "name": "cold war"
+      },
+      {
+        "id": null,
+        "name": "hearing"
+      }
+    ]
+  },
+  "reviews": {
+    "page": 1,
+    "total_results": 2,
+    "results": [
+      {
+        "author": "proyector_digital",
+        "author_details": {
+          "rating": 9
+        },
+        "content": "Tres horas que se pasan volando. Murphy sostiene la película y el sonido es abrumador en sala.",
+        "created_at": "2023-07-25T20:15:33.000Z",
+        "id": "64bfa3e1c2a9d6012d4b8e07"
+      },
+      {
+        "author": "filmstock_fan",
+        "author_details": {
+          "rating": 8
+        },
+        "content": "Dense, intense and brilliantly acted. The structure takes some patience but the payoff is strong.",
+        "created_at": "2023-08-09T11:02:18.000Z",
+        "id": "64d3b7a85f0e2c0111a96c4b"
+      }
+    ]
+  },
+  "watch/providers": {
+    "results": {
+      "CO": {
+        "link": "https://www.themoviedb.org/movie/872585/watch?locale=CO",
+        "flatrate": [
+          {
+            "provider_id": 119,
+            "provider_name": "Amazon Prime Video",
+            "logo_path": null,
+            "display_priority": 0
+          },
+          {
+            "provider_id": 8,
+            "provider_name": "Netflix",
+            "logo_path": null,
+            "display_priority": 1
+          }
+        ]
+      }
+    }
+  }
+}
