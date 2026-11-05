@@ -8,7 +8,8 @@
     "baseUrl": ".",
     "paths": {
       "@kinoo/engine": ["packages/engine/src/index.ts"],
-      "@kinoo/shared": ["packages/shared/src/index.ts"]
+      "@kinoo/shared": ["packages/shared/src/index.ts"],
+      "@kinoo/api": ["packages/api/src/index.ts"]
     }
   }
 }

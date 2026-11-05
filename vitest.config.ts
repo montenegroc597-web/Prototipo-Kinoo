@@ -6,6 +6,7 @@ export default defineConfig({
     alias: {
       '@kinoo/engine': path.resolve(__dirname, 'packages/engine/src/index.ts'),
       '@kinoo/shared': path.resolve(__dirname, 'packages/shared/src/index.ts'),
+      '@kinoo/api': path.resolve(__dirname, 'packages/api/src/index.ts'),
     },
   },
   test: {

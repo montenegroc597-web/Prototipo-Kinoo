@@ -2,8 +2,8 @@
 
 ## Estado actual
 - Fase: F5 · API y conexión con el prototipo
-- Última tarea terminada: F4 · semilla de 34 películas etiquetada y validada; pipeline de TMDB listo
-- Siguiente tarea: Edge Functions y adaptador de datos (modo demo)
+- Última tarea terminada: F5 · servicio de API (`packages/api`), Edge Functions y prueba de punta a punta sobre PGlite
+- Siguiente tarea: modo demo en el navegador y conexión de Descubrir y Ver
 - Bloqueos: **F4 · sin `TMDB_API_KEY` y con la red bloqueada a `api.themoviedb.org`**. El catálogo quedó en 34 películas de semilla manual. Para resolverlo, Camilo debe crear la clave, guardarla como variable de entorno y permitir la red a `api.themoviedb.org` e `image.tmdb.org` (ver `guias/catalogo.md`)
 - Última actualización: 2026-11-05 03:40
 
@@ -34,6 +34,7 @@
 - 2026-11-05 04:30 · F3 · Módulos del motor escritos. Por indicación de Camilo, las cartas de tarot pasan a ser **arquetipos de perfil** (misma idea, sin mencionar el tarot): tabla `archetypes`, `data/config/archetypes.json`.
 - 2026-11-05 05:10 · F3 · Simulador (`npm run sim`). Con los valores iniciales fallaba "Responde al cambio" (peor caso 62 eventos): el mazo insistía en lo descartado y nunca mostraba el gusto nuevo. Se agregó la fatiga de descarte y se ajustaron dos valores en la configuración (abajo). Resultado: 5/5.
 - 2026-11-05 05:40 · F4 · Pipeline `scripts/catalog/` (fetch-tmdb, tag, build). Semilla manual de 34 películas, etiquetada por dos subagentes Sonnet. QC aprobado.
+- 2026-11-05 06:05 · F5 · `packages/api`: un solo servicio para las Edge Functions y el modo demo. Cinco endpoints en `supabase/functions/` (events, deck, watch, onboarding). Prueba de punta a punta contra PGlite con RLS.
 
 ## Decisiones tomadas sin Camilo
 - La línea base es 0/0 porque el prototipo no tenía pruebas. Las pruebas nuevas son las primeras del repositorio.
@@ -59,6 +60,8 @@
 - **Anclas provisionales:** las 6 anclas las propuse yo. Su error bajo (0,052) mide coherencia del juez, no acuerdo con el equipo.
 - **Mazo del Equipo Kinoo provisional:** 12 películas con 5 notas escritas por mí. Hay que curarlo.
 - **Pósters:** donde el prototipo ya tenía imagen, `poster_path` apunta a `_blob/…`; las demás no tienen póster.
+- **`packages/api` (nuevo, no estaba en el plan):** la lógica de los endpoints vive aquí una sola vez y la usan las Edge Functions y el modo demo. Ver `adr/0003-api-y-modo-demo.md`.
+- **Edge Functions sin probar en Deno:** la sesión no tiene Deno ni proyecto de Supabase. Se probó la misma lógica en Node contra PGlite. Antes de desplegar hay que correr `npm run build:functions` (empaqueta el motor en `_shared/kinoo-core.js`).
 
 ## Para revisar cuando vuelvas
 - Subir el documento de Argon a `docs/historico/`.
