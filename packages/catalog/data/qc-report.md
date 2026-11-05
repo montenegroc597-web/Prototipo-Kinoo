@@ -1,12 +1,12 @@
 # Control de calidad del catálogo
 
-Generado: 2026-11-05T05:05:26.543Z · fuente: tmdb_simulado · 69 películas
+Generado: 2026-11-05T05:26:12.838Z · fuente: tmdb_simulado · 69 películas
 
 | Control | Resultado | Criterio | ¿Pasa? |
 |---|---|---|---|
 | Esquema y frases gancho | 0 errores | 0 errores | ✅ |
 | Dispersión | todos ≥ 0,15 | desviación ≥ 0,15 por átomo | ✅ |
-| Pilares (≤ 18 caracteres para la carta) | 0 largos | se recortan con "…" | ✅ |
+| Pilares (≤ 15 caracteres para la carta) | 0 largos | se recortan con "…" | ✅ |
 | Contradicciones | 0 alertas | frenética y contemplativa no ambas > 0,8 | ✅ |
 | Error de las anclas | 0.052 (mad-max-fury-road-2015: 0.044, coco-2017: 0.045, roma-2018: 0.058, hereditary-2018: 0.046, aftersun-2022: 0.065, chungking-express-1994: 0.056) | ≤ 0,15 | ✅ |
 

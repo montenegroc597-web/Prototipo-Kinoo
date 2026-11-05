@@ -17,7 +17,7 @@ function configSql() {
   out.push('delete from atoms where key not in (' + atoms.map((a) => q(a.key)).join(',') + ');');
   atoms.forEach((a, i) =>
     out.push(
-      `insert into atoms (key, dimension, label, description, sort_order) values (${q(a.key)}, ${q(a.dimension)}, ${q(a.label)}, ${q(a.description)}, ${i + 1}) on conflict (key) do update set dimension = excluded.dimension, label = excluded.label, description = excluded.description, sort_order = excluded.sort_order;`,
+      `insert into atoms (key, dimension, label, description, theme, sort_order) values (${q(a.key)}, ${q(a.dimension)}, ${q(a.label)}, ${q(a.description)}, ${q(a.theme)}, ${i + 1}) on conflict (key) do update set dimension = excluded.dimension, label = excluded.label, description = excluded.description, theme = excluded.theme, sort_order = excluded.sort_order;`,
     ),
   );
   for (const v of j('packages/config/data/vibes.json').vibes) {

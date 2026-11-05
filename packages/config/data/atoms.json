@@ -1,26 +1,152 @@
 {
-  "_doc": "Los 21 átomos (sección 4 de KINOO_ALGORITMO_v2). 'label' se usa en las explicaciones: escríbela para que encaje en 'historias {label}'.",
+  "_doc": "Los 21 átomos (sección 4 de KINOO_ALGORITMO_v2). 'label' se usa en las explicaciones: escríbela para que encaje en 'historias {label}'. 'theme' es el nombre corto (máximo 14 caracteres) que se usa como chip de tema en la ficha ADN.",
   "atoms": [
-    { "key": "frenetica", "dimension": "dinamica", "label": "frenéticas", "description": "Cortes rápidos, acción constante" },
-    { "key": "agil", "dimension": "dinamica", "label": "ágiles", "description": "Avanza rápido sin agobiar" },
-    { "key": "pausada", "dimension": "dinamica", "label": "a fuego lento", "description": "Se toma su tiempo, pero avanza" },
-    { "key": "contemplativa", "dimension": "dinamica", "label": "contemplativas", "description": "Planos largos, poca trama" },
-    { "key": "reconfortante", "dimension": "atmosfera", "label": "reconfortantes", "description": "Te deja bien" },
-    { "key": "luminosa", "dimension": "atmosfera", "label": "luminosas", "description": "Optimista, cálida en el ánimo" },
-    { "key": "melancolica", "dimension": "atmosfera", "label": "melancólicas", "description": "Tristeza suave, nostalgia" },
-    { "key": "tensa", "dimension": "atmosfera", "label": "tensas", "description": "Suspenso, nervios" },
-    { "key": "inquietante", "dimension": "atmosfera", "label": "inquietantes", "description": "Incomodidad, extrañeza" },
-    { "key": "sombria", "dimension": "atmosfera", "label": "sombrías", "description": "Oscura, dura" },
-    { "key": "cruda", "dimension": "estetica", "label": "de estética cruda", "description": "Realista, cámara en mano" },
-    { "key": "onirica", "dimension": "estetica", "label": "oníricas", "description": "Surreal, de sueño" },
-    { "key": "neon", "dimension": "estetica", "label": "de neón", "description": "Colores saturados, nocturna" },
-    { "key": "pastel", "dimension": "estetica", "label": "de tonos pastel", "description": "Suave, composiciones cuidadas" },
-    { "key": "calida", "dimension": "estetica", "label": "de luz cálida", "description": "Paleta cálida, textura de película" },
-    { "key": "monocromatica", "dimension": "estetica", "label": "en blanco y negro o casi", "description": "Paleta reducida" },
-    { "key": "carga_emocional", "dimension": "carga", "label": "que mueven por dentro", "description": "Cuánto te puede hacer llorar o conmover" },
-    { "key": "complejidad", "dimension": "carga", "label": "que exigen atención", "description": "Trama enredada, te hace pensar" },
-    { "key": "humor", "dimension": "carga", "label": "con humor", "description": "Cuánto te hace reír" },
-    { "key": "intimidad", "dimension": "carga", "label": "íntimas", "description": "Pocos personajes, escala personal" },
-    { "key": "escala_epica", "dimension": "carga", "label": "épicas", "description": "Gran escala, aventura, espectáculo" }
+    {
+      "key": "frenetica",
+      "dimension": "dinamica",
+      "label": "frenéticas",
+      "description": "Cortes rápidos, acción constante",
+      "theme": "Frenesí"
+    },
+    {
+      "key": "agil",
+      "dimension": "dinamica",
+      "label": "ágiles",
+      "description": "Avanza rápido sin agobiar",
+      "theme": "Ritmo ágil"
+    },
+    {
+      "key": "pausada",
+      "dimension": "dinamica",
+      "label": "a fuego lento",
+      "description": "Se toma su tiempo, pero avanza",
+      "theme": "Fuego lento"
+    },
+    {
+      "key": "contemplativa",
+      "dimension": "dinamica",
+      "label": "contemplativas",
+      "description": "Planos largos, poca trama",
+      "theme": "Contemplación"
+    },
+    {
+      "key": "reconfortante",
+      "dimension": "atmosfera",
+      "label": "reconfortantes",
+      "description": "Te deja bien",
+      "theme": "Consuelo"
+    },
+    {
+      "key": "luminosa",
+      "dimension": "atmosfera",
+      "label": "luminosas",
+      "description": "Optimista, cálida en el ánimo",
+      "theme": "Luz"
+    },
+    {
+      "key": "melancolica",
+      "dimension": "atmosfera",
+      "label": "melancólicas",
+      "description": "Tristeza suave, nostalgia",
+      "theme": "Melancolía"
+    },
+    {
+      "key": "tensa",
+      "dimension": "atmosfera",
+      "label": "tensas",
+      "description": "Suspenso, nervios",
+      "theme": "Tensión"
+    },
+    {
+      "key": "inquietante",
+      "dimension": "atmosfera",
+      "label": "inquietantes",
+      "description": "Incomodidad, extrañeza",
+      "theme": "Inquietud"
+    },
+    {
+      "key": "sombria",
+      "dimension": "atmosfera",
+      "label": "sombrías",
+      "description": "Oscura, dura",
+      "theme": "Oscuridad"
+    },
+    {
+      "key": "cruda",
+      "dimension": "estetica",
+      "label": "de estética cruda",
+      "description": "Realista, cámara en mano",
+      "theme": "Realismo"
+    },
+    {
+      "key": "onirica",
+      "dimension": "estetica",
+      "label": "oníricas",
+      "description": "Surreal, de sueño",
+      "theme": "Sueño"
+    },
+    {
+      "key": "neon",
+      "dimension": "estetica",
+      "label": "de neón",
+      "description": "Colores saturados, nocturna",
+      "theme": "Neón"
+    },
+    {
+      "key": "pastel",
+      "dimension": "estetica",
+      "label": "de tonos pastel",
+      "description": "Suave, composiciones cuidadas",
+      "theme": "Pastel"
+    },
+    {
+      "key": "calida",
+      "dimension": "estetica",
+      "label": "de luz cálida",
+      "description": "Paleta cálida, textura de película",
+      "theme": "Luz cálida"
+    },
+    {
+      "key": "monocromatica",
+      "dimension": "estetica",
+      "label": "en blanco y negro o casi",
+      "description": "Paleta reducida",
+      "theme": "Blanco y negro"
+    },
+    {
+      "key": "carga_emocional",
+      "dimension": "carga",
+      "label": "que mueven por dentro",
+      "description": "Cuánto te puede hacer llorar o conmover",
+      "theme": "Emoción"
+    },
+    {
+      "key": "complejidad",
+      "dimension": "carga",
+      "label": "que exigen atención",
+      "description": "Trama enredada, te hace pensar",
+      "theme": "Complejidad"
+    },
+    {
+      "key": "humor",
+      "dimension": "carga",
+      "label": "con humor",
+      "description": "Cuánto te hace reír",
+      "theme": "Humor"
+    },
+    {
+      "key": "intimidad",
+      "dimension": "carga",
+      "label": "íntimas",
+      "description": "Pocos personajes, escala personal",
+      "theme": "Intimidad"
+    },
+    {
+      "key": "escala_epica",
+      "dimension": "carga",
+      "label": "épicas",
+      "description": "Gran escala, aventura, espectáculo",
+      "theme": "Épica"
+    }
   ]
 }

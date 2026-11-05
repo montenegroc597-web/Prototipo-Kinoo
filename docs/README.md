@@ -6,6 +6,8 @@
 
 | Documento | Para qué |
 |---|---|
+| [COMO-FUNCIONA-EL-ALGORITMO.md](COMO-FUNCIONA-EL-ALGORITMO.md) | **Cómo funciona el algoritmo, en sencillo**, y su punto de valor. Versión gráfica con laboratorio: [presentacion/como-funciona-kinoo.html](presentacion/como-funciona-kinoo.html) |
+| [PREGUNTAS-RECOLECCION-DE-DATOS.md](PREGUNTAS-RECOLECCION-DE-DATOS.md) | **Preguntas para el equipo**: cómo recolectamos los datos desde cada función del front |
 | [ARQUITECTURA.md](ARQUITECTURA.md) | Front, back, paquetes y por dónde pasa una recomendación |
 | [KINOO_ALGORITMO_v2.md](KINOO_ALGORITMO_v2.md) | La especificación del algoritmo (fuente de verdad) |
 | [SIMULACION-PERFILAMIENTO.md](SIMULACION-PERFILAMIENTO.md) | **Cómo se perfilan los usuarios**: Camilo en la app y seis tipos de usuario |
@@ -18,6 +20,7 @@
 | Documento | Para qué |
 |---|---|
 | [guias/integrar-un-front-nuevo.md](guias/integrar-un-front-nuevo.md) | Conectar un front nuevo al back: pantallas, llamadas, pósters |
+| [guias/limites-de-texto.md](guias/limites-de-texto.md) | Cuántos caracteres caben en cada texto de cada pantalla |
 | [guias/contrato-api.md](guias/contrato-api.md) | Cada endpoint con ejemplos |
 | [guias/para-camilo-ajustar-el-algoritmo.md](guias/para-camilo-ajustar-el-algoritmo.md) | Cambiar pesos, moods, mazos y frases sin programar |
 | [guias/catalogo.md](guias/catalogo.md) | TMDB real o simulado, juez, pósters, agregar películas |
@@ -40,6 +43,6 @@
 Estado al 5 de noviembre de 2026:
 
 - 69 películas (simulación de TMDB), 18 con póster.
-- 116 pruebas unitarias y de integración, y 3 e2e, en verde.
+- 123 pruebas unitarias y de integración, y 10 e2e, en verde (las e2e revisan los textos de las 69 películas en el navegador).
 - 5 de 5 pruebas de aprendizaje: tras 40 eventos, el mazo trae 6,4 veces más aciertos que uno al azar.
 - La base de datos se prueba con dos proveedores: Supabase y PostgreSQL genérico.

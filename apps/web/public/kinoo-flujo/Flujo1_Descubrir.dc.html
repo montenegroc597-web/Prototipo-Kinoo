@@ -197,7 +197,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;margin:0;cu
       <div style="position:absolute;left:21px;top:62px;width:290px;display:flex;flex-direction:column;gap:4px">
         <p style="margin:0;font-style:italic;font-weight:600;font-size:22px;line-height:22px;color:#f2b544">cuando salen los créditos…</p>
         <p style="margin:0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:56px;line-height:52px;text-transform:uppercase;color:#f4e7d0">Mazo terminado</p>
-        <p style="margin:6px 0 0;font-weight:400;font-size:14px;line-height:19.6px;color:#d9c7a8">Viste las 10 cartas de Lentas y melancólicas.</p>
+        <p style="margin:6px 0 0;font-weight:400;font-size:14px;line-height:19.6px;color:#d9c7a8">{{endLine}}</p>
       </div>
       <!-- Tus ○ de este mazo: los pósters que marcaste "Quiero verla" -->
       <sc-if value="{{hasWants}}" hint-placeholder-val="{{ true }}">
@@ -626,6 +626,8 @@ renderVals() {
   };
 
   return {
+    // Con el motor: lo que aprendió del mazo (estándar de caracteres). Sin el motor: el texto de ejemplo.
+    endLine: KD ? (KD.closingLine() || 'Viste las ' + TOTAL + ' cartas de este mazo.') : 'Viste las 10 cartas de Lentas y melancólicas.',
     chip: isDone ? 'Fin del mazo' : 'Premisa',
     counter: Math.min(idx + 1, TOTAL) + ' de ' + TOTAL,
     segs, card, sheetD, adnD,

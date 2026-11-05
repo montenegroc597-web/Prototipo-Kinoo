@@ -85,9 +85,11 @@ Cada carta trae `display`, con los textos **ya recortados** para que nunca se sa
 | `display.subtitle` | 40 | Reverso: "Una película de…" | Deja el primer director y "y otros" |
 | `display.overview` | 110 | Reverso: la sinopsis (3 líneas + "Ver más") | Termina en una frase completa o corta con "…" |
 | `display.explanation` | 96 | Frente: la razón al pie (2 líneas) | Ídem |
-| `display.pillars.*` | 18 | Frente: ritmo, tono, historia, visual (1 línea) | Ídem |
+| `display.pillars.*` | 15 | Frente y ficha ADN: ritmo, tono, historia, visual (1 línea) | Ídem |
+| `display.dna_phrase` | 44 | Ficha ADN: "En una frase" | Ídem |
+| `display.themes` | hasta 3 chips, 30 caracteres sumados | Ficha ADN: temas | Se quitan chips del final |
 
-Los máximos están en `packages/config/data/params.json` (`card_*_max`). Si el diseño nuevo tiene otro tamaño de carta, cambia esos números; la función que recorta es `fitText()` de `@kinoo/shared`. La prueba `apps/web/e2e/cartas.spec.ts` revisa en el navegador que ningún texto de ninguna película se salga del borde. Si cambias el diseño de la carta, adapta esa prueba.
+Los máximos están en `packages/config/data/params.json` (`card_*`, `watch_*`, `closing_*`). La tabla completa, pantalla por pantalla, está en [`limites-de-texto.md`](limites-de-texto.md). Si el diseño nuevo tiene otro tamaño de carta, cambia esos números; la función que recorta es `fitText()` de `@kinoo/shared`. La prueba `apps/web/e2e/cartas.spec.ts` revisa en el navegador que ningún texto de ninguna película se salga del borde. Si cambias el diseño de la carta, adapta esa prueba.
 
 ## Paso 4 · Pósters
 
@@ -139,4 +141,4 @@ await kinoo.postEvents([{ type: 'saved_intent', movie_id: 'past-lives-2023', pay
 // → { accepted: 1, results: [{ id: '…', save: { special_match: false } }] }
 ```
 
-Con `w = 0,4` y `η = 0,08`, su gusto por lo melancólico sube un poco (de 0,30 a 0,305). Si después confirma "Me encantó" en Ver, sube a 0,454. El front no calcula nada de eso: solo manda las dos acciones.
+Con `w = 0,4` y `η = 0,08`, su gusto por lo melancólico sube un poco (de 0,30 a 0,305). Si después confirma "Me encantó" en Ver, sube a 0,456. El front no calcula nada de eso: solo manda las dos acciones.

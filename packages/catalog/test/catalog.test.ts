@@ -1,7 +1,7 @@
 import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { defaultConfig } from '@kinoo/config';
-import { KinooEngine, hasNumbers } from '@kinoo/engine';
+import { KinooEngine, hasNumbers, toCardDTO } from '@kinoo/engine';
 import type { Movie } from '@kinoo/shared';
 import { ATOM_KEYS } from '@kinoo/shared';
 import { describe, expect, it } from 'vitest';
@@ -67,6 +67,37 @@ describe('pósters', () => {
       if (p?.origin !== 'local') continue;
       expect(existsSync(path.join(site, p.path)), p.path).toBe(true);
       expect(pilot.movies.find((m) => m.id === id)?.poster_path).toBe(p.path);
+    }
+  });
+});
+
+describe('estándar de caracteres: lo que el back entrega a la carta', () => {
+  it('en las 69 películas, ningún texto de display supera su límite', () => {
+    const engine = new KinooEngine(defaultConfig, pilot.movies);
+    const p = defaultConfig.params;
+    const m = engine.model('u', []);
+    const deck = engine.openDeck(m, { deck_id: 'd', now: new Date('2026-11-05T20:00:00Z'), size: 20 });
+    const ids = new Set(deck.cards.map((c) => c.movie_id));
+    // Se arma una carta por película (no solo las del mazo) con el mismo convertidor.
+    const all = engine.catalog.list.map((im) =>
+      toCardDTO(
+        im,
+        { slot: 1, role: 'afin', explanation: 'Encaja con tu gusto por historias que mueven por dentro y en blanco y negro o casi.', special_treatment: false },
+        { limits: p, atoms: defaultConfig.atoms },
+      ),
+    );
+    expect(ids.size).toBe(20);
+    for (const c of all) {
+      const d = c.display;
+      expect(d.premise.length, c.movie_id).toBeLessThanOrEqual(p.card_premise_max);
+      expect(d.title.length, c.movie_id).toBeLessThanOrEqual(p.card_title_max);
+      expect(d.subtitle.length, c.movie_id).toBeLessThanOrEqual(p.card_subtitle_max);
+      expect(d.overview.length, c.movie_id).toBeLessThanOrEqual(p.card_overview_max);
+      expect(d.explanation.length, c.movie_id).toBeLessThanOrEqual(p.card_explanation_max);
+      for (const v of Object.values(d.pillars)) expect(v.length, `${c.movie_id} ${v}`).toBeLessThanOrEqual(p.card_pillar_max);
+      expect(d.dna_phrase.length, c.movie_id).toBeLessThanOrEqual(p.card_dna_phrase_max);
+      expect(d.themes.join('').length, c.movie_id).toBeLessThanOrEqual(p.card_dna_themes_max_chars);
+      expect(d.themes.length, c.movie_id).toBeGreaterThan(0);
     }
   });
 });

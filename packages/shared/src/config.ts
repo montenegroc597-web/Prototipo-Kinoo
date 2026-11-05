@@ -5,6 +5,8 @@ export interface AtomDef {
   dimension: string;
   label: string;
   description: string;
+  /** Nombre corto para chips de tema (máximo 14 caracteres). */
+  theme?: string;
 }
 export interface VibeDef {
   key: string;
@@ -76,6 +78,13 @@ export interface Params {
   card_overview_max: number;
   card_explanation_max: number;
   card_pillar_max: number;
+  card_dna_phrase_max: number;
+  card_dna_themes_max_chars: number;
+  card_similar_title_max: number;
+  watch_title_max: number;
+  watch_meta_max: number;
+  watch_why_max: number;
+  closing_text_max: number;
   watch_fresh_hours: number;
   watch_fresh_bonus: number;
   watch_special_bonus: number;

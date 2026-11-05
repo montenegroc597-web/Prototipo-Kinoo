@@ -1,4 +1,4 @@
-import { type CardDTO, type DeckDTO, type DeckRole, type Params, fitText, posterUrl } from '@kinoo/shared';
+import { ATOM_KEYS, type AtomDef, type CardDTO, type DeckDTO, type DeckRole, type Params, fitText, posterUrl } from '@kinoo/shared';
 import type { IndexedMovie } from './catalog';
 import type { ActiveDeck, DeckCard } from './deck';
 
@@ -8,7 +8,9 @@ export interface DtoOptions {
   /** Base para pósters del repositorio ("posters/<id>.jpg"): por ejemplo "https://…/Prototipo-Kinoo/" o "../". */
   assetBaseUrl?: string;
   /** Estándar de caracteres de la carta (params card_*_max). */
-  limits?: Pick<Params, 'card_premise_max' | 'card_title_max' | 'card_subtitle_max' | 'card_overview_max' | 'card_explanation_max' | 'card_pillar_max'>;
+  limits?: Partial<Params>;
+  /** Etiquetas y nombres cortos de los átomos (para la frase y los temas del ADN). */
+  atoms?: AtomDef[];
 }
 
 export const DEFAULT_CARD_LIMITS = {
@@ -17,12 +19,31 @@ export const DEFAULT_CARD_LIMITS = {
   card_subtitle_max: 40,
   card_overview_max: 110,
   card_explanation_max: 96,
-  card_pillar_max: 18,
+  card_pillar_max: 15,
+  card_dna_phrase_max: 44,
+  card_dna_themes_max_chars: 30,
 };
 
 const sentenceCase = (s: string) => (s ? s.charAt(0).toUpperCase() + s.slice(1).toLowerCase() : s);
 
 /** "Una película de A y B"; si no cabe, solo el primer nombre (y "y otros" si cabe). */
+/** ADN de la película: sus rasgos más distintivos, como frase y como temas cortos. */
+function dna(m: IndexedMovie, atoms: AtomDef[] | undefined, phraseMax: number, themesMax: number) {
+  const byKey = new Map((atoms ?? []).map((a) => [a.key, a]));
+  const top = [...ATOM_KEYS].filter((k) => m.hat[k] > 0.05).sort((a, b) => m.hat[b] - m.hat[a]);
+  const labels = top.slice(0, 2).map((k) => byKey.get(k)?.label ?? k);
+  const phrase = labels.length === 2 ? `Historias ${labels[0]} y ${labels[1]}` : labels.length === 1 ? `Historias ${labels[0]}` : '';
+  const themes: string[] = [];
+  let used = 0;
+  for (const k of top.slice(0, 3)) {
+    const t = byKey.get(k)?.theme ?? byKey.get(k)?.label ?? k;
+    if (used + t.length > themesMax) break;
+    themes.push(t);
+    used += t.length;
+  }
+  return { phrase: fitText(phrase, phraseMax), themes };
+}
+
 function byline(directors: string[], max: number): string {
   const all = `Una película de ${directors.join(' y ')}`;
   if (all.length <= max || directors.length === 0) return directors.length ? all : '';
@@ -39,8 +60,9 @@ export function toCardDTO(
 ): CardDTO {
   const mv = m.movie;
   const country = o.country ?? 'CO';
-  const L = { ...DEFAULT_CARD_LIMITS, ...(o.limits ?? {}) };
+  const L = { ...DEFAULT_CARD_LIMITS, ...(o.limits ?? {}) } as typeof DEFAULT_CARD_LIMITS;
   const overview = mv.overview || sentenceCase(mv.hook);
+  const d = dna(m, o.atoms, L.card_dna_phrase_max, L.card_dna_themes_max_chars);
   return {
     slot: card.slot,
     role: card.role,
@@ -70,6 +92,8 @@ export function toCardDTO(
         historia: fitText(mv.pillars.historia, L.card_pillar_max),
         visual: fitText(mv.pillars.visual, L.card_pillar_max),
       },
+      dna_phrase: d.phrase,
+      themes: d.themes,
     },
     special_treatment: card.special_treatment,
     ...(card.curator_name ? { curator_name: card.curator_name } : {}),

@@ -264,7 +264,7 @@ renderVals() {
   if (item && item.kind === 'film') {
     const f = FILMS[item.id];
     const il = inList[item.id] !== false;
-    c = Object.assign({ isFilm: true, isTitle: false, t: f.t, T: f.t.toUpperCase(), match: f.match, matchTxt: pct(f.match), tsize: f.t.length > 14 ? 34 : 46,
+    c = Object.assign({ isFilm: true, isTitle: false, t: f.t, T: f.t.toUpperCase(), match: f.match, matchTxt: pct(f.match), tsize: f.tsize || (f.t.length > 14 ? 34 : 46),
       meta: f.dur + ' · ' + f.g[0] + ' · ' + f.dir, why: f.why,
       kicker: kind === 'super' ? 'de tu mazo super likes' : 'tu película para esta noche',
       inList: il, lText: il ? 'En tu lista' : '+ A tu lista', lbg: il ? 'rgba(26,20,17,.82)' : 'rgba(244,231,208,.92)', lfg: il ? '#f4e7d0' : '#1a1411',
