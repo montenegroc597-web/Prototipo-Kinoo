@@ -1,10 +1,10 @@
 # Progreso
 
 ## Estado actual
-- Fase: F4 · Catálogo piloto
-- Última tarea terminada: F3 · motor, pruebas, simulador y guía paso a paso
-- Siguiente tarea: pipeline del catálogo (TMDB + juez) y semilla manual
-- Bloqueos: sin `TMDB_API_KEY` y sin acceso de red a `api.themoviedb.org` (afecta a F4)
+- Fase: F5 · API y conexión con el prototipo
+- Última tarea terminada: F4 · semilla de 34 películas etiquetada y validada; pipeline de TMDB listo
+- Siguiente tarea: Edge Functions y adaptador de datos (modo demo)
+- Bloqueos: **F4 · sin `TMDB_API_KEY` y con la red bloqueada a `api.themoviedb.org`**. El catálogo quedó en 34 películas de semilla manual. Para resolverlo, Camilo debe crear la clave, guardarla como variable de entorno y permitir la red a `api.themoviedb.org` e `image.tmdb.org` (ver `guias/catalogo.md`)
 - Última actualización: 2026-11-05 03:40
 
 ## Fases
@@ -14,7 +14,7 @@
 | F1 | ✅ | 86/86 rutas publicadas en `site/`; 86 archivos movidos con `git mv` sin cambios de contenido; typecheck limpio; 1/1 unitaria y 1/1 e2e (rutas) |
 | F2 | ✅ | 6 migraciones aplicadas desde cero en PGlite + pgvector; 10/10 pruebas (RLS de eventos y perfiles, solo agregar, votos, exportar y borrar) |
 | F3 | ✅ | 35/35 unitarias del motor; 5/5 pruebas de simulación (Aprende 6,4× el azar; moods coseno 0,64 y 20 % compartido; cambio en 22 eventos en el peor caso; 0 explicaciones con números; 181/181 mazos respetan la receta). Total del repo 51/51 |
-| F4 | ⬜ | |
+| F4 | ✅ (semilla) | 34 películas válidas (no 300: bloqueo anotado); 0 errores de esquema y frases gancho; dispersión ≥ 0,21 en los 21 átomos; 0 contradicciones; error de anclas 0,052 (anclas provisionales); CSV de 20 para revisión |
 | F5 | ⬜ | |
 | F6 | ⬜ | |
 
@@ -33,6 +33,7 @@
 - 2026-11-05 04:10 · F2 · Configuración en `data/config/*.json` → `npm run seed` → `supabase/seed/`. 6 migraciones y pruebas sobre PGlite.
 - 2026-11-05 04:30 · F3 · Módulos del motor escritos. Por indicación de Camilo, las cartas de tarot pasan a ser **arquetipos de perfil** (misma idea, sin mencionar el tarot): tabla `archetypes`, `data/config/archetypes.json`.
 - 2026-11-05 05:10 · F3 · Simulador (`npm run sim`). Con los valores iniciales fallaba "Responde al cambio" (peor caso 62 eventos): el mazo insistía en lo descartado y nunca mostraba el gusto nuevo. Se agregó la fatiga de descarte y se ajustaron dos valores en la configuración (abajo). Resultado: 5/5.
+- 2026-11-05 05:40 · F4 · Pipeline `scripts/catalog/` (fetch-tmdb, tag, build). Semilla manual de 34 películas, etiquetada por dos subagentes Sonnet. QC aprobado.
 
 ## Decisiones tomadas sin Camilo
 - La línea base es 0/0 porque el prototipo no tenía pruebas. Las pruebas nuevas son las primeras del repositorio.
@@ -53,7 +54,13 @@
 - **Explicación sin rasgos en común:** si el perfil existe pero no comparte nada con la película, la frase es "Algo distinto a lo que sueles guardar, para ampliar el mazo." (plantilla `no_overlap`, nueva).
 - **Sorpresa "media o baja":** puntaje en el 60 % inferior de las candidatas (`sorpresa_max_score_percentile`).
 - **Comodín:** el rasgo favorito tiene que valer al menos 0,4 en la película (`comodin_min_top_atom`).
+- **Semilla de 34, no de 30:** 30 no alcanzaba para cumplir las cuotas (20 % anteriores al 2000, 15 % latinoamericanas) e incluir todas las películas del prototipo.
+- **Metadatos de la semilla escritos a mano:** duración, nota, votos y plataformas en Colombia son aproximados. Los `tmdb_id` quedaron vacíos para no inventarlos.
+- **Anclas provisionales:** las 6 anclas las propuse yo. Su error bajo (0,052) mide coherencia del juez, no acuerdo con el equipo.
+- **Mazo del Equipo Kinoo provisional:** 12 películas con 5 notas escritas por mí. Hay que curarlo.
+- **Pósters:** donde el prototipo ya tenía imagen, `poster_path` apunta a `_blob/…`; las demás no tienen póster.
 
 ## Para revisar cuando vuelvas
 - Subir el documento de Argon a `docs/historico/`.
 - Resultados del simulador: `packages/engine/sim/RESULTADOS.md`.
+- CSV de revisión del catálogo: `data/catalog/revision-20.csv`. Valores ancla del equipo en `data/catalog/anchors.json`.
