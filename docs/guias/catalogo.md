@@ -78,7 +78,7 @@ npm run seed
 
 ## Atribución
 
-- TMDB exige este aviso donde se muestren sus datos: *"This product uses the TMDB API but is not endorsed or certified by TMDB."*, junto con su logo. El modo demo lo muestra.
+- TMDB exige este aviso donde se muestren sus datos: *"This product uses the TMDB API but is not endorsed or certified by TMDB."*, junto con su logo. El modo demo muestra el aviso abajo en cada pantalla conectada cuando el catálogo viene de TMDB (`source = tmdb`). Falta agregar el logo de TMDB al diseño.
 - Los datos de plataformas vienen de JustWatch a través de TMDB, y también hay que atribuirlos.
 - **Pendiente legal:** revisar los términos de uso comercial de TMDB y JustWatch antes de lanzar.
 

@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <title>Descubrir — mazo de 10 cartas</title>
 <script src="../_prototipos/dc-runtime.js"></script>
+<script src="../_kinoo/kinoo-demo.js"></script>
 </head>
 <body>
 <x-dc>
@@ -75,8 +76,10 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;margin:0;cu
             </div>
 
             <div style="position:absolute;left:18px;top:148px;height:101px;display:flex;flex-direction:column;gap:5px;color:#f4e7d0;white-space:nowrap">
+              <sc-if value="{{card.showMatch}}" hint-placeholder-val="{{ true }}">
               <p style="margin:0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:112px;line-height:87.4px">{{card.match}}</p>
               <p style="margin:0;font-weight:800;font-size:10px;line-height:13px;letter-spacing:1.4px;text-transform:uppercase">% contigo</p>
+              </sc-if>
             </div>
 
             <div style="position:absolute;left:202px;top:155px;width:117px;height:87px;display:flex;flex-direction:column;align-items:flex-end;justify-content:center;gap:6px">
@@ -412,7 +415,10 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;margin:0;cu
 class Component extends DCLogic {
 renderVals() {
   const S = this.state || {};
-  const TOTAL = 10;
+  // Motor Kinoo v2 (modo demo): si cargó, las cartas salen del motor; si no, se usan las de ejemplo.
+  const KD = window.KinooDemo;
+  const KCARDS = KD ? KD.discoverCards() : null;
+  const TOTAL = KCARDS ? KCARDS.length : 10;
   const idx = S.idx || 0;
   const flipped = !!S.flipped;
   const exit = S.exit || null;
@@ -435,7 +441,7 @@ renderVals() {
   };
   const PH = ['#e8642c', '#b83a26', '#8e3714'];
   const mk = (o) => o;
-  const CARDS = [
+  const CARDS = KCARDS || [
     mk({ kicker: 'muy, muy tú', premise: 'Un padre cruza el universo para volver.', match: 93, tags: ['Ciencia ficción', 'Drama', 'Aventura'], similar: 'Se parece a 2 películas que marcaste como ya vistas.', title: 'Interstellar', subtitle: 'Una película de Christopher Nolan', dur: '2 h 49', genre: 'Ciencia ficción', year: '2014', desc: 'Un grupo de astronautas viaja más allá de nuestra galaxia en busca de un nuevo hogar para la humanidad.', img: '_blob/8d36ec8e6ab2e36a214159e1cc93d1c6.jpg', pos: '50% 100%', netflix: true, disney: true, tono: 'melancólico', rows: [['ritmo', 'pausado', 'se toma su tiempo'], ['tono', 'melancólico', 'tristeza bonita'], ['historia', 'épica', 'mucho en juego'], ['visual', 'inmenso', 'para pantalla grande']] }),
     mk({ kicker: 'tu lado soñador', premise: 'Dos soñadores se aman a destiempo.', match: 88, tags: ['Musical', 'Romance', 'Drama'], similar: 'Se parece a 1 película que marcaste como ya vista.', title: 'La La Land', subtitle: 'Una película de Damien Chazelle', dur: '2 h 8', genre: 'Musical', year: '2016', desc: 'Una pianista de jazz y una aspirante a actriz se enamoran en Los Ángeles mientras persiguen sus sueños.', img: '_blob/47a12c3c151f8da9df8a65897c8a3b7b.jpg', pos: '50% 30%', netflix: false, disney: false, tono: 'nostálgico', rows: [['ritmo', 'fluido', 'se deja llevar'], ['tono', 'nostálgico', 'añoranza dulce'], ['historia', 'romántica', 'amor y sueños'], ['visual', 'colorido', 'luces de ciudad']] }),
     mk({ kicker: 'para creadores', premise: 'Un compositor lucha contra el reloj.', match: 84, tags: ['Musical', 'Drama', 'Biografía'], similar: 'Se parece a 3 películas que marcaste como ya vistas.', title: 'tick, tick...BOOM!', subtitle: 'Una película de Lin-Manuel Miranda', dur: '1 h 55', genre: 'Musical', year: '2021', desc: 'Un joven compositor de teatro lucha por estrenar su obra mientras el tiempo y la vida le pisan los talones.', img: '_blob/665a0569e72a0a72bc75b7aed03e2424.jpg', pos: '50% 35%', netflix: true, disney: false, tono: 'cálido', rows: [['ritmo', 'vibrante', 'late con la música'], ['tono', 'cálido', 'abrazo suave'], ['historia', 'íntima', 'un sueño en juego'], ['visual', 'teatral', 'escenario y luces']] }),
@@ -451,7 +457,7 @@ renderVals() {
   const raw = CARDS[Math.min(idx, TOTAL - 1)];
   const T = TONE[raw.tono];
   const card = {
-    kicker: raw.kicker, premise: raw.premise, match: raw.match, tags: raw.tags, similar: raw.similar,
+    kicker: raw.kicker, premise: raw.premise, match: raw.match, showMatch: raw.showMatch !== false, tags: raw.tags, similar: raw.similar,
     title: raw.title, subtitle: raw.subtitle, dur: raw.dur, genre: raw.genre, year: raw.year, desc: raw.desc,
     titleSize: raw.title.length <= 12 ? 40 : (raw.title.length <= 15 ? 38 : 34),
     hasImg: !!raw.img, noImg: !raw.img, img: raw.img, phBg: PH[idx % 3],
@@ -503,7 +509,7 @@ renderVals() {
   const sheetShow = !!S.sheetShow;
 
   // ADN de cada película (datos de ejemplo, mismo orden que CARDS)
-  const ADN = [
+  const ADN = (KD && KD.discoverAdn()) || [
     { phrase: 'Ciencia ficción con el corazón en la mano', themes: ['Tiempo', 'Sacrificio', 'Padres e hijos'], sim: [['Arrival', '2016'], ['Gravity', '2013'], ['Contact', '1997']] },
     { phrase: 'Un musical que sabe a despedida', themes: ['Sueños', 'Amor a destiempo', 'Ciudad'], sim: [['Whiplash', '2014'], ['Begin Again', '2013'], ['Cantando bajo la lluvia', '1952']] },
     { phrase: 'El musical de quien teme no llegar a tiempo', themes: ['Ambición', 'Tiempo', 'Amistad'], sim: [['Rent', '2005'], ['Birdman', '2014'], ['Inside Llewyn Davis', '2013']] },
@@ -543,6 +549,7 @@ renderVals() {
     if (s.exit || (s.idx || 0) >= TOTAL) return;
     if (kind === 'seen' && !s.flipped) return;
     this.setState({ exit: kind, drag: false });
+    if (KD) KD.onCard(s.idx || 0, kind, !!s.flipped);
     clearTimeout(this._t);
     this._t = setTimeout(() => {
       const c = st();
@@ -579,6 +586,7 @@ renderVals() {
       this.setState({ drag: false, dx: 0, dy: 0 });
       if (!s.flipping) {
         // 1) entra en modo 3D sin transición (misma imagen)  2) gira una sola vez  3) vuelve a reposo sin transición
+        if (KD && !st().flipped) KD.onFlip(st().idx || 0);
         this.setState({ flipping: true, fready: false });
         clearTimeout(this._t5); clearTimeout(this._t6);
         this._t5 = setTimeout(() => {
@@ -644,10 +652,11 @@ renderVals() {
     nWant, nSeen, nPass, wants, hasWants: wants.length > 0, noWants: wants.length === 0,
     // Al salir hacia el Resumen, el mazo se reinicia: al volver a Descubrir arranca un mazo nuevo.
     newDeckOnLeave: () => {
+      if (KD) KD.leaveDeck();
       clearTimeout(this._t7);
       this._t7 = setTimeout(() => { try { this.setState({ idx: 0, results: [], flipped: false, flipping: false, fready: false, exit: null, dx: 0, dy: 0, anim: false, sheet: null, sheetShow: false }); setTimeout(() => { try { this.setState({ anim: true }); } catch (_) {} }, 80); } catch (_) {} }, 400);
     },
-    restart: () => this.setState({ idx: 0, results: [], flipped: false, flipping: false, fready: false, exit: null, dx: 0, dy: 0, anim: false, sheet: null, sheetShow: false })
+    restart: () => { if (KD) KD.leaveDeck(); this.setState({ idx: 0, results: [], flipped: false, flipping: false, fready: false, exit: null, dx: 0, dy: 0, anim: false, sheet: null, sheetShow: false }); }
   };
 }
 componentWillUnmount() { clearTimeout(this._t); clearTimeout(this._t2); clearTimeout(this._t3); clearTimeout(this._t4); clearTimeout(this._t5); clearTimeout(this._t6); }

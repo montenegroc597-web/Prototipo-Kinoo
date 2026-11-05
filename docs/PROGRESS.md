@@ -1,9 +1,9 @@
 # Progreso
 
 ## Estado actual
-- Fase: F5 · API y conexión con el prototipo
-- Última tarea terminada: F5 · servicio de API (`packages/api`), Edge Functions y prueba de punta a punta sobre PGlite
-- Siguiente tarea: modo demo en el navegador y conexión de Descubrir y Ver
+- Fase: F6 · Documentación y cierre
+- Última tarea terminada: F5 · modo demo y Descubrir y Ver conectados al motor
+- Siguiente tarea: README, guía para ajustar el algoritmo, guía de despliegue y pull request
 - Bloqueos: **F4 · sin `TMDB_API_KEY` y con la red bloqueada a `api.themoviedb.org`**. El catálogo quedó en 34 películas de semilla manual. Para resolverlo, Camilo debe crear la clave, guardarla como variable de entorno y permitir la red a `api.themoviedb.org` e `image.tmdb.org` (ver `guias/catalogo.md`)
 - Última actualización: 2026-11-05 03:40
 
@@ -15,7 +15,7 @@
 | F2 | ✅ | 6 migraciones aplicadas desde cero en PGlite + pgvector; 10/10 pruebas (RLS de eventos y perfiles, solo agregar, votos, exportar y borrar) |
 | F3 | ✅ | 35/35 unitarias del motor; 5/5 pruebas de simulación (Aprende 6,4× el azar; moods coseno 0,64 y 20 % compartido; cambio en 22 eventos en el peor caso; 0 explicaciones con números; 181/181 mazos respetan la receta). Total del repo 51/51 |
 | F4 | ✅ (semilla) | 34 películas válidas (no 300: bloqueo anotado); 0 errores de esquema y frases gancho; dispersión ≥ 0,21 en los 21 átomos; 0 contradicciones; error de anclas 0,052 (anclas provisionales); CSV de 20 para revisión |
-| F5 | ⬜ | |
+| F5 | ✅ | 56/56 unitarias (incluye API de punta a punta sobre PGlite con RLS); 3/3 e2e: mazo del motor → guardar → Ver → "Me encantó" cambia el perfil; sin motor, el prototipo sigue igual; 86/86 rutas |
 | F6 | ⬜ | |
 
 ## Inventario del repositorio (F0)
@@ -35,6 +35,7 @@
 - 2026-11-05 05:10 · F3 · Simulador (`npm run sim`). Con los valores iniciales fallaba "Responde al cambio" (peor caso 62 eventos): el mazo insistía en lo descartado y nunca mostraba el gusto nuevo. Se agregó la fatiga de descarte y se ajustaron dos valores en la configuración (abajo). Resultado: 5/5.
 - 2026-11-05 05:40 · F4 · Pipeline `scripts/catalog/` (fetch-tmdb, tag, build). Semilla manual de 34 películas, etiquetada por dos subagentes Sonnet. QC aprobado.
 - 2026-11-05 06:05 · F5 · `packages/api`: un solo servicio para las Edge Functions y el modo demo. Cinco endpoints en `supabase/functions/` (events, deck, watch, onboarding). Prueba de punta a punta contra PGlite con RLS.
+- 2026-11-05 06:40 · F5 · Modo demo (`_kinoo/kinoo-demo.js`) y conexión de `Flujo1_Descubrir`, `FlujoV1_Feed` y `FlujoV4_Calificar`. Ver `adr/0003-api-y-modo-demo.md` y `guias/contrato-api.md`.
 
 ## Decisiones tomadas sin Camilo
 - La línea base es 0/0 porque el prototipo no tenía pruebas. Las pruebas nuevas son las primeras del repositorio.
@@ -62,6 +63,12 @@
 - **Pósters:** donde el prototipo ya tenía imagen, `poster_path` apunta a `_blob/…`; las demás no tienen póster.
 - **`packages/api` (nuevo, no estaba en el plan):** la lógica de los endpoints vive aquí una sola vez y la usan las Edge Functions y el modo demo. Ver `adr/0003-api-y-modo-demo.md`.
 - **Edge Functions sin probar en Deno:** la sesión no tiene Deno ni proyecto de Supabase. Se probó la misma lógica en Node contra PGlite. Antes de desplegar hay que correr `npm run build:functions` (empaqueta el motor en `_shared/kinoo-core.js`).
+- **"93 % contigo" oculto con el motor:** el principio 1 prohíbe mostrar porcentajes. En su lugar, la carta muestra la explicación en palabras al pie. Sin el motor, la carta se ve como antes.
+- **Premisa corta en la carta:** la carta está diseñada para unas 40 letras y el juez escribe hasta 160. En la demo se muestra la primera parte de la frase gancho con "…". Hay que decidir si el juez escribe además una premisa corta, o si cambia el diseño.
+- **Gestos → acciones:** "Quiero verla" = `saved_intent`, "No me interesa" = `dismissed`, "Ya la vi" = `marked_seen`, tocar para revelar = `card_flipped`. En Ver: "otra" = `watch_skipped`, "Abrir en…" = `watch_started`. En Calificar, los cinco niveles se traducen así: Me dormí y No era para mí = `not_for_me`; Estuvo bien = `liked`; Me encantó = `loved`; Obra maestra = `loved` + `rewatch`.
+- **Super like en Ver:** no tiene acción en el back. La especificación no lo define y no quise inventarle un peso.
+- **Tono del reverso:** el prototipo tiene ilustraciones para cuatro tonos (melancólico, nostálgico, oscuro, cálido). El puente elige el más cercano según los átomos; el tono del juez queda como subtítulo.
+- **Onboarding sin pantallas:** el prototipo no tiene pantallas de onboarding. El endpoint existe y está probado, pero en la demo el perfil empieza vacío y aprende desde el primer mazo.
 
 ## Para revisar cuando vuelvas
 - Subir el documento de Argon a `docs/historico/`.

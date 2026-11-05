@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <title>Ver · Calificación 1</title>
 <script src="../_prototipos/dc-runtime.js"></script>
+<script src="../_kinoo/kinoo-demo.js"></script>
 </head>
 <body>
 <x-dc>
@@ -70,7 +71,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;margin:0;cu
       <div style="position:absolute;inset:0;transform:rotate({{ang}}deg);transform-origin:185px 196px;transition:{{angTr}};pointer-events:none"><img src="_blob/ce663d2c3b75d4aef633694e024e61b3.svg" alt="" width="370" height="200"></div>
     </div>
     <p style="position:absolute;left:0;right:0;top:678px;margin:0;text-align:center;font-weight:600;font-size:12px;color:#bfa98a">Gira la aguja o toca una máscara</p>
-    <a href="FlujoV5_Version.dc.html" style="position:absolute;left:20px;top:716px;width:350px;height:56px;box-sizing:border-box;border-radius:28px;background:#b83a26;border:2px solid #f4e7d0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:24px;line-height:52px;color:#f4e7d0;text-transform:uppercase;letter-spacing:.5px;text-align:center">Continuar</a>
+    <a href="FlujoV5_Version.dc.html" onClick="{{confirm}}" style="position:absolute;left:20px;top:716px;width:350px;height:56px;box-sizing:border-box;border-radius:28px;background:#b83a26;border:2px solid #f4e7d0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:24px;line-height:52px;color:#f4e7d0;text-transform:uppercase;letter-spacing:.5px;text-align:center">Continuar</a>
     <a href="FlujoV1_Feed.dc.html" style="position:absolute;left:0;right:0;top:786px;text-align:center;font-weight:600;font-size:12.5px;color:#bfa98a">Saltar por ahora</a>
 
   </div>
@@ -96,6 +97,8 @@ renderVals() {
     gKey: (e) => { const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0; if (d) { e.preventDefault(); set(Math.max(0, Math.min(4, lv + d)), null); } }
   };
   for (let i = 0; i < 5; i++) { o['f' + i] = i === lv; o['s' + i] = () => set(i, null); }
+  // Motor Kinoo v2 (modo demo): al continuar, la calificación se guarda como watch_confirmed.
+  o.confirm = () => { if (window.KinooDemo) window.KinooDemo.confirmWatch(lv); };
   return o;
 }
 }
