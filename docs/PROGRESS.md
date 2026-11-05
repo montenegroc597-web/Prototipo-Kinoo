@@ -4,6 +4,7 @@
 - Fase: F6 · Documentación y cierre
 - Última tarea terminada: F6 · documentación consolidada y pull request abierto
 - Siguiente tarea: ninguna del plan. Pendientes de Camilo en "Para revisar cuando vuelvas"
+- Pull request: https://github.com/montenegroc597-web/Prototipo-Kinoo/pull/1
 - Bloqueos: **F4 · sin `TMDB_API_KEY` y con la red bloqueada a `api.themoviedb.org`**. El catálogo quedó en 34 películas de semilla manual. Para resolverlo, Camilo debe crear la clave, guardarla como variable de entorno y permitir la red a `api.themoviedb.org` e `image.tmdb.org` (ver `guias/catalogo.md`)
 - Última actualización: 2026-11-05 03:40
 
@@ -16,7 +17,7 @@
 | F3 | ✅ | 35/35 unitarias del motor; 5/5 pruebas de simulación (Aprende 6,4× el azar; moods coseno 0,64 y 20 % compartido; cambio en 22 eventos en el peor caso; 0 explicaciones con números; 181/181 mazos respetan la receta). Total del repo 51/51 |
 | F4 | ✅ (semilla) | 34 películas válidas (no 300: bloqueo anotado); 0 errores de esquema y frases gancho; dispersión ≥ 0,21 en los 21 átomos; 0 contradicciones; error de anclas 0,052 (anclas provisionales); CSV de 20 para revisión |
 | F5 | ✅ | 56/56 unitarias (incluye API de punta a punta sobre PGlite con RLS); 3/3 e2e: mazo del motor → guardar → Ver → "Me encantó" cambia el perfil; sin motor, el prototipo sigue igual; 86/86 rutas |
-| F6 | ⬜ | |
+| F6 | ✅ | Documentos enlazados entre sí (0 enlaces rotos); PR abierto: https://github.com/montenegroc597-web/Prototipo-Kinoo/pull/1 (sin fusionar). **Plan completo** |
 
 ## Inventario del repositorio (F0)
 - **Tecnología:** HTML estático. Cada pantalla es un archivo `.dc.html` que dibuja `public/_prototipos/dc-runtime.js`. No hay `package.json`, build ni pruebas.
