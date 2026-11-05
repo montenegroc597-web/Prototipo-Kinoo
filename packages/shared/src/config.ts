@@ -69,6 +69,13 @@ export interface Params {
   deck_ready_tonight_min: number;
   /** El cierre del mazo solo resume un gusto si se guardaron al menos estas cartas. */
   closing_min_saves: number;
+  /** Estándar de caracteres de la carta: más largo se recorta con fitText() para que no se salga del borde. */
+  card_premise_max: number;
+  card_title_max: number;
+  card_subtitle_max: number;
+  card_overview_max: number;
+  card_explanation_max: number;
+  card_pillar_max: number;
   watch_fresh_hours: number;
   watch_fresh_bonus: number;
   watch_special_bonus: number;

@@ -32,7 +32,7 @@
       "pillars": {
         "ritmo": "vertiginoso",
         "tono": "brutal",
-        "historia": "huida en el desierto",
+        "historia": "huida desértica",
         "visual": "polvo y fuego"
       }
     },
@@ -64,7 +64,7 @@
       "hook": "UN NIÑO QUE SUEÑA CON SER MÚSICO CRUZA AL MUNDO DE LOS MUERTOS PARA DESCUBRIR EL SECRETO DE SU FAMILIA.",
       "pillars": {
         "ritmo": "ágil",
-        "tono": "conmovedor y cálido",
+        "tono": "cálido y emotivo",
         "historia": "memoria y familia",
         "visual": "colorido festivo"
       }
@@ -163,9 +163,9 @@
       "hook": "A PUNTO DE CUMPLIR TREINTA, UN JOVEN COMPOSITOR DE TEATRO LUCHA CONTRA EL RELOJ PARA ESTRENAR SU OBRA Y NO PERDER A QUIENES QUIERE.",
       "pillars": {
         "ritmo": "enérgico",
-        "tono": "inspirador y emotivo",
-        "historia": "sueño contra el tiempo",
-        "visual": "Nueva York años noventa"
+        "tono": "inspirador",
+        "historia": "sueño y reloj",
+        "visual": "años noventa"
       }
     },
     {
@@ -229,7 +229,7 @@
       "hook": "EN UN FUTURO CERCANO, UN HOMBRE SOLITARIO SE ENAMORA DE LA VOZ DE UN SISTEMA OPERATIVO QUE APRENDE A SENTIR.",
       "pillars": {
         "ritmo": "pausado",
-        "tono": "melancólico y tierno",
+        "tono": "melancolía tierna",
         "historia": "amor artificial",
         "visual": "tonos cálidos"
       }
@@ -295,7 +295,7 @@
       "hook": "NAVES MISTERIOSAS APARECEN EN LA TIERRA Y UNA LINGÜISTA DEBE DESCIFRAR SU LENGUAJE ANTES DE QUE EL MUNDO ENTRE EN GUERRA.",
       "pillars": {
         "ritmo": "pausado",
-        "tono": "enigmático y emotivo",
+        "tono": "enigmático",
         "historia": "primer contacto",
         "visual": "niebla y gris"
       }
@@ -361,7 +361,7 @@
       "hook": "A BORDO DE UN TRANSATLÁNTICO CONDENADO, UNA JOVEN DE ALTA SOCIEDAD Y UN ARTISTA POBRE SE ENAMORAN CONTRA TODO PRONÓSTICO.",
       "pillars": {
         "ritmo": "fluido",
-        "tono": "trágico y romántico",
+        "tono": "romance trágico",
         "historia": "amor imposible",
         "visual": "épica marítima"
       }
@@ -395,8 +395,8 @@
       "pillars": {
         "ritmo": "tenso",
         "tono": "aterrador",
-        "historia": "maldición que se contagia",
-        "visual": "sonrisas perturbadoras"
+        "historia": "maldición viral",
+        "visual": "sonrisa macabra"
       }
     },
     {
@@ -428,7 +428,7 @@
       "pillars": {
         "ritmo": "vibrante",
         "tono": "optimista",
-        "historia": "héroe contra el poder",
+        "historia": "héroe contra poder",
         "visual": "colorido y aéreo"
       }
     },
@@ -461,7 +461,7 @@
       "pillars": {
         "ritmo": "ágil",
         "tono": "humor negro",
-        "historia": "venganzas cotidianas",
+        "historia": "venganza cotidiana",
         "visual": "realismo exagerado"
       }
     },
@@ -495,7 +495,7 @@
         "ritmo": "pausado",
         "tono": "hipnótico",
         "historia": "viaje por el río",
-        "visual": "selva en blanco y negro"
+        "visual": "selva monocroma"
       }
     },
     {
@@ -526,9 +526,9 @@
       "hook": "UNA MAESTRA JUBILADA QUE ESCRIBE CARTAS EN UNA ESTACIÓN ACOMPAÑA A UN NIÑO HUÉRFANO EN UN LARGO VIAJE EN BUSCA DE SU PADRE.",
       "pillars": {
         "ritmo": "pausado",
-        "tono": "humano y conmovedor",
-        "historia": "viaje en busca del padre",
-        "visual": "carretera del interior"
+        "tono": "humano y tierno",
+        "historia": "buscando al padre",
+        "visual": "ruta del interior"
       }
     },
     {
@@ -559,10 +559,11 @@
       "hook": "UN CINEASTA RECUERDA SU INFANCIA EN UN PUEBLO SICILIANO Y LA AMISTAD CON EL PROYECCIONISTA QUE LE ENSEÑÓ A AMAR EL CINE.",
       "pillars": {
         "ritmo": "pausado",
-        "tono": "nostálgico y cálido",
-        "historia": "amistad y primer amor",
-        "visual": "luz dorada de pueblo"
+        "tono": "nostalgia cálida",
+        "historia": "amistad y amor",
+        "visual": "luz dorada rural"
       }
     }
-  ]
+  ],
+  "pillars_revision": "pilares acortados a 18 caracteres para la carta (2026-11-05)"
 }

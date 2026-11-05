@@ -22,6 +22,18 @@ export interface CardDTO {
   };
   /** Razón en palabras. Nunca contiene números ni %. */
   explanation: string;
+  /**
+   * Textos listos para la carta, recortados con el estándar de caracteres (params card_*_max).
+   * Úsalos en la carta; los campos completos (back.overview, back.title…) quedan para una vista de detalle.
+   */
+  display: {
+    premise: string;
+    title: string;
+    subtitle: string;
+    overview: string;
+    explanation: string;
+    pillars: { ritmo: string; tono: string; historia: string; visual: string };
+  };
   /** Tratamiento visual especial (sorpresa). */
   special_treatment: boolean;
   curator_name?: string;

@@ -105,4 +105,10 @@ insert into config (key, value) values ('watch_vibe_min_cosine', '0.2'::jsonb) o
 insert into config (key, value) values ('dismiss_fatigue_weight', '0.3'::jsonb) on conflict (key) do update set value = excluded.value, updated_at = now();
 insert into config (key, value) values ('dismiss_fatigue_hours', '24'::jsonb) on conflict (key) do update set value = excluded.value, updated_at = now();
 insert into config (key, value) values ('closing_min_saves', '2'::jsonb) on conflict (key) do update set value = excluded.value, updated_at = now();
+insert into config (key, value) values ('card_premise_max', '44'::jsonb) on conflict (key) do update set value = excluded.value, updated_at = now();
+insert into config (key, value) values ('card_title_max', '24'::jsonb) on conflict (key) do update set value = excluded.value, updated_at = now();
+insert into config (key, value) values ('card_subtitle_max', '40'::jsonb) on conflict (key) do update set value = excluded.value, updated_at = now();
+insert into config (key, value) values ('card_overview_max', '110'::jsonb) on conflict (key) do update set value = excluded.value, updated_at = now();
+insert into config (key, value) values ('card_explanation_max', '96'::jsonb) on conflict (key) do update set value = excluded.value, updated_at = now();
+insert into config (key, value) values ('card_pillar_max', '18'::jsonb) on conflict (key) do update set value = excluded.value, updated_at = now();
 commit;

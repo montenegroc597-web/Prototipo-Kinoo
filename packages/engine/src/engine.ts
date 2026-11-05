@@ -76,7 +76,7 @@ export class KinooEngine {
   }
 
   deckDTO(deck: ActiveDeck): DeckDTO {
-    return toDeckDTO(deck, this.catalog.byId, { country: this.country, assetBaseUrl: this.assetBaseUrl });
+    return toDeckDTO(deck, this.catalog.byId, { country: this.country, assetBaseUrl: this.assetBaseUrl, limits: this.cfg.params });
   }
 
   /** Al guardar una carta: ¿es match especial? (muta el mazo para respetar "una vez por mazo"). */
@@ -101,7 +101,7 @@ export class KinooEngine {
             card: toCardDTO(
               d.movie,
               { slot: 1, role: 'afin', explanation: d.explanation ?? '', special_treatment: false },
-              { country: this.country, assetBaseUrl: this.assetBaseUrl },
+              { country: this.country, assetBaseUrl: this.assetBaseUrl, limits: this.cfg.params },
             ),
           }
         : {}),

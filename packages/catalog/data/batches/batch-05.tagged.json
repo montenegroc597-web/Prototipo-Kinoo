@@ -5,93 +5,499 @@
   "movies": [
     {
       "id": "shrek-2-2004",
-      "atoms": {"frenetica":0.35,"agil":0.8,"pausada":0.1,"contemplativa":0.02,"reconfortante":0.8,"luminosa":0.8,"melancolica":0.1,"tensa":0.2,"inquietante":0.03,"sombria":0.03,"cruda":0,"onirica":0.3,"neon":0.4,"pastel":0.45,"calida":0.6,"monocromatica":0,"carga_emocional":0.45,"complejidad":0.12,"humor":0.92,"intimidad":0.35,"escala_epica":0.45},
+      "atoms": {
+        "frenetica": 0.35,
+        "agil": 0.8,
+        "pausada": 0.1,
+        "contemplativa": 0.02,
+        "reconfortante": 0.8,
+        "luminosa": 0.8,
+        "melancolica": 0.1,
+        "tensa": 0.2,
+        "inquietante": 0.03,
+        "sombria": 0.03,
+        "cruda": 0,
+        "onirica": 0.3,
+        "neon": 0.4,
+        "pastel": 0.45,
+        "calida": 0.6,
+        "monocromatica": 0,
+        "carga_emocional": 0.45,
+        "complejidad": 0.12,
+        "humor": 0.92,
+        "intimidad": 0.35,
+        "escala_epica": 0.45
+      },
       "hook": "UN OGRO RECIÉN CASADO VISITA A LOS SUEGROS REALES Y DESCUBRE QUE LA FAMILIA POLÍTICA PUEDE SER MÁS PELIGROSA QUE CUALQUIER PANTANO.",
-      "pillars": {"ritmo": "ágil", "tono": "divertido y cálido", "historia": "suegros imposibles", "visual": "cuento animado"}
+      "pillars": {
+        "ritmo": "ágil",
+        "tono": "divertido y cálido",
+        "historia": "suegros imposibles",
+        "visual": "cuento animado"
+      }
     },
     {
       "id": "sinners-2025",
-      "atoms": {"frenetica":0.5,"agil":0.55,"pausada":0.35,"contemplativa":0.1,"reconfortante":0.1,"luminosa":0.1,"melancolica":0.4,"tensa":0.8,"inquietante":0.6,"sombria":0.75,"cruda":0.45,"onirica":0.35,"neon":0.2,"pastel":0,"calida":0.8,"monocromatica":0.05,"carga_emocional":0.55,"complejidad":0.35,"humor":0.15,"intimidad":0.3,"escala_epica":0.55},
+      "atoms": {
+        "frenetica": 0.5,
+        "agil": 0.55,
+        "pausada": 0.35,
+        "contemplativa": 0.1,
+        "reconfortante": 0.1,
+        "luminosa": 0.1,
+        "melancolica": 0.4,
+        "tensa": 0.8,
+        "inquietante": 0.6,
+        "sombria": 0.75,
+        "cruda": 0.45,
+        "onirica": 0.35,
+        "neon": 0.2,
+        "pastel": 0,
+        "calida": 0.8,
+        "monocromatica": 0.05,
+        "carga_emocional": 0.55,
+        "complejidad": 0.35,
+        "humor": 0.15,
+        "intimidad": 0.3,
+        "escala_epica": 0.55
+      },
       "hook": "DOS HERMANOS ABREN UN CLUB DE MÚSICA EN EL SUR DE LOS AÑOS TREINTA, Y SU NOCHE DE INAUGURACIÓN ATRAE ALGO QUE NO DEBERÍA ENTRAR.",
-      "pillars": {"ritmo": "intenso", "tono": "oscuro y vibrante", "historia": "noche de terror y blues", "visual": "calor de época"}
+      "pillars": {
+        "ritmo": "intenso",
+        "tono": "oscuro y vibrante",
+        "historia": "terror y blues",
+        "visual": "calor de época"
+      }
     },
     {
       "id": "ted-2-2015",
-      "atoms": {"frenetica":0.2,"agil":0.7,"pausada":0.25,"contemplativa":0.02,"reconfortante":0.45,"luminosa":0.55,"melancolica":0.1,"tensa":0.1,"inquietante":0.02,"sombria":0.03,"cruda":0.05,"onirica":0.05,"neon":0.2,"pastel":0.1,"calida":0.5,"monocromatica":0,"carga_emocional":0.3,"complejidad":0.12,"humor":0.9,"intimidad":0.45,"escala_epica":0.1},
+      "atoms": {
+        "frenetica": 0.2,
+        "agil": 0.7,
+        "pausada": 0.25,
+        "contemplativa": 0.02,
+        "reconfortante": 0.45,
+        "luminosa": 0.55,
+        "melancolica": 0.1,
+        "tensa": 0.1,
+        "inquietante": 0.02,
+        "sombria": 0.03,
+        "cruda": 0.05,
+        "onirica": 0.05,
+        "neon": 0.2,
+        "pastel": 0.1,
+        "calida": 0.5,
+        "monocromatica": 0,
+        "carga_emocional": 0.3,
+        "complejidad": 0.12,
+        "humor": 0.9,
+        "intimidad": 0.45,
+        "escala_epica": 0.1
+      },
       "hook": "UN OSO DE PELUCHE BOCÓN QUIERE SER PAPÁ, PERO PRIMERO DEBE DEMOSTRAR ANTE UN JUEZ QUE ES UNA PERSONA Y NO UN OBJETO.",
-      "pillars": {"ritmo": "ágil", "tono": "irreverente", "historia": "juicio por ser persona", "visual": "comedia urbana"}
+      "pillars": {
+        "ritmo": "ágil",
+        "tono": "irreverente",
+        "historia": "juicio y derechos",
+        "visual": "comedia urbana"
+      }
     },
     {
       "id": "ted-2012",
-      "atoms": {"frenetica":0.2,"agil":0.7,"pausada":0.25,"contemplativa":0.02,"reconfortante":0.5,"luminosa":0.55,"melancolica":0.1,"tensa":0.12,"inquietante":0.03,"sombria":0.03,"cruda":0.05,"onirica":0.1,"neon":0.2,"pastel":0.1,"calida":0.5,"monocromatica":0,"carga_emocional":0.35,"complejidad":0.1,"humor":0.92,"intimidad":0.5,"escala_epica":0.1},
+      "atoms": {
+        "frenetica": 0.2,
+        "agil": 0.7,
+        "pausada": 0.25,
+        "contemplativa": 0.02,
+        "reconfortante": 0.5,
+        "luminosa": 0.55,
+        "melancolica": 0.1,
+        "tensa": 0.12,
+        "inquietante": 0.03,
+        "sombria": 0.03,
+        "cruda": 0.05,
+        "onirica": 0.1,
+        "neon": 0.2,
+        "pastel": 0.1,
+        "calida": 0.5,
+        "monocromatica": 0,
+        "carga_emocional": 0.35,
+        "complejidad": 0.1,
+        "humor": 0.92,
+        "intimidad": 0.5,
+        "escala_epica": 0.1
+      },
       "hook": "UN DESEO DE NIÑO DIO VIDA A SU OSO DE PELUCHE. AHORA, YA ADULTO, DEBE ELEGIR ENTRE SU MEJOR AMIGO GROSERO Y LA MUJER QUE AMA.",
-      "pillars": {"ritmo": "ágil", "tono": "gamberro y tierno", "historia": "amistad que no madura", "visual": "comedia cotidiana"}
+      "pillars": {
+        "ritmo": "ágil",
+        "tono": "gamberro y tierno",
+        "historia": "amistad inmadura",
+        "visual": "comedia cotidiana"
+      }
     },
     {
       "id": "the-batman-2022",
-      "atoms": {"frenetica":0.2,"agil":0.3,"pausada":0.7,"contemplativa":0.3,"reconfortante":0,"luminosa":0.02,"melancolica":0.4,"tensa":0.85,"inquietante":0.65,"sombria":0.95,"cruda":0.5,"onirica":0.1,"neon":0.4,"pastel":0,"calida":0.15,"monocromatica":0.45,"carga_emocional":0.45,"complejidad":0.65,"humor":0.03,"intimidad":0.3,"escala_epica":0.6},
+      "atoms": {
+        "frenetica": 0.2,
+        "agil": 0.3,
+        "pausada": 0.7,
+        "contemplativa": 0.3,
+        "reconfortante": 0,
+        "luminosa": 0.02,
+        "melancolica": 0.4,
+        "tensa": 0.85,
+        "inquietante": 0.65,
+        "sombria": 0.95,
+        "cruda": 0.5,
+        "onirica": 0.1,
+        "neon": 0.4,
+        "pastel": 0,
+        "calida": 0.15,
+        "monocromatica": 0.45,
+        "carga_emocional": 0.45,
+        "complejidad": 0.65,
+        "humor": 0.03,
+        "intimidad": 0.3,
+        "escala_epica": 0.6
+      },
       "hook": "UN ASESINO ATACA A LAS ÉLITES DE UNA CIUDAD CORRUPTA Y DEJA ACERTIJOS. UN JUSTICIERO ENMASCARADO SIGUE EL RASTRO HASTA SU PROPIO PASADO.",
-      "pillars": {"ritmo": "pausado y tenso", "tono": "oscuro", "historia": "investigación criminal", "visual": "noir lluvioso"}
+      "pillars": {
+        "ritmo": "pausado y tenso",
+        "tono": "oscuro",
+        "historia": "caso criminal",
+        "visual": "noir lluvioso"
+      }
     },
     {
       "id": "the-exorcist-1973",
-      "atoms": {"frenetica":0.15,"agil":0.25,"pausada":0.65,"contemplativa":0.15,"reconfortante":0,"luminosa":0.02,"melancolica":0.3,"tensa":0.85,"inquietante":0.95,"sombria":0.9,"cruda":0.7,"onirica":0.2,"neon":0,"pastel":0,"calida":0.3,"monocromatica":0.3,"carga_emocional":0.65,"complejidad":0.35,"humor":0.02,"intimidad":0.7,"escala_epica":0.15},
+      "atoms": {
+        "frenetica": 0.15,
+        "agil": 0.25,
+        "pausada": 0.65,
+        "contemplativa": 0.15,
+        "reconfortante": 0,
+        "luminosa": 0.02,
+        "melancolica": 0.3,
+        "tensa": 0.85,
+        "inquietante": 0.95,
+        "sombria": 0.9,
+        "cruda": 0.7,
+        "onirica": 0.2,
+        "neon": 0,
+        "pastel": 0,
+        "calida": 0.3,
+        "monocromatica": 0.3,
+        "carga_emocional": 0.65,
+        "complejidad": 0.35,
+        "humor": 0.02,
+        "intimidad": 0.7,
+        "escala_epica": 0.15
+      },
       "hook": "UNA MADRE DESESPERADA PIDE AYUDA A DOS SACERDOTES CUANDO SU HIJA DE DOCE AÑOS EMPIEZA A COMPORTARSE DE UN MODO IMPOSIBLE DE EXPLICAR.",
-      "pillars": {"ritmo": "lento y opresivo", "tono": "aterrador", "historia": "fe contra posesión", "visual": "realismo gélido"}
+      "pillars": {
+        "ritmo": "lento y opresivo",
+        "tono": "aterrador",
+        "historia": "fe contra posesión",
+        "visual": "realismo gélido"
+      }
     },
     {
       "id": "the-godfather-1972",
-      "atoms": {"frenetica":0.08,"agil":0.2,"pausada":0.75,"contemplativa":0.4,"reconfortante":0.05,"luminosa":0.1,"melancolica":0.55,"tensa":0.6,"inquietante":0.2,"sombria":0.7,"cruda":0.3,"onirica":0.05,"neon":0,"pastel":0,"calida":0.9,"monocromatica":0.35,"carga_emocional":0.7,"complejidad":0.55,"humor":0.1,"intimidad":0.6,"escala_epica":0.7},
+      "atoms": {
+        "frenetica": 0.08,
+        "agil": 0.2,
+        "pausada": 0.75,
+        "contemplativa": 0.4,
+        "reconfortante": 0.05,
+        "luminosa": 0.1,
+        "melancolica": 0.55,
+        "tensa": 0.6,
+        "inquietante": 0.2,
+        "sombria": 0.7,
+        "cruda": 0.3,
+        "onirica": 0.05,
+        "neon": 0,
+        "pastel": 0,
+        "calida": 0.9,
+        "monocromatica": 0.35,
+        "carga_emocional": 0.7,
+        "complejidad": 0.55,
+        "humor": 0.1,
+        "intimidad": 0.6,
+        "escala_epica": 0.7
+      },
       "hook": "EL PATRIARCA DE UNA FAMILIA MAFIOSA DEBE TRASPASAR SU IMPERIO A UN HIJO QUE NUNCA QUISO ESE DESTINO. EL PODER SIEMPRE SE PAGA.",
-      "pillars": {"ritmo": "pausado", "tono": "solemne", "historia": "herencia de poder", "visual": "penumbra dorada"}
+      "pillars": {
+        "ritmo": "pausado",
+        "tono": "solemne",
+        "historia": "herencia de poder",
+        "visual": "penumbra dorada"
+      }
     },
     {
       "id": "the-godfather-part-ii-1974",
-      "atoms": {"frenetica":0.05,"agil":0.15,"pausada":0.8,"contemplativa":0.5,"reconfortante":0.03,"luminosa":0.1,"melancolica":0.7,"tensa":0.6,"inquietante":0.25,"sombria":0.8,"cruda":0.3,"onirica":0.1,"neon":0,"pastel":0,"calida":0.85,"monocromatica":0.3,"carga_emocional":0.75,"complejidad":0.7,"humor":0.05,"intimidad":0.5,"escala_epica":0.8},
+      "atoms": {
+        "frenetica": 0.05,
+        "agil": 0.15,
+        "pausada": 0.8,
+        "contemplativa": 0.5,
+        "reconfortante": 0.03,
+        "luminosa": 0.1,
+        "melancolica": 0.7,
+        "tensa": 0.6,
+        "inquietante": 0.25,
+        "sombria": 0.8,
+        "cruda": 0.3,
+        "onirica": 0.1,
+        "neon": 0,
+        "pastel": 0,
+        "calida": 0.85,
+        "monocromatica": 0.3,
+        "carga_emocional": 0.75,
+        "complejidad": 0.7,
+        "humor": 0.05,
+        "intimidad": 0.5,
+        "escala_epica": 0.8
+      },
       "hook": "UN HOMBRE CONSOLIDA SU PODER MIENTRAS SE RECUERDA CÓMO SU PADRE LLEGÓ A SER LEYENDA. DOS ÉPOCAS, UN MISMO PRECIO.",
-      "pillars": {"ritmo": "pausado", "tono": "sombrío", "historia": "poder y soledad", "visual": "épocas doradas"}
+      "pillars": {
+        "ritmo": "pausado",
+        "tono": "sombrío",
+        "historia": "poder y soledad",
+        "visual": "épocas doradas"
+      }
     },
     {
       "id": "the-godfather-part-iii-1990",
-      "atoms": {"frenetica":0.1,"agil":0.25,"pausada":0.7,"contemplativa":0.35,"reconfortante":0.05,"luminosa":0.1,"melancolica":0.8,"tensa":0.55,"inquietante":0.2,"sombria":0.65,"cruda":0.2,"onirica":0.1,"neon":0,"pastel":0,"calida":0.75,"monocromatica":0.2,"carga_emocional":0.75,"complejidad":0.6,"humor":0.05,"intimidad":0.5,"escala_epica":0.6},
+      "atoms": {
+        "frenetica": 0.1,
+        "agil": 0.25,
+        "pausada": 0.7,
+        "contemplativa": 0.35,
+        "reconfortante": 0.05,
+        "luminosa": 0.1,
+        "melancolica": 0.8,
+        "tensa": 0.55,
+        "inquietante": 0.2,
+        "sombria": 0.65,
+        "cruda": 0.2,
+        "onirica": 0.1,
+        "neon": 0,
+        "pastel": 0,
+        "calida": 0.75,
+        "monocromatica": 0.2,
+        "carga_emocional": 0.75,
+        "complejidad": 0.6,
+        "humor": 0.05,
+        "intimidad": 0.5,
+        "escala_epica": 0.6
+      },
       "hook": "ENVEJECIDO Y CARGADO DE CULPA, UN JEFE CRIMINAL BUSCA LEGITIMAR SU FAMILIA Y REDIMIRSE, PERO SU PASADO NO LO DEJA IR.",
-      "pillars": {"ritmo": "pausado", "tono": "crepuscular", "historia": "redención imposible", "visual": "sombras italianas"}
+      "pillars": {
+        "ritmo": "pausado",
+        "tono": "crepuscular",
+        "historia": "redención fallida",
+        "visual": "sombras italianas"
+      }
     },
     {
       "id": "the-pope-s-exorcist-2023",
-      "atoms": {"frenetica":0.35,"agil":0.55,"pausada":0.3,"contemplativa":0.03,"reconfortante":0.03,"luminosa":0.05,"melancolica":0.1,"tensa":0.7,"inquietante":0.7,"sombria":0.65,"cruda":0.2,"onirica":0.15,"neon":0.05,"pastel":0,"calida":0.4,"monocromatica":0.1,"carga_emocional":0.2,"complejidad":0.2,"humor":0.25,"intimidad":0.3,"escala_epica":0.3},
+      "atoms": {
+        "frenetica": 0.35,
+        "agil": 0.55,
+        "pausada": 0.3,
+        "contemplativa": 0.03,
+        "reconfortante": 0.03,
+        "luminosa": 0.05,
+        "melancolica": 0.1,
+        "tensa": 0.7,
+        "inquietante": 0.7,
+        "sombria": 0.65,
+        "cruda": 0.2,
+        "onirica": 0.15,
+        "neon": 0.05,
+        "pastel": 0,
+        "calida": 0.4,
+        "monocromatica": 0.1,
+        "carga_emocional": 0.2,
+        "complejidad": 0.2,
+        "humor": 0.25,
+        "intimidad": 0.3,
+        "escala_epica": 0.3
+      },
       "hook": "UN EXORCISTA DEL VATICANO INVESTIGA LA POSESIÓN DE UN NIÑO Y DESCUBRE UN SECRETO QUE LA IGLESIA LLEVA SIGLOS OCULTANDO.",
-      "pillars": {"ritmo": "ágil", "tono": "sobresaltado", "historia": "demonio y secreto", "visual": "abadía en sombras"}
+      "pillars": {
+        "ritmo": "ágil",
+        "tono": "sobresaltado",
+        "historia": "demonio y secreto",
+        "visual": "abadía en sombras"
+      }
     },
     {
       "id": "toy-story-1995",
-      "atoms": {"frenetica":0.3,"agil":0.8,"pausada":0.15,"contemplativa":0.03,"reconfortante":0.85,"luminosa":0.85,"melancolica":0.2,"tensa":0.25,"inquietante":0.05,"sombria":0.03,"cruda":0,"onirica":0.1,"neon":0.3,"pastel":0.4,"calida":0.7,"monocromatica":0,"carga_emocional":0.6,"complejidad":0.12,"humor":0.75,"intimidad":0.45,"escala_epica":0.4},
+      "atoms": {
+        "frenetica": 0.3,
+        "agil": 0.8,
+        "pausada": 0.15,
+        "contemplativa": 0.03,
+        "reconfortante": 0.85,
+        "luminosa": 0.85,
+        "melancolica": 0.2,
+        "tensa": 0.25,
+        "inquietante": 0.05,
+        "sombria": 0.03,
+        "cruda": 0,
+        "onirica": 0.1,
+        "neon": 0.3,
+        "pastel": 0.4,
+        "calida": 0.7,
+        "monocromatica": 0,
+        "carga_emocional": 0.6,
+        "complejidad": 0.12,
+        "humor": 0.75,
+        "intimidad": 0.45,
+        "escala_epica": 0.4
+      },
       "hook": "UN VAQUERO DE JUGUETE PIERDE EL PUESTO DE FAVORITO CUANDO LLEGA UN GUARDIÁN ESPACIAL. LOS DOS TENDRÁN QUE UNIRSE PARA VOLVER A CASA.",
-      "pillars": {"ritmo": "ágil", "tono": "cálido", "historia": "rivales que se vuelven amigos", "visual": "juguetes de colores"}
+      "pillars": {
+        "ritmo": "ágil",
+        "tono": "cálido",
+        "historia": "rivales y amigos",
+        "visual": "juguetes en color"
+      }
     },
     {
       "id": "toy-story-2-1999",
-      "atoms": {"frenetica":0.35,"agil":0.8,"pausada":0.1,"contemplativa":0.03,"reconfortante":0.85,"luminosa":0.8,"melancolica":0.4,"tensa":0.25,"inquietante":0.05,"sombria":0.03,"cruda":0,"onirica":0.1,"neon":0.3,"pastel":0.4,"calida":0.7,"monocromatica":0,"carga_emocional":0.75,"complejidad":0.15,"humor":0.75,"intimidad":0.4,"escala_epica":0.5},
+      "atoms": {
+        "frenetica": 0.35,
+        "agil": 0.8,
+        "pausada": 0.1,
+        "contemplativa": 0.03,
+        "reconfortante": 0.85,
+        "luminosa": 0.8,
+        "melancolica": 0.4,
+        "tensa": 0.25,
+        "inquietante": 0.05,
+        "sombria": 0.03,
+        "cruda": 0,
+        "onirica": 0.1,
+        "neon": 0.3,
+        "pastel": 0.4,
+        "calida": 0.7,
+        "monocromatica": 0,
+        "carga_emocional": 0.75,
+        "complejidad": 0.15,
+        "humor": 0.75,
+        "intimidad": 0.4,
+        "escala_epica": 0.5
+      },
       "hook": "UN JUGUETE ES SECUESTRADO POR UN COLECCIONISTA. SUS AMIGOS LO RESCATAN MIENTRAS ÉL DECIDE QUÉ CLASE DE JUGUETE QUIERE SER.",
-      "pillars": {"ritmo": "ágil", "tono": "tierno", "historia": "rescate y pertenencia", "visual": "juguetes de colores"}
+      "pillars": {
+        "ritmo": "ágil",
+        "tono": "tierno",
+        "historia": "rescate y hogar",
+        "visual": "juguetes en color"
+      }
     },
     {
       "id": "watchmen-2009",
-      "atoms": {"frenetica":0.35,"agil":0.4,"pausada":0.55,"contemplativa":0.2,"reconfortante":0,"luminosa":0.03,"melancolica":0.45,"tensa":0.65,"inquietante":0.5,"sombria":0.85,"cruda":0.5,"onirica":0.25,"neon":0.5,"pastel":0,"calida":0.3,"monocromatica":0.2,"carga_emocional":0.4,"complejidad":0.8,"humor":0.1,"intimidad":0.3,"escala_epica":0.75},
+      "atoms": {
+        "frenetica": 0.35,
+        "agil": 0.4,
+        "pausada": 0.55,
+        "contemplativa": 0.2,
+        "reconfortante": 0,
+        "luminosa": 0.03,
+        "melancolica": 0.45,
+        "tensa": 0.65,
+        "inquietante": 0.5,
+        "sombria": 0.85,
+        "cruda": 0.5,
+        "onirica": 0.25,
+        "neon": 0.5,
+        "pastel": 0,
+        "calida": 0.3,
+        "monocromatica": 0.2,
+        "carga_emocional": 0.4,
+        "complejidad": 0.8,
+        "humor": 0.1,
+        "intimidad": 0.3,
+        "escala_epica": 0.75
+      },
       "hook": "EN UN 1985 ALTERNATIVO, LOS SUPERHÉROES ESTÁN PROSCRITOS Y LA GUERRA FRÍA AL BORDE DEL FIN. UN ASESINATO DESTAPA UNA CONSPIRACIÓN MUNDIAL.",
-      "pillars": {"ritmo": "denso", "tono": "cínico", "historia": "conspiración de héroes caídos", "visual": "cómic sombrío"}
+      "pillars": {
+        "ritmo": "denso",
+        "tono": "cínico",
+        "historia": "héroes caídos",
+        "visual": "cómic sombrío"
+      }
     },
     {
       "id": "world-war-z-2013",
-      "atoms": {"frenetica":0.85,"agil":0.7,"pausada":0.1,"contemplativa":0.02,"reconfortante":0.03,"luminosa":0.05,"melancolica":0.15,"tensa":0.9,"inquietante":0.4,"sombria":0.55,"cruda":0.4,"onirica":0.03,"neon":0.05,"pastel":0,"calida":0.3,"monocromatica":0.15,"carga_emocional":0.3,"complejidad":0.3,"humor":0.05,"intimidad":0.1,"escala_epica":0.9},
+      "atoms": {
+        "frenetica": 0.85,
+        "agil": 0.7,
+        "pausada": 0.1,
+        "contemplativa": 0.02,
+        "reconfortante": 0.03,
+        "luminosa": 0.05,
+        "melancolica": 0.15,
+        "tensa": 0.9,
+        "inquietante": 0.4,
+        "sombria": 0.55,
+        "cruda": 0.4,
+        "onirica": 0.03,
+        "neon": 0.05,
+        "pastel": 0,
+        "calida": 0.3,
+        "monocromatica": 0.15,
+        "carga_emocional": 0.3,
+        "complejidad": 0.3,
+        "humor": 0.05,
+        "intimidad": 0.1,
+        "escala_epica": 0.9
+      },
       "hook": "UNA PANDEMIA CONVIERTE A LOS INFECTADOS EN HORDAS VIOLENTAS. UN EXINVESTIGADOR RECORRE EL MUNDO BUSCANDO FRENARLA ANTES DEL COLAPSO.",
-      "pillars": {"ritmo": "vertiginoso", "tono": "angustiante", "historia": "carrera contra la pandemia", "visual": "caos global"}
+      "pillars": {
+        "ritmo": "vertiginoso",
+        "tono": "angustiante",
+        "historia": "contra la pandemia",
+        "visual": "caos global"
+      }
     },
     {
       "id": "x-men-days-of-future-past-2014",
-      "atoms": {"frenetica":0.6,"agil":0.75,"pausada":0.15,"contemplativa":0.03,"reconfortante":0.1,"luminosa":0.25,"melancolica":0.3,"tensa":0.65,"inquietante":0.15,"sombria":0.45,"cruda":0.1,"onirica":0.1,"neon":0.3,"pastel":0.05,"calida":0.45,"monocromatica":0.1,"carga_emocional":0.4,"complejidad":0.6,"humor":0.25,"intimidad":0.15,"escala_epica":0.85},
+      "atoms": {
+        "frenetica": 0.6,
+        "agil": 0.75,
+        "pausada": 0.15,
+        "contemplativa": 0.03,
+        "reconfortante": 0.1,
+        "luminosa": 0.25,
+        "melancolica": 0.3,
+        "tensa": 0.65,
+        "inquietante": 0.15,
+        "sombria": 0.45,
+        "cruda": 0.1,
+        "onirica": 0.1,
+        "neon": 0.3,
+        "pastel": 0.05,
+        "calida": 0.45,
+        "monocromatica": 0.1,
+        "carga_emocional": 0.4,
+        "complejidad": 0.6,
+        "humor": 0.25,
+        "intimidad": 0.15,
+        "escala_epica": 0.85
+      },
       "hook": "EN UN FUTURO DEVASTADO, UN MUTANTE VIAJA AL PASADO PARA UNIR A DOS ANTIGUOS ENEMIGOS E INTENTAR CAMBIAR EL RUMBO DE LA HISTORIA.",
-      "pillars": {"ritmo": "vibrante", "tono": "épico", "historia": "viaje al pasado", "visual": "ciencia ficción setentera"}
+      "pillars": {
+        "ritmo": "vibrante",
+        "tono": "épico",
+        "historia": "viaje al pasado",
+        "visual": "ficción setentera"
+      }
     }
-  ]
+  ],
+  "pillars_revision": "pilares acortados a 18 caracteres para la carta (2026-11-05)"
 }
