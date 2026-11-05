@@ -1,0 +1,15 @@
+{
+  "_doc": "Sección 9.1. Cada posición tiene un rol: afin, creador, comodin o sorpresa. 'rank: first' = la de mayor puntaje (apertura); 'rank: second' = la segunda mayor (cierre alto). Las demás afines van en orden de puntaje.",
+  "recipes": [
+    { "size": 5, "slots": [
+      { "role": "afin", "rank": "first" }, { "role": "creador" }, { "role": "comodin" }, { "role": "afin" }, { "role": "afin", "rank": "second" } ] },
+    { "size": 10, "default": true, "slots": [
+      { "role": "afin", "rank": "first" }, { "role": "afin" }, { "role": "creador" }, { "role": "afin" }, { "role": "comodin" },
+      { "role": "afin" }, { "role": "creador" }, { "role": "sorpresa" }, { "role": "afin" }, { "role": "afin", "rank": "second" } ] },
+    { "size": 20, "slots": [
+      { "role": "afin", "rank": "first" }, { "role": "afin" }, { "role": "creador" }, { "role": "afin" }, { "role": "comodin" },
+      { "role": "afin" }, { "role": "creador" }, { "role": "sorpresa" }, { "role": "afin" }, { "role": "afin" },
+      { "role": "afin" }, { "role": "afin" }, { "role": "creador" }, { "role": "afin" }, { "role": "comodin" },
+      { "role": "afin" }, { "role": "creador" }, { "role": "sorpresa" }, { "role": "afin" }, { "role": "afin", "rank": "second" } ] }
+  ]
+}

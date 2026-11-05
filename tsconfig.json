@@ -1,6 +1,6 @@
 {
   "extends": "./tsconfig.base.json",
-  "include": ["packages/*/src", "packages/*/sim", "packages/*/test", "apps/*/src", "scripts/**/*.ts", "supabase/**/*.ts", "e2e", "vitest.config.ts"],
+  "include": ["data/config/*.ts", "packages/*/src", "packages/*/sim", "packages/*/test", "apps/*/src", "scripts/**/*.ts", "supabase/**/*.ts", "e2e", "vitest.config.ts"],
   "exclude": ["supabase/functions/**"],
   "compilerOptions": {
     "noEmit": true,

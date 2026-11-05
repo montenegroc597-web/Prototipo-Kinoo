@@ -1,0 +1,21 @@
+{
+  "_doc": "Sección 11. {a} y {b} son las etiquetas de los dos átomos que más aportaron; {mood} es el nombre del mood en minúscula; {curator} el nombre del curador. Regla dura: sin números ni %.",
+  "templates": [
+    { "key": "profile", "text": "Encaja con tu gusto por historias {a} y {b}." },
+    { "key": "profile_single", "text": "Encaja con tu gusto por historias {a}." },
+    { "key": "vibe", "text": "Responde a tu forma de {mood}: {a} y {b}." },
+    { "key": "vibe_single", "text": "Responde a tu forma de {mood}: {a}." },
+    { "key": "social", "text": "La guardó {curator}, que también disfruta lo {a}." },
+    { "key": "cold_start", "text": "Una de las mejor valoradas para empezar a conocerte." },
+    { "key": "role_comodin", "text": "Tiene lo {a} que te gusta, en una forma distinta." },
+    { "key": "role_sorpresa", "text": "Fuera de tu zona, pero muy bien valorada. Dale una oportunidad." },
+    { "key": "role_creador", "text": "Del mazo de {curator}." },
+    { "key": "deck_learned", "text": "Hoy te inclinaste por historias {a} y {b}." },
+    { "key": "deck_learned_single", "text": "Hoy te inclinaste por historias {a}." },
+    { "key": "deck_learned_none", "text": "Este mazo nos ayudó a conocerte un poco más." },
+    { "key": "watch_relaxed_duration", "text": "No tienes nada tan corto en tu mano; esta es un poco más larga." },
+    { "key": "watch_relaxed_vibe", "text": "No tienes nada para ese mood en tu mano; esta es la que más se acerca." },
+    { "key": "watch_too_many_skips", "text": "¿Y si abres un sobre en Descubrir? Te armamos uno para esta noche." },
+    { "key": "watch_empty_platforms", "text": "Nada de tu mano está en tus plataformas. Te armamos un mazo solo con lo que puedes ver." }
+  ]
+}
