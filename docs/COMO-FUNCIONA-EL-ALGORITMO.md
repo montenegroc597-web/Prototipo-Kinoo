@@ -1,6 +1,6 @@
 # Cómo funciona el algoritmo de Kinoo
 
-**Para qué sirve esto.** Explica en lenguaje sencillo cómo piensa Kinoo, cuál es su lógica y por qué tiene valor. Es la versión de texto de la presentación gráfica [`presentacion/como-funciona-kinoo.html`](presentacion/como-funciona-kinoo.html), que además trae un laboratorio para probarlo. El detalle técnico está en [`KINOO_ALGORITMO_v2.md`](KINOO_ALGORITMO_v2.md) y en [`guias/algoritmo-paso-a-paso.md`](guias/algoritmo-paso-a-paso.md).
+**Para qué sirve esto.** Explica en lenguaje sencillo cómo piensa Kinoo, cuál es su lógica y por qué tiene valor. Es la versión de texto de la presentación gráfica [`presentacion/como-funciona-kinoo.html`](presentacion/como-funciona-kinoo.html), que además trae un laboratorio para probarlo. La página toma los pesos, moods y arquetipos de la configuración: si cambias algo en `packages/config/data/`, regenérala con `npm run docs:presentacion` (una prueba avisa si quedó desactualizada). El detalle técnico está en [`KINOO_ALGORITMO_v2.md`](KINOO_ALGORITMO_v2.md) y en [`guias/algoritmo-paso-a-paso.md`](guias/algoritmo-paso-a-paso.md).
 
 ## La idea en una frase
 

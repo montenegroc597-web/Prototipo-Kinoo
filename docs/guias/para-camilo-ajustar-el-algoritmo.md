@@ -8,6 +8,7 @@
 - Puedes editarlos en GitHub: abre el archivo, toca el lápiz ✏️, cambia el valor y guarda con "Commit changes" **en la rama `back/algoritmo-v2`** (nunca en `main`).
 - Al guardar, la CI corre las pruebas. Si algo queda mal escrito o rompe una regla (por ejemplo, un número en una plantilla), la CI se pone en rojo y te dice qué falló.
 - Para que Supabase reciba el cambio, alguien corre `npm run db:seeds` y aplica `packages/db/seeds/001_config.sql`. El modo demo lo toma solo en la próxima publicación.
+- La explicación gráfica (`docs/presentacion/como-funciona-kinoo.html`) usa estos mismos valores: después de un cambio, corre `npm run docs:presentacion`.
 
 ## Los archivos
 
@@ -106,7 +107,7 @@ Los más útiles:
 
 ## 6. Largo de los textos de la carta (`params.json`)
 
-Para que ningún texto se salga del borde, cada texto de la carta tiene un máximo de caracteres: `card_premise_max` (44), `card_title_max` (24), `card_subtitle_max` (40), `card_overview_max` (110), `card_explanation_max` (96) y `card_pillar_max` (18). Si el texto es más largo, Kinoo lo corta en una palabra y agrega "…". Si el diseño de la carta cambia de tamaño, se cambian estos números. Después hay que correr la prueba de cartas (`npm run test:e2e`).
+Para que ningún texto se salga del borde, cada texto de la carta tiene un máximo de caracteres: `card_premise_max` (44), `card_title_max` (24), `card_subtitle_max` (40), `card_overview_max` (110), `card_explanation_max` (96) y `card_pillar_max` (15). La lista completa, pantalla por pantalla, está en [`limites-de-texto.md`](limites-de-texto.md). Si el texto es más largo, Kinoo lo corta en una palabra y agrega "…". Si el diseño de la carta cambia de tamaño, se cambian estos números. Después hay que correr la prueba de cartas (`npm run test:e2e`).
 
 ## 7. Comprobar que sigue aprendiendo
 

@@ -31,6 +31,7 @@
     "catalog:build": "node packages/catalog/scripts/build.mjs",
     "catalog:posters": "node packages/catalog/scripts/posters.mjs",
     "sim:perfiles": "tsx packages/engine/sim/profiling.ts",
+    "docs:presentacion": "tsx packages/engine/sim/presentacion.ts",
     "sim:camilo": "tsx apps/web/scripts/simulate-camilo.ts"
   },
   "devDependencies": {
