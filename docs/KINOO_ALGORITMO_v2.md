@@ -250,19 +250,21 @@ Cada perfil guarda cuántos eventos con señal lleva (`signal_count`). Con pocos
 
 1. **Plataformas:** elige qué suscripciones tiene. Sin esto, Ver no es accionable.
 2. **Duelos "¿Esta o esta?":** entre 5 y 8 pares de películas de rasgos opuestos (por ejemplo, frenética y de neón frente a contemplativa y cálida). El motor elige los pares que más información dan: los que separan los átomos donde el perfil aún está en cero.
-3. **La tirada de tarot** (sección 7.4) sale del perfil resultante.
+3. **La carta de perfil** (sección 7.4) sale del perfil resultante.
 
-### 7.4 La carta de tarot sale del perfil (propuesto)
+### 7.4 La carta de perfil sale del perfil (propuesto)
 
-Cada una de las cinco cartas es un **arquetipo**: una receta en el espacio de átomos (tabla `tarot_archetypes`). La carta del usuario es la más parecida a su perfil. Por eso "si mueves estos rasgos, tu carta puede cambiar" pasa a ser literal.
+Cada una de las cinco cartas es un **arquetipo**: una receta en el espacio de átomos (tabla `archetypes`). La carta del usuario es la más parecida a su perfil. Por eso "si mueves estos rasgos, tu carta puede cambiar" pasa a ser literal.
 
-| Carta | Rasgos que la definen (semilla) |
+| Arquetipo (nombre propuesto) | Rasgos que lo definen (semilla) |
 |---|---|
-| El Loco | `agil`, `humor`, `neon`, `escala_epica` |
-| El Ermitaño | `contemplativa`, `complejidad`, `monocromatica` |
-| Los Amantes | `intimidad`, `calida`, `carga_emocional` |
-| La Luna | `inquietante`, `onirica`, `sombria` |
-| La Estrella | `luminosa`, `reconfortante`, `pastel` |
+| El Explorador | `agil`, `humor`, `neon`, `escala_epica` |
+| El Observador | `contemplativa`, `complejidad`, `monocromatica` |
+| El Romántico | `intimidad`, `calida`, `carga_emocional` |
+| El Nocturno | `inquietante`, `onirica`, `sombria` |
+| El Luminoso | `luminosa`, `reconfortante`, `pastel` |
+
+**Ajuste del 5 de noviembre de 2026 (Camilo):** ya no son cartas de tarot. La idea es la misma (una carta-arquetipo que sale del perfil), pero la interfaz y los documentos no hablan de tarot. Los nombres de arriba son una propuesta y viven en `data/config/archetypes.json`.
 
 ---
 
@@ -395,7 +397,7 @@ Con `k = 10` (supuesto): con pocos votos manda el LLM; con muchos, la comunidad.
 
 Las tablas existen desde el inicio, con sus reglas de privacidad, pero ninguna pantalla las usa todavía:
 
-- `profiles`: nombre de usuario, nombre visible, carta de tarot, si el perfil es público.
+- `profiles`: nombre de usuario, nombre visible, arquetipo de perfil, si el perfil es público.
 - `follows`: quién sigue a quién.
 - `decks`: mazos con dueño (`system`, `curator` o `user`) y visibilidad. Los mazos del equipo fundador viven aquí desde el piloto.
 - `deck_items`: películas del mazo con la nota manuscrita del curador.

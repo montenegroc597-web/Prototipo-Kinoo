@@ -20,7 +20,7 @@ describe('migraciones de Supabase (PGlite)', () => {
   it('se aplican desde cero y crean todas las tablas del plan', async () => {
     const r = await db.query<{ table_name: string }>(`select table_name from information_schema.tables where table_schema = 'public'`);
     const names = r.rows.map((x) => x.table_name);
-    for (const t of ['atoms', 'movies', 'movie_atom_votes', 'vibes', 'tarot_archetypes', 'action_weights', 'deck_recipes', 'explanation_templates', 'config', 'events', 'user_taste_profiles', 'user_vibe_recipes', 'user_movie_state', 'active_decks', 'consents', 'profiles', 'follows', 'decks', 'deck_items', 'lists', 'groups', 'group_members']) {
+    for (const t of ['atoms', 'movies', 'movie_atom_votes', 'vibes', 'archetypes', 'action_weights', 'deck_recipes', 'explanation_templates', 'config', 'events', 'user_taste_profiles', 'user_vibe_recipes', 'user_movie_state', 'active_decks', 'consents', 'profiles', 'follows', 'decks', 'deck_items', 'lists', 'groups', 'group_members']) {
       expect(names, t).toContain(t);
     }
   });

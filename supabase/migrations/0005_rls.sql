@@ -5,7 +5,7 @@
 do $$
 declare t text;
 begin
-  foreach t in array array['atoms','vibes','tarot_archetypes','action_weights','deck_recipes','explanation_templates','config','movies','catalog_atom_stats'] loop
+  foreach t in array array['atoms','vibes','archetypes','action_weights','deck_recipes','explanation_templates','config','movies','catalog_atom_stats'] loop
     execute format('alter table %I enable row level security', t);
     execute format('drop policy if exists %I on %I', t || '_read', t);
     execute format('create policy %I on %I for select using (true)', t || '_read', t);

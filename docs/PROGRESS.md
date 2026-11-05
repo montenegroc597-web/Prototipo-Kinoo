@@ -2,8 +2,8 @@
 
 ## Estado actual
 - Fase: F3 · Motor del algoritmo
-- Última tarea terminada: F2 · migraciones, RLS, semillas y guía de la base de datos
-- Siguiente tarea: rasgo distintivo, aprendizaje del perfil y puntaje en `packages/engine`
+- Última tarea terminada: F3 · módulos del motor (rasgo distintivo, aprendizaje, puntaje, mazos, Ver, explicaciones, onboarding, arquetipos)
+- Siguiente tarea: pruebas unitarias y simulador de usuarios
 - Bloqueos: sin `TMDB_API_KEY` y sin acceso de red a `api.themoviedb.org` (afecta a F4)
 - Última actualización: 2026-11-05 03:40
 
@@ -31,6 +31,7 @@
 
 - 2026-11-05 03:55 · F1 · `public/` → `apps/web/` con `git mv`. Build a `site/`, `check:site`, CI nueva. Ver `adr/0002-monorepo.md`.
 - 2026-11-05 04:10 · F2 · Configuración en `data/config/*.json` → `npm run seed` → `supabase/seed/`. 6 migraciones y pruebas sobre PGlite.
+- 2026-11-05 04:30 · F3 · Módulos del motor escritos. Por indicación de Camilo, las cartas de tarot pasan a ser **arquetipos de perfil** (misma idea, sin mencionar el tarot): tabla `archetypes`, `data/config/archetypes.json`.
 
 ## Decisiones tomadas sin Camilo
 - La línea base es 0/0 porque el prototipo no tenía pruebas. Las pruebas nuevas son las primeras del repositorio.
@@ -43,6 +44,7 @@
 - **Calidad:** `calidad(m)` es un promedio bayesiano de la nota de TMDB: `(v·R + 500·6,5) / (v + 500) / 10`.
 - **Plataformas del usuario:** se guardan en `profiles.providers` y con un evento `platforms_set` (nuevo, no estaba en la tabla de eventos).
 - **Borrado de datos:** `kinoo_delete_my_data()` es la única vía que puede borrar eventos, por la Ley 1581.
+- **Nombres de los arquetipos:** El Explorador, El Observador, El Romántico, El Nocturno y El Luminoso (antes El Loco, El Ermitaño, Los Amantes, La Luna y La Estrella). Son una propuesta; se cambian en `data/config/archetypes.json`.
 
 ## Para revisar cuando vuelvas
 - Subir el documento de Argon a `docs/historico/`.

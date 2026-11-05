@@ -14,6 +14,7 @@ Camilo pidió construir todo sobre el repositorio del prototipo (`Prototipo-Kino
 | Enlaces que no se rompen | `/kinoo-pruebas/app/`, `/kinoo-pruebas/prueba/`, `?equipo=1` | `https://montenegroc597-web.github.io/Prototipo-Kinoo/` y todas las rutas `kinoo-flujo/…` (86 archivos, lista en `scripts/rutas-publicadas.txt`) |
 | Línea base de pruebas | 126 unitarias, 17 e2e | 0 y 0: el prototipo no tenía pruebas. Las de este plan son las primeras |
 | Herramienta de pruebas (`/prueba/`) | Vive en el mismo repositorio | Vive en `kinoo-pruebas`, intacta por construcción |
+| Cartas del perfil | Cartas de tarot | Arquetipos de perfil, sin mencionar el tarot (`data/config/archetypes.json`) |
 | Front que se conecta | App de la herramienta de pruebas | Las pantallas `.dc.html` del prototipo (Descubrir: `Flujo1_Descubrir`; Ver: `FlujoV1_Feed`) |
 
 Detalle en `docs/adr/0001-estructura.md` y `docs/adr/0002-monorepo.md`.
@@ -128,7 +129,7 @@ El costo relativo es una estimación del peso de cada fase dentro del presupuest
 
 **Objetivo:** la base de datos completa de la sección 4 a la 15 de la especificación.
 
-- Migraciones SQL numeradas: `atoms`, `movies` (con ADN, trazabilidad del juez, plataformas por país y columna de embedding vacía con pgvector), `movie_atom_votes`, `vibes`, `tarot_archetypes`, `action_weights`, `deck_recipes`, `explanation_templates`, `config` (parámetros sueltos), `events` (solo agregar), `user_taste_profiles`, `user_vibe_recipes`, `user_movie_state`, `active_decks`, `consents`, y las sociales: `profiles`, `follows`, `decks`, `deck_items`, `lists`, `groups`, `group_members`.
+- Migraciones SQL numeradas: `atoms`, `movies` (con ADN, trazabilidad del juez, plataformas por país y columna de embedding vacía con pgvector), `movie_atom_votes`, `vibes`, `archetypes`, `action_weights`, `deck_recipes`, `explanation_templates`, `config` (parámetros sueltos), `events` (solo agregar), `user_taste_profiles`, `user_vibe_recipes`, `user_movie_state`, `active_decks`, `consents`, y las sociales: `profiles`, `follows`, `decks`, `deck_items`, `lists`, `groups`, `group_members`.
 - Reglas de seguridad por fila (RLS) en todas las tablas de usuario.
 - Semillas de configuración generadas desde `data/config/*.json` (una sola fuente editable).
 - Esquema separado para los datos de las pruebas de usabilidad, o nota explícita de cómo se mantienen aparte.
@@ -144,7 +145,7 @@ El costo relativo es una estimación del peso de cada fase dentro del presupuest
 - Armador de mazos por receta (tamaños 5, 10 y 20), los cuatro roles con sus reglas de reemplazo, diversidad, match especial, cierre del mazo.
 - Decisor de Ver con el límite de "otra" y la mano vacía.
 - Explicador con plantillas.
-- Onboarding: elección de pares y carta de tarot.
+- Onboarding: elección de pares y carta de perfil (arquetipo).
 - Recalcular un perfil completo desde una lista de eventos.
 - La configuración entra como parámetro: el motor no lee archivos ni base de datos.
 - Simulador de usuarios sintéticos (`packages/engine/sim/`).

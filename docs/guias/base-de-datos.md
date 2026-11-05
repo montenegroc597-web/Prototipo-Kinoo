@@ -15,7 +15,7 @@
 |---|---|
 | `atoms` | Los 21 átomos: clave, dimensión, etiqueta para explicar, descripción, orden |
 | `vibes` | Moods: nombre, definición en una frase, receta semilla, alias, ejemplos, activo, versión |
-| `tarot_archetypes` | Las cinco cartas de tarot y su receta en átomos |
+| `archetypes` | Los cinco arquetipos de perfil y su receta en átomos |
 | `action_weights` | Señal `w` y velocidad `η` de cada acción |
 | `deck_recipes` | Posiciones y roles del mazo de 5, 10 y 20 |
 | `explanation_templates` | Frases con huecos `{a}`, `{b}`, `{mood}`. La base rechaza números y % |
@@ -32,7 +32,7 @@
 ### Cada persona (`0003_usuarios.sql`)
 | Tabla | Qué guarda |
 |---|---|
-| `profiles` | Nombre, carta de tarot, si el perfil es público, país y plataformas |
+| `profiles` | Nombre, arquetipo de perfil, si el perfil es público, país y plataformas |
 | `consents` | Qué aceptó y cuándo, con la versión de la política (Ley 1581) |
 | `events` | Todo lo que la persona hace. Solo se agrega |
 | `user_taste_profiles` | Perfil global: un valor de −1 a +1 por átomo y `signal_count` |
@@ -64,7 +64,7 @@ erDiagram
   movies ||--o{ deck_items : contiene
   vibes ||--o{ user_vibe_recipes : "copia personal"
   vibes ||--o{ active_decks : "sobre de"
-  tarot_archetypes ||--o{ profiles : carta
+  archetypes ||--o{ profiles : carta
   profiles ||--o{ events : hace
   profiles ||--|| user_taste_profiles : perfil
   profiles ||--o{ follows : sigue

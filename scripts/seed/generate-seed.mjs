@@ -19,8 +19,8 @@ function configSql() {
   for (const v of j('data/config/vibes.json').vibes) {
     out.push(`insert into vibes (key, name, definition, aliases, recipe, quality_weight, example_movie_ids, active, version) values (${q(v.key)}, ${q(v.name)}, ${q(v.definition)}, ${arr(v.aliases)}, ${jb(v.recipe)}, ${v.quality_weight ?? 'null'}, ${arr(v.example_movie_ids)}, ${v.active}, ${v.version}) on conflict (key) do update set name = excluded.name, definition = excluded.definition, aliases = excluded.aliases, recipe = excluded.recipe, quality_weight = excluded.quality_weight, example_movie_ids = excluded.example_movie_ids, active = excluded.active, version = excluded.version, updated_at = now();`);
   }
-  for (const a of j('data/config/tarot_archetypes.json').archetypes) {
-    out.push(`insert into tarot_archetypes (key, name, recipe) values (${q(a.key)}, ${q(a.name)}, ${jb(a.recipe)}) on conflict (key) do update set name = excluded.name, recipe = excluded.recipe;`);
+  for (const a of j('data/config/archetypes.json').archetypes) {
+    out.push(`insert into archetypes (key, name, recipe) values (${q(a.key)}, ${q(a.name)}, ${jb(a.recipe)}) on conflict (key) do update set name = excluded.name, recipe = excluded.recipe;`);
   }
   for (const w of j('data/config/action_weights.json').weights) {
     out.push(`insert into action_weights (action, variant, signal, eta, reason) values (${q(w.action)}, ${q(w.variant)}, ${w.signal}, ${w.eta}, ${q(w.reason)}) on conflict (action, variant) do update set signal = excluded.signal, eta = excluded.eta, reason = excluded.reason;`);

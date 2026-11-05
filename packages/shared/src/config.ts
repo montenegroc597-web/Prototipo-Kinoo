@@ -39,6 +39,7 @@ export interface Params {
   watch_fresh_bonus: number;
   watch_special_bonus: number;
   watch_skip_limit: number;
+  watch_vibe_min_cosine: number;
   watch_relax_order: Array<'duration' | 'vibe'>;
   curator_follow_bonus: number;
   community_prior_weight: number;

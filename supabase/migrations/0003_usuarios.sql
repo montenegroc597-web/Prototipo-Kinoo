@@ -4,7 +4,7 @@ create table if not exists profiles (
   user_id       uuid primary key,
   username      text unique,
   display_name  text,
-  tarot_card    text references tarot_archetypes(key),
+  archetype    text references archetypes(key),
   is_public     boolean not null default false,
   country       text not null default 'CO',
   providers     text[] not null default '{}',

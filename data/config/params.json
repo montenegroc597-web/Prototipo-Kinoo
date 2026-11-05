@@ -26,10 +26,14 @@
   "watch_fresh_bonus": 0.1,
   "watch_special_bonus": 0.15,
   "watch_skip_limit": 3,
-  "watch_relax_order": ["duration", "vibe"],
+  "watch_relax_order": [
+    "duration",
+    "vibe"
+  ],
   "curator_follow_bonus": 0.05,
   "community_prior_weight": 10,
   "onboarding_min_pairs": 5,
   "onboarding_max_pairs": 8,
-  "team_deck_owner": "equipo-kinoo"
+  "team_deck_owner": "equipo-kinoo",
+  "watch_vibe_min_cosine": 0.2
 }

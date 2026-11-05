@@ -24,7 +24,7 @@ create table if not exists vibes (
   updated_at        timestamptz not null default now()
 );
 
-create table if not exists tarot_archetypes (
+create table if not exists archetypes (
   key    text primary key,
   name   text not null,
   recipe jsonb not null

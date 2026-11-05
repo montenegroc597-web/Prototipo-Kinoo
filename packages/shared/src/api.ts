@@ -50,11 +50,11 @@ export interface WatchProposalDTO {
 
 export interface OnboardingPairDTO { left_movie_id: string; right_movie_id: string; left_title: string; right_title: string }
 
-export interface TarotDTO { key: string; name: string; top_atoms: string[] }
+export interface ArchetypeDTO { key: string; name: string; top_atoms: string[] }
 
 export interface ProfileDTO {
   user_id: string;
   vector: AtomVector;
   signal_count: number;
-  tarot: TarotDTO;
+  archetype: ArchetypeDTO;
 }
