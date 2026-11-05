@@ -13,6 +13,17 @@ const dist = path.join(web, 'dist');
 rmSync(dist, { recursive: true, force: true });
 cpSync(path.join(web, 'public'), dist, { recursive: true });
 
+// Inicio de sesión de la demo (entrar.html): pequeño, sin el motor.
+await build({
+  entryPoints: [path.join(web, 'src/login.ts')],
+  bundle: true,
+  format: 'iife',
+  target: 'es2019',
+  minify: true,
+  outfile: path.join(dist, '_kinoo/kinoo-login.js'),
+  logLevel: 'warning',
+});
+
 await build({
   entryPoints: [path.join(web, 'src/demo.ts')],
   bundle: true,

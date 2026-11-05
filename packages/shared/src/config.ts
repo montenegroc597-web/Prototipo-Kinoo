@@ -67,6 +67,8 @@ export interface Params {
   special_match_max_per_deck: number;
   deck_default_size: number;
   deck_ready_tonight_min: number;
+  /** El cierre del mazo solo resume un gusto si se guardaron al menos estas cartas. */
+  closing_min_saves: number;
   watch_fresh_hours: number;
   watch_fresh_bonus: number;
   watch_special_bonus: number;

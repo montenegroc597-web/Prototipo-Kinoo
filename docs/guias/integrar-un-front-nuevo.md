@@ -31,6 +31,8 @@ interface KinooAdapter {
 
 Empieza en modo demo; cambiar de modo es cambiar una línea.
 
+**Sesión.** En modo demo, la sesión es la de `entrar.html` (`apps/web/src/session.ts`: `getSession()`, `login()`, `logout()`); cada cuenta tiene su `user_id` (UUID) y su historial. Con back, la sesión la da el proveedor de identidad (Supabase Auth u otro) y el front manda su JWT en `Authorization: Bearer …`. Usa el mismo `user_id` para que el historial de pruebas se pueda migrar.
+
 ## Paso 2 · Pantalla por pantalla
 
 ### Descubrir (mazo de cartas)

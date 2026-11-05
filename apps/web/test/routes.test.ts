@@ -12,6 +12,11 @@ describe('rutas publicadas del front', () => {
     expect(rutas.filter((r) => !existsSync(path.join(web, 'public', r)))).toEqual([]);
   });
 
+  it('existe el inicio de sesión de la demo y la raíz lleva a él', () => {
+    expect(existsSync(path.join(web, 'public/entrar.html'))).toBe(true);
+    expect(readFileSync(path.join(web, 'public/index.html'), 'utf8')).toContain('url=entrar.html');
+  });
+
   it('las pantallas conectadas cargan el modo demo y siguen funcionando sin él', () => {
     for (const p of ['Flujo1_Descubrir', 'FlujoV1_Feed', 'FlujoV4_Calificar']) {
       const html = readFileSync(path.join(web, 'public/kinoo-flujo', `${p}.dc.html`), 'utf8');

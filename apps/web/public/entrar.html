@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#17120f">
+<title>Kinoo · Entrar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Figtree:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --fondo: #17120f; --vino: #5e0c10; --crema: #f4e7d0; --oro: #f2b544; --texto2: #bfa98a; --linea: #3a2c22; --error: #e8642c; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100%; background: var(--fondo); color: var(--crema); font-family: 'Figtree', system-ui, sans-serif; }
+  body { min-height: 100dvh; display: flex; align-items: center; justify-content: center; padding: 24px 16px; }
+  main { width: 100%; max-width: 370px; }
+  .marca { font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: 56px; line-height: 1; letter-spacing: .5px; margin: 0; }
+  .lema { margin: 6px 0 28px; font-style: italic; font-weight: 600; color: var(--oro); font-size: 18px; }
+  .tarjeta { border: 2px solid var(--crema); border-radius: 22px; padding: 22px 20px; background: var(--vino); box-shadow: 0 10px 30px rgba(0,0,0,.35); }
+  label { display: block; font-weight: 800; font-size: 11px; letter-spacing: 1.4px; text-transform: uppercase; margin: 0 0 6px; }
+  input { width: 100%; height: 50px; border-radius: 14px; border: 2px solid var(--linea); background: var(--fondo); color: var(--crema); font: 600 17px 'Figtree', sans-serif; padding: 0 14px; margin-bottom: 16px; outline: none; }
+  input:focus { border-color: var(--oro); }
+  button { width: 100%; height: 56px; border-radius: 28px; border: 2px solid var(--crema); background: var(--fondo); color: var(--crema); font: 900 22px 'Big Shoulders Display', sans-serif; letter-spacing: .5px; text-transform: uppercase; cursor: pointer; }
+  button:hover { background: #241b16; }
+  .secundario { margin-top: 10px; height: 44px; font: 700 14px 'Figtree', sans-serif; text-transform: none; border-color: var(--linea); color: var(--texto2); }
+  .error { margin: -6px 0 14px; color: var(--error); font-weight: 700; font-size: 14px; }
+  .nota { margin: 18px 4px 0; color: var(--texto2); font-size: 12.5px; line-height: 1.45; }
+  .hola { margin: 0 0 16px; font-size: 17px; }
+  .hola b { color: var(--oro); }
+</style>
+</head>
+<body>
+<main>
+  <p class="marca">Kinoo</p>
+  <p class="lema">qué ver esta noche, sin dar vueltas</p>
+  <div class="tarjeta">
+    <form id="form" autocomplete="on" novalidate>
+      <label for="user">Usuario</label>
+      <input id="user" name="username" autocomplete="username" autocapitalize="none" spellcheck="false" required>
+      <label for="pass">Clave</label>
+      <input id="pass" name="password" type="password" autocomplete="current-password" inputmode="numeric" required>
+      <p id="error" class="error" role="alert" hidden>Usuario o clave incorrectos.</p>
+      <button type="submit">Entrar</button>
+    </form>
+    <div id="logged" hidden>
+      <p class="hola">Hola, <b id="logged-name"></b>. Tu perfil sigue donde lo dejaste.</p>
+      <button id="continue" type="button">Seguir</button>
+      <button id="logout" type="button" class="secundario">Salir y cambiar de usuario</button>
+    </div>
+  </div>
+  <p class="nota">Prototipo de prueba. Lo que haces aquí se guarda solo en este navegador y enseña a Kinoo cómo es tu gusto.</p>
+</main>
+<script src="_kinoo/kinoo-login.js"></script>
+</body>
+</html>

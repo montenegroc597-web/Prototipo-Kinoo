@@ -8,6 +8,7 @@
 |---|---|
 | [ARQUITECTURA.md](ARQUITECTURA.md) | Front, back, paquetes y por dónde pasa una recomendación |
 | [KINOO_ALGORITMO_v2.md](KINOO_ALGORITMO_v2.md) | La especificación del algoritmo (fuente de verdad) |
+| [SIMULACION-PERFILAMIENTO.md](SIMULACION-PERFILAMIENTO.md) | **Cómo se perfilan los usuarios**: Camilo en la app y seis tipos de usuario |
 | [guias/algoritmo-paso-a-paso.md](guias/algoritmo-paso-a-paso.md) | De un evento a una recomendación, con números |
 | [PROGRESS.md](PROGRESS.md) | Estado, bitácora y **decisiones tomadas sin Camilo** |
 | [KINOO_PLAN_MAESTRO.md](KINOO_PLAN_MAESTRO.md) | Las fases del proyecto y sus comprobaciones |

@@ -29,7 +29,9 @@
     "catalog:prompts": "node packages/catalog/scripts/tag.mjs prompts",
     "catalog:tag": "node packages/catalog/scripts/tag.mjs api",
     "catalog:build": "node packages/catalog/scripts/build.mjs",
-    "catalog:posters": "node packages/catalog/scripts/posters.mjs"
+    "catalog:posters": "node packages/catalog/scripts/posters.mjs",
+    "sim:perfiles": "tsx packages/engine/sim/profiling.ts",
+    "sim:camilo": "tsx apps/web/scripts/simulate-camilo.ts"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
