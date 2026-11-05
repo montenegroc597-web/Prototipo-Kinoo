@@ -32,8 +32,8 @@
       "pillars": {
         "ritmo": "pausado",
         "tono": "oscuro y febril",
-        "historia": "obsesión vampírica",
-        "visual": "gótico en sombras"
+        "historia": "obsesión oscura",
+        "visual": "gótico sombrío"
       }
     },
     {
@@ -98,8 +98,8 @@
       "pillars": {
         "ritmo": "ágil",
         "tono": "tierno",
-        "historia": "madre inesperada",
-        "visual": "naturaleza pintada"
+        "historia": "madre sorpresa",
+        "visual": "bosque pintado"
       }
     },
     {
@@ -130,11 +130,11 @@
       "hook": "SU DUEÑO SE VA A LA UNIVERSIDAD Y LOS JUGUETES ACABAN EN UNA GUARDERÍA QUE PARECE UN PARAÍSO. SOLO JUNTOS PODRÁN VOLVER A CASA.",
       "pillars": {
         "ritmo": "ágil",
-        "tono": "cálido y emotivo",
+        "tono": "cálido, emotivo",
         "historia": "crecer y soltar",
-        "visual": "animación colorida"
+        "visual": "animación viva"
       }
     }
   ],
-  "pillars_revision": "pilares acortados a 18 caracteres para la carta (2026-11-05)"
+  "pillars_revision": "pilares acortados a 15 caracteres para la carta y la ficha ADN (2026-11-05)"
 }

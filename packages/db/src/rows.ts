@@ -29,7 +29,13 @@ export function rowsToConfig(r: ConfigRows): EngineConfig {
   return {
     atoms: [...r.atoms]
       .sort((a, b) => Number(a.sort_order) - Number(b.sort_order))
-      .map((a) => ({ key: a.key, dimension: a.dimension, label: a.label, description: a.description })) as EngineConfig['atoms'],
+      .map((a) => ({
+        key: a.key,
+        dimension: a.dimension,
+        label: a.label,
+        description: a.description,
+        ...(a.theme ? { theme: a.theme } : {}),
+      })) as EngineConfig['atoms'],
     vibes: r.vibes.map((v) => ({
       key: v.key as string,
       name: v.name as string,

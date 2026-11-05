@@ -33,6 +33,10 @@ export interface CardDTO {
     overview: string;
     explanation: string;
     pillars: { ritmo: string; tono: string; historia: string; visual: string };
+    /** ADN de la película (no de la persona): "Historias íntimas y melancólicas". */
+    dna_phrase: string;
+    /** Temas cortos para chips (nombre corto del átomo); su largo total cabe en una fila. */
+    themes: string[];
   };
   /** Tratamiento visual especial (sorpresa). */
   special_treatment: boolean;

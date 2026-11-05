@@ -31,9 +31,9 @@
       "hook": "UN NOVIO TÍMIDO PROMETE SU MANO A UNA NOVIA MUERTA Y DESCUBRE QUE EL OTRO MUNDO ES MÁS ALEGRE QUE EL DE LOS VIVOS.",
       "pillars": {
         "ritmo": "ágil y musical",
-        "tono": "melancolía lúdica",
-        "historia": "amor entre mundos",
-        "visual": "gótico stop motion"
+        "tono": "melancolía viva",
+        "historia": "amor y más allá",
+        "visual": "gótico animado"
       }
     },
     {
@@ -64,9 +64,9 @@
       "hook": "EN UN PUEBLO RURAL, DOS HERMANOS LIBERAN UNA FUERZA MALIGNA AL INTENTAR DESHACERSE DE UN CUERPO POSEÍDO. NADIE ESTÁ A SALVO.",
       "pillars": {
         "ritmo": "tenso",
-        "tono": "brutal y opresivo",
+        "tono": "brutal y denso",
         "historia": "posesión rural",
-        "visual": "campo polvoriento"
+        "visual": "campo polvo"
       }
     },
     {
@@ -99,7 +99,7 @@
         "ritmo": "pausado",
         "tono": "solemne",
         "historia": "el elegido",
-        "visual": "desierto colosal"
+        "visual": "desierto épico"
       }
     },
     {
@@ -131,7 +131,7 @@
       "pillars": {
         "ritmo": "épico",
         "tono": "grave y ominoso",
-        "historia": "venganza profética",
+        "historia": "venganza fatal",
         "visual": "arena y fuego"
       }
     },
@@ -165,7 +165,7 @@
         "ritmo": "tenso",
         "tono": "sátira incómoda",
         "historia": "paranoia social",
-        "visual": "suburbio siniestro"
+        "visual": "suburbio gélido"
       }
     },
     {
@@ -197,8 +197,8 @@
       "pillars": {
         "ritmo": "vibrante",
         "tono": "alegre",
-        "historia": "amor de instituto",
-        "visual": "años 50 colorido"
+        "historia": "amor escolar",
+        "visual": "años 50 pop"
       }
     },
     {
@@ -230,7 +230,7 @@
       "pillars": {
         "ritmo": "tenso",
         "tono": "sombrío",
-        "historia": "ajuste de cuentas",
+        "historia": "deuda pendiente",
         "visual": "noche de barrio"
       }
     },
@@ -262,9 +262,9 @@
       "hook": "EN LA NUEVA YORK DE LOS CINCUENTA, UN JOVEN SIN FILTROS LO ARRIESGA TODO POR SER CAMPEÓN MUNDIAL DE TENIS DE MESA.",
       "pillars": {
         "ritmo": "vertiginoso",
-        "tono": "ansioso y cómico",
-        "historia": "ambición sin freno",
-        "visual": "ciudad granulada"
+        "tono": "ansioso, cómico",
+        "historia": "ambición total",
+        "visual": "ciudad cruda"
       }
     },
     {
@@ -295,8 +295,8 @@
       "hook": "UN TRABAJADOR PRESCINDIBLE MUERE Y RENACE EN CADA MISIÓN MORTAL, HASTA QUE UNA COPIA SUYA APARECE CUANDO LA ANTERIOR SIGUE CON VIDA.",
       "pillars": {
         "ritmo": "ágil",
-        "tono": "satírico y absurdo",
-        "historia": "clones en el hielo",
+        "tono": "sátira absurda",
+        "historia": "clones en hielo",
         "visual": "colonia helada"
       }
     },
@@ -328,9 +328,9 @@
       "hook": "UN LUCHADOR ACOSTUMBRADO A PERDER LLEVA UNA MARCA MISTERIOSA Y DEBE UNIRSE A LOS MEJORES GUERREROS DE LA TIERRA CONTRA CAMPEONES DE OTRO REINO.",
       "pillars": {
         "ritmo": "frenético",
-        "tono": "violento y directo",
-        "historia": "torneo de reinos",
-        "visual": "combate sangriento"
+        "tono": "violento",
+        "historia": "duelo de reinos",
+        "visual": "combate gore"
       }
     },
     {
@@ -361,8 +361,8 @@
       "hook": "LOS CAMPEONES DE LA TIERRA SE PREPARAN PARA UN TORNEO CONTRA LOS LUCHADORES DEL MUNDO EXTERIOR, Y LLEGA UN NUEVO REFUERZO PARA PROTEGER EL REINO.",
       "pillars": {
         "ritmo": "frenético",
-        "tono": "violento y festivo",
-        "historia": "torneo otro mundo",
+        "tono": "gore festivo",
+        "historia": "torneo ajeno",
         "visual": "neón y magia"
       }
     },
@@ -427,8 +427,8 @@
       "hook": "VIUDO Y RETIRADO, UN EXBOXEADOR QUE DIRIGE UN PEQUEÑO RESTAURANTE VUELVE AL CUADRILÁTERO PARA ENFRENTAR AL CAMPEÓN ACTUAL.",
       "pillars": {
         "ritmo": "pausado",
-        "tono": "nostalgia valiente",
-        "historia": "veterano de vuelta",
+        "tono": "nostalgia noble",
+        "historia": "veterano vuelve",
         "visual": "Filadelfia gris"
       }
     },
@@ -461,8 +461,8 @@
       "pillars": {
         "ritmo": "constante",
         "tono": "esperanzador",
-        "historia": "revancha pendiente",
-        "visual": "barrio setentero"
+        "historia": "revancha",
+        "visual": "barrio retro 70"
       }
     },
     {
@@ -495,7 +495,7 @@
         "ritmo": "enérgico",
         "tono": "motivador",
         "historia": "caída y regreso",
-        "visual": "gimnasio ochentero"
+        "visual": "gimnasio 80s"
       }
     },
     {
@@ -526,11 +526,11 @@
       "hook": "UN REFUGIADO CUBANO EN MIAMI ASCIENDE EN EL NARCOTRÁFICO CON AMBICIÓN Y VIOLENCIA, PERO EL PODER SE COBRA CARO.",
       "pillars": {
         "ritmo": "intenso",
-        "tono": "violencia excesiva",
-        "historia": "ascenso criminal",
+        "tono": "violencia cruda",
+        "historia": "auge criminal",
         "visual": "Miami neón"
       }
     }
   ],
-  "pillars_revision": "pilares acortados a 18 caracteres para la carta (2026-11-05)"
+  "pillars_revision": "pilares acortados a 15 caracteres para la carta y la ficha ADN (2026-11-05)"
 }

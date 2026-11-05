@@ -64,9 +64,9 @@
       "hook": "UN NIÑO QUE SUEÑA CON SER MÚSICO CRUZA AL MUNDO DE LOS MUERTOS PARA DESCUBRIR EL SECRETO DE SU FAMILIA.",
       "pillars": {
         "ritmo": "ágil",
-        "tono": "cálido y emotivo",
-        "historia": "memoria y familia",
-        "visual": "colorido festivo"
+        "tono": "cálido, emotivo",
+        "historia": "memoria viva",
+        "visual": "color festivo"
       }
     },
     {
@@ -132,7 +132,7 @@
         "ritmo": "musical",
         "tono": "agridulce",
         "historia": "amor y ambición",
-        "visual": "colores de ensueño"
+        "visual": "color onírico"
       }
     },
     {
@@ -197,7 +197,7 @@
       "pillars": {
         "ritmo": "tenso",
         "tono": "oscuro",
-        "historia": "orden contra caos",
+        "historia": "orden y caos",
         "visual": "ciudad nocturna"
       }
     },
@@ -229,7 +229,7 @@
       "hook": "EN UN FUTURO CERCANO, UN HOMBRE SOLITARIO SE ENAMORA DE LA VOZ DE UN SISTEMA OPERATIVO QUE APRENDE A SENTIR.",
       "pillars": {
         "ritmo": "pausado",
-        "tono": "melancolía tierna",
+        "tono": "ternura triste",
         "historia": "amor artificial",
         "visual": "tonos cálidos"
       }
@@ -263,7 +263,7 @@
       "pillars": {
         "ritmo": "pausado",
         "tono": "melancólico",
-        "historia": "amor a destiempo",
+        "historia": "amor desfasado",
         "visual": "luces de ciudad"
       }
     },
@@ -328,8 +328,8 @@
       "hook": "TRAS LA MUERTE DE UN ESCRITOR MILLONARIO, UN DETECTIVE EXCÉNTRICO INTERROGA A UNA FAMILIA DONDE TODOS TIENEN ALGO QUE ESCONDER.",
       "pillars": {
         "ritmo": "ágil",
-        "tono": "divertido y pícaro",
-        "historia": "crimen en familia",
+        "tono": "pícaro",
+        "historia": "crimen familiar",
         "visual": "mansión otoñal"
       }
     },
@@ -428,8 +428,8 @@
       "pillars": {
         "ritmo": "vibrante",
         "tono": "optimista",
-        "historia": "héroe contra poder",
-        "visual": "colorido y aéreo"
+        "historia": "héroe y poder",
+        "visual": "color y vuelo"
       }
     },
     {
@@ -461,8 +461,8 @@
       "pillars": {
         "ritmo": "ágil",
         "tono": "humor negro",
-        "historia": "venganza cotidiana",
-        "visual": "realismo exagerado"
+        "historia": "venganza diaria",
+        "visual": "realismo brutal"
       }
     },
     {
@@ -494,8 +494,8 @@
       "pillars": {
         "ritmo": "pausado",
         "tono": "hipnótico",
-        "historia": "viaje por el río",
-        "visual": "selva monocroma"
+        "historia": "viaje fluvial",
+        "visual": "selva gris"
       }
     },
     {
@@ -527,8 +527,8 @@
       "pillars": {
         "ritmo": "pausado",
         "tono": "humano y tierno",
-        "historia": "buscando al padre",
-        "visual": "ruta del interior"
+        "historia": "buscar al padre",
+        "visual": "ruta interior"
       }
     },
     {
@@ -559,11 +559,11 @@
       "hook": "UN CINEASTA RECUERDA SU INFANCIA EN UN PUEBLO SICILIANO Y LA AMISTAD CON EL PROYECCIONISTA QUE LE ENSEÑÓ A AMAR EL CINE.",
       "pillars": {
         "ritmo": "pausado",
-        "tono": "nostalgia cálida",
+        "tono": "nostalgia tibia",
         "historia": "amistad y amor",
-        "visual": "luz dorada rural"
+        "visual": "luz dorada"
       }
     }
   ],
-  "pillars_revision": "pilares acortados a 18 caracteres para la carta (2026-11-05)"
+  "pillars_revision": "pilares acortados a 15 caracteres para la carta y la ficha ADN (2026-11-05)"
 }

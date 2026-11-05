@@ -4,7 +4,7 @@ import { type ActiveDeck, KinooEngine, cosine, explain, toCardDTO, topAtoms } fr
 // Modo demo de Kinoo: el motor v2 corre en el navegador. Lo cargan las pantallas del prototipo
 // (../_kinoo/kinoo-demo.js) y queda en window.KinooDemo. Si este archivo no carga, las pantallas
 // usan sus datos de ejemplo de siempre.
-import { type CardDTO, type EventInput, type KinooEvent, type Movie, posterUrl } from '@kinoo/shared';
+import { type CardDTO, type EventInput, type KinooEvent, type Movie, fitText, posterUrl } from '@kinoo/shared';
 import pilot from '../../../packages/catalog/data/movies.pilot.json';
 import type { KinooAdapter } from './adapter';
 import { getSession, loginUrl, logout } from './session';
@@ -99,6 +99,14 @@ function toneKey(m: Movie): 'melancólico' | 'nostálgico' | 'oscuro' | 'cálido
 }
 const KICKER: Record<string, string> = { afin: 'muy tú', creador: 'del equipo Kinoo', comodin: 'un giro para ti', sorpresa: 'una sorpresa' };
 
+const P = engine.cfg.params;
+
+/** Tamaño del título de Ver: una sola línea (46 px los cortos; 34 y 28 px los largos). */
+export function watchTitleSize(title: string): number {
+  const n = title.length;
+  return n <= 14 ? 46 : n <= 18 ? 34 : 28;
+}
+
 /** Tamaño del título del reverso según su largo (el estándar card_title_max garantiza que el más largo quepa a 26 px). */
 export function titleSize(title: string): number {
   const n = title.length;
@@ -149,12 +157,10 @@ function protoAdn(c: CardDTO) {
     .sort((a, b) => b[1] - a[1])
     .slice(0, 3);
   return {
-    phrase: c.explanation,
-    themes: topAtoms(im.hat, 3, { positiveOnly: true }).map((k) => {
-      const l = engine.cfg.label(k);
-      return l.charAt(0).toUpperCase() + l.slice(1);
-    }),
-    sim: sims.map(([x]) => [x.movie.title, String(x.movie.year)]),
+    // ADN de la película (no de la persona), con el estándar de caracteres de la ficha.
+    phrase: c.display.dna_phrase,
+    themes: c.display.themes,
+    sim: sims.map(([x]) => [fitText(x.movie.title, P.card_similar_title_max), String(x.movie.year)]),
   };
 }
 
@@ -257,6 +263,11 @@ const api = {
     if (d && !d.completed_at) run((svc) => svc.postEvents([{ type: 'deck_completed', payload: { deck_id: d.deck_id } } as EventInput]));
     pinned = null;
   },
+  /** Frase del cierre del mazo, con el estándar de caracteres (la usa la pantalla de fin del mazo). */
+  closingLine(): string | null {
+    const c = state.last_closing as { learned?: string } | undefined;
+    return c?.learned ? fitText(c.learned, P.closing_text_max) : null;
+  },
   lastClosing() {
     return state.last_closing ?? null;
   },
@@ -273,9 +284,10 @@ const api = {
       const m = im.movie;
       const img = posterUrl(m.poster_path, { assetBaseUrl: ASSET_BASE }) ?? undefined;
       out[m.id] = {
-        t: m.title,
+        t: fitText(m.title, P.watch_title_max),
+        tsize: watchTitleSize(fitText(m.title, P.watch_title_max)),
         dur: fmtDur(m.runtime_min),
-        dir: m.directors.join(' y '),
+        dir: m.directors.length > 1 ? `${m.directors[0]} y otros` : (m.directors[0] ?? ''),
         ...(img ? { img } : { pal: PALS[i % PALS.length] }),
         match: 0,
         g: m.genres,
@@ -306,7 +318,8 @@ const api = {
       const p = svc.watchProposal(vibe ? { vibe } : {});
       if (!p.card || ids.includes(p.card.movie_id)) break;
       ids.push(p.card.movie_id);
-      whys[p.card.movie_id] = p.card.explanation.charAt(0).toLowerCase() + p.card.explanation.slice(1);
+      const why = fitText(p.card.explanation, P.watch_why_max);
+      whys[p.card.movie_id] = why.charAt(0).toLowerCase() + why.slice(1);
     }
     for (const id of Object.keys(films)) {
       if (!ids.includes(id)) ids.push(id);

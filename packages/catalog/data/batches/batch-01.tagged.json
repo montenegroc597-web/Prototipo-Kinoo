@@ -33,7 +33,7 @@
         "ritmo": "asfixiante",
         "tono": "terror sombrío",
         "historia": "duelo maldito",
-        "visual": "penumbra doméstica"
+        "visual": "penumbra casera"
       }
     },
     {
@@ -96,9 +96,9 @@
       },
       "hook": "EN LAS NOCHES ELÉCTRICAS DE UNA CIUDAD ABARROTADA, DOS POLICÍAS SOLITARIOS ESPERAN UN AMOR QUE SE FUE Y UNO NUEVO QUE TAL VEZ YA PASÓ A SU LADO.",
       "pillars": {
-        "ritmo": "vibrante y suelto",
-        "tono": "melancolía lúdica",
-        "historia": "amores a destiempo",
+        "ritmo": "vibrante",
+        "tono": "melancolía viva",
+        "historia": "amor desfasado",
         "visual": "neón nocturno"
       }
     },
@@ -132,7 +132,7 @@
         "ritmo": "majestuoso",
         "tono": "épico y emotivo",
         "historia": "viaje cósmico",
-        "visual": "espacio infinito"
+        "visual": "cosmos infinito"
       }
     },
     {
@@ -164,8 +164,8 @@
       "pillars": {
         "ritmo": "denso y veloz",
         "tono": "grave y tenso",
-        "historia": "culpa científica",
-        "visual": "monocromo y color"
+        "historia": "culpa atómica",
+        "visual": "blanco y color"
       }
     },
     {
@@ -196,9 +196,9 @@
       "hook": "UN HOMBRE DESPIERTA SOLO EN UNA NAVE, SIN RECUERDOS, CON LA MISIÓN DE SALVAR A LA TIERRA, Y DESCUBRE QUE NO ESTÁ TAN SOLO COMO CREÍA.",
       "pillars": {
         "ritmo": "ágil",
-        "tono": "esperanza y humor",
-        "historia": "amistad espacial",
-        "visual": "ficción luminosa"
+        "tono": "fe y humor",
+        "historia": "amistad cósmica",
+        "visual": "ciencia clara"
       }
     },
     {
@@ -230,8 +230,8 @@
       "pillars": {
         "ritmo": "pausado",
         "tono": "soledad tierna",
-        "historia": "conexión pasajera",
-        "visual": "neón de madrugada"
+        "historia": "amor pasajero",
+        "visual": "neón nocturno"
       }
     },
     {
@@ -295,8 +295,8 @@
       "hook": "UNA DUEÑA DE LAVANDERÍA AGOBIADA POR LOS IMPUESTOS DEBE SALTAR ENTRE UNIVERSOS PARALELOS PARA SALVAR EL MULTIVERSO Y A SU FAMILIA.",
       "pillars": {
         "ritmo": "vertiginoso",
-        "tono": "absurdo y tierno",
-        "historia": "hija y multiverso",
+        "tono": "absurdo, tierno",
+        "historia": "madre e hija",
         "visual": "caos colorido"
       }
     },
@@ -327,10 +327,10 @@
       },
       "hook": "UNA FAMILIA POBRE SE VA INFILTRANDO, UNO A UNO, EN LA CASA DE UNOS RICOS, HASTA QUE EL PLAN PERFECTO EMPIEZA A DESMORONARSE.",
       "pillars": {
-        "ritmo": "ágil y creciente",
-        "tono": "sarcasmo sombrío",
+        "ritmo": "creciente",
+        "tono": "sarcasmo oscuro",
         "historia": "lucha de clases",
-        "visual": "casas contrastadas"
+        "visual": "casas opuestas"
       }
     },
     {
@@ -394,8 +394,8 @@
       "hook": "UN BOXEADOR DE BARRIO QUE NUNCA TUVO UNA OPORTUNIDAD RECIBE LA PELEA DE SU VIDA Y SOLO QUIERE DEMOSTRAR QUE PUEDE AGUANTAR HASTA EL FINAL.",
       "pillars": {
         "ritmo": "creciente",
-        "tono": "esperanza emotiva",
-        "historia": "perdedor valiente",
+        "tono": "esperanza",
+        "historia": "perdedor tenaz",
         "visual": "barrio gris"
       }
     },
@@ -492,8 +492,8 @@
       },
       "hook": "UN ACCIDENTE DE AUTO EN CIUDAD DE MÉXICO ENTRELAZA TRES VIDAS: UN JOVEN, UNA MODELO Y UN VAGABUNDO, Y TODAS TIENEN QUE CUESTIONAR SU LEALTAD.",
       "pillars": {
-        "ritmo": "nervioso y coral",
-        "tono": "duro y desgarrador",
+        "ritmo": "nervioso, coral",
+        "tono": "crudo y áspero",
         "historia": "vidas cruzadas",
         "visual": "cámara en mano"
       }
@@ -526,9 +526,9 @@
       "hook": "DOS ADOLESCENTES INVITAN A UNA MUJER MAYOR A UN VIAJE POR CARRETERA HACIA UNA PLAYA INEXISTENTE, Y TERMINAN APRENDIENDO MÁS DE LO QUE ESPERABAN.",
       "pillars": {
         "ritmo": "relajado",
-        "tono": "sensual agridulce",
-        "historia": "viaje iniciático",
-        "visual": "ruta luz natural"
+        "tono": "agridulce",
+        "historia": "rito de paso",
+        "visual": "luz natural"
       }
     },
     {
@@ -559,11 +559,11 @@
       "hook": "TRAS UNA PÉRDIDA CATASTRÓFICA, LOS HÉROES QUE SOBREVIVEN SE JUEGAN TODO EN UN ÚLTIMO PLAN PARA DESHACER EL DAÑO Y RECUPERAR A QUIENES AMAN.",
       "pillars": {
         "ritmo": "épico",
-        "tono": "emotivo y heroico",
+        "tono": "épico y emotivo",
         "historia": "adiós al equipo",
-        "visual": "espectáculo épico"
+        "visual": "espectáculo"
       }
     }
   ],
-  "pillars_revision": "pilares acortados a 18 caracteres para la carta (2026-11-05)"
+  "pillars_revision": "pilares acortados a 15 caracteres para la carta y la ficha ADN (2026-11-05)"
 }
