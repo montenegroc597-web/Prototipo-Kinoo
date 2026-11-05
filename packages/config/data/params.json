@@ -37,5 +37,6 @@
   "team_deck_owner": "equipo-kinoo",
   "watch_vibe_min_cosine": 0.2,
   "dismiss_fatigue_weight": 0.3,
-  "dismiss_fatigue_hours": 24
+  "dismiss_fatigue_hours": 24,
+  "closing_min_saves": 2
 }

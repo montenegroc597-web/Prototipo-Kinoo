@@ -294,3 +294,16 @@ describe('onboarding y arquetipo de perfil (7.3, 7.4)', () => {
     expect(engine.profile(m).archetype.key).toBe('nocturno');
   });
 });
+
+describe('cierre del mazo con poca información', () => {
+  it('si se guardó menos de closing_min_saves, no inventa un gusto: usa la frase neutra', () => {
+    const engine = new KinooEngine(defaultConfig, synthCatalog(120, 3));
+    const m = engine.model('u', []);
+    const d = engine.openDeck(m, { deck_id: 'd', now: NOW });
+    engine.apply(m, ev('saved_intent', { flipped: false, deck_id: 'd' }, { movie_id: d.cards[0]!.movie_id }));
+    for (const c of d.cards.slice(1)) engine.apply(m, ev('dismissed', { flipped: false, deck_id: 'd' }, { movie_id: c.movie_id }));
+    const close = engine.close(d, m);
+    expect(close.learned).toBe(defaultConfig.templates.find((t) => t.key === 'deck_learned_none')!.text);
+    expect(close.top_atoms).toEqual([]);
+  });
+});

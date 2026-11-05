@@ -1,4 +1,5 @@
 import { type Page, expect, test } from '@playwright/test';
+import { CAMILO_ID, loginAsCamilo } from './helpers';
 
 // Modo demo: Descubrir y Ver del prototipo conectados al motor v2 (en el navegador, con almacenamiento local).
 type KD = {
@@ -9,13 +10,12 @@ type KD = {
 };
 // Lo que el modo demo guardó en el almacenamiento local (sirve también en pantallas que no cargan el motor).
 const stored = (page: Page) =>
-  page.evaluate(() => JSON.parse(localStorage.getItem('kinoo.demo.v2') || '{"events":[]}')) as Promise<{
+  page.evaluate((id) => JSON.parse(localStorage.getItem(`kinoo.demo.v2:${id}`) || '{"events":[]}'), CAMILO_ID) as Promise<{
     events: Array<{ type: string; movie_id?: string; payload: Record<string, unknown> }>;
   }>;
 
 test('abrir un mazo, guardar una carta, verla en Ver y confirmar "Me encantó" cambia el perfil', async ({ page }) => {
-  await page.goto('kinoo-flujo/Flujo1_Descubrir.dc.html');
-  await page.waitForFunction(() => !!(window as unknown as { KinooDemo?: unknown }).KinooDemo);
+  await loginAsCamilo(page);
   await page.evaluate(() => (window as unknown as { KinooDemo: KD }).KinooDemo.reset());
   await page.reload();
   await page.waitForFunction(() => !!(window as unknown as { KinooDemo?: unknown }).KinooDemo);

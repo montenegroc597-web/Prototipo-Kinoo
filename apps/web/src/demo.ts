@@ -7,8 +7,14 @@ import { type ActiveDeck, KinooEngine, cosine, topAtoms } from '@kinoo/engine';
 import { type CardDTO, type EventInput, type KinooEvent, type Movie, posterUrl } from '@kinoo/shared';
 import pilot from '../../../packages/catalog/data/movies.pilot.json';
 import type { KinooAdapter } from './adapter';
+import { getSession, loginUrl, logout } from './session';
 
-const KEY = 'kinoo.demo.v2';
+// Sin sesión no hay demo: se pide el mini inicio de sesión y se vuelve a esta pantalla.
+const session = getSession();
+if (!session && typeof location !== 'undefined') location.replace(loginUrl());
+const USER_ID = session?.user_id ?? 'anonimo';
+// Cada cuenta guarda su propio historial en este navegador.
+const KEY = `kinoo.demo.v2:${USER_ID}`;
 interface DemoState extends UserSnapshot {
   watching_movie_id?: string | null;
   last_closing?: unknown;
@@ -51,7 +57,7 @@ function load(): DemoState {
   } catch {
     /* almacenamiento bloqueado: se trabaja en memoria */
   }
-  return { user_id: 'demo', events: [], active_deck: null };
+  return { user_id: USER_ID, events: [], active_deck: null };
 }
 let state = load();
 function save() {
@@ -326,10 +332,19 @@ const api = {
     return state.events;
   },
   reset() {
-    state = { user_id: 'demo', events: [], active_deck: null };
+    state = { user_id: USER_ID, events: [], active_deck: null };
     pinned = null;
     cache = null;
     save();
+  },
+  /** Quién está usando la demo. */
+  session() {
+    return session;
+  },
+  /** Cerrar sesión y volver al inicio de sesión. */
+  logout() {
+    logout();
+    location.assign(loginUrl());
   },
   /** El mismo contrato que el modo Supabase, por si una pantalla nueva lo quiere usar. */
   adapter: {

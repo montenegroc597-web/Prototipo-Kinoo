@@ -19,7 +19,7 @@
     },
     {
       "key": "social",
-      "text": "La guardó {curator}, que también disfruta lo {a}."
+      "text": "La guardó {curator}, a quien también le gustan las historias {a}."
     },
     {
       "key": "no_overlap",

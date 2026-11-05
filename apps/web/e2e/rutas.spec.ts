@@ -1,9 +1,11 @@
 import { expect, test } from '@playwright/test';
+import { loginAsCamilo } from './helpers';
 
-// Línea base del prototipo: las pantallas publicadas cargan en las mismas rutas.
-test('la raíz redirige a Descubrir y las pantallas de Ver y Descubrir cargan', async ({ page }) => {
+// Las pantallas publicadas siguen en las mismas rutas. La raíz lleva al inicio de sesión de la demo.
+test('la raíz lleva a entrar y, con sesión, las pantallas de Ver y Descubrir cargan', async ({ page }) => {
   await page.goto('./');
-  await page.waitForURL(/kinoo-flujo\/Flujo1_Descubrir\.dc\.html/);
+  await page.waitForURL(/entrar\.html/);
+  await loginAsCamilo(page);
   for (const p of ['kinoo-flujo/Flujo1_Descubrir.dc.html', 'kinoo-flujo/FlujoV1_Feed.dc.html', 'kinoo-flujo/Flujo2_Resumen.dc.html']) {
     const r = await page.goto(p);
     expect(r?.status()).toBe(200);

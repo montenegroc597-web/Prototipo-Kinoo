@@ -1,0 +1,323 @@
+{
+  "persona": {
+    "key": "camilo",
+    "name": "Camilo (hipótesis)",
+    "description": "Cine de autor emotivo y de luz cálida; le atrae el terror psicológico; le aburren la comedia tonta y la acción ruidosa.",
+    "taste": {
+      "melancolica": 0.8,
+      "carga_emocional": 0.8,
+      "intimidad": 0.7,
+      "calida": 0.6,
+      "complejidad": 0.6,
+      "pausada": 0.5,
+      "inquietante": 0.5,
+      "contemplativa": 0.4,
+      "humor": -0.6,
+      "frenetica": -0.6,
+      "escala_epica": -0.4
+    },
+    "cryTaste": {
+      "carga_emocional": 0.9,
+      "intimidad": 0.8,
+      "pausada": 0.6,
+      "calida": 0.6,
+      "melancolica": 0.7,
+      "humor": -0.5
+    },
+    "expectedArchetype": "romantico"
+  },
+  "trueTop": [
+    "melancolica",
+    "carga_emocional",
+    "intimidad",
+    "calida",
+    "complejidad"
+  ],
+  "threshold": 0.46093616852642927,
+  "decks": [
+    {
+      "deck": 1,
+      "liked": 3,
+      "cards": [
+        {
+          "title": "El padrino",
+          "liked": true,
+          "explanation": "Una de las mejor valoradas para empezar a conocerte."
+        },
+        {
+          "title": "Avengers: Endgame",
+          "liked": false,
+          "explanation": "Una de las mejor valoradas para empezar a conocerte."
+        },
+        {
+          "title": "Parásitos",
+          "liked": false,
+          "explanation": "Del mazo de Equipo Kinoo."
+        },
+        {
+          "title": "Matrix",
+          "liked": false,
+          "explanation": "Una de las mejor valoradas para empezar a conocerte."
+        },
+        {
+          "title": "Coco",
+          "liked": false,
+          "explanation": "Una de las mejor valoradas para empezar a conocerte."
+        },
+        {
+          "title": "El resplandor",
+          "liked": false,
+          "explanation": "Una de las mejor valoradas para empezar a conocerte."
+        },
+        {
+          "title": "Cinema Paradiso",
+          "liked": true,
+          "explanation": "Del mazo de Equipo Kinoo."
+        },
+        {
+          "title": "Rocky",
+          "liked": true,
+          "explanation": "Fuera de tu zona, pero muy bien valorada. Dale una oportunidad."
+        },
+        {
+          "title": "Robot salvaje",
+          "liked": false,
+          "explanation": "Una de las mejor valoradas para empezar a conocerte."
+        },
+        {
+          "title": "The Dark Knight",
+          "liked": false,
+          "explanation": "Una de las mejor valoradas para empezar a conocerte."
+        }
+      ],
+      "learned": "Hoy te inclinaste por historias a fuego lento y melancólicas.",
+      "watched": {
+        "title": "Cinema Paradiso",
+        "reaction": "loved"
+      },
+      "signals": 11,
+      "archetype": "El Romántico",
+      "top": [
+        "melancolica 0.25",
+        "calida 0.25",
+        "carga_emocional 0.24",
+        "reconfortante 0.18"
+      ],
+      "cosToTaste": 0.655416827912906,
+      "afterDeckSignals": 10
+    },
+    {
+      "deck": 2,
+      "liked": 8,
+      "cards": [
+        {
+          "title": "Estación central de Brasil",
+          "liked": true,
+          "explanation": "Encaja con tu gusto por historias que mueven por dentro y de luz cálida."
+        },
+        {
+          "title": "Aftersun",
+          "liked": true,
+          "explanation": "Encaja con tu gusto por historias melancólicas y que mueven por dentro."
+        },
+        {
+          "title": "Vidas pasadas",
+          "liked": true,
+          "explanation": "Del mazo de Equipo Kinoo. La guardó Equipo Kinoo, a quien también le gustan las historias melancólicas."
+        },
+        {
+          "title": "El padrino III",
+          "liked": true,
+          "explanation": "Encaja con tu gusto por historias melancólicas y de luz cálida."
+        },
+        {
+          "title": "El abrazo de la serpiente",
+          "liked": true,
+          "explanation": "Tiene lo melancólicas que te gusta, en una forma distinta."
+        },
+        {
+          "title": "Her",
+          "liked": true,
+          "explanation": "Encaja con tu gusto por historias melancólicas y de luz cálida."
+        },
+        {
+          "title": "Roma",
+          "liked": true,
+          "explanation": "Del mazo de Equipo Kinoo. La guardó Equipo Kinoo, a quien también le gustan las historias melancólicas."
+        },
+        {
+          "title": "Interstellar",
+          "liked": false,
+          "explanation": "Fuera de tu zona, pero muy bien valorada. Dale una oportunidad."
+        },
+        {
+          "title": "tick, tick...BOOM!",
+          "liked": false,
+          "explanation": "Encaja con tu gusto por historias de luz cálida y que mueven por dentro."
+        },
+        {
+          "title": "Rocky Balboa",
+          "liked": true,
+          "explanation": "Encaja con tu gusto por historias que mueven por dentro y melancólicas."
+        }
+      ],
+      "learned": "Hoy te inclinaste por historias contemplativas y íntimas.",
+      "watched": {
+        "title": "Estación central de Brasil",
+        "reaction": "loved"
+      },
+      "signals": 22,
+      "archetype": "El Romántico",
+      "top": [
+        "calida 0.34",
+        "carga_emocional 0.33",
+        "melancolica 0.32",
+        "intimidad 0.31"
+      ],
+      "cosToTaste": 0.73984617479982,
+      "afterDeckSignals": 21
+    },
+    {
+      "deck": 3,
+      "liked": 6,
+      "cards": [
+        {
+          "title": "Y tu mamá también",
+          "liked": true,
+          "explanation": "Encaja con tu gusto por historias íntimas y de luz cálida."
+        },
+        {
+          "title": "Eterno resplandor de una mente sin recuerdos",
+          "liked": true,
+          "explanation": "Encaja con tu gusto por historias íntimas y que mueven por dentro."
+        },
+        {
+          "title": "La llegada",
+          "liked": true,
+          "explanation": "Del mazo de Equipo Kinoo. La guardó Equipo Kinoo, a quien también le gustan las historias que mueven por dentro."
+        },
+        {
+          "title": "Rocky II",
+          "liked": false,
+          "explanation": "Encaja con tu gusto por historias de luz cálida y reconfortantes."
+        },
+        {
+          "title": "Ratatouille",
+          "liked": false,
+          "explanation": "Tiene lo de luz cálida que te gusta, en una forma distinta."
+        },
+        {
+          "title": "El padrino II",
+          "liked": true,
+          "explanation": "Encaja con tu gusto por historias de luz cálida y a fuego lento."
+        },
+        {
+          "title": "Chungking Express",
+          "liked": false,
+          "explanation": "Del mazo de Equipo Kinoo. La guardó Equipo Kinoo, a quien también le gustan las historias íntimas."
+        },
+        {
+          "title": "Scarface: El precio del poder",
+          "liked": false,
+          "explanation": "Fuera de tu zona, pero muy bien valorada. Dale una oportunidad."
+        },
+        {
+          "title": "La La Land",
+          "liked": true,
+          "explanation": "Encaja con tu gusto por historias que mueven por dentro y melancólicas."
+        },
+        {
+          "title": "Perdidos en Tokio",
+          "liked": true,
+          "explanation": "Encaja con tu gusto por historias íntimas y melancólicas."
+        }
+      ],
+      "learned": "Hoy te inclinaste por historias que exigen atención y épicas.",
+      "watched": {
+        "title": "Rocky Balboa",
+        "reaction": "loved"
+      },
+      "signals": 33,
+      "archetype": "El Romántico",
+      "top": [
+        "carga_emocional 0.35",
+        "melancolica 0.33",
+        "pausada 0.32",
+        "intimidad 0.29"
+      ],
+      "cosToTaste": 0.7693842505589839,
+      "afterDeckSignals": 32
+    },
+    {
+      "deck": 4,
+      "liked": 1,
+      "cards": [
+        {
+          "title": "Titanic",
+          "liked": false,
+          "explanation": "Encaja con tu gusto por historias que mueven por dentro y melancólicas."
+        },
+        {
+          "title": "Toy Story 3",
+          "liked": false,
+          "explanation": "Encaja con tu gusto por historias que mueven por dentro y reconfortantes."
+        },
+        {
+          "title": "Todo en todas partes al mismo tiempo",
+          "liked": false,
+          "explanation": "Del mazo de Equipo Kinoo. La guardó Equipo Kinoo, a quien también le gustan las historias que mueven por dentro."
+        },
+        {
+          "title": "Proyecto Fin del Mundo",
+          "liked": false,
+          "explanation": "Encaja con tu gusto por historias que mueven por dentro y reconfortantes."
+        },
+        {
+          "title": "Amores perros",
+          "liked": false,
+          "explanation": "Tiene lo que mueven por dentro que te gusta, en una forma distinta."
+        },
+        {
+          "title": "El legado del diablo",
+          "liked": true,
+          "explanation": "Encaja con tu gusto por historias íntimas y que mueven por dentro."
+        },
+        {
+          "title": "Mad Max: Furia en el camino",
+          "liked": false,
+          "explanation": "Del mazo de Equipo Kinoo. La guardó Equipo Kinoo, a quien también le gustan las historias de luz cálida."
+        },
+        {
+          "title": "Oppenheimer",
+          "liked": false,
+          "explanation": "Fuera de tu zona, pero muy bien valorada. Dale una oportunidad."
+        },
+        {
+          "title": "Duna",
+          "liked": false,
+          "explanation": "Encaja con tu gusto por historias a fuego lento y contemplativas."
+        },
+        {
+          "title": "El cadáver de la novia",
+          "liked": false,
+          "explanation": "Encaja con tu gusto por historias melancólicas y reconfortantes."
+        }
+      ],
+      "learned": "Este mazo nos ayudó a conocerte un poco más.",
+      "watched": {
+        "title": "Vidas pasadas",
+        "reaction": "loved"
+      },
+      "signals": 44,
+      "archetype": "El Romántico",
+      "top": [
+        "intimidad 0.42",
+        "melancolica 0.41",
+        "pausada 0.36",
+        "carga_emocional 0.32"
+      ],
+      "cosToTaste": 0.8075286200631532,
+      "afterDeckSignals": 43
+    }
+  ]
+}

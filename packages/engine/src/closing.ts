@@ -14,7 +14,11 @@ export function closeDeck(deck: ActiveDeck, model: UserModel, catalog: Catalog, 
     .sort((a, b) => b[1] - a[1])
     .slice(0, 2)
     .map(([k]) => k);
-  const labels = top.map((k) => cfg.label(k));
+  const ids = new Set(deck.cards.map((c) => c.movie_id));
+  const saved = [...model.states.values()].filter((s) => ids.has(s.movie_id) && s.state === 'saved');
+  // Con muy pocas cartas guardadas, la conclusión sería ruido: se usa la frase neutra.
+  const enough = saved.length >= (cfg.params.closing_min_saves ?? 2);
+  const labels = enough ? top.map((k) => cfg.label(k)) : [];
   const learned =
     labels.length === 2
       ? fill(cfg.template('deck_learned'), { a: labels[0]!, b: labels[1]! })
@@ -22,8 +26,6 @@ export function closeDeck(deck: ActiveDeck, model: UserModel, catalog: Catalog, 
         ? fill(cfg.template('deck_learned_single'), { a: labels[0]! })
         : cfg.template('deck_learned_none');
 
-  const ids = new Set(deck.cards.map((c) => c.movie_id));
-  const saved = [...model.states.values()].filter((s) => ids.has(s.movie_id) && s.state === 'saved');
   const hand = [...model.states.values()].filter((s) => s.state === 'saved' || s.state === 'rewatch');
   const ready = hand.filter((s) => {
     const m = catalog.byId.get(s.movie_id);
@@ -32,7 +34,7 @@ export function closeDeck(deck: ActiveDeck, model: UserModel, catalog: Catalog, 
   return {
     deck_id: deck.deck_id,
     learned,
-    top_atoms: top,
+    top_atoms: enough ? top : [],
     saved_posters: saved.map((s) => {
       const m = catalog.byId.get(s.movie_id)!.movie;
       return { movie_id: m.id, title: m.title, poster_path: m.poster_path ?? null, poster_url: posterUrl(m.poster_path, { assetBaseUrl }) };

@@ -28,6 +28,8 @@ npm run test:unit           # motor, núcleo, catálogo, configuración
 npm run test:integration    # PostgreSQL en memoria (PGlite), RLS y API HTTP
 npm run test:e2e            # navegador (en la nube: PW_CHROMIUM_PATH=/opt/pw-browsers/chromium)
 npm run test:sim            # las 5 pruebas de aprendizaje → packages/engine/sim/RESULTADOS.md
+npm run sim:perfiles        # 6 tipos de usuario con el catálogo real → docs/SIMULACION-PERFILAMIENTO.md
+npm run sim:camilo          # Camilo usando la app en un navegador (después de npm run build)
 npm run dev:web             # build + servidor en http://localhost:4173/Prototipo-Kinoo/
 npm run lint && npm run format
 ```
@@ -40,8 +42,9 @@ npm run lint && npm run format
 4. **El motor es puro.** Nada de `fs`, `fetch`, `window` ni `process` en `packages/engine`.
 5. **Las explicaciones no llevan números ni %.** Hay pruebas que lo verifican.
 6. **Las migraciones no se editan** después de publicadas: crea una nueva (`packages/db/migrations/00NN_….sql`). El aplicador compara sumas de verificación.
-7. **No rompas rutas publicadas.** `npm run check:routes -w @kinoo/web` revisa las 86 del prototipo.
-8. **Sin secretos en el repositorio.** Usa variables de entorno (`.env.example`).
+7. **La demo pide sesión** (`entrar.html`, cuenta `camilo` / `1234`, en `apps/web/src/session.ts`). Las e2e entran con `loginAsCamilo()`.
+8. **No rompas rutas publicadas.** `npm run check:routes -w @kinoo/web` revisa las 86 del prototipo.
+9. **Sin secretos en el repositorio.** Usa variables de entorno (`.env.example`).
 
 ## Tareas frecuentes
 

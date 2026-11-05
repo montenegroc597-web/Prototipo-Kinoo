@@ -56,7 +56,7 @@ insert into explanation_templates (key, text) values ('profile', 'Encaja con tu 
 insert into explanation_templates (key, text) values ('profile_single', 'Encaja con tu gusto por historias {a}.') on conflict (key) do update set text = excluded.text;
 insert into explanation_templates (key, text) values ('vibe', 'Responde a tu forma de {mood}: {a} y {b}.') on conflict (key) do update set text = excluded.text;
 insert into explanation_templates (key, text) values ('vibe_single', 'Responde a tu forma de {mood}: {a}.') on conflict (key) do update set text = excluded.text;
-insert into explanation_templates (key, text) values ('social', 'La guardó {curator}, que también disfruta lo {a}.') on conflict (key) do update set text = excluded.text;
+insert into explanation_templates (key, text) values ('social', 'La guardó {curator}, a quien también le gustan las historias {a}.') on conflict (key) do update set text = excluded.text;
 insert into explanation_templates (key, text) values ('no_overlap', 'Algo distinto a lo que sueles guardar, para ampliar el mazo.') on conflict (key) do update set text = excluded.text;
 insert into explanation_templates (key, text) values ('cold_start', 'Una de las mejor valoradas para empezar a conocerte.') on conflict (key) do update set text = excluded.text;
 insert into explanation_templates (key, text) values ('role_comodin', 'Tiene lo {a} que te gusta, en una forma distinta.') on conflict (key) do update set text = excluded.text;
@@ -104,4 +104,5 @@ insert into config (key, value) values ('team_deck_owner', '"equipo-kinoo"'::jso
 insert into config (key, value) values ('watch_vibe_min_cosine', '0.2'::jsonb) on conflict (key) do update set value = excluded.value, updated_at = now();
 insert into config (key, value) values ('dismiss_fatigue_weight', '0.3'::jsonb) on conflict (key) do update set value = excluded.value, updated_at = now();
 insert into config (key, value) values ('dismiss_fatigue_hours', '24'::jsonb) on conflict (key) do update set value = excluded.value, updated_at = now();
+insert into config (key, value) values ('closing_min_saves', '2'::jsonb) on conflict (key) do update set value = excluded.value, updated_at = now();
 commit;

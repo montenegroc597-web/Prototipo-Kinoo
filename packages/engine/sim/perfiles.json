@@ -1,0 +1,1129 @@
+[
+  {
+    "persona": {
+      "key": "camilo",
+      "name": "Camilo (hipótesis)"
+    },
+    "acceptShare": 0.25,
+    "catalogAcceptable": 18,
+    "decks": [
+      {
+        "deck": 1,
+        "vibe": null,
+        "signals": 23,
+        "hitRate": 0.8,
+        "accepted": [
+          "La llegada",
+          "Aftersun",
+          "Vidas pasadas",
+          "El legado del diablo",
+          "Eterno resplandor de una mente sin recuerdos",
+          "El abrazo de la serpiente",
+          "El resplandor",
+          "Roma"
+        ],
+        "remainingGood": 18,
+        "candidates": 69,
+        "capture": 0.8,
+        "randomExpected": 2.608695652173913,
+        "cosToTaste": 0.6905844981469843,
+        "top": [
+          "intimidad",
+          "contemplativa",
+          "monocromatica"
+        ],
+        "archetype": "El Observador",
+        "explanations": [
+          "Encaja con tu gusto por historias a fuego lento y que exigen atención.",
+          "Encaja con tu gusto por historias íntimas y melancólicas.",
+          "Del mazo de Equipo Kinoo. La guardó Equipo Kinoo, a quien también le gustan las historias íntimas."
+        ]
+      },
+      {
+        "deck": 2,
+        "vibe": "llorar_bonito",
+        "signals": 34,
+        "hitRate": 0.7,
+        "accepted": [
+          "Rocky Balboa",
+          "Rocky",
+          "Cinema Paradiso",
+          "Titanic",
+          "Perdidos en Tokio",
+          "Y tu mamá también",
+          "Estación central de Brasil"
+        ],
+        "remainingGood": 12,
+        "candidates": 59,
+        "capture": 0.7,
+        "randomExpected": 2.0338983050847457,
+        "cosToTaste": 0.7550839011230461,
+        "top": [
+          "intimidad",
+          "contemplativa",
+          "melancolica"
+        ],
+        "archetype": "El Romántico",
+        "explanations": [
+          "Responde a tu forma de llorar bonito: que mueven por dentro y melancólicas.",
+          "Responde a tu forma de llorar bonito: que mueven por dentro y íntimas.",
+          "Del mazo de Equipo Kinoo. La guardó Equipo Kinoo, a quien también le gustan las historias que mueven por dentro."
+        ]
+      },
+      {
+        "deck": 3,
+        "vibe": null,
+        "signals": 45,
+        "hitRate": 0.1,
+        "accepted": [
+          "El padrino III"
+        ],
+        "remainingGood": 4,
+        "candidates": 49,
+        "capture": 0.25,
+        "randomExpected": 0.8163265306122448,
+        "cosToTaste": 0.7829880381530331,
+        "top": [
+          "intimidad",
+          "melancolica",
+          "contemplativa"
+        ],
+        "archetype": "El Romántico",
+        "explanations": [
+          "Encaja con tu gusto por historias melancólicas y a fuego lento.",
+          "Encaja con tu gusto por historias en blanco y negro o casi y melancólicas.",
+          "Del mazo de Equipo Kinoo. La guardó Equipo Kinoo, a quien también le gustan las historias que mueven por dentro."
+        ]
+      },
+      {
+        "deck": 4,
+        "vibe": null,
+        "signals": 56,
+        "hitRate": 0.2,
+        "accepted": [
+          "El padrino",
+          "Rocky II",
+          "La La Land"
+        ],
+        "remainingGood": 3,
+        "candidates": 39,
+        "capture": 0.6666666666666666,
+        "randomExpected": 0.7692307692307693,
+        "cosToTaste": 0.7490374664631794,
+        "top": [
+          "contemplativa",
+          "intimidad",
+          "melancolica"
+        ],
+        "archetype": "El Romántico",
+        "explanations": [
+          "Encaja con tu gusto por historias a fuego lento y íntimas.",
+          "Encaja con tu gusto por historias que mueven por dentro y íntimas.",
+          "Del mazo de Equipo Kinoo. La guardó Equipo Kinoo, a quien también le gustan las historias de luz cálida."
+        ]
+      },
+      {
+        "deck": 5,
+        "vibe": "llorar_bonito",
+        "signals": 67,
+        "hitRate": 0.1,
+        "accepted": [
+          "El padrino II",
+          "Ted"
+        ],
+        "remainingGood": 1,
+        "candidates": 29,
+        "capture": 1,
+        "randomExpected": 0.3448275862068966,
+        "cosToTaste": 0.7217000623835776,
+        "top": [
+          "contemplativa",
+          "melancolica",
+          "intimidad"
+        ],
+        "archetype": "El Romántico",
+        "explanations": [
+          "Responde a tu forma de llorar bonito: melancólicas y que mueven por dentro.",
+          "Responde a tu forma de llorar bonito: reconfortantes y de luz cálida.",
+          "Responde a tu forma de llorar bonito: de luz cálida y reconfortantes."
+        ]
+      }
+    ],
+    "eventsToReliable": 14,
+    "finalTop": [
+      "contemplativa",
+      "melancolica",
+      "intimidad",
+      "pausada"
+    ],
+    "trueTop": [
+      "melancolica",
+      "carga_emocional",
+      "intimidad",
+      "calida"
+    ],
+    "archetype": "El Romántico",
+    "cryRecipeShift": {
+      "cosToSeed": 0.8984389013428147,
+      "rose": [
+        "pausada",
+        "contemplativa",
+        "sombria"
+      ]
+    },
+    "watched": [
+      {
+        "title": "Roma",
+        "reaction": "loved"
+      },
+      {
+        "title": "Aftersun",
+        "reaction": "loved"
+      },
+      {
+        "title": "Vidas pasadas",
+        "reaction": "loved"
+      },
+      {
+        "title": "Perdidos en Tokio",
+        "reaction": "liked"
+      },
+      {
+        "title": "Rocky Balboa",
+        "reaction": "loved"
+      }
+    ]
+  },
+  {
+    "persona": {
+      "key": "acción",
+      "name": "Valentina · adrenalina"
+    },
+    "acceptShare": 0.25,
+    "catalogAcceptable": 18,
+    "decks": [
+      {
+        "deck": 1,
+        "vibe": null,
+        "signals": 23,
+        "hitRate": 0.8,
+        "accepted": [
+          "X-Men: Días del futuro pasado",
+          "Mortal Kombat",
+          "Todo en todas partes al mismo tiempo",
+          "Matrix",
+          "Guerra Mundial Z",
+          "Mad Max: Furia en el camino"
+        ],
+        "remainingGood": 18,
+        "candidates": 69,
+        "capture": 0.8,
+        "randomExpected": 2.608695652173913,
+        "cosToTaste": 0.8696304655172568,
+        "top": [
+          "escala_epica",
+          "frenetica",
+          "agil"
+        ],
+        "archetype": "El Explorador",
+        "explanations": [
+          "Encaja con tu gusto por historias épicas y frenéticas.",
+          "Encaja con tu gusto por historias épicas y frenéticas.",
+          "Del mazo de Equipo Kinoo. La guardó Equipo Kinoo, a quien también le gustan las historias épicas."
+        ]
+      },
+      {
+        "deck": 2,
+        "vibe": null,
+        "signals": 34,
+        "hitRate": 0.6,
+        "accepted": [
+          "Mortal Kombat II",
+          "Scarface: El precio del poder",
+          "The Dark Knight"
+        ],
+        "remainingGood": 10,
+        "candidates": 59,
+        "capture": 0.6,
+        "randomExpected": 1.694915254237288,
+        "cosToTaste": 0.8197289953820127,
+        "top": [
+          "escala_epica",
+          "frenetica",
+          "neon"
+        ],
+        "archetype": "El Explorador",
+        "explanations": [
+          "Encaja con tu gusto por historias épicas y frenéticas.",
+          "Encaja con tu gusto por historias épicas y tensas.",
+          "Del mazo de Equipo Kinoo. La guardó Equipo Kinoo, a quien también le gustan las historias ágiles."
+        ]
+      },
+      {
+        "deck": 3,
+        "vibe": null,
+        "signals": 45,
+        "hitRate": 0.4,
+        "accepted": [
+          "Terminator",
+          "Pecadores",
+          "¿Qué pasó ayer?",
+          "Oppenheimer"
+        ],
+        "remainingGood": 4,
+        "candidates": 49,
+        "capture": 1,
+        "randomExpected": 0.8163265306122448,
+        "cosToTaste": 0.864335539802493,
+        "top": [
+          "frenetica",
+          "escala_epica",
+          "agil"
+        ],
+        "archetype": "El Explorador",
+        "explanations": [
+          "Encaja con tu gusto por historias frenéticas y tensas.",
+          "Encaja con tu gusto por historias épicas y que exigen atención.",
+          "Del mazo de Equipo Kinoo. La guardó Equipo Kinoo, a quien también le gustan las historias de neón."
+        ]
+      },
+      {
+        "deck": 4,
+        "vibe": null,
+        "signals": 56,
+        "hitRate": 0,
+        "accepted": [
+          "Interstellar"
+        ],
+        "remainingGood": 0,
+        "candidates": 39,
+        "capture": 1,
+        "randomExpected": 0,
+        "cosToTaste": 0.8411850032761569,
+        "top": [
+          "frenetica",
+          "escala_epica",
+          "neon"
+        ],
+        "archetype": "El Explorador",
+        "explanations": [
+          "Encaja con tu gusto por historias tensas y sombrías.",
+          "Encaja con tu gusto por historias tensas y sombrías.",
+          "Del mazo de Equipo Kinoo. La guardó Equipo Kinoo, a quien también le gustan las historias en blanco y negro o casi."
+        ]
+      },
+      {
+        "deck": 5,
+        "vibe": null,
+        "signals": 67,
+        "hitRate": 0,
+        "accepted": [],
+        "remainingGood": 0,
+        "candidates": 29,
+        "capture": 1,
+        "randomExpected": 0,
+        "cosToTaste": 0.8522977538845128,
+        "top": [
+          "frenetica",
+          "escala_epica",
+          "neon"
+        ],
+        "archetype": "El Explorador",
+        "explanations": [
+          "Encaja con tu gusto por historias ágiles y que exigen atención.",
+          "Encaja con tu gusto por historias ágiles y con humor.",
+          "Del mazo de Equipo Kinoo. La guardó Equipo Kinoo, a quien también le gustan las historias de neón."
+        ]
+      }
+    ],
+    "eventsToReliable": 13,
+    "finalTop": [
+      "frenetica",
+      "escala_epica",
+      "neon",
+      "tensa"
+    ],
+    "trueTop": [
+      "escala_epica",
+      "frenetica",
+      "agil",
+      "tensa"
+    ],
+    "archetype": "El Explorador",
+    "watched": [
+      {
+        "title": "X-Men: Días del futuro pasado",
+        "reaction": "loved"
+      },
+      {
+        "title": "Matrix",
+        "reaction": "loved"
+      },
+      {
+        "title": "Mortal Kombat",
+        "reaction": "loved"
+      },
+      {
+        "title": "Mortal Kombat II",
+        "reaction": "loved"
+      },
+      {
+        "title": "Guerra Mundial Z",
+        "reaction": "loved"
+      }
+    ]
+  },
+  {
+    "persona": {
+      "key": "familia",
+      "name": "Andrés · plan familiar"
+    },
+    "acceptShare": 0.25,
+    "catalogAcceptable": 18,
+    "decks": [
+      {
+        "deck": 1,
+        "vibe": null,
+        "signals": 23,
+        "hitRate": 0.6,
+        "accepted": [
+          "Coco",
+          "La La Land",
+          "tick, tick...BOOM!",
+          "Ratatouille",
+          "Shrek 2",
+          "Robot salvaje"
+        ],
+        "remainingGood": 18,
+        "candidates": 69,
+        "capture": 0.6,
+        "randomExpected": 2.608695652173913,
+        "cosToTaste": 0.6809652426484996,
+        "top": [
+          "luminosa",
+          "calida",
+          "reconfortante"
+        ],
+        "archetype": "El Luminoso",
+        "explanations": [
+          "Encaja con tu gusto por historias de luz cálida y luminosas.",
+          "Encaja con tu gusto por historias luminosas y que mueven por dentro.",
+          "Del mazo de Equipo Kinoo. La guardó Equipo Kinoo, a quien también le gustan las historias de luz cálida."
+        ]
+      },
+      {
+        "deck": 2,
+        "vibe": "llorar_bonito",
+        "signals": 34,
+        "hitRate": 0.4,
+        "accepted": [
+          "Toy Story 3",
+          "Rocky",
+          "Rocky Balboa",
+          "Grease (Vaselina)"
+        ],
+        "remainingGood": 11,
+        "candidates": 59,
+        "capture": 0.4,
+        "randomExpected": 1.8644067796610169,
+        "cosToTaste": 0.7809885913587701,
+        "top": [
+          "luminosa",
+          "reconfortante",
+          "calida"
+        ],
+        "archetype": "El Luminoso",
+        "explanations": [
+          "Responde a tu forma de llorar bonito: que mueven por dentro y reconfortantes.",
+          "Responde a tu forma de llorar bonito: que mueven por dentro y reconfortantes.",
+          "Del mazo de Equipo Kinoo. La guardó Equipo Kinoo, a quien también le gustan las historias que mueven por dentro."
+        ]
+      },
+      {
+        "deck": 3,
+        "vibe": null,
+        "signals": 45,
+        "hitRate": 0.7,
+        "accepted": [
+          "Toy Story 2",
+          "Proyecto Fin del Mundo",
+          "Ted",
+          "¿Qué pasó ayer?",
+          "Entre navajas y secretos",
+          "Rocky III"
+        ],
+        "remainingGood": 10,
+        "candidates": 49,
+        "capture": 0.7,
+        "randomExpected": 2.0408163265306123,
+        "cosToTaste": 0.8245091670656813,
+        "top": [
+          "luminosa",
+          "reconfortante",
+          "humor"
+        ],
+        "archetype": "El Luminoso",
+        "explanations": [
+          "Encaja con tu gusto por historias luminosas y reconfortantes.",
+          "Encaja con tu gusto por historias luminosas y reconfortantes.",
+          "Del mazo de Equipo Kinoo. La guardó Equipo Kinoo, a quien también le gustan las historias de neón."
+        ]
+      },
+      {
+        "deck": 4,
+        "vibe": null,
+        "signals": 56,
+        "hitRate": 0.3,
+        "accepted": [
+          "Toy Story",
+          "Rocky II",
+          "Mad Max: Furia en el camino",
+          "Ted 2"
+        ],
+        "remainingGood": 3,
+        "candidates": 39,
+        "capture": 1,
+        "randomExpected": 0.7692307692307693,
+        "cosToTaste": 0.8175214815860996,
+        "top": [
+          "luminosa",
+          "reconfortante",
+          "agil"
+        ],
+        "archetype": "El Luminoso",
+        "explanations": [
+          "Encaja con tu gusto por historias reconfortantes y luminosas.",
+          "Encaja con tu gusto por historias reconfortantes y luminosas.",
+          "Del mazo de Equipo Kinoo. La guardó Equipo Kinoo, a quien también le gustan las historias de luz cálida."
+        ]
+      },
+      {
+        "deck": 5,
+        "vibe": "llorar_bonito",
+        "signals": 67,
+        "hitRate": 0,
+        "accepted": [
+          "Mortal Kombat II"
+        ],
+        "remainingGood": 0,
+        "candidates": 29,
+        "capture": 1,
+        "randomExpected": 0,
+        "cosToTaste": 0.800797694034589,
+        "top": [
+          "luminosa",
+          "reconfortante",
+          "calida"
+        ],
+        "archetype": "El Luminoso",
+        "explanations": [
+          "Responde a tu forma de llorar bonito: que mueven por dentro y de luz cálida.",
+          "Responde a tu forma de llorar bonito: que mueven por dentro y melancólicas.",
+          "Del mazo de Equipo Kinoo. La guardó Equipo Kinoo, a quien también le gustan las historias que mueven por dentro."
+        ]
+      }
+    ],
+    "eventsToReliable": 18,
+    "finalTop": [
+      "luminosa",
+      "reconfortante",
+      "calida",
+      "pastel"
+    ],
+    "trueTop": [
+      "reconfortante",
+      "luminosa",
+      "humor",
+      "agil"
+    ],
+    "archetype": "El Luminoso",
+    "cryRecipeShift": {
+      "cosToSeed": 0.6119684117547565,
+      "rose": [
+        "luminosa",
+        "calida",
+        "pastel"
+      ]
+    },
+    "watched": [
+      {
+        "title": "Coco",
+        "reaction": "loved"
+      },
+      {
+        "title": "Robot salvaje",
+        "reaction": "loved"
+      },
+      {
+        "title": "Toy Story 2",
+        "reaction": "loved"
+      },
+      {
+        "title": "Grease (Vaselina)",
+        "reaction": "loved"
+      },
+      {
+        "title": "Ratatouille",
+        "reaction": "loved"
+      }
+    ]
+  },
+  {
+    "persona": {
+      "key": "terror",
+      "name": "Laura · noche de miedo"
+    },
+    "acceptShare": 0.25,
+    "catalogAcceptable": 18,
+    "decks": [
+      {
+        "deck": 1,
+        "vibe": null,
+        "signals": 23,
+        "hitRate": 0.7,
+        "accepted": [
+          "Batman",
+          "Sonríe",
+          "Parásitos",
+          "Cuando acecha la maldad",
+          "Watchmen: Los vigilantes",
+          "Halloween"
+        ],
+        "remainingGood": 18,
+        "candidates": 69,
+        "capture": 0.7,
+        "randomExpected": 2.608695652173913,
+        "cosToTaste": 0.7221883409801827,
+        "top": [
+          "sombria",
+          "tensa",
+          "inquietante"
+        ],
+        "archetype": "El Nocturno",
+        "explanations": [
+          "Encaja con tu gusto por historias sombrías y tensas.",
+          "Encaja con tu gusto por historias sombrías y tensas.",
+          "Del mazo de Equipo Kinoo. La guardó Equipo Kinoo, a quien también le gustan las historias tensas."
+        ]
+      },
+      {
+        "deck": 2,
+        "vibe": null,
+        "signals": 34,
+        "hitRate": 0.6,
+        "accepted": [
+          "The Dark Knight",
+          "El resplandor",
+          "¡Huye!",
+          "El padrino",
+          "El exorcista del papa",
+          "Scarface: El precio del poder",
+          "Nosferatu"
+        ],
+        "remainingGood": 11,
+        "candidates": 59,
+        "capture": 0.6,
+        "randomExpected": 1.8644067796610169,
+        "cosToTaste": 0.8172260314430524,
+        "top": [
+          "sombria",
+          "inquietante",
+          "tensa"
+        ],
+        "archetype": "El Nocturno",
+        "explanations": [
+          "Encaja con tu gusto por historias sombrías y tensas.",
+          "Encaja con tu gusto por historias tensas y sombrías.",
+          "Del mazo de Equipo Kinoo. La guardó Equipo Kinoo, a quien también le gustan las historias tensas."
+        ]
+      },
+      {
+        "deck": 3,
+        "vibe": null,
+        "signals": 45,
+        "hitRate": 0.4,
+        "accepted": [
+          "Oppenheimer",
+          "Pecadores",
+          "Terminator",
+          "Matrix",
+          "El legado del diablo"
+        ],
+        "remainingGood": 5,
+        "candidates": 49,
+        "capture": 0.8,
+        "randomExpected": 1.0204081632653061,
+        "cosToTaste": 0.8426495471503956,
+        "top": [
+          "tensa",
+          "sombria",
+          "inquietante"
+        ],
+        "archetype": "El Nocturno",
+        "explanations": [
+          "Encaja con tu gusto por historias tensas y sombrías.",
+          "Encaja con tu gusto por historias sombrías y tensas.",
+          "Del mazo de Equipo Kinoo. La guardó Equipo Kinoo, a quien también le gustan las historias en blanco y negro o casi."
+        ]
+      },
+      {
+        "deck": 4,
+        "vibe": null,
+        "signals": 56,
+        "hitRate": 0.1,
+        "accepted": [
+          "Amores perros"
+        ],
+        "remainingGood": 1,
+        "candidates": 39,
+        "capture": 1,
+        "randomExpected": 0.2564102564102564,
+        "cosToTaste": 0.8332794637260993,
+        "top": [
+          "inquietante",
+          "sombria",
+          "tensa"
+        ],
+        "archetype": "El Nocturno",
+        "explanations": [
+          "Encaja con tu gusto por historias sombrías y tensas.",
+          "Encaja con tu gusto por historias tensas y que exigen atención.",
+          "Del mazo de Equipo Kinoo. La guardó Equipo Kinoo, a quien también le gustan las historias que exigen atención."
+        ]
+      },
+      {
+        "deck": 5,
+        "vibe": null,
+        "signals": 67,
+        "hitRate": 0,
+        "accepted": [
+          "El cadáver de la novia",
+          "Estación central de Brasil"
+        ],
+        "remainingGood": 0,
+        "candidates": 29,
+        "capture": 1,
+        "randomExpected": 0,
+        "cosToTaste": 0.846099976926016,
+        "top": [
+          "inquietante",
+          "sombria",
+          "tensa"
+        ],
+        "archetype": "El Nocturno",
+        "explanations": [
+          "Encaja con tu gusto por historias sombrías y tensas.",
+          "Encaja con tu gusto por historias en blanco y negro o casi y inquietantes.",
+          "Del mazo de Equipo Kinoo. La guardó Equipo Kinoo, a quien también le gustan las historias de estética cruda."
+        ]
+      }
+    ],
+    "eventsToReliable": 13,
+    "finalTop": [
+      "inquietante",
+      "sombria",
+      "tensa",
+      "cruda"
+    ],
+    "trueTop": [
+      "inquietante",
+      "tensa",
+      "sombria",
+      "onirica"
+    ],
+    "archetype": "El Nocturno",
+    "watched": [
+      {
+        "title": "Batman",
+        "reaction": "loved"
+      },
+      {
+        "title": "Sonríe",
+        "reaction": "loved"
+      },
+      {
+        "title": "Halloween",
+        "reaction": "loved"
+      },
+      {
+        "title": "Cuando acecha la maldad",
+        "reaction": "loved"
+      },
+      {
+        "title": "El exorcista del papa",
+        "reaction": "loved"
+      }
+    ]
+  },
+  {
+    "persona": {
+      "key": "clasicos",
+      "name": "Jorge · cinéfilo de clásicos"
+    },
+    "acceptShare": 0.25,
+    "catalogAcceptable": 18,
+    "decks": [
+      {
+        "deck": 1,
+        "vibe": null,
+        "signals": 23,
+        "hitRate": 0.5,
+        "accepted": [
+          "Batman",
+          "Parásitos",
+          "El exorcista",
+          "El abrazo de la serpiente",
+          "Watchmen: Los vigilantes"
+        ],
+        "remainingGood": 18,
+        "candidates": 69,
+        "capture": 0.5,
+        "randomExpected": 2.608695652173913,
+        "cosToTaste": 0.7045579666579207,
+        "top": [
+          "sombria",
+          "tensa",
+          "complejidad"
+        ],
+        "archetype": "El Nocturno",
+        "explanations": [
+          "Encaja con tu gusto por historias sombrías y tensas.",
+          "Encaja con tu gusto por historias sombrías y tensas.",
+          "Del mazo de Equipo Kinoo. La guardó Equipo Kinoo, a quien también le gustan las historias tensas."
+        ]
+      },
+      {
+        "deck": 2,
+        "vibe": null,
+        "signals": 34,
+        "hitRate": 0.6,
+        "accepted": [
+          "Oppenheimer",
+          "El resplandor",
+          "La llegada",
+          "El legado del diablo",
+          "Roma"
+        ],
+        "remainingGood": 13,
+        "candidates": 59,
+        "capture": 0.6,
+        "randomExpected": 2.2033898305084745,
+        "cosToTaste": 0.7544795005925712,
+        "top": [
+          "sombria",
+          "complejidad",
+          "escala_epica"
+        ],
+        "archetype": "El Observador",
+        "explanations": [
+          "Encaja con tu gusto por historias sombrías y tensas.",
+          "Encaja con tu gusto por historias sombrías y tensas.",
+          "Del mazo de Equipo Kinoo. La guardó Equipo Kinoo, a quien también le gustan las historias que exigen atención."
+        ]
+      },
+      {
+        "deck": 3,
+        "vibe": null,
+        "signals": 45,
+        "hitRate": 0.4,
+        "accepted": [
+          "Duna: Parte dos",
+          "Amores perros",
+          "El padrino II"
+        ],
+        "remainingGood": 7,
+        "candidates": 49,
+        "capture": 0.5714285714285714,
+        "randomExpected": 1.4285714285714284,
+        "cosToTaste": 0.7402184554885946,
+        "top": [
+          "complejidad",
+          "escala_epica",
+          "sombria"
+        ],
+        "archetype": "El Observador",
+        "explanations": [
+          "Encaja con tu gusto por historias épicas y sombrías.",
+          "Encaja con tu gusto por historias sombrías y de estética cruda.",
+          "Del mazo de Equipo Kinoo. La guardó Equipo Kinoo, a quien también le gustan las historias épicas."
+        ]
+      },
+      {
+        "deck": 4,
+        "vibe": null,
+        "signals": 56,
+        "hitRate": 0.2,
+        "accepted": [
+          "El padrino"
+        ],
+        "remainingGood": 3,
+        "candidates": 39,
+        "capture": 0.6666666666666666,
+        "randomExpected": 0.7692307692307693,
+        "cosToTaste": 0.7262431913505235,
+        "top": [
+          "sombria",
+          "complejidad",
+          "tensa"
+        ],
+        "archetype": "El Observador",
+        "explanations": [
+          "Encaja con tu gusto por historias épicas y en blanco y negro o casi.",
+          "Encaja con tu gusto por historias que exigen atención y épicas.",
+          "Del mazo de Equipo Kinoo. La guardó Equipo Kinoo, a quien también le gustan las historias que exigen atención."
+        ]
+      },
+      {
+        "deck": 5,
+        "vibe": null,
+        "signals": 67,
+        "hitRate": 0.1,
+        "accepted": [
+          "El padrino III",
+          "Y tu mamá también"
+        ],
+        "remainingGood": 1,
+        "candidates": 29,
+        "capture": 1,
+        "randomExpected": 0.3448275862068966,
+        "cosToTaste": 0.5424303577631219,
+        "top": [
+          "sombria",
+          "tensa",
+          "inquietante"
+        ],
+        "archetype": "El Observador",
+        "explanations": [
+          "Encaja con tu gusto por historias sombrías y que exigen atención.",
+          "Encaja con tu gusto por historias que exigen atención y íntimas.",
+          "Del mazo de Equipo Kinoo. La guardó Equipo Kinoo, a quien también le gustan las historias de estética cruda."
+        ]
+      }
+    ],
+    "eventsToReliable": 24,
+    "finalTop": [
+      "sombria",
+      "tensa",
+      "inquietante",
+      "complejidad"
+    ],
+    "trueTop": [
+      "complejidad",
+      "pausada",
+      "sombria",
+      "cruda"
+    ],
+    "archetype": "El Observador",
+    "watched": [
+      {
+        "title": "Batman",
+        "reaction": "loved"
+      },
+      {
+        "title": "Watchmen: Los vigilantes",
+        "reaction": "loved"
+      },
+      {
+        "title": "Oppenheimer",
+        "reaction": "loved"
+      },
+      {
+        "title": "El exorcista",
+        "reaction": "liked"
+      },
+      {
+        "title": "Parásitos",
+        "reaction": "liked"
+      }
+    ]
+  },
+  {
+    "persona": {
+      "key": "mixto",
+      "name": "Sofía · de todo un poco"
+    },
+    "acceptShare": 0.25,
+    "catalogAcceptable": 18,
+    "decks": [
+      {
+        "deck": 1,
+        "vibe": null,
+        "signals": 23,
+        "hitRate": 0.7,
+        "accepted": [
+          "Coco",
+          "La La Land",
+          "Cinema Paradiso",
+          "tick, tick...BOOM!",
+          "Ratatouille",
+          "Shrek 2",
+          "Robot salvaje"
+        ],
+        "remainingGood": 18,
+        "candidates": 69,
+        "capture": 0.7,
+        "randomExpected": 2.608695652173913,
+        "cosToTaste": 0.692588292775026,
+        "top": [
+          "luminosa",
+          "calida",
+          "reconfortante"
+        ],
+        "archetype": "El Luminoso",
+        "explanations": [
+          "Encaja con tu gusto por historias de luz cálida y luminosas.",
+          "Encaja con tu gusto por historias luminosas y que mueven por dentro.",
+          "Del mazo de Equipo Kinoo. La guardó Equipo Kinoo, a quien también le gustan las historias de luz cálida."
+        ]
+      },
+      {
+        "deck": 2,
+        "vibe": null,
+        "signals": 34,
+        "hitRate": 0.6,
+        "accepted": [
+          "Grease (Vaselina)",
+          "Chungking Express",
+          "Rocky",
+          "Proyecto Fin del Mundo",
+          "Estación central de Brasil",
+          "Toy Story 3"
+        ],
+        "remainingGood": 11,
+        "candidates": 59,
+        "capture": 0.6,
+        "randomExpected": 1.8644067796610169,
+        "cosToTaste": 0.6825596663846863,
+        "top": [
+          "carga_emocional",
+          "reconfortante",
+          "luminosa"
+        ],
+        "archetype": "El Luminoso",
+        "explanations": [
+          "Encaja con tu gusto por historias luminosas y reconfortantes.",
+          "Encaja con tu gusto por historias reconfortantes y luminosas.",
+          "Del mazo de Equipo Kinoo. La guardó Equipo Kinoo, a quien también le gustan las historias de neón."
+        ]
+      },
+      {
+        "deck": 3,
+        "vibe": null,
+        "signals": 45,
+        "hitRate": 0.2,
+        "accepted": [
+          "Toy Story 2",
+          "Ted"
+        ],
+        "remainingGood": 5,
+        "candidates": 49,
+        "capture": 0.4,
+        "randomExpected": 1.0204081632653061,
+        "cosToTaste": 0.6398376254416102,
+        "top": [
+          "luminosa",
+          "reconfortante",
+          "pastel"
+        ],
+        "archetype": "El Luminoso",
+        "explanations": [
+          "Encaja con tu gusto por historias reconfortantes y luminosas.",
+          "Encaja con tu gusto por historias con humor y luminosas.",
+          "Del mazo de Equipo Kinoo. La guardó Equipo Kinoo, a quien también le gustan las historias que mueven por dentro."
+        ]
+      },
+      {
+        "deck": 4,
+        "vibe": null,
+        "signals": 56,
+        "hitRate": 0.3,
+        "accepted": [
+          "Toy Story",
+          "Ted 2",
+          "Y tu mamá también",
+          "Mad Max: Furia en el camino"
+        ],
+        "remainingGood": 3,
+        "candidates": 39,
+        "capture": 1,
+        "randomExpected": 0.7692307692307693,
+        "cosToTaste": 0.6221528231044243,
+        "top": [
+          "luminosa",
+          "reconfortante",
+          "pastel"
+        ],
+        "archetype": "El Luminoso",
+        "explanations": [
+          "Encaja con tu gusto por historias luminosas y reconfortantes.",
+          "Encaja con tu gusto por historias con humor y luminosas.",
+          "Del mazo de Equipo Kinoo. La guardó Equipo Kinoo, a quien también le gustan las historias con humor."
+        ]
+      },
+      {
+        "deck": 5,
+        "vibe": null,
+        "signals": 67,
+        "hitRate": 0,
+        "accepted": [
+          "Titanic",
+          "La llegada",
+          "El abrazo de la serpiente",
+          "El resplandor"
+        ],
+        "remainingGood": 0,
+        "candidates": 29,
+        "capture": 1,
+        "randomExpected": 0,
+        "cosToTaste": 0.5826487606639225,
+        "top": [
+          "luminosa",
+          "reconfortante",
+          "pastel"
+        ],
+        "archetype": "El Luminoso",
+        "explanations": [
+          "Encaja con tu gusto por historias reconfortantes y que mueven por dentro.",
+          "Encaja con tu gusto por historias de luz cálida y que mueven por dentro.",
+          "Del mazo de Equipo Kinoo. La guardó Equipo Kinoo, a quien también le gustan las historias que mueven por dentro."
+        ]
+      }
+    ],
+    "eventsToReliable": 13,
+    "finalTop": [
+      "luminosa",
+      "reconfortante",
+      "pastel",
+      "calida"
+    ],
+    "trueTop": [
+      "luminosa",
+      "calida",
+      "humor",
+      "intimidad"
+    ],
+    "archetype": "El Luminoso",
+    "watched": [
+      {
+        "title": "Coco",
+        "reaction": "loved"
+      },
+      {
+        "title": "Robot salvaje",
+        "reaction": "loved"
+      },
+      {
+        "title": "Grease (Vaselina)",
+        "reaction": "liked"
+      },
+      {
+        "title": "Ratatouille",
+        "reaction": "liked"
+      },
+      {
+        "title": "Toy Story",
+        "reaction": "liked"
+      }
+    ]
+  }
+]

@@ -2,7 +2,12 @@
 
 **Para qué sirve esto.** Dice cómo publicar el front, y cómo levantar la base de datos y la API en Supabase o en otra nube cuando llegue el momento. Hoy solo está activo el front en GitHub Pages; lo demás queda preparado y probado.
 
-## 1. Front en GitHub Pages (activo)
+## 1. Front en GitHub Pages
+
+**Paso pendiente de Camilo (una sola vez):** en GitHub, entra a *Settings → Pages* y en *Build and deployment → Source* elige **GitHub Actions**. Sin eso, la publicación falla con "Get Pages site failed… Not Found". Después, en *Actions → Deploy (GitHub Pages) → Run workflow*, vuelve a correrla (o haz cualquier push a `main`).
+
+**Inicio de sesión de la demo.** La raíz lleva a `entrar.html`. La cuenta de prueba es `camilo` con clave `1234`. Las cuentas están en `apps/web/src/session.ts` (la clave se guarda como SHA-256). Es una puerta para pruebas, no seguridad: todo corre en el navegador. Cada cuenta guarda su propio historial en ese navegador.
+
 
 - `main` publica con `.github/workflows/deploy.yml`: `npm ci`, `npm run build` (arma `apps/web/dist`), comprobación de las 86 rutas y publicación.
 - La fuente de Pages es **GitHub Actions**. Las rutas no cambian: `https://montenegroc597-web.github.io/Prototipo-Kinoo/kinoo-flujo/…`.
