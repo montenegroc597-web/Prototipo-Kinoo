@@ -15,7 +15,8 @@ export function closeDeck(deck: ActiveDeck, model: UserModel, catalog: Catalog, 
     .slice(0, 2)
     .map(([k]) => k);
   const ids = new Set(deck.cards.map((c) => c.movie_id));
-  const saved = [...model.states.values()].filter((s) => ids.has(s.movie_id) && s.state === 'saved');
+  const inDeck = [...model.states.values()].filter((s) => ids.has(s.movie_id));
+  const saved = inDeck.filter((s) => s.state === 'saved');
   // Con muy pocas cartas guardadas, la conclusión sería ruido: se usa la frase neutra.
   const enough = saved.length >= (cfg.params.closing_min_saves ?? 2);
   const labels = enough ? top.map((k) => cfg.label(k)) : [];
@@ -40,5 +41,11 @@ export function closeDeck(deck: ActiveDeck, model: UserModel, catalog: Catalog, 
       return { movie_id: m.id, title: m.title, poster_path: m.poster_path ?? null, poster_url: posterUrl(m.poster_path, { assetBaseUrl }) };
     }),
     ready_tonight: ready.length >= cfg.params.deck_ready_tonight_min,
+    counts: {
+      want: inDeck.filter((s) => s.state === 'saved' || s.state === 'rewatch').length,
+      seen: inDeck.filter((s) => s.state === 'seen').length,
+      pass: inDeck.filter((s) => s.state === 'dismissed').length,
+    },
+    vibe: deck.vibe,
   };
 }

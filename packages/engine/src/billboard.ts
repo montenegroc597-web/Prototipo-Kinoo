@@ -193,9 +193,11 @@ export function buildShelf(input: { catalog: Catalog; model: UserModel; cfg: Con
       const atom = topAtoms(m.hat, 1, { positiveOnly: true })[0] ?? topAtoms(m.movie.atoms, 1)[0];
       const backKey = s.reaction === 'loved' ? 'back_loved' : s.reaction === 'liked' ? 'back_liked' : 'back_not_for_me';
       const back = safe(fill(cfg.template(backKey), { a: atom ? cfg.label(atom) : '' }), safe(cfg.template('back_not_for_me'), ''));
+      const title = fitText(m.movie.title, p.shelf_title_max);
       return {
         id: m.movie.id,
-        title: fitText(m.movie.title, p.shelf_title_max),
+        title,
+        title_size: titleSizeFor(title, cfg),
         poster_url: posterUrl(m.movie.poster_path, { assetBaseUrl: opts.assetBaseUrl }),
         palette: paletteFor(m, cfg),
         meta: metaLine(m, p.watch_meta_max),

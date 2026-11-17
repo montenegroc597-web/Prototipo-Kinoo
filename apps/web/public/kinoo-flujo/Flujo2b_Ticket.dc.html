@@ -114,7 +114,7 @@ a{text-decoration:none;color:inherit}
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":402,"height":844}}'>
 class Component extends DCLogic {
-// El mismo mazo que el cierre y Resumen: lastClosing() + eventos de ese mazo + closingLine(). Sin puente: textos neutros.
+// El mismo mazo que el cierre y Resumen: lastClosing() (conteos, mood, pósters) + closingLine(). Sin puente: textos neutros.
 renderVals() {
   if (this.__d) return this.__d;
   const KD = window.KinooDemo;
@@ -125,10 +125,9 @@ renderVals() {
     try {
       const c = KD.lastClosing();
       if (c && c.deck_id) {
-        const last = {}; let vibe = null;
-        KD.events().forEach((e) => { if (e.payload && e.payload.deck_id === c.deck_id) { if (e.payload.vibe) vibe = e.payload.vibe; if (e.movie_id && ['saved_intent', 'marked_seen', 'dismissed'].indexOf(e.type) >= 0) last[e.movie_id] = e.type; } });
-        const v = Object.keys(last).map((k) => last[k]);
-        d.want = v.filter((t) => t === 'saved_intent').length; d.seen = v.filter((t) => t === 'marked_seen').length; d.pass = v.filter((t) => t === 'dismissed').length;
+        // Conteos y mood salen del cierre real del mazo (el back): no se recalculan aquí.
+        const n = c.counts, vibe = c.vibe || null;
+        if (n) { d.want = n.want; d.seen = n.seen; d.pass = n.pass; }
         const m = vibe ? (KD.moods() || []).find((x) => x.key === vibe) : null;
         if (m) d.title = m.name;
         (c.saved_posters || []).slice(0, 3).forEach((x) => posters.push(x));

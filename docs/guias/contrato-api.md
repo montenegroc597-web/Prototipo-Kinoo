@@ -37,7 +37,7 @@ Respuesta:
 ```json
 { "accepted": 2, "results": [
   { "id": "…", "save": { "special_match": true, "message": "Esta es muy tú." } },
-  { "id": "…", "closing": { "deck_id": "…", "learned": "Hoy te inclinaste por historias íntimas y de luz cálida.", "top_atoms": ["intimidad", "calida"], "saved_posters": [{ "movie_id": "past-lives-2023", "title": "Vidas pasadas", "poster_path": null, "poster_url": null }], "ready_tonight": false } }
+  { "id": "…", "closing": { "deck_id": "…", "learned": "Hoy te inclinaste por historias íntimas y de luz cálida.", "top_atoms": ["intimidad", "calida"], "saved_posters": [{ "movie_id": "past-lives-2023", "title": "Vidas pasadas", "poster_path": null, "poster_url": null }], "ready_tonight": false, "counts": { "want": 1, "seen": 0, "pass": 9 }, "vibe": null } }
 ] }
 ```
 
@@ -153,7 +153,7 @@ Cartelera de Ver, ordenada por el motor. Parámetro opcional `vibe` (clave, alia
 Repisa de Ver: lo que ya vio y calificó, lo más reciente primero.
 
 ```json
-{ "shelf": [{ "id": "her-2013", "title": "Her", "poster_url": "…/posters/her-2013.jpg", "palette": ["#f4c6d7", "#8fa9c9", "#fff4e0"],
+{ "shelf": [{ "id": "her-2013", "title": "Her", "title_size": 38, "poster_url": "…/posters/her-2013.jpg", "palette": ["#f4c6d7", "#8fa9c9", "#fff4e0"],
   "when": "hace 3 semanas", "rating": "¡Me encantó!", "back": "Para volver a una de tus historias íntimas, ahora sin la sorpresa.",
   "meta": "2 h 06 · Romance · Ciencia ficción", "runtime_min": 126, "providers": [{ "key": "max", "name": "Max", "note": "en tu suscripción", "rent": false }] }] }
 ```

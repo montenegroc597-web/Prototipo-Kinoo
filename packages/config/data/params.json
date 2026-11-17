@@ -55,7 +55,7 @@
   "insight_min_signals": 6,
   "insight_trait_high": 0.3,
   "insight_trait_mid": 0.15,
-  "insight_trait_min": 0.05,
+  "insight_trait_min": 0.03,
   "insight_mood_high": 0.5,
   "insight_mood_mid": 0.25,
   "insight_title_max": 24,

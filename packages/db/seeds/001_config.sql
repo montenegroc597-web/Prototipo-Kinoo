@@ -147,7 +147,7 @@ insert into config (key, value) values ('closing_text_max', '80'::jsonb) on conf
 insert into config (key, value) values ('insight_min_signals', '6'::jsonb) on conflict (key) do update set value = excluded.value, updated_at = now();
 insert into config (key, value) values ('insight_trait_high', '0.3'::jsonb) on conflict (key) do update set value = excluded.value, updated_at = now();
 insert into config (key, value) values ('insight_trait_mid', '0.15'::jsonb) on conflict (key) do update set value = excluded.value, updated_at = now();
-insert into config (key, value) values ('insight_trait_min', '0.05'::jsonb) on conflict (key) do update set value = excluded.value, updated_at = now();
+insert into config (key, value) values ('insight_trait_min', '0.03'::jsonb) on conflict (key) do update set value = excluded.value, updated_at = now();
 insert into config (key, value) values ('insight_mood_high', '0.5'::jsonb) on conflict (key) do update set value = excluded.value, updated_at = now();
 insert into config (key, value) values ('insight_mood_mid', '0.25'::jsonb) on conflict (key) do update set value = excluded.value, updated_at = now();
 insert into config (key, value) values ('insight_title_max', '24'::jsonb) on conflict (key) do update set value = excluded.value, updated_at = now();

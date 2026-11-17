@@ -32,7 +32,8 @@ export type RewatchIntentEvent = Base<'rewatch_intent', Record<string, never>>;
 export type DeckCompletedEvent = Base<'deck_completed', { deck_id: string }>;
 export type WatchProposedEvent = Base<'watch_proposed', { filters?: WatchFilters }>;
 export type WatchSkippedEvent = Base<'watch_skipped', Record<string, never>>;
-export type WatchStartedEvent = Base<'watch_started', { provider: string }>;
+/** provider: la plataforma que eligió en la hoja de Ver. Si no eligió ninguna, va vacío (nunca se inventa). */
+export type WatchStartedEvent = Base<'watch_started', { provider?: string }>;
 export type WatchConfirmedEvent = Base<'watch_confirmed', { reaction: Reaction; rewatch?: boolean; vibe?: string | null; fell_asleep?: boolean }>;
 /** Estrella (super like, P7.3): "la quiero ver sí o sí". Se quita con un `undo` de este evento. */
 export type SuperLikedEvent = Base<'super_liked', { vibe?: string | null }>;

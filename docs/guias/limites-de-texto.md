@@ -45,7 +45,9 @@
 | Frase de lo aprendido | **80** (2 líneas) | `closing_text_max` | Con menos de 2 cartas guardadas, la frase es neutra |
 | Títulos en el abanico de cartas | Los del título (24) | — | Las cartas se superponen a propósito; el título de abajo queda tapado en parte |
 
-### Ver · propuesta para esta noche
+### Ver · propuesta para esta noche (pantalla anterior, solo `watchFilms`/`watchQueue`)
+
+La pantalla Ver de hoy es la B7c (tabla siguiente). Estos límites quedan para el puente viejo, que ya no usa ninguna pantalla.
 
 | Texto | Máximo | Clave | Notas |
 |---|---|---|---|
@@ -66,7 +68,7 @@
 | Películas por cartelera | **10** | `billboard_max_films` | Para que quepan los puntos |
 | Nombre del mood | **18** | `mood_name_max` | |
 | Descripción del mood | **28** | `mood_desc_max` | `tagline` en `vibes.json` |
-| Título en la repisa | **24** | `shelf_title_max` | |
+| Título en la repisa | **24** | `shelf_title_max` | `title_size` con la misma regla que la cartelera (38 / 30 px) para mostrarla en la carta de "ya vistas" |
 | Cuándo la vio | **16** | `shelf_when_max` | "hace 3 semanas" |
 | Calificación | **16** | `shelf_rating_max` | "¡Me encantó!" |
 | Razón para volver a verla | **90** | `shelf_back_max` | Plantillas `back_*` |
@@ -107,8 +109,9 @@ Medidos sobre el prototipo actual:
 
 ## Pendientes que encontró la revisión
 
-- **Porcentajes en pantallas sin conectar.** Resumen ("100 %"), Perfil ("82/100", "40 %") y Función ("12 % igual") todavía muestran números de ejemplo. El back ya entrega `insight()` con niveles en palabras (alto, medio, bajo) para reemplazarlos; falta conectarlo en el front.
+- **Porcentajes: resuelto (F11).** Resumen, Perfil y Ver ya muestran "lo que el mazo dice de ti" con `insight()` en palabras (mucho, bastante, un poco) y barras de 3 segmentos; Función ya no muestra "% igual". `npm run check:front` y las e2e (`ver-y-perfil.spec.ts`) verifican que ningún texto visible tenga cifras con %, "/100" ni "match". Descubrir ya no tiene el bloque "% contigo" de ejemplo, ni siquiera cuando el puente no carga (la e2e "sin el motor" verifica que no aparezca).
 - **Premisa con "…".** Muchas frases gancho tienen más de 44 caracteres y se ven cortadas. Lo ideal es que el juez escriba además una premisa corta (≤ 44); está en el documento de preguntas.
+- **Toast de Ver.** Es texto del front ("{título} queda primera en tu cartelera"): con el título más largo (24) llega a 60 caracteres justos. Si cambia la frase, revisar.
 
 ## Ejemplo con números
 

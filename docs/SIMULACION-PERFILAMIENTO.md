@@ -4,6 +4,8 @@
 
 *Simulación del 5 de noviembre de 2026 con el catálogo de 69 películas. Se repite con `npm run sim:camilo` y `npm run sim:perfiles`.*
 
+*Repetida el 17 de noviembre de 2026, después de F11 (estrella `super_liked`, cartelera y repisa de Ver): `npm run sim:perfiles` da **exactamente los mismos números** de la sección 2 (6 de 6 arquetipos, perfil confiable en 13 a 24 señales, 24 noches "Me encantó" y 6 "Estuvo bien"). Es lo esperado: los usuarios simulados no usan la estrella ni la repisa, y esos cambios no tocan los pesos de guardar, descartar ni calificar. Cuánto mueve la estrella el perfil está probado aparte, en `packages/engine/test`.*
+
 ---
 
 ## En una frase

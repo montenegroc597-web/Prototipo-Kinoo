@@ -7,6 +7,7 @@ import { type ActiveDeck, KinooEngine, cosine, explain, inHand, paletteFor, runt
 import {
   type BillboardDTO,
   type CardDTO,
+  type DeckClosingDTO,
   type EventInput,
   type InsightDTO,
   type KinooEvent,
@@ -28,7 +29,7 @@ const USER_ID = session?.user_id ?? 'anonimo';
 const KEY = `kinoo.demo.v2:${USER_ID}`;
 interface DemoState extends UserSnapshot {
   watching_movie_id?: string | null;
-  last_closing?: unknown;
+  last_closing?: DeckClosingDTO | null;
   /** Última película que salió a ver (para Abriendo y Gracias). */
   last_watch?: { movie_id: string; provider: string | null; rating: string | null; version: string | null } | null;
 }
@@ -272,10 +273,11 @@ const api = {
   },
   /** Frase del cierre del mazo, con el estándar de caracteres (la usa la pantalla de fin del mazo). */
   closingLine(): string | null {
-    const c = state.last_closing as { learned?: string } | undefined;
+    const c = state.last_closing;
     return c?.learned ? fitText(c.learned, P.closing_text_max) : null;
   },
-  lastClosing() {
+  /** Cierre del último mazo terminado: frase, pósters guardados, conteos (quieres ver / ya la viste / dejaste pasar) y mood del mazo. */
+  lastClosing(): DeckClosingDTO | null {
     return state.last_closing ?? null;
   },
 
@@ -301,9 +303,8 @@ const api = {
         e: `${Math.floor(m.year / 10) * 10}s`,
         du: m.runtime_min < 100 ? 0 : m.runtime_min < 140 ? 1 : 2,
         to: [toneKey(m)],
-        plat: (m.providers.CO ?? [])
-          .filter((p) => ['Netflix', 'Prime Video', 'Max', 'Apple TV'].includes(p))
-          .concat((m.providers.CO ?? []).length ? [] : ['Netflix']),
+        // Solo las plataformas reales de la película (sin inventar una si no tiene).
+        plat: (m.providers.CO ?? []).filter((p) => ['Netflix', 'Prime Video', 'Max', 'Apple TV'].includes(p)),
         why: '',
       };
     });
@@ -340,9 +341,7 @@ const api = {
       run((svc) => svc.postEvents([{ type: 'watch_skipped', movie_id: movieId, payload: {}, context: { surface: 'watch' } } as EventInput]));
     if (action === 'start') {
       run((svc) =>
-        svc.postEvents([
-          { type: 'watch_started', movie_id: movieId, payload: { provider: provider ?? 'Netflix' }, context: { surface: 'watch' } } as EventInput,
-        ]),
+        svc.postEvents([{ type: 'watch_started', movie_id: movieId, payload: provider ? { provider } : {}, context: { surface: 'watch' } } as EventInput]),
       );
       state.watching_movie_id = movieId;
       state.last_watch = { movie_id: movieId, provider: provider ?? null, rating: null, version: null };

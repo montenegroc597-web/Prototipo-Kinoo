@@ -55,7 +55,7 @@
       "route": "kinoo-flujo/Flujo2_Resumen.dc.html",
       "purpose": "Resumen del último mazo: conteos reales (quieres ver / ya la viste / dejaste pasar), frase del cierre y lo que aprendimos de ti con niveles en palabras.",
       "connected": true,
-      "bridge": ["lastClosing", "events", "closingLine", "insight", "billboard"],
+      "bridge": ["lastClosing", "closingLine", "insight", "billboard"],
       "texts": [
         { "text": "Título (insight.title)", "max": 24, "param": "insight_title_max" },
         { "text": "Frase del cierre", "max": 80, "param": "closing_text_max" },
@@ -72,7 +72,7 @@
       "route": "kinoo-flujo/Flujo2b_Ticket.dc.html",
       "purpose": "Recibo del último mazo: mood del mazo, pósters guardados, frase del cierre y conteos reales.",
       "connected": true,
-      "bridge": ["lastClosing", "events", "moods", "closingLine"],
+      "bridge": ["lastClosing", "moods", "closingLine"],
       "texts": [
         { "text": "Nombre del mood", "max": 18, "param": "mood_name_max" },
         { "text": "Frase del cierre", "max": 80, "param": "closing_text_max" }

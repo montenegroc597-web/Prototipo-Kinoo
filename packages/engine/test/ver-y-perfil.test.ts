@@ -137,6 +137,7 @@ describe('cartelera y repisa de Ver', () => {
     expect(shelf[0]!.meta).toMatch(/h/);
     expect(shelf[0]!.providers.map((p) => p.key)).toEqual(['netflix']);
     expect(shelf[0]!.back.length).toBeGreaterThan(0);
+    expect(shelf[0]!.title_size).toBe(engine.cfg.params.watch_title_size_short);
 
     const back = engine.model('u', [...rated, ev('rewatch_intent', {}, { movie_id: 'amor1' })]);
     expect(engine.billboard(back, NOW, null).films.map((f) => f.id)).toContain('amor1');
@@ -248,6 +249,22 @@ describe('cartelera y repisa de Ver', () => {
       expect(s.rating.length).toBeLessThanOrEqual(P.shelf_rating_max);
       expect(s.back.length).toBeLessThanOrEqual(P.shelf_back_max);
       expect(hasNumbers(s.back), s.back).toBe(false);
+    }
+  });
+});
+
+describe('coherencia entre el cierre del mazo y lo que el mazo dice de ti', () => {
+  // Si el cierre ya concluye un gusto ("Hoy te inclinaste por…"), Resumen, Perfil y Ver no pueden decir "desliza unas cartas más".
+  it('con el catálogo real, tras un primer mazo de 5 guardadas y 5 descartadas, si el cierre opina, insight también', () => {
+    const real = new KinooEngine(defaultConfig, (pilot as unknown as { movies: Movie[] }).movies);
+    for (let k = 0; k < 6; k++) {
+      const m = real.model('u', []);
+      const d = real.openDeck(m, { deck_id: `d${k}`, now: NOW });
+      // Patrones distintos de guardar y descartar.
+      d.cards.forEach((c, i) => real.apply(m, ((i + k) % 2 === 0 ? save : dismiss)(c.movie_id)));
+      const close = real.close(d, m);
+      expect(close.counts.want + close.counts.pass).toBe(d.cards.length);
+      if (close.top_atoms.length) expect(real.insight(m).ready, `mazo ${k}: ${close.learned}`).toBe(true);
     }
   });
 });

@@ -57,6 +57,10 @@ export interface DeckClosingDTO {
   top_atoms: string[];
   saved_posters: Array<{ movie_id: string; title: string; poster_path: string | null; poster_url: string | null }>;
   ready_tonight: boolean;
+  /** Conteos del mazo, como los muestra el cierre: quieres ver (guardadas), ya la viste, dejaste pasar. Son conteos, no afinidad. */
+  counts: { want: number; seen: number; pass: number };
+  /** Mood con el que se abrió el mazo (clave de vibes.json) o null si fue sin mood. */
+  vibe: string | null;
 }
 
 export interface SaveResultDTO {
@@ -154,6 +158,8 @@ export interface BillboardDTO {
 export interface ShelfItemDTO {
   id: string;
   title: string;
+  /** Tamaño del título en px cuando se muestra en la carta de Ver (misma regla que la cartelera). */
+  title_size: number;
   poster_url: string | null;
   palette: [string, string, string];
   /** "hace 3 semanas" */

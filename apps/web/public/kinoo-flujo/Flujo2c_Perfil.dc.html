@@ -63,7 +63,7 @@ a{text-decoration:none;color:inherit}
         </svg>
         <div style="position:absolute;left:70px;top:118px;width:180px;display:flex;flex-direction:column;align-items:center;gap:4px;white-space:nowrap;overflow:hidden">
           <p style="margin:0;font-weight:700;font-size:11px;line-height:normal;color:#b6a48c">ARQUETIPO</p>
-          <p data-k="perfil-archetype" style="margin:0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:38px;line-height:44px;text-transform:uppercase;color:#f5e8ce">{{archetype}}</p>
+          <p data-k="perfil-archetype" style="margin:0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:{{archetypeSize}}px;line-height:44px;text-transform:uppercase;color:#f5e8ce">{{archetype}}</p>
           <p style="margin:0;font-style:italic;font-weight:600;font-size:15px;line-height:20px;color:#f5e8ce">en palabras, sin cifras</p>
         </div>
       </div>
@@ -114,6 +114,8 @@ renderVals() {
     title: ready ? ins.title : 'Tu retrato',
     body: ready ? ins.body : ((ins && ins.empty_text) || 'Juega unos mazos en Descubrir y aquí te contamos qué te atrapa.'),
     archetype: ready && ins.archetype && ins.archetype.name ? ins.archetype.name : 'Por descubrir',
+    // El hueco del anillo mide 180 px: a 38 px ningún nombre cabía ("El Explorador" mide 216). 32 px hasta 12 letras, 30 px el resto.
+    archetypeSize: String(ready && ins.archetype && ins.archetype.name ? ins.archetype.name : 'Por descubrir').length <= 12 ? 32 : 30,
     rows, noRows: rows.length === 0,
     emptyText: (ins && ins.empty_text) || 'Todavía no hay suficientes elecciones para contarte esto.',
     disclaimer: ins ? 'No es una evaluación psicológica: solo resume tus elecciones de películas.' : 'Sin conexión con tus datos: textos de ejemplo. No es una evaluación psicológica.',

@@ -51,7 +51,7 @@ a{text-decoration:none;color:inherit}
       <svg style="position:absolute;left:130px;top:15px" width="248" height="248" viewBox="0 0 248 248" aria-hidden="true"><circle cx="124" cy="124" r="124" fill="#4d1a19"/></svg>
       <div style="position:relative;width:152px;display:flex;flex-direction:column;gap:16px;overflow:hidden">
         <p style="margin:0;font-weight:700;font-size:11px;line-height:normal;color:#ee7d35;white-space:nowrap">DIARIO DE UNA SESIÓN</p>
-        <p style="margin:0;font-style:italic;font-weight:600;font-size:26px;line-height:1.15;color:#f4e7d0">Hay amores que siguen en los créditos.</p>
+        <p style="margin:0;font-style:italic;font-weight:600;font-size:26px;line-height:1.15;color:#f4e7d0">Así se jugó tu mazo.</p>
         <div style="width:43px;height:2px;background:#ee7d35"></div>
       </div>
       <div style="position:absolute;left:178px;top:38px;width:157px;height:225px;overflow:hidden">
@@ -135,7 +135,7 @@ a{text-decoration:none;color:inherit}
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":402,"height":844}}'>
 class Component extends DCLogic {
-// Datos del último mazo (lastClosing + eventos de ese mazo) y "lo que aprendimos de ti" (insight). Sin números de afinidad.
+// Datos del último mazo (lastClosing: conteos y pósters del cierre real) y "lo que aprendimos de ti" (insight). Sin números de afinidad.
 _data() {
   if (this.__d) return this.__d;
   const KD = window.KinooDemo;
@@ -144,10 +144,9 @@ _data() {
     try {
       const c = KD.lastClosing();
       if (c && c.deck_id) {
-        const last = {};
-        KD.events().forEach((e) => { if (e.movie_id && e.payload && e.payload.deck_id === c.deck_id && ['saved_intent', 'marked_seen', 'dismissed'].indexOf(e.type) >= 0) last[e.movie_id] = e.type; });
-        const v = Object.keys(last).map((k) => last[k]);
-        d.want = v.filter((t) => t === 'saved_intent').length; d.seen = v.filter((t) => t === 'marked_seen').length; d.pass = v.filter((t) => t === 'dismissed').length; d.total = v.length;
+        // Los conteos vienen del cierre real del mazo (el back): no se recalculan aquí.
+        const n = c.counts;
+        if (n) { d.want = n.want; d.seen = n.seen; d.pass = n.pass; d.total = n.want + n.seen + n.pass; }
         const p = (c.saved_posters || []).find((x) => x.poster_url); d.poster = p ? p.poster_url : '';
       }
       d.line = KD.closingLine() || '';
