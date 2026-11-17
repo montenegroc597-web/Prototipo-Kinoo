@@ -54,7 +54,7 @@ supabase db push --include-seed
 ```
 
 ```bash
-supabase functions deploy events && supabase functions deploy deck && supabase functions deploy watch && supabase functions deploy onboarding
+supabase functions deploy events && supabase functions deploy deck && supabase functions deploy watch && supabase functions deploy onboarding && supabase functions deploy profile
 ```
 
 4. Secretos de las funciones (opcionales): `KINOO_ALLOWED_ORIGINS` y `KINOO_ASSET_BASE_URL`. Por defecto, la URL de GitHub Pages.

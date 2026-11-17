@@ -68,6 +68,106 @@
     {
       "key": "watch_empty_platforms",
       "text": "Nada de tu mano está en tus plataformas. Te armamos un mazo solo con lo que puedes ver."
+    },
+    {
+      "key": "watch_empty_hand",
+      "text": "Todavía no guardas nada. Abre un sobre en Descubrir y arma tu mano."
+    },
+    {
+      "key": "billboard_empty_mood",
+      "text": "Nada de tu mano encaja con ese mood. Prueba con otro o abre un sobre."
+    },
+    {
+      "key": "mood_all_name",
+      "text": "Todas"
+    },
+    {
+      "key": "mood_all_desc",
+      "text": "Un poco de todo"
+    },
+    {
+      "key": "provider_mine",
+      "text": "en tu suscripción"
+    },
+    {
+      "key": "provider_other",
+      "text": "no está en tus planes"
+    },
+    {
+      "key": "provider_unknown",
+      "text": "con suscripción"
+    },
+    {
+      "key": "insight_kicker",
+      "text": "lo que aprendimos de ti"
+    },
+    {
+      "key": "insight_title_explorador",
+      "text": "Eres todo un explorador"
+    },
+    {
+      "key": "insight_title_observador",
+      "text": "Eres todo un observador"
+    },
+    {
+      "key": "insight_title_romantico",
+      "text": "Eres todo un romántico"
+    },
+    {
+      "key": "insight_title_nocturno",
+      "text": "Eres un alma nocturna"
+    },
+    {
+      "key": "insight_title_luminoso",
+      "text": "Eres pura luz"
+    },
+    {
+      "key": "insight_body",
+      "text": "Te atrapan las historias {a} y {b}."
+    },
+    {
+      "key": "insight_body_single",
+      "text": "Te atrapan las historias {a}."
+    },
+    {
+      "key": "insight_body_mood",
+      "text": "Te atrapan las historias {a} y {b}, sobre todo para {mood}."
+    },
+    {
+      "key": "insight_empty",
+      "text": "Desliza unas cartas más y te contamos lo que el mazo dice de ti."
+    },
+    {
+      "key": "rating_loved_rewatch",
+      "text": "¡Obra maestra!"
+    },
+    {
+      "key": "rating_loved",
+      "text": "¡Me encantó!"
+    },
+    {
+      "key": "rating_liked",
+      "text": "Estuvo bien"
+    },
+    {
+      "key": "rating_not_for_me",
+      "text": "No era para mí"
+    },
+    {
+      "key": "rating_asleep",
+      "text": "Me dormí"
+    },
+    {
+      "key": "back_loved",
+      "text": "Para volver a una de tus historias {a}, ahora sin la sorpresa."
+    },
+    {
+      "key": "back_liked",
+      "text": "Una segunda vez puede sumarle: es de tus historias {a}."
+    },
+    {
+      "key": "back_not_for_me",
+      "text": "Esa vez no fue para ti; quizás en otro momento te sorprenda."
     }
   ]
 }

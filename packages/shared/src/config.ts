@@ -13,6 +13,8 @@ export interface VibeDef {
   name: string;
   definition: string;
   aliases?: string[];
+  /** Descripción corta para el selector de mood de Ver (máximo mood_desc_max). Si falta, se recorta la definición. */
+  tagline?: string;
   active: boolean;
   version: number;
   recipe: PartialAtomVector;
@@ -85,6 +87,38 @@ export interface Params {
   watch_meta_max: number;
   watch_why_max: number;
   closing_text_max: number;
+  /** "Lo que el mazo dice de ti": mínimo de señales para opinar y umbrales de los niveles alto / medio / bajo. */
+  insight_min_signals: number;
+  insight_trait_high: number;
+  insight_trait_mid: number;
+  insight_trait_min: number;
+  insight_mood_high: number;
+  insight_mood_mid: number;
+  insight_title_max: number;
+  insight_kicker_max: number;
+  insight_body_max: number;
+  insight_trait_max: number;
+  insight_empty_max: number;
+  /** Selector de mood de Ver. */
+  mood_name_max: number;
+  mood_desc_max: number;
+  /** Bono en la cartelera de Ver para una película con estrella (super_liked). */
+  watch_star_bonus: number;
+  watch_provider_note_max: number;
+  /** Cartelera de Ver: máximo de películas, largo del aviso y tamaño del título (px) según su largo. */
+  billboard_max_films: number;
+  billboard_notice_max: number;
+  watch_title_size_short_max: number;
+  watch_title_size_short: number;
+  watch_title_size_long: number;
+  /** Repisa de Ver (ya vistas y calificadas). */
+  shelf_when_max: number;
+  shelf_title_max: number;
+  shelf_rating_max: number;
+  shelf_back_max: number;
+  /** Colores de la carta sin póster: un trío por átomo estético; "default" si ninguno llega a palette_min_atom. */
+  poster_palettes: Record<string, [string, string, string]>;
+  palette_min_atom: number;
   watch_fresh_hours: number;
   watch_fresh_bonus: number;
   watch_special_bonus: number;

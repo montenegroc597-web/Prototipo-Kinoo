@@ -1,10 +1,22 @@
 import { defaultConfig } from '@kinoo/config';
 import { KinooService, type UserSnapshot } from '@kinoo/core';
-import { type ActiveDeck, KinooEngine, cosine, explain, toCardDTO, topAtoms } from '@kinoo/engine';
+import { type ActiveDeck, KinooEngine, cosine, explain, inHand, paletteFor, runtimeText, toCardDTO } from '@kinoo/engine';
 // Modo demo de Kinoo: el motor v2 corre en el navegador. Lo cargan las pantallas del prototipo
 // (../_kinoo/kinoo-demo.js) y queda en window.KinooDemo. Si este archivo no carga, las pantallas
 // usan sus datos de ejemplo de siempre.
-import { type CardDTO, type EventInput, type KinooEvent, type Movie, fitText, posterUrl } from '@kinoo/shared';
+import {
+  type BillboardDTO,
+  type CardDTO,
+  type DeckClosingDTO,
+  type EventInput,
+  type InsightDTO,
+  type KinooEvent,
+  type MoodDTO,
+  type Movie,
+  type ShelfItemDTO,
+  fitText,
+  posterUrl,
+} from '@kinoo/shared';
 import pilot from '../../../packages/catalog/data/movies.pilot.json';
 import type { KinooAdapter } from './adapter';
 import { getSession, loginUrl, logout } from './session';
@@ -17,7 +29,9 @@ const USER_ID = session?.user_id ?? 'anonimo';
 const KEY = `kinoo.demo.v2:${USER_ID}`;
 interface DemoState extends UserSnapshot {
   watching_movie_id?: string | null;
-  last_closing?: unknown;
+  last_closing?: DeckClosingDTO | null;
+  /** Última película que salió a ver (para Abriendo y Gracias). */
+  last_watch?: { movie_id: string; provider: string | null; rating: string | null; version: string | null } | null;
 }
 
 const catalog = pilot as unknown as {
@@ -77,14 +91,8 @@ function run<T>(fn: (svc: KinooService) => T): T {
 }
 
 const vibeOf = (k: string | null | undefined) => (k && k !== 'todas' ? engine.cfg.vibeKey(k) : null);
-const fmtDur = (min: number) => `${Math.floor(min / 60)} h ${min % 60}`;
+const fmtDur = runtimeText;
 const movieOf = (id: string) => engine.catalog.byId.get(id)!;
-const PALS = [
-  ['#2c3b52', '#0f1320', '#f2b544'],
-  ['#6b2a6e', '#1d0f24', '#f2b544'],
-  ['#4a4f52', '#16191b', '#d9c7a8'],
-  ['#d9772e', '#4a1a08', '#f4e7d0'],
-];
 
 // El prototipo tiene cuatro tonos con ilustración propia; se elige el más cercano según los átomos.
 function toneKey(m: Movie): 'melancólico' | 'nostálgico' | 'oscuro' | 'cálido' {
@@ -265,10 +273,11 @@ const api = {
   },
   /** Frase del cierre del mazo, con el estándar de caracteres (la usa la pantalla de fin del mazo). */
   closingLine(): string | null {
-    const c = state.last_closing as { learned?: string } | undefined;
+    const c = state.last_closing;
     return c?.learned ? fitText(c.learned, P.closing_text_max) : null;
   },
-  lastClosing() {
+  /** Cierre del último mazo terminado: frase, pósters guardados, conteos (quieres ver / ya la viste / dejaste pasar) y mood del mazo. */
+  lastClosing(): DeckClosingDTO | null {
     return state.last_closing ?? null;
   },
 
@@ -276,10 +285,10 @@ const api = {
   /** Películas de la mano en el formato FILMS del prototipo (FlujoV1_Feed). null si la mano está vacía. */
   watchFilms(): Record<string, unknown> | null {
     const model = engine.model(state.user_id, state.events);
-    const hand = [...model.states.values()].filter((s) => s.state === 'saved' || s.state === 'rewatch');
+    const hand = [...model.states.values()].filter((s) => inHand(s) && engine.catalog.byId.has(s.movie_id));
     if (!hand.length) return null;
     const out: Record<string, unknown> = {};
-    hand.forEach((s, i) => {
+    hand.forEach((s) => {
       const im = movieOf(s.movie_id);
       const m = im.movie;
       const img = posterUrl(m.poster_path, { assetBaseUrl: ASSET_BASE }) ?? undefined;
@@ -288,15 +297,14 @@ const api = {
         tsize: watchTitleSize(fitText(m.title, P.watch_title_max)),
         dur: fmtDur(m.runtime_min),
         dir: m.directors.length > 1 ? `${m.directors[0]} y otros` : (m.directors[0] ?? ''),
-        ...(img ? { img } : { pal: PALS[i % PALS.length] }),
+        ...(img ? { img } : { pal: paletteFor(im, engine.cfg) }),
         match: 0,
         g: m.genres,
         e: `${Math.floor(m.year / 10) * 10}s`,
         du: m.runtime_min < 100 ? 0 : m.runtime_min < 140 ? 1 : 2,
         to: [toneKey(m)],
-        plat: (m.providers.CO ?? [])
-          .filter((p) => ['Netflix', 'Prime Video', 'Max', 'Apple TV'].includes(p))
-          .concat((m.providers.CO ?? []).length ? [] : ['Netflix']),
+        // Solo las plataformas reales de la película (sin inventar una si no tiene).
+        plat: (m.providers.CO ?? []).filter((p) => ['Netflix', 'Prime Video', 'Max', 'Apple TV'].includes(p)),
         why: '',
       };
     });
@@ -333,28 +341,81 @@ const api = {
       run((svc) => svc.postEvents([{ type: 'watch_skipped', movie_id: movieId, payload: {}, context: { surface: 'watch' } } as EventInput]));
     if (action === 'start') {
       run((svc) =>
-        svc.postEvents([
-          { type: 'watch_started', movie_id: movieId, payload: { provider: provider ?? 'Netflix' }, context: { surface: 'watch' } } as EventInput,
-        ]),
+        svc.postEvents([{ type: 'watch_started', movie_id: movieId, payload: provider ? { provider } : {}, context: { surface: 'watch' } } as EventInput]),
       );
       state.watching_movie_id = movieId;
+      state.last_watch = { movie_id: movieId, provider: provider ?? null, rating: null, version: null };
       save();
     }
   },
-  /** Calificar (FlujoV4): niveles del prototipo 0 a 4 → reacción del motor. */
-  confirmWatch(level: number) {
+  /**
+   * Calificar (FlujoV4): niveles del prototipo 0 a 4 → reacción del motor. 0 = "Me dormí" (cuenta como not_for_me, ver P9.1).
+   * version: la frase de "¿Qué versión de ti salió?" (opcional). Por ahora solo se guarda para la pantalla de Gracias (P9.2 sin decidir).
+   */
+  confirmWatch(level: number, version?: string | null) {
     const id = state.watching_movie_id;
     if (!id) return false;
     const reaction = level >= 3 ? 'loved' : level === 2 ? 'liked' : 'not_for_me';
     run((svc) =>
-      svc.postEvents([{ type: 'watch_confirmed', movie_id: id, payload: { reaction, rewatch: level === 4 }, context: { surface: 'watch' } } as EventInput]),
+      svc.postEvents([
+        {
+          type: 'watch_confirmed',
+          movie_id: id,
+          payload: { reaction, rewatch: level === 4, ...(level <= 0 ? { fell_asleep: true } : {}) },
+          context: { surface: 'watch' },
+        } as EventInput,
+      ]),
     );
     state.watching_movie_id = null;
+    const rating = run((svc) => svc.shelf()).find((x) => x.id === id)?.rating ?? null;
+    state.last_watch = { movie_id: id, provider: state.last_watch?.movie_id === id ? state.last_watch.provider : null, rating, version: version ?? null };
     save();
     return true;
   },
+  /** Lo último que salió a ver: plataforma elegida y, si ya calificó, su calificación en palabras. null si nunca salió a ver nada. */
+  lastWatch(): { movie_id: string; title: string; provider: string | null; rating: string | null; version: string | null } | null {
+    const w = state.last_watch;
+    if (!w || !engine.catalog.byId.has(w.movie_id)) return null;
+    return { ...w, title: fitText(movieOf(w.movie_id).movie.title, P.watch_title_max) };
+  },
+
+  /**
+   * Cartelera de Ver para un mood ("todas" o null = sin mood), en el orden del motor. Lo calificado ya no está: pasó a la repisa.
+   * Pasar de carta no es una señal: solo un botón "otra" explícito debería llamar onWatch(id, 'skip').
+   */
+  billboard(moodKey: string | null): BillboardDTO {
+    return run((svc) => svc.billboard(moodKey));
+  },
+  /** Selector de mood de Ver: "todas" primero. */
+  moods(): MoodDTO[] {
+    return run((svc) => svc.moods());
+  },
+  /** Repisa de Ver: lo que ya vio y calificó, lo más reciente primero. */
+  shelf(): ShelfItemDTO[] {
+    return run((svc) => svc.shelf());
+  },
+  /** Estrella (super like): on = true guarda un super_liked; on = false deshace esa estrella con un undo. Devuelve cómo quedó. */
+  star(movieId: string, on: boolean): { starred: boolean } {
+    if (!engine.catalog.byId.has(movieId)) return { starred: false };
+    return run((svc) => {
+      const st = svc.userModel.states.get(movieId);
+      if (on && !st?.starred) svc.postEvents([{ type: 'super_liked', movie_id: movieId, payload: {}, context: { surface: 'watch' } } as EventInput]);
+      if (!on && st?.starred && st.star_event_id)
+        svc.postEvents([{ type: 'undo', payload: { undone_event_id: st.star_event_id }, context: { surface: 'watch' } } as EventInput]);
+      return { starred: !!svc.userModel.states.get(movieId)?.starred };
+    });
+  },
+  /** "Volver a verla" desde la repisa: rewatch_intent la devuelve a la cartelera. */
+  rewatch(movieId: string): void {
+    if (!engine.catalog.byId.has(movieId)) return;
+    run((svc) => svc.postEvents([{ type: 'rewatch_intent', movie_id: movieId, payload: {}, context: { surface: 'watch' } } as EventInput]));
+  },
 
   // ---- Utilidades ----
+  /** "Lo que el mazo dice de ti" (Resumen, Perfil y Ver), en palabras. */
+  insight(): InsightDTO {
+    return run((svc) => svc.insight());
+  },
   profile() {
     return run((svc) => svc.profile());
   },
@@ -362,7 +423,7 @@ const api = {
     return state.events;
   },
   reset() {
-    state = { user_id: USER_ID, events: [], active_deck: null };
+    state = { user_id: USER_ID, events: [], active_deck: null, last_watch: null };
     pinned = null;
     cache = null;
     save();
@@ -384,6 +445,11 @@ const api = {
     openDeck: async (o) => run((svc) => svc.openDeck(o)),
     watchProposal: async (f) => run((svc) => svc.watchProposal(f)),
     onboarding: async (b) => run((svc) => svc.onboarding(b as never)),
+    profile: async () => run((svc) => svc.profile()),
+    insight: async () => run((svc) => svc.insight()),
+    moods: async () => run((svc) => svc.moods()),
+    billboard: async (v) => run((svc) => svc.billboard(v)),
+    shelf: async () => run((svc) => svc.shelf()),
   } as KinooAdapter,
 };
 

@@ -105,6 +105,13 @@
       "signal": 0,
       "eta": 0,
       "reason": "Señal de momento, no de gusto"
+    },
+    {
+      "action": "super_liked",
+      "variant": "default",
+      "signal": 0.8,
+      "eta": 0.12,
+      "reason": "Estrella: la quiere ver sí o sí (P7.3). Decisión tomada sin Camilo"
     }
   ]
 }

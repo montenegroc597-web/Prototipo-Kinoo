@@ -38,7 +38,7 @@ El motor convierte cada acción en un empujón al perfil. **Señal** (w) es la d
 | Elección | Mood / Hilo / Creadores | `deck_opened` | — | — | ⚠️ solo mood (P6) |
 | En función | Momentos clave | — | — | — | ❌ sin evento (P8) |
 | Versión | ¿Qué versión de ti salió? | — | — | — | ❌ sin evento (P9) |
-| Super like | ↑ en Ver | — | — | — | ❌ sin evento (P7.3) |
+| Super like | ★ en Ver | `super_liked` | +0,8 | 0,12 | ✅ en el back y en el puente (`KinooDemo.star`), opción ★ de P7.3 |
 
 **Lo más urgente** (decidir antes de la próxima prueba con usuarios): P2.1, P3.3, P5.1, P7.3, P8.1, P9.1, P9.4 y P10.1.
 
@@ -307,6 +307,7 @@ Es la mejor oportunidad para entrenar el algoritmo sin películas: en 10 segundo
   - a) "La quiero ver sí o sí": señal fuerte (+0,8, η 0,12) y la película queda primera en Ver. ★
   - b) Solo una lista de favoritos, sin señal.
 - Qué cambia en el back: evento `super_liked` y una fila en `action_weights.json`.
+- **Hecho (F11):** se implementó la opción a). Quitar la estrella es un `undo` del evento. El bono en la cartelera es `watch_star_bonus` (0,3).
 
 **P7.4 · "Lista" / "otro momento": ¿qué es cada una?**
 - Hoy: el cierre de Ver muestra "en tu lista" y "otro momento".

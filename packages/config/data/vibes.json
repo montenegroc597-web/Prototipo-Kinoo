@@ -5,6 +5,7 @@
       "key": "llorar_bonito",
       "name": "Llorar bonito",
       "definition": "Historias que te conmueven sin dejarte destruido.",
+      "tagline": "Historias para llorar",
       "aliases": [
         "sufrir",
         "sentir"
@@ -25,6 +26,7 @@
       "key": "apagar_cerebro",
       "name": "Apagar el cerebro",
       "definition": "Diversión directa: nada que descifrar, todo que disfrutar.",
+      "tagline": "Desconectar sin esfuerzo",
       "aliases": [
         "apagar"
       ],
@@ -45,6 +47,7 @@
       "key": "escapar",
       "name": "Escapar un rato",
       "definition": "Otro mundo, otra escala: para salir de tu día por un par de horas.",
+      "tagline": "Irte a otro mundo",
       "aliases": [],
       "active": true,
       "version": 1,
@@ -62,6 +65,7 @@
       "key": "salir_pensando",
       "name": "Salir pensando",
       "definition": "Películas que siguen trabajando en tu cabeza después de los créditos.",
+      "tagline": "Para quedarte rumiando",
       "aliases": [
         "pensando"
       ],
@@ -81,6 +85,7 @@
       "key": "solo_reirme",
       "name": "Solo reírme",
       "definition": "Que lo principal sea reírte, sin sustos ni golpes bajos.",
+      "tagline": "Reírte de verdad",
       "aliases": [
         "reir"
       ],
@@ -101,6 +106,7 @@
       "key": "algo_raro",
       "name": "Algo raro",
       "definition": "Lo extraño, lo surreal y lo que no se parece a nada.",
+      "tagline": "Lo que no viste venir",
       "aliases": [
         "raro"
       ],
@@ -119,6 +125,7 @@
       "key": "cine_del_bueno",
       "name": "Cine del bueno",
       "definition": "Lo mejor valorado que encaja contigo, sin importar el género.",
+      "tagline": "Clásicos que se sienten",
       "aliases": [
         "bueno"
       ],

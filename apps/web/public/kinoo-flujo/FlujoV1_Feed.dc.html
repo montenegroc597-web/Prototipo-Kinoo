@@ -2,12 +2,18 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<title>Ver · Tu mazo</title>
+<title>Ver · Tu cartelera</title>
 <script src="../_prototipos/dc-runtime.js"></script>
 <link rel="stylesheet" href="../_kinoo/kinoo-shell.css">
 <script src="../_kinoo/kinoo-demo.js"></script>
 </head>
 <body>
+<!--
+  Ver (diseño B7c): cartelera por mood + ticket "Verla ahora" + repisa de ya vistas + "lo que aprendimos de ti".
+  Especificación: docs/auditoria/especificacion-ver-b7c.md. Contrato de la pantalla: apps/web/front.manifest.json.
+  Todo dato sale del puente window.KinooDemo (moods, billboard, shelf, insight, star, rewatch, onWatch).
+  Si el puente no carga, se usan los datos de ejemplo de _sample() (sin pósters, sin porcentajes ni "match").
+-->
 <x-dc>
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,390 +27,386 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;margin:0;cu
 @keyframes kin{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 @keyframes kfade{from{opacity:0}to{opacity:1}}
 @keyframes kpop{0%{transform:scale(1)}35%{transform:scale(1.06)}100%{transform:scale(1)}}
-@keyframes kbump{0%{transform:rotate(4deg) scale(1)}35%{transform:rotate(-8deg) scale(1.3)}100%{transform:rotate(4deg) scale(1)}}
-@keyframes kspin{to{transform:rotate(1turn)}}
-@keyframes kfill{from{width:0}to{width:100%}}
-@keyframes kshake{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
 @keyframes kdeal{from{transform:translateY(-120px) scale(.75) rotate(-8deg);opacity:0}to{transform:none;opacity:1}}
-@keyframes kwig{0%,80%,100%{rotate:0deg}85%{rotate:-3deg}90%{rotate:3deg}95%{rotate:-2deg}}
-@keyframes kpulse{50%{transform:scale(1.12)}}
-@keyframes kblink{50%{opacity:.25}}
 @keyframes kchev{50%{transform:translateY(4px)}}
-@keyframes kmodal{from{transform:translateY(40px) scale(.92);opacity:0}to{transform:none;opacity:1}}
-@keyframes knotif{from{transform:translateY(-140px) scale(.9);opacity:0}to{transform:none;opacity:1}}
-@keyframes kwave{0%,100%{height:4px}50%{height:18px}}
 .kin{animation:kin .45s cubic-bezier(.2,.9,.25,1.05) both}
 .kfade{animation:kfade .3s ease both}
 .kpop{animation:kpop .4s ease-out}
-.kbump{animation:kbump .6s cubic-bezier(.3,1.7,.5,1)}
-.kspin{animation:kspin 40s linear infinite}
-.kfill{animation:kfill 2200ms linear both}
-.kshake{animation:kshake .4s}
 .kdeal{animation:kdeal .55s cubic-bezier(.2,.9,.25,1.1) both}
-.kwig{animation:kwig 1.8s ease-in-out infinite}
-.kpulse{animation:kpulse 1.4s ease-in-out infinite}
-.kblink{animation:kblink 1.2s infinite}
 .kchev{animation:kchev 1.6s ease-in-out infinite}
-.kmodal{animation:kmodal .5s cubic-bezier(.2,.9,.25,1.15) both}
-.knotif{animation:knotif .7s .4s cubic-bezier(.2,.9,.25,1.15) both}
-.kwave{animation:kwave .7s ease-in-out infinite}
+@media (prefers-reduced-motion: reduce){.kdeal,.kchev,.kpop,.kin{animation:none!important}}
 </style>
 </helmet>
-<div style="position:relative;width:402px;height:844px;overflow:hidden;background:#17120f;font-family:'Figtree',sans-serif;color:#f4e7d0;user-select:none">
-  <div aria-hidden="true" style="position:absolute;width:760px;height:760px;left:-179px;top:-50px;border-radius:50%;background:#1e1713;pointer-events:none"></div>
-  <div aria-hidden="true" style="position:absolute;width:540px;height:540px;left:-69px;top:60px;border-radius:50%;background:rgba(34,26,21,.7);pointer-events:none"></div>
-  <div style="position:absolute;left:6px;top:0;width:390px;height:844px">
-    <p style="position:absolute;left:20px;top:18px;margin:0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:32px;line-height:32px;letter-spacing:.3px;color:#f4e7d0">Kinoo</p>
-    
-    <a aria-label="Tu perfil" style="position:absolute;left:326px;top:14px;width:44px;height:44px;box-sizing:border-box;border-radius:22px;background:#221a15;border:2px solid #ce7e01;display:flex;align-items:center;justify-content:center"><img src="_blob/af0ff6915cfda5a557cef50b14e485d2.svg" alt="" width="22" height="22"></a>
-    <p style="position:absolute;left:20px;top:66px;margin:0;font-family:'Figtree',sans-serif;font-style:italic;font-weight:600;font-size:18px;line-height:22px;color:#f2b544">¿qué mood traes?</p>
-    <a style="position:absolute;left:286px;top:63px;height:30px;box-sizing:border-box;padding:0 12px 0 10px;border-radius:15px;background:#221a15;border:1px solid #3a2c22;display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:#f4e7d0"><img src="_blob/2729392101c1b3e53f9658f549f96ef1.svg" alt="" width="14" height="14">Filtros</a>
-    <div style="position:absolute;left:-14px;top:92px;width:418px;height:160px;transform:rotate(-1.6deg);background:#1a1411;border-top:2px solid #5e0c10;border-bottom:2px solid #5e0c10;box-shadow:0 10px 24px rgba(0,0,0,.45)">
-      <div aria-hidden="true" style="position:absolute;left:0;right:0;top:7px;height:7px;border-radius:2px;opacity:.95;background:repeating-linear-gradient(90deg,transparent 0 6px,#f4e7d0 6px 22px,transparent 22px 30px)"></div>
-      <div aria-hidden="true" style="position:absolute;left:0;right:0;bottom:7px;height:7px;border-radius:2px;opacity:.95;background:repeating-linear-gradient(90deg,transparent 0 6px,#f4e7d0 6px 22px,transparent 22px 30px)"></div>
-      <div class="kscroll" style="position:absolute;left:0;right:0;top:20px;bottom:18px;display:flex;overflow-x:auto;overflow-y:hidden;padding-left:22px">
-        <sc-for list="{{moods}}" as="m" hint-placeholder-count="5">
-          <button onClick="{{m.pick}}" aria-pressed="{{m.on}}" style="flex:none;width:108px;display:flex;flex-direction:column;align-items:center;gap:7px;padding-top:4px">
-            <span class="{{m.cls}}" style="width:92px;height:70px;box-sizing:border-box;border-radius:6px;background:#221a15;display:flex;align-items:center;justify-content:center;border:3px solid {{m.bd}};overflow:hidden;box-shadow:{{m.sh}};transform:scale({{m.sc}});transition:transform .25s cubic-bezier(.3,1.6,.5,1),box-shadow .25s,border-color .25s"><img src="{{m.svg}}" alt="" width="84" height="64"></span>
-            <span style="font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:13px;line-height:13.3px;text-transform:uppercase;color:{{m.fg}};text-align:center;letter-spacing:.3px;max-width:100px;transition:color .2s">{{m.n}}</span>
+<div class="kroot" data-screen="ver" style="position:relative;width:402px;height:844px;overflow:hidden;overflow:clip;background:#17120f;font-family:'Figtree',sans-serif;color:#f4e7d0;user-select:none">
+<div class="kscroll" ref="{{setScroll}}" style="position:absolute;inset:0;overflow-y:auto;overscroll-behavior:contain">
+  <!-- Escenario: cartelera (las coordenadas siguen la referencia B7c) -->
+  <div style="position:relative;height:760px;overflow:hidden;overflow:clip">
+    <div aria-hidden="true" style="position:absolute;width:760px;height:760px;left:-179px;top:-50px;border-radius:50%;background:#1e1713;pointer-events:none"></div>
+    <div aria-hidden="true" style="position:absolute;width:540px;height:540px;left:-69px;top:60px;border-radius:50%;background:rgba(34,26,21,.7);pointer-events:none"></div>
+    <div style="position:absolute;left:6px;top:0;width:390px;height:760px">
+      <p style="position:absolute;left:20px;top:18px;margin:0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:32px;line-height:32px;letter-spacing:.3px;color:#f4e7d0">Kinoo</p>
+      <a href="Flujo2c_Perfil.dc.html" aria-label="Tu perfil" style="position:absolute;left:326px;top:14px;width:44px;height:44px;box-sizing:border-box;border-radius:22px;background:#221a15;border:2px solid #ce7e01;display:flex;align-items:center;justify-content:center"><img src="_blob/af0ff6915cfda5a557cef50b14e485d2.svg" alt="" width="22" height="22"></a>
+
+      <sc-if value="{{newMode}}" hint-placeholder-val="{{ true }}">
+      <p style="position:absolute;left:0;right:0;top:60px;margin:0;text-align:center;font-style:italic;font-weight:600;font-size:15px;line-height:20px;color:#f2b544">esta noche quiero algo para…</p>
+      <div style="position:absolute;left:18px;right:18px;top:80px;height:44px;display:flex;align-items:center;justify-content:space-between">
+        <button onClick="{{moodPrev}}" aria-label="Mood anterior" data-k="mood-prev" style="width:44px;height:44px;box-sizing:border-box;border-radius:22px;border:1.5px solid #5a4838;display:flex;align-items:center;justify-content:center;font-size:20px;color:#f4e7d0">‹</button>
+        <span class="{{dealCls}}" data-k="mood-name" aria-live="polite" style="font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:{{moodSize}}px;line-height:34px;text-transform:uppercase;color:#f4e7d0;text-align:center;white-space:nowrap;border-bottom:3px solid #f2b544;padding:0 4px">{{moodName}}</span>
+        <button onClick="{{moodNext}}" aria-label="Mood siguiente" data-k="mood-next" style="width:44px;height:44px;box-sizing:border-box;border-radius:22px;border:1.5px solid #5a4838;display:flex;align-items:center;justify-content:center;font-size:20px;color:#f4e7d0">›</button>
+      </div>
+      <div style="position:absolute;left:0;right:0;top:132px;display:flex;justify-content:center;align-items:center;gap:6px">
+        <span data-k="mood-desc" style="font-weight:600;font-size:12px;color:#bfa98a;margin-right:6px">{{moodDesc}}</span>
+        <sc-for list="{{dialDots}}" as="d" hint-placeholder-count="8"><span aria-hidden="true" style="width:{{d.w}}px;height:5px;border-radius:3px;background:{{d.bg}};transition:width .25s"></span></sc-for>
+      </div>
+      </sc-if>
+      <sc-if value="{{seenMode}}" hint-placeholder-val="{{ false }}">
+      <div class="kfade" style="position:absolute;left:20px;right:20px;top:64px;display:flex;align-items:center;justify-content:space-between">
+        <div><p style="margin:0;font-style:italic;font-weight:600;font-size:15px;line-height:18px;color:#f2b544">volver a ver</p><p style="margin:0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:28px;line-height:28px;text-transform:uppercase">Las que ya viste</p></div>
+        <button onClick="{{toNew}}" data-k="to-new" style="height:44px;padding:0 16px;border-radius:22px;border:1.5px solid #5a4838;font-weight:800;font-size:12px;color:#d9c7a8">← Nuevas</button>
+      </div>
+      </sc-if>
+
+      <!-- Cartas fantasma (anterior / siguiente) -->
+      <sc-if value="{{hasGhosts}}" hint-placeholder-val="{{ true }}">
+      <button onClick="{{prevF}}" aria-label="Anterior: {{prev.title}}" data-k="prev" style="position:absolute;left:-30px;top:185px;width:96px;height:294px;box-sizing:border-box;border-radius:14px;border:2px solid #3a2c22;overflow:hidden;opacity:.45;transform:rotate(-4deg);background:#0c0a09"><sc-if value="{{prev.hasImg}}" hint-placeholder-val="{{ false }}"><img src="{{prev.img}}" alt="" draggable="false" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0;pointer-events:none"></sc-if><sc-if value="{{prev.noImg}}" hint-placeholder-val="{{ true }}"><div style="position:absolute;inset:0;background:{{prev.gbg}};overflow:hidden"><div style="position:absolute;left:-10%;right:-10%;bottom:-6%;height:48%;background:{{prev.p1}};border-radius:50% 50% 0 0;filter:brightness(.55)"></div></div></sc-if></button>
+      <button onClick="{{nextF}}" aria-label="Siguiente: {{next.title}}" data-k="next" style="position:absolute;left:324px;top:185px;width:96px;height:294px;box-sizing:border-box;border-radius:14px;border:2px solid #3a2c22;overflow:hidden;opacity:.45;transform:rotate(4deg);background:#0c0a09"><sc-if value="{{next.hasImg}}" hint-placeholder-val="{{ false }}"><img src="{{next.img}}" alt="" draggable="false" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0;pointer-events:none"></sc-if><sc-if value="{{next.noImg}}" hint-placeholder-val="{{ true }}"><div style="position:absolute;inset:0;background:{{next.gbg}};overflow:hidden"><div style="position:absolute;left:-10%;right:-10%;bottom:-6%;height:48%;background:{{next.p1}};border-radius:50% 50% 0 0;filter:brightness(.55)"></div></div></sc-if></button>
+      </sc-if>
+
+      <!-- Carta principal -->
+      <sc-if value="{{hasCard}}" hint-placeholder-val="{{ true }}">
+      <div class="{{dealCls}}" data-k="card" tabindex="0" role="group" aria-label="{{cur.title}}" onPointerDown="{{onDown}}" onPointerUp="{{onUp}}" onKeyDown="{{onKey}}" style="position:absolute;left:77px;top:160px;width:236px;height:344px;box-sizing:border-box;border-radius:18px;border:3px solid #f4e7d0;overflow:hidden;background:#0c0a09;box-shadow:0 18px 34px rgba(0,0,0,.6);touch-action:pan-y;cursor:grab">
+        <sc-if value="{{cur.hasImg}}" hint-placeholder-val="{{ false }}"><img src="{{cur.img}}" alt="" draggable="false" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0;pointer-events:none"></sc-if>
+        <sc-if value="{{cur.noImg}}" hint-placeholder-val="{{ true }}"><div style="position:absolute;inset:0;background:{{cur.gbg}};overflow:hidden"><span style="position:absolute;left:0;right:0;top:9%;text-align:center;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:18px;letter-spacing:.45em;color:rgba(244,231,208,.85);padding:0 8%">{{cur.T}}</span><div style="position:absolute;left:-10%;right:-10%;bottom:-6%;height:48%;background:{{cur.p1}};border-radius:50% 50% 0 0;filter:brightness(.55)"></div><div style="position:absolute;left:40%;bottom:30%;width:9%;height:22%;background:rgba(0,0,0,.75);border-radius:40% 40% 4px 4px"></div></div></sc-if>
+        <sc-if value="{{seenMode}}" hint-placeholder-val="{{ false }}"><span data-k="seen-when" style="position:absolute;left:10px;bottom:12px;height:26px;box-sizing:border-box;padding:0 10px;border-radius:13px;background:rgba(26,20,17,.85);border:1.5px solid #f2b544;display:flex;align-items:center;font-style:italic;font-weight:600;font-size:12.5px;color:#f2b544;white-space:nowrap">{{whenLabel}}</span></sc-if>
+        <sc-if value="{{newMode}}" hint-placeholder-val="{{ true }}"><button onClick="{{star}}" onPointerDown="{{stopEv}}" onPointerUp="{{stopEv}}" aria-label="{{starLabel}}" aria-pressed="{{cur.starred}}" data-k="star" class="{{popCls}}" style="position:absolute;right:8px;top:8px;width:44px;height:44px;border-radius:22px;background:rgba(26,20,17,.8);display:flex;align-items:center;justify-content:center;color:#f4e7d0"><sc-if value="{{cur.starred}}" hint-placeholder-val="{{ false }}"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9Z" fill="#f2b544" stroke="#f2b544" stroke-width="2" stroke-linejoin="round"></path></svg></sc-if><sc-if value="{{cur.notStarred}}" hint-placeholder-val="{{ true }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9Z"></path></svg></sc-if></button></sc-if>
+      </div>
+      <sc-if value="{{hasGhosts}}" hint-placeholder-val="{{ true }}">
+      <div aria-hidden="true" style="position:absolute;left:0;right:0;top:514px;display:flex;justify-content:center;gap:5px"><sc-for list="{{dots}}" as="d" hint-placeholder-count="6"><span style="width:{{d.w}}px;height:6px;border-radius:3px;background:{{d.bg}};transition:width .25s"></span></sc-for></div>
+      </sc-if>
+      <div style="position:absolute;left:20px;right:20px;top:530px;text-align:center">
+        <p data-k="title" style="margin:0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:{{cur.size}}px;line-height:1;text-transform:uppercase;color:#f4e7d0;white-space:nowrap">{{cur.title}}</p>
+        <p data-k="meta" style="margin:4px 0 0;font-weight:700;font-size:12px;color:#bfa98a">{{cardMeta}}</p>
+        <p data-k="quote" style="margin:6px 0 0;font-style:italic;font-weight:600;font-size:15px;line-height:19px;color:#f2b544">{{cardQuote}}</p>
+      </div>
+      <!-- Ticket: abre la hoja de plataformas -->
+      <button onClick="{{openSheet}}" data-k="ticket" aria-label="{{ticketLabel}}" style="position:absolute;left:20px;top:644px;width:350px;height:88px;display:flex;text-align:left;filter:drop-shadow(0 10px 18px rgba(0,0,0,.45))">
+        <span style="position:relative;flex:1;height:88px;box-sizing:border-box;border-radius:16px 0 0 16px;background:#f4e7d0;color:#1a1411;padding:12px 16px;display:flex;flex-direction:column;justify-content:center;gap:2px">
+          <span style="font-weight:800;font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:#a8401a">{{tkKick}}</span>
+          <span style="font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:28px;line-height:28px;text-transform:uppercase">{{tkBig}} ↗</span>
+          <span data-k="ticket-sub" style="font-weight:600;font-size:11.5px;color:#6b5844;white-space:nowrap">{{tkSub}}</span>
+          <span aria-hidden="true" style="position:absolute;right:-9px;top:-9px;width:18px;height:18px;border-radius:9px;background:#17120f"></span>
+          <span aria-hidden="true" style="position:absolute;right:-9px;bottom:-9px;width:18px;height:18px;border-radius:9px;background:#17120f"></span>
+        </span>
+        <span style="flex:none;width:88px;height:88px;box-sizing:border-box;border-left:2px dashed #b8a27f;border-radius:0 16px 16px 0;background:#5e0c10;display:flex;align-items:center;justify-content:center">
+          <sc-if value="{{tk.hasLogo}}" hint-placeholder-val="{{ true }}"><img src="{{tk.logo}}" alt="" width="48" height="48" style="border-radius:12px;border:2px solid #f4e7d0"></sc-if>
+          <sc-if value="{{tk.noLogo}}" hint-placeholder-val="{{ false }}"><span aria-hidden="true" style="width:48px;height:48px;box-sizing:border-box;border-radius:12px;border:2px solid #f4e7d0;background:#1a1411;display:flex;align-items:center;justify-content:center;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:17px;color:#f4e7d0">{{tk.ini}}</span></sc-if>
+        </span>
+      </button>
+      </sc-if>
+
+      <!-- Estado vacío (según billboard().status) -->
+      <sc-if value="{{isEmpty}}" hint-placeholder-val="{{ false }}">
+      <div data-k="empty" style="position:absolute;left:77px;top:160px;width:236px;height:344px;box-sizing:border-box;border-radius:18px;border:3px dashed #5a4838;background:#1e1713;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:0 20px;text-align:center">
+        <p data-k="empty-title" style="margin:0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:26px;line-height:26px;text-transform:uppercase;color:#f4e7d0">{{emptyTitle}}</p>
+        <p data-k="empty-text" style="margin:0;font-weight:600;font-size:13px;line-height:18px;color:#bfa98a">{{emptyText}}</p>
+        <sc-if value="{{emptyToAll}}" hint-placeholder-val="{{ false }}"><button onClick="{{toAll}}" style="height:44px;padding:0 20px;border-radius:22px;background:#5e0c10;border:2px solid #f4e7d0;font-weight:800;font-size:13px;color:#f4e7d0">Ver todas</button></sc-if>
+        <sc-if value="{{emptyToDiscover}}" hint-placeholder-val="{{ true }}"><a href="Flujo1_Descubrir.dc.html" style="height:44px;display:inline-flex;align-items:center;padding:0 20px;border-radius:22px;background:#5e0c10;border:2px solid #f4e7d0;font-weight:800;font-size:13px;color:#f4e7d0">Ir a Descubrir</a></sc-if>
+      </div>
+      </sc-if>
+
+      <button onClick="{{toShelf}}" data-k="to-shelf" style="position:absolute;left:40px;right:40px;top:734px;height:26px;display:flex;align-items:center;justify-content:center;gap:6px;font-weight:800;font-size:11px;color:#f2b544"><span class="kchev" aria-hidden="true" style="display:inline-block">↓</span> {{shelfLink}}</button>
+    </div>
+  </div>
+
+  <!-- Repisa -->
+  <section ref="{{setShelf}}" data-k="shelf" style="padding:40px 0 0">
+    <div style="padding:0 26px">
+      <p style="margin:0;font-style:italic;font-weight:600;font-size:16px;line-height:20px;color:#f2b544">volver a ver</p>
+      <div style="display:flex;align-items:baseline;justify-content:space-between"><p style="margin:2px 0 0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:34px;line-height:34px;text-transform:uppercase;color:#f4e7d0">Tu repisa</p><span data-k="shelf-count" style="font-weight:700;font-size:11px;color:#bfa98a">{{shelfCount}}</span></div>
+      <p style="margin:4px 0 0;font-weight:600;font-size:12px;line-height:16px;color:#bfa98a">{{shelfHelp}}</p>
+    </div>
+    <sc-if value="{{hasShelf}}" hint-placeholder-val="{{ true }}">
+    <div style="position:relative;width:402px;height:236px;margin-top:20px">
+      <div aria-hidden="true" style="position:absolute;left:14px;right:14px;top:166px;height:10px;border-radius:3px;background:#3a2c22;box-shadow:0 6px 10px rgba(0,0,0,.4)"></div>
+      <div class="kscroll" style="position:relative;display:flex;gap:12px;overflow-x:auto;padding:0 26px">
+        <sc-for list="{{shelf}}" as="s" hint-placeholder-count="3">
+          <button onClick="{{s.pick}}" aria-label="Volver a ver {{s.title}}" data-k="shelf-item" style="flex:none;width:112px;text-align:left">
+            <span style="display:block;position:relative;width:112px;height:162px;box-sizing:border-box;border-radius:10px;border:2px solid #f4e7d0;overflow:hidden;background:#0c0a09;box-shadow:0 8px 14px rgba(0,0,0,.45)"><sc-if value="{{s.hasImg}}" hint-placeholder-val="{{ false }}"><img src="{{s.img}}" alt="" draggable="false" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0;pointer-events:none"></sc-if><sc-if value="{{s.noImg}}" hint-placeholder-val="{{ true }}"><span style="position:absolute;inset:0;background:{{s.gbg}};overflow:hidden"><span style="position:absolute;left:-10%;right:-10%;bottom:-6%;height:48%;background:{{s.p1}};border-radius:50% 50% 0 0;filter:brightness(.55)"></span></span></sc-if></span>
+            <b style="display:block;margin-top:16px;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:15px;line-height:15px;text-transform:uppercase;color:#f4e7d0">{{s.title}}</b>
+            <small style="font-weight:700;font-size:11px;color:#f2b544">{{s.rating}}</small>
           </button>
         </sc-for>
       </div>
     </div>
-    <img aria-hidden="true" src="_blob/7636f9b458cd5e444a1bb283c3e23ba8.svg" alt="" width="16" height="16" style="position:absolute;left:344px;top:150px;pointer-events:none">
+    </sc-if>
+  </section>
 
-    <sc-if value="{{hasLabel}}" hint-placeholder-val="{{ false }}">
-    <div style="position:absolute;left:50%;top:252px;transform:translateX(-50%);height:31px;box-sizing:border-box;padding:0 14px;border-radius:16px;background:#f2b544;border:3px solid #1a1411;color:#1a1411;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:14px;line-height:25px;letter-spacing:.6px;text-transform:uppercase;display:flex;gap:7px;align-items:center;white-space:nowrap;z-index:4">★ {{deckName}} <small style="font-family:'Figtree',sans-serif;font-weight:700;font-size:11px;opacity:.75;text-transform:none;letter-spacing:0">{{deckPos}}</small></div>
-    </sc-if>
-    <sc-if value="{{inDeck}}" hint-placeholder-val="{{ true }}">
-    <div style="position:absolute;left:20px;top:267px;width:350px;height:454px">
-      <sc-if value="{{hasUnder}}" hint-placeholder-val="{{ true }}">
-      <div aria-hidden="true" style="position:absolute;inset:0;box-sizing:border-box;border-radius:26px;border:3px solid #f4e7d0;overflow:hidden;background:{{u.bgc}};transform:{{underT}};filter:brightness({{underB}});transition:{{underTr}}">
-        <sc-if value="{{u.hasImg}}" hint-placeholder-val="{{ true }}"><img src="{{u.img}}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0"></sc-if>
-        <sc-if value="{{u.noImg}}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;background:{{u.gbg}}"></div></sc-if>
-      </div>
-      </sc-if>
-      <div class="{{dealCls}}" onPointerDown="{{onDown}}" onPointerMove="{{onMove}}" onPointerUp="{{onUp}}" onPointerCancel="{{onCancel}}" style="position:absolute;inset:0;touch-action:none;cursor:grab;transform:{{dragT}};transition:{{dragTr}};z-index:2">
-      <sc-if value="{{c.isFilm}}" hint-placeholder-val="{{ true }}">
-      <div style="position:absolute;inset:0;box-sizing:border-box;border-radius:26px;border:3px solid #f4e7d0;overflow:hidden;background:#0c0a09;box-shadow:0 14px 28px rgba(0,0,0,.5)">
-        <sc-if value="{{c.hasImg}}" hint-placeholder-val="{{ true }}"><img src="{{c.img}}" alt="" draggable="false" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0;pointer-events:none"></sc-if>
-        <sc-if value="{{c.noImg}}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;background:{{c.gbg}};overflow:hidden"><span style="position:absolute;left:0;right:0;top:9%;text-align:center;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:22px;letter-spacing:.45em;color:rgba(244,231,208,.85);padding:0 8%">{{c.T}}</span><div style="position:absolute;left:-10%;right:-10%;bottom:-6%;height:48%;background:{{c.p1}};border-radius:50% 50% 0 0;filter:brightness(.55)"></div><div style="position:absolute;left:40%;bottom:30%;width:9%;height:22%;background:rgba(0,0,0,.75);border-radius:40% 40% 4px 4px"></div></div></sc-if>
-        <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,20,16,.55) 0%,rgba(26,20,16,0) 20%,rgba(26,20,16,0) 40%,rgba(26,20,17,.82) 70%,#1a1411 100%);pointer-events:none"></div>
-        <div style="position:absolute;left:14px;right:14px;top:14px;display:flex;justify-content:space-between;align-items:center">
-          <span style="height:30px;box-sizing:border-box;border-radius:15px;background:#f2b544;color:#1a1411;font-weight:800;font-size:13px;display:flex;align-items:center;gap:7px;padding:0 12px 0 5px"><span style="width:20px;height:20px;border-radius:10px;background:#1a1411;box-shadow:inset 0 0 0 4px #1a1411,inset 0 0 0 6px #f2b544"></span>{{c.matchTxt}}</span>
-          <button onPointerDown="{{stop}}" onPointerUp="{{stop}}" onClick="{{toggleList}}" style="height:30px;box-sizing:border-box;border-radius:15px;background:{{c.lbg}};color:{{c.lfg}};font-weight:700;font-size:12px;display:flex;align-items:center;gap:6px;padding:0 12px 0 9px;transition:background .25s">
-            <sc-if value="{{c.inList}}" hint-placeholder-val="{{ true }}"><img src="_blob/7fb4649c4d0200ce341a5f8738962eb0.svg" alt="" width="16" height="16"></sc-if>{{c.lText}}</button>
+  <!-- Lo que aprendimos de ti (insight) -->
+  <section ref="{{setInsight}}" data-k="insight" style="padding:28px 26px 0">
+    <p style="margin:0;font-style:italic;font-weight:600;font-size:16px;line-height:20px;color:#f2b544">{{ins.kicker}}</p>
+    <sc-if value="{{ins.ready}}" hint-placeholder-val="{{ true }}">
+    <p data-k="insight-title" style="margin:2px 0 0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:30px;line-height:30px;text-transform:uppercase;color:#f4e7d0;white-space:nowrap">{{ins.title}}</p>
+    <p data-k="insight-body" style="margin:8px 0 0;font-weight:600;font-size:13px;line-height:18px;color:#d9c7a8">{{ins.body}}</p>
+    <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px">
+      <sc-for list="{{ins.moods}}" as="m" hint-placeholder-count="3">
+        <div role="img" aria-label="{{m.aria}}" data-k="insight-mood" style="display:grid;grid-template-columns:130px 1fr 64px;align-items:center;gap:8px;height:28px">
+          <span aria-hidden="true" style="font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:13px;text-transform:uppercase;color:#f4e7d0;white-space:nowrap;overflow:hidden">{{m.name}}</span>
+          <span aria-hidden="true" style="display:flex;gap:4px"><span style="width:18px;height:7px;border-radius:4px;background:{{m.s1}}"></span><span style="width:18px;height:7px;border-radius:4px;background:{{m.s2}}"></span><span style="width:18px;height:7px;border-radius:4px;background:{{m.s3}}"></span></span>
+          <span aria-hidden="true" style="font-weight:700;font-size:11px;color:#bfa98a;text-align:right">{{m.word}}</span>
         </div>
-        <div style="position:absolute;left:18px;right:18px;bottom:16px">
-          <p style="margin:0;font-family:'Figtree',sans-serif;font-style:italic;font-weight:600;font-size:18px;line-height:22px;color:#f2b544">{{c.kicker}}</p>
-          <p style="margin:4px 0 6px;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:{{c.tsize}}px;line-height:.88;text-transform:uppercase;color:#f4e7d0">{{c.t}}</p>
-          <p style="margin:0;font-weight:700;font-size:12.5px;color:rgba(244,231,208,.82)">{{c.meta}}</p>
-          <p style="margin:6px 0 10px;font-weight:500;font-size:13.5px;line-height:18.2px;color:#f4e7d0"><b style="color:#f2b544;font-weight:700">Por qué hoy:</b> {{c.why}}</p>
-          <div style="display:flex;gap:8px">
-            <sc-for list="{{c.plats}}" as="p" hint-placeholder-count="2"><button onPointerDown="{{stop}}" onPointerUp="{{stop}}" onClick="{{p.open}}" style="height:26px;box-sizing:border-box;border-radius:13px;border:1.5px solid #f4e7d0;font-weight:700;font-size:11px;padding:0 10px;color:#f4e7d0">{{p.n}}</button></sc-for>
-          </div>
-        </div>
-      </div>
-      </sc-if>
-      <sc-if value="{{c.isTitle}}" hint-placeholder-val="{{ false }}">
-      <div style="position:absolute;inset:0;box-sizing:border-box;border-radius:26px;border:3px solid #f4e7d0;overflow:hidden;background:#5e0c10;box-shadow:0 14px 28px rgba(0,0,0,.5)">
-        <p style="position:absolute;left:0;right:0;top:16px;margin:0;text-align:center;font-family:'Figtree',sans-serif;font-style:italic;font-weight:600;font-size:17px;line-height:22px;color:#f2b544">lo que aprendimos de ti</p>
-        <div style="position:absolute;left:109px;top:48px;width:132px;height:132px;border-radius:50%;background:#f2b544;box-shadow:0 0 30px rgba(242,181,68,.55);display:flex;align-items:center;justify-content:center"><div style="position:absolute;inset:10px;border-radius:50%;background:#b83a26"></div><div style="position:absolute;inset:16px;border-radius:50%;border:1.5px dashed #f2b544"></div><img src="_blob/5206cb53d6ff7b40f82756ccad2695ea.svg" alt="" width="70" height="70" style="position:relative"></div>
-        <p style="position:absolute;left:0;right:0;top:190px;margin:0;text-align:center;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:18px">ERES TODO UN</p>
-        <p style="position:absolute;left:0;right:0;top:208px;margin:0;text-align:center;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:46px;line-height:46px;color:#f2b544">SUFRIDOR BONITO</p>
-        <p style="position:absolute;left:30px;right:30px;top:258px;margin:0;text-align:center;font-weight:600;font-size:12px;line-height:16px;color:#d9c7a8">7 de tus últimos 10 likes fueron dramas que duelen. Tus próximos mazos van a saber eso.</p>
-        <div style="position:absolute;left:20px;top:304px;width:310px;display:flex;flex-direction:column;gap:6px">
-          <div style="display:grid;grid-template-columns:96px 1fr 34px;align-items:center;gap:8px;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:12px;text-transform:uppercase"><span>Sufrir bonito</span><div style="height:7px;border-radius:4px;background:rgba(244,231,208,.18);overflow:hidden"><div style="height:100%;width:70%;border-radius:4px;background:#f2b544"></div></div><span style="font-family:'Figtree',sans-serif;font-weight:700;font-size:10.5px;text-align:right;color:#bfa98a">70 %</span></div>
-          <div style="display:grid;grid-template-columns:96px 1fr 34px;align-items:center;gap:8px;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:12px;text-transform:uppercase"><span>Salir pensando</span><div style="height:7px;border-radius:4px;background:rgba(244,231,208,.18);overflow:hidden"><div style="height:100%;width:20%;border-radius:4px;background:#f4e7d0"></div></div><span style="font-family:'Figtree',sans-serif;font-weight:700;font-size:10.5px;text-align:right;color:#bfa98a">20 %</span></div>
-          <div style="display:grid;grid-template-columns:96px 1fr 34px;align-items:center;gap:8px;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:12px;text-transform:uppercase"><span>Algo raro</span><div style="height:7px;border-radius:4px;background:rgba(244,231,208,.18);overflow:hidden"><div style="height:100%;width:10%;border-radius:4px;background:#e8642c"></div></div><span style="font-family:'Figtree',sans-serif;font-weight:700;font-size:10.5px;text-align:right;color:#bfa98a">10 %</span></div>
-        </div>
-        <div style="position:absolute;left:20px;right:20px;top:388px;display:flex;gap:8px;justify-content:center">
-          <button onPointerDown="{{stop}}" onPointerUp="{{stop}}" onClick="{{shareTitle}}" style="display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 14px;border-radius:15px;border:1.5px solid #f4e7d0;font-weight:800;font-size:11.5px;color:#f4e7d0"><img src="_blob/0584de75cfb702abe74aee8ddb485b64.svg" alt="" width="16" height="16">Compartir</button>
-          <button onPointerDown="{{stop}}" onPointerUp="{{stop}}" onClick="{{doNext}}" style="display:inline-flex;align-items:center;height:30px;padding:0 14px;border-radius:15px;background:#f2b544;color:#1a1411;font-weight:800;font-size:11.5px">Seguir →</button>
-        </div>
-      </div>
-      </sc-if>
-        <div style="position:absolute;left:22px;top:70px;box-sizing:border-box;padding:4px 12px;border:4px solid {{sl.lc}};border-radius:10px;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:40px;line-height:40px;letter-spacing:1px;text-transform:uppercase;color:{{sl.lc}};background:rgba(26,20,17,.55);transform:rotate(-12deg);opacity:{{opR}};pointer-events:none">{{sl.r}}</div>
-        <div style="position:absolute;right:22px;top:70px;box-sizing:border-box;padding:4px 12px;border:4px solid #f4e7d0;border-radius:10px;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:40px;line-height:40px;letter-spacing:1px;text-transform:uppercase;color:#f4e7d0;background:rgba(184,58,38,.6);transform:rotate(12deg);opacity:{{opL}};pointer-events:none">{{sl.l}}</div>
-        <div style="position:absolute;left:50%;bottom:160px;box-sizing:border-box;padding:4px 12px;border:4px solid #1a1411;border-radius:10px;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:40px;line-height:40px;letter-spacing:1px;text-transform:uppercase;color:#1a1411;background:#f2b544;transform:translateX(-50%) rotate(-4deg);opacity:{{opU}};pointer-events:none;white-space:nowrap">{{sl.u}}</div>
-      </div>
+      </sc-for>
     </div>
-    <button onClick="{{openSuper}}" aria-label="Tus super likes" class="{{bumpCls}}" style="position:absolute;left:345px;top:259px;width:44px;height:61px;border-radius:10px;background:#f2b544;transform:rotate(4deg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;box-shadow:0 6px 14px rgba(0,0,0,.4);z-index:4;color:#1a1411;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:22px;line-height:22px"><img src="_blob/e6484950883b693dfab382ddc83187f7.svg" alt="" width="19" height="19"><b>{{supers}}</b></button>
-    <div style="position:absolute;left:20px;right:20px;top:726px;display:flex;justify-content:space-between;align-items:center">
-      <button onClick="{{doLeft}}" style="height:28px;padding:0 12px;border-radius:14px;border:1.5px solid #3a2c22;font-weight:700;font-size:12px;color:#d9c7a8">← otra</button>
-      <span style="font-weight:700;font-size:12px;color:#bfa98a">desliza · ↑ super like</span>
-      <button onClick="{{doRight}}" style="height:28px;padding:0 12px;border-radius:14px;border:1.5px solid #f2b544;font-weight:800;font-size:12px;color:#f2b544">verla →</button>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px">
+      <sc-for list="{{ins.traits}}" as="t" hint-placeholder-count="3">
+        <span role="img" aria-label="{{t.aria}}" data-k="insight-trait" style="height:28px;box-sizing:border-box;padding:0 12px;border-radius:14px;border:1.5px solid #5a4838;display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:12px;color:#f4e7d0"><span aria-hidden="true">{{t.label}}</span><span aria-hidden="true" style="display:inline-flex;gap:2px"><span style="width:5px;height:5px;border-radius:3px;background:{{t.s1}}"></span><span style="width:5px;height:5px;border-radius:3px;background:{{t.s2}}"></span><span style="width:5px;height:5px;border-radius:3px;background:{{t.s3}}"></span></span></span>
+      </sc-for>
     </div>
     </sc-if>
-    <sc-if value="{{isEnd}}" hint-placeholder-val="{{ false }}">
-    <div class="kin" style="position:absolute;left:20px;top:267px;width:350px;height:454px;box-sizing:border-box;border-radius:26px;border:3px solid #f4e7d0;background:#5e0c10;box-shadow:0 14px 28px rgba(0,0,0,.5);overflow:hidden">
-      <p style="position:absolute;left:20px;top:18px;margin:0;font-family:'Figtree',sans-serif;font-style:italic;font-weight:600;font-size:17px;color:#f2b544">buen mazo</p>
-      <p style="position:absolute;left:20px;top:40px;margin:0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:42px;line-height:40px;text-transform:uppercase">Mazo terminado</p>
-      <div style="position:absolute;left:20px;top:88px;display:flex;align-items:center;gap:10px"><span style="display:inline-flex;align-items:center;height:24px;padding:0 12px;border-radius:12px;background:#1a1411;color:#f2b544;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:13px;letter-spacing:.6px;text-transform:uppercase">{{deckLabel}}</span><span style="font-weight:600;font-size:11.5px;color:#bfa98a">{{endCount}} películas</span></div>
-      <div style="position:absolute;left:20px;top:130px;display:flex;gap:9px">
-        <div style="width:97px;height:44px;box-sizing:border-box;border-radius:12px;display:flex;align-items:center;gap:6px;padding:0 9px;font-weight:700;font-size:10.5px;line-height:1.1;background:#f2b544;color:#1a1411"><b style="font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:28px">{{nList}}</b>en tu lista</div>
-        <div style="width:97px;height:44px;box-sizing:border-box;border-radius:12px;display:flex;align-items:center;gap:6px;padding:0 9px;font-weight:700;font-size:10.5px;line-height:1.1;background:#b83a26;color:#f4e7d0"><b style="font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:28px">{{nOtro}}</b>otro momento</div>
-        <div style="width:97px;height:44px;box-sizing:border-box;border-radius:12px;display:flex;align-items:center;gap:6px;padding:0 9px;font-weight:700;font-size:10.5px;line-height:1.1;background:#f4e7d0;color:#1a1411"><b style="font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:28px">{{nSup}}</b>super likes</div>
-      </div>
-      <div style="position:absolute;left:20px;top:186px;width:310px;height:96px;box-sizing:border-box;border-radius:18px;background:#221a15;border:1px solid #3a2c22;display:flex;align-items:center;gap:12px;padding:0 12px">
-        <div style="flex:none;width:52px;height:76px;box-sizing:border-box;border-radius:6px;overflow:hidden;border:1.5px solid #f4e7d0;background:{{best.bgc}}"><sc-if value="{{best.hasImg}}" hint-placeholder-val="{{ true }}"><img src="{{best.img}}" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></sc-if></div>
-        <div style="flex:1;min-width:0"><p style="margin:0;font-weight:800;font-size:10px;letter-spacing:1px;color:#f2b544;text-transform:uppercase">Tu match del mazo</p><p style="margin:2px 0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:24px;line-height:24px;text-transform:uppercase">{{best.t}}</p><p style="margin:0;font-weight:600;font-size:11px;color:#bfa98a">{{best.matchTxt}}{{best.dur}}</p></div>
-        <button onClick="{{openBest}}" style="height:30px;padding:0 14px;border-radius:15px;background:#f2b544;color:#1a1411;font-weight:800;font-size:12px">Verla</button>
-      </div>
-      <p style="position:absolute;left:20px;top:300px;margin:0;font-weight:800;font-size:10px;letter-spacing:1px;color:#d9c7a8;text-transform:uppercase">¿Y ahora qué?</p>
-      <div style="position:absolute;left:20px;top:322px;width:310px;display:flex;gap:10px">
-        <a style="flex:1;height:108px;box-sizing:border-box;border-radius:16px;background:#221a15;border:1px solid #3a2c22;padding:14px;display:flex;flex-direction:column;justify-content:space-between"><span style="font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:24px;line-height:24px;text-transform:uppercase;color:#f4e7d0">← Tus mazos</span><span style="font-weight:600;font-size:11px;line-height:14px;color:#bfa98a">Otros mazos afines a tu mood</span></a>
-        <a style="flex:1;height:108px;box-sizing:border-box;border-radius:16px;background:#221a15;border:1.5px solid #f2b544;padding:14px;display:flex;flex-direction:column;justify-content:space-between"><span style="font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:24px;line-height:24px;text-transform:uppercase;color:#f2b544">Sorpréndeme →</span><span style="font-weight:600;font-size:11px;line-height:14px;color:#bfa98a">Un mazo misterioso con comodines</span></a>
-      </div>
-      <button onClick="{{restart}}" style="position:absolute;left:0;right:0;top:418px;text-align:center;font-weight:700;font-size:12px;color:#d9c7a8;text-decoration:underline">Repetir este mazo</button>
-    </div>
+    <sc-if value="{{ins.notReady}}" hint-placeholder-val="{{ false }}">
+    <p data-k="insight-empty" style="margin:6px 0 0;font-weight:600;font-size:13px;line-height:18px;color:#d9c7a8">{{ins.empty}}</p>
     </sc-if>
+  </section>
 
+  <!-- Atribución (TMDB / JustWatch) y aviso de datos de ejemplo -->
+  <div style="padding:28px 26px 118px;text-align:center">
+    <p data-k="attribution" style="margin:0;font-weight:600;font-size:11px;line-height:15px;color:#a8927a">Datos de películas: TMDB. Plataformas: JustWatch.</p>
+    <sc-if value="{{isSample}}" hint-placeholder-val="{{ false }}"><p data-k="sample-note" style="margin:4px 0 0;font-weight:600;font-size:11px;line-height:15px;color:#a8927a">Ejemplo ilustrativo · no son tus datos.</p></sc-if>
   </div>
+</div>
+
   <nav style="position:absolute;left:0;top:760px;width:402px;height:84px;box-sizing:border-box;background:#f4e7d0;border-radius:26px 26px 0 0;display:flex;align-items:flex-start;justify-content:space-around;padding:10px 20px 0;z-index:5">
-    <a href="FlujoV1_Feed.dc.html" style="width:119px;height:52px;box-sizing:border-box;border-radius:26px;background:#5e0c10;border:2px solid #1a1411;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:14px;color:#f4e7d0"><img src="_blob/55fc1f6c9b4360c066f2b1bb6d61ae7f.svg" alt="" width="20" height="20">Ver</a>
+    <a href="FlujoV1_Feed.dc.html" aria-current="page" style="width:119px;height:52px;box-sizing:border-box;border-radius:26px;background:#5e0c10;border:2px solid #1a1411;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:14px;color:#f4e7d0"><img src="_blob/55fc1f6c9b4360c066f2b1bb6d61ae7f.svg" alt="" width="20" height="20">Ver</a>
     <a href="Flujo1_Descubrir.dc.html" style="width:92px;height:52px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-weight:600;font-size:12px;color:#6b5844"><img src="_blob/80d9f6f0ac9895ede8c56a2abce2ab48.svg" alt="" width="20" height="20">Descubrir</a>
-    <div style="width:92px;height:52px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-weight:600;font-size:12px;color:#6b5844"><img src="_blob/6448a35c89fcd4c9dca572ef5ffc5110.svg" alt="" width="20" height="20">Comunidad</div>
+    <div aria-disabled="true" title="Pronto" style="width:92px;height:52px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-weight:600;font-size:12px;color:#6b5844;opacity:.5"><img src="_blob/6448a35c89fcd4c9dca572ef5ffc5110.svg" alt="" width="20" height="20">Comunidad</div>
     <div aria-hidden="true" style="position:absolute;bottom:8px;left:50%;width:134px;height:5px;margin-left:-67px;border-radius:3px;background:#1a1411;opacity:.85"></div>
   </nav>
+
+  <!-- Hoja "¿Dónde la ves?": las plataformas reales de la película (providers), sin precios -->
   <sc-if value="{{sheetMounted}}" hint-placeholder-val="{{ false }}">
-    <button onClick="{{dimTap}}" aria-label="Cerrar" style="position:absolute;inset:0;width:402px;height:844px;background:rgba(11,8,5,.66);z-index:20;opacity:{{dimOp}};transition:opacity 300ms ease"></button>
-  </sc-if>
-    <sc-if value="{{dondeOn}}" hint-placeholder-val="{{ false }}">
-    <div style="position:absolute;left:0;top:333px;width:402px;height:511px;box-sizing:border-box;background:#f4e7d0;color:#1a1411;border-radius:28px 28px 0 0;z-index:21;box-shadow:0 -10px 30px rgba(0,0,0,.4);transform:translateY({{sheetY}});transition:transform 420ms cubic-bezier(.2,.9,.25,1.05)">
-      <button onClick="{{closeSheet}}" aria-label="Cerrar" style="position:absolute;left:131px;top:0;width:140px;height:30px"><span style="position:absolute;left:48px;top:12px;width:44px;height:5px;border-radius:3px;background:rgba(26,20,17,.3)"></span></button>
-      <div style="padding:30px 26px 0"><p style="margin:0;font-family:'Figtree',sans-serif;font-style:italic;font-weight:600;font-size:18px;line-height:22px;color:#a8401a">{{film.t}}</p><p style="margin:2px 0 0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:36px;line-height:33px;text-transform:uppercase;color:#1a1411">¿Dónde la ves?</p></div>
-      <div style="display:flex;flex-direction:column;gap:10px;padding:16px 26px 0">
-        <sc-for list="{{plats}}" as="o" hint-placeholder-count="4">
-          <button onClick="{{o.pick}}" style="width:350px;height:64px;box-sizing:border-box;border-radius:16px;border:{{o.bd}};display:flex;align-items:center;gap:12px;padding:0 14px 0 10px;text-align:left;background:{{o.bg}};opacity:{{o.op}};transition:border-color .2s,background .2s">
-            <img src="{{o.logo}}" alt="" width="44" height="44" style="border-radius:10px;flex:none">
-            <span style="flex:1;min-width:0"><b style="display:block;font-weight:700;font-size:15px;color:#1a1411">{{o.n}}</b><small style="font-weight:600;font-size:12px;color:{{o.sc}}">{{o.s}}</small></span>
-            <span style="width:22px;height:22px;box-sizing:border-box;border-radius:50%;border:2px solid {{o.rc}};display:flex;align-items:center;justify-content:center"><span style="width:12px;height:12px;border-radius:50%;background:#e8642c;transform:scale({{o.dot}});transition:transform .25s cubic-bezier(.3,1.6,.5,1)"></span></span>
+    <button onClick="{{closeSheet}}" aria-label="Cerrar" style="position:absolute;inset:0;width:402px;height:844px;background:rgba(11,8,5,.66);z-index:20;opacity:{{dimOp}};transition:opacity 300ms ease"></button>
+    <div role="dialog" aria-modal="true" aria-label="¿Dónde la ves?" data-k="sheet" style="position:absolute;left:0;top:333px;width:402px;height:511px;box-sizing:border-box;background:#f4e7d0;color:#1a1411;border-radius:28px 28px 0 0;z-index:21;box-shadow:0 -10px 30px rgba(0,0,0,.4);transform:translateY({{sheetY}});transition:transform 420ms cubic-bezier(.2,.9,.25,1.05)">
+      <button onClick="{{closeSheet}}" aria-label="Cerrar" style="position:absolute;left:131px;top:0;width:140px;height:44px"><span style="position:absolute;left:48px;top:12px;width:44px;height:5px;border-radius:3px;background:rgba(26,20,17,.3)"></span></button>
+      <div style="padding:30px 26px 0"><p data-k="sheet-title" style="margin:0;font-style:italic;font-weight:600;font-size:18px;line-height:22px;color:#a8401a">{{cur.title}}</p><p style="margin:2px 0 0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:36px;line-height:33px;text-transform:uppercase;color:#1a1411">¿Dónde la ves?</p></div>
+      <div class="kscroll" style="display:flex;flex-direction:column;gap:10px;padding:16px 26px 0;max-height:222px;overflow-y:auto">
+        <sc-for list="{{plats}}" as="o" hint-placeholder-count="2">
+          <button onClick="{{o.pick}}" role="radio" aria-checked="{{o.on}}" data-k="plat" style="flex:none;width:350px;height:64px;box-sizing:border-box;border-radius:16px;border:{{o.bd}};display:flex;align-items:center;gap:12px;padding:0 14px 0 10px;text-align:left;background:{{o.bg}};transition:border-color .2s,background .2s">
+            <sc-if value="{{o.hasLogo}}" hint-placeholder-val="{{ true }}"><img src="{{o.logo}}" alt="" width="44" height="44" style="border-radius:10px;flex:none"></sc-if>
+            <sc-if value="{{o.noLogo}}" hint-placeholder-val="{{ false }}"><span aria-hidden="true" style="flex:none;width:44px;height:44px;border-radius:10px;background:#1a1411;display:flex;align-items:center;justify-content:center;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:16px;color:#f4e7d0">{{o.ini}}</span></sc-if>
+            <span style="flex:1;min-width:0"><b style="display:block;font-weight:700;font-size:15px;color:#1a1411">{{o.name}}</b><small style="font-weight:600;font-size:12px;color:{{o.sc}}">{{o.note}}</small></span>
+            <span aria-hidden="true" style="width:22px;height:22px;box-sizing:border-box;border-radius:50%;border:2px solid {{o.rc}};display:flex;align-items:center;justify-content:center"><span style="width:12px;height:12px;border-radius:50%;background:#e8642c;transform:scale({{o.dot}});transition:transform .25s cubic-bezier(.3,1.6,.5,1)"></span></span>
           </button>
         </sc-for>
+        <sc-if value="{{noPlats}}" hint-placeholder-val="{{ false }}"><p style="margin:0;font-weight:600;font-size:13px;line-height:18px;color:#6b5844">No sabemos en qué plataforma está en tu país.</p></sc-if>
       </div>
-      <div style="padding:16px 26px 0"><a href="FlujoV2_Abriendo.dc.html" onClick="{{startWatch}}" style="width:350px;height:58px;box-sizing:border-box;border-radius:29px;background:#5e0c10;border:2px solid #f4e7d0;color:#f4e7d0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:22px;letter-spacing:.5px;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 6px 16px rgba(0,0,0,.25)">{{openLabel}}</a></div>
-      <p style="margin:10px 0 0;padding:0 36px;text-align:center;font-weight:600;font-size:10.5px;line-height:14px;color:#8e6f62">Kinoo no reproduce: te lleva a la app donde ya tienes la película.</p>
+      <sc-if value="{{hasPlats}}" hint-placeholder-val="{{ true }}">
+      <div style="padding:16px 26px 0"><a href="FlujoV2_Abriendo.dc.html" onClick="{{startWatch}}" data-k="open" style="width:350px;height:58px;box-sizing:border-box;border-radius:29px;background:#5e0c10;border:2px solid #f4e7d0;color:#f4e7d0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:22px;letter-spacing:.5px;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 6px 16px rgba(0,0,0,.25)">{{openLabel}}</a></div>
+      </sc-if>
+      <p style="margin:10px 0 0;padding:0 36px;text-align:center;font-weight:600;font-size:11px;line-height:15px;color:#6b5844">Kinoo no reproduce: te lleva a la app donde ya tienes la película.</p>
+      <p style="margin:2px 0 0;padding:0 36px;text-align:center;font-weight:600;font-size:11px;line-height:15px;color:#6b5844">Disponibilidad: JustWatch vía TMDB.</p>
     </div>
-    </sc-if>
-    <sc-if value="{{superOn}}" hint-placeholder-val="{{ false }}">
-    <div style="position:absolute;left:325px;top:347px;width:56px;height:34px;border-radius:12px 12px 0 0;background:#f2b544;color:#1a1411;display:flex;align-items:center;justify-content:center;gap:4px;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:18px;z-index:21;transform:translateY({{sheetY}});transition:transform 420ms cubic-bezier(.2,.9,.25,1.05)"><img src="_blob/e6484950883b693dfab382ddc83187f7.svg" alt="" width="16" height="16">{{supers}}</div>
-    <div style="position:absolute;left:0;top:381px;width:402px;height:463px;box-sizing:border-box;padding:30px 26px 0;background:#f4e7d0;color:#1a1411;border-radius:28px 28px 0 0;z-index:21;box-shadow:0 -10px 30px rgba(0,0,0,.4);transform:translateY({{sheetY}});transition:transform 420ms cubic-bezier(.2,.9,.25,1.05)">
-      <button onClick="{{closeSheet}}" aria-label="Cerrar" style="position:absolute;left:131px;top:0;width:140px;height:30px"><span style="position:absolute;left:48px;top:12px;width:44px;height:5px;border-radius:3px;background:rgba(26,20,17,.3)"></span></button>
-      <div style="display:flex;justify-content:space-between;align-items:flex-end"><div><p style="margin:0;font-family:'Figtree',sans-serif;font-style:italic;font-weight:600;font-size:16px;line-height:20px;color:#a8401a">las que marcaste con estrella</p><p style="margin:0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:30px;line-height:28px;text-transform:uppercase">Tus super likes</p></div><span style="display:inline-flex;align-items:center;height:24px;padding:0 12px;border-radius:12px;background:#f2b544;font-weight:800;font-size:11.5px">★ {{supers}} guardadas</span></div>
-      <div style="display:flex;gap:8px;margin:12px 0">
-        <sc-for list="{{slChips}}" as="ch" hint-placeholder-count="3"><button onClick="{{ch.pick}}" style="height:28px;box-sizing:border-box;padding:0 13px;border-radius:14px;border:1.5px solid #1a1411;font-weight:700;font-size:11.5px;background:{{ch.bg}};color:{{ch.fg}};transition:background .2s,color .2s">{{ch.n}}</button></sc-for>
-      </div>
-      <div class="kscroll" style="display:flex;gap:10px;overflow-x:auto;padding:2px 26px 4px;margin:0 -26px">
-        <sc-for list="{{slFilms}}" as="s" hint-placeholder-count="4">
-          <button onClick="{{s.open}}" style="flex:none;width:110px;text-align:left">
-            <div style="position:relative;width:110px;height:150px;box-sizing:border-box;border-radius:10px;border:2px solid #1a1411;overflow:hidden;background:{{s.bgc}}">
-              <sc-if value="{{s.hasImg}}" hint-placeholder-val="{{ true }}"><img src="{{s.img}}" alt="" style="width:100%;height:100%;object-fit:cover;display:block"></sc-if>
-              <span style="position:absolute;left:6px;top:6px;width:24px;height:24px;box-sizing:border-box;border-radius:12px;background:#f2b544;border:1.5px solid #1a1411;display:flex;align-items:center;justify-content:center"><img src="_blob/a73add2e38d3041673a7f504159c4235.svg" alt="" width="13" height="13"></span>
-            </div>
-            <b style="display:block;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:15px;line-height:15px;text-transform:uppercase;margin-top:6px">{{s.t}}</b><small style="font-weight:600;font-size:10.5px;color:#8e6f62">{{s.matchTxt}}</small>
-          </button>
-        </sc-for>
-      </div>
-      <p style="margin:6px 0 10px;text-align:center;font-weight:600;font-size:11px;color:#8e6f62">{{slCount}}</p>
-      <button onClick="{{playSuper}}" style="width:350px;height:50px;box-sizing:border-box;border-radius:25px;background:#b83a26;border:2px solid #f4e7d0;color:#f4e7d0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:20px;letter-spacing:.5px;text-transform:uppercase;display:flex;align-items:center;justify-content:center">★ Jugar mi mazo de super likes</button>
-    </div>
-    </sc-if>
-  <sc-if value="{{hasToast}}" hint-placeholder-val="{{ false }}">
-  <div class="kin" role="status" style="position:absolute;left:26px;right:26px;top:690px;z-index:30;box-sizing:border-box;padding:10px 14px;border-radius:14px;background:#1a1411;border:1.5px solid #f2b544;box-shadow:0 10px 24px rgba(0,0,0,.45);font-weight:600;font-size:12.5px;line-height:17px;color:#f4e7d0;text-align:center">{{toast}}</div>
   </sc-if>
 
+  <sc-if value="{{hasToast}}" hint-placeholder-val="{{ false }}">
+  <div class="kin" role="status" data-k="toast" style="position:absolute;left:26px;right:26px;top:96px;z-index:30;box-sizing:border-box;padding:10px 14px;border-radius:14px;background:#1a1411;border:1.5px solid #f2b544;box-shadow:0 10px 24px rgba(0,0,0,.45);font-weight:600;font-size:12.5px;line-height:17px;color:#f4e7d0;text-align:center">{{toast}}</div>
+  </sc-if>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":402,"height":844}}'>
 class Component extends DCLogic {
-_data() {
-  if (this.__d) return this.__d;
-  const FILMS = {"interstellar": {"t": "Interstellar", "dur": "2 h 49", "dir": "Christopher Nolan", "img": "_blob/8d36ec8e6ab2e36a214159e1cc93d1c6.jpg", "match": 93, "g": ["Drama", "Ciencia ficción", "Aventura"], "e": "2010s", "du": 2, "to": ["melancólico", "solemne"], "plat": ["Netflix", "Prime Video"], "why": "es tu match más alto y la guardaste en el último mazo de Nolan."}, "vidas": {"t": "Vidas pasadas", "dur": "1 h 44", "dir": "Celine Song", "match": 91, "g": ["Drama", "Romance"], "e": "2020s", "du": 0, "to": ["melancólico"], "plat": ["Prime Video", "Max"], "pal": ["#2c3b52", "#0f1320", "#f2b544"], "why": "dos personas, veinte años y un amor que no fue. Duele bonito."}, "arrival": {"t": "La llegada", "dur": "1 h 56", "dir": "Denis Villeneuve", "match": 89, "g": ["Drama", "Ciencia ficción"], "e": "2010s", "du": 1, "to": ["melancólico", "tenso"], "plat": ["Netflix", "Max"], "pal": ["#4a4f52", "#16191b", "#d9c7a8"], "why": "te gustó Interstellar y esta también juega con el tiempo."}, "aftersun": {"t": "Aftersun", "dur": "1 h 41", "dir": "Charlotte Wells", "match": 87, "g": ["Drama"], "e": "2020s", "du": 0, "to": ["melancólico"], "plat": ["Max", "Apple TV"], "pal": ["#2f6b8f", "#0d2233", "#f2b544"], "why": "unas vacaciones que se entienden de grande. Para llorar en silencio."}, "eternal": {"t": "Eterno resplandor", "dur": "1 h 48", "dir": "Michel Gondry", "match": 84, "g": ["Drama", "Romance"], "e": "2000s", "du": 1, "to": ["melancólico", "absurdo"], "plat": ["Prime Video", "Apple TV"], "pal": ["#3b5f8f", "#1a1430", "#e8642c"], "why": "borrar a alguien de tu memoria no sale como esperas."}, "oppen": {"t": "Oppenheimer", "dur": "3 h 00", "dir": "Christopher Nolan", "img": "_blob/1632e88b436a4b0f52ce128f48b74984.jpg", "match": 88, "g": ["Thriller"], "e": "2020s", "du": 2, "to": ["tenso", "solemne"], "plat": ["Prime Video", "Netflix"], "why": "Nolan otra vez, ahora con una bomba en la conciencia."}, "tdk": {"t": "The Dark Knight", "dur": "2 h 32", "dir": "Christopher Nolan", "img": "_blob/afe4882e107c9f765350409c23f76f18.jpg", "match": 85, "g": ["Acción", "Thriller"], "e": "2000s", "du": 2, "to": ["tenso", "feroz"], "plat": ["Max", "Netflix"], "why": "un villano que te va a quitar el sueño."}, "eeaao": {"t": "Todo en todas partes", "dur": "2 h 19", "dir": "Daniels", "match": 82, "g": ["Comedia", "Acción", "Fantasía"], "e": "2020s", "du": 2, "to": ["absurdo", "juguetón"], "plat": ["Prime Video", "Max"], "pal": ["#6b2a6e", "#1d0f24", "#f2b544"], "why": "multiversos, dedos de salchicha y una mamá que lo arregla todo."}, "madmax": {"t": "Mad Max: Furia", "dur": "2 h 00", "dir": "George Miller", "match": 80, "g": ["Acción", "Aventura"], "e": "2010s", "du": 1, "to": ["feroz"], "plat": ["Max", "Netflix"], "pal": ["#d9772e", "#4a1a08", "#f4e7d0"], "why": "dos horas sin frenar. Cero cerebro, puro motor."}, "parasite": {"t": "Parásitos", "dur": "2 h 12", "dir": "Bong Joon-ho", "match": 86, "g": ["Thriller", "Comedia negra"], "e": "2010s", "du": 1, "to": ["tenso", "feroz"], "plat": ["Prime Video", "Netflix"], "pal": ["#3d4a2e", "#121608", "#d9c7a8"], "why": "empieza como comedia y termina en el sótano."}, "lalaland": {"t": "La La Land", "dur": "2 h 08", "dir": "Damien Chazelle", "img": "_blob/47a12c3c151f8da9df8a65897c8a3b7b.jpg", "match": 83, "g": ["Romance", "Música", "Comedia"], "e": "2010s", "du": 1, "to": ["tierno", "juguetón"], "plat": ["Netflix", "Apple TV"], "why": "para cantar bajito y salir con el corazón apretado."}, "coco": {"t": "Coco", "dur": "1 h 45", "dir": "Lee Unkrich", "match": 81, "g": ["Animación", "Familia", "Música", "Fantasía"], "e": "2010s", "du": 1, "to": ["tierno"], "plat": ["Netflix", "Prime Video"], "pal": ["#c2410c", "#3b0a2a", "#f2b544"], "why": "la familia, la música y un final que nadie aguanta."}, "hered": {"t": "Hereditary", "dur": "2 h 07", "dir": "Ari Aster", "match": 78, "g": ["Terror", "Misterio"], "e": "2010s", "du": 1, "to": ["tenso"], "plat": ["Max", "Prime Video"], "pal": ["#3b2a20", "#0c0806", "#b83a26"], "why": "rara, incómoda y difícil de olvidar."}, "knives": {"t": "Entre navajas", "dur": "2 h 10", "dir": "Rian Johnson", "match": 79, "g": ["Misterio", "Comedia"], "e": "2010s", "du": 1, "to": ["juguetón"], "plat": ["Netflix", "Prime Video"], "pal": ["#5e3a1c", "#1a0f08", "#f2b544"], "why": "un misterio para jugar al detective sin esfuerzo."}};
-  const MOODS = [["todas", "Todas", "_blob/448d430c3bbc1484a5e4ae80c6712ba9.svg", ["interstellar", "eeaao", "parasite", "lalaland", "madmax", "arrival"]], ["apagar", "Apagar el cerebro", "_blob/210d4d00823561d5d5167cc6e47550f7.svg", ["madmax", "tdk", "knives", "eeaao", "coco", "lalaland"]], ["sufrir", "Sufrir bonito", "_blob/3ae955ccefadbe2176426f0089ead788.svg", ["interstellar", "vidas", "aftersun", "arrival", "eternal", "oppen"]], ["escapar", "Escapar un rato", "_blob/318ae326d239d9211907d580bac97cdd.svg", ["interstellar", "madmax", "coco", "eeaao", "arrival", "lalaland"]], ["sentir", "Sentir algo", "_blob/74e310a197a9e6f8724753f560fdf3a9.svg", ["vidas", "aftersun", "lalaland", "coco", "eternal", "interstellar"]], ["pensando", "Salir pensando", "_blob/0954021303eddc07bc7c0b57e0fdd6cf.svg", ["arrival", "oppen", "parasite", "interstellar", "eternal", "aftersun"]], ["reir", "Solo reírme", "_blob/5ced9fe1b669ac19c3cfd2e77fa61758.svg", ["knives", "eeaao", "lalaland", "parasite", "coco", "madmax"]], ["raro", "Algo raro", "_blob/bf8b70422dc5e9e0f6cf244fac4b7f9e.svg", ["eeaao", "eternal", "hered", "arrival", "parasite", "knives"]], ["bueno", "Cine del bueno", "_blob/e45badb7d21707020a133a21f9c39ec5.svg", ["oppen", "parasite", "tdk", "interstellar", "arrival", "aftersun"]]];
-const PLATS = [
-  { n: 'Netflix', s: 'En tu suscripción', logo: '_blob/e19e382cca13f7f21b95d85f9d925a77.svg' },
-  { n: 'Prime Video', s: 'En tu suscripción', logo: '_blob/0ba16619c766dee534933cefdd8348fb.svg' },
-  { n: 'Max', s: 'Incluida con tu plan · HD', logo: '_blob/416ff56e862c1dafca0dd9f6688cc880.svg' },
-  { n: 'Apple TV', s: 'Alquiler · $14.900', logo: '_blob/6db6d0a00e08a8caf17e583ca734be02.svg', rent: true }
-];
-const SUPER0 = ['interstellar', 'oppen', 'tdk', 'arrival', 'parasite', 'vidas', 'aftersun'];
-const gbg = (p) => 'radial-gradient(circle at 64% 34%,' + p[2] + ' 0 13%,transparent 13.5%),radial-gradient(ellipse at 50% 120%,rgba(0,0,0,.7),transparent 60%),linear-gradient(170deg,' + p[0] + ',' + p[1] + ')';
-const vis = (id) => { const f = FILMS[id]; return { hasImg: !!f.img, noImg: !f.img, img: f.img || '', gbg: f.pal ? gbg(f.pal) : 'none', p1: f.pal ? f.pal[1] : '#000', bgc: f.pal ? f.pal[1] : '#0c0a09' }; };
-  // Motor Kinoo v2 (modo demo): si hay películas en la mano, cada mood propone desde ahí, en el orden del motor.
-  const KD = window.KinooDemo;
-  const KQ = KD ? KD.watchQueue(null) : null;
-  if (KQ) {
-    Object.assign(FILMS, KQ.films);
-    MOODS.forEach((m) => { const q = m[0] === 'todas' ? KQ : KD.watchQueue(m[0]); if (q) m[3] = q.ids; });
-  }
-  this.__d = { FILMS, MOODS, PLATS, SUPER0, gbg, vis };
-  return this.__d;
+// ---------- Datos: siempre del puente; _sample() solo si kinoo-demo.js no cargó ----------
+_kd() { return window.KinooDemo || null; }
+_sample() {
+  if (this.__s) return this.__s;
+  const P = (n, note) => ({ key: n.toLowerCase().replace(/\+/g, '_plus').replace(/[^a-z0-9]+/g, '_'), name: n, note: note || 'en tu suscripción', rent: false });
+  const F = (id, title, meta, quote, palette, provs, runtime_min) => ({ id, title, title_size: title.length <= 14 ? 38 : 30, meta, quote, poster_url: null, palette, starred: false, providers: provs.map((n) => P(n)), runtime_min });
+  const FILMS = {
+    interstellar: F('interstellar', 'Interstellar', '2 h 49 · Drama · Ciencia ficción', 'Un viaje enorme para mirar con calma y la luz apagada.', ['#24324a', '#0b0f1a', '#f2b544'], ['Netflix', 'Prime Video'], 169),
+    vidas: F('vidas', 'Vidas pasadas', '1 h 44 · Drama · Romance', 'Dos personas, veinte años y un amor que no fue. Duele bonito.', ['#2c3b52', '#0f1320', '#f2b544'], ['Prime Video', 'Max'], 104),
+    arrival: F('arrival', 'La llegada', '1 h 56 · Drama · Ciencia ficción', 'Juega con el tiempo y te deja pensando un buen rato.', ['#4a4f52', '#16191b', '#d9c7a8'], ['Netflix', 'Max'], 116),
+    aftersun: F('aftersun', 'Aftersun', '1 h 41 · Drama', 'Unas vacaciones que se entienden de grande. Para llorar en silencio.', ['#2f6b8f', '#0d2233', '#f2b544'], ['Max', 'Apple TV'], 101),
+    eternal: F('eternal', 'Eterno resplandor', '1 h 48 · Drama · Romance', 'Borrar a alguien de tu memoria no sale como esperas.', ['#3b5f8f', '#1a1430', '#e8642c'], ['Prime Video', 'Apple TV'], 108),
+    oppen: F('oppen', 'Oppenheimer', '3 h · Drama · Historia', 'Una bomba en la conciencia, contada sin prisa.', ['#5a3a22', '#1a0f08', '#f2b544'], ['Prime Video', 'Netflix'], 180),
+    tdk: F('tdk', 'The Dark Knight', '2 h 32 · Acción · Crimen', 'Un villano que te va a quitar el sueño.', ['#2a2f38', '#0a0c10', '#b83a26'], ['Max', 'Netflix'], 152),
+    eeaao: F('eeaao', 'Todo en todas partes', '2 h 19 · Comedia · Acción', 'Multiversos, dedos de salchicha y una mamá que lo arregla todo.', ['#6b2a6e', '#1d0f24', '#f2b544'], ['Prime Video', 'Max'], 139),
+    madmax: F('madmax', 'Mad Max: Furia', '2 h · Acción · Aventura', 'Dos horas sin frenar. Cero cerebro, puro motor.', ['#d9772e', '#4a1a08', '#f4e7d0'], ['Max', 'Netflix'], 120),
+    parasite: F('parasite', 'Parásitos', '2 h 12 · Thriller · Comedia', 'Empieza como comedia y termina en el sótano.', ['#3d4a2e', '#121608', '#d9c7a8'], ['Prime Video', 'Netflix'], 132),
+    lalaland: F('lalaland', 'La La Land', '2 h 08 · Romance · Música', 'Para cantar bajito y salir con el corazón apretado.', ['#2d2a6e', '#0f0d24', '#f2b544'], ['Netflix', 'Apple TV'], 128),
+    coco: F('coco', 'Coco', '1 h 45 · Animación · Familia', 'La familia, la música y un final que nadie aguanta.', ['#c2410c', '#3b0a2a', '#f2b544'], ['Netflix', 'Prime Video'], 105),
+    hered: F('hered', 'Hereditary', '2 h 07 · Terror · Misterio', 'Rara, incómoda y difícil de olvidar.', ['#3b2a20', '#0c0806', '#b83a26'], ['Max', 'Prime Video'], 127),
+    knives: F('knives', 'Entre navajas', '2 h 10 · Misterio · Comedia', 'Un misterio para jugar al detective sin esfuerzo.', ['#5e3a1c', '#1a0f08', '#f2b544'], ['Netflix', 'Prime Video'], 130),
+  };
+  const MOODS = [
+    { key: 'todas', name: 'Todas', desc: 'Un poco de todo' },
+    { key: 'llorar_bonito', name: 'Llorar bonito', desc: 'Historias para llorar' },
+    { key: 'apagar_cerebro', name: 'Apagar el cerebro', desc: 'Desconectar sin esfuerzo' },
+    { key: 'escapar', name: 'Escapar un rato', desc: 'Irte a otro mundo' },
+    { key: 'salir_pensando', name: 'Salir pensando', desc: 'Para quedarte rumiando' },
+    { key: 'solo_reirme', name: 'Solo reírme', desc: 'Reírte de verdad' },
+    { key: 'algo_raro', name: 'Algo raro', desc: 'Lo que no viste venir' },
+    { key: 'cine_del_bueno', name: 'Cine del bueno', desc: 'Clásicos que se sienten' },
+  ];
+  const LISTS = {
+    todas: ['interstellar', 'eeaao', 'parasite', 'madmax', 'arrival', 'vidas'],
+    llorar_bonito: ['interstellar', 'vidas', 'aftersun', 'arrival', 'eternal', 'oppen'],
+    apagar_cerebro: ['madmax', 'tdk', 'knives', 'eeaao'],
+    escapar: ['interstellar', 'madmax', 'eeaao', 'arrival'],
+    salir_pensando: ['arrival', 'oppen', 'parasite', 'interstellar', 'eternal', 'aftersun'],
+    solo_reirme: ['knives', 'eeaao', 'parasite', 'madmax'],
+    algo_raro: ['eeaao', 'eternal', 'hered', 'arrival', 'parasite', 'knives'],
+    cine_del_bueno: ['oppen', 'parasite', 'tdk', 'interstellar', 'arrival', 'aftersun'],
+  };
+  const S = (id, when, rating, back) => { const f = FILMS[id]; return { id, title: f.title, poster_url: null, palette: f.palette, when, rating, back, meta: f.meta, runtime_min: f.runtime_min, providers: f.providers }; };
+  const SHELF = [
+    S('coco', 'hace 3 semanas', '¡Me encantó!', 'Ideal para volver a verla acompañado: esta vez llora alguien más.'),
+    S('lalaland', 'hace 2 meses', 'Estuvo bien', 'Ahora que sabes el final, el primer baile se siente distinto.'),
+  ];
+  const INSIGHT = {
+    ready: true, kicker: 'lo que aprendimos de ti', title: 'Eres todo un explorador',
+    body: 'Te quedas con historias que te sacan de aquí y con las que mueven por dentro.',
+    traits: [{ key: 'a', label: 'Épicas', level: 'alto' }, { key: 'b', label: 'Melancólicas', level: 'medio' }, { key: 'c', label: 'Con humor', level: 'bajo' }],
+    moods: [{ key: 'escapar', name: 'Escapar un rato', level: 'alto' }, { key: 'llorar_bonito', name: 'Llorar bonito', level: 'medio' }, { key: 'salir_pensando', name: 'Salir pensando', level: 'bajo' }],
+    archetype: { key: 'explorador', name: 'Explorador' }, empty_text: '',
+  };
+  this.__s = { FILMS, MOODS, LISTS, SHELF, INSIGHT };
+  return this.__s;
 }
+_call(fn, fallback) { const KD = this._kd(); if (!KD) return fallback(); try { const r = fn(KD); return r == null ? fallback(true) : r; } catch (e) { return fallback(true); } }
+_moods() { return this._ms || (this._ms = this._call((K) => { const m = K.moods(); return m && m.length ? m : null; }, (bridge) => bridge ? [{ key: 'todas', name: 'Todas', desc: '' }] : this._sample().MOODS)); }
+_shelf() { return this._sh || (this._sh = this._call((K) => K.shelf(), (bridge) => bridge ? [] : this._sample().SHELF)); }
+_insight() { return this._in || (this._in = this._call((K) => K.insight(), (bridge) => bridge ? { ready: false, kicker: 'lo que aprendimos de ti', empty_text: '', traits: [], moods: [] } : this._sample().INSIGHT)); }
+_board(key) {
+  this._bb = this._bb || {};
+  if (!this._bb[key]) this._bb[key] = this._call((K) => K.billboard(key), (bridge) => {
+    const mood = this._moods().find((m) => m.key === key) || this._moods()[0];
+    if (bridge) return { mood, films: [], status: 'empty_hand', notice: null };
+    const s = this._sample(); const seen = s.SHELF.map((x) => x.id);
+    return { mood, films: (s.LISTS[key] || s.LISTS.todas).filter((id) => seen.indexOf(id) < 0).map((id) => Object.assign({}, s.FILMS[id])), status: 'ok', notice: null };
+  });
+  return this._bb[key];
+}
+_initMood() {
+  if (this._m0) return this._m0;
+  let k = null; try { k = localStorage.getItem('kinoo.ver.mood'); } catch (_) {}
+  const ms = this._moods();
+  this._m0 = ms.some((m) => m.key === k) ? k : ms[0].key;
+  return this._m0;
+}
+// ---------- Presentación ----------
+_gbg(p) { return 'radial-gradient(circle at 64% 34%,' + p[2] + ' 0 13%,transparent 13.5%),radial-gradient(ellipse at 50% 120%,rgba(0,0,0,.7),transparent 60%),linear-gradient(170deg,' + p[0] + ',' + p[1] + ')'; }
+_vis(x) { const p = x.palette || ['#3a2f2a', '#14100e', '#e9d8c4']; return { id: x.id, title: x.title, T: String(x.title || '').toUpperCase(), hasImg: !!x.poster_url, noImg: !x.poster_url, img: x.poster_url || '', gbg: this._gbg(p), p1: p[1] }; }
+_logo(key) { const L = { netflix: 'e19e382cca13f7f21b95d85f9d925a77', prime_video: '0ba16619c766dee534933cefdd8348fb', max: '416ff56e862c1dafca0dd9f6688cc880', apple_tv: '6db6d0a00e08a8caf17e583ca734be02' }; return L[key] ? '_blob/' + L[key] + '.svg' : ''; }
+_ini(name) { return String(name || '?').replace(/[^A-Za-zÁÉÍÓÚÑáéíóúñ0-9+ ]/g, '').split(' ').filter(Boolean).map((w) => w[0]).join('').slice(0, 2).toUpperCase() || '?'; }
+_level(lv) { const n = lv === 'alto' ? 3 : lv === 'medio' ? 2 : 1; const on = '#f2b544', off = 'rgba(244,231,208,.18)'; return { word: lv === 'alto' ? 'mucho' : lv === 'medio' ? 'bastante' : 'un poco', s1: on, s2: n >= 2 ? on : off, s3: n >= 3 ? on : off }; }
 renderVals() {
-  const { FILMS, MOODS, PLATS, SUPER0, vis } = this._data();
   const S = this.state || {};
-  const st = () => this.state || {};
-  const mood = S.mood || 'sufrir';
-  const kind = S.kind || 'mood';
-  const items = S.items || this._build(mood, kind, S.films, S.titleShown);
-  const idx = S.idx || 0;
-  const item = items[idx];
-  const isEnd = idx >= items.length;
-  const supers = typeof S.supers === 'number' ? S.supers : 7;
-  const superFilms = S.superFilms || SUPER0;
-  const plat = S.plat || 0;
-  const dx = S.dx || 0, dy = S.dy || 0, drag = !!S.drag, exit = S.exit || null;
-  const inList = S.inList || {};
-  const moodName = (MOODS.find((m) => m[0] === mood) || MOODS[2])[1];
-
-  // Con el motor (modo demo) no hay porcentajes: el principio 1 prohíbe mostrar afinidad en números.
-  const pct = (m) => (m ? m + ' % contigo' : 'de tu mano');
-  let c = { isFilm: false, isTitle: false, plats: [] };
-  if (item && item.kind === 'film') {
-    const f = FILMS[item.id];
-    const il = inList[item.id] !== false;
-    c = Object.assign({ isFilm: true, isTitle: false, t: f.t, T: f.t.toUpperCase(), match: f.match, matchTxt: pct(f.match), tsize: f.tsize || (f.t.length > 14 ? 34 : 46),
-      meta: f.dur + ' · ' + f.g[0] + ' · ' + f.dir, why: f.why,
-      kicker: kind === 'super' ? 'de tu mazo super likes' : 'tu película para esta noche',
-      inList: il, lText: il ? 'En tu lista' : '+ A tu lista', lbg: il ? 'rgba(26,20,17,.82)' : 'rgba(244,231,208,.92)', lfg: il ? '#f4e7d0' : '#1a1411',
-      plats: f.plat.map((p) => ({ n: p, open: (e) => { e.stopPropagation(); this._openDonde(item.id, p, true); } })) }, vis(item.id));
-  } else if (item && item.kind === 'title') { c = { isFilm: false, isTitle: true, plats: [] }; }
-  const nx = items[idx + 1];
-  const u = nx ? (nx.kind === 'film' ? vis(nx.id) : { hasImg: false, noImg: false, bgc: '#5e0c10' }) : null;
-
-  let tx = dx, ty = dy, rot = dx / 14;
-  if (exit === 'right') { tx = 520; ty = 40; rot = 24; }
-  if (exit === 'left') { tx = -520; ty = 40; rot = -24; }
-  if (exit === 'up') { tx = 0; ty = -900; rot = -4; }
-  const atRest = !drag && !exit && dx === 0 && dy === 0;
-  const prog = Math.min(1, Math.hypot(dx, dy) / 160);
-  const clamp = (v) => Math.max(0, Math.min(1, v));
-  const isT = c.isTitle;
-
-  const films = items.filter((i) => i.kind === 'film').map((i) => i.id);
-  const liked = S.liked || [], noped = S.noped || [];
-  const bestId = liked[0] || films[0] || 'interstellar';
-  const bf = FILMS[bestId];
-  const filmPos = items.slice(0, idx + 1).filter((i) => i.kind === 'film').length;
-
-  const sheet = S.sheet || null;
-  const film = FILMS[S.film || 'interstellar'];
-  const slF = S.slFilter || 'Todas';
-  const moodOf = (id) => FILMS[id].to.indexOf('melancólico') >= 0 ? 'Sufrir bonito' : 'Salir pensando';
-  const slList = Array.from(new Set(superFilms)).filter((id) => slF === 'Todas' || moodOf(id) === slF);
-
+  const KD = this._kd();
+  const moods = this._moods();
+  let mk = S.mood || this._initMood();
+  let mi = moods.findIndex((m) => m.key === mk); if (mi < 0) { mi = 0; mk = moods[0].key; }
+  const shelfData = this._shelf();
+  const seen = S.mode === 'seen' && shelfData.length > 0;
+  const board = this._board(mk);
+  const mood = board.mood || moods[mi];
+  const src = seen ? shelfData : (board.status === 'ok' ? board.films : []);
+  const n = src.length;
+  const idx = n ? (((S.idx || 0) % n) + n) % n : 0;
+  const raw = n ? src[idx] : null;
+  const isEmpty = !seen && !raw;
+  const item = (x) => {
+    if (!x) return { id: '', title: '', T: '', size: 38, hasImg: false, noImg: true, img: '', gbg: 'none', p1: '#000', starred: false, notStarred: true, providers: [] };
+    const v = this._vis(x); const st = !!(this._stars && x.id in this._stars ? this._stars[x.id] : x.starred);
+    return Object.assign(v, { size: x.title_size || (String(x.title).length <= 14 ? 38 : 30), starred: st, notStarred: !st, providers: x.providers || [] });
+  };
+  const cur = item(raw);
+  const prev = item(n > 1 ? src[(idx - 1 + n) % n] : null), next = item(n > 1 ? src[(idx + 1) % n] : null);
+  const pi = Math.min(S.plat || 0, Math.max(0, cur.providers.length - 1));
+  const P = cur.providers[pi] || cur.providers[0] || null;
+  const P0 = cur.providers[0] || null;
+  const dur = raw && raw.meta ? String(raw.meta).split(' · ')[0] : '';
+  const go = (k) => { this.setState({ idx: (S.idx || 0) + k, deal: false, plat: 0 }); setTimeout(() => this.setState({ deal: true }), 10); };
+  const setMood = (key) => {
+    try { localStorage.setItem('kinoo.ver.mood', key); } catch (_) {}
+    this.setState({ mode: 'new', mood: key, idx: 0, deal: false, plat: 0 }); setTimeout(() => this.setState({ deal: true }), 10);
+    const b = this._board(key);
+    if (b.status === 'ok' && b.films.length) this._toast((b.mood || {}).name + ' · ' + b.films.length + ' en cartelera');
+  };
+  const toSeen = (i) => { this.setState({ mode: 'seen', idx: i || 0, deal: false, plat: 0 }); setTimeout(() => this.setState({ deal: true }), 10); };
+  const toNew = () => { this.setState({ mode: 'new', idx: 0, deal: false, plat: 0 }); setTimeout(() => this.setState({ deal: true }), 10); };
+  const toTop = () => { try { this._sc.scrollTo({ top: 0, behavior: 'smooth' }); } catch (_) {} };
+  const emptyCopy = {
+    empty_hand: ['Tu cartelera está vacía', 'Guarda películas en Descubrir y aquí te proponemos cuál ver esta noche.'],
+    empty_mood: ['Nada para este mood', 'Ninguna de tus guardadas va con este mood. Prueba Todas o descubre más.'],
+    empty_platforms: ['No está en tus plataformas', 'Lo que guardaste no está en tus plataformas. Descubre más películas.'],
+  }[board.status] || ['Tu cartelera está vacía', 'Guarda películas en Descubrir y aquí te proponemos cuál ver esta noche.'];
+  const ins = this._insight();
+  const sheetOn = !!S.sheet;
+  const nShelf = shelfData.length;
   return {
-    moods: MOODS.map((m) => { const on = m[0] === mood && kind === 'mood'; return { n: m[1], svg: m[2], on, bd: on ? '#f2b544' : 'transparent', fg: on ? '#f2b544' : '#f4e7d0', sh: on ? '0 0 0 3px #1a1411,0 0 18px rgba(242,181,68,.55)' : 'none', sc: on ? 1.04 : 1, cls: on && S.popMood === m[0] ? 'kpop' : '', pick: () => this._setMood(m[0]) }; }),
-    inDeck: !isEnd, isEnd, c, u: u || {}, hasUnder: !!u,
-    underT: 'scale(' + (0.94 + 0.06 * prog) + ') translateY(' + (14 - 14 * prog) + 'px)', underB: (0.6 + 0.4 * prog).toFixed(2), underTr: drag ? 'none' : 'transform .35s, filter .35s',
-    dragT: atRest ? 'none' : 'translate(' + tx + 'px,' + ty + 'px) rotate(' + rot + 'deg)',
-    dragTr: exit ? 'transform .38s cubic-bezier(.5,0,.75,0)' : (drag ? 'none' : 'transform .45s cubic-bezier(.3,1.5,.5,1)'),
-    dealCls: S.deal ? 'kdeal' : '',
-    sl: isT ? { r: 'Sigue', l: 'Sigue', u: 'Sigue', lc: '#f4e7d0' } : { r: 'Verla', l: 'Otra', u: '★ Super like', lc: '#f2b544' },
-    opR: exit === 'right' ? 1 : (drag ? clamp(dx / 90) : 0), opL: exit === 'left' ? 1 : (drag ? clamp(-dx / 90) : 0), opU: exit === 'up' ? 1 : (drag ? clamp((-dy - Math.abs(dx)) / 90) : 0),
-    hasLabel: kind === 'super' && !isEnd, deckName: S.deckName || 'Super likes', deckPos: filmPos + ' de ' + films.length,
-    supers, bumpCls: S.bump ? 'kbump' : '',
-    deckLabel: kind === 'super' ? 'Super likes' : moodName, endCount: films.length,
-    nList: liked.length, nOtro: noped.length, nSup: S.supAdded || 0,
-    best: Object.assign({ t: bf.t, match: bf.match, matchTxt: bf.match ? pct(bf.match) + ' · ' : '', dur: bf.dur }, vis(bestId)),
-    openBest: () => this._openDonde(bestId, null, false),
-    restart: () => this._setMood(mood, true),
-    stop: (e) => { e.stopPropagation(); },
-    toggleList: (e) => { e.stopPropagation(); const s = st(); const id = (s.items || items)[s.idx || 0].id; const m = Object.assign({}, s.inList || {}); const now = m[id] === false; m[id] = now; this.setState({ inList: m }); this._toast(now ? FILMS[id].t + ' guardada en tu lista' : 'Quitamos ' + FILMS[id].t + ' de tu lista'); },
-    shareTitle: (e) => { e.stopPropagation(); this._toast('Link copiado · comparte tu título donde quieras'); },
-    doNext: (e) => { e.stopPropagation(); this._swipe('right'); },
-    doLeft: () => this._swipe('left'), doRight: () => this._swipe('right'),
-    onDown: (e) => { const s = st(); if (s.exit) return; const r = e.currentTarget.getBoundingClientRect(); this._k = (r.width / 350) || 1; this._sx = e.clientX; this._sy = e.clientY; try { e.currentTarget.setPointerCapture(e.pointerId); } catch (_) {} this.setState({ drag: true, dx: 0, dy: 0, deal: false }); },
-    onMove: (e) => { if (!st().drag) return; this.setState({ dx: (e.clientX - this._sx) / this._k, dy: (e.clientY - this._sy) / this._k }); },
-    onUp: () => { const s = st(); if (!s.drag) return; const ddx = s.dx || 0, ddy = s.dy || 0;
-      if (Math.abs(ddx) + Math.abs(ddy) < 6) { this.setState({ drag: false, dx: 0, dy: 0 }); const it = (s.items || items)[s.idx || 0]; if (it && it.kind === 'film') this._openDonde(it.id, null, true); return; }
-      if (-ddy > 110 && Math.abs(ddx) < 90) return this._swipe('up');
-      if (ddx > 110) return this._swipe('right');
-      if (ddx < -110) return this._swipe('left');
-      this.setState({ drag: false, dx: 0, dy: 0 }); },
-    onCancel: () => this.setState({ drag: false, dx: 0, dy: 0 }),
-    openSuper: () => this._openSheet('super'),
-    sheetMounted: !!sheet, dondeOn: sheet === 'donde', superOn: sheet === 'super',
-    dimOp: S.sheetShow ? 1 : 0, sheetY: S.sheetShow ? '0px' : '110%',
-    closeSheet: () => this._closeSheet(),
-    dimTap: () => { const s = st(); if (s.sheet === 'donde' && s.fromDeck) { const id = s.film; this._closeSheet(); this._toast(FILMS[id].t + ' quedó en tu lista para otro día'); this._advance('liked', id); } else this._closeSheet(); },
-    film: { t: film.t },
-    plats: PLATS.map((p, i) => { const on = i === plat; return { n: p.n, s: p.s, logo: p.logo, sc: p.rent ? '#8e6f62' : '#2f6b4f', op: p.rent ? 0.78 : 1, bd: on ? '2px solid #e8642c' : '1.5px solid #8e6f62', bg: on ? '#fff7ea' : 'rgba(255,255,255,.25)', rc: on ? '#e8642c' : '#8e6f62', dot: on ? 1 : 0, pick: () => this.setState({ plat: i }) }; }),
-    openLabel: PLATS[plat].rent ? 'Alquilar en ' + PLATS[plat].n + ' · $14.900' : 'Abrir en ' + PLATS[plat].n + ' ↗',
-    slChips: ['Todas', 'Sufrir bonito', 'Salir pensando'].map((n) => ({ n, bg: n === slF ? '#1a1411' : 'transparent', fg: n === slF ? '#f4e7d0' : '#1a1411', pick: () => this.setState({ slFilter: n }) })),
-    slFilms: slList.map((id) => Object.assign({ t: FILMS[id].t, match: FILMS[id].match, matchTxt: pct(FILMS[id].match), open: () => { this._closeSheet(); setTimeout(() => this._openDonde(id, null, false), 360); } }, vis(id))),
-    slCount: slList.length > 3 ? '+' + (slList.length - 3) + ' más · desliza para verlas' : slList.length + ' en este filtro',
-    playSuper: () => { this._closeSheet(); const fs = Array.from(new Set(superFilms)); this.setState({ kind: 'super', deckName: 'Super likes', items: fs.map((id) => ({ kind: 'film', id })), idx: 0, liked: [], noped: [], supAdded: 0, deal: true }); },
+    newMode: !seen, seenMode: seen, isSample: !KD,
+    moodName: mood.name, moodDesc: mood.desc, moodSize: String(mood.name || '').length > 16 ? 28 : 32,
+    dialDots: moods.map((m, i) => ({ w: i === mi ? 14 : 5, bg: i === mi ? '#f2b544' : '#8a7458' })),
+    moodPrev: () => setMood(moods[(mi + moods.length - 1) % moods.length].key),
+    moodNext: () => setMood(moods[(mi + 1) % moods.length].key),
+    toNew, toAll: () => setMood(moods[0].key),
+    dealCls: S.deal ? 'kdeal' : '', popCls: S.pop ? 'kpop' : '',
+    hasCard: !!raw, hasGhosts: !!raw && n > 1, isEmpty,
+    cur, prev, next,
+    dots: src.map((x, i) => ({ w: i === idx ? 18 : 6, bg: i === idx ? '#f2b544' : '#8a7458' })),
+    cardMeta: seen ? (dur ? dur + ' · ' : '') + 'tu calificación: ' + (raw ? raw.rating : '') : (raw ? raw.meta : ''),
+    cardQuote: raw ? '“' + (seen ? raw.back : raw.quote) + '”' : '',
+    whenLabel: raw && raw.when ? 'la viste ' + raw.when : 'ya la viste',
+    starLabel: cur.starred ? 'Quitar estrella' : 'Marcar con estrella',
+    stopEv: (e) => { if (e) e.stopPropagation(); },
+    star: (e) => {
+      if (e) e.stopPropagation(); if (!raw) return;
+      const want = !cur.starred; let got = want;
+      if (KD) { try { const r = KD.star(raw.id, want); got = !!(r && r.starred); } catch (_) { got = cur.starred; } }
+      this._stars = Object.assign({}, this._stars || {}, { [raw.id]: got });
+      // El motor reordena la cartelera con la estrella: pedirla de nuevo y seguir mostrando la misma película.
+      let ni = S.idx || 0;
+      if (KD && !seen) { this._bb = {}; this._in = null; const nb = this._board(mk); const j = nb.status === 'ok' ? nb.films.findIndex((x) => x.id === raw.id) : -1; if (j >= 0) ni = j; }
+      this.setState({ idx: ni, pop: false }); setTimeout(() => this.setState({ pop: true }), 10);
+      this._toast(got ? raw.title + ' queda primera en tu cartelera' : 'Le quitamos la estrella a ' + raw.title);
+    },
+    prevF: () => go(-1), nextF: () => go(1),
+    onDown: (e) => { this._sx = e.clientX; },
+    onUp: (e) => { const d = e.clientX - (this._sx === undefined ? e.clientX : this._sx); this._sx = undefined; if (Math.abs(d) > 50 && n > 1) go(d < 0 ? 1 : -1); },
+    onKey: (e) => { if (n > 1 && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) { e.preventDefault(); go(e.key === 'ArrowRight' ? 1 : -1); } else if (e.key === 'Enter') this.setState({ sheet: true, sheetShow: false, plat: 0 }); },
+    tkKick: seen ? 'Volver a verla · ahora' : 'Tu plan · ahora',
+    tkBig: seen ? 'Repetirla' : (P0 && P0.rent ? 'Alquilarla' : 'Verla ahora'),
+    tkSub: P0 ? 'en ' + P0.name + (P0.note ? ' · ' + P0.note : '') : 'elige dónde verla',
+    tk: { hasLogo: !!(P0 && this._logo(P0.key)), noLogo: !(P0 && this._logo(P0.key)), logo: P0 ? this._logo(P0.key) : '', ini: P0 ? this._ini(P0.name) : '?' },
+    ticketLabel: (seen ? 'Repetirla' : (P0 && P0.rent ? 'Alquilarla' : 'Verla ahora')) + (P0 ? ' en ' + P0.name : ''),
+    openSheet: () => { if (!raw) return; this.setState({ sheet: true, sheetShow: false, plat: 0 }); clearTimeout(this._ts1); this._ts1 = setTimeout(() => this.setState({ sheetShow: true }), 20); },
+    closeSheet: () => { this.setState({ sheetShow: false }); clearTimeout(this._ts2); this._ts2 = setTimeout(() => this.setState({ sheet: false }), 320); },
+    sheetMounted: sheetOn, dimOp: S.sheetShow ? 1 : 0, sheetY: S.sheetShow ? '0' : '100%',
+    plats: cur.providers.map((p, i) => { const on = i === pi; const logo = this._logo(p.key); return { name: p.name, note: p.note || (p.rent ? 'alquiler' : ''), on, hasLogo: !!logo, noLogo: !logo, logo, ini: this._ini(p.name), sc: p.rent ? '#8e3714' : '#2f6b4f', bd: on ? '2px solid #e8642c' : '2px solid rgba(26,20,17,.15)', bg: on ? '#fff7ea' : 'transparent', rc: on ? '#e8642c' : 'rgba(26,20,17,.35)', dot: on ? 1 : 0, pick: () => this.setState({ plat: i }) }; }),
+    hasPlats: cur.providers.length > 0, noPlats: cur.providers.length === 0,
+    openLabel: P ? (P.rent ? 'Alquilar en ' + P.name : 'Abrir en ' + P.name + ' ↗') : '',
+    // Al confirmar: (repetirla → rewatch) + watch_started con la plataforma elegida; el enlace lleva a Abriendo.
+    startWatch: () => { if (!KD || !raw || !P) return; try { if (seen) KD.rewatch(raw.id); KD.onWatch(raw.id, 'start', P.name); } catch (_) {} },
+    emptyTitle: emptyCopy[0], emptyText: board.notice || emptyCopy[1],
+    emptyToAll: isEmpty && board.status === 'empty_mood' && mi !== 0, emptyToDiscover: isEmpty && !(board.status === 'empty_mood' && mi !== 0),
+    shelfLink: nShelf ? 'Tu repisa · ' + nShelf + ' para volver a ver' : 'Lo que aprendimos de ti',
+    toShelf: () => { try { const t = nShelf ? this._shelfEl : this._insEl; this._sc.scrollTo({ top: t ? t.offsetTop - 24 : 700, behavior: 'smooth' }); } catch (_) {} },
+    hasShelf: nShelf > 0, shelfCount: nShelf ? nShelf + (nShelf === 1 ? ' ya vista' : ' ya vistas') : '',
+    shelfHelp: nShelf ? 'Cuando calificas una película, sale de la cartelera y se guarda aquí.' : 'Cuando califiques una película, aparece aquí.',
+    shelf: shelfData.map((s, i) => Object.assign(this._vis(s), { rating: s.rating, pick: () => { toSeen(i); toTop(); } })),
+    ins: {
+      kicker: ins.kicker || 'lo que aprendimos de ti', ready: !!ins.ready, notReady: !ins.ready, title: ins.title || '', body: ins.body || '',
+      empty: ins.empty_text || 'Desliza unas cartas más y te contamos lo que el mazo dice de ti.',
+      moods: (ins.moods || []).slice(0, 3).map((m) => { const l = this._level(m.level); return Object.assign(l, { name: m.name, aria: m.name + ': ' + l.word }); }),
+      traits: (ins.traits || []).slice(0, 3).map((t) => { const l = this._level(t.level); return Object.assign(l, { label: t.label, aria: t.label + ': ' + l.word }); }),
+    },
+    setScroll: this._ssr || (this._ssr = (el) => { if (el) this._sc = el; }),
+    setShelf: this._ssh || (this._ssh = (el) => { if (el) this._shelfEl = el; }),
+    setInsight: this._sin || (this._sin = (el) => { if (el) this._insEl = el; }),
     hasToast: !!S.toast, toast: S.toast || '',
-    startWatch: () => { const s = st(); if (window.KinooDemo && s.film) window.KinooDemo.onWatch(s.film, 'start', PLATS[s.plat || 0].n); }
   };
 }
-_build(mood, kind, films, titleShown) {
-  const { FILMS, MOODS, PLATS, SUPER0, vis } = this._data();
-  const m = MOODS.find((x) => x[0] === mood) || MOODS[2];
-  const items = (kind === 'super' ? films : m[3]).map((id) => ({ kind: 'film', id }));
-  if (kind === 'mood' && !titleShown) items.splice(3, 0, { kind: 'title' });
-  return items;
-}
-_setMood(id, again) {
-  const { FILMS, MOODS, PLATS, SUPER0, vis } = this._data();
-  const s = this.state || {};
-  if (id === s.mood && !again && (s.kind || 'mood') === 'mood' && (s.idx || 0) < (s.items || this._build(id, 'mood', null, s.titleShown)).length) { this.setState({ popMood: null }); setTimeout(() => this.setState({ popMood: id }), 10); return; }
-  const items = this._build(id, 'mood', null, s.titleShown);
-  this.setState({ mood: id, kind: 'mood', items, idx: 0, liked: [], noped: [], supAdded: 0, popMood: id, deal: true, dx: 0, dy: 0, exit: null, drag: false });
-  const m = MOODS.find((x) => x[0] === id);
-  this._toast('Mazo ' + m[1] + ' · ' + items.filter((i) => i.kind === 'film').length + ' cartas');
-}
-_toast(t) { clearTimeout(this._tt); this.setState({ toast: t }); this._tt = setTimeout(() => this.setState({ toast: null }), 2200); }
-_openSheet(k) { clearTimeout(this._ts1); clearTimeout(this._ts2); this.setState({ sheet: k, sheetShow: false }); this._ts1 = setTimeout(() => this.setState({ sheetShow: true }), 30); }
-_closeSheet() { clearTimeout(this._ts1); clearTimeout(this._ts2); this.setState({ sheetShow: false }); this._ts2 = setTimeout(() => this.setState({ sheet: null, fromDeck: false }), 320); }
-_openDonde(id, platName, fromDeck) {
-  const { FILMS, MOODS, PLATS, SUPER0, vis } = this._data();
-  const f = FILMS[id];
-  const want = platName || f.plat[0];
-  const i = Math.max(0, PLATS.findIndex((p) => p.n === want));
-  this.setState({ film: id, plat: i, fromDeck: !!fromDeck });
-  this._openSheet('donde');
-}
-_swipe(dir) {
-  const { FILMS, MOODS, PLATS, SUPER0, vis } = this._data();
-  const s = this.state || {};
-  const items = s.items || this._build(s.mood || 'sufrir', s.kind || 'mood', s.films, s.titleShown);
-  const it = items[s.idx || 0];
-  if (!it || s.exit) return;
-  if (!s.items) this.setState({ items });
-  if (it.kind === 'film' && dir === 'right') {
-    this.setState({ exit: 'right', drag: false });
-    clearTimeout(this._te); this._te = setTimeout(() => { this.setState({ exit: null, dx: 0, dy: 0 }); this._openDonde(it.id, null, true); }, 260);
-    return;
-  }
-  this.setState({ exit: dir, drag: false });
-  if (window.KinooDemo && it.kind === 'film' && dir === 'left') window.KinooDemo.onWatch(it.id, 'skip');
-  clearTimeout(this._te);
-  this._te = setTimeout(() => {
-    const c = this.state || {};
-    const up = {};
-    if (it.kind === 'title') up.titleShown = true;
-    if (it.kind === 'film' && dir === 'up') {
-      up.supers = (typeof c.supers === 'number' ? c.supers : 7) + 1; up.supAdded = (c.supAdded || 0) + 1; up.bump = true;
-      up.superFilms = [it.id].concat(c.superFilms || SUPER0);
-      setTimeout(() => this.setState({ bump: false }), 650);
-      this._toast('★ Super like · ' + FILMS[it.id].t + ' va a tu mazo especial');
-    }
-    this.setState(up);
-    this._advance(dir === 'left' && it.kind === 'film' ? 'noped' : (dir === 'up' ? 'liked' : null), it.id);
-  }, 340);
-}
-_advance(list, id) {
-  const c = this.state || {};
-  const up = { idx: (c.idx || 0) + 1, exit: null, dx: 0, dy: 0, drag: false, deal: false };
-  if (list === 'liked') up.liked = (c.liked || []).concat([id]);
-  if (list === 'noped') up.noped = (c.noped || []).concat([id]);
-  this.setState(up);
-}
-componentWillUnmount() { clearTimeout(this._tt); clearTimeout(this._ts1); clearTimeout(this._ts2); clearTimeout(this._te); }
-
+_toast(t) { clearTimeout(this._tt); this.setState({ toast: t }); this._tt = setTimeout(() => this.setState({ toast: null }), 2000); }
+componentDidMount() { this._dl = setTimeout(() => this.setState({ deal: true }), 30); }
+componentWillUnmount() { clearTimeout(this._tt); clearTimeout(this._ts1); clearTimeout(this._ts2); clearTimeout(this._dl); }
 }
 </script>
 <script src="../_prototipos/embed.js"></script>

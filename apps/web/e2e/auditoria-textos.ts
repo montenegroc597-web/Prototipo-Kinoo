@@ -1,5 +1,6 @@
 // Detector de textos que se salen de su caja o se montan sobre otros. Corre dentro de la página (page.evaluate).
-// Raíz: la hoja abierta (si se pasa) o la app de 402 px. Ignora carruseles con desplazamiento horizontal.
+// Raíz: la hoja abierta (si se pasa) o la app de 402 px. Ignora carruseles (contenedores que se desplazan en horizontal);
+// los contenedores con scroll vertical sí se miden (ancho y choques), sin contar lo que queda debajo del borde.
 export function auditTexts(rootSelector: string | null): string[] {
   const app = document.querySelector('body > div > div > div') as HTMLElement;
   let root: HTMLElement = app;
@@ -19,9 +20,18 @@ export function auditTexts(rootSelector: string | null): string[] {
     return true;
   };
   const ownText = (el: Element) => [...el.childNodes].some((n) => n.nodeType === 3 && n.textContent?.trim());
+  // Carrusel = contenedor que de verdad se desplaza en horizontal (lo que sobra a la derecha es a propósito).
+  // Un contenedor con scroll solo vertical (.kscroll de Ver) también tiene overflow-x auto en el CSS calculado: ese no es carrusel.
+  const scrollsX = (e: Element) => {
+    const o = getComputedStyle(e).overflowX;
+    return (o === 'auto' || o === 'scroll') && e.scrollWidth > e.clientWidth + 1;
+  };
+  const scrollsY = (e: Element) => {
+    const o = getComputedStyle(e).overflowY;
+    return o === 'auto' || o === 'scroll';
+  };
   const inCarousel = (el: Element) => {
-    for (let e: Element | null = el; e && e !== root; e = e.parentElement)
-      if (getComputedStyle(e).overflowX === 'auto' || getComputedStyle(e).overflowX === 'scroll') return true;
+    for (let e: Element | null = el; e && e !== root; e = e.parentElement) if (scrollsX(e)) return true;
     return false;
   };
   const rectOf = (el: Element) => {
@@ -52,8 +62,19 @@ export function auditTexts(rootSelector: string | null): string[] {
       if (boxed) break;
       a = a.parentElement;
     }
-    const box = (a ?? root).getBoundingClientRect();
-    const over = Math.max(r.right - (box.right - 2), box.left + 2 - r.left, r.bottom - (box.bottom - 2));
+    const boxEl = a ?? root;
+    const box = boxEl.getBoundingClientRect();
+    // Margen de 2 px solo si la caja se ve (borde, esquinas o fondo): el texto no debe tocar el borde dibujado.
+    // Una caja que solo recorta (overflow, p. ej. con "…") se mide contra su borde exacto.
+    const bs = getComputedStyle(boxEl);
+    const drawn =
+      Number.parseFloat(bs.borderTopWidth) > 0 || Number.parseFloat(bs.borderRadius) > 2 || !['rgba(0, 0, 0, 0)', 'transparent'].includes(bs.backgroundColor);
+    const m = drawn ? 2 : 0;
+    // Abajo, una caja que solo recorta admite 4 px: la caja de las letras (ascendentes y descendentes de Big Shoulders)
+    // es más alta que un line-height ajustado sin que se corte nada visible.
+    // En un contenedor con scroll vertical, lo que queda debajo se ve al bajar: solo cuenta el ancho.
+    const below = scrollsY(boxEl) ? Number.NEGATIVE_INFINITY : r.bottom - (box.bottom - (drawn ? 2 : -4));
+    const over = Math.max(r.right - (box.right - m), box.left + m - r.left, below);
     if (over > 1.5 && box.width < R.width + 1) out.push(`se sale de su caja (+${Math.round(over)} px): ${t}`);
     else if (r.right > R.right + 1) out.push(`se sale de la pantalla (+${Math.round(r.right - R.right)} px): ${t}`);
   }

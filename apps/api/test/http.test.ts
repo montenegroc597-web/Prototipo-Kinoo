@@ -69,6 +69,51 @@ describe('API HTTP', () => {
     expect(after.archetype.name).toBeTruthy();
   });
 
+  it('GET /profile/insight: en palabras, sin cifras; con pocas señales no opina', async () => {
+    const leo = await signJwt({ sub: '66666666-6666-4666-8666-666666666666', exp: Math.floor(Date.now() / 1000) + 3600 }, SECRET);
+    const empty = await call('GET', '/profile/insight', undefined, leo);
+    expect(empty.status).toBe(200);
+    expect(empty.body).toMatchObject({ ready: false, title: '', body: '', traits: [], moods: [] });
+    expect(empty.body.empty_text.length).toBeGreaterThan(0);
+
+    const pairs = (await call('POST', '/onboarding', { step: 'pairs', n: 5 }, leo)).body.pairs;
+    const choices = pairs.map((p: any) => ({ chosen_movie_id: p.left_movie_id, rejected_movie_id: p.right_movie_id }));
+    await call('POST', '/onboarding', { step: 'choices', choices }, leo);
+    const r = await call('GET', '/profile/insight', undefined, leo);
+    expect(r.body.ready).toBe(true);
+    expect(r.body.title.length).toBeGreaterThan(0);
+    expect(r.body.archetype.key).toBeTruthy();
+    expect(/[0-9%]/.test(`${r.body.title} ${r.body.body} ${r.body.traits.map((t: any) => t.label).join(' ')}`)).toBe(false);
+    for (const t of r.body.traits) expect(['alto', 'medio', 'bajo']).toContain(t.level);
+  });
+
+  it('Ver: moods, cartelera, estrella (super_liked) y repisa', async () => {
+    const zoe = await signJwt({ sub: '77777777-7777-4777-8777-777777777777', exp: Math.floor(Date.now() / 1000) + 3600 }, SECRET);
+    const moods = (await call('GET', '/watch/moods', undefined, zoe)).body.moods;
+    expect(moods[0].key).toBe('todas');
+    expect((await call('GET', '/watch/billboard', undefined, zoe)).body.status).toBe('empty_hand');
+
+    const deck = (await call('POST', '/deck/open', { size: 5 }, zoe)).body.deck;
+    const [a, b] = deck.cards.map((c: any) => c.movie_id);
+    await call('POST', '/events', { events: [a, b].map((id: string) => ({ type: 'saved_intent', movie_id: id, payload: { flipped: false } })) }, zoe);
+    // La estrella la acepta la base (migración 0009) y sube la película al primer lugar.
+    const star = await call('POST', '/events', { events: [{ type: 'super_liked', movie_id: b, payload: {} }] }, zoe);
+    expect(star.status).toBe(200);
+    const bb = (await call('GET', '/watch/billboard?vibe=todas', undefined, zoe)).body;
+    expect(bb.status).toBe('ok');
+    expect(bb.mood).toMatchObject({ key: 'todas', name: 'Todas' });
+    expect(bb.films[0]).toMatchObject({ id: b, starred: true });
+
+    await call('POST', '/events', { events: [{ type: 'watch_confirmed', movie_id: b, payload: { reaction: 'loved' } }] }, zoe);
+    const after = (await call('GET', '/watch/billboard', undefined, zoe)).body;
+    expect(after.films.map((f: any) => f.id)).not.toContain(b);
+    const shelf = (await call('GET', '/watch/shelf', undefined, zoe)).body.shelf;
+    expect(shelf.map((s: any) => s.id)).toEqual([b]);
+    expect(shelf[0].rating).toBe('¡Me encantó!');
+
+    expect((await call('GET', '/watch/billboard?vibe=no-existe', undefined, zoe)).status).toBe(400);
+  });
+
   it('errores de validación responden 400 con mensaje en español', async () => {
     expect(await call('POST', '/deck/open', { size: 7 })).toEqual({ status: 400, body: { error: 'El tamaño del mazo debe ser 5, 10 o 20' } });
     expect((await call('POST', '/events', { events: [{ type: 'swipe_up', payload: {} }] })).status).toBe(400);

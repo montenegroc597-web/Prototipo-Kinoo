@@ -72,6 +72,10 @@ const ROUTES: Array<[string, string, Route]> = [
       return run((s) => s.onboarding(b));
     },
   ],
+  ['GET', '/watch/billboard', ({ run, url }) => run((s) => s.billboard(url.searchParams.get('vibe')))],
+  ['GET', '/watch/shelf', ({ run }) => run((s) => ({ shelf: s.shelf() }))],
+  ['GET', '/watch/moods', ({ run }) => run((s) => ({ moods: s.moods() }))],
+  ['GET', '/profile/insight', ({ run }) => run((s) => s.insight())],
   ['GET', '/profile', ({ run }) => run((s) => s.profile())],
 ];
 

@@ -40,6 +40,7 @@ export function rowsToConfig(r: ConfigRows): EngineConfig {
       key: v.key as string,
       name: v.name as string,
       definition: v.definition as string,
+      ...(v.tagline ? { tagline: v.tagline as string } : {}),
       aliases: (v.aliases as string[]) ?? [],
       active: !!v.active,
       version: Number(v.version),

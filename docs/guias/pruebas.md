@@ -9,7 +9,7 @@
 | **Unitarias** | `npm run test:unit` | El motor (aprendizaje, puntaje, mazos, Ver, explicaciones), el núcleo con repositorio en memoria, la configuración editable, el catálogo y la simulación de TMDB, las rutas del front | `packages/*/test`, `apps/web/test` |
 | **Simulación** | `npm run test:sim` (también dentro de las unitarias) | Las 5 pruebas de aprendizaje de la sección 16 con usuarios sintéticos | `packages/engine/sim` |
 | **Integración** | `npm run test:integration` | Migraciones en los dos proveedores (Supabase y PostgreSQL genérico), reglas de seguridad por fila (RLS), aplicador de migraciones, repositorios, API HTTP completa con JWT | `packages/db/test`, `apps/api/test` |
-| **E2E** | `npm run test:e2e` | El prototipo en un navegador real: abrir mazo, guardar, Ver, "Me encantó"; las pantallas sin motor; las rutas | `apps/web/e2e` |
+| **E2E** | `npm run test:e2e` | El prototipo en un navegador real: abrir mazo, guardar, Ver (cartelera, estrella, plataformas, repisa), calificar; lo que el mazo dice de ti en Perfil, Resumen y Ver; conteos del cierre en Resumen y Ticket; textos de las 69 películas; las pantallas sin motor; las rutas | `apps/web/e2e` |
 | **Calidad** | `npm run lint`, `npm run typecheck`, `npm run db:seeds:check` | Estilo, tipos y semillas al día | — |
 
 `npm run check` corre todo menos las e2e. La CI (`.github/workflows/ci.yml`) corre las cuatro capas en paralelo en cada pull request.
@@ -31,4 +31,4 @@ PW_CHROMIUM_PATH=/opt/pw-browsers/chromium npm run test:e2e
 
 ## Ejemplo con números
 
-Estado al 5 de noviembre de 2026: **116 unitarias e integración** y **3 e2e** en verde. La simulación da 6,4 veces más aciertos que el azar tras 40 eventos. Las de integración tardan unos 15 segundos porque crean 10 bases PostgreSQL en memoria.
+Estado al 17 de noviembre de 2026: **148 unitarias e integración** y **14 e2e** en verde. La simulación da 6,4 veces más aciertos que el azar tras 40 eventos. Las de integración tardan unos 15 segundos porque crean 10 bases PostgreSQL en memoria; las e2e tardan unos 6 minutos, casi todo en revisar los textos de las 69 películas.

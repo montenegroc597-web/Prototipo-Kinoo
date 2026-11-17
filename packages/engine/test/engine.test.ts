@@ -305,5 +305,18 @@ describe('cierre del mazo con poca información', () => {
     const close = engine.close(d, m);
     expect(close.learned).toBe(defaultConfig.templates.find((t) => t.key === 'deck_learned_none')!.text);
     expect(close.top_atoms).toEqual([]);
+    expect(close.counts).toEqual({ want: 1, seen: 0, pass: d.cards.length - 1 });
+    expect(close.vibe).toBe(d.vibe);
+  });
+  it('los conteos del cierre separan quieres ver, ya la viste y dejaste pasar', () => {
+    const engine = new KinooEngine(defaultConfig, synthCatalog(120, 3));
+    const m = engine.model('u', []);
+    const d = engine.openDeck(m, { deck_id: 'd', now: NOW });
+    const [a, b, c, ...rest] = d.cards;
+    engine.apply(m, ev('saved_intent', { flipped: false, deck_id: 'd' }, { movie_id: a!.movie_id }));
+    engine.apply(m, ev('saved_intent', { flipped: true, deck_id: 'd' }, { movie_id: b!.movie_id }));
+    engine.apply(m, ev('marked_seen', { flipped: false }, { movie_id: c!.movie_id }));
+    for (const x of rest) engine.apply(m, ev('dismissed', { flipped: false, deck_id: 'd' }, { movie_id: x.movie_id }));
+    expect(engine.close(d, m).counts).toEqual({ want: 2, seen: 1, pass: rest.length });
   });
 });

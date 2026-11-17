@@ -3,6 +3,12 @@
  * como un celular, sobre un fondo café. En el celular no cambia nada.
  * Estructura de cada pantalla .dc.html: body > div > div > div (402 px, la app).
  */
+
+/* En el celular: el fondo de la página es el de la app (sin franja blanca bajo la barra en teléfonos altos). */
+html, body { background: #17120f; }
+
+/* Foco visible con teclado en todas las pantallas (los botones del diseño quitan el borde). */
+:focus-visible { outline: 2px solid #f2b544 !important; outline-offset: 2px; }
 @media (min-width: 600px) {
   html, body { background: #3b2a20 !important; }
   body { margin: 0; min-height: 100vh; background: radial-gradient(ellipse at 50% 30%, #4a3528 0%, #3b2a20 55%, #2a1d16 100%) !important; }

@@ -1,12 +1,12 @@
 # Progreso
 
 ## Estado actual
-- Fase: F10 · Límites de texto en toda la app, preguntas de recolección de datos y explicación gráfica del algoritmo
+- Fase: F11 · Auditoría de Kinoo, Ver nuevo (B7c) y "lo que el mazo dice de ti" con datos reales (informe: `auditoria/INFORME.md`)
 - Última tarea terminada: F7 · estructura nueva, base de datos portátil, API HTTP, simulación de TMDB con 69 películas, pósters y documentación
 - Siguiente tarea: el equipo responde `docs/PREGUNTAS-RECOLECCION-DE-DATOS.md`; subir los pósters que faltan (ver abajo)
 - Bloqueos: sin `TMDB_API_KEY` (el catálogo usa la simulación de TMDB, que corre el mismo pipeline sin red)
 - Pull requests: montenegroc597-web/Prototipo-Kinoo#1 (fusionado), montenegroc597-web/Prototipo-Kinoo#2 (arreglo del despliegue), y el de F7
-- Última actualización: 2026-11-05 09:30
+- Última actualización: 2026-11-17 16:30
 
 ## Fases
 | Fase | Estado | Comprobación |
@@ -17,6 +17,7 @@
 | F3 | ✅ | 35/35 unitarias del motor; 5/5 pruebas de simulación (Aprende 6,4× el azar; moods coseno 0,64 y 20 % compartido; cambio en 22 eventos en el peor caso; 0 explicaciones con números; 181/181 mazos respetan la receta). Total del repo 51/51 |
 | F4 | ✅ (semilla) | 34 películas válidas (no 300: bloqueo anotado); 0 errores de esquema y frases gancho; dispersión ≥ 0,21 en los 21 átomos; 0 contradicciones; error de anclas 0,052 (anclas provisionales); CSV de 20 para revisión |
 | F5 | ✅ | 56/56 unitarias (incluye API de punta a punta sobre PGlite con RLS); 3/3 e2e: mazo del motor → guardar → Ver → "Me encantó" cambia el perfil; sin motor, el prototipo sigue igual; 86/86 rutas |
+| F11 | ✅ | Auditoría (UX-UI, back, front, tester): Ver B7c conectado, insight/cartelera/repisa/estrella reales, 0 porcentajes visibles; `npm run check` verde con 148/148 unitarias e integración; 14/14 e2e (4 adaptadas, 4 nuevas en `ver-y-perfil.spec.ts`); `sim:perfiles` 6/6 arquetipos sin cambios. Informe: `auditoria/INFORME.md` |
 | F10 | ✅ | Límites de caracteres por pantalla (`guias/limites-de-texto.md`); auditoría en el navegador sin textos fuera de su caja ni montados en frente, reverso, ficha ADN y Ver de las 69 películas y en las pantallas fijas; 123/123 unitarias e integración y 10/10 e2e; documento de preguntas; explicación gráfica (`presentacion/como-funciona-kinoo.html`) y su versión md |
 | F9 | ✅ | Estándar de caracteres de la carta (`display.*`, `card_*_max`); 0 textos fuera del borde en las 69 películas (`cartas.spec.ts`); 90 pilares acortados; póster de Rocky corregido; vista en PC centrada sobre fondo café; 122/122 y 7/7 e2e |
 | F8 | ✅ | Inicio de sesión camilo/1234 (6/6 e2e); simulación de Camilo en la app (4 mazos por la interfaz real) y de 6 tipos de usuario; `docs/SIMULACION-PERFILAMIENTO.md`; 118/118 unitarias e integración |
@@ -48,6 +49,8 @@
 - 2026-11-05 06:30 · F8 · Inicio de sesión de la demo, simulación de perfilamiento y dos ajustes que salieron de ella (cierre del mazo y frase del curador).
 - 2026-11-05 07:10 · F9 · Pedido de Camilo: la sinopsis del reverso se salía del borde. Se definió un estándar de caracteres para todos los textos de la carta, se corrigieron los pósters y la vista en PC.
 - 2026-11-05 09:30 · F10 · Pedido de Camilo: revisar todos los textos de la app. Límites en `params.json`, ficha ADN con frase y temas de la película (migración 0008), Ver con título en una línea, cierre del mazo neutro con menos de 2 guardadas, pilares a 15 caracteres. Documento de preguntas para recolectar datos desde el front (minijuego, momentos clave, versión, super like…) y explicación gráfica del algoritmo.
+- 2026-11-17 · F11 · Pedido de Camilo: auditar Kinoo, que "lo que el mazo dice de ti" salga de los swipes, Ver con el diseño B7c y un sistema para actualizar el front con IA. Trabajo en cuatro roles (`auditoria/BRIEF-EQUIPO.md`): UX-UI (auditoría y especificación), back (insight, cartelera, repisa, `super_liked`), front (Ver B7c, pantallas sin mockups de la persona, manifiesto y `check:front`) y tester (e2e, arreglos pequeños, informe).
+- 2026-11-17 · F11 · Tester: el recorrido encontró que tras un primer mazo el cierre concluía un gusto y Resumen/Perfil/Ver decían "desliza unas cartas más"; se bajó `insight_trait_min`. También: arquetipo cortado en Perfil, conteos del cierre en `lastClosing()`, "Netflix" inventado eliminado, auditoría de textos que ahora mide los contenedores con scroll. Detalle en `auditoria/INFORME.md`.
 
 ## Decisiones tomadas sin Camilo
 - La línea base es 0/0 porque el prototipo no tenía pruebas. Las pruebas nuevas son las primeras del repositorio.
@@ -93,10 +96,21 @@
 - **F9 · Dos cambios mínimos de plantilla en Descubrir:** el tamaño del título baja hasta 26 px para títulos largos, y la razón al pie puede ocupar 2 líneas (antes era 1 y se salía).
 - **F9 · Pósters:** se encuadran hacia arriba (`50% 22%`) porque son verticales y el espacio es horizontal. El archivo de "Rocky" era el póster de "Rocky Balboa": se movió a esa película. El de "Interstellar" es una imagen vieja del prototipo (con logo de Netflix): conviene reemplazarlo por el póster oficial.
 - **F9 · Pilares:** 90 etiquetas tenían más de 18 caracteres; un subagente las acortó conservando el sentido (por ejemplo, "locura en aislamiento" → "locura aislada"). Desde ahora el juez recibe el límite en el prompt.
+- **F11 · Estrella (`super_liked`):** se tomó la opción ★ de P7.3: señal +0,8 y η 0,12 (`action_weights.json`), la película queda en la mano y sube en la cartelera de Ver con un bono de 0,3 (`watch_star_bonus`). Quitar la estrella es un `undo` de ese evento (los eventos no se borran). Migración 0009 (tipo de evento y `vibes.tagline`).
+- **F11 · Calificar saca de la cartelera:** una película con `watch_confirmed` pasa a la repisa aunque sea "¡Obra maestra!" (antes quedaba en la mano y Ver la volvía a proponer). "Volver a verla" (`rewatch_intent`) la devuelve a la cartelera.
+- **F11 · "Me dormí":** se sigue contando como "No era para mí" (−0,8), pero se guarda `fell_asleep: true` para medir y para que la repisa diga "Me dormí". P9.1 sigue abierta.
+- **F11 · Lo que el mazo dice de ti:** sale del perfil (que se recalcula de los eventos). Opina desde 6 señales (`insight_min_signals`). Rasgos: alto si el perfil pasa 0,30, medio si pasa 0,15. Moods: parecido (coseno) del perfil con la receta personal: alto desde 0,5, medio desde 0,25. Son supuestos: se ajustan con datos.
+- **F11 · Repisa con fechas:** "hace 3 semanas" lleva una cifra de tiempo, como el diseño. La regla prohíbe cifras de afinidad, no fechas.
+- **F11 · Plataformas en Ver:** solo las del catálogo (suscripción). `rent` siempre es `false` y no hay precios, porque el catálogo no trae alquiler.
+- **F11 · Pasar de carta en la cartelera no es señal:** solo un botón "otra" explícito debería mandar `watch_skipped` (decisión pendiente del equipo, P7.4).
+- **F11 · Umbral de "lo que el mazo dice de ti":** `insight_trait_min` baja de 0,05 a 0,03 para que, si el cierre del mazo ya concluye un gusto, Resumen, Perfil y Ver también lo digan (tras un primer mazo de 5 y 5, el rasgo más alto queda cerca de 0,04). Prueba en `packages/engine/test/ver-y-perfil.test.ts`.
+- **F11 · Conteos del cierre:** `DeckClosingDTO` trae `counts` (quieres ver / ya la viste / dejaste pasar, según el estado de cada carta del mazo al cerrar) y `vibe`. Resumen y Ticket los usan en vez de recalcular desde los eventos. Un cierre guardado antes de este cambio no los trae: esas pantallas muestran "–".
+- **F11 · Plataforma sin dato:** si no se eligió plataforma, `watch_started` va sin `provider` (antes se inventaba "Netflix").
 
 ## Para revisar cuando vuelvas
+- **Leer el informe de la auditoría** (`docs/auditoria/INFORME.md`): tabla de funciones reales y maquetas, pendientes y decisiones abiertas (P7.3 estrella, P7.4 "otra", P8.1 Función, P9.1 "Me dormí", P9.2 versión).
 - **Responder las preguntas** de `docs/PREGUNTAS-RECOLECCION-DE-DATOS.md` (las urgentes están al inicio). Con eso se agregan los eventos del minijuego, el super like y la versión.
-- **Pantallas con porcentajes.** Resumen, Perfil y Función siguen mostrando números de ejemplo ("100 %", "82/100", "41 % igual"): hay que pasarlos a palabras cuando se conecten.
+- **Pantallas con porcentajes: resuelto en F11.** Resumen, Perfil y Ver muestran niveles en palabras; Función ya no tiene "% igual".
 - **Póster de Interstellar.** La imagen actual es la del prototipo viejo y trae el logo de Netflix: conviene cambiarla.
 - **Pósters que faltan.** De todas las imágenes que mandaste por el chat, solo 5 llegaron como archivo (*Duna*, *Duna: Parte dos*, *Marty Supreme*, *Hereditary* y *Mortal Kombat II*): esas ya están. Las demás se pudieron ver, pero no guardar. Para agregarlas, súbelas a `apps/web/public/posters/` con el nombre de la lista `missing` de `packages/catalog/data/posters.json` (por ejemplo, `the-godfather-1972.jpg`) y corre `npm run catalog:posters && npm run catalog:build && npm run db:seeds`. Si las subes desde GitHub, se pueden procesar en una sesión.
 - Subir el documento de Argon a `docs/historico/`.

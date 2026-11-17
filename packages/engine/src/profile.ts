@@ -1,4 +1,4 @@
-import type { AtomVector, KinooEvent } from '@kinoo/shared';
+import type { AtomVector, KinooEvent, Reaction } from '@kinoo/shared';
 import type { Catalog } from './catalog';
 import type { ConfigIndex } from './configIndex';
 import { applySignal, signalsOf } from './learning';
@@ -12,6 +12,20 @@ export interface MovieState {
   special_match: boolean;
   saved_at?: string;
   updated_at: string;
+  /** Tiene estrella (super_liked). Se quita con un undo de ese evento. */
+  starred?: boolean;
+  star_event_id?: string;
+  /** Ya la vio y la calificó (watch_confirmed): sale de la cartelera y va a la repisa hasta que pida volver a verla. */
+  on_shelf?: boolean;
+  confirmed_at?: string;
+  reaction?: Reaction;
+  rewatch?: boolean;
+  fell_asleep?: boolean;
+}
+
+/** En la mano de Ver: guardada o para repetir, y no calificada desde entonces. */
+export function inHand(s: MovieState): boolean {
+  return (s.state === 'saved' || s.state === 'rewatch') && !s.on_shelf;
 }
 
 export interface VibeRecipeState {
@@ -90,7 +104,8 @@ export function applyEvent(model: UserModel, e: KinooEvent, catalog: Catalog, cf
 function mark(model: UserModel, movie: string | undefined, state: MovieMark, at: string, extra: Partial<MovieState> = {}) {
   if (!movie) return;
   const prev = model.states.get(movie);
-  model.states.set(movie, { movie_id: movie, special_match: prev?.special_match ?? false, saved_at: prev?.saved_at, ...extra, state, updated_at: at });
+  // Se conserva lo anterior (estrella, repisa, match especial) salvo lo que el evento cambie.
+  model.states.set(movie, { ...prev, movie_id: movie, special_match: prev?.special_match ?? false, ...extra, state, updated_at: at });
 }
 
 function resetSkips(model: UserModel) {
@@ -101,7 +116,7 @@ function resetSkips(model: UserModel) {
 function updateState(model: UserModel, e: KinooEvent) {
   switch (e.type) {
     case 'saved_intent':
-      mark(model, e.movie_id, 'saved', e.at, { saved_at: e.at, special_match: !!e.context?.special_match });
+      mark(model, e.movie_id, 'saved', e.at, { saved_at: e.at, special_match: !!e.context?.special_match, on_shelf: false });
       break;
     case 'dismissed':
       mark(model, e.movie_id, 'dismissed', e.at);
@@ -114,12 +129,27 @@ function updateState(model: UserModel, e: KinooEvent) {
       mark(model, e.movie_id, 'seen', e.at);
       break;
     case 'rewatch_intent':
-      mark(model, e.movie_id, 'rewatch', e.at);
+      // Desde la repisa: "volver a verla" la devuelve a la cartelera.
+      mark(model, e.movie_id, 'rewatch', e.at, { on_shelf: false });
       break;
     case 'watch_confirmed':
-      mark(model, e.movie_id, e.payload.rewatch ? 'rewatch' : 'seen', e.at);
+      mark(model, e.movie_id, e.payload.rewatch ? 'rewatch' : 'seen', e.at, {
+        on_shelf: true,
+        confirmed_at: e.at,
+        reaction: e.payload.reaction,
+        rewatch: !!e.payload.rewatch,
+        fell_asleep: !!e.payload.fell_asleep,
+      });
       resetSkips(model);
       break;
+    case 'super_liked': {
+      if (!e.movie_id) break;
+      const prev = model.states.get(e.movie_id);
+      // Si no estaba en la mano (o la había descartado), la estrella también la guarda.
+      const keep = prev && prev.state !== 'dismissed';
+      mark(model, e.movie_id, keep ? prev.state : 'saved', e.at, { starred: true, star_event_id: e.id, ...(keep ? {} : { saved_at: e.at }) });
+      break;
+    }
     case 'watch_skipped':
       model.watch_skips_in_row += 1;
       if (e.movie_id) model.watch_skipped_ids.add(e.movie_id);

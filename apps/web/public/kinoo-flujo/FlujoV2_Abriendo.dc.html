@@ -5,6 +5,7 @@
 <title>Ver · Abriendo plataforma</title>
 <script src="../_prototipos/dc-runtime.js"></script>
 <link rel="stylesheet" href="../_kinoo/kinoo-shell.css">
+<script src="../_kinoo/kinoo-demo.js"></script>
 </head>
 <body>
 <x-dc>
@@ -52,20 +53,27 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;margin:0;cu
 <div ref="{{setRoot}}" style="position:relative;width:402px;height:844px;overflow:hidden;background:#000;font-family:'Figtree',sans-serif;color:#f4e7d0;user-select:none">
   <a ref="{{setA}}" href="FlujoV3_Funcion.dc.html" aria-label="Continuar" style="position:absolute;inset:0;display:block">
     <sc-if value="{{run}}" hint-placeholder-val="{{ true }}">
-    <div class="kin" style="position:absolute;left:153px;top:330px;width:96px;height:96px;border-radius:22px;overflow:hidden;background:#000"><img src="_blob/e19e382cca13f7f21b95d85f9d925a77.svg" alt="Netflix" width="96" height="96"></div>
-    <div style="position:absolute;left:36px;right:36px;top:452px;text-align:center"><p style="margin:0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:30px;text-transform:uppercase;color:#f4e7d0">Te llevamos a Netflix</p><p style="margin:6px 0 0;font-weight:600;font-size:13px;line-height:19px;color:#bfa98a">Dale play allá. Kinoo te avisa en los momentos clave para que juegues sin perderte nada.</p></div>
+    <div class="kin" style="position:absolute;left:153px;top:330px;width:96px;height:96px;border-radius:22px;overflow:hidden;background:#000"><sc-if value="{{hasLogo}}" hint-placeholder-val="{{ true }}"><img src="{{logo}}" alt="" width="96" height="96"></sc-if><sc-if value="{{noLogo}}" hint-placeholder-val="{{ false }}"><span aria-hidden="true" style="width:96px;height:96px;box-sizing:border-box;border-radius:22px;border:2px solid #3a2c22;background:#1a1411;display:flex;align-items:center;justify-content:center;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:34px;color:#f4e7d0">{{ini}}</span></sc-if></div>
+    <div style="position:absolute;left:36px;right:36px;top:452px;text-align:center"><p style="margin:0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:30px;text-transform:uppercase;color:#f4e7d0" data-k="abriendo-title">{{heading}}</p><p style="margin:6px 0 0;font-weight:600;font-size:13px;line-height:19px;color:#bfa98a">Dale play allá. Kinoo te avisa en los momentos clave para que juegues sin perderte nada.</p></div>
     <div style="position:absolute;left:101px;right:101px;top:560px;height:4px;border-radius:2px;background:#222;overflow:hidden"><div class="kfill" style="height:100%;background:#e8642c"></div></div>
-    <p style="position:absolute;left:0;right:0;top:580px;margin:0;text-align:center;font-weight:600;font-size:11px;color:#6b5844">toca para seguir</p>
+    <p style="position:absolute;left:0;right:0;top:580px;margin:0;text-align:center;font-weight:600;font-size:12px;color:#a8927a">toca para seguir</p>
     </sc-if>
   </a>
 
 </div>
-<img src="_blob/8b30359e78d3b7a820aa4ac282357119.webp" alt="download" width="70" height="70" style="position: absolute; left: 64px; top: 364px; width: 70px; height: auto"></x-dc>
+</x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":402,"height":844}}'>
 class Component extends DCLogic {
 renderVals() {
   if (!this._sr) { this._sr = (el) => this._setRoot(el); this._sa = (el) => { if (el) this._a = el; }; }
-  return { setRoot: this._sr, setA: this._sa, run: (this.state || {}).run !== false };
+  // Plataforma que eligió en Ver (lastWatch del puente). Sin puente o sin dato: "tu plataforma", sin logo.
+  if (this._w === undefined) { try { this._w = window.KinooDemo ? window.KinooDemo.lastWatch() : null; } catch (_) { this._w = null; } }
+  const prov = this._w && this._w.provider ? this._w.provider : null;
+  const key = prov ? prov.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/\+/g, '_plus').replace(/[^a-z0-9]+/g, '_').replace(/^_+|_+$/g, '') : '';
+  const L = { netflix: 'e19e382cca13f7f21b95d85f9d925a77', prime_video: '0ba16619c766dee534933cefdd8348fb', max: '416ff56e862c1dafca0dd9f6688cc880', apple_tv: '6db6d0a00e08a8caf17e583ca734be02' };
+  const logo = L[key] ? '_blob/' + L[key] + '.svg' : '';
+  const ini = prov ? prov.split(' ').map((w) => w[0]).join('').slice(0, 2).toUpperCase() : '▶';
+  return { setRoot: this._sr, setA: this._sa, run: (this.state || {}).run !== false, heading: 'Te llevamos a ' + (prov || 'tu plataforma'), hasLogo: !!logo, noLogo: !logo, logo, ini };
 }
 _start() { this.setState({ run: false }); setTimeout(() => this.setState({ run: true }), 20); clearTimeout(this._t); this._t = setTimeout(() => { try { (this._a || document.querySelector('a[href="FlujoV3_Funcion.dc.html"]')).click(); } catch (_) {} }, 2600); }
 _stop() { clearTimeout(this._t); }

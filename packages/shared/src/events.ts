@@ -32,8 +32,11 @@ export type RewatchIntentEvent = Base<'rewatch_intent', Record<string, never>>;
 export type DeckCompletedEvent = Base<'deck_completed', { deck_id: string }>;
 export type WatchProposedEvent = Base<'watch_proposed', { filters?: WatchFilters }>;
 export type WatchSkippedEvent = Base<'watch_skipped', Record<string, never>>;
-export type WatchStartedEvent = Base<'watch_started', { provider: string }>;
-export type WatchConfirmedEvent = Base<'watch_confirmed', { reaction: Reaction; rewatch?: boolean; vibe?: string | null }>;
+/** provider: la plataforma que eligió en la hoja de Ver. Si no eligió ninguna, va vacío (nunca se inventa). */
+export type WatchStartedEvent = Base<'watch_started', { provider?: string }>;
+export type WatchConfirmedEvent = Base<'watch_confirmed', { reaction: Reaction; rewatch?: boolean; vibe?: string | null; fell_asleep?: boolean }>;
+/** Estrella (super like, P7.3): "la quiero ver sí o sí". Se quita con un `undo` de este evento. */
+export type SuperLikedEvent = Base<'super_liked', { vibe?: string | null }>;
 export type AttributeRefutedEvent = Base<'attribute_refuted', { atom: AtomKey }>;
 export type UndoEvent = Base<'undo', { undone_event_id: string }>;
 export type PlatformsSetEvent = Base<'platforms_set', { country: string; providers: string[] }>;
@@ -53,7 +56,8 @@ export type KinooEvent =
   | WatchConfirmedEvent
   | AttributeRefutedEvent
   | UndoEvent
-  | PlatformsSetEvent;
+  | PlatformsSetEvent
+  | SuperLikedEvent;
 
 export type EventType = KinooEvent['type'];
 
@@ -73,6 +77,7 @@ export const EVENT_TYPES: readonly EventType[] = [
   'attribute_refuted',
   'undo',
   'platforms_set',
+  'super_liked',
 ];
 
 /** Filtros de momento en Ver. */

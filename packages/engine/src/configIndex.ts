@@ -40,6 +40,16 @@ export class ConfigIndex {
     return t;
   }
 
+  /** Plantilla opcional: si no existe, devuelve fallback (por ejemplo, un título por arquetipo). */
+  templateOr(key: string, fallback: string): string {
+    return this.templates.get(key) ?? fallback;
+  }
+
+  /** Nombre corto del átomo (para chips); si no tiene, su etiqueta. */
+  theme(atom: AtomKey): string {
+    return this.config.atoms.find((a) => a.key === atom)?.theme ?? this.label(atom);
+  }
+
   label(atom: AtomKey): string {
     return this.labels.get(atom) ?? atom;
   }

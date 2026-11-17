@@ -13,6 +13,10 @@
 | [SIMULACION-PERFILAMIENTO.md](SIMULACION-PERFILAMIENTO.md) | **Cómo se perfilan los usuarios**: Camilo en la app y seis tipos de usuario |
 | [guias/algoritmo-paso-a-paso.md](guias/algoritmo-paso-a-paso.md) | De un evento a una recomendación, con números |
 | [PROGRESS.md](PROGRESS.md) | Estado, bitácora y **decisiones tomadas sin Camilo** |
+| [auditoria/INFORME.md](auditoria/INFORME.md) | **Informe final de la auditoría (F11)**: qué es real y qué es maqueta, pruebas, hallazgos y decisiones abiertas |
+| [auditoria/ux-ui.md](auditoria/ux-ui.md) | Auditoría UX-UI pantalla por pantalla, con lista priorizada |
+| [auditoria/especificacion-ver-b7c.md](auditoria/especificacion-ver-b7c.md) | Especificación de la pantalla Ver nueva (B7c): estados, datos, accesibilidad |
+| [auditoria/BRIEF-EQUIPO.md](auditoria/BRIEF-EQUIPO.md) | Encargo de los cuatro roles de F11 y contrato del puente |
 | [KINOO_PLAN_MAESTRO.md](KINOO_PLAN_MAESTRO.md) | Las fases del proyecto y sus comprobaciones |
 
 ## Para trabajar
@@ -20,6 +24,7 @@
 | Documento | Para qué |
 |---|---|
 | [guias/integrar-un-front-nuevo.md](guias/integrar-un-front-nuevo.md) | Conectar un front nuevo al back: pantallas, llamadas, pósters |
+| [guias/actualizar-el-front-con-ia.md](guias/actualizar-el-front-con-ia.md) | **Cambiar o reemplazar una pantalla con IA** sin romper el puente ni las reglas (prompt listo) |
 | [guias/limites-de-texto.md](guias/limites-de-texto.md) | Cuántos caracteres caben en cada texto de cada pantalla |
 | [guias/contrato-api.md](guias/contrato-api.md) | Cada endpoint con ejemplos |
 | [guias/para-camilo-ajustar-el-algoritmo.md](guias/para-camilo-ajustar-el-algoritmo.md) | Cambiar pesos, moods, mazos y frases sin programar |
@@ -40,9 +45,10 @@
 
 ## Ejemplo con números
 
-Estado al 5 de noviembre de 2026:
+Estado al 17 de noviembre de 2026 (F11):
 
 - 69 películas (simulación de TMDB), 18 con póster.
-- 123 pruebas unitarias y de integración, y 10 e2e, en verde (las e2e revisan los textos de las 69 películas en el navegador).
-- 5 de 5 pruebas de aprendizaje: tras 40 eventos, el mazo trae 6,4 veces más aciertos que uno al azar.
+- 148 pruebas unitarias y de integración, y 14 e2e, en verde (las e2e revisan los textos de las 69 películas en el navegador y recorren Ver, Perfil, Resumen y Ticket con el puente real).
+- 14 pantallas con ficha en `apps/web/front.manifest.json`; 0 porcentajes visibles.
+- 5 de 5 pruebas de aprendizaje: tras 40 eventos, el mazo trae 6,4 veces más aciertos que uno al azar; 6 de 6 arquetipos en la simulación de perfiles.
 - La base de datos se prueba con dos proveedores: Supabase y PostgreSQL genérico.

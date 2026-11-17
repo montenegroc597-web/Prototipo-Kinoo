@@ -51,5 +51,72 @@
   "watch_title_max": 24,
   "watch_meta_max": 44,
   "watch_why_max": 80,
-  "closing_text_max": 80
+  "closing_text_max": 80,
+  "insight_min_signals": 6,
+  "insight_trait_high": 0.3,
+  "insight_trait_mid": 0.15,
+  "insight_trait_min": 0.03,
+  "insight_mood_high": 0.5,
+  "insight_mood_mid": 0.25,
+  "insight_title_max": 24,
+  "insight_kicker_max": 28,
+  "insight_body_max": 110,
+  "insight_trait_max": 16,
+  "insight_empty_max": 90,
+  "mood_name_max": 18,
+  "mood_desc_max": 28,
+  "watch_star_bonus": 0.3,
+  "watch_provider_note_max": 22,
+  "billboard_max_films": 10,
+  "billboard_notice_max": 90,
+  "watch_title_size_short_max": 14,
+  "watch_title_size_short": 38,
+  "watch_title_size_long": 30,
+  "shelf_when_max": 16,
+  "shelf_title_max": 24,
+  "shelf_rating_max": 16,
+  "shelf_back_max": 90,
+  "palette_min_atom": 0.3,
+  "poster_palettes": {
+    "neon": [
+      "#ff3d8b",
+      "#1a0b2e",
+      "#3df2ff"
+    ],
+    "pastel": [
+      "#f4c6d7",
+      "#8fa9c9",
+      "#fff4e0"
+    ],
+    "calida": [
+      "#d9772e",
+      "#4a1a08",
+      "#f4e7d0"
+    ],
+    "monocromatica": [
+      "#4a4f52",
+      "#16191b",
+      "#d9c7a8"
+    ],
+    "sombria": [
+      "#2c3b52",
+      "#0f1320",
+      "#f2b544"
+    ],
+    "onirica": [
+      "#6b2a6e",
+      "#1d0f24",
+      "#f2b544"
+    ],
+    "luminosa": [
+      "#f2b544",
+      "#7a4a12",
+      "#fff4dc"
+    ],
+    "default": [
+      "#3a2f2a",
+      "#14100e",
+      "#e9d8c4"
+    ]
+  }
 }

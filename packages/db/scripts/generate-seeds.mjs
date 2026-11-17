@@ -1,6 +1,6 @@
 // Genera las semillas SQL desde la fuente editable (packages/config/data/*.json y packages/catalog/data/movies.pilot.json).
 // Uso: npm run db:seeds            → escribe packages/db/seeds/*.sql
-//      npm run seed -- --check → falla si las semillas no están al día (para CI)
+//      npm run db:seeds:check → falla si las semillas no están al día (para CI)
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -22,7 +22,7 @@ function configSql() {
   );
   for (const v of j('packages/config/data/vibes.json').vibes) {
     out.push(
-      `insert into vibes (key, name, definition, aliases, recipe, quality_weight, example_movie_ids, active, version) values (${q(v.key)}, ${q(v.name)}, ${q(v.definition)}, ${arr(v.aliases)}, ${jb(v.recipe)}, ${v.quality_weight ?? 'null'}, ${arr(v.example_movie_ids)}, ${v.active}, ${v.version}) on conflict (key) do update set name = excluded.name, definition = excluded.definition, aliases = excluded.aliases, recipe = excluded.recipe, quality_weight = excluded.quality_weight, example_movie_ids = excluded.example_movie_ids, active = excluded.active, version = excluded.version, updated_at = now();`,
+      `insert into vibes (key, name, definition, tagline, aliases, recipe, quality_weight, example_movie_ids, active, version) values (${q(v.key)}, ${q(v.name)}, ${q(v.definition)}, ${q(v.tagline)}, ${arr(v.aliases)}, ${jb(v.recipe)}, ${v.quality_weight ?? 'null'}, ${arr(v.example_movie_ids)}, ${v.active}, ${v.version}) on conflict (key) do update set name = excluded.name, definition = excluded.definition, tagline = excluded.tagline, aliases = excluded.aliases, recipe = excluded.recipe, quality_weight = excluded.quality_weight, example_movie_ids = excluded.example_movie_ids, active = excluded.active, version = excluded.version, updated_at = now();`,
     );
   }
   for (const a of j('packages/config/data/archetypes.json').archetypes) {

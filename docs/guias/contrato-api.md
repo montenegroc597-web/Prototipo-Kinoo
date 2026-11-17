@@ -13,14 +13,17 @@ El back saca de ese JWT quién es la persona. RLS garantiza que solo lee y escri
 
 Base:
 
-- Supabase: `https://<proyecto>.supabase.co/functions/v1/` (una función por recurso: `events`, `deck`, `watch`, `onboarding`).
+- Supabase: `https://<proyecto>.supabase.co/functions/v1/` (una función por recurso: `events`, `deck`, `watch`, `onboarding`, `profile`).
 - Servidor propio (`apps/api`): `https://<tu-api>/` o `https://<tu-api>/api/`. Las rutas se reconocen por su final, así que funcionan con cualquier prefijo.
 
 `GET /health` responde `{ "ok": true }` sin sesión. `GET /profile` devuelve el perfil y el arquetipo (ver más abajo).
 
 ## POST /events
 
-Guarda una o varias acciones (máximo 100). Tipos válidos: `onboarding_choice`, `deck_opened`, `card_flipped`, `saved_intent`, `dismissed`, `marked_seen`, `rewatch_intent`, `deck_completed`, `watch_proposed`, `watch_skipped`, `watch_started`, `watch_confirmed`, `attribute_refuted`, `undo`, `platforms_set`.
+Guarda una o varias acciones (máximo 100). Tipos válidos: `onboarding_choice`, `deck_opened`, `card_flipped`, `saved_intent`, `dismissed`, `marked_seen`, `rewatch_intent`, `deck_completed`, `watch_proposed`, `watch_skipped`, `watch_started`, `watch_confirmed`, `attribute_refuted`, `undo`, `platforms_set`, `super_liked`.
+
+- `super_liked` (estrella): `{ "type": "super_liked", "movie_id": "…", "payload": {} }`. Señal +0,8, η 0,12; la deja en la mano y la sube en la cartelera. Para quitarla, `undo` de ese evento.
+- `watch_confirmed` acepta `fell_asleep: true` ("Me dormí"): cuenta como `not_for_me` y la repisa lo muestra en palabras.
 
 ```json
 { "events": [
@@ -34,7 +37,7 @@ Respuesta:
 ```json
 { "accepted": 2, "results": [
   { "id": "…", "save": { "special_match": true, "message": "Esta es muy tú." } },
-  { "id": "…", "closing": { "deck_id": "…", "learned": "Hoy te inclinaste por historias íntimas y de luz cálida.", "top_atoms": ["intimidad", "calida"], "saved_posters": [{ "movie_id": "past-lives-2023", "title": "Vidas pasadas", "poster_path": null, "poster_url": null }], "ready_tonight": false } }
+  { "id": "…", "closing": { "deck_id": "…", "learned": "Hoy te inclinaste por historias íntimas y de luz cálida.", "top_atoms": ["intimidad", "calida"], "saved_posters": [{ "movie_id": "past-lives-2023", "title": "Vidas pasadas", "poster_path": null, "poster_url": null }], "ready_tonight": false, "counts": { "want": 1, "seen": 0, "pass": 9 }, "vibe": null } }
 ] }
 ```
 
@@ -89,6 +92,74 @@ Parámetros opcionales: `max_runtime_min`, `vibe`, `company`.
 
 "Otra" se informa con `POST /events` tipo `watch_skipped`; "salir a la plataforma", con `watch_started`; "¿la viste?", con `watch_confirmed`.
 
+## GET /profile/insight
+
+"Lo que el mazo dice de ti". Sale de las acciones reales de la persona. Nunca trae números de afinidad: los niveles son `alto`, `medio` o `bajo`.
+
+```json
+{
+  "ready": true,
+  "title": "ERES TODO UN ROMÁNTICO",
+  "kicker": "lo que aprendimos de ti",
+  "body": "Te atrapan las historias íntimas y melancólicas, sobre todo para llorar bonito.",
+  "traits": [{ "key": "intimidad", "label": "Intimidad", "level": "alto" }, { "key": "melancolica", "label": "Melancolía", "level": "medio" }],
+  "moods": [{ "key": "llorar_bonito", "name": "Llorar bonito", "level": "alto" }],
+  "archetype": { "key": "romantico", "name": "El Romántico" },
+  "empty_text": "Desliza unas cartas más y te contamos lo que el mazo dice de ti."
+}
+```
+
+- Con menos de `insight_min_signals` señales (o sin ningún gusto positivo), `ready` es `false` y `title`, `body`, `traits`, `moods` y `archetype` llegan vacíos: el front muestra `empty_text`.
+- Hasta 3 rasgos (nombre corto del átomo) y hasta 3 moods. Los títulos por arquetipo son plantillas `insight_title_<arquetipo>` en `explanation_templates.json`.
+
+## GET /watch/moods
+
+`{ "moods": [{ "key": "todas", "name": "Todas", "desc": "Un poco de todo" }, { "key": "llorar_bonito", "name": "Llorar bonito", "desc": "Historias para llorar" }, …] }`. "todas" va primero; luego los moods activos de `vibes.json` (la descripción corta es `tagline`).
+
+## GET /watch/billboard
+
+Cartelera de Ver, ordenada por el motor. Parámetro opcional `vibe` (clave, alias o `todas`). Un mood desconocido responde 400. No guarda eventos.
+
+```json
+{
+  "mood": { "key": "llorar_bonito", "name": "Llorar bonito", "desc": "Historias para llorar" },
+  "films": [{
+    "id": "past-lives-2023", "title": "Vidas pasadas", "title_size": 38,
+    "meta": "1 h 46 · Drama · Romance",
+    "quote": "Responde a tu forma de llorar bonito: íntimas y melancólicas.",
+    "poster_url": null, "palette": ["#d9772e", "#4a1a08", "#f4e7d0"], "starred": false,
+    "providers": [{ "key": "max", "name": "Max", "note": "en tu suscripción", "rent": false }],
+    "runtime_min": 106
+  }],
+  "status": "ok",
+  "notice": null
+}
+```
+
+| `status` | Qué significa |
+|---|---|
+| `ok` | Hay películas (máximo `billboard_max_films`) |
+| `empty_hand` | No hay nada en la mano: llevar a Descubrir |
+| `empty_platforms` | Nada de su mano está en sus plataformas |
+| `empty_mood` | Nada de su mano encaja con ese mood (`films` vacío) |
+
+- Entra la mano (guardadas y "para repetir"); lo calificado (`watch_confirmed`) no está: pasó a la repisa.
+- Orden: el mismo puntaje de Ver (perfil, receta del mood, calidad) más los bonos de recién guardada, match especial y estrella (`watch_star_bonus`). Lo que pidió cambiar con "otra" va al final.
+- `palette` es para la carta sin póster: sale del átomo estético más fuerte de la película (`poster_palettes` en `params.json`).
+- `providers`: solo las plataformas reales del catálogo, primero las de la persona. `key` sirve para buscar el logo. `rent` siempre es `false` (el catálogo no trae alquiler).
+
+## GET /watch/shelf
+
+Repisa de Ver: lo que ya vio y calificó, lo más reciente primero.
+
+```json
+{ "shelf": [{ "id": "her-2013", "title": "Her", "title_size": 38, "poster_url": "…/posters/her-2013.jpg", "palette": ["#f4c6d7", "#8fa9c9", "#fff4e0"],
+  "when": "hace 3 semanas", "rating": "¡Me encantó!", "back": "Para volver a una de tus historias íntimas, ahora sin la sorpresa.",
+  "meta": "2 h 06 · Romance · Ciencia ficción", "runtime_min": 126, "providers": [{ "key": "max", "name": "Max", "note": "en tu suscripción", "rent": false }] }] }
+```
+
+"Volver a verla" se informa con `POST /events` tipo `rewatch_intent`: la película vuelve a la cartelera.
+
 ## POST /onboarding
 
 Tres pasos:
@@ -107,10 +178,17 @@ Tres pasos:
 
 ## Modo demo
 
-En GitHub Pages no hay servidor: `kinoo-demo.js` corre el mismo servicio en el navegador y guarda los eventos en `localStorage` (clave `kinoo.demo.v2`). Desde la consola del navegador:
+En GitHub Pages no hay servidor: `kinoo-demo.js` corre el mismo servicio en el navegador y guarda los eventos en `localStorage` (clave `kinoo.demo.v2:<user_id>`, una por cuenta). Desde la consola del navegador:
 
 ```js
 KinooDemo.profile()      // perfil actual y arquetipo
+KinooDemo.insight()      // lo que el mazo dice de ti (GET /profile/insight)
+KinooDemo.moods()        // selector de mood de Ver (GET /watch/moods)
+KinooDemo.billboard('llorar_bonito')  // cartelera (GET /watch/billboard)
+KinooDemo.shelf()        // repisa (GET /watch/shelf)
+KinooDemo.star(id, true) // estrella → { starred: true }
+KinooDemo.rewatch(id)    // volver a verla
+KinooDemo.lastWatch()    // última película que salió a ver: plataforma y calificación
 KinooDemo.events()       // historial de eventos
 KinooDemo.reset()        // empezar de cero
 ```

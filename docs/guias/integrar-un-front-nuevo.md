@@ -2,6 +2,8 @@
 
 **Para qué sirve esto.** El prototipo actual (`.dc.html`) se va a reemplazar por un front nuevo. Esta guía dice exactamente cómo conectarlo al back sin tocar el algoritmo. Está escrita para una persona o un modelo de IA. Si eres un modelo, lee también [`AGENTS.md`](../../AGENTS.md).
 
+**Empieza por el manifiesto.** [`apps/web/front.manifest.json`](../../apps/web/front.manifest.json) tiene la ficha de cada pantalla actual: archivo y ruta publicada, para qué sirve, qué métodos del puente `window.KinooDemo` usa, qué textos tienen límite (con su clave de `params.json`) y a qué pantalla lleva. Un front nuevo debe cubrir esas mismas pantallas y llamadas. Para cambiar una pantalla del prototipo sin reemplazarlo todo, sigue [`actualizar-el-front-con-ia.md`](actualizar-el-front-con-ia.md); `npm run check:front` revisa la ficha contra el archivo.
+
 ## Las cuatro reglas
 
 1. **El front manda acciones, no gestos.** Un swipe, un botón o una tecla se traducen a un evento (`saved_intent`, `dismissed`…). Si mañana el gesto cambia, el back no se entera.
@@ -64,6 +66,19 @@ Empieza en modo demo; cambiar de modo es cambiar una línea.
 | `empty_platforms` | Nada de su mano está en sus plataformas: ofrecer `openDeck({ only_my_platforms: true })` |
 | `empty_hand` | No ha guardado nada: llevar a Descubrir |
 
+### Ver con cartelera (diseño B7c, el del prototipo actual)
+
+La pantalla Ver del prototipo (`FlujoV1_Feed`) ya no usa `watchProposal`: muestra una cartelera por mood. Su ficha en `apps/web/front.manifest.json` lista las llamadas; en resumen:
+
+| Momento | Llamada | Qué mostrar |
+|---|---|---|
+| Entrar | `moods()` y `billboard(moodKey)` | `films` en el orden del back; si `status` no es `ok`, el estado vacío con `notice` |
+| Pasar de carta | — (no es una señal) | La siguiente de `films` |
+| Estrella | `star(id, on)` → `{ starred }` | Estrella llena o vacía |
+| "Verla ahora" | La hoja con `films[i].providers` (sin precios) → `onWatch(id, 'start', provider)` | Abriendo |
+| Repisa | `shelf()`; "Repetirla" → `rewatch(id)` y `onWatch(id, 'start', provider)` | Las ya vistas |
+| Lo que aprendimos | `insight()` | Niveles en palabras, sin cifras |
+
 ### Onboarding
 
 1. `onboarding({ step: 'platforms', country: 'CO', providers: ['Netflix', 'Max'] })`.
@@ -120,6 +135,7 @@ python3 packages/catalog/scripts/optimize-poster.py ruta/al/poster.jpg the-godfa
 
 ## Paso 5 · Comprobar
 
+- [ ] `npm run check:front` pasa (si el front nuevo vive en otra carpeta, actualiza `base` y las fichas del manifiesto).
 - [ ] La e2e del flujo principal pasa (`apps/web/e2e/motor.spec.ts` es el modelo a copiar): abrir mazo → guardar → Ver → "Me encantó" → el perfil cambió.
 - [ ] Ninguna pantalla muestra números de afinidad. Busca `%` en el front.
 - [ ] Ningún texto se sale de la carta: usa `display.*` y corre `cartas.spec.ts`.

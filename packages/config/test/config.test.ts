@@ -47,6 +47,20 @@ describe('configuración editable (packages/config/data)', () => {
     }
   });
 
+  it('cada paleta de carta sin póster es un trío de colores y existe la de respaldo', () => {
+    const pals = c.params.poster_palettes;
+    expect(pals.default, 'falta poster_palettes.default').toBeDefined();
+    for (const [k, trio] of Object.entries(pals)) {
+      if (k !== 'default') expect(isAtomKey(k), `paleta de un átomo desconocido: ${k}`).toBe(true);
+      expect(trio).toHaveLength(3);
+      for (const col of trio) expect(col, `${k}`).toMatch(/^#[0-9a-f]{6}$/i);
+    }
+  });
+
+  it('cada mood tiene una descripción corta que cabe en el selector de Ver', () => {
+    for (const v of c.vibes) if (v.tagline) expect(v.tagline.length, v.key).toBeLessThanOrEqual(c.params.mood_desc_max);
+  });
+
   it('los arquetipos usan átomos que existen', () => {
     for (const a of c.archetypes) for (const k of Object.keys(a.recipe)) expect(isAtomKey(k), `${a.key}: ${k}`).toBe(true);
   });
