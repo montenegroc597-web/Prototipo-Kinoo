@@ -4,7 +4,7 @@ import type { Catalog, IndexedMovie } from './catalog';
 import type { ConfigIndex } from './configIndex';
 import { vibeRecipeOf } from './deck';
 import { explain } from './explain';
-import type { UserModel } from './profile';
+import { type MovieState, type UserModel, inHand } from './profile';
 import { scoreMovie } from './score';
 import { cosine } from './vector';
 
@@ -18,6 +18,28 @@ export interface WatchDecision {
   relaxed: Array<'duration' | 'vibe'>;
   notice?: string;
   filters: WatchFilters;
+}
+
+/** La mano de Ver: guardadas o para repetir que no se han calificado desde entonces (y siguen en el catálogo). */
+export function handMovies(model: UserModel, catalog: Catalog): Array<{ st: MovieState; m: IndexedMovie }> {
+  return [...model.states.values()]
+    .filter(inHand)
+    .map((st) => ({ st, m: catalog.byId.get(st.movie_id) }))
+    .filter((x): x is { st: MovieState; m: IndexedMovie } => !!x.m);
+}
+
+/** Bonos de Ver: recién guardada, match especial y estrella (todos en params). */
+export function watchBonus(model: UserModel, cfg: ConfigIndex, now: Date): (m: IndexedMovie) => number {
+  const p = cfg.params;
+  const freshSince = now.getTime() - p.watch_fresh_hours * 3_600_000;
+  return (m) => {
+    const st = model.states.get(m.movie.id);
+    let b = 0;
+    if (st?.saved_at && new Date(st.saved_at).getTime() >= freshSince) b += p.watch_fresh_bonus;
+    if (st?.special_match) b += p.watch_special_bonus;
+    if (st?.starred) b += p.watch_star_bonus ?? 0;
+    return b;
+  };
 }
 
 /** Ver (sección 10): una propuesta a la vez desde la mano. */
@@ -34,11 +56,8 @@ export function proposeWatch(input: { catalog: Catalog; model: UserModel; cfg: C
   }
 
   // 1. Mano: solo ○ y ◉.
-  const hand = [...model.states.values()]
-    .filter((s) => s.state === 'saved' || s.state === 'rewatch')
-    .map((s) => ({ st: s, m: catalog.byId.get(s.movie_id) }))
-    .filter((x): x is { st: typeof x.st; m: IndexedMovie } => !!x.m);
-  if (!hand.length) return { ...base, status: 'empty_hand', notice: cfg.template('watch_too_many_skips') };
+  const hand = handMovies(model, catalog);
+  if (!hand.length) return { ...base, status: 'empty_hand', notice: cfg.template('watch_empty_hand') };
 
   // 2. Disponibilidad en sus plataformas.
   const available = model.providers?.list.length ? hand.filter((x) => availableOn(x.m, model.providers!)) : hand;
@@ -64,20 +83,8 @@ export function proposeWatch(input: { catalog: Catalog; model: UserModel; cfg: C
   }
   if (!matches.length) matches = pool;
 
-  // 4. Mayor puntaje + bono de frescura.
-  const fresh48 = now.getTime() - p.watch_fresh_hours * 3_600_000;
-  const ctx = {
-    model,
-    vibe,
-    vibeRecipe,
-    bonus: (m: IndexedMovie) => {
-      const st = model.states.get(m.movie.id);
-      let b = 0;
-      if (st?.saved_at && new Date(st.saved_at).getTime() >= fresh48) b += p.watch_fresh_bonus;
-      if (st?.special_match) b += p.watch_special_bonus;
-      return b;
-    },
-  };
+  // 4. Mayor puntaje + bonos (frescura, match especial, estrella).
+  const ctx = { model, vibe, vibeRecipe, bonus: watchBonus(model, cfg, now) };
   const best = matches.map((x) => scoreMovie(x.m, ctx, cfg)).sort((a, b) => b.score - a.score)[0]!;
   const notice = relaxed.length
     ? cfg.template(relaxed[0] === 'duration' && filters.max_runtime_min ? 'watch_relaxed_duration' : 'watch_relaxed_vibe')

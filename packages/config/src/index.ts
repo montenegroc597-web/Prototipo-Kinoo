@@ -17,5 +17,5 @@ export const defaultConfig: EngineConfig = {
   deckRecipes: deckRecipes.recipes as EngineConfig['deckRecipes'],
   templates: templates.templates,
   archetypes: archetypesFile.archetypes as EngineConfig['archetypes'],
-  params: p as EngineConfig['params'],
+  params: p as unknown as EngineConfig['params'],
 };

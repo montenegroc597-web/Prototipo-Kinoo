@@ -12,8 +12,8 @@ export function fill(template: string, vars: Record<string, string>): string {
 }
 
 /** Garantiza la regla dura: si una plantilla editada trae números, se usa una frase segura. */
-function safe(text: string): string {
-  return hasNumbers(text) ? 'Creemos que te puede gustar.' : text;
+export function safe(text: string, fallback = 'Creemos que te puede gustar.'): string {
+  return hasNumbers(text) ? fallback : text;
 }
 
 /** Contribución de cada átomo: cᵢ = Uᵢ × m̂ᵢ (+ Rᵢ × m̂ᵢ si hay mood). Devuelve los dos mayores positivos. */

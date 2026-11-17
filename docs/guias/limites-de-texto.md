@@ -4,7 +4,7 @@
 
 ## Cómo funciona
 
-1. **Los máximos viven en la configuración**, en `packages/config/data/params.json` (claves `card_*`, `watch_*` y `closing_*`). Si el diseño cambia de tamaño, se cambian esos números.
+1. **Los máximos viven en la configuración**, en `packages/config/data/params.json` (claves `card_*`, `watch_*`, `closing_*`, `billboard_*`, `shelf_*`, `mood_*` e `insight_*`). Si el diseño cambia de tamaño, se cambian esos números.
 2. **El back entrega los textos ya recortados.** Cada carta trae `display` con premisa, título, subtítulo, sinopsis, razón, pilares, frase ADN y temas. Lo hace `toCardDTO()` en `packages/engine/src/cards.ts`.
 3. **Cómo recorta (`fitText()` en `@kinoo/shared`):** si el texto pasa el máximo, termina en la última frase completa que quepa; si no hay ninguna, corta en una palabra y agrega "…". Nunca corta una palabra a la mitad.
 4. **Las pruebas lo vigilan.** `apps/web/e2e/cartas.spec.ts` abre las 69 películas en el navegador y comprueba que ningún texto se salga ni se monte sobre otro en el frente, el reverso, la ficha ADN y Ver, ni en las pantallas fijas. `packages/catalog/test/catalog.test.ts` comprueba que ningún texto entregado pase su límite.
@@ -54,6 +54,33 @@
 | "Por qué hoy:" | **80** | `watch_why_max` | |
 | Plataformas (chips) | Hasta 4 | — | |
 
+### Ver B7c · cartelera, repisa y selector de mood
+
+| Texto | Máximo | Clave | Notas |
+|---|---|---|---|
+| Título de la cartelera | **24**, 1 línea | `watch_title_max` | `title_size`: 38 px hasta 14 caracteres, 30 px de 15 a 24 (`watch_title_size_*`) |
+| "1 h 44 · Drama · Romance" | **44** | `watch_meta_max` | Si no cabe, quita géneros |
+| Frase (`quote`) | **80** | `watch_why_max` | Empieza en mayúscula |
+| Nota de la plataforma | **22** | `watch_provider_note_max` | "en tu suscripción", "no está en tus planes" |
+| Aviso de estado (`notice`) | **90** | `billboard_notice_max` | Cartelera vacía, sin plataformas o sin nada para el mood |
+| Películas por cartelera | **10** | `billboard_max_films` | Para que quepan los puntos |
+| Nombre del mood | **18** | `mood_name_max` | |
+| Descripción del mood | **28** | `mood_desc_max` | `tagline` en `vibes.json` |
+| Título en la repisa | **24** | `shelf_title_max` | |
+| Cuándo la vio | **16** | `shelf_when_max` | "hace 3 semanas" |
+| Calificación | **16** | `shelf_rating_max` | "¡Me encantó!" |
+| Razón para volver a verla | **90** | `shelf_back_max` | Plantillas `back_*` |
+
+### Lo que el mazo dice de ti (Resumen, Perfil y Ver)
+
+| Texto | Máximo | Clave | Notas |
+|---|---|---|---|
+| Título | **24** | `insight_title_max` | "ERES TODO UN ROMÁNTICO" (plantillas `insight_title_<arquetipo>`) |
+| Encabezado | **28** | `insight_kicker_max` | "lo que aprendimos de ti" |
+| Frase | **110** | `insight_body_max` | Sin cifras; si la versión con mood no cabe, se usa la corta |
+| Rasgo | **16** | `insight_trait_max` | Nombre corto del átomo (`theme`) |
+| Texto cuando aún no sabemos | **90** | `insight_empty_max` | |
+
 ### Textos que escribe el equipo
 
 | Texto | Máximo | Dónde se edita | Por qué |
@@ -80,7 +107,7 @@ Medidos sobre el prototipo actual:
 
 ## Pendientes que encontró la revisión
 
-- **Porcentajes en pantallas sin conectar.** Resumen ("100 %"), Perfil ("82/100", "40 %") y Función ("12 % igual") todavía muestran números de ejemplo. Cuando se conecten al motor, deben pasar a palabras: el principio 1 prohíbe mostrar afinidad en números.
+- **Porcentajes en pantallas sin conectar.** Resumen ("100 %"), Perfil ("82/100", "40 %") y Función ("12 % igual") todavía muestran números de ejemplo. El back ya entrega `insight()` con niveles en palabras (alto, medio, bajo) para reemplazarlos; falta conectarlo en el front.
 - **Premisa con "…".** Muchas frases gancho tienen más de 44 caracteres y se ven cortadas. Lo ideal es que el juez escriba además una premisa corta (≤ 44); está en el documento de preguntas.
 
 ## Ejemplo con números

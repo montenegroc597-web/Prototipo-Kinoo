@@ -1,22 +1,28 @@
 import type {
   AtomVector,
+  BillboardDTO,
   CuratedDeck,
   DeckClosingDTO,
   DeckDTO,
   EngineConfig,
+  InsightDTO,
   KinooEvent,
+  MoodDTO,
   Movie,
   OnboardingPairDTO,
   ProfileDTO,
   SaveResultDTO,
+  ShelfItemDTO,
   WatchFilters,
   WatchProposalDTO,
 } from '@kinoo/shared';
+import { buildBillboard, buildShelf, moodList } from './billboard';
 import { toCardDTO, toDeckDTO } from './cards';
 import { type Catalog, buildCatalog } from './catalog';
 import { closeDeck } from './closing';
 import { ConfigIndex } from './configIndex';
 import { type ActiveDeck, buildDeck, checkSpecialMatch } from './deck';
+import { buildInsight } from './insight';
 import { archetypeCard, onboardingPairs } from './onboarding';
 import { type UserModel, applyEvent, replay } from './profile';
 import { proposeWatch } from './watch';
@@ -120,6 +126,26 @@ export class KinooEngine {
       left_title: p.left.movie.title,
       right_title: p.right.movie.title,
     }));
+  }
+
+  /** "Lo que el mazo dice de ti", en palabras. */
+  insight(model: UserModel): InsightDTO {
+    return buildInsight(model, this.cfg);
+  }
+
+  /** Selector de mood de Ver ("todas" primero). */
+  moods(): MoodDTO[] {
+    return moodList(this.cfg);
+  }
+
+  /** Cartelera de Ver para un mood (null = todas). */
+  billboard(model: UserModel, now: Date, vibe: string | null): BillboardDTO {
+    return buildBillboard({ catalog: this.catalog, model, cfg: this.cfg, now, vibe, opts: { country: this.country, assetBaseUrl: this.assetBaseUrl } });
+  }
+
+  /** Repisa de Ver: lo ya visto y calificado. */
+  shelf(model: UserModel, now: Date): ShelfItemDTO[] {
+    return buildShelf({ catalog: this.catalog, model, cfg: this.cfg, now, opts: { country: this.country, assetBaseUrl: this.assetBaseUrl } });
   }
 
   profile(model: UserModel): ProfileDTO {

@@ -4,7 +4,7 @@ import type { Catalog } from './catalog';
 import type { ConfigIndex } from './configIndex';
 import type { ActiveDeck } from './deck';
 import { fill } from './explain';
-import type { UserModel } from './profile';
+import { type UserModel, inHand } from './profile';
 
 /** Cierre del mazo (9.4): los dos átomos que más subieron, pósteres de lo guardado y "Ya sabemos bastante". */
 export function closeDeck(deck: ActiveDeck, model: UserModel, catalog: Catalog, cfg: ConfigIndex, assetBaseUrl?: string): DeckClosingDTO {
@@ -26,7 +26,7 @@ export function closeDeck(deck: ActiveDeck, model: UserModel, catalog: Catalog, 
         ? fill(cfg.template('deck_learned_single'), { a: labels[0]! })
         : cfg.template('deck_learned_none');
 
-  const hand = [...model.states.values()].filter((s) => s.state === 'saved' || s.state === 'rewatch');
+  const hand = [...model.states.values()].filter(inHand);
   const ready = hand.filter((s) => {
     const m = catalog.byId.get(s.movie_id);
     return m && (!model.providers || !model.providers.list.length || availableOn(m, model.providers));

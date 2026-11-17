@@ -91,3 +91,80 @@ export interface ProfileDTO {
   signal_count: number;
   archetype: ArchetypeDTO;
 }
+
+/** Nivel en palabras: reemplaza a los porcentajes en todas las pantallas. */
+export type LevelWord = 'alto' | 'medio' | 'bajo';
+
+/** "Lo que el mazo dice de ti": sale de las acciones reales. Nunca trae números de afinidad. */
+export interface InsightDTO {
+  /** false si hay muy pocas señales: entonces title, body, rasgos y moods van vacíos y se muestra empty_text. */
+  ready: boolean;
+  title: string;
+  kicker: string;
+  body: string;
+  traits: Array<{ key: string; label: string; level: LevelWord }>;
+  moods: Array<{ key: string; name: string; level: LevelWord }>;
+  archetype: { key: string; name: string };
+  empty_text: string;
+}
+
+/** Un mood del selector de Ver. "todas" va primero y significa "sin mood". */
+export interface MoodDTO {
+  key: string;
+  name: string;
+  desc: string;
+}
+
+/** Una plataforma de la película (datos del catálogo, solo suscripción). key es estable para buscar el logo. */
+export interface ProviderDTO {
+  key: string;
+  name: string;
+  note: string;
+  /** Siempre false por ahora: el catálogo solo trae suscripción, sin alquiler ni precios. */
+  rent: boolean;
+}
+
+export interface BillboardFilmDTO {
+  id: string;
+  title: string;
+  /** Tamaño del título en px para Ver B7c (params watch_title_size_*). */
+  title_size: number;
+  /** "1 h 44 · Drama · Romance" */
+  meta: string;
+  /** Por qué hoy, en palabras. */
+  quote: string;
+  poster_url: string | null;
+  /** Colores para la carta sin póster (fondo, sombra, acento), según los átomos estéticos de la película. */
+  palette: [string, string, string];
+  starred: boolean;
+  /** Primero las plataformas de la persona. */
+  providers: ProviderDTO[];
+  runtime_min: number;
+}
+
+/** Cartelera de Ver para un mood, en el orden del motor. */
+export interface BillboardDTO {
+  mood: MoodDTO;
+  films: BillboardFilmDTO[];
+  status: 'ok' | 'empty_hand' | 'empty_mood' | 'empty_platforms';
+  notice: string | null;
+}
+
+/** Repisa de Ver: lo que ya vio y calificó, lo más reciente primero. */
+export interface ShelfItemDTO {
+  id: string;
+  title: string;
+  poster_url: string | null;
+  palette: [string, string, string];
+  /** "hace 3 semanas" */
+  when: string;
+  /** "¡Me encantó!" */
+  rating: string;
+  /** Razón para volver a verla. */
+  back: string;
+  /** "1 h 44 · Drama · Romance" */
+  meta: string;
+  runtime_min: number;
+  /** Mismo formato que la cartelera: primero las plataformas de la persona. */
+  providers: ProviderDTO[];
+}

@@ -3,14 +3,18 @@ import type { ActiveDeck, KinooEngine, UserModel } from '@kinoo/engine';
 // Trabaja sobre una "foto" de los datos de la persona (eventos y mazo abierto). Quien lo usa
 // (Edge Function o modo demo) carga la foto, llama al método y guarda lo nuevo (newEvents, deckChanged).
 import {
+  type BillboardDTO,
   type DeckClosingDTO,
   type DeckDTO,
   EVENT_TYPES,
   type EventInput,
+  type InsightDTO,
   type KinooEvent,
+  type MoodDTO,
   type OnboardingPairDTO,
   type ProfileDTO,
   type SaveResultDTO,
+  type ShelfItemDTO,
   type WatchFilters,
   type WatchProposalDTO,
 } from '@kinoo/shared';
@@ -164,5 +168,27 @@ export class KinooService {
 
   profile(): ProfileDTO {
     return this.engine.profile(this.model);
+  }
+
+  /** GET /profile/insight: "lo que el mazo dice de ti", en palabras. */
+  insight(): InsightDTO {
+    return this.engine.insight(this.model);
+  }
+
+  /** GET /watch/moods */
+  moods(): MoodDTO[] {
+    return this.engine.moods();
+  }
+
+  /** GET /watch/billboard?vibe=…: cartelera de Ver. "todas", vacío o null = sin mood. No guarda eventos. */
+  billboard(vibe?: string | null): BillboardDTO {
+    const key = vibe && vibe !== 'todas' ? this.engine.cfg.vibeKey(vibe) : null;
+    if (vibe && vibe !== 'todas' && !key) throw new ApiError(400, `Mood desconocido: ${vibe}`);
+    return this.engine.billboard(this.model, this.now(), key);
+  }
+
+  /** GET /watch/shelf: repisa de Ver. */
+  shelf(): ShelfItemDTO[] {
+    return this.engine.shelf(this.model, this.now());
   }
 }

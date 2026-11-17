@@ -10,6 +10,8 @@ export * from './explain';
 export * from './deck';
 export * from './closing';
 export * from './watch';
+export * from './billboard';
+export * from './insight';
 export * from './onboarding';
 export * from './cards';
 export * from './engine';

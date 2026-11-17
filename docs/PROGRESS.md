@@ -93,6 +93,13 @@
 - **F9 · Dos cambios mínimos de plantilla en Descubrir:** el tamaño del título baja hasta 26 px para títulos largos, y la razón al pie puede ocupar 2 líneas (antes era 1 y se salía).
 - **F9 · Pósters:** se encuadran hacia arriba (`50% 22%`) porque son verticales y el espacio es horizontal. El archivo de "Rocky" era el póster de "Rocky Balboa": se movió a esa película. El de "Interstellar" es una imagen vieja del prototipo (con logo de Netflix): conviene reemplazarlo por el póster oficial.
 - **F9 · Pilares:** 90 etiquetas tenían más de 18 caracteres; un subagente las acortó conservando el sentido (por ejemplo, "locura en aislamiento" → "locura aislada"). Desde ahora el juez recibe el límite en el prompt.
+- **F11 · Estrella (`super_liked`):** se tomó la opción ★ de P7.3: señal +0,8 y η 0,12 (`action_weights.json`), la película queda en la mano y sube en la cartelera de Ver con un bono de 0,3 (`watch_star_bonus`). Quitar la estrella es un `undo` de ese evento (los eventos no se borran). Migración 0009 (tipo de evento y `vibes.tagline`).
+- **F11 · Calificar saca de la cartelera:** una película con `watch_confirmed` pasa a la repisa aunque sea "¡Obra maestra!" (antes quedaba en la mano y Ver la volvía a proponer). "Volver a verla" (`rewatch_intent`) la devuelve a la cartelera.
+- **F11 · "Me dormí":** se sigue contando como "No era para mí" (−0,8), pero se guarda `fell_asleep: true` para medir y para que la repisa diga "Me dormí". P9.1 sigue abierta.
+- **F11 · Lo que el mazo dice de ti:** sale del perfil (que se recalcula de los eventos). Opina desde 6 señales (`insight_min_signals`). Rasgos: alto si el perfil pasa 0,30, medio si pasa 0,15. Moods: parecido (coseno) del perfil con la receta personal: alto desde 0,5, medio desde 0,25. Son supuestos: se ajustan con datos.
+- **F11 · Repisa con fechas:** "hace 3 semanas" lleva una cifra de tiempo, como el diseño. La regla prohíbe cifras de afinidad, no fechas.
+- **F11 · Plataformas en Ver:** solo las del catálogo (suscripción). `rent` siempre es `false` y no hay precios, porque el catálogo no trae alquiler.
+- **F11 · Pasar de carta en la cartelera no es señal:** solo un botón "otra" explícito debería mandar `watch_skipped` (decisión pendiente del equipo, P7.4).
 
 ## Para revisar cuando vuelvas
 - **Responder las preguntas** de `docs/PREGUNTAS-RECOLECCION-DE-DATOS.md` (las urgentes están al inicio). Con eso se agregan los eventos del minijuego, el super like y la versión.

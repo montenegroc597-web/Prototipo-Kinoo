@@ -35,6 +35,8 @@ export function signalsOf(e: KinooEvent, cfg: ConfigIndex): Signal[] {
       return [...one(e.payload.chosen_movie_id, 'onboarding_choice', 'chosen'), ...one(e.payload.rejected_movie_id, 'onboarding_choice', 'rejected')];
     case 'watch_skipped':
       return one(e.movie_id, 'watch_skipped');
+    case 'super_liked':
+      return one(e.movie_id, 'super_liked');
     default:
       return [];
   }
