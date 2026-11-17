@@ -55,10 +55,10 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;margin:0;cu
   <div aria-hidden="true" style="position:absolute;width:540px;height:540px;left:-69px;top:60px;border-radius:50%;background:rgba(34,26,21,.7);pointer-events:none"></div>
   <div style="position:absolute;left:6px;top:0;width:390px;height:844px">
     <p style="position:absolute;left:20px;top:18px;margin:0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:32px;line-height:32px;color:#f4e7d0">Kinoo</p>
-    <a aria-label="Tu perfil" style="position:absolute;left:326px;top:14px;width:44px;height:44px;box-sizing:border-box;border-radius:22px;background:#221a15;border:2px solid #ce7e01;display:flex;align-items:center;justify-content:center"><img src="_blob/af0ff6915cfda5a557cef50b14e485d2.svg" alt="" width="22" height="22"></a>
+    <a href="Flujo2c_Perfil.dc.html" aria-label="Tu perfil" style="position:absolute;left:326px;top:14px;width:44px;height:44px;box-sizing:border-box;border-radius:22px;background:#221a15;border:2px solid #ce7e01;display:flex;align-items:center;justify-content:center"><img src="_blob/af0ff6915cfda5a557cef50b14e485d2.svg" alt="" width="22" height="22"></a>
     <a href="FlujoV1_Feed.dc.html" style="position:absolute;left:20px;top:78px;display:flex;align-items:center;gap:10px;font-weight:700;font-size:14px;color:#f4e7d0"><img src="_blob/ce164a19586227b0592a1dded43b62d5.svg" alt="" width="36" height="36">Calificación</a>
     <div style="position:absolute;right:20px;top:82px;height:26px;box-sizing:border-box;padding:0 12px;border-radius:13px;border:1.5px solid #3a2c22;font-weight:800;font-size:10.5px;line-height:23px;letter-spacing:1.2px;color:#d9c7a8">1 DE 2</div>
-    <p style="position:absolute;left:0;right:0;top:134px;margin:0;text-align:center;font-family:'Figtree',sans-serif;font-style:italic;font-weight:600;font-size:17px;color:#f2b544">se acabó la función</p>
+    <p style="position:absolute;left:0;right:0;top:134px;margin:0;text-align:center;font-family:'Figtree',sans-serif;font-style:italic;font-weight:600;font-size:17px;color:#f2b544;white-space:nowrap" data-k="calificar-film">{{kick}}</p>
     <p style="position:absolute;left:30px;right:30px;top:154px;margin:0;text-align:center;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:40px;line-height:36px;text-transform:uppercase">¿Qué te pareció?</p>
     <div aria-hidden="true" style="position:absolute;left:95px;top:190px;width:200px;height:200px;border-radius:50%;background:{{halo}};filter:blur(10px);transition:background .4s"></div>
     <div class="{{popCls}}" style="position:absolute;left:119px;top:205px;width:151px;height:168px">
@@ -71,9 +71,9 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;margin:0;cu
       <svg width="370" height="200" viewBox="0 0 370 200" style="position:absolute;left:0;top:0;overflow:visible" aria-hidden="true"><path d="{{hl}}" fill="none" stroke="#f2b544" stroke-width="3"></path><path d="M17 196C17 160.522 28.2316 125.954 49.0851 97.252L110.57 141.924C99.1507 157.642 93 176.571 93 196H17Z" fill="transparent" onClick="{{s0}}" style="cursor:pointer"></path><path d="M49.0852 97.252C69.9387 68.5496 99.3435 47.1858 133.085 36.2224L156.57 108.503C138.093 114.506 121.99 126.206 110.57 141.924L49.0852 97.252Z" fill="transparent" onClick="{{s1}}" style="cursor:pointer"></path><path d="M133.085 36.2225C166.827 25.2592 203.173 25.2592 236.915 36.2225L213.43 108.503C194.952 102.499 175.048 102.499 156.57 108.503L133.085 36.2225Z" fill="transparent" onClick="{{s2}}" style="cursor:pointer"></path><path d="M236.915 36.2224C270.657 47.1858 300.061 68.5496 320.915 97.252L259.43 141.924C248.01 126.206 231.907 114.506 213.43 108.503L236.915 36.2224Z" fill="transparent" onClick="{{s3}}" style="cursor:pointer"></path><path d="M320.915 97.252C341.768 125.954 353 160.522 353 196H277C277 176.571 270.849 157.642 259.43 141.924L320.915 97.252Z" fill="transparent" onClick="{{s4}}" style="cursor:pointer"></path></svg>
       <div style="position:absolute;inset:0;transform:rotate({{ang}}deg);transform-origin:185px 196px;transition:{{angTr}};pointer-events:none"><img src="_blob/ce663d2c3b75d4aef633694e024e61b3.svg" alt="" width="370" height="200"></div>
     </div>
-    <p style="position:absolute;left:0;right:0;top:678px;margin:0;text-align:center;font-weight:600;font-size:12px;color:#bfa98a">Gira la aguja o toca una máscara</p>
+    <p data-k="calificar-help" style="position:absolute;left:20px;right:20px;top:678px;margin:0;text-align:center;font-weight:600;font-size:12px;color:{{helpColor}}">{{help}}</p>
     <a href="FlujoV5_Version.dc.html" onClick="{{confirm}}" style="position:absolute;left:20px;top:716px;width:350px;height:56px;box-sizing:border-box;border-radius:28px;background:#b83a26;border:2px solid #f4e7d0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:24px;line-height:52px;color:#f4e7d0;text-transform:uppercase;letter-spacing:.5px;text-align:center">Continuar</a>
-    <a href="FlujoV1_Feed.dc.html" style="position:absolute;left:0;right:0;top:786px;text-align:center;font-weight:600;font-size:12.5px;color:#bfa98a">Saltar por ahora</a>
+    <a href="FlujoV1_Feed.dc.html" style="position:absolute;left:95px;right:95px;top:776px;height:44px;line-height:44px;text-align:center;font-weight:600;font-size:12.5px;color:#bfa98a">Saltar por ahora</a>
 
   </div>
 
@@ -98,8 +98,20 @@ renderVals() {
     gKey: (e) => { const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0; if (d) { e.preventDefault(); set(Math.max(0, Math.min(4, lv + d)), null); } }
   };
   for (let i = 0; i < 5; i++) { o['f' + i] = i === lv; o['s' + i] = () => set(i, null); }
-  // Motor Kinoo v2 (modo demo): al continuar, la calificación se guarda como watch_confirmed.
-  o.confirm = () => { if (window.KinooDemo) window.KinooDemo.confirmWatch(lv); };
+  // Motor Kinoo v2 (modo demo): la calificación se guarda al terminar "¿Qué versión de ti salió?" (FlujoV5),
+  // con confirmWatch(nivel, versión) en una sola llamada. Aquí solo se deja anotado el nivel elegido.
+  const KD = window.KinooDemo;
+  if (this._w === undefined) { try { this._w = KD ? KD.lastWatch() : null; } catch (_) { this._w = null; } }
+  const w = this._w;
+  const pending = !!(w && !w.rating);
+  const lost = !!KD && !pending;
+  o.kick = pending ? w.title : 'se acabó la función';
+  o.help = lost && S.tried ? 'No sabemos qué película viste. Elige una en Ver y vuelve aquí.' : 'Gira la aguja o toca una máscara';
+  o.helpColor = lost && S.tried ? '#f2b544' : '#bfa98a';
+  o.confirm = (e) => {
+    if (lost) { if (e) e.preventDefault(); if (!S.tried) this.setState({ tried: true }); else location.assign('FlujoV1_Feed.dc.html'); return; }
+    try { sessionStorage.setItem('kinoo.rating.pending', JSON.stringify({ movie_id: w ? w.movie_id : null, level: lv })); } catch (_) {}
+  };
   return o;
 }
 }

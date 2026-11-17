@@ -8,6 +8,7 @@
     "build": "node scripts/build.mjs",
     "serve": "node scripts/serve.mjs",
     "check:routes": "node scripts/check-routes.mjs",
+    "check:front": "node scripts/check-front.mjs",
     "test:e2e": "playwright test"
   },
   "dependencies": {

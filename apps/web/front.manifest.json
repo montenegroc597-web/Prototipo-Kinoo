@@ -1,0 +1,222 @@
+{
+  "$comment": "Contrato del front de Kinoo. Léelo primero si vas a cambiar o reemplazar una pantalla. Lo valida apps/web/scripts/check-front.mjs (npm run check:front). Guía: docs/guias/actualizar-el-front-con-ia.md",
+  "version": 1,
+  "base": "apps/web/public",
+  "public_url": "https://<usuario>.github.io/Prototipo-Kinoo/",
+  "bridge": {
+    "source": "apps/web/src/demo.ts",
+    "global": "window.KinooDemo",
+    "script": "../_kinoo/kinoo-demo.js",
+    "shell_css": "../_kinoo/kinoo-shell.css",
+    "built_files": ["_kinoo/kinoo-demo.js", "_kinoo/kinoo-login.js"],
+    "note": "El puente lo escribe el back. El front solo lo llama: no calcula nada del algoritmo. Si un método no existe, se pide al back (no se inventa en la pantalla)."
+  },
+  "rules": [
+    "Nunca mostrar porcentajes ni números de afinidad (ni 'match', ni '/100', ni '% igual'). Los niveles van en palabras: alto = mucho, medio = bastante, bajo = un poco, con barra de 3 segmentos.",
+    "No renombrar archivos ni rutas: hay 86 rutas publicadas (npm run check:routes -w @kinoo/web).",
+    "Toda pantalla conectada carga ../_kinoo/kinoo-demo.js y ../_kinoo/kinoo-shell.css en el <head>.",
+    "Si el puente no carga, la pantalla muestra datos neutros o de ejemplo marcados como ejemplo; nunca datos inventados presentados como de la persona.",
+    "Los textos del back ya vienen recortados (fitText); el front no los alarga. Los límites están en packages/config/data/params.json.",
+    "Los métodos del puente que usa cada pantalla deben coincidir con 'bridge' de esa pantalla en este archivo."
+  ],
+  "screens": [
+    {
+      "id": "entrar",
+      "file": "entrar.html",
+      "route": "entrar.html",
+      "purpose": "Inicio de sesión de la demo (camilo / 1234). Las pantallas conectadas mandan aquí si no hay sesión.",
+      "connected": false,
+      "bridge": [],
+      "texts": [],
+      "next": ["kinoo-flujo/Flujo1_Descubrir.dc.html"]
+    },
+    {
+      "id": "descubrir",
+      "file": "kinoo-flujo/Flujo1_Descubrir.dc.html",
+      "route": "kinoo-flujo/Flujo1_Descubrir.dc.html",
+      "purpose": "Mazo de 10 cartas: frente, reverso con póster, ficha ADN y cierre del mazo con lo aprendido.",
+      "connected": true,
+      "bridge": ["discoverCards", "discoverAdn", "onCard", "onFlip", "closingLine", "leaveDeck"],
+      "texts": [
+        { "text": "Premisa", "max": 44, "param": "card_premise_max" },
+        { "text": "Título del reverso", "max": 24, "param": "card_title_max" },
+        { "text": "Subtítulo (director)", "max": 40, "param": "card_subtitle_max" },
+        { "text": "Sinopsis", "max": 110, "param": "card_overview_max" },
+        { "text": "Razón al pie", "max": 96, "param": "card_explanation_max" },
+        { "text": "Pilares", "max": 15, "param": "card_pillar_max" },
+        { "text": "Frase ADN", "max": 44, "param": "card_dna_phrase_max" },
+        { "text": "Frase del cierre", "max": 80, "param": "closing_text_max" }
+      ],
+      "next": ["kinoo-flujo/Flujo2_Resumen.dc.html", "kinoo-flujo/FlujoV1_Feed.dc.html"]
+    },
+    {
+      "id": "resumen",
+      "file": "kinoo-flujo/Flujo2_Resumen.dc.html",
+      "route": "kinoo-flujo/Flujo2_Resumen.dc.html",
+      "purpose": "Resumen del último mazo: conteos reales (quieres ver / ya la viste / dejaste pasar), frase del cierre y lo que aprendimos de ti con niveles en palabras.",
+      "connected": true,
+      "bridge": ["lastClosing", "events", "closingLine", "insight", "billboard"],
+      "texts": [
+        { "text": "Título (insight.title)", "max": 24, "param": "insight_title_max" },
+        { "text": "Frase del cierre", "max": 80, "param": "closing_text_max" },
+        { "text": "Encabezado (insight.kicker)", "max": 28, "param": "insight_kicker_max" },
+        { "text": "Rasgo", "max": 16, "param": "insight_trait_max" },
+        { "text": "Mood", "max": 18, "param": "mood_name_max" },
+        { "text": "Texto sin datos (insight.empty_text)", "max": 90, "param": "insight_empty_max" }
+      ],
+      "next": ["kinoo-flujo/Flujo2b_Ticket.dc.html", "kinoo-flujo/Flujo3_Minijuego.dc.html", "kinoo-flujo/FlujoV1_Feed.dc.html", "kinoo-flujo/Flujo2c_Perfil.dc.html"]
+    },
+    {
+      "id": "ticket",
+      "file": "kinoo-flujo/Flujo2b_Ticket.dc.html",
+      "route": "kinoo-flujo/Flujo2b_Ticket.dc.html",
+      "purpose": "Recibo del último mazo: mood del mazo, pósters guardados, frase del cierre y conteos reales.",
+      "connected": true,
+      "bridge": ["lastClosing", "events", "moods", "closingLine"],
+      "texts": [
+        { "text": "Nombre del mood", "max": 18, "param": "mood_name_max" },
+        { "text": "Frase del cierre", "max": 80, "param": "closing_text_max" }
+      ],
+      "next": ["kinoo-flujo/FlujoV1_Feed.dc.html", "kinoo-flujo/Flujo2_Resumen.dc.html"]
+    },
+    {
+      "id": "perfil",
+      "file": "kinoo-flujo/Flujo2c_Perfil.dc.html",
+      "route": "kinoo-flujo/Flujo2c_Perfil.dc.html",
+      "purpose": "Tu perfil: arquetipo, frase y lo que te atrapa (moods y rasgos con nivel en palabras). Atribución completa de TMDB.",
+      "connected": true,
+      "bridge": ["insight"],
+      "texts": [
+        { "text": "Título", "max": 24, "param": "insight_title_max" },
+        { "text": "Frase", "max": 110, "param": "insight_body_max" },
+        { "text": "Rasgo", "max": 16, "param": "insight_trait_max" },
+        { "text": "Texto sin datos", "max": 90, "param": "insight_empty_max" }
+      ],
+      "next": ["kinoo-flujo/Flujo2_Resumen.dc.html"]
+    },
+    {
+      "id": "minijuego",
+      "file": "kinoo-flujo/Flujo3_Minijuego.dc.html",
+      "route": "kinoo-flujo/Flujo3_Minijuego.dc.html",
+      "purpose": "Mockup: pregunta rápida de 10 s al cerrar el mazo. La respuesta no se guarda.",
+      "connected": false,
+      "bridge": [],
+      "texts": [],
+      "next": ["kinoo-flujo/Flujo4_Eleccion.dc.html"]
+    },
+    {
+      "id": "eleccion",
+      "file": "kinoo-flujo/Flujo4_Eleccion.dc.html",
+      "route": "kinoo-flujo/Flujo4_Eleccion.dc.html",
+      "purpose": "Mockup: elegir el próximo mazo (mazos fijos de ejemplo).",
+      "connected": false,
+      "bridge": [],
+      "texts": [],
+      "next": ["kinoo-flujo/Flujo5_Inicio.dc.html", "kinoo-flujo/FlujoV1_Feed.dc.html"]
+    },
+    {
+      "id": "inicio",
+      "file": "kinoo-flujo/Flujo5_Inicio.dc.html",
+      "route": "kinoo-flujo/Flujo5_Inicio.dc.html",
+      "purpose": "Mockup: el próximo mazo está listo.",
+      "connected": false,
+      "bridge": [],
+      "texts": [],
+      "next": ["kinoo-flujo/Flujo1_Descubrir.dc.html", "kinoo-flujo/FlujoV1_Feed.dc.html"]
+    },
+    {
+      "id": "ver",
+      "file": "kinoo-flujo/FlujoV1_Feed.dc.html",
+      "route": "kinoo-flujo/FlujoV1_Feed.dc.html",
+      "purpose": "Ver (diseño B7c): cartelera por mood, estrella, ticket 'Verla ahora' con hoja de plataformas reales, repisa de ya vistas con 'volver a ver', lo que aprendimos de ti y estados vacíos. Especificación: docs/auditoria/especificacion-ver-b7c.md.",
+      "connected": true,
+      "bridge": ["moods", "billboard", "shelf", "insight", "star", "rewatch", "onWatch"],
+      "texts": [
+        { "text": "Nombre del mood", "max": 18, "param": "mood_name_max" },
+        { "text": "Descripción del mood", "max": 28, "param": "mood_desc_max" },
+        { "text": "Título (title_size 38/30 px)", "max": 24, "param": "watch_title_max" },
+        { "text": "Meta '1 h 44 · Drama · Romance'", "max": 44, "param": "watch_meta_max" },
+        { "text": "Frase (quote)", "max": 80, "param": "watch_why_max" },
+        { "text": "Nota de la plataforma", "max": 22, "param": "watch_provider_note_max" },
+        { "text": "Aviso de estado (notice)", "max": 90, "param": "billboard_notice_max" },
+        { "text": "Películas por cartelera", "max": 10, "param": "billboard_max_films" },
+        { "text": "Título en la repisa", "max": 24, "param": "shelf_title_max" },
+        { "text": "Cuándo la vio", "max": 16, "param": "shelf_when_max" },
+        { "text": "Calificación", "max": 16, "param": "shelf_rating_max" },
+        { "text": "Razón para volver a verla", "max": 90, "param": "shelf_back_max" },
+        { "text": "Título de lo aprendido", "max": 24, "param": "insight_title_max" },
+        { "text": "Frase de lo aprendido", "max": 110, "param": "insight_body_max" },
+        { "text": "Aviso flotante (toast, texto del front)", "max": 60, "param": null }
+      ],
+      "selectors": {
+        "$comment": "Atributos data-k estables para pruebas e2e.",
+        "card": "[data-k=card]",
+        "title": "[data-k=title]",
+        "meta": "[data-k=meta]",
+        "quote": "[data-k=quote]",
+        "star": "[data-k=star]",
+        "prev_next": "[data-k=prev], [data-k=next]",
+        "mood": "[data-k=mood-prev], [data-k=mood-name], [data-k=mood-next]",
+        "ticket": "[data-k=ticket]",
+        "sheet": "[data-k=sheet], [data-k=plat], [data-k=open]",
+        "empty": "[data-k=empty]",
+        "shelf": "[data-k=shelf], [data-k=shelf-item], [data-k=to-new]",
+        "insight": "[data-k=insight]"
+      },
+      "next": ["kinoo-flujo/FlujoV2_Abriendo.dc.html", "kinoo-flujo/Flujo1_Descubrir.dc.html", "kinoo-flujo/Flujo2c_Perfil.dc.html"]
+    },
+    {
+      "id": "abriendo",
+      "file": "kinoo-flujo/FlujoV2_Abriendo.dc.html",
+      "route": "kinoo-flujo/FlujoV2_Abriendo.dc.html",
+      "purpose": "Paso hacia la plataforma elegida en la hoja de Ver.",
+      "connected": true,
+      "bridge": ["lastWatch"],
+      "texts": [],
+      "next": ["kinoo-flujo/FlujoV3_Funcion.dc.html"]
+    },
+    {
+      "id": "funcion",
+      "file": "kinoo-flujo/FlujoV3_Funcion.dc.html",
+      "route": "kinoo-flujo/FlujoV3_Funcion.dc.html",
+      "purpose": "Mockup: momentos clave durante la película (preguntas fijas de Interstellar). Sin porcentajes de otras personas. Pendiente de decidir si va en la v1 (P8.1).",
+      "connected": false,
+      "bridge": [],
+      "texts": [],
+      "next": ["kinoo-flujo/FlujoV4_Calificar.dc.html"]
+    },
+    {
+      "id": "calificar",
+      "file": "kinoo-flujo/FlujoV4_Calificar.dc.html",
+      "route": "kinoo-flujo/FlujoV4_Calificar.dc.html",
+      "purpose": "Calificación con aguja (5 niveles). Muestra la película en curso; si no hay, avisa. El nivel queda anotado en sessionStorage y se guarda en Versión.",
+      "connected": true,
+      "bridge": ["lastWatch"],
+      "texts": [{ "text": "Título de la película", "max": 24, "param": "watch_title_max" }],
+      "next": ["kinoo-flujo/FlujoV5_Version.dc.html", "kinoo-flujo/FlujoV1_Feed.dc.html"]
+    },
+    {
+      "id": "version",
+      "file": "kinoo-flujo/FlujoV5_Version.dc.html",
+      "route": "kinoo-flujo/FlujoV5_Version.dc.html",
+      "purpose": "¿Qué versión de ti salió? Guarda la calificación una sola vez: confirmWatch(nivel, versión). 'Saltar' guarda el nivel sin versión.",
+      "connected": true,
+      "bridge": ["confirmWatch"],
+      "texts": [],
+      "next": ["kinoo-flujo/FlujoV6_Gracias.dc.html", "kinoo-flujo/FlujoV1_Feed.dc.html"]
+    },
+    {
+      "id": "gracias",
+      "file": "kinoo-flujo/FlujoV6_Gracias.dc.html",
+      "route": "kinoo-flujo/FlujoV6_Gracias.dc.html",
+      "purpose": "Cierre de la calificación: película, calificación, versión y plataforma reales.",
+      "connected": true,
+      "bridge": ["lastWatch"],
+      "texts": [
+        { "text": "Título de la película", "max": 24, "param": "watch_title_max" },
+        { "text": "Calificación", "max": 16, "param": "shelf_rating_max" }
+      ],
+      "next": ["kinoo-flujo/Flujo1_Descubrir.dc.html", "kinoo-flujo/FlujoV1_Feed.dc.html"]
+    }
+  ]
+}

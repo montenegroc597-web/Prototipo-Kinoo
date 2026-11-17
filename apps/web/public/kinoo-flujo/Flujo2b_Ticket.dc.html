@@ -5,6 +5,7 @@
 <title>Ticket coleccionable</title>
 <script src="../_prototipos/dc-runtime.js"></script>
 <link rel="stylesheet" href="../_kinoo/kinoo-shell.css">
+<script src="../_kinoo/kinoo-demo.js"></script>
 </head>
 <body>
 <x-dc>
@@ -19,16 +20,16 @@ a{text-decoration:none;color:inherit}
 <div style="position:relative;width:402px;height:844px;overflow:hidden;background:#17120f;font-family:'Figtree',sans-serif;color:#f4e7d0;display:flex;flex-direction:column;align-items:center">
 
   <div style="width:390px;flex:none;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;padding:14px 20px 6px 20px">
-    <a href="Flujo2_Resumen.dc.html" aria-label="Volver al cierre" style="display:flex;align-items:center;height:44px">
+    <a href="Flujo2_Resumen.dc.html" aria-label="Volver al cierre" style="display:flex;align-items:center;height:44px;min-width:44px">
       <svg width="33" height="24" viewBox="0 0 33 24" fill="none" stroke="#f4e7d0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M31 12H2.5"/><path d="M11.5 3 2.5 12l9 9"/></svg>
     </a>
     <div style="display:flex;align-items:center;gap:10px">
       <div style="box-sizing:border-box;border:1px solid #8a7458;border-radius:15px;padding:8px 13px;display:flex">
         <p style="margin:0;font-weight:600;font-size:12px;line-height:14px;letter-spacing:1.2px;text-transform:uppercase;color:#d9c7a8;white-space:nowrap">Fin del mazo</p>
       </div>
-      <div style="width:44px;height:44px;box-sizing:border-box;border:2px solid #ce7e01;border-radius:22px;background:#221a15;display:flex;align-items:center;justify-content:center">
+      <a href="Flujo2c_Perfil.dc.html" aria-label="Tu perfil" style="width:44px;height:44px;box-sizing:border-box;border:2px solid #ce7e01;border-radius:22px;background:#221a15;display:flex;align-items:center;justify-content:center">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f4e7d0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 21v-1a5.5 5.5 0 0 1 5.5-5.5h4a5.5 5.5 0 0 1 5.5 5.5v1"/></svg>
-      </div>
+      </a>
     </div>
   </div>
 
@@ -39,38 +40,37 @@ a{text-decoration:none;color:inherit}
 
       <div style="width:100%;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;padding:14px 20px;background:#5e0c10;color:#f4e7d0;white-space:nowrap;overflow:hidden">
         <p style="margin:0;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:23px;line-height:normal">KINOO</p>
-        <p style="margin:0;font-weight:800;font-size:10px;line-height:normal">TICKET DEL MAZO</p>
+        <p style="margin:0;font-weight:800;font-size:11px;line-height:normal">TICKET DEL MAZO</p>
       </div>
 
       <div style="width:100%;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;gap:14px;padding:22px 20px 14px;overflow:hidden">
         <div style="width:100%;text-align:center;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:40px;line-height:0.94;text-transform:uppercase;color:#1a1411">
-          <p style="margin:0">Lentas y</p>
-          <p style="margin:0">melancólicas</p>
+          <p style="margin:0" data-k="ticket-title">{{title}}</p>
         </div>
 
         <div style="position:relative;flex:none;width:310px;height:207px">
           <div style="position:absolute;left:7px;top:4.87px;width:146.306px;height:189.01px;display:flex;align-items:center;justify-content:center">
             <div style="flex:none;transform:rotate(-11deg)">
               <div style="box-sizing:border-box;width:116px;height:170px;padding:3px;border-radius:5px;background:#1a1411;box-shadow:0 7px 12px rgba(0,0,0,0.33);overflow:hidden">
-                <img src="_blob/47a12c3c151f8da9df8a65897c8a3b7b.jpg" alt="La La Land" style="display:block;width:100%;height:100%;object-fit:cover;border-radius:2px">
+                <sc-if value="{{p0.hasImg}}" hint-placeholder-val="{{ false }}"><img src="{{p0.img}}" alt="{{p0.title}}" style="display:block;width:100%;height:100%;object-fit:cover;object-position:50% 0;border-radius:2px"></sc-if><sc-if value="{{p0.noImg}}" hint-placeholder-val="{{ true }}"><span style="display:flex;align-items:flex-end;width:100%;height:100%;box-sizing:border-box;padding:8px;border-radius:2px;background:{{p0.bg}};font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:16px;line-height:16px;text-transform:uppercase;color:#f4e7d0"></span></sc-if>
               </div>
             </div>
           </div>
           <div style="position:absolute;left:163.48px;top:12px;width:143.758px;height:187.561px;display:flex;align-items:center;justify-content:center">
             <div style="flex:none;transform:rotate(10deg)">
               <div style="box-sizing:border-box;width:116px;height:170px;padding:3px;border-radius:5px;background:#1a1411;box-shadow:0 7px 12px rgba(0,0,0,0.33);overflow:hidden">
-                <img src="_blob/898b391b9a5eaba68df05fef307a6e56.jpg" alt="Project Hail Mary" style="display:block;width:100%;height:100%;object-fit:cover;object-position:42% 50%;border-radius:2px">
+                <sc-if value="{{p2.hasImg}}" hint-placeholder-val="{{ false }}"><img src="{{p2.img}}" alt="{{p2.title}}" style="display:block;width:100%;height:100%;object-fit:cover;object-position:50% 0;border-radius:2px"></sc-if><sc-if value="{{p2.noImg}}" hint-placeholder-val="{{ true }}"><span style="display:flex;align-items:flex-end;width:100%;height:100%;box-sizing:border-box;padding:8px;border-radius:2px;background:{{p2.bg}};font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:16px;line-height:16px;text-transform:uppercase;color:#f4e7d0"></span></sc-if>
               </div>
             </div>
           </div>
           <div style="position:absolute;left:90px;top:3px;box-sizing:border-box;width:130px;height:191px;padding:3px;border-radius:5px;background:#1a1411;box-shadow:0 7px 12px rgba(0,0,0,0.33);overflow:hidden">
             <div style="position:relative;width:100%;height:100%;border-radius:2px;overflow:hidden">
-              <img src="_blob/665a0569e72a0a72bc75b7aed03e2424.jpg" alt="tick, tick... BOOM!" style="position:absolute;left:-6.26%;top:-6.15%;width:111.9%;height:111.95%;max-width:none">
+              <sc-if value="{{p1.hasImg}}" hint-placeholder-val="{{ false }}"><img src="{{p1.img}}" alt="{{p1.title}}" style="display:block;width:100%;height:100%;object-fit:cover;object-position:50% 0;border-radius:2px"></sc-if><sc-if value="{{p1.noImg}}" hint-placeholder-val="{{ true }}"><span style="display:flex;align-items:flex-end;width:100%;height:100%;box-sizing:border-box;padding:8px;border-radius:2px;background:{{p1.bg}};font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:16px;line-height:16px;text-transform:uppercase;color:#f4e7d0">{{p1.title}}</span></sc-if>
             </div>
           </div>
         </div>
 
-        <p style="margin:0;width:100%;font-family:'Figtree',sans-serif;font-style:italic;font-weight:600;font-size:19px;line-height:24px;text-align:center;color:#1a1411">Hoy te movieron las historias grandes y serias.</p>
+        <p style="margin:0;width:100%;font-family:'Figtree',sans-serif;font-style:italic;font-weight:600;font-size:19px;line-height:24px;text-align:center;color:#1a1411" data-k="ticket-line">{{line}}</p>
       </div>
 
       <!-- Troquel -->
@@ -84,15 +84,15 @@ a{text-decoration:none;color:inherit}
         <div style="width:100%;display:flex;align-items:center;justify-content:center;gap:30px">
           <div style="display:flex;align-items:center;gap:8px">
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="6.2" stroke="#d9541f" stroke-width="2.6"/></svg>
-            <p style="margin:0;font-weight:700;font-size:16px;line-height:normal;color:#1a1411">3</p>
+            <p style="margin:0;font-weight:700;font-size:16px;line-height:normal;color:#1a1411" data-k="count-want">{{want}}</p>
           </div>
           <div style="display:flex;align-items:center;gap:8px">
             <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="6.8" fill="#1a1411"/></svg>
-            <p style="margin:0;font-weight:700;font-size:16px;line-height:normal;color:#1a1411">1</p>
+            <p style="margin:0;font-weight:700;font-size:16px;line-height:normal;color:#1a1411" data-k="count-seen">{{seen}}</p>
           </div>
           <div style="display:flex;align-items:center;gap:8px;color:#1a1411">
             <p style="margin:0;font-weight:400;font-size:19px;line-height:normal">✕</p>
-            <p style="margin:0;font-weight:700;font-size:16px;line-height:normal">6</p>
+            <p style="margin:0;font-weight:700;font-size:16px;line-height:normal" data-k="count-pass">{{pass}}</p>
           </div>
         </div>
         <div style="display:flex;justify-content:center;gap:2px;height:18px" aria-hidden="true">
@@ -103,10 +103,10 @@ a{text-decoration:none;color:inherit}
 
     <!-- Acciones -->
     <div style="width:100%;display:flex;flex-direction:column;gap:4px;overflow:hidden">
-      <div style="box-sizing:border-box;width:100%;height:58px;display:flex;align-items:center;justify-content:center;gap:10px;border:2px solid #f4e7d0;border-radius:29px;background:#5e0c10;overflow:hidden">
-        <span style="font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:24px;line-height:normal;text-transform:uppercase;color:#f4e7d0;white-space:nowrap">Compartir recibo</span>
+      <a href="FlujoV1_Feed.dc.html" style="box-sizing:border-box;width:100%;height:58px;display:flex;align-items:center;justify-content:center;gap:10px;border:2px solid #f4e7d0;border-radius:29px;background:#5e0c10;overflow:hidden">
+        <span style="font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:24px;line-height:normal;text-transform:uppercase;color:#f4e7d0;white-space:nowrap">Ir a Ver</span>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f4e7d0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
-      </div>
+      </a>
       <a href="Flujo2_Resumen.dc.html" style="height:44px;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:14px;line-height:normal;color:#d9c7a8;text-decoration:underline;white-space:nowrap">Volver al cierre</a>
     </div>
   </div>
@@ -114,7 +114,32 @@ a{text-decoration:none;color:inherit}
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":402,"height":844}}'>
 class Component extends DCLogic {
-renderVals() { return {}; }
+// El mismo mazo que el cierre y Resumen: lastClosing() + eventos de ese mazo + closingLine(). Sin puente: textos neutros.
+renderVals() {
+  if (this.__d) return this.__d;
+  const KD = window.KinooDemo;
+  const d = { title: 'Tu mazo de hoy', line: 'Cuando termines un mazo, aquí queda su recibo.', want: '–', seen: '–', pass: '–' };
+  const pal = ['#5e0c10', '#3a2c22', '#8e3714'];
+  const posters = [];
+  if (KD) {
+    try {
+      const c = KD.lastClosing();
+      if (c && c.deck_id) {
+        const last = {}; let vibe = null;
+        KD.events().forEach((e) => { if (e.payload && e.payload.deck_id === c.deck_id) { if (e.payload.vibe) vibe = e.payload.vibe; if (e.movie_id && ['saved_intent', 'marked_seen', 'dismissed'].indexOf(e.type) >= 0) last[e.movie_id] = e.type; } });
+        const v = Object.keys(last).map((k) => last[k]);
+        d.want = v.filter((t) => t === 'saved_intent').length; d.seen = v.filter((t) => t === 'marked_seen').length; d.pass = v.filter((t) => t === 'dismissed').length;
+        const m = vibe ? (KD.moods() || []).find((x) => x.key === vibe) : null;
+        if (m) d.title = m.name;
+        (c.saved_posters || []).slice(0, 3).forEach((x) => posters.push(x));
+      }
+      d.line = KD.closingLine() || d.line;
+    } catch (_) {}
+  }
+  [0, 1, 2].forEach((i) => { const x = posters[i]; d['p' + i] = { hasImg: !!(x && x.poster_url), noImg: !(x && x.poster_url), img: (x && x.poster_url) || '', title: x ? x.title : 'Kinoo', bg: pal[i] }; });
+  this.__d = d;
+  return d;
+}
 }
 </script>
 <script src="../_prototipos/embed.js"></script>
