@@ -362,7 +362,10 @@ renderVals() {
       const want = !cur.starred; let got = want;
       if (KD) { try { const r = KD.star(raw.id, want); got = !!(r && r.starred); } catch (_) { got = cur.starred; } }
       this._stars = Object.assign({}, this._stars || {}, { [raw.id]: got });
-      this.setState({ pop: false }); setTimeout(() => this.setState({ pop: true }), 10);
+      // El motor reordena la cartelera con la estrella: pedirla de nuevo y seguir mostrando la misma película.
+      let ni = S.idx || 0;
+      if (KD && !seen) { this._bb = {}; this._in = null; const nb = this._board(mk); const j = nb.status === 'ok' ? nb.films.findIndex((x) => x.id === raw.id) : -1; if (j >= 0) ni = j; }
+      this.setState({ idx: ni, pop: false }); setTimeout(() => this.setState({ pop: true }), 10);
       this._toast(got ? raw.title + ' queda primera en tu cartelera' : 'Le quitamos la estrella a ' + raw.title);
     },
     prevF: () => go(-1), nextF: () => go(1),

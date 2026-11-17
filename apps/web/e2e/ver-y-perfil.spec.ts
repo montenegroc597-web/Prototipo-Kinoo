@@ -203,6 +203,11 @@ test('cartelera: el mood cambia las películas, la estrella la pone primera y la
   const after = await kd(page, (K) => K.billboard('todas'));
   expect(after.films[0]!.id).toBe(third.id);
   expect(after.films[0]!.starred).toBe(true);
+  // Sin recargar: la cartelera en pantalla ya trae el nuevo orden (la anterior a la marcada es la última).
+  await expect(page.locator('[data-k=title]')).toHaveText(third.title);
+  await page.waitForTimeout(700);
+  await page.locator('[data-k=next]').click();
+  await expect(page.locator('[data-k=title]')).toHaveText(after.films[1]!.title);
   await open(page, 'FlujoV1_Feed');
   await expect(page.locator('[data-k=title]')).toHaveText(third.title);
 
