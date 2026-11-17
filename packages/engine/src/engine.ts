@@ -96,8 +96,8 @@ export class KinooEngine {
     return special ? { special_match: true, message: 'Esta es muy tú.' } : { special_match: false };
   }
 
-  close(deck: ActiveDeck, model: UserModel): DeckClosingDTO {
-    return closeDeck(deck, model, this.catalog, this.cfg, this.assetBaseUrl);
+  close(deck: ActiveDeck, model: UserModel, events?: KinooEvent[]): DeckClosingDTO {
+    return closeDeck(deck, model, this.catalog, this.cfg, this.assetBaseUrl, events);
   }
 
   watch(model: UserModel, now: Date, filters?: WatchFilters): WatchProposalDTO {

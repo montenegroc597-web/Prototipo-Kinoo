@@ -3,6 +3,7 @@ import type { EngineConfig, Movie } from '@kinoo/shared';
 import { describe, expect, it } from 'vitest';
 import pilot from '../../catalog/data/movies.pilot.json';
 import { paletteFor, providerKey, relativeWhen, runtimeText } from '../src/billboard';
+import { deckCounts } from '../src/closing';
 import { KinooEngine } from '../src/engine';
 import { hasNumbers } from '../src/explain';
 import { ev, movie } from './helpers';
@@ -266,5 +267,24 @@ describe('coherencia entre el cierre del mazo y lo que el mazo dice de ti', () =
       expect(close.counts.want + close.counts.pass).toBe(d.cards.length);
       if (close.top_atoms.length) expect(real.insight(m).ready, `mazo ${k}: ${close.learned}`).toBe(true);
     }
+  });
+});
+
+describe('hallazgos de la revisión del PR #7', () => {
+  it('la hoja usa las plataformas del país que eligió la persona, no el del motor', () => {
+    const mx = movie('mx1', { intimidad: 0.9 }, { providers: { CO: ['Prime Video'], MX: ['Netflix'] } });
+    const e2 = new KinooEngine(defaultConfig, [mx, ...movies]);
+    const m = e2.model('u', [ev('platforms_set', { country: 'MX', providers: ['Netflix'] }), save('mx1')]);
+    const f = e2.billboard(m, NOW, null).films.find((x) => x.id === 'mx1')!;
+    expect(f.providers.map((p) => p.name)).toEqual(['Netflix']);
+  });
+
+  it('el cierre cuenta solo las acciones de este mazo, no descartes de mazos anteriores', () => {
+    const old = ev('dismissed', { flipped: false, deck_id: 'mazo-viejo' }, { movie_id: 'accion1' });
+    const now1 = ev('saved_intent', { flipped: false, deck_id: 'mazo-nuevo' }, { movie_id: 'amor1' });
+    const now2 = ev('dismissed', { flipped: true, deck_id: 'mazo-nuevo' }, { movie_id: 'accion2' });
+    const now3 = ev('dismissed', { flipped: true, deck_id: 'mazo-nuevo' }, { movie_id: 'amor2' });
+    const now4 = ev('saved_intent', { flipped: true, deck_id: 'mazo-nuevo' }, { movie_id: 'amor2' }); // cambió de idea: cuenta la última
+    expect(deckCounts('mazo-nuevo', [old, now1, now2, now3, now4])).toEqual({ want: 2, seen: 0, pass: 1 });
   });
 });

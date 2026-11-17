@@ -168,7 +168,7 @@ export function buildBillboard(input: {
       poster_url: posterUrl(m.movie.poster_path, { assetBaseUrl: opts.assetBaseUrl }),
       palette: paletteFor(m, cfg),
       starred: !!x.st.starred,
-      providers: providersOf(m, model, cfg, opts.country),
+      providers: providersOf(m, model, cfg, model.providers?.country ?? opts.country),
       runtime_min: m.movie.runtime_min,
     };
   });
@@ -202,7 +202,7 @@ export function buildShelf(input: { catalog: Catalog; model: UserModel; cfg: Con
         palette: paletteFor(m, cfg),
         meta: metaLine(m, p.watch_meta_max),
         runtime_min: m.movie.runtime_min,
-        providers: providersOf(m, model, cfg, opts.country),
+        providers: providersOf(m, model, cfg, model.providers?.country ?? opts.country),
         when: fitText(relativeWhen(s.confirmed_at!, now), p.shelf_when_max),
         rating: fitText(safe(cfg.template(ratingKey(s)), ''), p.shelf_rating_max),
         back: fitText(back, p.shelf_back_max),

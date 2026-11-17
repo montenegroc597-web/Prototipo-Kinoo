@@ -96,7 +96,7 @@ export class KinooService {
       const e = this.record(input);
       let closing: DeckClosingDTO | undefined;
       if (e.type === 'deck_completed' && deck && deck.deck_id === e.payload.deck_id) {
-        closing = this.engine.close(deck, this.model);
+        closing = this.engine.close(deck, this.model, this.snap.events);
         deck.completed_at = e.at;
         this.deckChanged = true;
       }
